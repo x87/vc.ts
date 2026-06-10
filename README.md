@@ -1,6 +1,6 @@
 This project aims to convert GTA Vice City Mission Script from gta3script to CLEO Redux (TypeScript).
 
-# Status
+## Status
 
 - [x] batch conversion
 - [ ] first mission playable
@@ -12,6 +12,10 @@ This project aims to convert GTA Vice City Mission Script from gta3script to CLE
     - [ ] Side Missions
     - [ ] 100% checklist
 
-# License
+## See Also
+
+* [GTA3.ts](https://github.com/x87/gta3.ts) - GTA III Mission script converted to to CLEO Redux (TypeScript)
+
+## License
 
 MIT
