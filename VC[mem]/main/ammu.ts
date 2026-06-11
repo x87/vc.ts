@@ -1,18 +1,18 @@
 // Generated from main/ammu.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_ammu() {
 
 
 
 
-  // START_NEW_SCRIPT shop_ammu1
-  // START_NEW_SCRIPT shop_ammu2
-  // START_NEW_SCRIPT shop_ammu3
-  // START_NEW_SCRIPT shop_hardware1
-  // START_NEW_SCRIPT shop_hardware2
-  // START_NEW_SCRIPT shop_hardware3
+  // START_NEW_SCRIPT shop_ammu1 
+  // START_NEW_SCRIPT shop_ammu2 
+  // START_NEW_SCRIPT shop_ammu3 
+  // START_NEW_SCRIPT shop_hardware1 
+  // START_NEW_SCRIPT shop_hardware2 
+  // START_NEW_SCRIPT shop_hardware3 
 
 
   // MissionBoundary
@@ -47,7 +47,7 @@ async function shop_ammu1_inner() {
           if ($.camera_ammu1 == 0) {
             await load_up_sam();  // SCM GOSUB load_up_sam
             $.time_difference1 = $.current_time - $.time_since_murdering_shopkeeper1;
-            $.ammu_gun1 = ScriptObject.Create(173 /* colt45 */, -60.793, -1488.141, 12.24);
+            $.ammu_gun1 = ScriptObject.Create(colt45, -60.793, -1488.141, 12.24);
             $.ammu_gun1.setDynamic(false /* FALSE */);
             $.ammu_gun1.setRotation(0.0, 8.0, 0.0);
             $.ammu_gun2 = ScriptObject.Create(ingramsl, -62.293, -1488.241, 12.223);
@@ -58,7 +58,7 @@ async function shop_ammu1_inner() {
             $.ammu_gun3.setRotation(0.0, 7.0, 0.0);
             $.ammu_gun4 = ScriptObject.Create(ruger, -65.393, -1488.221, 12.18);
             $.ammu_gun4.setDynamic(false /* FALSE */);
-            $.ammu_gun5 = ScriptObject.Create(1364 /* bodyarmour */, -66.629, -1488.0, 12.113);
+            $.ammu_gun5 = ScriptObject.Create(bodyarmour, -66.629, -1488.0, 12.113);
             $.ammu_gun5.setDynamic(false /* FALSE */);
             if ($.time_difference1 > 30000) {
               $.ammu_shop_bloke1 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL21, -62.5, -1485.1, 9.6);
@@ -120,18 +120,18 @@ $.what_weapontype = _res4.weaponType;
 $.returnedammo = _res4.weaponAmmo;
 $.what_model = _res4.weaponModel;
                               await set_current_weapon();  // SCM GOSUB set_current_weapon
-                              if ($.player1.hasGotWeapon(WEAPONTYPE_PYTHON)) {
+                              if ($.player1.hasGotWeapon(18 /* WEAPONTYPE_PYTHON */)) {
                                 Text.PrintWithNumberNow("HELP54", 100, 1000, 1);
                               }
                               if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
-                                $.returnedammo = $.player1.getAmmoInWeapon(2 /* WEAPONTYPE_PISTOL */);
+                                $.returnedammo = $.player1.getAmmoInWeapon(17 /* WEAPONTYPE_PISTOL */);
                                 if ($.player1.isScoreGreater(99)) {
                                   if ($.returnedammo < 9999) {
-                                    $.player1.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 68);
+                                    $.player1.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 68);
                                     if ($.returnedammo > 9999) {
-                                      $.player1.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 9999);
+                                      $.player1.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 9999);
                                     }
-                                    $.player1.setCurrentWeapon(2 /* WEAPONTYPE_PISTOL */);
+                                    $.player1.setCurrentWeapon(17 /* WEAPONTYPE_PISTOL */);
                                     await buy_noise();  // SCM GOSUB buy_noise
                                     $.player1.addScore(-100);
                                     Stat.AddMoneySpentOnWeapons(100);
@@ -177,18 +177,18 @@ $.what_weapontype = _res5.weaponType;
 $.returnedammo = _res5.weaponAmmo;
 $.what_model = _res5.weaponModel;
                               await set_current_weapon();  // SCM GOSUB set_current_weapon
-                              if ($.player1.hasGotWeapon(WEAPONTYPE_MP5) || $.player1.hasGotWeapon(3 /* WEAPONTYPE_UZI */) || $.player1.hasGotWeapon(WEAPONTYPE_TEC9)) {
+                              if ($.player1.hasGotWeapon(25 /* WEAPONTYPE_MP5 */) || $.player1.hasGotWeapon(23 /* WEAPONTYPE_UZI */) || $.player1.hasGotWeapon(22 /* WEAPONTYPE_TEC9 */)) {
                                 Text.PrintWithNumberNow("HELP54", 300, 1000, 1);
                               }
                               if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
-                                $.returnedammo = $.player1.getAmmoInWeapon(WEAPONTYPE_SILENCED_INGRAM);
+                                $.returnedammo = $.player1.getAmmoInWeapon(24 /* WEAPONTYPE_SILENCED_INGRAM */);
                                 if ($.player1.isScoreGreater(299)) {
                                   if ($.returnedammo < 9999) {
-                                    $.player1.giveWeapon(WEAPONTYPE_SILENCED_INGRAM, 120);
+                                    $.player1.giveWeapon(24 /* WEAPONTYPE_SILENCED_INGRAM */, 120);
                                     if ($.returnedammo > 9999) {
-                                      $.player1.giveWeapon(WEAPONTYPE_SILENCED_INGRAM, 9999);
+                                      $.player1.giveWeapon(24 /* WEAPONTYPE_SILENCED_INGRAM */, 9999);
                                     }
-                                    $.player1.setCurrentWeapon(WEAPONTYPE_SILENCED_INGRAM);
+                                    $.player1.setCurrentWeapon(24 /* WEAPONTYPE_SILENCED_INGRAM */);
                                     await buy_noise();  // SCM GOSUB buy_noise
                                     $.player1.addScore(-300);
                                     Stat.AddMoneySpentOnWeapons(300);
@@ -242,20 +242,20 @@ $.returnedammo = _res6.weaponAmmo;
 $.what_model = _res6.weaponModel;
                               await set_current_weapon();  // SCM GOSUB set_current_weapon
                               if ($.shotgun_in_stock == 1) {
-                                if ($.player1.hasGotWeapon(WEAPONTYPE_SPAS12_SHOTGUN) || $.player1.hasGotWeapon(WEAPONTYPE_STUBBY_SHOTGUN)) {
+                                if ($.player1.hasGotWeapon(20 /* WEAPONTYPE_SPAS12_SHOTGUN */) || $.player1.hasGotWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */)) {
                                   Text.PrintWithNumberNow("HELP54", 500, 1000, 1);
                                 }
                               }
                               if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                                 if ($.shotgun_in_stock == 1) {
-                                  $.returnedammo = $.player1.getAmmoInWeapon(4 /* WEAPONTYPE_SHOTGUN */);
+                                  $.returnedammo = $.player1.getAmmoInWeapon(19 /* WEAPONTYPE_SHOTGUN */);
                                   if ($.player1.isScoreGreater(499)) {
                                     if ($.returnedammo < 9999) {
-                                      $.player1.giveWeapon(4 /* WEAPONTYPE_SHOTGUN */, 32);
+                                      $.player1.giveWeapon(19 /* WEAPONTYPE_SHOTGUN */, 32);
                                       if ($.returnedammo > 9999) {
-                                        $.player1.giveWeapon(4 /* WEAPONTYPE_SHOTGUN */, 9999);
+                                        $.player1.giveWeapon(19 /* WEAPONTYPE_SHOTGUN */, 9999);
                                       }
-                                      $.player1.setCurrentWeapon(4 /* WEAPONTYPE_SHOTGUN */);
+                                      $.player1.setCurrentWeapon(19 /* WEAPONTYPE_SHOTGUN */);
                                       await buy_noise();  // SCM GOSUB buy_noise
                                       $.player1.addScore(-500);
                                       Stat.AddMoneySpentOnWeapons(500);
@@ -313,20 +313,20 @@ $.returnedammo = _res7.weaponAmmo;
 $.what_model = _res7.weaponModel;
                               await set_current_weapon();  // SCM GOSUB set_current_weapon
                               if ($.ruger_in_stock == 1) {
-                                if ($.player1.hasGotWeapon(WEAPONTYPE_M4)) {
+                                if ($.player1.hasGotWeapon(26 /* WEAPONTYPE_M4 */)) {
                                   Text.PrintWithNumberNow("HELP54", 1000, 1000, 1);
                                 }
                               }
                               if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                                 if ($.ruger_in_stock == 1) {
-                                  $.returnedammo = $.player1.getAmmoInWeapon(WEAPONTYPE_RUGER);
+                                  $.returnedammo = $.player1.getAmmoInWeapon(27 /* WEAPONTYPE_RUGER */);
                                   if ($.player1.isScoreGreater(999)) {
                                     if ($.returnedammo < 9999) {
-                                      $.player1.giveWeapon(WEAPONTYPE_RUGER, 150);
+                                      $.player1.giveWeapon(27 /* WEAPONTYPE_RUGER */, 150);
                                       if ($.returnedammo > 9999) {
-                                        $.player1.giveWeapon(WEAPONTYPE_RUGER, 9999);
+                                        $.player1.giveWeapon(27 /* WEAPONTYPE_RUGER */, 9999);
                                       }
-                                      $.player1.setCurrentWeapon(WEAPONTYPE_RUGER);
+                                      $.player1.setCurrentWeapon(27 /* WEAPONTYPE_RUGER */);
                                       await buy_noise();  // SCM GOSUB buy_noise
                                       $.player1.addScore(-1000);
                                       Stat.AddMoneySpentOnWeapons(1000);
@@ -505,10 +505,10 @@ async function shop_ammu2_inner() {
           if ($.camera_ammu1 == 0) {
             await load_up_sam();  // SCM GOSUB load_up_sam
             $.time_difference1 = $.current_time - $.time_since_murdering_shopkeeper1;
-            $.ammu_gun1 = ScriptObject.Create(173 /* colt45 */, 367.0, 1049.5, 21.09);
+            $.ammu_gun1 = ScriptObject.Create(colt45, 367.0, 1049.5, 21.09);
             $.ammu_gun1.setDynamic(false /* FALSE */);
             $.ammu_gun1.setRotation(0.0, 8.0, 0.0);
-            $.ammu_gun2 = ScriptObject.Create(178 /* uzi */, 366.0, 1049.5, 21.05);
+            $.ammu_gun2 = ScriptObject.Create(uzi, 366.0, 1049.5, 21.05);
             $.ammu_gun2.setDynamic(false /* FALSE */);
             $.ammu_gun2.setRotation(0.0, 4.0, 0.0);
             $.ammu_gun3 = ScriptObject.Create(buddyshot, 364.9, 1049.5, 21.067);
@@ -517,11 +517,11 @@ async function shop_ammu2_inner() {
             $.ammu_gun4 = ScriptObject.Create(7 /* sniper */, 363.9, 1049.5, 21.05);
             $.ammu_gun4.setDynamic(false /* FALSE */);
             $.ammu_gun4.setRotation(0.0, 5.0, 0.0);
-            $.ammu_gun5 = ScriptObject.Create(170 /* grenade */, 363.1, 1049.5, 20.76);
+            $.ammu_gun5 = ScriptObject.Create(grenade, 363.1, 1049.5, 20.76);
             $.ammu_gun5.setDynamic(false /* FALSE */);
-            $.ammu_gun6 = ScriptObject.Create(170 /* grenade */, 363.0, 1049.5, 20.72);
+            $.ammu_gun6 = ScriptObject.Create(grenade, 363.0, 1049.5, 20.72);
             $.ammu_gun6.setDynamic(false /* FALSE */);
-            $.ammu_gun7 = ScriptObject.Create(1364 /* bodyarmour */, 362.1, 1049.5, 20.9);
+            $.ammu_gun7 = ScriptObject.Create(bodyarmour, 362.1, 1049.5, 20.9);
             $.ammu_gun7.setDynamic(false /* FALSE */);
             if ($.time_difference1 > 30000) {
               $.ammu_shop_bloke1 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL21, 366.1, 1052.2, 18.2);
@@ -583,18 +583,18 @@ $.what_weapontype = _res8.weaponType;
 $.returnedammo = _res8.weaponAmmo;
 $.what_model = _res8.weaponModel;
                               await set_current_weapon();  // SCM GOSUB set_current_weapon
-                              if ($.player1.hasGotWeapon(WEAPONTYPE_PYTHON)) {
+                              if ($.player1.hasGotWeapon(18 /* WEAPONTYPE_PYTHON */)) {
                                 Text.PrintWithNumberNow("HELP54", 100, 1000, 1);
                               }
                               if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
-                                $.returnedammo = $.player1.getAmmoInWeapon(2 /* WEAPONTYPE_PISTOL */);
+                                $.returnedammo = $.player1.getAmmoInWeapon(17 /* WEAPONTYPE_PISTOL */);
                                 if ($.player1.isScoreGreater(99)) {
                                   if ($.returnedammo < 9999) {
-                                    $.player1.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 68);
+                                    $.player1.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 68);
                                     if ($.returnedammo > 9999) {
-                                      $.player1.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 9999);
+                                      $.player1.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 9999);
                                     }
-                                    $.player1.setCurrentWeapon(2 /* WEAPONTYPE_PISTOL */);
+                                    $.player1.setCurrentWeapon(17 /* WEAPONTYPE_PISTOL */);
                                     await buy_noise();  // SCM GOSUB buy_noise
                                     $.player1.addScore(-100);
                                     Stat.AddMoneySpentOnWeapons(100);
@@ -640,18 +640,18 @@ $.what_weapontype = _res9.weaponType;
 $.returnedammo = _res9.weaponAmmo;
 $.what_model = _res9.weaponModel;
                               await set_current_weapon();  // SCM GOSUB set_current_weapon
-                              if ($.player1.hasGotWeapon(WEAPONTYPE_MP5) || $.player1.hasGotWeapon(WEAPONTYPE_SILENCED_INGRAM) || $.player1.hasGotWeapon(WEAPONTYPE_TEC9)) {
+                              if ($.player1.hasGotWeapon(25 /* WEAPONTYPE_MP5 */) || $.player1.hasGotWeapon(24 /* WEAPONTYPE_SILENCED_INGRAM */) || $.player1.hasGotWeapon(22 /* WEAPONTYPE_TEC9 */)) {
                                 Text.PrintWithNumberNow("HELP54", 400, 1000, 1);
                               }
                               if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
-                                $.returnedammo = $.player1.getAmmoInWeapon(3 /* WEAPONTYPE_UZI */);
+                                $.returnedammo = $.player1.getAmmoInWeapon(23 /* WEAPONTYPE_UZI */);
                                 if ($.player1.isScoreGreater(399)) {
                                   if ($.returnedammo < 9999) {
-                                    $.player1.giveWeapon(3 /* WEAPONTYPE_UZI */, 120);
+                                    $.player1.giveWeapon(23 /* WEAPONTYPE_UZI */, 120);
                                     if ($.returnedammo > 9999) {
-                                      $.player1.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+                                      $.player1.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
                                     }
-                                    $.player1.setCurrentWeapon(3 /* WEAPONTYPE_UZI */);
+                                    $.player1.setCurrentWeapon(23 /* WEAPONTYPE_UZI */);
                                     await buy_noise();  // SCM GOSUB buy_noise
                                     $.player1.addScore(-400);
                                     Stat.AddMoneySpentOnWeapons(400);
@@ -705,20 +705,20 @@ $.returnedammo = _res10.weaponAmmo;
 $.what_model = _res10.weaponModel;
                               await set_current_weapon();  // SCM GOSUB set_current_weapon
                               if ($.stubby_in_stock == 1) {
-                                if ($.player1.hasGotWeapon(WEAPONTYPE_SPAS12_SHOTGUN) || $.player1.hasGotWeapon(4 /* WEAPONTYPE_SHOTGUN */)) {
+                                if ($.player1.hasGotWeapon(20 /* WEAPONTYPE_SPAS12_SHOTGUN */) || $.player1.hasGotWeapon(19 /* WEAPONTYPE_SHOTGUN */)) {
                                   Text.PrintWithNumberNow("HELP54", 600, 1000, 1);
                                 }
                               }
                               if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                                 if ($.stubby_in_stock == 1) {
-                                  $.returnedammo = $.player1.getAmmoInWeapon(WEAPONTYPE_STUBBY_SHOTGUN);
+                                  $.returnedammo = $.player1.getAmmoInWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */);
                                   if ($.player1.isScoreGreater(599)) {
                                     if ($.returnedammo < 9999) {
-                                      $.player1.giveWeapon(WEAPONTYPE_STUBBY_SHOTGUN, 20);
+                                      $.player1.giveWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */, 20);
                                       if ($.returnedammo > 9999) {
-                                        $.player1.giveWeapon(WEAPONTYPE_STUBBY_SHOTGUN, 9999);
+                                        $.player1.giveWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */, 9999);
                                       }
-                                      $.player1.setCurrentWeapon(WEAPONTYPE_STUBBY_SHOTGUN);
+                                      $.player1.setCurrentWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */);
                                       await buy_noise();  // SCM GOSUB buy_noise
                                       $.player1.addScore(-600);
                                       Stat.AddMoneySpentOnWeapons(600);
@@ -776,20 +776,20 @@ $.returnedammo = _res11.weaponAmmo;
 $.what_model = _res11.weaponModel;
                               await set_current_weapon();  // SCM GOSUB set_current_weapon
                               if ($.sniper_in_stock == 1) {
-                                if ($.player1.hasGotWeapon(WEAPONTYPE_LASERSCOPE)) {
+                                if ($.player1.hasGotWeapon(29 /* WEAPONTYPE_LASERSCOPE */)) {
                                   Text.PrintWithNumberNow("HELP54", 1500, 1000, 1);
                                 }
                               }
                               if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                                 if ($.sniper_in_stock == 1) {
-                                  $.returnedammo = $.player1.getAmmoInWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */);
+                                  $.returnedammo = $.player1.getAmmoInWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */);
                                   if ($.player1.isScoreGreater(1499)) {
                                     if ($.returnedammo < 9999) {
-                                      $.player1.giveWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */, 40);
+                                      $.player1.giveWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */, 40);
                                       if ($.returnedammo > 9999) {
-                                        $.player1.giveWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */, 9999);
+                                        $.player1.giveWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */, 9999);
                                       }
-                                      $.player1.setCurrentWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */);
+                                      $.player1.setCurrentWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */);
                                       await buy_noise();  // SCM GOSUB buy_noise
                                       $.player1.addScore(-1500);
                                       Stat.AddMoneySpentOnWeapons(1500);
@@ -841,16 +841,16 @@ $.what_weapontype = _res12.weaponType;
 $.returnedammo = _res12.weaponAmmo;
 $.what_model = _res12.weaponModel;
                               await set_current_weapon();  // SCM GOSUB set_current_weapon
-                              if ($.player1.hasGotWeapon(WEAPONTYPE_DETONATOR_GRENADE) || $.player1.hasGotWeapon(10 /* WEAPONTYPE_MOLOTOV */) || $.player1.hasGotWeapon(WEAPONTYPE_TEARGAS)) {
+                              if ($.player1.hasGotWeapon(13 /* WEAPONTYPE_DETONATOR_GRENADE */) || $.player1.hasGotWeapon(15 /* WEAPONTYPE_MOLOTOV */) || $.player1.hasGotWeapon(14 /* WEAPONTYPE_TEARGAS */)) {
                                 Text.PrintWithNumberNow("HELP54", 300, 1000, 1);
                               }
                               if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
-                                $.returnedammo = $.player1.getAmmoInWeapon(11 /* WEAPONTYPE_GRENADE */);
+                                $.returnedammo = $.player1.getAmmoInWeapon(12 /* WEAPONTYPE_GRENADE */);
                                 if ($.player1.isScoreGreater(299)) {
                                   if ($.returnedammo < 9999) {
-                                    $.player1.giveWeapon(11 /* WEAPONTYPE_GRENADE */, 8);
+                                    $.player1.giveWeapon(12 /* WEAPONTYPE_GRENADE */, 8);
                                     if ($.returnedammo > 9999) {
-                                      $.player1.giveWeapon(11 /* WEAPONTYPE_GRENADE */, 9999);
+                                      $.player1.giveWeapon(12 /* WEAPONTYPE_GRENADE */, 9999);
                                     }
                                     await buy_noise();  // SCM GOSUB buy_noise
                                     $.player1.addScore(-300);
@@ -1044,7 +1044,7 @@ async function shop_ammu3_inner() {
             $.ammu_gun5 = ScriptObject.Create(laser, -683.6, 1206.549, 12.81);
             $.ammu_gun5.setDynamic(false /* FALSE */);
             $.ammu_gun5.setRotation(0.0, 2.0, 95.0);
-            $.ammu_gun6 = ScriptObject.Create(1364 /* bodyarmour */, -683.5, 1208.189, 12.809);
+            $.ammu_gun6 = ScriptObject.Create(bodyarmour, -683.5, 1208.189, 12.809);
             $.ammu_gun6.setDynamic(false /* FALSE */);
             $.ammu_gun6.setHeading(90.0);
 
@@ -1117,20 +1117,20 @@ $.returnedammo = _res13.weaponAmmo;
 $.what_model = _res13.weaponModel;
                                 await set_current_weapon();  // SCM GOSUB set_current_weapon
                                 if ($.python_in_stock == 1) {
-                                  if ($.player1.hasGotWeapon(2 /* WEAPONTYPE_PISTOL */)) {
+                                  if ($.player1.hasGotWeapon(17 /* WEAPONTYPE_PISTOL */)) {
                                     Text.PrintWithNumberNow("HELP54", 2000, 1000, 1);
                                   }
                                 }
                                 if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                                   if ($.python_in_stock == 1) {
-                                    $.returnedammo = $.player1.getAmmoInWeapon(WEAPONTYPE_PYTHON);
+                                    $.returnedammo = $.player1.getAmmoInWeapon(18 /* WEAPONTYPE_PYTHON */);
                                     if ($.player1.isScoreGreater(1999)) {
                                       if ($.returnedammo < 9999) {
-                                        $.player1.giveWeapon(WEAPONTYPE_PYTHON, 24);
+                                        $.player1.giveWeapon(18 /* WEAPONTYPE_PYTHON */, 24);
                                         if ($.returnedammo > 9999) {
-                                          $.player1.giveWeapon(WEAPONTYPE_PYTHON, 9999);
+                                          $.player1.giveWeapon(18 /* WEAPONTYPE_PYTHON */, 9999);
                                         }
-                                        $.player1.setCurrentWeapon(WEAPONTYPE_PYTHON);
+                                        $.player1.setCurrentWeapon(18 /* WEAPONTYPE_PYTHON */);
                                         await buy_noise();  // SCM GOSUB buy_noise
                                         $.player1.addScore(-2000);
                                         Stat.AddMoneySpentOnWeapons(2000);
@@ -1186,20 +1186,20 @@ $.returnedammo = _res14.weaponAmmo;
 $.what_model = _res14.weaponModel;
                                 await set_current_weapon();  // SCM GOSUB set_current_weapon
                                 if ($.mp5_in_stock == 1) {
-                                  if ($.player1.hasGotWeapon(3 /* WEAPONTYPE_UZI */) || $.player1.hasGotWeapon(WEAPONTYPE_SILENCED_INGRAM) || $.player1.hasGotWeapon(WEAPONTYPE_TEC9)) {
+                                  if ($.player1.hasGotWeapon(23 /* WEAPONTYPE_UZI */) || $.player1.hasGotWeapon(24 /* WEAPONTYPE_SILENCED_INGRAM */) || $.player1.hasGotWeapon(22 /* WEAPONTYPE_TEC9 */)) {
                                     Text.PrintWithNumberNow("HELP54", 3000, 1000, 1);
                                   }
                                 }
                                 if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                                   if ($.mp5_in_stock == 1) {
-                                    $.returnedammo = $.player1.getAmmoInWeapon(WEAPONTYPE_MP5);
+                                    $.returnedammo = $.player1.getAmmoInWeapon(25 /* WEAPONTYPE_MP5 */);
                                     if ($.player1.isScoreGreater(2999)) {
                                       if ($.returnedammo < 9999) {
-                                        $.player1.giveWeapon(WEAPONTYPE_MP5, 120);
+                                        $.player1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 120);
                                         if ($.returnedammo > 9999) {
-                                          $.player1.giveWeapon(WEAPONTYPE_MP5, 9999);
+                                          $.player1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 9999);
                                         }
-                                        $.player1.setCurrentWeapon(WEAPONTYPE_MP5);
+                                        $.player1.setCurrentWeapon(25 /* WEAPONTYPE_MP5 */);
                                         await buy_noise();  // SCM GOSUB buy_noise
                                         $.player1.addScore(-3000);
                                         Stat.AddMoneySpentOnWeapons(3000);
@@ -1257,20 +1257,20 @@ $.returnedammo = _res15.weaponAmmo;
 $.what_model = _res15.weaponModel;
                                 await set_current_weapon();  // SCM GOSUB set_current_weapon
                                 if ($.spaz_in_stock == 1) {
-                                  if ($.player1.hasGotWeapon(WEAPONTYPE_STUBBY_SHOTGUN) || $.player1.hasGotWeapon(4 /* WEAPONTYPE_SHOTGUN */)) {
+                                  if ($.player1.hasGotWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */) || $.player1.hasGotWeapon(19 /* WEAPONTYPE_SHOTGUN */)) {
                                     Text.PrintWithNumberNow("HELP54", 4000, 1000, 1);
                                   }
                                 }
                                 if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                                   if ($.spaz_in_stock == 1) {
-                                    $.returnedammo = $.player1.getAmmoInWeapon(WEAPONTYPE_SPAS12_SHOTGUN);
+                                    $.returnedammo = $.player1.getAmmoInWeapon(20 /* WEAPONTYPE_SPAS12_SHOTGUN */);
                                     if ($.player1.isScoreGreater(3999)) {
                                       if ($.returnedammo < 9999) {
-                                        $.player1.giveWeapon(WEAPONTYPE_SPAS12_SHOTGUN, 28);
+                                        $.player1.giveWeapon(20 /* WEAPONTYPE_SPAS12_SHOTGUN */, 28);
                                         if ($.returnedammo > 9999) {
-                                          $.player1.giveWeapon(WEAPONTYPE_SPAS12_SHOTGUN, 9999);
+                                          $.player1.giveWeapon(20 /* WEAPONTYPE_SPAS12_SHOTGUN */, 9999);
                                         }
-                                        $.player1.setCurrentWeapon(WEAPONTYPE_SPAS12_SHOTGUN);
+                                        $.player1.setCurrentWeapon(20 /* WEAPONTYPE_SPAS12_SHOTGUN */);
                                         await buy_noise();  // SCM GOSUB buy_noise
                                         $.player1.addScore(-4000);
                                         Stat.AddMoneySpentOnWeapons(4000);
@@ -1328,20 +1328,20 @@ $.returnedammo = _res16.weaponAmmo;
 $.what_model = _res16.weaponModel;
                                 await set_current_weapon();  // SCM GOSUB set_current_weapon
                                 if ($.m4_in_stock == 1) {
-                                  if ($.player1.hasGotWeapon(WEAPONTYPE_RUGER)) {
+                                  if ($.player1.hasGotWeapon(27 /* WEAPONTYPE_RUGER */)) {
                                     Text.PrintWithNumberNow("HELP54", 5000, 1000, 1);
                                   }
                                 }
                                 if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                                   if ($.m4_in_stock == 1) {
-                                    $.returnedammo = $.player1.getAmmoInWeapon(WEAPONTYPE_M4);
+                                    $.returnedammo = $.player1.getAmmoInWeapon(26 /* WEAPONTYPE_M4 */);
                                     if ($.player1.isScoreGreater(4999)) {
                                       if ($.returnedammo < 9999) {
-                                        $.player1.giveWeapon(WEAPONTYPE_M4, 150);
+                                        $.player1.giveWeapon(26 /* WEAPONTYPE_M4 */, 150);
                                         if ($.returnedammo > 9999) {
-                                          $.player1.giveWeapon(WEAPONTYPE_M4, 9999);
+                                          $.player1.giveWeapon(26 /* WEAPONTYPE_M4 */, 9999);
                                         }
-                                        $.player1.setCurrentWeapon(WEAPONTYPE_M4);
+                                        $.player1.setCurrentWeapon(26 /* WEAPONTYPE_M4 */);
                                         await buy_noise();  // SCM GOSUB buy_noise
                                         $.player1.addScore(-5000);
                                         Stat.AddMoneySpentOnWeapons(5000);
@@ -1399,18 +1399,18 @@ $.returnedammo = _res17.weaponAmmo;
 $.what_model = _res17.weaponModel;
                                 await set_current_weapon();  // SCM GOSUB set_current_weapon
                                 if ($.laser_in_stock == 1) {
-                                  if ($.player1.hasGotWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */)) {
+                                  if ($.player1.hasGotWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */)) {
                                     Text.PrintWithNumberNow("HELP54", 6000, 1000, 1);
                                   }
                                 }
                                 if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                                   if ($.laser_in_stock == 1) {
-                                    $.returnedammo = $.player1.getAmmoInWeapon(WEAPONTYPE_LASERSCOPE);
+                                    $.returnedammo = $.player1.getAmmoInWeapon(29 /* WEAPONTYPE_LASERSCOPE */);
                                     if ($.player1.isScoreGreater(5999)) {
                                       if ($.returnedammo < 9999) {
-                                        $.player1.giveWeapon(WEAPONTYPE_LASERSCOPE, 28);
+                                        $.player1.giveWeapon(29 /* WEAPONTYPE_LASERSCOPE */, 28);
                                         if ($.returnedammo > 9999) {
-                                          $.player1.giveWeapon(WEAPONTYPE_LASERSCOPE, 9999);
+                                          $.player1.giveWeapon(29 /* WEAPONTYPE_LASERSCOPE */, 9999);
                                         }
                                         await buy_noise();  // SCM GOSUB buy_noise
                                         $.player1.addScore(-6000);
@@ -1591,7 +1591,7 @@ async function shop_hardware_inner1() {
             $.hard_weapon2.setRotation(0.0, 4.0, 0.0);
             $.hard_weapon3 = ScriptObject.Create(cleaver, 203.508, -469.297, 13.77);
             $.hard_weapon3.setDynamic(false /* FALSE */);
-            $.hard_weapon4 = ScriptObject.Create(172 /* bat */, 204.606, -469.297, 13.91);
+            $.hard_weapon4 = ScriptObject.Create(bat, 204.606, -469.297, 13.91);
             $.hard_weapon4.setDynamic(false /* FALSE */);
             $.hard_weapon4.setRotation(85.0, 0.0, 90.0);
             $.hard_weapon5 = ScriptObject.Create(machete, 205.858, -469.297, 14.0);
@@ -1657,9 +1657,9 @@ async function shop_hardware_inner1() {
                               await you_have_a_weapon();  // SCM GOSUB you_have_a_weapon
                               if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                                 if ($.player1.isScoreGreater(9)) {
-                                  if (!($.player1.isCurrentWeapon(WEAPONTYPE_SCREWDRIVER))) {
-                                    $.player1.giveWeapon(WEAPONTYPE_SCREWDRIVER, 0);
-                                    $.player1.setCurrentWeapon(WEAPONTYPE_SCREWDRIVER);
+                                  if (!($.player1.isCurrentWeapon(2 /* WEAPONTYPE_SCREWDRIVER */))) {
+                                    $.player1.giveWeapon(2 /* WEAPONTYPE_SCREWDRIVER */, 0);
+                                    $.player1.setCurrentWeapon(2 /* WEAPONTYPE_SCREWDRIVER */);
                                     await buy_noise();  // SCM GOSUB buy_noise
                                     $.player1.addScore(-10);
                                     Stat.AddMoneySpentOnWeapons(10);
@@ -1707,9 +1707,9 @@ async function shop_hardware_inner1() {
                               await you_have_a_weapon();  // SCM GOSUB you_have_a_weapon
                               if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                                 if ($.player1.isScoreGreater(19)) {
-                                  if (!($.player1.isCurrentWeapon(WEAPONTYPE_HAMMER))) {
-                                    $.player1.giveWeapon(WEAPONTYPE_HAMMER, 0);
-                                    $.player1.setCurrentWeapon(WEAPONTYPE_HAMMER);
+                                  if (!($.player1.isCurrentWeapon(7 /* WEAPONTYPE_HAMMER */))) {
+                                    $.player1.giveWeapon(7 /* WEAPONTYPE_HAMMER */, 0);
+                                    $.player1.setCurrentWeapon(7 /* WEAPONTYPE_HAMMER */);
                                     await buy_noise();  // SCM GOSUB buy_noise
                                     $.player1.addScore(-20);
                                     Stat.AddMoneySpentOnWeapons(20);
@@ -1757,9 +1757,9 @@ async function shop_hardware_inner1() {
                               await you_have_a_weapon();  // SCM GOSUB you_have_a_weapon
                               if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                                 if ($.player1.isScoreGreater(49)) {
-                                  if (!($.player1.isCurrentWeapon(WEAPONTYPE_CLEAVER))) {
-                                    $.player1.giveWeapon(WEAPONTYPE_CLEAVER, 0);
-                                    $.player1.setCurrentWeapon(WEAPONTYPE_CLEAVER);
+                                  if (!($.player1.isCurrentWeapon(8 /* WEAPONTYPE_CLEAVER */))) {
+                                    $.player1.giveWeapon(8 /* WEAPONTYPE_CLEAVER */, 0);
+                                    $.player1.setCurrentWeapon(8 /* WEAPONTYPE_CLEAVER */);
                                     await buy_noise();  // SCM GOSUB buy_noise
                                     $.player1.addScore(-50);
                                     Stat.AddMoneySpentOnWeapons(50);
@@ -1813,9 +1813,9 @@ async function shop_hardware_inner1() {
                               if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                                 if ($.bbat_in_stock == 1) {
                                   if ($.player1.isScoreGreater(79)) {
-                                    if (!($.player1.isCurrentWeapon(1 /* WEAPONTYPE_BASEBALLBAT */))) {
-                                      $.player1.giveWeapon(1 /* WEAPONTYPE_BASEBALLBAT */, 0);
-                                      $.player1.setCurrentWeapon(1 /* WEAPONTYPE_BASEBALLBAT */);
+                                    if (!($.player1.isCurrentWeapon(6 /* WEAPONTYPE_BASEBALLBAT */))) {
+                                      $.player1.giveWeapon(6 /* WEAPONTYPE_BASEBALLBAT */, 0);
+                                      $.player1.setCurrentWeapon(6 /* WEAPONTYPE_BASEBALLBAT */);
                                       await buy_noise();  // SCM GOSUB buy_noise
                                       $.player1.addScore(-80);
                                       Stat.AddMoneySpentOnWeapons(80);
@@ -1875,9 +1875,9 @@ async function shop_hardware_inner1() {
                               if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                                 if ($.machete_in_stock == 1) {
                                   if ($.player1.isScoreGreater(99)) {
-                                    if (!($.player1.isCurrentWeapon(WEAPONTYPE_MACHETE))) {
-                                      $.player1.giveWeapon(WEAPONTYPE_MACHETE, 0);
-                                      $.player1.setCurrentWeapon(WEAPONTYPE_MACHETE);
+                                    if (!($.player1.isCurrentWeapon(9 /* WEAPONTYPE_MACHETE */))) {
+                                      $.player1.giveWeapon(9 /* WEAPONTYPE_MACHETE */, 0);
+                                      $.player1.setCurrentWeapon(9 /* WEAPONTYPE_MACHETE */);
                                       await buy_noise();  // SCM GOSUB buy_noise
                                       $.player1.addScore(-100);
                                       Stat.AddMoneySpentOnWeapons(100);
@@ -2061,9 +2061,9 @@ async function shop_hardware2_inner() {
                               await you_have_a_weapon();  // SCM GOSUB you_have_a_weapon
                               if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                                 if ($.player1.isScoreGreater(9)) {
-                                  if (!($.player1.isCurrentWeapon(WEAPONTYPE_SCREWDRIVER))) {
-                                    $.player1.giveWeapon(WEAPONTYPE_SCREWDRIVER, 0);
-                                    $.player1.setCurrentWeapon(WEAPONTYPE_SCREWDRIVER);
+                                  if (!($.player1.isCurrentWeapon(2 /* WEAPONTYPE_SCREWDRIVER */))) {
+                                    $.player1.giveWeapon(2 /* WEAPONTYPE_SCREWDRIVER */, 0);
+                                    $.player1.setCurrentWeapon(2 /* WEAPONTYPE_SCREWDRIVER */);
                                     await buy_noise();  // SCM GOSUB buy_noise
                                     $.player1.addScore(-10);
                                     Stat.AddMoneySpentOnWeapons(10);
@@ -2111,9 +2111,9 @@ async function shop_hardware2_inner() {
                               await you_have_a_weapon();  // SCM GOSUB you_have_a_weapon
                               if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                                 if ($.player1.isScoreGreater(19)) {
-                                  if (!($.player1.isCurrentWeapon(WEAPONTYPE_HAMMER))) {
-                                    $.player1.giveWeapon(WEAPONTYPE_HAMMER, 0);
-                                    $.player1.setCurrentWeapon(WEAPONTYPE_HAMMER);
+                                  if (!($.player1.isCurrentWeapon(7 /* WEAPONTYPE_HAMMER */))) {
+                                    $.player1.giveWeapon(7 /* WEAPONTYPE_HAMMER */, 0);
+                                    $.player1.setCurrentWeapon(7 /* WEAPONTYPE_HAMMER */);
                                     await buy_noise();  // SCM GOSUB buy_noise
                                     $.player1.addScore(-20);
                                     Stat.AddMoneySpentOnWeapons(20);
@@ -2161,9 +2161,9 @@ async function shop_hardware2_inner() {
                               await you_have_a_weapon();  // SCM GOSUB you_have_a_weapon
                               if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                                 if ($.player1.isScoreGreater(49)) {
-                                  if (!($.player1.isCurrentWeapon(WEAPONTYPE_CLEAVER))) {
-                                    $.player1.giveWeapon(WEAPONTYPE_CLEAVER, 0);
-                                    $.player1.setCurrentWeapon(WEAPONTYPE_CLEAVER);
+                                  if (!($.player1.isCurrentWeapon(8 /* WEAPONTYPE_CLEAVER */))) {
+                                    $.player1.giveWeapon(8 /* WEAPONTYPE_CLEAVER */, 0);
+                                    $.player1.setCurrentWeapon(8 /* WEAPONTYPE_CLEAVER */);
                                     await buy_noise();  // SCM GOSUB buy_noise
                                     $.player1.addScore(-50);
                                     Stat.AddMoneySpentOnWeapons(50);
@@ -2209,9 +2209,9 @@ async function shop_hardware2_inner() {
                               await you_have_a_weapon();  // SCM GOSUB you_have_a_weapon
                               if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                                 if ($.player1.isScoreGreater(89)) {
-                                  if (!($.player1.isCurrentWeapon(WEAPONTYPE_KNIFE))) {
-                                    $.player1.giveWeapon(WEAPONTYPE_KNIFE, 0);
-                                    $.player1.setCurrentWeapon(WEAPONTYPE_KNIFE);
+                                  if (!($.player1.isCurrentWeapon(5 /* WEAPONTYPE_KNIFE */))) {
+                                    $.player1.giveWeapon(5 /* WEAPONTYPE_KNIFE */, 0);
+                                    $.player1.setCurrentWeapon(5 /* WEAPONTYPE_KNIFE */);
                                     await buy_noise();  // SCM GOSUB buy_noise
                                     $.player1.addScore(-90);
                                     Stat.AddMoneySpentOnWeapons(90);
@@ -2265,9 +2265,9 @@ async function shop_hardware2_inner() {
                               if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                                 if ($.katana_in_stock == 1) {
                                   if ($.player1.isScoreGreater(299)) {
-                                    if (!($.player1.isCurrentWeapon(WEAPONTYPE_KATANA))) {
-                                      $.player1.giveWeapon(WEAPONTYPE_KATANA, 0);
-                                      $.player1.setCurrentWeapon(WEAPONTYPE_KATANA);
+                                    if (!($.player1.isCurrentWeapon(10 /* WEAPONTYPE_KATANA */))) {
+                                      $.player1.giveWeapon(10 /* WEAPONTYPE_KATANA */, 0);
+                                      $.player1.setCurrentWeapon(10 /* WEAPONTYPE_KATANA */);
                                       await buy_noise();  // SCM GOSUB buy_noise
                                       $.player1.addScore(-300);
                                       Stat.AddMoneySpentOnWeapons(300);
@@ -2453,9 +2453,9 @@ async function shop_hardware3_inner() {
                             await you_have_a_weapon();  // SCM GOSUB you_have_a_weapon
                             if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                               if ($.player1.isScoreGreater(9)) {
-                                if (!($.player1.isCurrentWeapon(WEAPONTYPE_SCREWDRIVER))) {
-                                  $.player1.giveWeapon(WEAPONTYPE_SCREWDRIVER, 0);
-                                  $.player1.setCurrentWeapon(WEAPONTYPE_SCREWDRIVER);
+                                if (!($.player1.isCurrentWeapon(2 /* WEAPONTYPE_SCREWDRIVER */))) {
+                                  $.player1.giveWeapon(2 /* WEAPONTYPE_SCREWDRIVER */, 0);
+                                  $.player1.setCurrentWeapon(2 /* WEAPONTYPE_SCREWDRIVER */);
                                   await buy_noise();  // SCM GOSUB buy_noise
                                   $.player1.addScore(-10);
                                   Stat.AddMoneySpentOnWeapons(10);
@@ -2503,9 +2503,9 @@ async function shop_hardware3_inner() {
                             await you_have_a_weapon();  // SCM GOSUB you_have_a_weapon
                             if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                               if ($.player1.isScoreGreater(19)) {
-                                if (!($.player1.isCurrentWeapon(WEAPONTYPE_HAMMER))) {
-                                  $.player1.giveWeapon(WEAPONTYPE_HAMMER, 0);
-                                  $.player1.setCurrentWeapon(WEAPONTYPE_HAMMER);
+                                if (!($.player1.isCurrentWeapon(7 /* WEAPONTYPE_HAMMER */))) {
+                                  $.player1.giveWeapon(7 /* WEAPONTYPE_HAMMER */, 0);
+                                  $.player1.setCurrentWeapon(7 /* WEAPONTYPE_HAMMER */);
                                   await buy_noise();  // SCM GOSUB buy_noise
                                   $.player1.addScore(-20);
                                   Stat.AddMoneySpentOnWeapons(20);
@@ -2553,9 +2553,9 @@ async function shop_hardware3_inner() {
                             await you_have_a_weapon();  // SCM GOSUB you_have_a_weapon
                             if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                               if ($.player1.isScoreGreater(49)) {
-                                if (!($.player1.isCurrentWeapon(WEAPONTYPE_CLEAVER))) {
-                                  $.player1.giveWeapon(WEAPONTYPE_CLEAVER, 0);
-                                  $.player1.setCurrentWeapon(WEAPONTYPE_CLEAVER);
+                                if (!($.player1.isCurrentWeapon(8 /* WEAPONTYPE_CLEAVER */))) {
+                                  $.player1.giveWeapon(8 /* WEAPONTYPE_CLEAVER */, 0);
+                                  $.player1.setCurrentWeapon(8 /* WEAPONTYPE_CLEAVER */);
                                   await buy_noise();  // SCM GOSUB buy_noise
                                   $.player1.addScore(-50);
                                   Stat.AddMoneySpentOnWeapons(50);
@@ -2601,9 +2601,9 @@ async function shop_hardware3_inner() {
                             await you_have_a_weapon();  // SCM GOSUB you_have_a_weapon
                             if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                               if ($.player1.isScoreGreater(99)) {
-                                if (!($.player1.isCurrentWeapon(WEAPONTYPE_MACHETE))) {
-                                  $.player1.giveWeapon(WEAPONTYPE_MACHETE, 0);
-                                  $.player1.setCurrentWeapon(WEAPONTYPE_MACHETE);
+                                if (!($.player1.isCurrentWeapon(9 /* WEAPONTYPE_MACHETE */))) {
+                                  $.player1.giveWeapon(9 /* WEAPONTYPE_MACHETE */, 0);
+                                  $.player1.setCurrentWeapon(9 /* WEAPONTYPE_MACHETE */);
                                   await buy_noise();  // SCM GOSUB buy_noise
                                   $.player1.addScore(-100);
                                   Stat.AddMoneySpentOnWeapons(100);
@@ -2649,9 +2649,9 @@ async function shop_hardware3_inner() {
                             await you_have_a_weapon();  // SCM GOSUB you_have_a_weapon
                             if (Pad.IsButtonPressed(0 /* PAD1 */, 16 /* CROSS */)) {
                               if ($.player1.isScoreGreater(499)) {
-                                if (!($.player1.isCurrentWeapon(WEAPONTYPE_CHAINSAW))) {
-                                  $.player1.giveWeapon(WEAPONTYPE_CHAINSAW, 0);
-                                  $.player1.setCurrentWeapon(WEAPONTYPE_CHAINSAW);
+                                if (!($.player1.isCurrentWeapon(11 /* WEAPONTYPE_CHAINSAW */))) {
+                                  $.player1.giveWeapon(11 /* WEAPONTYPE_CHAINSAW */, 0);
+                                  $.player1.setCurrentWeapon(11 /* WEAPONTYPE_CHAINSAW */);
                                   await buy_noise();  // SCM GOSUB buy_noise
                                   $.player1.addScore(-500);
                                   Stat.AddMoneySpentOnWeapons(500);
@@ -2744,7 +2744,7 @@ async function ammu_bloke_goes_radge() {
 
 
   if (!(Char.IsDead($.ammu_shop_bloke1))) {
-    if ($.player1.isShooting() || $.ammu_shop_bloke1.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON)) {
+    if ($.player1.isShooting() || $.ammu_shop_bloke1.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */)) {
       if ($.ammu_bloke_kill_player == 0) {
         if ($.player1.isPlaying()) {
           $.ammu_shop_bloke1.setObjKillPlayerOnFoot($.player1);
@@ -2782,7 +2782,7 @@ $.shop_blokez = _res18.z;
         if (TIMERA > 2000 && TIMERA < 6000) {
           if ($.robbed_money1_created == 0) {
             $.robbed_money1 = Pickup.CreateMoney($.shop_blokex, $.shop_blokey, $.shop_blokez, 50);
-            Sound.AddOneOffSound($.shop_blokex, $.shop_blokey, $.shop_blokez, SOUND_AMMUNATION_BUY_WEAPON);
+            Sound.AddOneOffSound($.shop_blokex, $.shop_blokey, $.shop_blokez, 13 /* SOUND_AMMUNATION_BUY_WEAPON */);
             await add_stat_point2();  // SCM GOSUB add_stat_point2
             $.robbed_money1_created = 1;
           }
@@ -2792,7 +2792,7 @@ $.shop_blokez = _res18.z;
             $.shop_blokey = $.shop_blokey + 0.1;
             $.shop_blokex = $.shop_blokex + 0.1;
             $.robbed_money2 = Pickup.CreateMoney($.shop_blokex, $.shop_blokey, $.shop_blokez, 100);
-            Sound.AddOneOffSound($.shop_blokex, $.shop_blokey, $.shop_blokez, SOUND_AMMUNATION_BUY_WEAPON);
+            Sound.AddOneOffSound($.shop_blokex, $.shop_blokey, $.shop_blokez, 13 /* SOUND_AMMUNATION_BUY_WEAPON */);
             $.player1.alterWantedLevelNoDrop(1);
             $.robbed_money2_created = 1;
           }
@@ -2801,7 +2801,7 @@ $.shop_blokez = _res18.z;
           if ($.robbed_money3_created == 0) {
             $.shop_blokey = $.shop_blokey + 0.1;
             $.robbed_money3 = Pickup.CreateMoney($.shop_blokex, $.shop_blokey, $.shop_blokez, 250);
-            Sound.AddOneOffSound($.shop_blokex, $.shop_blokey, $.shop_blokez, SOUND_AMMUNATION_BUY_WEAPON);
+            Sound.AddOneOffSound($.shop_blokex, $.shop_blokey, $.shop_blokez, 13 /* SOUND_AMMUNATION_BUY_WEAPON */);
             $.player1.alterWantedLevelNoDrop(2);
             $.robbed_money3_created = 1;
           }
@@ -2811,13 +2811,13 @@ $.shop_blokez = _res18.z;
             $.shop_blokey = $.shop_blokey + 0.1;
             $.shop_blokex = $.shop_blokex + 0.1;
             $.robbed_money4 = Pickup.CreateMoney($.shop_blokex, $.shop_blokey, $.shop_blokez, 600);
-            Sound.AddOneOffSound($.shop_blokex, $.shop_blokey, $.shop_blokez, SOUND_AMMUNATION_BUY_WEAPON);
+            Sound.AddOneOffSound($.shop_blokex, $.shop_blokey, $.shop_blokez, 13 /* SOUND_AMMUNATION_BUY_WEAPON */);
             $.player1.alterWantedLevelNoDrop(3);
             $.robbed_money4_created = 1;
           }
         }
       }
-      if ($.player1.isShooting() || $.hard_shop_bloke1.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON)) {
+      if ($.player1.isShooting() || $.hard_shop_bloke1.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */)) {
         // SCM GOTO → duck_hardware (not lowered; manual jump required)
         throw new Error("unresolved GOTO duck_hardware"); // fallback: would break linear control flow
       }
@@ -2827,7 +2827,7 @@ $.shop_blokez = _res18.z;
     else {
       // SCM label duck_hardware
       if ($.hard_bloke_hide == 0) {
-        if ($.player1.isShooting() || $.hard_shop_bloke1.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON)) {
+        if ($.player1.isShooting() || $.hard_shop_bloke1.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */)) {
           $.hard_bloke_hide = 1;
         }
       }
@@ -2841,7 +2841,7 @@ $.shop_blokez = _res18.z;
 $.shop_blokex = _res19.x;
 $.shop_blokey = _res19.y;
 $.shop_blokez = _res19.z;
-            $.shop_alarm = Sound.AddContinuous($.shop_blokex, $.shop_blokey, $.shop_blokez, SOUND_BANK_ALARM_LOOP);
+            $.shop_alarm = Sound.AddContinuous($.shop_blokex, $.shop_blokey, $.shop_blokez, 0 /* SOUND_BANK_ALARM_LOOP */);
             $.player1.alterWantedLevelNoDrop(2);
             $.shop_alarm_played = 1;
           }
@@ -2863,7 +2863,7 @@ async function denied_noise() {
 $.playera_x = _res20.x;
 $.playera_y = _res20.y;
 $.playera_z = _res20.z;
-    Sound.AddOneOffSound($.playera_x, $.playera_y, $.playera_z, SOUND_AMMUNATION_BUY_WEAPON_DENIED);
+    Sound.AddOneOffSound($.playera_x, $.playera_y, $.playera_z, 14 /* SOUND_AMMUNATION_BUY_WEAPON_DENIED */);
   }
 
 
@@ -2882,7 +2882,7 @@ async function buy_noise() {
 $.playera_x = _res21.x;
 $.playera_y = _res21.y;
 $.playera_z = _res21.z;
-    Sound.AddOneOffSound($.playera_x, $.playera_y, $.playera_z, SOUND_AMMUNATION_BUY_WEAPON);
+    Sound.AddOneOffSound($.playera_x, $.playera_y, $.playera_z, 13 /* SOUND_AMMUNATION_BUY_WEAPON */);
   }
 
 
@@ -3121,17 +3121,17 @@ async function ammu_shop_keeper_setup() {
       $.ammu_shop_bloke1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
       if ($.player1.isInZone("BEACH1")) {
         if (Streaming.HasModelLoaded(ingramsl)) {
-          $.ammu_shop_bloke1.giveWeapon(WEAPONTYPE_SILENCED_INGRAM, 9999);
+          $.ammu_shop_bloke1.giveWeapon(24 /* WEAPONTYPE_SILENCED_INGRAM */, 9999);
         }
       }
       if ($.player1.isInZone("BEACH3")) {
-        if (Streaming.HasModelLoaded(178 /* uzi */)) {
-          $.ammu_shop_bloke1.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+        if (Streaming.HasModelLoaded(uzi)) {
+          $.ammu_shop_bloke1.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
         }
       }
       if ($.player1.isInZone("DTOWN")) {
         if (Streaming.HasModelLoaded(python)) {
-          $.ammu_shop_bloke1.giveWeapon(WEAPONTYPE_PYTHON, 9999);
+          $.ammu_shop_bloke1.giveWeapon(18 /* WEAPONTYPE_PYTHON */, 9999);
         }
       }
       if ($.player1.isPlaying()) {
@@ -3398,7 +3398,7 @@ export async function ammu() {
   $.robbed_hardshop_3 = 0;
 
 
-  $.shop_alarm = Sound.AddContinuous($.shop_blokex, $.shop_blokey, $.shop_blokez, SOUND_BANK_ALARM_LOOP);
+  $.shop_alarm = Sound.AddContinuous($.shop_blokex, $.shop_blokey, $.shop_blokez, 0 /* SOUND_BANK_ALARM_LOOP */);
   $.shop_alarm.remove();
 
 

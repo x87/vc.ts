@@ -1,6 +1,6 @@
 // Generated from main/moviedemo.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *****************************************************************************************
 // *********************************** XXXX mission 1  *************************************
@@ -32,21 +32,21 @@ async function body() {
   Streaming.RequestModel(SENTINEL);
   Streaming.RequestModel(MALE01);
   Streaming.RequestModel(BANSHEE);
-  Streaming.RequestModel(176 /* SHOTGUN */);
+  Streaming.RequestModel(SHOTGUN);
   Streaming.RequestModel(M4);
-  Streaming.RequestModel(178 /* UZI */);
-  Streaming.RequestModel(1337 /* barrel1 */);
+  Streaming.RequestModel(UZI);
+  Streaming.RequestModel(barrel1);
 
 
   Streaming.LoadAllModelsNow();
 
 
-  while (!(Streaming.HasModelLoaded(COP)) || !(Streaming.HasModelLoaded(SENTINEL)) || !(Streaming.HasModelLoaded(HFYBE)) || !(Streaming.HasModelLoaded(176 /* SHOTGUN */)) || !(Streaming.HasModelLoaded(BANSHEE))) {
+  while (!(Streaming.HasModelLoaded(COP)) || !(Streaming.HasModelLoaded(SENTINEL)) || !(Streaming.HasModelLoaded(HFYBE)) || !(Streaming.HasModelLoaded(SHOTGUN)) || !(Streaming.HasModelLoaded(BANSHEE))) {
     await asyncWait(0);
   }
 
 
-  while (!(Streaming.HasModelLoaded(M4)) || !(Streaming.HasModelLoaded(178 /* UZI */)) || !(Streaming.HasModelLoaded(1337 /* barrel1 */))) {
+  while (!(Streaming.HasModelLoaded(M4)) || !(Streaming.HasModelLoaded(UZI)) || !(Streaming.HasModelLoaded(barrel1))) {
     await asyncWait(0);
   }
 
@@ -628,7 +628,7 @@ async function movie_demo_loop() {
         movie_drinker2.setHeading(101.4189);
         movie_drinker3 = Char.Create(4 /* PEDTYPE_CIVMALE */, MALE01, 466.6759, -57.1055, 10.4431);
         movie_drinker2.setHeading(222.7760);
-        movie_player.giveWeapon(4 /* WEAPONTYPE_SHOTGUN */, 9999);
+        movie_player.giveWeapon(19 /* WEAPONTYPE_SHOTGUN */, 9999);
         movie_car1.setIdle();
         movie_counter = 35;
       }
@@ -773,7 +773,7 @@ async function movie_demo_loop() {
         movie_player.setObjRunToCoord(464.8543, -59.6144);
         Camera.SetFixedPosition(467.5534, -64.1758, 10.3380, 0.0, 0.0, 0.0); //AT PLAYER SHOOTING FROM LOW DOWN
         Camera.PointAtPoint(467.3854, -63.2178, 10.5704, 2 /* JUMP_CUT */);
-        movie_player.giveWeapon(WEAPONTYPE_M4, 9999);
+        movie_player.giveWeapon(26 /* WEAPONTYPE_M4 */, 9999);
         movie_counter = 48;
       }
     }
@@ -825,8 +825,8 @@ async function movie_demo_loop() {
       if (movie_car2.isStopped()) {
         movie_car2_driver.setObjRunToCoord(501.3533, -79.8217);
         movie_car2_passenger.setObjRunToCoord(501.3533, -79.8217);
-        movie_car2_driver.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
-        movie_car2_passenger.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+        movie_car2_driver.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
+        movie_car2_passenger.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
         movie_car2.setIdle();
         movie_counter2 = 13;
         movie_counter3 = 1;
@@ -928,13 +928,13 @@ async function movie_demo_loop() {
         movie_cop2 = Char.CreateInsideCar(copscar2, 4 /* PEDTYPE_CIVMALE */, COP);
         movie_car2 = Car.Create(SENTINEL, 453.5575, -338.9098, 9.5);
         Camera.SetGenerateCarsAround(false /* FALSE */);
-        World.SetVisibilityOfClosestObjectOfType(460.562, -379.384, 10.63, 1.0, 1378 /* newramp */, false /* FALSE */);
-        $.barrel_1 = ScriptObject.Create(1337 /* barrel1 */, 459.7787, -379.0, 9.5);
-        $.barrel_2 = ScriptObject.Create(1337 /* barrel1 */, 459.7787, -377.0, 9.5);
-        $.barrel_3 = ScriptObject.Create(1337 /* barrel1 */, 459.7787, -376.0, 9.5);
-        $.barrel_4 = ScriptObject.Create(1337 /* barrel1 */, 461.7787, -379.0, 9.5);
-        barrel_5 = ScriptObject.Create(1337 /* barrel1 */, 461.7787, -377.0, 9.5);
-        barrel_6 = ScriptObject.Create(1337 /* barrel1 */, 461.7787, -376.0, 9.5);
+        World.SetVisibilityOfClosestObjectOfType(460.562, -379.384, 10.63, 1.0, newramp, false /* FALSE */);
+        $.barrel_1 = ScriptObject.Create(barrel1, 459.7787, -379.0, 9.5);
+        $.barrel_2 = ScriptObject.Create(barrel1, 459.7787, -377.0, 9.5);
+        $.barrel_3 = ScriptObject.Create(barrel1, 459.7787, -376.0, 9.5);
+        $.barrel_4 = ScriptObject.Create(barrel1, 461.7787, -379.0, 9.5);
+        barrel_5 = ScriptObject.Create(barrel1, 461.7787, -377.0, 9.5);
+        barrel_6 = ScriptObject.Create(barrel1, 461.7787, -376.0, 9.5);
         $.barrel_1.setCollision(false /* FALSE */);
         $.barrel_2.setCollision(false /* FALSE */);
         $.barrel_3.setCollision(false /* FALSE */);

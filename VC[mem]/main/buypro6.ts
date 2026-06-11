@@ -1,6 +1,6 @@
 // Generated from main/buypro6.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_lnkvbuy() {
 
@@ -29,17 +29,17 @@ async function mission_start_lnkvbuy() {
   while (Camera.GetFadingStatus()) {
     await asyncWait(0);
     if (!($.player1.isPlaying())) {
-      $.lnkvbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.lnkvbuyX, $.lnkvbuyY, $.lnkvbuyZ, RADAR_SPRITE_SAVEHOUSE);
+      $.lnkvbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.lnkvbuyX, $.lnkvbuyY, $.lnkvbuyZ, 19 /* RADAR_SPRITE_SAVEHOUSE */);
       $.lnkvbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
-      // START_NEW_SCRIPT lnkvsave1_save_loop
+      // START_NEW_SCRIPT lnkvsave1_save_loop 
       return; // TERMINATE_THIS_SCRIPT
     }
   }
 
 
-  $.lnkvbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.lnkvbuyX, $.lnkvbuyY, $.lnkvbuyZ, RADAR_SPRITE_SAVEHOUSE);
+  $.lnkvbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.lnkvbuyX, $.lnkvbuyY, $.lnkvbuyZ, 19 /* RADAR_SPRITE_SAVEHOUSE */);
   $.lnkvbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
-  // START_NEW_SCRIPT lnkvsave1_save_loop
+  // START_NEW_SCRIPT lnkvsave1_save_loop 
 
 
   World.ClearArea(306.5728, 376.2928, 12.1856, 1.0, true /* TRUE */);
@@ -70,7 +70,7 @@ async function mission_start_lnkvbuy() {
   $.safehouse_created6 = 1;
   Text.PrintWithNumberBig("LNKVBUY", $.lnkvbuy_price, 5000, 6); //"Links View Apartment purchased: $ 15000"
   Stat.AddMoneySpentOnProperty($.lnkvbuy_price);
-  Stat.SetPropertyAsOwned(PROP_LINKSVIEW);
+  Stat.SetPropertyAsOwned(9 /* PROP_LINKSVIEW */);
   //lnkvbuy_price *= -1
   //ADD_SCORE player1 lnkvbuy_price
 

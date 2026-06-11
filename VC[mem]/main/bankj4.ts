@@ -1,6 +1,6 @@
 // Generated from main/bankj4.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_bankjob4() {
 
@@ -133,7 +133,7 @@ async function mission_start_bankjob4() {
 
   //CLEAR_EXTRA_COLOURS FALSE
 
-  Streaming.SetAreaVisible(VIS_MALIBU_CLUB);
+  Streaming.SetAreaVisible(17 /* VIS_MALIBU_CLUB */);
   World.SetCarDensityMultiplier(0.0);
   Streaming.LoadScene(481.03, -64.21, 8.98);
 
@@ -402,7 +402,7 @@ async function mission_start_bankjob4() {
   // ****************************************END OF CUTSCENE**********************************
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   World.ClearExtraColors(false /* FALSE */);
   $.flag_player_in_malibu = 0;
   Path.SwitchPedRoadsOff(468.0, -77.0, 0.0, 490.0, -54.0, 30.0);
@@ -1024,13 +1024,13 @@ $.world_z = _res76.z;
   if (!(Char.IsDead($.scplayer))) {
     if (!(Char.IsDead($.phil))) {
       //TURN_CHAR_TO_FACE_CHAR phil scplayer
-      $.phil.giveWeapon(WEAPONTYPE_M4, 9999);
+      $.phil.giveWeapon(26 /* WEAPONTYPE_M4 */, 9999);
     }
     if (!(Char.IsDead($.cam))) {
       //TURN_CHAR_TO_FACE_CHAR cam scplayer
-      $.cam.giveWeapon(WEAPONTYPE_MP5, 9999);
+      $.cam.giveWeapon(25 /* WEAPONTYPE_MP5 */, 9999);
     }
-    $.scplayer.giveWeapon(WEAPONTYPE_PYTHON, 24);
+    $.scplayer.giveWeapon(18 /* WEAPONTYPE_PYTHON */, 24);
   }
 
 
@@ -1266,7 +1266,7 @@ async function selkirk() {
 
 
 
-  Streaming.SetAreaVisible(VIS_BANK);
+  Streaming.SetAreaVisible(3 /* VIS_BANK */);
   World.SwitchRubbish(false /* OFF */);
   Streaming.LoadScene(-903.0, -341.0, 13.4);
   $.flag_player_in_bank = 1;
@@ -1283,8 +1283,8 @@ async function selkirk() {
 
   $.player1.setControl(false /* OFF */);
   Hud.SwitchWidescreen(true /* ON */);
-  $.player1.giveWeapon(WEAPONTYPE_PYTHON, 24);
-  $.player1.setCurrentWeapon(WEAPONTYPE_PYTHON);
+  $.player1.giveWeapon(18 /* WEAPONTYPE_PYTHON */, 24);
+  $.player1.setCurrentWeapon(18 /* WEAPONTYPE_PYTHON */);
   //GIVE_WEAPON_TO_PLAYER player1 WEAPONTYPE_PISTOL 600
 
   World.ClearArea(-890.0, -340.0, 11.0, 10.0, false /* FALSE */);
@@ -1705,7 +1705,7 @@ async function botty_head() {
   //SET_CHAR_CROUCH bank_cop_4 TRUE 9999
   //CHAR_SET_IDLE bank_cop_4
 
-  $.bank_cop_4.giveWeapon(WEAPONTYPE_MP5, 9999);
+  $.bank_cop_4.giveWeapon(25 /* WEAPONTYPE_MP5 */, 9999);
 
 
   $.bank_cop_5 = Char.Create(4 /* PEDTYPE_CIVMALE */, GDb, -956.75, -340.4, 14.6); // managers office & surveillance room
@@ -1715,7 +1715,7 @@ async function botty_head() {
   //SET_CHAR_CROUCH bank_cop_5 TRUE 9999
   //CHAR_SET_IDLE bank_cop_5
 
-  $.bank_cop_5.giveWeapon(WEAPONTYPE_MP5, 9999);
+  $.bank_cop_5.giveWeapon(25 /* WEAPONTYPE_MP5 */, 9999);
 
 
   $.bank_cop_7 = Char.Create(4 /* PEDTYPE_CIVMALE */, GDa, -935.73, -348.3, 16.8); // by the lift
@@ -1725,7 +1725,7 @@ async function botty_head() {
   $.bank_cop_7.setCrouch(true /* TRUE */, 300000);
   //CHAR_SET_IDLE bank_cop_5
 
-  $.bank_cop_7.giveWeapon(WEAPONTYPE_MP5, 9999);
+  $.bank_cop_7.giveWeapon(25 /* WEAPONTYPE_MP5 */, 9999);
 
 
   $.bank_cop_8 = Char.Create(4 /* PEDTYPE_CIVMALE */, GDb, -943.0, -343.9, 6.3); // bank vault
@@ -1737,7 +1737,7 @@ async function botty_head() {
   //SET_CHAR_CROUCH bank_cop_8 TRUE 9999
   //CHAR_SET_IDLE bank_cop_8
 
-  $.bank_cop_8.giveWeapon(WEAPONTYPE_MP5, 9999);
+  $.bank_cop_8.giveWeapon(25 /* WEAPONTYPE_MP5 */, 9999);
 
 
   Path.AddRoutePoint(1, -943.0, -343.9, 6.3);
@@ -1764,8 +1764,8 @@ async function botty_head() {
 
   //CREATE_PICKUP_WITH_AMMO ModelIndex PickUpType Ammo X Y Z PickupID
 
-  $.bank_health = Pickup.Create(1362 /* health */, 3 /* PICKUP_ONCE */, -959.3, -335.97, 15.59);
-  $.bank_armour = Pickup.Create(1364 /* bodyarmour */, 3 /* PICKUP_ONCE */, -956.7, -337.64, 15.6);
+  $.bank_health = Pickup.Create(health, 3 /* PICKUP_ONCE */, -959.3, -335.97, 15.59);
+  $.bank_armour = Pickup.Create(bodyarmour, 3 /* PICKUP_ONCE */, -956.7, -337.64, 15.6);
 
 
   while (!($.player1.locateOnFoot3D(-938.56, -351.5, 16.8, 1.5, 1.5, 1.5, true /* TRUE */))) {
@@ -1856,7 +1856,7 @@ async function botty_head() {
 
   if (!(Char.IsDead($.cam))) {
     $.cam.leaveGroup();
-    $.cam.followPath(-938.56, -351.5, 16.8, 0.5, RUN);
+    $.cam.followPath(-938.56, -351.5, 16.8, 0.5, 1 /* RUN */);
     //SET_CHAR_OBJ_RUN_TO_COORD cam -938.56 -351.5
 
   }
@@ -1873,7 +1873,7 @@ async function cunty() {
         if (!(Char.IsDead($.cam))) {
           $.cam.setCoordinates(-932.9, -351.3, 16.8);
           $.cam.setHeading(90.0);
-          $.cam.followPath(-938.56, -351.5, 16.8, 0.5, RUN);
+          $.cam.followPath(-938.56, -351.5, 16.8, 0.5, 1 /* RUN */);
           //SET_CHAR_OBJ_RUN_TO_COORD cam -938.56 -351.5
 
         }
@@ -2212,7 +2212,7 @@ async function labia() {
 
   if (!(Char.IsDead($.bank_manager))) {
     $.bank_manager.leaveGroup();
-    $.bank_manager.followPath(-938.56, -351.5, 16.8, 0.5, RUN);
+    $.bank_manager.followPath(-938.56, -351.5, 16.8, 0.5, 1 /* RUN */);
   }
 }
 
@@ -2228,7 +2228,7 @@ async function ooooogggg() {
           //				IF NOT IS_CHAR_ON_SCREEN bank_manager
           $.bank_manager.setCoordinates(-932.9, -351.3, 16.8);
           $.bank_manager.setHeading(90.0);
-          $.bank_manager.followPath(-938.56, -351.5, 16.8, 0.5, RUN);
+          $.bank_manager.followPath(-938.56, -351.5, 16.8, 0.5, 1 /* RUN */);
           //SET_CHAR_OBJ_RUN_TO_COORD bank_manager -938.56 -351.5
           //				ENDIF
 
@@ -2553,7 +2553,7 @@ $.world_z = _res81.z;
   $.player1.alterWantedLevelNoDrop(3);
 
 
-  $.bank_alarm = Sound.AddContinuous(-916.0, -340.0, 15.0, SOUND_BANK_ALARM_LOOP);
+  $.bank_alarm = Sound.AddContinuous(-916.0, -340.0, 15.0, 0 /* SOUND_BANK_ALARM_LOOP */);
   Audio.LoadMissionAudio($.audio_slot, "BK4_24b" as any);
   await audio_bank_loading();  // SCM GOSUB audio_bank_loading
   Text.PrintNow("BK4_24b", 10000, 1); //rhubarb rhubarb
@@ -3009,12 +3009,12 @@ $.warp_z = _res82.z;
       //SET_OBJECT_DYNAMIC grill_1 TRUE
       $.swat_1 = Char.Create(6 /* PEDTYPE_COP */, swat, -899.214, -333.656, 23.0);
       $.swat_1.setHeading(0.0);
-      $.swat_1.giveWeapon(WEAPONTYPE_MP5, 9999);
+      $.swat_1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 9999);
 
       //SET_OBJECT_DYNAMIC grill_2 TRUE
       $.swat_2 = Char.Create(6 /* PEDTYPE_COP */, swat, -899.214, -348.466, 23.0);
       $.swat_2.setHeading(180.0);
-      $.swat_2.giveWeapon(WEAPONTYPE_MP5, 9999);
+      $.swat_2.giveWeapon(25 /* WEAPONTYPE_MP5 */, 9999);
       if (!(Char.IsDead($.cam))) {
         $.swat_1.setObjKillCharOnFoot($.cam);
         $.swat_2.setObjKillCharOnFoot($.cam);
@@ -3057,7 +3057,7 @@ $.player_z = _res84.z;
       if ($.flag_cam_dead == 0) {
         $.cam.markAsNoLongerNeeded();
         Text.PrintNow("C_DEAD", 5000, 1); //Cam's dead!
-        $.retirement = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, $.world_x, $.world_y, $.world_z);
+        $.retirement = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, $.world_x, $.world_y, $.world_z);
         $.mission_blip.remove();
         $.mission_blip = Blip.AddForPickup($.retirement);
         $.flag_cam_dead = 1;
@@ -3178,7 +3178,7 @@ async function outside_the_bank() {
   $.bank_cop_1 = Char.Create(4 /* PEDTYPE_CIVMALE */, swat, -875.9, -334.0, 10.3);
   $.bank_cop_1.clearThreatSearch();
   $.bank_cop_1.setHeading(137.0);
-  $.bank_cop_1.giveWeapon(WEAPONTYPE_MP5, 9999);
+  $.bank_cop_1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 9999);
   $.bank_cop_1.setCrouch(true /* TRUE */, 9999);
   $.bank_cop_1.setObjKillPlayerAnyMeans($.player1);
   $.bank_cop_1.setStayInSamePlace(true /* TRUE */);
@@ -3190,7 +3190,7 @@ async function outside_the_bank() {
   $.bank_cop_2 = Char.Create(4 /* PEDTYPE_CIVMALE */, swat, -876.39, -347.45, 10.3);
   $.bank_cop_2.clearThreatSearch();
   $.bank_cop_2.setHeading(130.0);
-  $.bank_cop_2.giveWeapon(WEAPONTYPE_MP5, 9999);
+  $.bank_cop_2.giveWeapon(25 /* WEAPONTYPE_MP5 */, 9999);
   $.bank_cop_2.setCrouch(true /* TRUE */, 9999);
   $.bank_cop_2.setObjKillPlayerAnyMeans($.player1);
   $.bank_cop_2.setStayInSamePlace(true /* TRUE */);
@@ -3201,7 +3201,7 @@ async function outside_the_bank() {
   $.bank_cop_3 = Char.Create(4 /* PEDTYPE_CIVMALE */, swat, -864.6, -341.0, 9.9);
   $.bank_cop_3.clearThreatSearch();
   $.bank_cop_3.setHeading(95.0);
-  $.bank_cop_3.giveWeapon(WEAPONTYPE_MP5, 9999);
+  $.bank_cop_3.giveWeapon(25 /* WEAPONTYPE_MP5 */, 9999);
   $.bank_cop_3.setObjKillPlayerAnyMeans($.player1);
   $.bank_cop_3.setStayInSamePlace(true /* TRUE */);
   //SET_CHAR_THREAT_SEARCH bank_cop_3 THREAT_PLAYER1
@@ -3211,7 +3211,7 @@ async function outside_the_bank() {
   $.bank_cop_4 = Char.Create(4 /* PEDTYPE_CIVMALE */, swat, -868.4, -339.98, 9.9);
   $.bank_cop_4.clearThreatSearch();
   $.bank_cop_4.setHeading(90.0);
-  $.bank_cop_4.giveWeapon(WEAPONTYPE_MP5, 9999);
+  $.bank_cop_4.giveWeapon(25 /* WEAPONTYPE_MP5 */, 9999);
   $.bank_cop_4.setCrouch(true /* TRUE */, 9999);
   $.bank_cop_4.setObjKillPlayerAnyMeans($.player1);
   $.bank_cop_4.setStayInSamePlace(true /* TRUE */);
@@ -3222,7 +3222,7 @@ async function outside_the_bank() {
   $.bank_cop_5 = Char.Create(4 /* PEDTYPE_CIVMALE */, swat, -856.3, -294.7, 10.1);
   $.bank_cop_5.clearThreatSearch();
   $.bank_cop_5.setHeading(167.0);
-  $.bank_cop_5.giveWeapon(WEAPONTYPE_MP5, 9999);
+  $.bank_cop_5.giveWeapon(25 /* WEAPONTYPE_MP5 */, 9999);
   $.bank_cop_5.setCrouch(true /* TRUE */, 9999);
   //SET_CHAR_OBJ_KILL_PLAYER_ANY_MEANS bank_cop_5 player1
   //SET_CHAR_STAY_IN_SAME_PLACE bank_cop_5 TRUE
@@ -3234,7 +3234,7 @@ async function outside_the_bank() {
   $.bank_cop_6 = Char.Create(4 /* PEDTYPE_CIVMALE */, swat, -852.1, -304.3, 10.1);
   $.bank_cop_6.clearThreatSearch();
   $.bank_cop_6.setHeading(140.0);
-  $.bank_cop_6.giveWeapon(WEAPONTYPE_MP5, 9999);
+  $.bank_cop_6.giveWeapon(25 /* WEAPONTYPE_MP5 */, 9999);
   $.bank_cop_6.setCrouch(true /* TRUE */, 9999);
   //SET_CHAR_OBJ_KILL_PLAYER_ANY_MEANS bank_cop_6 player1
   //SET_CHAR_STAY_IN_SAME_PLACE bank_cop_6 TRUE
@@ -3338,7 +3338,7 @@ async function outside_the_bank() {
     $.hilary.setAsPlayerFriend($.player1, true /* TRUE */);
     $.hilary.setSuffersCriticalHits(false /* FALSE */);
     $.hilary.setPersonality(30 /* PEDSTAT_PSYCHO */);
-    $.hilary.giveWeapon(WEAPONTYPE_MP5, 9999);
+    $.hilary.giveWeapon(25 /* WEAPONTYPE_MP5 */, 9999);
     $.getaway_car.freezePosition(false /* FALSE */);
     $.getaway_car.setTempAction(8 /* TEMPACT_GOFORWARD */, 3000);
     $.getaway_car.setForwardSpeed(30.0);
@@ -4006,7 +4006,7 @@ async function mission_bankjob4_passed() {
   Audio.SetMusicDoesFade(true /* TRUE */);
   $.player1.setControl(true /* ON */);
   Game.SetEveryoneIgnorePlayer($.player1, false /* OFF */);
-  $.player1.setMood(PLAYER_MOOD_WISECRACKING, 60000);
+  $.player1.setMood(3 /* PLAYER_MOOD_WISECRACKING */, 60000);
   Hud.SwitchWidescreen(false /* OFF */);
 
 
@@ -4021,8 +4021,8 @@ async function mission_bankjob4_passed() {
   $.clothes_pickup13 = Pickup.CreateClothes(465.3, -57.4, 15.7, 7);
   $.jason_knife = Pickup.Create(knifecur, 2 /* PICKUP_ON_STREET */, 468.5, -54.2, 15.7);
   $.clothes13_created = 1;
-  // START_NEW_SCRIPT cloth9
-  // START_NEW_SCRIPT ambient_bank_loop
+  // START_NEW_SCRIPT cloth9 
+  // START_NEW_SCRIPT ambient_bank_loop 
 }
 
 
@@ -4051,7 +4051,7 @@ async function exit_bank() {
   World.ClearExtraColors(false /* FALSE */);
   World.SetCarDensityMultiplier(1.0);
   World.SwitchRubbish(true /* ON */);
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   Path.SwitchPedRoadsOff(-956.0, -355.0, 5.0, -898.0, -328.0, 25.0);
   World.ClearArea(-893.0, -341.0, 13.5, 1.0, false /* FALSE */);
   Streaming.LoadScene(-893.0, -341.0, 13.5);
@@ -4429,37 +4429,37 @@ async function mission_cleanup_bankjob4() {
   $.grill_1 = ScriptObject.CreateNoOffset(Bnk_grill01, -899.214, -333.656, 21.0);
   $.grill_1.setDynamic(false /* FALSE */);
   $.grill_1.dontRemove();
-  $.grill_1.setAreaVisible(VIS_BANK);
+  $.grill_1.setAreaVisible(3 /* VIS_BANK */);
 
 
   $.grill_2 = ScriptObject.CreateNoOffset(Bnk_grill01, -899.214, -348.466, 21.03);
   $.grill_2.setDynamic(false /* FALSE */);
   $.grill_2.dontRemove();
-  $.grill_2.setAreaVisible(VIS_BANK);
+  $.grill_2.setAreaVisible(3 /* VIS_BANK */);
 
 
   $.grill_3 = ScriptObject.CreateNoOffset(Bnk_grill01, -907.307, -336.618, 23.7);
   $.grill_3.setDynamic(false /* FALSE */);
   $.grill_3.dontRemove();
-  $.grill_3.setAreaVisible(VIS_BANK);
+  $.grill_3.setAreaVisible(3 /* VIS_BANK */);
 
 
   $.grill_4 = ScriptObject.CreateNoOffset(Bnk_grill01, -907.307, -345.504, 23.7);
   $.grill_4.setDynamic(false /* FALSE */);
   $.grill_4.dontRemove();
-  $.grill_4.setAreaVisible(VIS_BANK);
+  $.grill_4.setAreaVisible(3 /* VIS_BANK */);
 
 
   $.grill_5 = ScriptObject.CreateNoOffset(Bnk_grill01, -915.401, -336.6184, 23.7);
   $.grill_5.setDynamic(false /* FALSE */);
   $.grill_5.dontRemove();
-  $.grill_5.setAreaVisible(VIS_BANK);
+  $.grill_5.setAreaVisible(3 /* VIS_BANK */);
 
 
   $.grill_6 = ScriptObject.CreateNoOffset(Bnk_grill01, -915.401, -345.50, 23.7);
   $.grill_6.setDynamic(false /* FALSE */);
   $.grill_6.dontRemove();
-  $.grill_6.setAreaVisible(VIS_BANK);
+  $.grill_6.setAreaVisible(3 /* VIS_BANK */);
 
   //flag_player_on_bank_mission = 0
   //flag_bank_job = 0
@@ -4712,13 +4712,13 @@ async function hostage_checker() {
     $.var_hostage = $.bank_cop_3;
     await hostage_attack();  // SCM GOSUB hostage_attack
     if (!(Char.IsDead($.phil))) {
-      $.phil.setThreatSearch(THREAT_GANG_SECURITY);
+      $.phil.setThreatSearch(2048 /* THREAT_GANG_SECURITY */);
       $.phil.setThreatSearch(64 /* THREAT_COP */);
       $.phil.setHeedThreats(true /* TRUE */);
       $.phil.followPlayer($.player1);
     }
     if (!(Char.IsDead($.cam)) && $.flag_cam_downstairs == 0) {
-      $.cam.setThreatSearch(THREAT_GANG_SECURITY);
+      $.cam.setThreatSearch(2048 /* THREAT_GANG_SECURITY */);
       $.cam.setThreatSearch(64 /* THREAT_COP */);
       $.cam.setHeedThreats(true /* TRUE */);
       $.cam.followPlayer($.player1);
@@ -4787,7 +4787,7 @@ async function stairs_cam() {
       $.bank_cop_6.setHeading(60.0);
       $.bank_cop_6.setCrouch(true /* TRUE */, 300000);
       //CHAR_SET_IDLE bank_cop_6
-      $.bank_cop_6.giveWeapon(WEAPONTYPE_MP5, 9999);
+      $.bank_cop_6.giveWeapon(25 /* WEAPONTYPE_MP5 */, 9999);
       $.timer_intro_start = Clock.GetGameTimer();
       if (!(Char.IsDead($.phil))) {
         Path.AddRoutePoint(2, -921.0, -340.0, 13.4);
@@ -5218,7 +5218,7 @@ $.gas_world_z = _res88.z;
   $.gas_vect_z = $.gas_world_z - $.gas_z;
   //ADD_MOVING_PARTICLE_EFFECT POBJECT_DRY_ICE gas_world_x gas_world_y gas_world_z 0.0 0.0 0.0 0.3 0 0 0 200
 
-  Fx.CreateSingleParticle(PARTICLE_TEARGAS, $.gas_x, $.gas_y, $.gas_z, $.gas_vect_x, $.gas_vect_y, $.gas_vect_z, 0.3);
+  Fx.CreateSingleParticle(23 /* PARTICLE_TEARGAS */, $.gas_x, $.gas_y, $.gas_z, $.gas_vect_x, $.gas_vect_y, $.gas_vect_z, 0.3);
 }
 
 //ADD_MOVING_PARTICLE_EFFECT MovingParticleType X Y Z XSpeed YSpeed ZSpeed Radius R G B Time

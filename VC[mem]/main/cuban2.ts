@@ -1,6 +1,6 @@
 // Generated from main/cuban2.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_cuban2() {
   Text.ClearThisPrint("M_FAIL");
@@ -79,7 +79,7 @@ async function mission_start_cuban2() {
 
   // ****************************************START OF CUTSCENE********************************
 
-  Streaming.SetAreaVisible(VIS_COFFEE_SHOP);
+  Streaming.SetAreaVisible(7 /* VIS_COFFEE_SHOP */);
   World.ClearAreaOfChars(-1174.8, -609.0, 10.4, -116.3, -632.5, 15.3);
   World.SetCarDensityMultiplier(0.0);
   World.SetPedDensityMultiplier(0.0);
@@ -336,7 +336,7 @@ async function mission_start_cuban2() {
 
 
   $.free_scope = Pickup.CreateWithAmmo(laser, 3 /* PICKUP_ONCE */, 6, -1129.9, 66.3, 11.0);
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   $.flag_player_in_cafe = 0;
   // ******************************************END OF CUTSCENE********************************
 
@@ -345,11 +345,11 @@ async function mission_start_cuban2() {
   Camera.SetBehindPlayer();
   //------------------REQUEST_MODELS ------------------------------
 
-  $.player1.setMood(PLAYER_MOOD_PISSED_OFF, 60000);
+  $.player1.setMood(1 /* PLAYER_MOOD_PISSED_OFF */, 60000);
   Game.SetWantedMultiplier(0.2);
 
 
-  Game.SetThreatForPedType(PEDTYPE_GANG_HAITIAN, 1 /* THREAT_PLAYER1 */);
+  Game.SetThreatForPedType(8 /* PEDTYPE_GANG_HAITIAN */, 1 /* THREAT_PLAYER1 */);
 
 
   Streaming.RequestModel(CBa);
@@ -361,7 +361,7 @@ async function mission_start_cuban2() {
 
 
   Streaming.RequestModel(stinger);
-  Streaming.RequestModel(178 /* uzi */);
+  Streaming.RequestModel(uzi);
   Streaming.RequestModel(pony);
   Streaming.RequestModel(7 /* sniper */);
   Streaming.RequestModel(m4);
@@ -373,7 +373,7 @@ async function mission_start_cuban2() {
   }
 
 
-  while (!(Streaming.HasModelLoaded(stinger)) || !(Streaming.HasModelLoaded(178 /* uzi */)) || !(Streaming.HasModelLoaded(pony)) || !(Streaming.HasModelLoaded(7 /* sniper */)) || !(Streaming.HasModelLoaded(m4)) || !(Streaming.HasModelLoaded(taxi))) {
+  while (!(Streaming.HasModelLoaded(stinger)) || !(Streaming.HasModelLoaded(uzi)) || !(Streaming.HasModelLoaded(pony)) || !(Streaming.HasModelLoaded(7 /* sniper */)) || !(Streaming.HasModelLoaded(m4)) || !(Streaming.HasModelLoaded(taxi))) {
     await asyncWait(0);
   }
 
@@ -392,16 +392,16 @@ async function mission_start_cuban2() {
   //cheating the compilier into thinking i have created something which i havent (so it can be used later)
 
   if (ONMISSION == 0) {
-    $.haitian_defender1 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, $.haitian1x, $.haitian1y, $.haitian_z);
-    $.haitian_defender2 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, $.haitian2x, $.haitian2y, $.haitian_z);
-    $.haitian_defender3 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, $.haitian3x, $.haitian3y, $.haitian_z);
-    $.haitian_defender4 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, $.haitian4x, $.haitian4y, $.haitian_z);
-    $.haitian_defender5 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, $.haitian5x, $.haitian5y, $.haitian_z);
-    $.haitian_defender6 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, $.haitian5x, $.haitian5y, $.haitian_z);
-    $.haitian_defender7 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, $.haitian5x, $.haitian5y, $.haitian_z);
-    $.haitian_defender8 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, $.haitian5x, $.haitian5y, $.haitian_z);
-    $.haitian_defender9 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, $.haitian5x, $.haitian5y, $.haitian_z);
-    $.haitian_defender10 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, $.haitian5x, $.haitian5y, $.haitian_z);
+    $.haitian_defender1 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, $.haitian1x, $.haitian1y, $.haitian_z);
+    $.haitian_defender2 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, $.haitian2x, $.haitian2y, $.haitian_z);
+    $.haitian_defender3 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, $.haitian3x, $.haitian3y, $.haitian_z);
+    $.haitian_defender4 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, $.haitian4x, $.haitian4y, $.haitian_z);
+    $.haitian_defender5 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, $.haitian5x, $.haitian5y, $.haitian_z);
+    $.haitian_defender6 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, $.haitian5x, $.haitian5y, $.haitian_z);
+    $.haitian_defender7 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, $.haitian5x, $.haitian5y, $.haitian_z);
+    $.haitian_defender8 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, $.haitian5x, $.haitian5y, $.haitian_z);
+    $.haitian_defender9 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, $.haitian5x, $.haitian5y, $.haitian_z);
+    $.haitian_defender10 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, $.haitian5x, $.haitian5y, $.haitian_z);
     $.cuban_carry_car = $.player1.storeCarIsIn();
     $.radar_blip_cuban_carry_car = Blip.AddForCar($.cuban_carry_car);
   }
@@ -422,9 +422,9 @@ async function mission_start_cuban2() {
 
   //Collecting Cubans to drive to Haitian Base
 
-  $.cuban_pickup1 = Char.Create(PEDTYPE_GANG_CUBAN, CBa, -1171.2, -608.7, 10.8);
+  $.cuban_pickup1 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, CBa, -1171.2, -608.7, 10.8);
   $.cuban_pickup1.setHeading(181.1);
-  $.cuban_pickup1.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+  $.cuban_pickup1.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
   $.cuban_pickup1.addArmor(100);
   $.cuban_pickup1.clearThreatSearch();
   $.cuban_pickup1.setStopShootDontSeekEntity(true /* TRUE */);
@@ -436,9 +436,9 @@ async function mission_start_cuban2() {
   $.cuban_pickup1.setNeverTargeted(true /* TRUE */);
 
 
-  $.cuban_pickup2 = Char.Create(PEDTYPE_GANG_CUBAN, CBa, -1169.9, -609.0, 10.8);
+  $.cuban_pickup2 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, CBa, -1169.9, -609.0, 10.8);
   $.cuban_pickup2.setHeading(181.1);
-  $.cuban_pickup2.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+  $.cuban_pickup2.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
   $.cuban_pickup2.addArmor(100);
   $.cuban_pickup2.clearThreatSearch();
   $.cuban_pickup2.setStopShootDontSeekEntity(true /* TRUE */);
@@ -450,8 +450,8 @@ async function mission_start_cuban2() {
   $.cuban_pickup2.setNeverTargeted(true /* TRUE */);
 
 
-  $.cuban_pickup3 = Char.Create(PEDTYPE_GANG_CUBAN, CBa, -1169.9, -610.0, 10.8);
-  $.cuban_pickup3.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+  $.cuban_pickup3 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, CBa, -1169.9, -610.0, 10.8);
+  $.cuban_pickup3.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
   $.cuban_pickup3.addArmor(100);
   $.cuban_pickup3.clearThreatSearch();
   $.cuban_pickup3.setStopShootDontSeekEntity(true /* TRUE */);
@@ -672,28 +672,28 @@ async function first_cuban_pickup() {
             $.cuban_pickup3.markAsNoLongerNeeded();
           }
         }
-        $.cuban_pickup1 = Char.CreateAsPassenger($.cuban_carry_car, PEDTYPE_GANG_CUBAN, CBa, 0);
+        $.cuban_pickup1 = Char.CreateAsPassenger($.cuban_carry_car, 7 /* PEDTYPE_GANG_CUBAN */, CBa, 0);
         $.cuban_pickup1.setAsPlayerFriend($.player1, true /* TRUE */);
         $.cuban_pickup1.setStayInCarWhenJacked(true /* TRUE */);
-        $.cuban_pickup1.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+        $.cuban_pickup1.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
         $.cuban_pickup1.clearThreatSearch();
         $.cuban_pickup1.setOnlyDamagedByPlayer(true /* TRUE */);
         $.cuban_pickup1.setCantBeDraggedOut(true /* TRUE */);
         $.cuban_pickup1.setHeedThreats(true /* TRUE */);
         $.cuban_pickup1.setNeverTargeted(true /* TRUE */);
-        $.cuban_pickup2 = Char.CreateAsPassenger($.cuban_carry_car, PEDTYPE_GANG_CUBAN, CBa, 1);
+        $.cuban_pickup2 = Char.CreateAsPassenger($.cuban_carry_car, 7 /* PEDTYPE_GANG_CUBAN */, CBa, 1);
         $.cuban_pickup2.setAsPlayerFriend($.player1, true /* TRUE */);
         $.cuban_pickup2.setStayInCarWhenJacked(true /* TRUE */);
-        $.cuban_pickup2.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+        $.cuban_pickup2.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
         $.cuban_pickup2.clearThreatSearch();
         $.cuban_pickup2.setOnlyDamagedByPlayer(true /* TRUE */);
         $.cuban_pickup2.setCantBeDraggedOut(true /* TRUE */);
         $.cuban_pickup2.setHeedThreats(true /* TRUE */);
         $.cuban_pickup2.setNeverTargeted(true /* TRUE */);
-        $.cuban_pickup3 = Char.CreateAsPassenger($.cuban_carry_car, PEDTYPE_GANG_CUBAN, CBa, 2);
+        $.cuban_pickup3 = Char.CreateAsPassenger($.cuban_carry_car, 7 /* PEDTYPE_GANG_CUBAN */, CBa, 2);
         $.cuban_pickup3.setAsPlayerFriend($.player1, true /* TRUE */);
         $.cuban_pickup3.setStayInCarWhenJacked(true /* TRUE */);
-        $.cuban_pickup3.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+        $.cuban_pickup3.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
         $.cuban_pickup3.clearThreatSearch();
         $.cuban_pickup3.setOnlyDamagedByPlayer(true /* TRUE */);
         $.cuban_pickup3.setCantBeDraggedOut(true /* TRUE */);
@@ -760,13 +760,13 @@ async function waiting_for_player_2_get_close() {
         //Creating Initial Cubans
 
         //right of alleyway
-        $.cuban_attacker1 = Char.Create(PEDTYPE_GANG_CUBAN, CBa, -1079.5, 72.6, 10.2);
+        $.cuban_attacker1 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, CBa, -1079.5, 72.6, 10.2);
         $.cuban_attacker1.setAsPlayerFriend($.player1, true /* TRUE */);
         $.cuban_attacker1.setHeading(91.5);
-        $.cuban_attacker1.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+        $.cuban_attacker1.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
         $.cuban_attacker1.clearThreatSearch();
         $.cuban_attacker1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-        $.cuban_attacker1.setThreatSearch(THREAT_GANG_HAITIAN);
+        $.cuban_attacker1.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
         $.cuban_attacker1.setThreatSearch(64 /* THREAT_COP */);
         $.cuban_attacker1.setThreatSearch(65536 /* THREAT_EMERGENCY */);
         $.cuban_attacker1.setOnlyDamagedByPlayer(true /* TRUE */);
@@ -776,7 +776,7 @@ async function waiting_for_player_2_get_close() {
         $.cuban_attacker1.setNeverTargeted(true /* TRUE */);
 
         //leader bloke
-        $.cuban_attacker2 = Char.Create(PEDTYPE_GANG_CUBAN, CBb, -1079.6, 73.9, 10.2);
+        $.cuban_attacker2 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, CBb, -1079.6, 73.9, 10.2);
         $.cuban_attacker2.setAsPlayerFriend($.player1, true /* TRUE */);
         $.cuban_attacker2.setHeading(270.9);
         $.cuban_attacker2.clearThreatSearch();
@@ -791,13 +791,13 @@ async function waiting_for_player_2_get_close() {
         $.cuban_attacker2.setCantBeDraggedOut(true /* TRUE */);
 
         //left of alleyway
-        $.cuban_attacker3 = Char.Create(PEDTYPE_GANG_CUBAN, CBa, -1079.3, 68.6, 10.2);
+        $.cuban_attacker3 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, CBa, -1079.3, 68.6, 10.2);
         $.cuban_attacker3.setAsPlayerFriend($.player1, true /* TRUE */);
         $.cuban_attacker3.setHeading(82.1);
-        $.cuban_attacker3.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+        $.cuban_attacker3.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
         $.cuban_attacker3.clearThreatSearch();
         $.cuban_attacker3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-        $.cuban_attacker3.setThreatSearch(THREAT_GANG_HAITIAN);
+        $.cuban_attacker3.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
         $.cuban_attacker3.setThreatSearch(64 /* THREAT_COP */);
         $.cuban_attacker3.setThreatSearch(65536 /* THREAT_EMERGENCY */);
         $.cuban_attacker3.setOnlyDamagedByPlayer(true /* TRUE */);
@@ -967,7 +967,7 @@ async function player1_arrived1() {
   if (!(Char.IsDead($.cuban_pickup1))) {
     $.cuban_pickup1.setHeading(91.5);
     $.cuban_pickup1.setStopShootDontSeekEntity(true /* TRUE */);
-    $.cuban_pickup1.setThreatSearch(THREAT_GANG_HAITIAN);
+    $.cuban_pickup1.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
     $.cuban_pickup1.setThreatSearch(64 /* THREAT_COP */);
     $.cuban_pickup1.setThreatSearch(65536 /* THREAT_EMERGENCY */);
   }
@@ -976,7 +976,7 @@ async function player1_arrived1() {
   if (!(Char.IsDead($.cuban_pickup2))) {
     $.cuban_pickup2.setHeading(89.5);
     $.cuban_pickup2.setStopShootDontSeekEntity(true /* TRUE */);
-    $.cuban_pickup2.setThreatSearch(THREAT_GANG_HAITIAN);
+    $.cuban_pickup2.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
     $.cuban_pickup2.setThreatSearch(64 /* THREAT_COP */);
     $.cuban_pickup2.setThreatSearch(65536 /* THREAT_EMERGENCY */);
   }
@@ -985,7 +985,7 @@ async function player1_arrived1() {
   if (!(Char.IsDead($.cuban_pickup3))) {
     $.cuban_pickup3.setHeading(90.5);
     $.cuban_pickup3.setStopShootDontSeekEntity(true /* TRUE */);
-    $.cuban_pickup3.setThreatSearch(THREAT_GANG_HAITIAN);
+    $.cuban_pickup3.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
     $.cuban_pickup3.setThreatSearch(64 /* THREAT_COP */);
     $.cuban_pickup3.setThreatSearch(65536 /* THREAT_EMERGENCY */);
   }
@@ -1074,10 +1074,10 @@ async function fudgelips() {
   $.player1.stopLooking();
   if (!(Char.IsDead($.cuban_attacker2))) {
     $.cuban_attacker2.stopLooking();
-    $.cuban_attacker2.setThreatSearch(THREAT_GANG_HAITIAN);
+    $.cuban_attacker2.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
     $.cuban_attacker2.setThreatSearch(64 /* THREAT_COP */);
     $.cuban_attacker2.setThreatSearch(65536 /* THREAT_EMERGENCY */);
-    $.cuban_attacker2.giveWeapon(WEAPONTYPE_M4, 99999);
+    $.cuban_attacker2.giveWeapon(26 /* WEAPONTYPE_M4 */, 99999);
   }
 
 
@@ -1252,9 +1252,9 @@ async function preparing_for_next_pickup() {
   //Go pick up the other set of Cubans
 
 
-  $.cuban_pickup4 = Char.CreateAsPassenger($.cuban_carry_car, PEDTYPE_GANG_CUBAN, CBa, 0);
+  $.cuban_pickup4 = Char.CreateAsPassenger($.cuban_carry_car, 7 /* PEDTYPE_GANG_CUBAN */, CBa, 0);
   $.cuban_pickup4.setAsPlayerFriend($.player1, true /* TRUE */);
-  $.cuban_pickup4.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+  $.cuban_pickup4.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
   $.cuban_pickup4.addArmor(100);
   $.cuban_pickup4.clearThreatSearch();
   $.cuban_pickup4.setOnlyDamagedByPlayer(true /* TRUE */);
@@ -1264,9 +1264,9 @@ async function preparing_for_next_pickup() {
   $.cuban_pickup4.setNeverTargeted(true /* TRUE */);
 
 
-  $.cuban_pickup5 = Char.CreateAsPassenger($.cuban_carry_car, PEDTYPE_GANG_CUBAN, CBa, 1);
+  $.cuban_pickup5 = Char.CreateAsPassenger($.cuban_carry_car, 7 /* PEDTYPE_GANG_CUBAN */, CBa, 1);
   $.cuban_pickup5.setAsPlayerFriend($.player1, true /* TRUE */);
-  $.cuban_pickup5.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+  $.cuban_pickup5.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
   $.cuban_pickup5.addArmor(100);
   $.cuban_pickup5.clearThreatSearch();
   $.cuban_pickup5.setOnlyDamagedByPlayer(true /* TRUE */);
@@ -1276,9 +1276,9 @@ async function preparing_for_next_pickup() {
   $.cuban_pickup5.setNeverTargeted(true /* TRUE */);
 
 
-  $.cuban_pickup6 = Char.CreateAsPassenger($.cuban_carry_car, PEDTYPE_GANG_CUBAN, CBa, 2);
+  $.cuban_pickup6 = Char.CreateAsPassenger($.cuban_carry_car, 7 /* PEDTYPE_GANG_CUBAN */, CBa, 2);
   $.cuban_pickup6.setAsPlayerFriend($.player1, true /* TRUE */);
-  $.cuban_pickup6.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+  $.cuban_pickup6.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
   $.cuban_pickup6.addArmor(100);
   $.cuban_pickup6.clearThreatSearch();
   $.cuban_pickup6.setOnlyDamagedByPlayer(true /* TRUE */);
@@ -1332,16 +1332,16 @@ async function preparing_for_next_pickup() {
 
   //creating sniper
 
-  $.target2 = Char.Create(PEDTYPE_GANG_HAITIAN, HNb, -1189.8, 69.2, 23.9);
+  $.target2 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNb, -1189.8, 69.2, 23.9);
 
 
 
   $.target2.shutUp(true /* TRUE */);
   $.target2.setHeading(270.0);
-  $.target2.giveWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */, 30000);
+  $.target2.giveWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */, 30000);
   $.target2.clearThreatSearch();
   $.target2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  $.target2.setThreatSearch(THREAT_GANG_CUBAN);
+  $.target2.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
   $.target2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.target2.setThreatSearch(64 /* THREAT_COP */);
   $.target2.setAccuracy(100);
@@ -1854,7 +1854,7 @@ async function getting_the_cunts_out_the_car2() {
   if (!(Char.IsDead($.cuban_pickup4))) {
     $.cuban_pickup4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
     $.cuban_pickup4.setOnlyDamagedByPlayer(false /* FALSE */);
-    $.cuban_pickup4.setThreatSearch(THREAT_GANG_HAITIAN);
+    $.cuban_pickup4.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
     $.cuban_pickup4.setThreatSearch(64 /* THREAT_COP */);
   }
 
@@ -1862,7 +1862,7 @@ async function getting_the_cunts_out_the_car2() {
   if (!(Char.IsDead($.cuban_pickup5))) {
     $.cuban_pickup5.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
     $.cuban_pickup5.setOnlyDamagedByPlayer(false /* FALSE */);
-    $.cuban_pickup5.setThreatSearch(THREAT_GANG_HAITIAN);
+    $.cuban_pickup5.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
     $.cuban_pickup5.setThreatSearch(64 /* THREAT_COP */);
   }
 
@@ -1870,7 +1870,7 @@ async function getting_the_cunts_out_the_car2() {
   if (!(Char.IsDead($.cuban_pickup6))) {
     $.cuban_pickup6.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
     $.cuban_pickup6.setOnlyDamagedByPlayer(false /* FALSE */);
-    $.cuban_pickup6.setThreatSearch(THREAT_GANG_HAITIAN);
+    $.cuban_pickup6.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
     $.cuban_pickup6.setThreatSearch(64 /* THREAT_COP */);
   }
   if (!(Char.IsDead($.target2))) {
@@ -1881,22 +1881,22 @@ async function getting_the_cunts_out_the_car2() {
   if (!(Char.IsDead($.cuban_attacker2))) {
     $.cuban_attacker2.setWaitState(19 /* WAITSTATE_PLAYANIM_CHAT */, 10);
     $.cuban_attacker2.stopLooking();
-    $.cuban_attacker2.setThreatSearch(THREAT_GANG_HAITIAN);
+    $.cuban_attacker2.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
     $.cuban_attacker2.setThreatSearch(64 /* THREAT_COP */);
     $.cuban_attacker2.setThreatSearch(65536 /* THREAT_EMERGENCY */);
-    $.cuban_attacker2.giveWeapon(WEAPONTYPE_M4, 99999);
+    $.cuban_attacker2.giveWeapon(26 /* WEAPONTYPE_M4 */, 99999);
   }
 
 
   if (!(Char.IsDead($.cuban_attacker1))) {
-    $.cuban_attacker1.setThreatSearch(THREAT_GANG_HAITIAN);
+    $.cuban_attacker1.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
     $.cuban_attacker1.setThreatSearch(64 /* THREAT_COP */);
     $.cuban_attacker1.setThreatSearch(65536 /* THREAT_EMERGENCY */);
   }
 
 
   if (!(Char.IsDead($.cuban_pickup3))) {
-    $.cuban_pickup3.setThreatSearch(THREAT_GANG_HAITIAN);
+    $.cuban_pickup3.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
     $.cuban_pickup3.setThreatSearch(64 /* THREAT_COP */);
     $.cuban_pickup3.setThreatSearch(65536 /* THREAT_EMERGENCY */);
   }
@@ -2383,31 +2383,31 @@ async function little_ickle_bit() {
       Camera.SetFixedPosition(-1163.2, 64.2, 16.5, 0.0, 0.0, 0.0);
       Camera.PointAtPoint(-1163.7, 73.3, 12.2, 2 /* JUMP_CUT */);
       if (!(Char.IsDead($.cuban_attacker1))) {
-        $.cuban_attacker1.setThreatSearch(THREAT_GANG_HAITIAN);
+        $.cuban_attacker1.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
         $.cuban_attacker1.setThreatSearch(64 /* THREAT_COP */);
         $.cuban_attacker1.setThreatSearch(65536 /* THREAT_EMERGENCY */);
         $.cuban_attacker1.setHeedThreats(true /* TRUE */);
       }
       if (!(Char.IsDead($.cuban_pickup3))) {
-        $.cuban_pickup3.setThreatSearch(THREAT_GANG_HAITIAN);
+        $.cuban_pickup3.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
         $.cuban_pickup3.setThreatSearch(64 /* THREAT_COP */);
         $.cuban_pickup3.setThreatSearch(65536 /* THREAT_EMERGENCY */);
         $.cuban_pickup3.setHeedThreats(true /* TRUE */);
       }
       if (!(Char.IsDead($.cuban_pickup4))) {
-        $.cuban_pickup4.setThreatSearch(THREAT_GANG_HAITIAN);
+        $.cuban_pickup4.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
         $.cuban_pickup4.setThreatSearch(64 /* THREAT_COP */);
         $.cuban_pickup4.setThreatSearch(65536 /* THREAT_EMERGENCY */);
         $.cuban_pickup4.setHeedThreats(true /* TRUE */);
       }
       if (!(Char.IsDead($.cuban_pickup5))) {
-        $.cuban_pickup5.setThreatSearch(THREAT_GANG_HAITIAN);
+        $.cuban_pickup5.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
         $.cuban_pickup5.setThreatSearch(64 /* THREAT_COP */);
         $.cuban_pickup5.setThreatSearch(65536 /* THREAT_EMERGENCY */);
         $.cuban_pickup5.setHeedThreats(true /* TRUE */);
       }
       if (!(Char.IsDead($.cuban_pickup6))) {
-        $.cuban_pickup6.setThreatSearch(THREAT_GANG_HAITIAN);
+        $.cuban_pickup6.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
         $.cuban_pickup6.setThreatSearch(64 /* THREAT_COP */);
         $.cuban_pickup6.setThreatSearch(65536 /* THREAT_EMERGENCY */);
         $.cuban_pickup6.setHeedThreats(true /* TRUE */);
@@ -2435,36 +2435,36 @@ async function little_ickle_bit() {
 
 
 async function next_little_ickle_bit() {
-  $.fake_haitian1 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1115.6, 69.6, 10.1);
+  $.fake_haitian1 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1115.6, 69.6, 10.1);
   $.fake_haitian1.setHeading(105.9);
-  $.fake_haitian1.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+  $.fake_haitian1.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
   $.fake_haitian1.clearThreatSearch();
   $.fake_haitian1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  $.fake_haitian1.setThreatSearch(THREAT_GANG_CUBAN);
+  $.fake_haitian1.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
   $.fake_haitian1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.fake_haitian1.setThreatSearch(64 /* THREAT_COP */);
   $.fake_haitian1.setStopShootDontSeekEntity(true /* TRUE */);
   $.fake_haitian1.setHeedThreats(true /* TRUE */);
 
 
-  $.fake_haitian2 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1115.6, 73.7, 10.1);
+  $.fake_haitian2 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1115.6, 73.7, 10.1);
   $.fake_haitian2.setHeading(105.9);
-  $.fake_haitian2.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+  $.fake_haitian2.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
   $.fake_haitian2.clearThreatSearch();
   $.fake_haitian2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  $.fake_haitian2.setThreatSearch(THREAT_GANG_CUBAN);
+  $.fake_haitian2.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
   $.fake_haitian2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.fake_haitian2.setThreatSearch(64 /* THREAT_COP */);
   $.fake_haitian2.setStopShootDontSeekEntity(true /* TRUE */);
   $.fake_haitian2.setHeedThreats(true /* TRUE */);
 
 
-  $.fake_haitian3 = Char.Create(PEDTYPE_GANG_HAITIAN, HNb, -1115.6, 71.0, 10.1);
+  $.fake_haitian3 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNb, -1115.6, 71.0, 10.1);
   $.fake_haitian3.setHeading(105.9);
-  $.fake_haitian3.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+  $.fake_haitian3.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
   $.fake_haitian3.clearThreatSearch();
   $.fake_haitian3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  $.fake_haitian3.setThreatSearch(THREAT_GANG_CUBAN);
+  $.fake_haitian3.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
   $.fake_haitian3.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.fake_haitian3.setThreatSearch(64 /* THREAT_COP */);
   $.fake_haitian3.setStopShootDontSeekEntity(true /* TRUE */);
@@ -2688,7 +2688,7 @@ async function mission_passed_cuban2() {
   $.player1.addScore(2000);
   Stat.PlayerMadeProgress(1);
   Stat.RegisterMissionPassed("CUB_2");
-  // START_NEW_SCRIPT cuban_mission3_loop
+  // START_NEW_SCRIPT cuban_mission3_loop 
   $.flag_cuban_mission2_passed = 1;
 }
 
@@ -2699,7 +2699,7 @@ async function mission_passed_cuban2() {
 
 async function mission_cleanup_cuban2() {
   ONMISSION = 0;
-  Game.ClearThreatForPedType(PEDTYPE_GANG_HAITIAN, 1 /* THREAT_PLAYER1 */);
+  Game.ClearThreatForPedType(8 /* PEDTYPE_GANG_HAITIAN */, 1 /* THREAT_PLAYER1 */);
   $.player1.setControl(true /* on */);
   //andy_has_control = 0 //reseting gate
   //closing gate
@@ -2710,7 +2710,7 @@ async function mission_cleanup_cuban2() {
   Streaming.MarkModelAsNoLongerNeeded(CBa);
   Streaming.MarkModelAsNoLongerNeeded(stinger);
   Streaming.MarkModelAsNoLongerNeeded(pony);
-  Streaming.MarkModelAsNoLongerNeeded(178 /* uzi */);
+  Streaming.MarkModelAsNoLongerNeeded(uzi);
   Streaming.MarkModelAsNoLongerNeeded(7 /* sniper */);
   Streaming.MarkModelAsNoLongerNeeded(HNa);
   Streaming.MarkModelAsNoLongerNeeded(CBb);
@@ -2748,9 +2748,9 @@ async function creating_new_haitians() {
 
   if (Char.IsDead($.haitian_defender1)) {
     $.haitian_defender1.markAsNoLongerNeeded();
-    $.haitian_defender1 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, $.haitian1x, $.haitian1y, $.haitian_z);
+    $.haitian_defender1 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, $.haitian1x, $.haitian1y, $.haitian_z);
     $.haitian_defender1.setHeading($.hd1_heading);
-    $.haitian_defender1.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+    $.haitian_defender1.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
     $.haitian_defender1.clearThreatSearch();
     $.haitian_defender1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
     //SET_CHAR_THREAT_SEARCH haitian_defender1 THREAT_GANG_CUBAN
@@ -2775,12 +2775,12 @@ async function creating_new_haitians() {
 
   if (Char.IsDead($.haitian_defender2)) {
     $.haitian_defender2.markAsNoLongerNeeded();
-    $.haitian_defender2 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, $.haitian2x, $.haitian2y, $.haitian_z);
+    $.haitian_defender2 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, $.haitian2x, $.haitian2y, $.haitian_z);
     $.haitian_defender2.setHeading($.hd2_heading);
-    $.haitian_defender2.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+    $.haitian_defender2.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
     $.haitian_defender2.clearThreatSearch();
     $.haitian_defender2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-    $.haitian_defender2.setThreatSearch(THREAT_GANG_CUBAN);
+    $.haitian_defender2.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
     $.haitian_defender2.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.haitian_defender2.setThreatSearch(64 /* THREAT_COP */);
     $.haitian_defender2.setStopShootDontSeekEntity(true /* TRUE */);
@@ -2802,12 +2802,12 @@ async function creating_new_haitians() {
 
   if (Char.IsDead($.haitian_defender3)) {
     $.haitian_defender3.markAsNoLongerNeeded();
-    $.haitian_defender3 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, $.haitian3x, $.haitian3y, $.haitian_z);
+    $.haitian_defender3 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, $.haitian3x, $.haitian3y, $.haitian_z);
     $.haitian_defender3.setHeading($.hd3_heading);
-    $.haitian_defender3.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+    $.haitian_defender3.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
     $.haitian_defender3.clearThreatSearch();
     $.haitian_defender3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-    $.haitian_defender3.setThreatSearch(THREAT_GANG_CUBAN);
+    $.haitian_defender3.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
     $.haitian_defender3.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.haitian_defender3.setThreatSearch(64 /* THREAT_COP */);
     $.haitian_defender3.setStopShootDontSeekEntity(true /* TRUE */);
@@ -2829,12 +2829,12 @@ async function creating_new_haitians() {
 
   if (Char.IsDead($.haitian_defender4)) {
     $.haitian_defender4.markAsNoLongerNeeded();
-    $.haitian_defender4 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, $.haitian4x, $.haitian4y, $.haitian_z);
+    $.haitian_defender4 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, $.haitian4x, $.haitian4y, $.haitian_z);
     $.haitian_defender4.setHeading($.hd4_heading);
-    $.haitian_defender4.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+    $.haitian_defender4.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
     $.haitian_defender4.clearThreatSearch();
     $.haitian_defender4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-    $.haitian_defender4.setThreatSearch(THREAT_GANG_CUBAN);
+    $.haitian_defender4.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
     $.haitian_defender4.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.haitian_defender4.setThreatSearch(64 /* THREAT_COP */);
     $.haitian_defender4.setStopShootDontSeekEntity(true /* TRUE */);
@@ -2856,7 +2856,7 @@ async function creating_new_haitians() {
 
   if (Char.IsDead($.haitian_defender5)) {
     $.haitian_defender5.markAsNoLongerNeeded();
-    $.haitian_defender5 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, $.haitian5x, $.haitian5y, $.haitian_z);
+    $.haitian_defender5 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, $.haitian5x, $.haitian5y, $.haitian_z);
     $.haitian_defender5.setHeading($.hd5_heading);
     $.haitian_defender5.clearThreatSearch();
     $.haitian_defender5.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -2869,10 +2869,10 @@ async function creating_new_haitians() {
     if ($.cuban_flag1 == 0) {
       $.cuban_blip5.remove();
       $.cuban_blip5 = Blip.AddForChar($.haitian_defender5);
-      $.haitian_defender5.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+      $.haitian_defender5.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
     }
     else {
-      $.haitian_defender5.giveWeapon(WEAPONTYPE_m4, 30000);
+      $.haitian_defender5.giveWeapon(26 /* WEAPONTYPE_m4 */, 30000);
       $.haitian_defender5.addArmor(100);
     }
     $.number_of_haitians_dead++;
@@ -2888,16 +2888,16 @@ async function creating_new_haitians() {
   if (!($.haitians_doubled_flag == 0)) {
     if (Char.IsDead($.haitian_defender6)) {
       if ($.haitians_doubled_flag == 1) {
-        $.haitian_defender6 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1166.5, 104.2, 10.2);
+        $.haitian_defender6 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1166.5, 104.2, 10.2);
       }
       else {
-        $.haitian_defender6 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1186.5, 104.0, 10.2);
+        $.haitian_defender6 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1186.5, 104.0, 10.2);
       }
       $.haitian_defender6.setHeading(187.5);
-      $.haitian_defender6.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+      $.haitian_defender6.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
       $.haitian_defender6.clearThreatSearch();
       $.haitian_defender6.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-      $.haitian_defender6.setThreatSearch(THREAT_GANG_CUBAN);
+      $.haitian_defender6.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
       $.haitian_defender6.setThreatSearch(1 /* THREAT_PLAYER1 */);
       $.haitian_defender6.setThreatSearch(64 /* THREAT_COP */);
       //SET_CHAR_STOP_SHOOT_DONT_SEEK_ENTITY haitian_defender6 FALSE
@@ -2906,16 +2906,16 @@ async function creating_new_haitians() {
     }
     if (Char.IsDead($.haitian_defender7)) {
       if ($.haitians_doubled_flag == 1) {
-        $.haitian_defender7 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1169.0, 103.5, 10.2);
+        $.haitian_defender7 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1169.0, 103.5, 10.2);
       }
       else {
-        $.haitian_defender7 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1186.5, 104.0, 10.2);
+        $.haitian_defender7 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1186.5, 104.0, 10.2);
       }
       $.haitian_defender7.setHeading(199.5);
-      $.haitian_defender7.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+      $.haitian_defender7.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
       $.haitian_defender7.clearThreatSearch();
       $.haitian_defender7.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-      $.haitian_defender7.setThreatSearch(THREAT_GANG_CUBAN);
+      $.haitian_defender7.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
       $.haitian_defender7.setThreatSearch(1 /* THREAT_PLAYER1 */);
       $.haitian_defender7.setThreatSearch(64 /* THREAT_COP */);
       //SET_CHAR_STOP_SHOOT_DONT_SEEK_ENTITY haitian_defender7 FALSE
@@ -2924,16 +2924,16 @@ async function creating_new_haitians() {
     }
     if (Char.IsDead($.haitian_defender8)) {
       if ($.haitians_doubled_flag == 1) {
-        $.haitian_defender8 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1170.5, 103.2, 10.2);
+        $.haitian_defender8 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1170.5, 103.2, 10.2);
       }
       else {
-        $.haitian_defender8 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1186.5, 104.0, 10.2);
+        $.haitian_defender8 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1186.5, 104.0, 10.2);
       }
       $.haitian_defender8.setHeading(187.5);
-      $.haitian_defender8.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+      $.haitian_defender8.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
       $.haitian_defender8.clearThreatSearch();
       $.haitian_defender8.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-      $.haitian_defender8.setThreatSearch(THREAT_GANG_CUBAN);
+      $.haitian_defender8.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
       $.haitian_defender8.setThreatSearch(1 /* THREAT_PLAYER1 */);
       $.haitian_defender8.setThreatSearch(64 /* THREAT_COP */);
       //SET_CHAR_STOP_SHOOT_DONT_SEEK_ENTITY haitian_defender8 FALSE
@@ -2944,16 +2944,16 @@ async function creating_new_haitians() {
 
     if (Char.IsDead($.haitian_defender9)) {
       if ($.haitians_doubled_flag == 1) {
-        $.haitian_defender9 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1164.5, 106.2, 10.2);
+        $.haitian_defender9 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1164.5, 106.2, 10.2);
       }
       else {
-        $.haitian_defender9 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1186.5, 104.0, 10.2);
+        $.haitian_defender9 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1186.5, 104.0, 10.2);
       }
       $.haitian_defender9.setHeading(187.5);
-      $.haitian_defender9.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+      $.haitian_defender9.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
       $.haitian_defender9.clearThreatSearch();
       $.haitian_defender9.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-      $.haitian_defender9.setThreatSearch(THREAT_GANG_CUBAN);
+      $.haitian_defender9.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
       $.haitian_defender9.setThreatSearch(1 /* THREAT_PLAYER1 */);
       $.haitian_defender9.setThreatSearch(64 /* THREAT_COP */);
       //SET_CHAR_STOP_SHOOT_DONT_SEEK_ENTITY haitian_defender9 FALSE
@@ -2962,16 +2962,16 @@ async function creating_new_haitians() {
     }
     if (Char.IsDead($.haitian_defender10)) {
       if ($.haitians_doubled_flag == 1) {
-        $.haitian_defender10 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1168.5, 106.2, 10.2);
+        $.haitian_defender10 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1168.5, 106.2, 10.2);
       }
       else {
-        $.haitian_defender10 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1186.5, 104.0, 10.2);
+        $.haitian_defender10 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1186.5, 104.0, 10.2);
       }
       $.haitian_defender10.setHeading(187.5);
-      $.haitian_defender10.giveWeapon(3 /* WEAPONTYPE_uzi */, 30000);
+      $.haitian_defender10.giveWeapon(23 /* WEAPONTYPE_uzi */, 30000);
       $.haitian_defender10.clearThreatSearch();
       $.haitian_defender10.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-      $.haitian_defender10.setThreatSearch(THREAT_GANG_CUBAN);
+      $.haitian_defender10.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
       $.haitian_defender10.setThreatSearch(1 /* THREAT_PLAYER1 */);
       $.haitian_defender10.setThreatSearch(64 /* THREAT_COP */);
       //SET_CHAR_STOP_SHOOT_DONT_SEEK_ENTITY haitian_defender10 FALSE

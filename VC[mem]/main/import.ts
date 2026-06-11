@@ -1,6 +1,6 @@
 // Generated from main/import.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_import_start() {
 
@@ -125,8 +125,8 @@ async function import1_loop_inner() {
             }
             await clean_up_import_varibles();  // SCM GOSUB clean_up_import_varibles
             Stat.PlayerMadeProgress(1);
-            // START_NEW_SCRIPT import2_loop
-            // START_NEW_SCRIPT create_car_generator1
+            // START_NEW_SCRIPT import2_loop 
+            // START_NEW_SCRIPT create_car_generator1 
             return; // TERMINATE_THIS_SCRIPT
           }
 
@@ -224,8 +224,8 @@ async function import2_loop_inner() {
             }
             await clean_up_import_varibles();  // SCM GOSUB clean_up_import_varibles
             Stat.PlayerMadeProgress(1);
-            // START_NEW_SCRIPT import3_loop
-            // START_NEW_SCRIPT create_car_generator2
+            // START_NEW_SCRIPT import3_loop 
+            // START_NEW_SCRIPT create_car_generator2 
             return; // TERMINATE_THIS_SCRIPT
           }
 
@@ -320,8 +320,8 @@ async function import3_loop_inner() {
             }
             await clean_up_import_varibles();  // SCM GOSUB clean_up_import_varibles
             Stat.PlayerMadeProgress(1);
-            // START_NEW_SCRIPT import4_loop
-            // START_NEW_SCRIPT create_car_generator3
+            // START_NEW_SCRIPT import4_loop 
+            // START_NEW_SCRIPT create_car_generator3 
             return; // TERMINATE_THIS_SCRIPT
           }
 
@@ -411,7 +411,7 @@ async function import4_loop_inner() {
 
             }
             Stat.PlayerMadeProgress(1);
-            // START_NEW_SCRIPT create_car_generator4
+            // START_NEW_SCRIPT create_car_generator4 
             return; // TERMINATE_THIS_SCRIPT
           }
 

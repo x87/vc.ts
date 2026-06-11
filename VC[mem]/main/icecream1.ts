@@ -1,6 +1,6 @@
 // Generated from main/icecream1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_icecream1() {
 
@@ -158,12 +158,12 @@ async function icecreamloop() {
 
 
     if ($.ganghateflag == 1) {
-      Game.SetThreatForPedType(PEDTYPE_GANG_HAITIAN, 1 /* THREAT_PLAYER1 */);
-      Game.SetThreatForPedType(PEDTYPE_GANG_CUBAN, 1 /* THREAT_PLAYER1 */);
-      Game.SetThreatForPedType(PEDTYPE_GANG_STREET, 1 /* THREAT_PLAYER1 */);
-      Game.SetThreatForPedType(PEDTYPE_GANG_SECURITY, 1 /* THREAT_PLAYER1 */);
-      Game.SetThreatForPedType(PEDTYPE_GANG_BIKER, 1 /* THREAT_PLAYER1 */);
-      Game.SetThreatForPedType(PEDTYPE_GANG_GOLFER, 1 /* THREAT_PLAYER1 */);
+      Game.SetThreatForPedType(8 /* PEDTYPE_GANG_HAITIAN */, 1 /* THREAT_PLAYER1 */);
+      Game.SetThreatForPedType(7 /* PEDTYPE_GANG_CUBAN */, 1 /* THREAT_PLAYER1 */);
+      Game.SetThreatForPedType(9 /* PEDTYPE_GANG_STREET */, 1 /* THREAT_PLAYER1 */);
+      Game.SetThreatForPedType(11 /* PEDTYPE_GANG_SECURITY */, 1 /* THREAT_PLAYER1 */);
+      Game.SetThreatForPedType(12 /* PEDTYPE_GANG_BIKER */, 1 /* THREAT_PLAYER1 */);
+      Game.SetThreatForPedType(14 /* PEDTYPE_GANG_GOLFER */, 1 /* THREAT_PLAYER1 */);
       $.ganghateflag = 2;
     }
 
@@ -718,13 +718,13 @@ async function mission_cleanup_icecream1() {
 
 
   if (!($.flag_cuban_mission4_passed == 1)) {
-    Game.ClearThreatForPedType(PEDTYPE_GANG_HAITIAN, 1 /* THREAT_PLAYER1 */);
+    Game.ClearThreatForPedType(8 /* PEDTYPE_GANG_HAITIAN */, 1 /* THREAT_PLAYER1 */);
   }
-  Game.ClearThreatForPedType(PEDTYPE_GANG_CUBAN, 1 /* THREAT_PLAYER1 */);
-  Game.ClearThreatForPedType(PEDTYPE_GANG_STREET, 1 /* THREAT_PLAYER1 */);
-  Game.ClearThreatForPedType(PEDTYPE_GANG_SECURITY, 1 /* THREAT_PLAYER1 */);
-  Game.ClearThreatForPedType(PEDTYPE_GANG_BIKER, 1 /* THREAT_PLAYER1 */);
-  Game.ClearThreatForPedType(PEDTYPE_GANG_GOLFER, 1 /* THREAT_PLAYER1 */);
+  Game.ClearThreatForPedType(7 /* PEDTYPE_GANG_CUBAN */, 1 /* THREAT_PLAYER1 */);
+  Game.ClearThreatForPedType(9 /* PEDTYPE_GANG_STREET */, 1 /* THREAT_PLAYER1 */);
+  Game.ClearThreatForPedType(11 /* PEDTYPE_GANG_SECURITY */, 1 /* THREAT_PLAYER1 */);
+  Game.ClearThreatForPedType(12 /* PEDTYPE_GANG_BIKER */, 1 /* THREAT_PLAYER1 */);
+  Game.ClearThreatForPedType(14 /* PEDTYPE_GANG_GOLFER */, 1 /* THREAT_PLAYER1 */);
   $.icecreamped1_blip.remove();
   $.icecreamped2_blip.remove();
   $.icecreamped3_blip.remove();

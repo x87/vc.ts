@@ -1,6 +1,6 @@
 // Generated from main/pizza.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_pizza() {
 
@@ -137,7 +137,7 @@ async function mission_start_pizza() {
   }
 
 
-  Hud.DisplayTimer($.$id.customer_complaint_time, TIMER_DOWN);
+  Hud.DisplayTimer($.$id.customer_complaint_time, 1 /* TIMER_DOWN */);
   Hud.DisplayCounterWithString($.$id.total_pizzas_thrown, 0, "PIZ1_12");
 
 
@@ -1004,7 +1004,7 @@ async function delivering_pizzas() {
         await asyncWait(500);
         await del_pizzas();  // SCM GOSUB del_pizzas
         $.customer1.markAsNoLongerNeeded();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("PIZ1_34", 5000, 1); //Pizza delivered, here's your cash.
         $.player1.addScore(10);
         $.customer1_blip.remove();
@@ -1037,7 +1037,7 @@ async function delivering_pizzas() {
         await asyncWait(500);
         await del_pizzas();  // SCM GOSUB del_pizzas
         $.customer2.markAsNoLongerNeeded();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("PIZ1_34", 5000, 1); //Pizza delivered, here's your cash.
         $.player1.addScore(10);
         $.customer2_blip.remove();
@@ -1067,7 +1067,7 @@ async function delivering_pizzas() {
         await asyncWait(500);
         await del_pizzas();  // SCM GOSUB del_pizzas
         $.customer3.markAsNoLongerNeeded();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("PIZ1_34", 5000, 1); //Pizza delivered, here's your cash.
         $.player1.addScore(10);
         $.customer3_blip.remove();
@@ -1097,7 +1097,7 @@ async function delivering_pizzas() {
         await asyncWait(500);
         await del_pizzas();  // SCM GOSUB del_pizzas
         $.customer4.markAsNoLongerNeeded();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("PIZ1_34", 5000, 1); //Pizza delivered, here's your cash.
         $.player1.addScore(10);
         $.customer4_blip.remove();
@@ -1127,7 +1127,7 @@ async function delivering_pizzas() {
         await asyncWait(500);
         await del_pizzas();  // SCM GOSUB del_pizzas
         $.customer5.markAsNoLongerNeeded();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("PIZ1_34", 5000, 1); //Pizza delivered, here's your cash.
         $.player1.addScore(10);
         $.customer5_blip.remove();
@@ -1157,7 +1157,7 @@ async function delivering_pizzas() {
         await asyncWait(500);
         await del_pizzas();  // SCM GOSUB del_pizzas
         $.customer6.markAsNoLongerNeeded();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("PIZ1_34", 5000, 1); //Pizza delivered, here's your cash.
         $.player1.addScore(10);
         $.customer6_blip.remove();
@@ -1187,7 +1187,7 @@ async function delivering_pizzas() {
         await asyncWait(500);
         await del_pizzas();  // SCM GOSUB del_pizzas
         $.customer7.markAsNoLongerNeeded();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("PIZ1_34", 5000, 1); //Pizza delivered, here's your cash.
         $.player1.addScore(10);
         $.customer7_blip.remove();
@@ -1217,7 +1217,7 @@ async function delivering_pizzas() {
         await asyncWait(500);
         await del_pizzas();  // SCM GOSUB del_pizzas
         $.customer8.markAsNoLongerNeeded();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("PIZ1_34", 5000, 1); //Pizza delivered, here's your cash.
         $.player1.addScore(10);
         $.customer8_blip.remove();
@@ -1247,7 +1247,7 @@ async function delivering_pizzas() {
         await asyncWait(500);
         await del_pizzas();  // SCM GOSUB del_pizzas
         $.customer9.markAsNoLongerNeeded();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("PIZ1_34", 5000, 1); //Pizza delivered, here's your cash.
         $.player1.addScore(10);
         $.customer9_blip.remove();
@@ -1277,7 +1277,7 @@ async function delivering_pizzas() {
         await asyncWait(500);
         await del_pizzas();  // SCM GOSUB del_pizzas
         $.customer10.markAsNoLongerNeeded();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("PIZ1_34", 5000, 1); //Pizza delivered, here's your cash.
         $.player1.addScore(10);
         $.customer10_blip.remove();

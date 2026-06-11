@@ -1,6 +1,6 @@
 // Generated from main/taxiwar3.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *******************************************************************************************
 // *******************************************************************************************
@@ -339,7 +339,7 @@ async function skip_passed_taxi3_cut() {
 
 
   $.countdown_taxiwar = 61000;
-  Hud.DisplayTimer($.$id.countdown_taxiwar, TIMER_DOWN);
+  Hud.DisplayTimer($.$id.countdown_taxiwar, 1 /* TIMER_DOWN */);
 
 
   Text.PrintNow("TAXW3_2", 8000, 1); //KILL THE CABS
@@ -514,13 +514,13 @@ async function skip_passed_taxi3_cut() {
       $.blip6_taxicab6.remove();
     }
     if (Close_cab_gate == 0) {
-      Sound.AddOneOffSound(-989.9, -1252.2, 10.4, SOUND_POLICE_CELL_DOOR_CLUNK);
-      $.gate_slide_loop = Sound.AddContinuous(-989.9, -1252.2, 10.4, SOUND_POLICE_CELL_DOOR_SLIDING_LOOP);
+      Sound.AddOneOffSound(-989.9, -1252.2, 10.4, 3 /* SOUND_POLICE_CELL_DOOR_CLUNK */);
+      $.gate_slide_loop = Sound.AddContinuous(-989.9, -1252.2, 10.4, 2 /* SOUND_POLICE_CELL_DOOR_SLIDING_LOOP */);
       while (!($.cabmagedon_gate.slide(-986.272, -1243.532, 10.4, 0.05, 0.12, 0.0, false /* FALSE */))) {
         await asyncWait(0);
       }
       $.gate_slide_loop.remove();
-      Sound.AddOneOffSound(-986.272, -1243.532, 10.4, SOUND_POLICE_CELL_DOOR_CLUNK);
+      Sound.AddOneOffSound(-986.272, -1243.532, 10.4, 3 /* SOUND_POLICE_CELL_DOOR_CLUNK */);
       Close_cab_gate = 1;
 
 
@@ -625,8 +625,8 @@ async function skip_passed_taxi3_cut() {
   await asyncWait(1000);
 
 
-  Sound.AddOneOffSound(-986.272, -1243.532, 10.4, SOUND_POLICE_CELL_DOOR_CLUNK);
-  $.gate_slide_loop = Sound.AddContinuous(-986.272, -1243.532, 10.4, SOUND_POLICE_CELL_DOOR_SLIDING_LOOP);
+  Sound.AddOneOffSound(-986.272, -1243.532, 10.4, 3 /* SOUND_POLICE_CELL_DOOR_CLUNK */);
+  $.gate_slide_loop = Sound.AddContinuous(-986.272, -1243.532, 10.4, 2 /* SOUND_POLICE_CELL_DOOR_SLIDING_LOOP */);
 
 
   while (!($.cabmagedon_gate.slide(-989.9, -1252.2, 10.4, 0.05, 0.12, 0.0, false /* FALSE */))) {
@@ -635,7 +635,7 @@ async function skip_passed_taxi3_cut() {
 
 
   $.gate_slide_loop.remove();
-  Sound.AddOneOffSound(-989.9, -1252.2, 10.4, SOUND_POLICE_CELL_DOOR_CLUNK);
+  Sound.AddOneOffSound(-989.9, -1252.2, 10.4, 3 /* SOUND_POLICE_CELL_DOOR_CLUNK */);
 
 
 
@@ -702,13 +702,13 @@ async function skip_passed_taxi3_cut() {
       TIMERA = 0;
     }
     if (Close_cab_gate == 0) {
-      Sound.AddOneOffSound(-989.9, -1252.2, 10.4, SOUND_POLICE_CELL_DOOR_CLUNK);
-      $.gate_slide_loop = Sound.AddContinuous(-989.9, -1252.2, 10.4, SOUND_POLICE_CELL_DOOR_SLIDING_LOOP);
+      Sound.AddOneOffSound(-989.9, -1252.2, 10.4, 3 /* SOUND_POLICE_CELL_DOOR_CLUNK */);
+      $.gate_slide_loop = Sound.AddContinuous(-989.9, -1252.2, 10.4, 2 /* SOUND_POLICE_CELL_DOOR_SLIDING_LOOP */);
       while (!($.cabmagedon_gate.slide(-986.272, -1243.532, 10.4, 0.05, 0.12, 0.0, false /* FALSE */))) {
         await asyncWait(0);
       }
       $.gate_slide_loop.remove();
-      Sound.AddOneOffSound(-986.272, -1243.532, 10.4, SOUND_POLICE_CELL_DOOR_CLUNK);
+      Sound.AddOneOffSound(-986.272, -1243.532, 10.4, 3 /* SOUND_POLICE_CELL_DOOR_CLUNK */);
       Close_cab_gate = 1;
 
 
@@ -719,8 +719,8 @@ async function skip_passed_taxi3_cut() {
           if (!(Char.IsDead(kingcab_man))) {
             kingcab_man.setObjLeaveCar($.eviltaxi);
             kingcab_man.setPersonality(30 /* PEDSTAT_PSYCHO */);
-            kingcab_man.giveWeapon(WEAPONTYPE_KATANA, 0);
-            kingcab_man.setCurrentWeapon(WEAPONTYPE_KATANA);
+            kingcab_man.giveWeapon(10 /* WEAPONTYPE_KATANA */, 0);
+            kingcab_man.setCurrentWeapon(10 /* WEAPONTYPE_KATANA */);
             $.eviltaxi.lockDoors(1 /* CARLOCK_UNLOCKED */);
             while (kingcab_man.isInCar($.eviltaxi)) {
               await asyncWait(0);
@@ -879,7 +879,7 @@ async function cleanup() {
   if (!(Car.IsDead($.eviltaxi))) {
     $.eviltaxi.lockDoors(1 /* CARLOCK_UNLOCKED */);
   }
-  $.cabmagedon_gate = ScriptObject.CreateNoOffset(1278 /* electricgate */, -989.9, -1252.2, 10.4);
+  $.cabmagedon_gate = ScriptObject.CreateNoOffset(electricgate, -989.9, -1252.2, 10.4);
   $.cabmagedon_gate.setHeading(249.0);
   $.cabmagedon_gate.dontRemove();
   Audio.ClearMissionAudio(1);

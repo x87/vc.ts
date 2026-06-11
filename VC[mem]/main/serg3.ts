@@ -1,6 +1,6 @@
 // Generated from main/serg3.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_serg2() {
 
@@ -171,7 +171,7 @@ async function mission_start_serg2() {
   // ********************************** SCRIPTED CUT - AVERY'S STRETCH ARRIVES ***************
 
 
-  Weather.ForceNow(WEATHER_EXTRA_SUNNY);
+  Weather.ForceNow(4 /* WEATHER_EXTRA_SUNNY */);
   Hud.SwitchWidescreen(true /* ON */);
 
 
@@ -450,7 +450,7 @@ $.vect_z = _res486.z;
 
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   Camera.DoFade(1500, 1 /* FADE_IN */);
@@ -470,13 +470,13 @@ $.vect_z = _res486.z;
   Streaming.RequestModel(WMYCW);
   Streaming.RequestModel(HAMMER);
   Streaming.RequestModel(RCgoblin);
-  Streaming.RequestModel(1336 /* barrel2 */);
+  Streaming.RequestModel(barrel2);
   Streaming.RequestModel(GDa);
-  Streaming.RequestModel(173 /* colt45 */);
+  Streaming.RequestModel(colt45);
 
 
 
-  while (!(Streaming.HasModelLoaded(dynamite)) || !(Streaming.HasModelLoaded(HAMMER)) || !(Streaming.HasModelLoaded(WMYCW)) || !(Streaming.HasModelLoaded(TOPFUN)) || !(Streaming.HasModelLoaded(1336 /* barrel2 */)) || !(Streaming.HasModelLoaded(173 /* colt45 */))) {
+  while (!(Streaming.HasModelLoaded(dynamite)) || !(Streaming.HasModelLoaded(HAMMER)) || !(Streaming.HasModelLoaded(WMYCW)) || !(Streaming.HasModelLoaded(TOPFUN)) || !(Streaming.HasModelLoaded(barrel2)) || !(Streaming.HasModelLoaded(colt45))) {
     await asyncWait(0);
   }
 
@@ -551,81 +551,81 @@ async function mission_serg2_loop() {
           ///////////////////CREATING BUILDERS
 
           Game.SetEveryoneIgnorePlayer($.player1, true /* ON */);
-          $.dmbarrel1 = ScriptObject.Create(1336 /* barrel2 */, 97.574, -381.658, 7.9721);
-          $.dmbarrel2 = ScriptObject.Create(1336 /* barrel2 */, 156.5491, -348.0284, 16.8517);
-          $.dmbarrel3 = ScriptObject.Create(1336 /* barrel2 */, 88.1474, -361.8685, 26.0760);
-          $.dmbarrel4 = ScriptObject.Create(1336 /* barrel2 */, 140.0079, -383.1253, 35.3172);
+          $.dmbarrel1 = ScriptObject.Create(barrel2, 97.574, -381.658, 7.9721);
+          $.dmbarrel2 = ScriptObject.Create(barrel2, 156.5491, -348.0284, 16.8517);
+          $.dmbarrel3 = ScriptObject.Create(barrel2, 88.1474, -361.8685, 26.0760);
+          $.dmbarrel4 = ScriptObject.Create(barrel2, 140.0079, -383.1253, 35.3172);
           $.builder1 = Char.Create(4 /* PEDTYPE_CIVMALE */, WMYCW, 121.4188, -371.5533, 7.6307); //doing nothing
-          $.builder1.giveWeapon(WEAPONTYPE_HAMMER, 1);
+          $.builder1.giveWeapon(7 /* WEAPONTYPE_HAMMER */, 1);
           $.builder1.setHeading(189.9082);
           $.builder1.setRunning(true /* TRUE */);
           $.builder2 = Char.Create(4 /* PEDTYPE_CIVMALE */, WMYCW, 160.0738, -375.7540, 7.6307); //hammer
-          $.builder2.giveWeapon(WEAPONTYPE_HAMMER, 1);
+          $.builder2.giveWeapon(7 /* WEAPONTYPE_HAMMER */, 1);
           $.builder2.setHeading(268.8645);
           $.builder2.setRunning(true /* TRUE */);
           $.builder3 = Char.Create(4 /* PEDTYPE_CIVMALE */, WMYCW, 116.1989, -348.1792, 16.8494); //chatting
-          $.builder3.giveWeapon(WEAPONTYPE_HAMMER, 1);
+          $.builder3.giveWeapon(7 /* WEAPONTYPE_HAMMER */, 1);
           $.builder3.setHeading(288.6831);
           $.builder3.setRunning(true /* TRUE */);
           $.builder4 = Char.Create(4 /* PEDTYPE_CIVMALE */, WMYCW, 117.5286, -348.1254, 16.8494); //chatting
-          $.builder4.giveWeapon(WEAPONTYPE_HAMMER, 1);
+          $.builder4.giveWeapon(7 /* WEAPONTYPE_HAMMER */, 1);
           $.builder4.setHeading(110.9578);
           $.builder4.setRunning(true /* TRUE */);
           Game.SetCharsChatting($.builder4, $.builder3, 800000);
           $.builder5 = Char.Create(4 /* PEDTYPE_CIVMALE */, WMYCW, 160.1008, -356.3203, 16.8517); //hammer
-          $.builder5.giveWeapon(WEAPONTYPE_HAMMER, 1);
+          $.builder5.giveWeapon(7 /* WEAPONTYPE_HAMMER */, 1);
           $.builder5.setHeading(277.8673);
           $.builder5.setRunning(true /* TRUE */);
-          $.builder5.setWaitState(WAITSTATE_USE_ATM, 300000);
+          $.builder5.setWaitState(25 /* WAITSTATE_USE_ATM */, 300000);
           $.builder6 = Char.Create(4 /* PEDTYPE_CIVMALE */, WMYCW, 160.3129, -375.7929, 16.8517); //hammer
-          $.builder6.giveWeapon(WEAPONTYPE_HAMMER, 1);
+          $.builder6.giveWeapon(7 /* WEAPONTYPE_HAMMER */, 1);
           $.builder6.setHeading(261.6740);
           $.builder6.setRunning(true /* TRUE */);
-          $.builder6.setWaitState(WAITSTATE_USE_ATM, 300000);
+          $.builder6.setWaitState(25 /* WAITSTATE_USE_ATM */, 300000);
           $.builder7 = Char.Create(4 /* PEDTYPE_CIVMALE */, WMYCW, 81.4138, -356.4398, 26.0760); //hammer
-          $.builder7.giveWeapon(WEAPONTYPE_HAMMER, 1);
+          $.builder7.giveWeapon(7 /* WEAPONTYPE_HAMMER */, 1);
           $.builder7.setHeading(87.3059);
           $.builder7.setRunning(true /* TRUE */);
-          $.builder7.setWaitState(WAITSTATE_USE_ATM, 300000);
+          $.builder7.setWaitState(25 /* WAITSTATE_USE_ATM */, 300000);
           $.builder8 = Char.Create(4 /* PEDTYPE_CIVMALE */, WMYCW, 81.5607, -354.9395, 26.0760); //chat waitstate
-          $.builder8.giveWeapon(WEAPONTYPE_HAMMER, 1);
+          $.builder8.giveWeapon(7 /* WEAPONTYPE_HAMMER */, 1);
           $.builder8.setHeading(176.8125);
           $.builder8.setRunning(true /* TRUE */);
           $.builder8.setWaitState(19 /* WAITSTATE_PLAYANIM_CHAT */, 800000);
           $.builder9 = Char.Create(4 /* PEDTYPE_CIVMALE */, GDa, 121.0359, -379.1090, 26.0805); //wander  //SECURITY GUARD
-          $.builder9.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 300000);
+          $.builder9.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 300000);
           $.builder9.setHeading(15.4943);
           $.builder9.setRunning(true /* TRUE */);
           $.builder9.shutUp(true /* TRUE */);
           $.builder10 = Char.Create(4 /* PEDTYPE_CIVMALE */, WMYCW, 112.2413, -356.3021, 35.3172); //hammer
-          $.builder10.giveWeapon(WEAPONTYPE_HAMMER, 1);
+          $.builder10.giveWeapon(7 /* WEAPONTYPE_HAMMER */, 1);
           $.builder10.setHeading(278.5729);
           $.builder10.setRunning(true /* TRUE */);
           $.builder11 = Char.Create(4 /* PEDTYPE_CIVMALE */, WMYCW, 98.2973, -376.0110, 35.3172); //hammer
-          $.builder11.giveWeapon(WEAPONTYPE_HAMMER, 1);
+          $.builder11.giveWeapon(7 /* WEAPONTYPE_HAMMER */, 1);
           $.builder11.setHeading(76.4463);
           $.builder11.setRunning(true /* TRUE */);
           $.builder12 = Char.Create(4 /* PEDTYPE_CIVMALE */, WMYCW, 160.5181, -356.3491, 35.3172); //hammer
-          $.builder12.giveWeapon(WEAPONTYPE_HAMMER, 1);
+          $.builder12.giveWeapon(7 /* WEAPONTYPE_HAMMER */, 1);
           $.builder12.setHeading(278.5729);
           $.builder12.setRunning(true /* TRUE */);
           $.builder13 = Char.Create(4 /* PEDTYPE_CIVMALE */, WMYCW, 129.3469, -366.2533, 35.3172); //hammer
-          $.builder13.giveWeapon(WEAPONTYPE_HAMMER, 1);
+          $.builder13.giveWeapon(7 /* WEAPONTYPE_HAMMER */, 1);
           $.builder13.setHeading(84.4686);
           $.builder13.setRunning(true /* TRUE */);
           $.security1_s3 = Char.Create(4 /* PEDTYPE_CIVMALE */, GDa, 120.1059, -346.0308, 35.3104); //gun
-          $.security1_s3.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 300000);
+          $.security1_s3.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 300000);
           $.security1_s3.setHeading(185.8660);
           $.security1_s3.setRunning(true /* TRUE */);
           $.security1_s3.setAccuracy(80);
           $.security1_s3.shutUp(true /* TRUE */);
           $.security2_s3 = Char.Create(4 /* PEDTYPE_CIVMALE */, GDa, 123.3658, -380.2271, 35.3172); //gun
-          $.security2_s3.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 300000);
+          $.security2_s3.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 300000);
           $.security2_s3.setHeading(358.9169);
           $.security2_s3.setRunning(true /* TRUE */);
           $.security2_s3.shutUp(true /* TRUE */);
           $.security3_s3 = Char.Create(4 /* PEDTYPE_CIVMALE */, GDa, 104.143, -346.1777, 26.268); //gun
-          $.security3_s3.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 300000);
+          $.security3_s3.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 300000);
           $.security3_s3.setHeading(185.8660);
           $.security3_s3.setRunning(true /* TRUE */);
           $.security3_s3.shutUp(true /* TRUE */);
@@ -750,10 +750,10 @@ async function mission_serg2_loop() {
               throw new Error("unresolved GOTO end_of_demolition_cutscene"); // fallback: would break linear control flow
             }
             if (!(Char.IsDead($.builder5))) {
-              $.builder5.setWaitState(WAITSTATE_USE_ATM, 300000);
+              $.builder5.setWaitState(25 /* WAITSTATE_USE_ATM */, 300000);
             }
             if (!(Char.IsDead($.builder6))) {
-              $.builder6.setWaitState(WAITSTATE_USE_ATM, 300000);
+              $.builder6.setWaitState(25 /* WAITSTATE_USE_ATM */, 300000);
             }
 
 
@@ -769,7 +769,7 @@ async function mission_serg2_loop() {
               throw new Error("unresolved GOTO end_of_demolition_cutscene"); // fallback: would break linear control flow
             }
             if (!(Char.IsDead($.builder7))) {
-              $.builder7.setWaitState(WAITSTATE_USE_ATM, 300000);
+              $.builder7.setWaitState(25 /* WAITSTATE_USE_ATM */, 300000);
             }
 
 
@@ -1314,7 +1314,7 @@ $.current_goblinz_s3 = _res494.z;
     if (!(Char.IsDead($.builder2))) {
       if (!(Car.IsDead($.rc_goblin_s3))) {
         if ($.builder2attack == 0) {
-          $.builder2.setWaitState(WAITSTATE_USE_ATM, 300000);
+          $.builder2.setWaitState(25 /* WAITSTATE_USE_ATM */, 300000);
         }
       }
     }
@@ -1323,7 +1323,7 @@ $.current_goblinz_s3 = _res494.z;
     if (!(Char.IsDead($.builder5))) {
       if (!(Car.IsDead($.rc_goblin_s3))) {
         if ($.builder5attack == 0) {
-          $.builder5.setWaitState(WAITSTATE_USE_ATM, 300000);
+          $.builder5.setWaitState(25 /* WAITSTATE_USE_ATM */, 300000);
         }
       }
     }
@@ -1332,7 +1332,7 @@ $.current_goblinz_s3 = _res494.z;
     if (!(Char.IsDead($.builder6))) {
       if (!(Car.IsDead($.rc_goblin_s3))) {
         if ($.builder6attack == 0) {
-          $.builder6.setWaitState(WAITSTATE_USE_ATM, 300000);
+          $.builder6.setWaitState(25 /* WAITSTATE_USE_ATM */, 300000);
         }
       }
     }
@@ -1341,7 +1341,7 @@ $.current_goblinz_s3 = _res494.z;
     if (!(Char.IsDead($.builder7))) {
       if (!(Car.IsDead($.rc_goblin_s3))) {
         if ($.builder7attack == 0) {
-          $.builder7.setWaitState(WAITSTATE_USE_ATM, 300000);
+          $.builder7.setWaitState(25 /* WAITSTATE_USE_ATM */, 300000);
         }
       }
     }
@@ -1359,7 +1359,7 @@ $.current_goblinz_s3 = _res494.z;
     if (!(Char.IsDead($.builder10))) {
       if (!(Car.IsDead($.rc_goblin_s3))) {
         if ($.builder10attack == 0) {
-          $.builder10.setWaitState(WAITSTATE_USE_ATM, 300000);
+          $.builder10.setWaitState(25 /* WAITSTATE_USE_ATM */, 300000);
         }
       }
     }
@@ -1368,7 +1368,7 @@ $.current_goblinz_s3 = _res494.z;
     if (!(Char.IsDead($.builder11))) {
       if (!(Car.IsDead($.rc_goblin_s3))) {
         if ($.builder11attack == 0) {
-          $.builder11.setWaitState(WAITSTATE_USE_ATM, 300000);
+          $.builder11.setWaitState(25 /* WAITSTATE_USE_ATM */, 300000);
         }
       }
     }
@@ -1377,7 +1377,7 @@ $.current_goblinz_s3 = _res494.z;
     if (!(Char.IsDead($.builder12))) {
       if (!(Car.IsDead($.rc_goblin_s3))) {
         if ($.builder12attack == 0) {
-          $.builder12.setWaitState(WAITSTATE_USE_ATM, 300000);
+          $.builder12.setWaitState(25 /* WAITSTATE_USE_ATM */, 300000);
         }
       }
     }
@@ -1386,7 +1386,7 @@ $.current_goblinz_s3 = _res494.z;
     if (!(Char.IsDead($.builder13))) {
       if (!(Car.IsDead($.rc_goblin_s3))) {
         if ($.builder13attack == 0) {
-          $.builder13.setWaitState(WAITSTATE_USE_ATM, 300000);
+          $.builder13.setWaitState(25 /* WAITSTATE_USE_ATM */, 300000);
         }
       }
     }
@@ -1928,7 +1928,7 @@ $.current_goblinz_s3 = _res494.z;
 
     if ($.start_timer_on_first_hit == 1) {
       if (!($.timer_s3 == 0)) {
-        Hud.DisplayTimerWithString($.$id.timer_s3, TIMER_DOWN, "RACES"); //Time:
+        Hud.DisplayTimerWithString($.$id.timer_s3, 1 /* TIMER_DOWN */, "RACES"); //Time:
         Text.PrintNow("TEX3_15", 7000, 1);
         $.start_timer_on_first_hit = 2;
       }
@@ -2077,7 +2077,7 @@ async function demolish_building() {
 
   Streaming.MarkModelAsNoLongerNeeded(dynamite);
   Streaming.MarkModelAsNoLongerNeeded(HAMMER);
-  Streaming.MarkModelAsNoLongerNeeded(1344 /* barrel4 */);
+  Streaming.MarkModelAsNoLongerNeeded(barrel4);
   Streaming.MarkModelAsNoLongerNeeded(GDa);
   Streaming.MarkModelAsNoLongerNeeded(GDa);
 
@@ -2119,26 +2119,26 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(69.420, -371.249, 30.28, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(69.420, -371.249, 30.28, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(69.420, -371.249, 30.28, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosion(69.420, -371.249, 30.28, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(69.420, -371.249, 30.28, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(69.420, -371.249, 30.28, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(72.875, -360.392, 23.922, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(72.875, -360.392, 23.922, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(72.875, -360.392, 23.922, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(72.875, -360.392, 23.922, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(72.875, -360.392, 23.922, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosion(71.554, -356.053, 24.468, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(10);
@@ -2151,52 +2151,52 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(72.875, -360.392, 23.922, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(72.875, -360.392, 23.922, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(72.875, -360.392, 23.922, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(72.875, -360.392, 23.922, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(72.875, -360.392, 23.922, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosion(71.554, -356.053, 24.468, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(71.554, -356.053, 24.468, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(69.420, -370.249, 30.28, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(69.420, -370.249, 30.28, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(69.420, -370.249, 30.28, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(69.420, -370.249, 30.28, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(69.420, -370.249, 30.28, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(69.420, -370.249, 30.28, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(72.875, -361.392, 23.922, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(72.875, -361.392, 23.922, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(72.875, -361.392, 23.922, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(72.875, -361.392, 23.922, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(72.875, -361.392, 23.922, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(73.180, -368.699, 13.236, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(73.180, -368.699, 13.236, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(73.180, -368.699, 13.236, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(73.180, -368.699, 13.236, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(73.180, -368.699, 13.236, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(71.554, -354.053, 24.468, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(71.554, -354.053, 24.468, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(71.554, -354.053, 24.468, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(71.554, -354.053, 24.468, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(71.554, -354.053, 24.468, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(71.554, -354.053, 24.468, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(69.420, -370.249, 30.28, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(69.420, -370.249, 30.28, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(69.420, -370.249, 30.28, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(69.420, -370.249, 30.28, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(69.420, -370.249, 30.28, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(72.875, -361.392, 23.922, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(72.875, -361.392, 23.922, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosion(72.875, -361.392, 23.922, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(72.875, -361.392, 23.922, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosion(72.875, -361.392, 23.922, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(105);
@@ -2204,9 +2204,9 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(73.180, -368.699, 13.236, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(73.180, -368.699, 13.236, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(73.180, -368.699, 13.236, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(73.180, -368.699, 13.236, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosion(73.180, -368.699, 13.236, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(73.180, -368.699, 13.236, 6 /* EXPLOSION_HELI */);
 
 
   Streaming.MarkModelAsNoLongerNeeded(bldngst2meshdam);
@@ -2217,28 +2217,28 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(71.554, -354.053, 24.468, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(71.554, -354.053, 24.468, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(71.554, -354.053, 24.468, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(71.554, -354.053, 24.468, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(71.554, -354.053, 24.468, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(69.420, -371.249, 30.28, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(69.420, -371.249, 30.28, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(69.420, -371.249, 30.28, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(69.420, -371.249, 30.28, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosion(69.420, -371.249, 30.28, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(69.420, -371.249, 30.28, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(105);
 
 
   Fx.AddExplosionNoSound(72.875, -360.392, 23.922, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(72.875, -360.392, 23.922, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(72.875, -360.392, 23.922, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(72.875, -360.392, 23.922, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(72.875, -360.392, 23.922, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(73.180, -366.699, 13.236, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosion(73.180, -366.699, 13.236, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 6 /* EXPLOSION_HELI */);
   Fx.AddMovingParticleEffect(4 /* POBJECT_DARK_SMOKE */, 73.180, -366.699, 13.236, 16.0, 0.0, 0.1, 5.0, 0, 0, 0, 11000);
 
 
@@ -2246,22 +2246,22 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosion(71.554, -356.053, 24.468, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosion(71.554, -356.053, 24.468, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(69.420, -370.249, 30.28, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(69.420, -370.249, 30.28, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(69.420, -370.249, 30.28, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(69.420, -370.249, 30.28, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(69.420, -370.249, 30.28, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(300);
 
 
   Fx.AddExplosionNoSound(72.875, -361.392, 23.922, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(72.875, -361.392, 23.922, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(72.875, -361.392, 23.922, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(72.875, -361.392, 23.922, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosion(72.875, -361.392, 23.922, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(72.875, -361.392, 23.922, 6 /* EXPLOSION_HELI */);
   Fx.AddMovingParticleEffect(4 /* POBJECT_DARK_SMOKE */, 69.420, -370.249, 30.28, 16.0, 0.0, 0.1, 5.0, 0, 0, 0, 11000);
 
 
@@ -2269,23 +2269,23 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(71.554, -354.053, 24.468, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(71.554, -354.053, 24.468, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosion(71.554, -354.053, 24.468, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(71.554, -354.053, 24.468, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(71.554, -354.053, 24.468, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(71.554, -354.053, 24.468, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(400);
 
 
   Fx.AddExplosion(67.421, -374.562, 25.85, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(67.421, -374.562, 25.85, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(67.421, -374.562, 25.85, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(67.421, -374.562, 25.85, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(67.421, -374.562, 25.85, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(67.421, -374.562, 25.85, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(71.875, -360.392, 30.092, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(71.875, -360.392, 30.092, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(71.875, -360.392, 30.092, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(71.875, -360.392, 30.092, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(71.875, -360.392, 30.092, 6 /* EXPLOSION_HELI */);
 
 
 
@@ -2293,21 +2293,21 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosion(73.180, -366.699, 13.236, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosion(73.180, -366.699, 13.236, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(300);
 
 
   Fx.AddExplosionNoSound(69.224, -371.249, 26.28, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(69.224, -371.249, 26.28, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(69.224, -371.249, 26.28, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(69.224, -371.249, 26.28, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(69.224, -371.249, 26.28, 6 /* EXPLOSION_HELI */);
   Fx.AddMovingParticleEffect(4 /* POBJECT_DARK_SMOKE */, 69.224, -371.249, 26.28, 16.0, 0.0, 0.1, 5.0, 0, 0, 0, 5000);
 
 
@@ -2316,26 +2316,26 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(72.875, -360.392, 23.922, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(72.875, -360.392, 23.922, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(72.875, -360.392, 23.922, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(72.875, -360.392, 23.922, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(72.875, -360.392, 23.922, 6 /* EXPLOSION_HELI */);
   Fx.AddMovingParticleEffect(4 /* POBJECT_DARK_SMOKE */, 72.875, -360.392, 23.922, 16.0, 0.0, 0.1, 5.0, 0, 0, 0, 5000);
   await asyncWait(100);
 
 
 
   Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(73.180, -366.699, 13.236, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosion(73.180, -366.699, 13.236, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(73.180, -366.699, 13.236, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(50);
 
 
   Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(71.554, -356.053, 24.468, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosion(71.554, -356.053, 24.468, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(71.554, -356.053, 24.468, 6 /* EXPLOSION_HELI */);
   Fx.AddMovingParticleEffect(4 /* POBJECT_DARK_SMOKE */, 71.554, -356.053, 24.468, 16.0, 0.0, 0.1, 5.0, 0, 0, 0, 5000);
 
 
@@ -2375,63 +2375,63 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(138.234, -398.796, 49.419, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(138.234, -398.796, 49.419, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(138.234, -398.796, 49.419, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(138.234, -398.796, 49.419, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(138.234, -398.796, 49.419, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(146.365, -401.270, 45.175, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(146.365, -401.270, 45.175, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(146.365, -401.270, 45.175, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(146.365, -401.270, 45.175, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(146.365, -401.270, 45.175, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(145.540, -400.172, 32.071, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(145.540, -400.172, 32.071, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(145.540, -400.172, 32.071, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(145.540, -400.172, 32.071, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(145.540, -400.172, 32.071, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(145.540, -400.172, 32.071, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(105);
 
 
   Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(130.865, -399.556, 45.108, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(130.865, -399.556, 45.108, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(130.865, -399.556, 45.108, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(130.865, -399.556, 45.108, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(130.865, -399.556, 45.108, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(50);
 
 
   Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(138.234, -398.796, 49.419, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(138.234, -398.796, 49.419, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(138.234, -398.796, 49.419, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(138.234, -398.796, 49.419, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosion(138.234, -398.796, 49.419, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(138.234, -398.796, 49.419, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(105);
@@ -2439,41 +2439,41 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(130.865, -399.556, 45.108, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(130.865, -399.556, 45.108, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(130.865, -399.556, 45.108, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(130.865, -399.556, 45.108, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(130.865, -399.556, 45.108, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(130.865, -399.556, 45.108, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(138.693, -399.751, 45.107, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(138.693, -399.751, 45.107, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(138.693, -399.751, 45.107, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(138.693, -399.751, 45.107, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(138.693, -399.751, 45.107, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(139.529, -400.04, 34.706, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(139.529, -397.04, 34.706, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(139.529, -397.04, 34.706, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(139.529, -397.04, 34.706, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(139.529, -397.04, 34.706, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(139.529, -397.04, 34.706, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosion(135.62, -399.95996, 41.42, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(140.531, -399.216644, 26.636, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(140.531, -399.216644, 26.636, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(139.529, -400.04, 34.706, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(139.529, -397.04, 34.706, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(139.529, -397.04, 34.706, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(139.529, -397.04, 34.706, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosion(139.529, -397.04, 34.706, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(139.529, -397.04, 34.706, 6 /* EXPLOSION_HELI */);
 
 
   World.SwapNearestBuildingModel(117.991, -362.461, 10.179, 80.0, bldngst2mesh, bldngst2meshdam);
@@ -2481,15 +2481,15 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosion(135.271, -390.00, 31.704, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(135.271, -390.00, 31.704, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(130.865, -399.556, 45.108, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(130.865, -399.556, 45.108, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosion(130.865, -399.556, 45.108, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosion(130.865, -399.556, 45.108, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(130.865, -399.556, 45.108, 6 /* EXPLOSION_HELI */);
   Fx.AddMovingParticleEffect(4 /* POBJECT_DARK_SMOKE */, 135.271, -390.00, 31.704, 16.0, 0.0, 0.1, 5.0, 0, 0, 0, 11000);
 
 
@@ -2501,17 +2501,17 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(138.693, -399.751, 45.107, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(138.693, -399.751, 45.107, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosion(138.693, -399.751, 45.107, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(138.693, -399.751, 45.107, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(138.693, -399.751, 45.107, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(138.693, -399.751, 45.107, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(105);
 
 
   Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(105);
@@ -2521,16 +2521,16 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(135.62, -399.95996, 41.42, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(135.62, -399.95996, 41.42, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(250);
 
 
   Fx.AddExplosion(140.531, -399.216644, 26.636, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 6 /* EXPLOSION_HELI */);
   Fx.AddMovingParticleEffect(4 /* POBJECT_DARK_SMOKE */, 139.529, -400.04, 34.706, 16.0, 0.0, 0.1, 5.0, 0, 0, 0, 11000);
 
 
@@ -2539,14 +2539,14 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(138.234, -398.796, 49.419, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(138.234, -398.796, 49.419, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosion(138.234, -398.796, 49.419, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(138.234, -398.796, 49.419, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(138.234, -398.796, 49.419, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(138.234, -398.796, 49.419, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(105);
@@ -2557,41 +2557,41 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(139.529, -400.04, 34.706, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(139.529, -397.04, 34.706, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosion(139.529, -397.04, 34.706, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(139.529, -397.04, 34.706, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(139.529, -397.04, 34.706, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(139.529, -397.04, 34.706, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(250);
 
 
   Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(135.271, -390.00, 31.704, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(130.865, -399.556, 45.108, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(130.865, -399.556, 45.108, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(130.865, -399.556, 45.108, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(130.865, -399.556, 45.108, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(130.865, -399.556, 45.108, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(130.865, -399.556, 45.108, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(135.62, -399.95996, 41.42, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(135.62, -399.95996, 41.42, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(135.62, -399.95996, 41.42, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(50);
 
 
   Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(140.531, -399.216644, 26.636, 6 /* EXPLOSION_HELI */);
   Fx.AddMovingParticleEffect(4 /* POBJECT_DARK_SMOKE */, 130.865, -399.556, 45.108, 16.0, 0.0, 0.1, 5.0, 0, 0, 0, 5000);
   Fx.AddMovingParticleEffect(4 /* POBJECT_DARK_SMOKE */, 139.529, -400.04, 34.706, 16.0, 0.0, 0.1, 5.0, 0, 0, 0, 5000);
 
@@ -2627,16 +2627,16 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(168.166, -361.913, 15.148, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(168.166, -366.913, 15.206, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosion(164.8878, -340.893311, 16.268, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(168.166, -366.913, 15.206, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosion(164.8878, -340.893311, 16.268, 6 /* EXPLOSION_HELI */);
 
 
   Camera.Shake(2000);
 
 
   Fx.AddExplosionNoSound(168.166, -361.913, 15.148, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(168.166, -366.913, 15.206, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(164.8878, -340.893311, 16.268, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(168.166, -366.913, 15.206, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(164.8878, -340.893311, 16.268, 6 /* EXPLOSION_HELI */);
 
 
   Streaming.RequestModel(bldngst2meshdam);
@@ -2648,73 +2648,73 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(168.166, -361.913, 15.148, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(168.166, -366.913, 15.206, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(164.8878, -340.893311, 16.268, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(168.166, -366.913, 15.206, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(164.8878, -340.893311, 16.268, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(105);
 
 
   Fx.AddExplosionNoSound(168.166, -361.913, 15.148, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(168.166, -366.913, 15.206, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosion(168.166, -366.913, 15.206, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(167.0835, -350.057, 16.283, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(164.8878, -340.893311, 16.268, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(164.8878, -340.893311, 16.268, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(50);
 
 
   Fx.AddExplosionNoSound(158.365, -335.0422, 21.805, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(158.365, -335.0422, 21.805, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(158.365, -335.0422, 21.805, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(158.365, -335.0422, 21.805, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(158.365, -335.0422, 21.805, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosion(143.1712, -335.231, 22.164, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(143.1712, -335.231, 22.164, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(143.1712, -335.231, 22.164, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(168.692, -336.464, 19.678, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(143.1712, -335.231, 22.164, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(143.1712, -335.231, 22.164, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(168.692, -336.464, 19.678, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(168.692, -336.464, 19.678, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(168.692, -336.464, 19.678, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(168.692, -336.464, 19.678, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosion(168.692, -336.464, 19.678, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(168.692, -336.464, 19.678, 6 /* EXPLOSION_HELI */);
 
 
   World.SwapNearestBuildingModel(117.991, -362.461, 10.179, 80.0, bldngst2mesh, bldngst2meshdam);
 
 
   Fx.AddExplosion(168.166, -361.913, 15.148, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(168.166, -366.913, 15.206, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(168.166, -366.913, 15.206, 11 /* EXPLOSION_HELI_BOMB */);
 
 
-  Fx.AddExplosionNoSound(164.8878, -340.893311, 16.268, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(164.8878, -340.893311, 16.268, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(168.166, -361.913, 15.148, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(168.166, -366.913, 15.206, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosion(168.166, -366.913, 15.206, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(167.0835, -350.057, 16.283, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(164.8878, -340.893311, 16.268, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(164.8878, -340.893311, 16.268, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(50);
 
 
   Fx.AddExplosionNoSound(168.477, -335.314, 22.231, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(168.477, -335.314, 22.231, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(168.477, -335.314, 22.231, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(168.477, -335.314, 22.231, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(168.477, -335.314, 22.231, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(168.477, -335.314, 22.231, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(169.708, -337.357, 19.075, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(169.708, -337.357, 19.075, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(169.708, -337.357, 19.075, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(169.708, -337.357, 19.075, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(169.708, -337.357, 19.075, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(169.708, -351.357, 18.075, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(169.708, -351.357, 18.075, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(169.708, -351.357, 18.075, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(169.708, -351.357, 18.075, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosion(169.708, -351.357, 18.075, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(169.708, -351.357, 18.075, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(105);
@@ -2724,14 +2724,14 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(168.282, -335.453, 18.769, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(168.282, -335.453, 18.769, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(168.282, -335.453, 18.769, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(168.282, -335.453, 18.769, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(168.282, -335.453, 18.769, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(168.692, -336.464, 19.678, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(168.692, -336.464, 19.678, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(168.692, -336.464, 19.678, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(168.692, -336.464, 19.678, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosion(168.692, -336.464, 19.678, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(168.692, -336.464, 19.678, 6 /* EXPLOSION_HELI */);
 
 
   Streaming.MarkModelAsNoLongerNeeded(bldngst2meshdam);
@@ -2741,45 +2741,45 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(169.708, -351.357, 18.075, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(169.708, -351.357, 18.075, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(169.708, -351.357, 18.075, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosion(169.708, -351.357, 18.075, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(169.708, -351.357, 18.075, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(169.708, -351.357, 18.075, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(134.058, -335.45, 22.873, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(134.058, -335.45, 22.873, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(134.058, -335.45, 22.873, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(134.058, -335.45, 22.873, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(134.058, -335.45, 22.873, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(105);
 
 
   Fx.AddExplosionNoSound(158.365, -335.0422, 21.805, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(158.365, -335.0422, 21.805, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosion(158.365, -335.0422, 21.805, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(158.365, -335.0422, 21.805, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosion(158.365, -335.0422, 21.805, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(300);
 
 
   Fx.AddExplosionNoSound(154.231, -335.0846, 20.826, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(154.231, -335.0846, 20.826, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosion(154.231, -335.0846, 20.826, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(154.231, -335.0846, 20.826, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosion(154.231, -335.0846, 20.826, 6 /* EXPLOSION_HELI */);
   Fx.AddMovingParticleEffect(4 /* POBJECT_DARK_SMOKE */, 154.231, -335.0846, 20.826, 16.0, 0.0, 0.1, 5.0, 0, 0, 0, 11000);
 
 
   Fx.AddExplosionNoSound(169.335, -337.878, 19.478, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(169.335, -337.878, 19.478, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(169.335, -337.878, 19.478, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(169.335, -337.878, 19.478, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(169.335, -337.878, 19.478, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(500);
 
 
   Fx.AddExplosion(164.531, -334.908, 19.209, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(164.531, -334.908, 19.209, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(164.531, -334.908, 19.209, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(164.531, -334.908, 19.209, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(164.531, -334.908, 19.209, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(164.531, -334.908, 19.209, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(105);
@@ -2789,27 +2789,27 @@ async function demolish_building() {
 
 
   Fx.AddExplosion(168.692, -336.464, 19.678, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(168.692, -336.464, 19.678, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(168.692, -336.464, 19.678, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(168.692, -336.464, 19.678, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(168.692, -336.464, 19.678, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(146.933, -331.328, 23.657, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(146.933, -331.328, 23.657, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(146.933, -331.328, 23.657, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(146.933, -331.328, 23.657, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(146.933, -331.328, 23.657, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(300);
 
 
   Fx.AddExplosion(169.335, -337.878, 19.478, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(169.335, -337.878, 19.478, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(169.335, -337.878, 19.478, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(169.335, -337.878, 19.478, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(169.335, -337.878, 19.478, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(168.282, -335.453, 18.769, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(168.282, -335.453, 18.769, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(168.282, -335.453, 18.769, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(168.282, -335.453, 18.769, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(168.282, -335.453, 18.769, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(168.282, -335.453, 18.769, 6 /* EXPLOSION_HELI */);
   Fx.AddMovingParticleEffect(4 /* POBJECT_DARK_SMOKE */, 168.282, -335.453, 18.769, 16.0, 0.0, 0.1, 5.0, 0, 0, 0, 5000);
 
 
@@ -2817,37 +2817,37 @@ async function demolish_building() {
 
 
   Fx.AddExplosionNoSound(158.365, -335.0422, 21.805, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(158.365, -335.0422, 21.805, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(158.365, -335.0422, 21.805, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(158.365, -335.0422, 21.805, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(158.365, -335.0422, 21.805, 6 /* EXPLOSION_HELI */);
 
 
   Fx.AddExplosionNoSound(143.1712, -335.231, 22.164, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(143.1712, -335.231, 22.164, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(143.1712, -335.231, 22.164, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosion(143.1712, -335.231, 22.164, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(143.1712, -335.231, 22.164, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(500);
 
 
   Fx.AddExplosionNoSound(168.692, -336.464, 19.678, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(168.692, -336.464, 19.678, 9 /* EXPLOSION_HELI_BOMB */);
-  Fx.AddExplosionNoSound(168.692, -336.464, 19.678, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(168.692, -336.464, 19.678, 11 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(168.692, -336.464, 19.678, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(250);
 
 
   Fx.AddExplosionNoSound(164.531, -334.908, 19.209, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosionNoSound(164.531, -334.908, 19.209, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosionNoSound(164.531, -334.908, 19.209, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddExplosionNoSound(164.531, -334.908, 19.209, 1 /* EXPLOSION_MOLOTOV */);
-  Fx.AddExplosionNoSound(164.531, -334.908, 19.209, 5 /* EXPLOSION_HELI */);
+  Fx.AddExplosionNoSound(164.531, -334.908, 19.209, 6 /* EXPLOSION_HELI */);
 
 
   await asyncWait(50);
 
 
   Fx.AddExplosionNoSound(158.365, -335.0422, 21.805, 2 /* EXPLOSION_ROCKET */);
-  Fx.AddExplosion(158.365, -335.0422, 21.805, 9 /* EXPLOSION_HELI_BOMB */);
+  Fx.AddExplosion(158.365, -335.0422, 21.805, 11 /* EXPLOSION_HELI_BOMB */);
   Fx.AddMovingParticleEffect(4 /* POBJECT_DARK_SMOKE */, 149.742294, -398.409, 8.639, 16.0, 0.0, 0.1, 5.0, 0, 0, 0, 14000);
   Fx.AddMovingParticleEffect(4 /* POBJECT_DARK_SMOKE */, 168.692, -336.464, 19.678, 16.0, 0.0, 0.1, 10.0, 0, 0, 0, 14000);
   Fx.AddMovingParticleEffect(4 /* POBJECT_DARK_SMOKE */, 149.742294, -398.409, 8.639, 16.0, 0.0, 0.1, 5.0, 0, 0, 0, 14000);
@@ -2997,7 +2997,7 @@ async function check_if_bomb1_has_hit_target() {
     //target 1
     if ($.target1_hit == 0) {
       if ($.timer_bomb1_s3.locate3D($.target1x_s3, $.target1y_s3, $.target1z_s3, 3.5, 3.5, 2.0, false /* FALSE */)) {
-        Sound.AddOneOffSound($.target1x_s3, $.target1y_s3, $.target1z_s3, SOUND_IMRAN_ARM_BOMB);
+        Sound.AddOneOffSound($.target1x_s3, $.target1y_s3, $.target1z_s3, 16 /* SOUND_IMRAN_ARM_BOMB */);
         $.bomb1_state = 3;
         $.target1_hit = 1;
         $.timer_bomb1_s3.setCoordinates(97.574, -381.658, 9.2721);
@@ -3009,7 +3009,7 @@ async function check_if_bomb1_has_hit_target() {
     //target 2
     if ($.target2_hit == 0) {
       if ($.timer_bomb1_s3.locate3D($.target2x_s3, $.target2y_s3, $.target2z_s3, 3.5, 3.5, 2.0, false /* FALSE */)) {
-        Sound.AddOneOffSound($.target2x_s3, $.target2y_s3, $.target2z_s3, SOUND_IMRAN_ARM_BOMB);
+        Sound.AddOneOffSound($.target2x_s3, $.target2y_s3, $.target2z_s3, 16 /* SOUND_IMRAN_ARM_BOMB */);
         $.bomb1_state = 3;
         $.target2_hit = 1;
         $.timer_bomb1_s3.setCoordinates(156.5491, -348.0284, 18.1517);
@@ -3021,7 +3021,7 @@ async function check_if_bomb1_has_hit_target() {
     //target 3
     if ($.target3_hit == 0) {
       if ($.timer_bomb1_s3.locate3D($.target3x_s3, $.target3y_s3, $.target3z_s3, 3.5, 3.5, 2.0, false /* FALSE */)) {
-        Sound.AddOneOffSound($.target3x_s3, $.target3y_s3, $.target3z_s3, SOUND_IMRAN_ARM_BOMB);
+        Sound.AddOneOffSound($.target3x_s3, $.target3y_s3, $.target3z_s3, 16 /* SOUND_IMRAN_ARM_BOMB */);
         $.bomb1_state = 3;
         $.target3_hit = 1;
         $.timer_bomb1_s3.setCoordinates(88.1474, -361.8685, 27.376);
@@ -3033,7 +3033,7 @@ async function check_if_bomb1_has_hit_target() {
     //target 4
     if ($.target4_hit == 0) {
       if ($.timer_bomb1_s3.locate3D($.target4x_s3, $.target4y_s3, $.target4z_s3, 3.5, 3.5, 2.0, false /* FALSE */)) {
-        Sound.AddOneOffSound($.target4x_s3, $.target4y_s3, $.target4z_s3, SOUND_IMRAN_ARM_BOMB);
+        Sound.AddOneOffSound($.target4x_s3, $.target4y_s3, $.target4z_s3, 16 /* SOUND_IMRAN_ARM_BOMB */);
         $.bomb1_state = 3;
         $.target4_hit = 1;
         $.timer_bomb1_s3.setCoordinates(140.0079, -383.1253, 36.6172);
@@ -3065,7 +3065,7 @@ async function check_if_bomb2_has_hit_target() {
     //target 1
     if ($.target1_hit == 0) {
       if ($.timer_bomb2_s3.locate3D($.target1x_s3, $.target1y_s3, $.target1z_s3, 3.5, 3.5, 2.0, false /* FALSE */)) {
-        Sound.AddOneOffSound($.target1x_s3, $.target1y_s3, $.target1z_s3, SOUND_IMRAN_ARM_BOMB);
+        Sound.AddOneOffSound($.target1x_s3, $.target1y_s3, $.target1z_s3, 16 /* SOUND_IMRAN_ARM_BOMB */);
         $.bomb2_state = 3;
         $.target1_hit = 1;
         $.timer_bomb2_s3.setCoordinates(97.574, -381.658, 9.2721);
@@ -3077,7 +3077,7 @@ async function check_if_bomb2_has_hit_target() {
     //target 2
     if ($.target2_hit == 0) {
       if ($.timer_bomb2_s3.locate3D($.target2x_s3, $.target2y_s3, $.target2z_s3, 3.5, 3.5, 2.0, false /* FALSE */)) {
-        Sound.AddOneOffSound($.target2x_s3, $.target2y_s3, $.target2z_s3, SOUND_IMRAN_ARM_BOMB);
+        Sound.AddOneOffSound($.target2x_s3, $.target2y_s3, $.target2z_s3, 16 /* SOUND_IMRAN_ARM_BOMB */);
         $.bomb2_state = 3;
         $.target2_hit = 1;
         $.timer_bomb2_s3.setCoordinates(156.5491, -348.0284, 18.1517);
@@ -3089,7 +3089,7 @@ async function check_if_bomb2_has_hit_target() {
     //target 3
     if ($.target3_hit == 0) {
       if ($.timer_bomb2_s3.locate3D($.target3x_s3, $.target3y_s3, $.target3z_s3, 3.5, 3.5, 2.0, false /* FALSE */)) {
-        Sound.AddOneOffSound($.target3x_s3, $.target3y_s3, $.target3z_s3, SOUND_IMRAN_ARM_BOMB);
+        Sound.AddOneOffSound($.target3x_s3, $.target3y_s3, $.target3z_s3, 16 /* SOUND_IMRAN_ARM_BOMB */);
         $.bomb2_state = 3;
         $.target3_hit = 1;
         $.timer_bomb2_s3.setCoordinates(88.1474, -361.8685, 27.376);
@@ -3101,7 +3101,7 @@ async function check_if_bomb2_has_hit_target() {
     //target 4
     if ($.target4_hit == 0) {
       if ($.timer_bomb2_s3.locate3D($.target4x_s3, $.target4y_s3, $.target4z_s3, 3.5, 3.5, 2.0, false /* FALSE */)) {
-        Sound.AddOneOffSound($.target4x_s3, $.target4y_s3, $.target4z_s3, SOUND_IMRAN_ARM_BOMB);
+        Sound.AddOneOffSound($.target4x_s3, $.target4y_s3, $.target4z_s3, 16 /* SOUND_IMRAN_ARM_BOMB */);
         $.bomb2_state = 3;
         $.target4_hit = 1;
         $.timer_bomb2_s3.setCoordinates(140.0079, -383.1253, 36.6172);
@@ -3133,7 +3133,7 @@ async function check_if_bomb3_has_hit_target() {
     //target 1
     if ($.target1_hit == 0) {
       if ($.timer_bomb3_s3.locate3D($.target1x_s3, $.target1y_s3, $.target1z_s3, 3.5, 3.5, 2.0, false /* FALSE */)) {
-        Sound.AddOneOffSound($.target1x_s3, $.target1y_s3, $.target1z_s3, SOUND_IMRAN_ARM_BOMB);
+        Sound.AddOneOffSound($.target1x_s3, $.target1y_s3, $.target1z_s3, 16 /* SOUND_IMRAN_ARM_BOMB */);
         $.bomb3_state = 3;
         $.target1_hit = 1;
         $.timer_bomb3_s3.setCoordinates(97.574, -381.658, 9.2721);
@@ -3145,7 +3145,7 @@ async function check_if_bomb3_has_hit_target() {
     //target 2
     if ($.target2_hit == 0) {
       if ($.timer_bomb3_s3.locate3D($.target2x_s3, $.target2y_s3, $.target2z_s3, 3.5, 3.5, 2.0, false /* FALSE */)) {
-        Sound.AddOneOffSound($.target2x_s3, $.target2y_s3, $.target2z_s3, SOUND_IMRAN_ARM_BOMB);
+        Sound.AddOneOffSound($.target2x_s3, $.target2y_s3, $.target2z_s3, 16 /* SOUND_IMRAN_ARM_BOMB */);
         $.bomb3_state = 3;
         $.target2_hit = 1;
         $.timer_bomb3_s3.setCoordinates(156.5491, -348.0284, 18.1517);
@@ -3157,7 +3157,7 @@ async function check_if_bomb3_has_hit_target() {
     //target 3
     if ($.target3_hit == 0) {
       if ($.timer_bomb3_s3.locate3D($.target3x_s3, $.target3y_s3, $.target3z_s3, 3.5, 3.5, 2.0, false /* FALSE */)) {
-        Sound.AddOneOffSound($.target3x_s3, $.target3y_s3, $.target3z_s3, SOUND_IMRAN_ARM_BOMB);
+        Sound.AddOneOffSound($.target3x_s3, $.target3y_s3, $.target3z_s3, 16 /* SOUND_IMRAN_ARM_BOMB */);
         $.bomb3_state = 3;
         $.target3_hit = 1;
         $.timer_bomb3_s3.setCoordinates(88.1474, -361.8685, 27.376);
@@ -3169,7 +3169,7 @@ async function check_if_bomb3_has_hit_target() {
     //target 4
     if ($.target4_hit == 0) {
       if ($.timer_bomb3_s3.locate3D($.target4x_s3, $.target4y_s3, $.target4z_s3, 3.5, 3.5, 2.0, false /* FALSE */)) {
-        Sound.AddOneOffSound($.target4x_s3, $.target4y_s3, $.target4z_s3, SOUND_IMRAN_ARM_BOMB);
+        Sound.AddOneOffSound($.target4x_s3, $.target4y_s3, $.target4z_s3, 16 /* SOUND_IMRAN_ARM_BOMB */);
         $.bomb3_state = 3;
         $.target4_hit = 1;
         $.timer_bomb3_s3.setCoordinates(140.0079, -383.1253, 36.6172);
@@ -3201,7 +3201,7 @@ async function check_if_bomb4_has_hit_target() {
     //target 1
     if ($.target1_hit == 0) {
       if ($.timer_bomb4_s3.locate3D($.target1x_s3, $.target1y_s3, $.target1z_s3, 3.5, 3.5, 2.0, false /* FALSE */)) {
-        Sound.AddOneOffSound($.target1x_s3, $.target1y_s3, $.target1z_s3, SOUND_IMRAN_ARM_BOMB);
+        Sound.AddOneOffSound($.target1x_s3, $.target1y_s3, $.target1z_s3, 16 /* SOUND_IMRAN_ARM_BOMB */);
         $.bomb4_state = 3;
         $.target1_hit = 1;
         $.timer_bomb4_s3.setCoordinates(97.574, -381.658, 9.2721);
@@ -3213,7 +3213,7 @@ async function check_if_bomb4_has_hit_target() {
     //target 2
     if ($.target2_hit == 0) {
       if ($.timer_bomb4_s3.locate3D($.target2x_s3, $.target2y_s3, $.target2z_s3, 3.5, 3.5, 2.0, false /* FALSE */)) {
-        Sound.AddOneOffSound($.target2x_s3, $.target2y_s3, $.target2z_s3, SOUND_IMRAN_ARM_BOMB);
+        Sound.AddOneOffSound($.target2x_s3, $.target2y_s3, $.target2z_s3, 16 /* SOUND_IMRAN_ARM_BOMB */);
         $.bomb4_state = 3;
         $.target2_hit = 1;
         $.timer_bomb4_s3.setCoordinates(156.5491, -348.0284, 18.1517);
@@ -3225,7 +3225,7 @@ async function check_if_bomb4_has_hit_target() {
     //target 3
     if ($.target3_hit == 0) {
       if ($.timer_bomb4_s3.locate3D($.target3x_s3, $.target3y_s3, $.target3z_s3, 3.5, 3.5, 2.0, false /* FALSE */)) {
-        Sound.AddOneOffSound($.target3x_s3, $.target3y_s3, $.target3z_s3, SOUND_IMRAN_ARM_BOMB);
+        Sound.AddOneOffSound($.target3x_s3, $.target3y_s3, $.target3z_s3, 16 /* SOUND_IMRAN_ARM_BOMB */);
         $.bomb4_state = 3;
         $.target3_hit = 1;
         $.timer_bomb4_s3.setCoordinates(88.1474, -361.8685, 27.376);
@@ -3237,7 +3237,7 @@ async function check_if_bomb4_has_hit_target() {
     //target 4
     if ($.target4_hit == 0) {
       if ($.timer_bomb4_s3.locate3D($.target4x_s3, $.target4y_s3, $.target4z_s3, 3.5, 3.5, 2.0, false /* FALSE */)) {
-        Sound.AddOneOffSound($.target4x_s3, $.target4y_s3, $.target4z_s3, SOUND_IMRAN_ARM_BOMB);
+        Sound.AddOneOffSound($.target4x_s3, $.target4y_s3, $.target4z_s3, 16 /* SOUND_IMRAN_ARM_BOMB */);
         $.bomb4_state = 3;
         $.target4_hit = 1;
         $.timer_bomb4_s3.setCoordinates(140.0079, -383.1253, 36.6172);
@@ -3332,9 +3332,9 @@ async function mission_cleanup_serg2() {
   Streaming.MarkModelAsNoLongerNeeded(WMYCW);
   Streaming.MarkModelAsNoLongerNeeded(HAMMER);
   Streaming.MarkModelAsNoLongerNeeded(RCGoblin);
-  Streaming.MarkModelAsNoLongerNeeded(1336 /* barrel2 */);
+  Streaming.MarkModelAsNoLongerNeeded(barrel2);
   Streaming.MarkModelAsNoLongerNeeded(GDa);
-  Streaming.MarkModelAsNoLongerNeeded(173 /* colt45 */);
+  Streaming.MarkModelAsNoLongerNeeded(colt45);
 
 
   Game.SetEveryoneIgnorePlayer($.player1, false /* OFF */);

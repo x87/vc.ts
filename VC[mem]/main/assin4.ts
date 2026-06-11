@@ -1,6 +1,6 @@
 // Generated from main/assin4.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_assin4() {
 
@@ -24,12 +24,12 @@ async function mission_start_assin4() {
 
   Streaming.RequestModel(WMORI);
   Streaming.RequestModel(HFYBU);
-  Streaming.RequestModel(178 /* UZI */);
+  Streaming.RequestModel(UZI);
   Streaming.RequestModel(cellphone);
 
 
 
-  while (!(Streaming.HasModelLoaded(WMORI)) || !(Streaming.HasModelLoaded(HFYBU)) || !(Streaming.HasModelLoaded(cellphone)) || !(Streaming.HasModelLoaded(178 /* UZI */))) {
+  while (!(Streaming.HasModelLoaded(WMORI)) || !(Streaming.HasModelLoaded(HFYBU)) || !(Streaming.HasModelLoaded(cellphone)) || !(Streaming.HasModelLoaded(UZI))) {
     await asyncWait(0);
   }
 
@@ -359,7 +359,7 @@ async function assin4loop() {
         //create bodyguard1
         $.bodyguard1_am4 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL01, $.bodyguard1_am4x, $.bodyguard1_am4y, $.bodyguard1_am4z);
         $.bodyguard1_am4.setHeading($.bodyguard1_am4h);
-        $.bodyguard1_am4.giveWeapon(3 /* WEAPONTYPE_UZI */, 300000);
+        $.bodyguard1_am4.giveWeapon(23 /* WEAPONTYPE_UZI */, 300000);
         $.bodyguard1_am4.followChar($.mantgt);
         $.bodyguard1_am4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
         $.bodyguard1_am4.clearThreatSearch();
@@ -575,7 +575,7 @@ async function assin4loop() {
         if ($.charnowrun_am4 == 0) {
           if ($.targetwalk_am4 == 6) {
             if (TIMERB > 1000) {
-              $.mantgt.followPath($.mantgtdestx, $.mantgtdesty, $.mantgtdestz, 2.0, WALK);
+              $.mantgt.followPath($.mantgtdestx, $.mantgtdesty, $.mantgtdestz, 2.0, 0 /* WALK */);
               TIMERB = 0;
             }
           }
@@ -583,7 +583,7 @@ async function assin4loop() {
         if ($.charnowrun_am4 == 1) {
           if ($.targetwalk_am4 == 6) {
             if (TIMERB > 1000) {
-              $.mantgt.followPath($.mantgtdestx, $.mantgtdesty, $.mantgtdestz, 2.0, RUN);
+              $.mantgt.followPath($.mantgtdestx, $.mantgtdesty, $.mantgtdestz, 2.0, 1 /* RUN */);
               TIMERB = 0;
             }
           }
@@ -609,12 +609,12 @@ $.mantgtlastz = _res32.z;
     if ($.assassin4flag > 3) {
       if (Char.IsDead($.mantgt)) {
         if ($.mantgtdeaddropdacase == 0) {
-          $.briefcase_playerhastoget = Pickup.Create(1319 /* BRIEFCASE */, 3 /* PICKUP_ONCE */, $.mantgtlastx, $.mantgtlasty, $.mantgtlastz);
+          $.briefcase_playerhastoget = Pickup.Create(BRIEFCASE, 3 /* PICKUP_ONCE */, $.mantgtlastx, $.mantgtlasty, $.mantgtlastz);
           $.briefcase_playerhastogetblip = Blip.AddForPickup($.briefcase_playerhastoget);
           Text.PrintNow("ASM4_21", 5000, 2);
           Hud.ClearCounter($.$id.intdistancebar_am4);
           $.player1.alterWantedLevel(2);
-          $.player1.setMood(PLAYER_MOOD_ANGRY, 300000);
+          $.player1.setMood(2 /* PLAYER_MOOD_ANGRY */, 300000);
           Zone.SetPedInfo("TERMINL", 1 /* DAY */, 13, 0, 0, 0, 0, 5, 0, 0, 0, 0, 5);
           Zone.SetPedInfo("TERMINL", 0 /* NIGHT */, 4, 0, 0, 0, 0, 5, 0, 0, 0, 0, 5);
           if (!(Char.IsDead($.bodyguard1_am4))) {
@@ -882,8 +882,8 @@ $.chasecar1z_am4 = _res35.z;
                   $.chaseshooter1_am4.delete();
                   $.chasecar1z_am4 = $.chasecar1z_am4 - 20.0;
                   $.chaseshooter1_am4 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL01, $.chasecar1x_am4, $.chasecar1y_am4, $.chasecar1z_am4);
-                  $.chaseshooter1_am4.attachToCar($.chasecar1_am4, 0.0, -0.3, 0.8, 0 /* FACING_FORWARD */, 360.0, 3 /* WEAPONTYPE_UZI */);
-                  $.chaseshooter1_am4.addAmmo(3 /* WEAPONTYPE_UZI */, 3000);
+                  $.chaseshooter1_am4.attachToCar($.chasecar1_am4, 0.0, -0.3, 0.8, 0 /* FACING_FORWARD */, 360.0, 23 /* WEAPONTYPE_UZI */);
+                  $.chaseshooter1_am4.addAmmo(23 /* WEAPONTYPE_UZI */, 3000);
                   $.chaseshooter1_am4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
                   $.chaseshooter1_am4.setStayInSamePlace(true /* TRUE */);
                   $.chaseshooter1_am4.setObjKillPlayerOnFoot($.player1);
@@ -964,8 +964,8 @@ $.chasecar2z_am4 = _res36.z;
                   $.chaseshooter2_am4.delete();
                   $.chasecar2z_am4 = $.chasecar2z_am4 - 20.0;
                   $.chaseshooter2_am4 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL01, $.chasecar2x_am4, $.chasecar2y_am4, $.chasecar2z_am4);
-                  $.chaseshooter2_am4.attachToCar($.chasecar2_am4, 0.0, -0.3, 0.8, 0 /* FACING_FORWARD */, 360.0, 3 /* WEAPONTYPE_UZI */);
-                  $.chaseshooter2_am4.addAmmo(3 /* WEAPONTYPE_UZI */, 3000);
+                  $.chaseshooter2_am4.attachToCar($.chasecar2_am4, 0.0, -0.3, 0.8, 0 /* FACING_FORWARD */, 360.0, 23 /* WEAPONTYPE_UZI */);
+                  $.chaseshooter2_am4.addAmmo(23 /* WEAPONTYPE_UZI */, 3000);
                   $.chaseshooter2_am4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
                   $.chaseshooter2_am4.setStayInSamePlace(true /* TRUE */);
                   $.chaseshooter2_am4.setObjKillPlayerOnFoot($.player1);
@@ -1030,8 +1030,8 @@ $.chasecar3z_am4 = _res37.z;
                   $.chaseshooter3_am4.delete();
                   $.chasecar3z_am4 = $.chasecar3z_am4 - 20.0;
                   $.chaseshooter3_am4 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL01, $.chasecar3x_am4, $.chasecar3y_am4, $.chasecar3z_am4);
-                  $.chaseshooter3_am4.attachToCar($.chasecar3_am4, 0.0, -0.3, 0.8, 0 /* FACING_FORWARD */, 360.0, 3 /* WEAPONTYPE_UZI */);
-                  $.chaseshooter3_am4.addAmmo(3 /* WEAPONTYPE_UZI */, 3000);
+                  $.chaseshooter3_am4.attachToCar($.chasecar3_am4, 0.0, -0.3, 0.8, 0 /* FACING_FORWARD */, 360.0, 23 /* WEAPONTYPE_UZI */);
+                  $.chaseshooter3_am4.addAmmo(23 /* WEAPONTYPE_UZI */, 3000);
                   $.chaseshooter3_am4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
                   $.chaseshooter3_am4.setStayInSamePlace(true /* TRUE */);
                   $.chaseshooter3_am4.setAccuracy(90);
@@ -1300,7 +1300,7 @@ async function mission_cleanup_assin4() {
   Streaming.MarkModelAsNoLongerNeeded(HFYBU);
   Streaming.MarkModelAsNoLongerNeeded(admiral);
   Streaming.MarkModelAsNoLongerNeeded(maverick);
-  Streaming.MarkModelAsNoLongerNeeded(178 /* UZI */);
+  Streaming.MarkModelAsNoLongerNeeded(UZI);
 
 
   $.bodyguard1_am4.removeElegantly();

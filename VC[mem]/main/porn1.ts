@@ -1,6 +1,6 @@
 // Generated from main/porn1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_porn1() {
   Text.ClearThisPrint("M_FAIL");
@@ -376,14 +376,14 @@ async function mission_start_porn1() {
   Camera.SetBehindPlayer();
   //------------------REQUEST_MODELS ------------------------------
 
-  $.player1.setMood(PLAYER_MOOD_CALM, 60000);
+  $.player1.setMood(0 /* PLAYER_MOOD_CALM */, 60000);
 
 
   Streaming.RequestModel(WMYPI);
   Streaming.RequestModel(BMYCR);
   Streaming.RequestModel(HMYRI);
   Streaming.RequestModel(sentinel);
-  Streaming.RequestModel(172 /* bat */);
+  Streaming.RequestModel(bat);
   Streaming.RequestModel(tec9);
   Streaming.RequestModel(stretch);
 
@@ -393,7 +393,7 @@ async function mission_start_porn1() {
   }
 
 
-  while (!(Streaming.HasModelLoaded(sentinel)) || !(Streaming.HasModelLoaded(172 /* bat */)) || !(Streaming.HasModelLoaded(tec9)) || !(Streaming.HasModelLoaded(stretch))) {
+  while (!(Streaming.HasModelLoaded(sentinel)) || !(Streaming.HasModelLoaded(bat)) || !(Streaming.HasModelLoaded(tec9)) || !(Streaming.HasModelLoaded(stretch))) {
     await asyncWait(0);
   }
 
@@ -476,7 +476,7 @@ async function mission_start_porn1() {
   $.candy_sexxx.setAsPlayerFriend($.player1, true /* TRUE */);
   $.candy_sexxx.clearThreatSearch();
   $.candy_sexxx.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.candy_sexxx.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+  $.candy_sexxx.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
   $.candy_sexxx.setRunning(true /* TRUE */);
   $.candy_sexxx.setNeverTargeted(true /* TRUE */);
   $.candy_sexxx.setInPlayersGroupCanFight(false /* FALSE */);
@@ -553,16 +553,16 @@ async function getting_candy_out_car() {
           $.pap_man = Char.CreateInsideCar($.pap_car, 4 /* PEDTYPE_CIVMALE */, WMYPI);
 
 
-          $.pap_man.giveWeapon(WEAPONTYPE_tec9, 30000);
+          $.pap_man.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
           $.pap_man.setOnlyDamagedByPlayer(true /* TRUE */);
           $.pap_guard1 = Char.CreateAsPassenger($.pap_car, 4 /* PEDTYPE_CIVMALE */, BMYCR, 0);
-          $.pap_guard1.giveWeapon(1 /* WEAPONTYPE_BASEBALLBAT */, 1);
+          $.pap_guard1.giveWeapon(6 /* WEAPONTYPE_BASEBALLBAT */, 1);
           $.pap_guard1.clearThreatSearch();
           $.pap_guard2 = Char.CreateAsPassenger($.pap_car, 4 /* PEDTYPE_CIVMALE */, BMYCR, 1);
-          $.pap_guard2.giveWeapon(1 /* WEAPONTYPE_BASEBALLBAT */, 1);
+          $.pap_guard2.giveWeapon(6 /* WEAPONTYPE_BASEBALLBAT */, 1);
           $.pap_guard2.clearThreatSearch();
           $.pap_guard3 = Char.CreateAsPassenger($.pap_car, 4 /* PEDTYPE_CIVMALE */, BMYCR, 2);
-          $.pap_guard3.giveWeapon(WEAPONTYPE_tec9, 30000);
+          $.pap_guard3.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
           $.pap_guard3.clearThreatSearch();
           $.pap_man_blip = Blip.AddForChar($.pap_man);
           $.candy_stretch_limo.setForwardSpeed(15.0);
@@ -876,14 +876,14 @@ async function porn1_loop() {
                           $.pap_guard1.explodeHead();
                           $.pap_guard1.markAsNoLongerNeeded();
                           $.pap_guard1 = Char.CreateAsPassenger($.pap_car, 4 /* PEDTYPE_CIVMALE */, BMYCR, 0);
-                          $.pap_guard1.giveWeapon(WEAPONTYPE_tec9, 30000);
+                          $.pap_guard1.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
                         }
                       }
                     }
                     else {
                       $.pap_guard1.markAsNoLongerNeeded();
                       $.pap_guard1 = Char.CreateAsPassenger($.pap_car, 4 /* PEDTYPE_CIVMALE */, BMYCR, 0);
-                      $.pap_guard1.giveWeapon(WEAPONTYPE_tec9, 30000);
+                      $.pap_guard1.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
                     }
                     if (!(Char.IsDead($.pap_guard2))) {
                       if (!($.pap_guard2.isInCar($.pap_car))) {
@@ -891,14 +891,14 @@ async function porn1_loop() {
                           $.pap_guard2.explodeHead();
                           $.pap_guard2.markAsNoLongerNeeded();
                           $.pap_guard2 = Char.CreateAsPassenger($.pap_car, 4 /* PEDTYPE_CIVMALE */, BMYCR, 1);
-                          $.pap_guard2.giveWeapon(WEAPONTYPE_tec9, 30000);
+                          $.pap_guard2.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
                         }
                       }
                     }
                     else {
                       $.pap_guard2.markAsNoLongerNeeded();
                       $.pap_guard2 = Char.CreateAsPassenger($.pap_car, 4 /* PEDTYPE_CIVMALE */, BMYCR, 1);
-                      $.pap_guard2.giveWeapon(WEAPONTYPE_tec9, 30000);
+                      $.pap_guard2.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
                     }
                     if (!(Char.IsDead($.pap_guard3))) {
                       if (!($.pap_guard3.isInCar($.pap_car))) {
@@ -906,14 +906,14 @@ async function porn1_loop() {
                           $.pap_guard3.explodeHead();
                           $.pap_guard3.markAsNoLongerNeeded();
                           $.pap_guard3 = Char.CreateAsPassenger($.pap_car, 4 /* PEDTYPE_CIVMALE */, BMYCR, 2);
-                          $.pap_guard3.giveWeapon(WEAPONTYPE_tec9, 30000);
+                          $.pap_guard3.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
                         }
                       }
                     }
                     else {
                       $.pap_guard3.markAsNoLongerNeeded();
                       $.pap_guard3 = Char.CreateAsPassenger($.pap_car, 4 /* PEDTYPE_CIVMALE */, BMYCR, 2);
-                      $.pap_guard3.giveWeapon(WEAPONTYPE_tec9, 30000);
+                      $.pap_guard3.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
                     }
                   }
                 }
@@ -1134,7 +1134,7 @@ async function next_porn_bit() {
   $.mercedes = Char.Create(5 /* PEDTYPE_CIVFEMALE */, SPECIAL02, -902.3, 800.2, 10.4);
   $.mercedes.setHeading(95.9);
   $.mercedes.setAsPlayerFriend($.player1, true /* TRUE */);
-  $.mercedes.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+  $.mercedes.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
   $.mercedes.setRunning(true /* TRUE */);
   $.mercedes.setInPlayersGroupCanFight(false /* FALSE */);
   $.mercedes.setWaitState(19 /* WAITSTATE_PLAYANIM_CHAT */, 86400000);
@@ -1267,7 +1267,7 @@ async function next_porn_bit() {
       throw new Error("unresolved GOTO mission_failed_porn1"); // fallback: would break linear control flow
     }
     else {
-      $.mercedes.setWaitState(WAITSTATE_USE_ATM, 86400000);
+      $.mercedes.setWaitState(25 /* WAITSTATE_USE_ATM */, 86400000);
     }
 
 
@@ -1776,7 +1776,7 @@ async function mission_passed_porn1() {
   $.player1.addScore(1000);
   Stat.PlayerMadeProgress(1);
   Stat.RegisterMissionPassed("PORN_1");
-  // START_NEW_SCRIPT porn_mission2_loop
+  // START_NEW_SCRIPT porn_mission2_loop 
   $.flag_porn_mission1_passed = 1;
 }
 
@@ -1794,7 +1794,7 @@ async function mission_cleanup_porn1() {
   Streaming.MarkModelAsNoLongerNeeded(BMYCR);
   Streaming.MarkModelAsNoLongerNeeded(HMYRI);
   Streaming.MarkModelAsNoLongerNeeded(sentinel);
-  Streaming.MarkModelAsNoLongerNeeded(172 /* bat */);
+  Streaming.MarkModelAsNoLongerNeeded(bat);
   Streaming.MarkModelAsNoLongerNeeded(tec9);
   Streaming.MarkModelAsNoLongerNeeded(stretch);
   $.candy_sexxx.removeElegantly();

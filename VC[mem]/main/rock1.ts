@@ -1,6 +1,6 @@
 // Generated from main/rock1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_rock1() {
 
@@ -111,7 +111,7 @@ async function mission_start_rock1() {
   Streaming.LoadSpecialCharacter(5, "CSplay");
 
 
-  Streaming.SetAreaVisible(VIS_STUDIO);
+  Streaming.SetAreaVisible(9 /* VIS_STUDIO */);
 
 
   Streaming.LoadScene(-879.75, 1157.77, 17.81);
@@ -437,7 +437,7 @@ async function mission_start_rock1() {
   }
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   World.ClearExtraColors(false /* FALSE */);
@@ -458,7 +458,7 @@ async function mission_start_rock1() {
   Streaming.LoadScene(-871.90, 1159.46, 10.07);
 
 
-  $.player1.setMood(PLAYER_MOOD_WISECRACKING, 60000);
+  $.player1.setMood(3 /* PLAYER_MOOD_WISECRACKING */, 60000);
 
   // ****************************************END OF CUTSCENE**********************************
 
@@ -496,7 +496,7 @@ async function mission_start_rock1() {
   $.radar_blip_studio_rock1.remove();
 
 
-  $.drug1_rock1 = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, $.drug1_x_rock1, $.drug1_y_rock1, $.drug1_z_rock1);
+  $.drug1_rock1 = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, $.drug1_x_rock1, $.drug1_y_rock1, $.drug1_z_rock1);
 
 
   $.radar_blip_drug1_rock1 = Blip.AddForPickup($.drug1_rock1);
@@ -625,7 +625,7 @@ async function mission_start_rock1() {
             throw new Error("unresolved GOTO mission_rock1_failed"); // fallback: would break linear control flow
           }
           else {
-            if ($.dealer1_rock1.hasBeenDamagedByWeapon(10 /* WEAPONTYPE_MOLOTOV */) || $.dealer1_rock1.hasBeenDamagedByWeapon(9 /* WEAPONTYPE_FLAMETHROWER */) || $.dealer1_rock1.hasBeenDamagedByWeapon(18 /* WEAPONTYPE_EXPLOSION */)) {
+            if ($.dealer1_rock1.hasBeenDamagedByWeapon(15 /* WEAPONTYPE_MOLOTOV */) || $.dealer1_rock1.hasBeenDamagedByWeapon(31 /* WEAPONTYPE_FLAMETHROWER */) || $.dealer1_rock1.hasBeenDamagedByWeapon(41 /* WEAPONTYPE_EXPLOSION */)) {
               Text.PrintNow("RBM1_10", 5000, 1); //"You idiot we have lost the mercandise!"
               // SCM GOTO → mission_rock1_failed (not lowered; manual jump required)
               throw new Error("unresolved GOTO mission_rock1_failed"); // fallback: would break linear control flow
@@ -636,7 +636,7 @@ async function mission_start_rock1() {
 $.drug1_x_rock1 = _res460.x;
 $.drug1_y_rock1 = _res460.y;
 $.drug1_z_rock1 = _res460.z;
-                $.drug1_rock1 = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, $.drug1_x_rock1, $.drug1_y_rock1, $.drug1_z_rock1);
+                $.drug1_rock1 = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, $.drug1_x_rock1, $.drug1_y_rock1, $.drug1_z_rock1);
                 $.radar_blip_drug1_rock1 = Blip.AddForPickup($.drug1_rock1);
                 $.flag_drug1_created_rock1 = 1;
               }
@@ -849,7 +849,7 @@ $.drug1_z_rock1 = _res460.z;
   $.mercedes_rock1 = Char.Create(5 /* PEDTYPE_CIVFEMALE */, SPECIAL06, 297.849, 289.728, 16.64);
   $.mercedes_rock1.clearThreatSearch();
   $.mercedes_rock1.setHeading(270.0);
-  $.mercedes_rock1.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+  $.mercedes_rock1.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
   $.mercedes_rock1.setSuffersCriticalHits(false /* FALSE */);
   $.mercedes_rock1.setAsPlayerFriend($.player1, true /* TRUE */);
   $.mercedes_rock1.setNeverTargeted(true /* TRUE */);
@@ -1198,7 +1198,7 @@ $.drug1_z_rock1 = _res460.z;
   $.radar_blip_studio_rock1 = Blip.AddForCoord(-867.8, 1165.7, 10.2);
 
 
-  Hud.DisplayTimer($.$id.timer_rock1, TIMER_DOWN);
+  Hud.DisplayTimer($.$id.timer_rock1, 1 /* TIMER_DOWN */);
 
 
   $.blob_flag = 1;
@@ -1279,7 +1279,7 @@ async function end_cut_rock1() {
   }
   else {
     $.mercedes_rock1.leaveGroup();
-    $.mercedes_rock1.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+    $.mercedes_rock1.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
   }
 
 
@@ -1455,7 +1455,7 @@ async function mission_rock1_passed() {
   $.player1.clearWantedLevel();
   Text.PrintWithNumberBig("M_PASS", 2000, 5000, 1); //"Mission Passed!"
   $.player1.addScore(2000);
-  // START_NEW_SCRIPT rock_mission2_loop
+  // START_NEW_SCRIPT rock_mission2_loop 
 }
 
 
@@ -1610,7 +1610,7 @@ $.dealer1_dest_z_rock1 = _res461.z;
           if (TIMERA >= 3000) {
             Audio.PlayMissionAudio(1); // Thanks for the money sucker!
             Text.PrintNow("ROK1_9", 5000, 1); //"Thanks for the money sucker!"
-            $.dealer1_rock1.giveWeapon(WEAPONTYPE_STUBBY_SHOTGUN, 30000); // Set to infinate ammo
+            $.dealer1_rock1.giveWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */, 30000); // Set to infinate ammo
 
             //IF NOT IS_CAR_DEAD cutcar_rock1
             //SET_CHAR_WAIT_STATE dealer1_rock1 WAITSTATE_PLAYANIM_DUCK 100000

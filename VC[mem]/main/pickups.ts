@@ -1,6 +1,6 @@
 // Generated from main/pickups.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_packages_start() {
 
@@ -13,7 +13,7 @@ async function mission_packages_start() {
 
   $.bollox = 0;
   if ($.bollox == 1) {
-    $.haitian_gate = ScriptObject.CreateNoOffset(1278 /* electricgate */, -1114.1, 67.0, 10.1);
+    $.haitian_gate = ScriptObject.CreateNoOffset(electricgate, -1114.1, 67.0, 10.1);
     $.mansion_clothes = Pickup.CreateClothes(-384.5, -591.9, 25.3, 1);
     $.clothes_pickup1 = Pickup.CreateClothes(226.4, -1265.6, 20.1, 1);
     $.clothes_pickup2 = Pickup.CreateClothes(97.5, -1133.6, 10.4, 2);
@@ -453,25 +453,25 @@ async function mission_packages_start() {
         if ($.player1.isInZone("STARI")) {
           if ($.bonus_weapons_created1 == 0) {
             if ($.earned_free_body_armour == 1) {
-              $.bonus_armour1 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, -314.7, -551.2, 10.3);
+              $.bonus_armour1 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, -314.7, -551.2, 10.3);
             }
             if ($.earned_free_chainsaw == 1) {
-              $.bonus_gun1 = Pickup.Create(chnsaw, 14 /* PICKUP_ON_STREET_SLOW */, -310.7, -551.2, 10.3);
+              $.bonus_gun1 = Pickup.Create(chnsaw, 15 /* PICKUP_ON_STREET_SLOW */, -310.7, -551.2, 10.3);
             }
             if ($.earned_free_python == 1) {
-              $.bonus_gun2 = Pickup.CreateWithAmmo(python, 14 /* PICKUP_ON_STREET_SLOW */, 24, -306.7, -551.2, 10.3);
+              $.bonus_gun2 = Pickup.CreateWithAmmo(python, 15 /* PICKUP_ON_STREET_SLOW */, 24, -306.7, -551.2, 10.3);
             }
             if ($.earned_free_flame_thrower == 1) {
-              $.bonus_gun3 = Pickup.CreateWithAmmo(181 /* flame */, 14 /* PICKUP_ON_STREET_SLOW */, 60, -302.7, -551.2, 10.3);
+              $.bonus_gun3 = Pickup.CreateWithAmmo(flame, 15 /* PICKUP_ON_STREET_SLOW */, 60, -302.7, -551.2, 10.3);
             }
             if ($.earned_free_laserscope == 1) {
-              $.bonus_gun4 = Pickup.CreateWithAmmo(laser, 14 /* PICKUP_ON_STREET_SLOW */, 28, -298.7, -551.2, 10.3);
+              $.bonus_gun4 = Pickup.CreateWithAmmo(laser, 15 /* PICKUP_ON_STREET_SLOW */, 28, -298.7, -551.2, 10.3);
             }
             if ($.earned_free_minigun == 1) {
-              $.bonus_gun5 = Pickup.CreateWithAmmo(minigun, 14 /* PICKUP_ON_STREET_SLOW */, 500, -294.7, -551.2, 10.3);
+              $.bonus_gun5 = Pickup.CreateWithAmmo(minigun, 15 /* PICKUP_ON_STREET_SLOW */, 500, -294.7, -551.2, 10.3);
             }
             if ($.earned_free_rocket == 1) {
-              $.bonus_gun6 = Pickup.CreateWithAmmo(rocketla, 14 /* PICKUP_ON_STREET_SLOW */, 8, -290.7, -551.2, 10.3);
+              $.bonus_gun6 = Pickup.CreateWithAmmo(rocketla, 15 /* PICKUP_ON_STREET_SLOW */, 8, -290.7, -551.2, 10.3);
             }
             $.bonus_weapons_created1 = 1;
           }
@@ -495,25 +495,25 @@ async function mission_packages_start() {
         if ($.flag_player_in_hotel == 1) {
           if ($.bonus_weapons_created2 == 0) {
             if ($.earned_free_body_armour == 1) {
-              $.bonus_armour1 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, 214.2, -1275.7, 19.2);
+              $.bonus_armour1 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, 214.2, -1275.7, 19.2);
             }
             if ($.earned_free_chainsaw == 1) {
-              $.bonus_gun1 = Pickup.Create(chnsaw, 14 /* PICKUP_ON_STREET_SLOW */, 210.2, -1274.7, 19.2);
+              $.bonus_gun1 = Pickup.Create(chnsaw, 15 /* PICKUP_ON_STREET_SLOW */, 210.2, -1274.7, 19.2);
             }
             if ($.earned_free_python == 1) {
-              $.bonus_gun2 = Pickup.CreateWithAmmo(python, 14 /* PICKUP_ON_STREET_SLOW */, 24, 206.2, -1273.7, 19.2);
+              $.bonus_gun2 = Pickup.CreateWithAmmo(python, 15 /* PICKUP_ON_STREET_SLOW */, 24, 206.2, -1273.7, 19.2);
             }
             if ($.earned_free_flame_thrower == 1) {
-              $.bonus_gun3 = Pickup.CreateWithAmmo(181 /* flame */, 14 /* PICKUP_ON_STREET_SLOW */, 60, 224.2, -1273.1, 19.2);
+              $.bonus_gun3 = Pickup.CreateWithAmmo(flame, 15 /* PICKUP_ON_STREET_SLOW */, 60, 224.2, -1273.1, 19.2);
             }
             if ($.earned_free_laserscope == 1) {
-              $.bonus_gun4 = Pickup.CreateWithAmmo(laser, 14 /* PICKUP_ON_STREET_SLOW */, 28, 228.2, -1279.2, 19.2);
+              $.bonus_gun4 = Pickup.CreateWithAmmo(laser, 15 /* PICKUP_ON_STREET_SLOW */, 28, 228.2, -1279.2, 19.2);
             }
             if ($.earned_free_minigun == 1) {
-              $.bonus_gun5 = Pickup.CreateWithAmmo(minigun, 14 /* PICKUP_ON_STREET_SLOW */, 500, 226.0, -1268.6, 20.1);
+              $.bonus_gun5 = Pickup.CreateWithAmmo(minigun, 15 /* PICKUP_ON_STREET_SLOW */, 500, 226.0, -1268.6, 20.1);
             }
             if ($.earned_free_rocket == 1) {
-              $.bonus_gun6 = Pickup.CreateWithAmmo(rocketla, 14 /* PICKUP_ON_STREET_SLOW */, 8, 231.7, -1264.4, 20.1);
+              $.bonus_gun6 = Pickup.CreateWithAmmo(rocketla, 15 /* PICKUP_ON_STREET_SLOW */, 8, 231.7, -1264.4, 20.1);
             }
             $.bonus_weapons_created2 = 1;
           }
@@ -537,25 +537,25 @@ async function mission_packages_start() {
         if ($.hyman_condo_bought == 1) {
           if ($.bonus_weapons_created3 == 0) {
             if ($.earned_free_body_armour == 1) {
-              $.bonus_armour1 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, -813.1, 1344.7, 66.4);
+              $.bonus_armour1 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, -813.1, 1344.7, 66.4);
             }
             if ($.earned_free_chainsaw == 1) {
-              $.bonus_gun1 = Pickup.Create(chnsaw, 14 /* PICKUP_ON_STREET_SLOW */, -817.1, 1344.7, 66.4);
+              $.bonus_gun1 = Pickup.Create(chnsaw, 15 /* PICKUP_ON_STREET_SLOW */, -817.1, 1344.7, 66.4);
             }
             if ($.earned_free_python == 1) {
-              $.bonus_gun2 = Pickup.CreateWithAmmo(python, 14 /* PICKUP_ON_STREET_SLOW */, 24, -821.1, 1344.7, 66.4);
+              $.bonus_gun2 = Pickup.CreateWithAmmo(python, 15 /* PICKUP_ON_STREET_SLOW */, 24, -821.1, 1344.7, 66.4);
             }
             if ($.earned_free_flame_thrower == 1) {
-              $.bonus_gun3 = Pickup.CreateWithAmmo(181 /* flame */, 14 /* PICKUP_ON_STREET_SLOW */, 60, -825.1, 1344.7, 66.4);
+              $.bonus_gun3 = Pickup.CreateWithAmmo(flame, 15 /* PICKUP_ON_STREET_SLOW */, 60, -825.1, 1344.7, 66.4);
             }
             if ($.earned_free_laserscope == 1) {
-              $.bonus_gun4 = Pickup.CreateWithAmmo(laser, 14 /* PICKUP_ON_STREET_SLOW */, 28, -830.1, 1344.7, 66.4);
+              $.bonus_gun4 = Pickup.CreateWithAmmo(laser, 15 /* PICKUP_ON_STREET_SLOW */, 28, -830.1, 1344.7, 66.4);
             }
             if ($.earned_free_minigun == 1) {
-              $.bonus_gun5 = Pickup.CreateWithAmmo(minigun, 14 /* PICKUP_ON_STREET_SLOW */, 500, -833.1, 1344.7, 66.4);
+              $.bonus_gun5 = Pickup.CreateWithAmmo(minigun, 15 /* PICKUP_ON_STREET_SLOW */, 500, -833.1, 1344.7, 66.4);
             }
             if ($.earned_free_rocket == 1) {
-              $.bonus_gun6 = Pickup.CreateWithAmmo(rocketla, 14 /* PICKUP_ON_STREET_SLOW */, 8, -839.0, 1351.6, 66.4);
+              $.bonus_gun6 = Pickup.CreateWithAmmo(rocketla, 15 /* PICKUP_ON_STREET_SLOW */, 8, -839.0, 1351.6, 66.4);
             }
             $.bonus_weapons_created3 = 1;
           }
@@ -1163,7 +1163,7 @@ export async function pickups() {
 
 
   await asyncWait(100);
-  // START_NEW_SCRIPT check_packages
+  // START_NEW_SCRIPT check_packages 
 
 
 

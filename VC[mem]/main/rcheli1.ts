@@ -1,6 +1,6 @@
 // Generated from main/rcheli1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_rcbuggy1() {
 
@@ -259,7 +259,7 @@ async function mission_start_rcbuggy1() {
       Camera.PointAtCar($.remote_copter, 18 /* CAM_ON_A_STRING */, 2 /* JUMP_CUT */);
     }
     Text.ClearSmallPrints();
-    Hud.DisplayTimerWithString($.$id.timer_for_rcraider_coronas, TIMER_UP, "RCH1_5");
+    Hud.DisplayTimerWithString($.$id.timer_for_rcraider_coronas, 0 /* TIMER_UP */, "RCH1_5");
     Hud.DisplayCounterWithString($.$id.pack_counter, 0 /* COUNTER_DISPLAY_NUMBER */, "RCH1_4");
     $.player1.setControl(true /* ON */);
     Hud.SwitchWidescreen(false /* OFF */);
@@ -286,7 +286,7 @@ async function mission_start_rcbuggy1() {
       if (!(Car.IsDead($.remote_copter))) {
         Fx.DrawCorona($.pack1x, $.pack1y, $.pack1z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
         if ($.remote_copter.locate3D($.pack1x, $.pack1y, $.pack1z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           $.pack1blip.remove();
           $.pack_counter--;
           $.pack1 = 2;
@@ -302,7 +302,7 @@ async function mission_start_rcbuggy1() {
         if (!(Car.IsDead($.remote_copter))) {
           Fx.DrawCorona($.pack2x, $.pack2y, $.pack2z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
           if ($.remote_copter.locate3D($.pack2x, $.pack2y, $.pack2z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.pack2blip.remove();
             $.pack_counter--;
             $.pack2 = 2;
@@ -319,7 +319,7 @@ async function mission_start_rcbuggy1() {
         if (!(Car.IsDead($.remote_copter))) {
           Fx.DrawCorona($.pack3x, $.pack3y, $.pack3z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
           if ($.remote_copter.locate3D($.pack3x, $.pack3y, $.pack3z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.pack3blip.remove();
             $.pack_counter--;
             $.pack3 = 2;
@@ -336,7 +336,7 @@ async function mission_start_rcbuggy1() {
         if (!(Car.IsDead($.remote_copter))) {
           Fx.DrawCorona($.pack4x, $.pack4y, $.pack4z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
           if ($.remote_copter.locate3D($.pack4x, $.pack4y, $.pack4z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.pack4blip.remove();
             $.pack_counter--;
             $.pack4 = 2;
@@ -353,7 +353,7 @@ async function mission_start_rcbuggy1() {
         if (!(Car.IsDead($.remote_copter))) {
           Fx.DrawCorona($.pack5x, $.pack5y, $.pack5z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
           if ($.remote_copter.locate3D($.pack5x, $.pack5y, $.pack5z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.pack5blip.remove();
             $.pack_counter--;
             $.pack5 = 2;
@@ -370,7 +370,7 @@ async function mission_start_rcbuggy1() {
         if (!(Car.IsDead($.remote_copter))) {
           Fx.DrawCorona($.pack6x, $.pack6y, $.pack6z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
           if ($.remote_copter.locate3D($.pack6x, $.pack6y, $.pack6z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.pack6blip.remove();
             $.pack_counter--;
             $.pack6 = 2;
@@ -387,7 +387,7 @@ async function mission_start_rcbuggy1() {
         if (!(Car.IsDead($.remote_copter))) {
           Fx.DrawCorona($.pack7x, $.pack7y, $.pack7z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
           if ($.remote_copter.locate3D($.pack7x, $.pack7y, $.pack7z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.pack7blip.remove();
             $.pack_counter--;
             $.pack7 = 2;
@@ -404,7 +404,7 @@ async function mission_start_rcbuggy1() {
         if (!(Car.IsDead($.remote_copter))) {
           Fx.DrawCorona($.pack8x, $.pack8y, $.pack8z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
           if ($.remote_copter.locate3D($.pack8x, $.pack8y, $.pack8z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.pack8blip.remove();
             $.pack_counter--;
             $.pack8 = 2;
@@ -421,7 +421,7 @@ async function mission_start_rcbuggy1() {
         if (!(Car.IsDead($.remote_copter))) {
           Fx.DrawCorona($.pack9x, $.pack9y, $.pack9z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
           if ($.remote_copter.locate3D($.pack9x, $.pack9y, $.pack9z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.pack9blip.remove();
             $.pack_counter--;
             $.pack9 = 2;
@@ -438,7 +438,7 @@ async function mission_start_rcbuggy1() {
         if (!(Car.IsDead($.remote_copter))) {
           Fx.DrawCorona($.pack10x, $.pack10y, $.pack10z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
           if ($.remote_copter.locate3D($.pack10x, $.pack10y, $.pack10z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.pack10blip.remove();
             $.pack_counter--;
             $.pack10 = 2;
@@ -457,7 +457,7 @@ async function mission_start_rcbuggy1() {
         if (!(Car.IsDead($.remote_copter))) {
           Fx.DrawCorona($.pack11x, $.pack11y, $.pack11z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
           if ($.remote_copter.locate3D($.pack11x, $.pack11y, $.pack11z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.pack11blip.remove();
             $.pack_counter--;
             $.pack11 = 2;
@@ -474,7 +474,7 @@ async function mission_start_rcbuggy1() {
         if (!(Car.IsDead($.remote_copter))) {
           Fx.DrawCorona($.pack12x, $.pack12y, $.pack12z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
           if ($.remote_copter.locate3D($.pack12x, $.pack12y, $.pack12z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.pack12blip.remove();
             $.pack_counter--;
             $.pack12 = 2;
@@ -491,7 +491,7 @@ async function mission_start_rcbuggy1() {
         if (!(Car.IsDead($.remote_copter))) {
           Fx.DrawCorona($.pack13x, $.pack13y, $.pack13z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
           if ($.remote_copter.locate3D($.pack13x, $.pack13y, $.pack13z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.pack13blip.remove();
             $.pack_counter--;
             $.pack13 = 2;
@@ -508,7 +508,7 @@ async function mission_start_rcbuggy1() {
         if (!(Car.IsDead($.remote_copter))) {
           Fx.DrawCorona($.pack14x, $.pack14y, $.pack14z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
           if ($.remote_copter.locate3D($.pack14x, $.pack14y, $.pack14z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.pack14blip.remove();
             $.pack_counter--;
             $.pack14 = 2;
@@ -525,7 +525,7 @@ async function mission_start_rcbuggy1() {
         if (!(Car.IsDead($.remote_copter))) {
           Fx.DrawCorona($.pack15x, $.pack15y, $.pack15z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
           if ($.remote_copter.locate3D($.pack15x, $.pack15y, $.pack15z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.pack15blip.remove();
             $.pack_counter--;
             $.pack15 = 2;
@@ -542,7 +542,7 @@ async function mission_start_rcbuggy1() {
         if (!(Car.IsDead($.remote_copter))) {
           Fx.DrawCorona($.pack16x, $.pack16y, $.pack16z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
           if ($.remote_copter.locate3D($.pack16x, $.pack16y, $.pack16z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.pack16blip.remove();
             $.pack_counter--;
             $.pack16 = 2;
@@ -559,7 +559,7 @@ async function mission_start_rcbuggy1() {
         if (!(Car.IsDead($.remote_copter))) {
           Fx.DrawCorona($.pack17x, $.pack17y, $.pack17z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
           if ($.remote_copter.locate3D($.pack17x, $.pack17y, $.pack17z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.pack17blip.remove();
             $.pack_counter--;
             $.pack17 = 2;
@@ -576,7 +576,7 @@ async function mission_start_rcbuggy1() {
         if (!(Car.IsDead($.remote_copter))) {
           Fx.DrawCorona($.pack18x, $.pack18y, $.pack18z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
           if ($.remote_copter.locate3D($.pack18x, $.pack18y, $.pack18z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.pack18blip.remove();
             $.pack_counter--;
             $.pack18 = 2;
@@ -593,7 +593,7 @@ async function mission_start_rcbuggy1() {
         if (!(Car.IsDead($.remote_copter))) {
           Fx.DrawCorona($.pack19x, $.pack19y, $.pack19z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
           if ($.remote_copter.locate3D($.pack19x, $.pack19y, $.pack19z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.pack19blip.remove();
             $.pack_counter--;
             $.pack19 = 2;
@@ -610,7 +610,7 @@ async function mission_start_rcbuggy1() {
         if (!(Car.IsDead($.remote_copter))) {
           Fx.DrawCorona($.pack20x, $.pack20y, $.pack20z, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 100, 100);
           if ($.remote_copter.locate3D($.pack20x, $.pack20y, $.pack20z, 2.0, 2.0, 2.0, false /* FALSE */)) {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.pack20blip.remove();
             $.pack_counter--;
             $.pack20 = 2;

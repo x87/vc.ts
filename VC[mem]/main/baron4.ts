@@ -1,6 +1,6 @@
 // Generated from main/baron4.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *******************************************************************************************
 // *******************************************************************************************
@@ -45,7 +45,7 @@ async function body() {
   $.set_heli_chopper_off = 0;
 
 
-  Streaming.SetAreaVisible(VIS_MANSION);
+  Streaming.SetAreaVisible(2 /* VIS_MANSION */);
   World.SetExtraColors(8, false /* FALSE */);
 
 
@@ -170,7 +170,7 @@ async function body() {
   //impact
 
   if (!(Cutscene.WasSkipped())) {
-    Fx.AddMovingParticleEffect(15 /* POBJECT_FIREBALL_AND_SMOKE */, -408.2, -559.9, 18.7, 0.05, 0.05, 0.05, 0.05, 0, 0, 0, 500);
+    Fx.AddMovingParticleEffect(17 /* POBJECT_FIREBALL_AND_SMOKE */, -408.2, -559.9, 18.7, 0.05, 0.05, 0.05, 0.05, 0, 0, 0, 500);
   }
 
 
@@ -344,7 +344,7 @@ async function body() {
   World.RemoveParticleEffectsInArea(-406.8, -552.0, 25.0, -437.9, -569.4, 10.0);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   Streaming.LoadScene(-412.3, -607.0, 16.2);
@@ -619,7 +619,7 @@ async function body() {
     $.buddy.setSuffersCriticalHits(false /* FALSE */);
     $.buddy.setAsPlayerFriend($.player1, true /* TRUE */);
     $.buddy.setNeverTargeted(true /* TRUE */);
-    $.buddy.attachToCar($.fastest_boat, -0.7, 0.5, 1.4, 0 /* FACING_FORWARD */, 180.0, WEAPONTYPE_RUGER);
+    $.buddy.attachToCar($.fastest_boat, -0.7, 0.5, 1.4, 0 /* FACING_FORWARD */, 180.0, 27 /* WEAPONTYPE_RUGER */);
     $.buddy.setHeading(270.0);
   }
 
@@ -940,9 +940,9 @@ async function body() {
 
   Streaming.RequestModel(sparrow);
   Streaming.RequestModel(ruger);
-  Streaming.RequestModel(1344 /* barrel4 */);
+  Streaming.RequestModel(barrel4);
   Streaming.RequestModel(TEC9);
-  Streaming.RequestModel(178 /* UZI */);
+  Streaming.RequestModel(UZI);
 
 
   Camera.SetFixedPosition(278.740, 579.153, 26.070, 0.0, 0.0, 0.0);
@@ -960,7 +960,7 @@ async function body() {
   }
 
 
-  while (!(Streaming.HasModelLoaded(sparrow)) || !(Streaming.HasModelLoaded(ruger)) || !(Streaming.HasModelLoaded(1344 /* barrel4 */)) || !(Streaming.HasModelLoaded(TEC9)) || !(Streaming.HasModelLoaded(178 /* UZI */))) {
+  while (!(Streaming.HasModelLoaded(sparrow)) || !(Streaming.HasModelLoaded(ruger)) || !(Streaming.HasModelLoaded(barrel4)) || !(Streaming.HasModelLoaded(TEC9)) || !(Streaming.HasModelLoaded(UZI))) {
     await asyncWait(0);
 
 
@@ -983,7 +983,7 @@ async function body() {
   $.buddy.setSuffersCriticalHits(false /* FALSE */);
   $.buddy.clearThreatSearch();
   $.buddy.setAsPlayerFriend($.player1, true /* TRUE */);
-  $.scplayer.attachToCar($.fastest_boat, -0.8, 0.3, 1.7, 2 /* FACING_BACK */, 181.0, WEAPONTYPE_RUGER);
+  $.scplayer.attachToCar($.fastest_boat, -0.8, 0.3, 1.7, 2 /* FACING_BACK */, 181.0, 27 /* WEAPONTYPE_RUGER */);
   Hud.DisplayCounterWithString($.$id.fastboat_health, 1 /* COUNTER_DISPLAY_BAR */, "COK4_35");
   await fastboat_health();  // SCM GOSUB fastboat_health
 
@@ -998,7 +998,7 @@ async function body() {
     coke_boat1.goto(286.2, 482.0, 5.6);
     coke_boat1.setCruiseSpeed(24.0);
     boat_shooter1 = Char.Create(4 /* PEDTYPE_CIVMALE */, CBa, 354.4, 595.0, 9.2);
-    boat_shooter1.attachToCar(coke_boat1, -0.8, 0.3, 1.5, 0 /* FACING_FORWARD */, 181.0, 3 /* WEAPONTYPE_UZI */);
+    boat_shooter1.attachToCar(coke_boat1, -0.8, 0.3, 1.5, 0 /* FACING_FORWARD */, 181.0, 23 /* WEAPONTYPE_UZI */);
     boat_shooter1.setObjDestroyCar($.fastest_boat);
     coke_boat1.setHealth(1000);
   }
@@ -1014,7 +1014,7 @@ async function body() {
     coke_boat3.goto(286.2, 482.0, 5.6);
     coke_boat3.setCruiseSpeed(24.0);
     boat_shooter3 = Char.Create(4 /* PEDTYPE_CIVMALE */, CBa, 354.4, 597.0, 9.2);
-    boat_shooter3.attachToCar(coke_boat3, -0.8, 0.3, 1.5, 0 /* FACING_FORWARD */, 181.0, 3 /* WEAPONTYPE_UZI */);
+    boat_shooter3.attachToCar(coke_boat3, -0.8, 0.3, 1.5, 0 /* FACING_FORWARD */, 181.0, 23 /* WEAPONTYPE_UZI */);
     boat_shooter3.setObjDestroyCar($.fastest_boat);
     coke_boat3.setHealth(1000);
   }
@@ -1025,7 +1025,7 @@ async function body() {
     coke_boat4.setHeading(180.0);
     coke_boat4.setCruiseSpeed(0.0);
     boat_shooter4 = Char.Create(4 /* PEDTYPE_CIVMALE */, CBa, 354.4, 598.0, 9.2);
-    boat_shooter4.attachToCar(coke_boat4, -0.8, 0.3, 1.5, 0 /* FACING_FORWARD */, 181.0, 3 /* WEAPONTYPE_UZI */);
+    boat_shooter4.attachToCar(coke_boat4, -0.8, 0.3, 1.5, 0 /* FACING_FORWARD */, 181.0, 23 /* WEAPONTYPE_UZI */);
     boat_shooter4.setObjDestroyCar($.fastest_boat);
     coke_boat4.setHealth(1000);
   }
@@ -1033,17 +1033,17 @@ async function body() {
 
 
   $.heli_chopper = Car.Create(sparrow, 473.9, 90.0, 65.0);
-  125 /* heli_chopper */.setHeading(180.0);
-  125 /* heli_chopper */.freezePosition(true /* TRUE */);
-  125 /* heli_chopper */.setStabiliser(true /* TRUE */);
-  boat_pilot2 = Char.CreateInsideCar(125 /* heli_chopper */, 4 /* PEDTYPE_CIVMALE */, CBa);
+  $.heli_chopper.setHeading(180.0);
+  $.heli_chopper.freezePosition(true /* TRUE */);
+  $.heli_chopper.setStabiliser(true /* TRUE */);
+  boat_pilot2 = Char.CreateInsideCar($.heli_chopper, 4 /* PEDTYPE_CIVMALE */, CBa);
 
 
   $.boat_pilot5 = Char.Create(4 /* PEDTYPE_CIVMALE */, CBa, -370.4, -655.0, 9.2);
-  $.boat_pilot5.attachToCar(125 /* heli_chopper */, 0.8, 0.0, 0.5, 3 /* FACING_RIGHT */, 180.0, WEAPONTYPE_RUGER);
+  $.boat_pilot5.attachToCar($.heli_chopper, 0.8, 0.0, 0.5, 3 /* FACING_RIGHT */, 180.0, 27 /* WEAPONTYPE_RUGER */);
 
 
-  125 /* heli_chopper */.gotoCoords(-231.6, -672.1, 50.0, 100);
+  $.heli_chopper.gotoCoords(-231.6, -672.1, 50.0, 100);
 
 
   if (Car.IsDead($.fastest_boat)) {
@@ -1203,10 +1203,10 @@ async function body() {
         await return_to_masion();  // SCM GOSUB return_to_masion
       }
       if ($.second_two_samples == 1) {
-        if (!(Car.IsDead(125 /* heli_chopper */))) {
+        if (!(Car.IsDead($.heli_chopper))) {
           if ($.set_heli_chopper_off == 0) {
-            125 /* heli_chopper */.freezePosition(false /* FALSE */);
-            125 /* heli_chopper */.setForwardSpeed(20.0);
+            $.heli_chopper.freezePosition(false /* FALSE */);
+            $.heli_chopper.setForwardSpeed(20.0);
             if (!(Char.IsDead($.boat_pilot5))) {
               //SET_CHAR_WAIT_STATE boat_pilot5 WAITSTATE_SIT_IDLE 9999999999
               $.boat_pilot5.setObjDestroyCar($.fastest_boat);
@@ -1224,10 +1224,10 @@ $.player_z = _res95.z;
           $.player_z = $.player_z + 10.0;
           $.player_y = $.player_y - 4.0;
           if (!(Char.IsDead(boat_pilot2))) {
-            125 /* heli_chopper */.gotoCoords($.player_x, $.player_y, $.player_z, 75);
+            $.heli_chopper.gotoCoords($.player_x, $.player_y, $.player_z, 75);
           }
           else {
-            125 /* heli_chopper */.gotoCoords($.player_x, $.player_y, $.player_z, 0);
+            $.heli_chopper.gotoCoords($.player_x, $.player_y, $.player_z, 0);
           }
         }
       }
@@ -1260,35 +1260,35 @@ $.player_z = _res95.z;
     if ($.player1.locateAnyMeans2D(416.0, -76.1, 40.0, 40.0, false /* FALSE */)) {
       if ($.jetty_chars_created == 0) {
         if (!(Car.IsDead($.fastest_boat))) {
-          $.cok4_barrel1 = ScriptObject.Create(1344 /* barrel4 */, 396.3, -178.9, 6.4);
-          $.cok4_barrel2 = ScriptObject.Create(1344 /* barrel4 */, 395.3, -184.6, 6.4);
+          $.cok4_barrel1 = ScriptObject.Create(barrel4, 396.3, -178.9, 6.4);
+          $.cok4_barrel2 = ScriptObject.Create(barrel4, 395.3, -184.6, 6.4);
           $.jetty_char1 = Char.Create(4 /* PEDTYPE_CIVMALE */, CBa, 401.4, -171.0, 6.6);
           $.jetty_char1.setStayInSamePlace(true /* TRUE */);
           $.jetty_char1.setObjDestroyCar($.fastest_boat);
           $.jetty_char1.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.jetty_char1.lookAtPlayerAlways($.player1);
-          $.jetty_char1.giveWeapon(WEAPONTYPE_TEC9, 30000);
+          $.jetty_char1.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
           $.jetty_char1.setHealth(50);
           $.jetty_char2 = Char.Create(4 /* PEDTYPE_CIVMALE */, CBa, 400.7, -177.8, 6.6);
           $.jetty_char2.setStayInSamePlace(true /* TRUE */);
           $.jetty_char2.setObjDestroyCar($.fastest_boat);
           $.jetty_char2.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.jetty_char2.lookAtPlayerAlways($.player1);
-          $.jetty_char2.giveWeapon(WEAPONTYPE_TEC9, 30000);
+          $.jetty_char2.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
           $.jetty_char2.setHealth(50);
           $.jetty_char3 = Char.Create(4 /* PEDTYPE_CIVMALE */, CBa, 398.8, -190.8, 6.6);
           $.jetty_char3.setStayInSamePlace(true /* TRUE */);
           $.jetty_char3.setObjDestroyCar($.fastest_boat);
           $.jetty_char3.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.jetty_char3.lookAtPlayerAlways($.player1);
-          $.jetty_char3.giveWeapon(WEAPONTYPE_TEC9, 30000);
+          $.jetty_char3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
           $.jetty_char3.setHealth(50);
           $.jetty_char4 = Char.Create(4 /* PEDTYPE_CIVMALE */, CBa, 399.6, -183.9, 6.6);
           $.jetty_char4.setStayInSamePlace(true /* TRUE */);
           $.jetty_char4.setObjDestroyCar($.fastest_boat);
           $.jetty_char4.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.jetty_char4.lookAtPlayerAlways($.player1);
-          $.jetty_char4.giveWeapon(WEAPONTYPE_TEC9, 30000);
+          $.jetty_char4.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
           $.jetty_char4.setHealth(50);
           $.jetty_chars_created = 1;
         }
@@ -1340,7 +1340,7 @@ $.player_z = _res95.z;
     }
     if (TIMERB > 6000) {
       if ($.first_two_samples == 1) {
-        if ($.player1.isShooting() && coke_boat3.hasBeenDamagedByWeapon(WEAPONTYPE_RUGER)) {
+        if ($.player1.isShooting() && coke_boat3.hasBeenDamagedByWeapon(27 /* WEAPONTYPE_RUGER */)) {
           if ($.eat_it_samp == 0) {
             if ($.audio_is_loading == 0) {
               Audio.LoadMissionAudio(2, "COK4_16" as any);
@@ -1362,7 +1362,7 @@ $.player_z = _res95.z;
 
 
         }
-        if ($.player1.isShooting() && coke_boat1.hasBeenDamagedByWeapon(WEAPONTYPE_RUGER)) {
+        if ($.player1.isShooting() && coke_boat1.hasBeenDamagedByWeapon(27 /* WEAPONTYPE_RUGER */)) {
           if ($.eat_it_samp == 1) {
             if ($.sleep_fish_samp == 0) {
               if ($.audio_is_loading == 0) {
@@ -1387,7 +1387,7 @@ $.player_z = _res95.z;
 
         }
         if ($.third_two_samples == 1) {
-          if ($.player1.isShooting() && coke_boat4.hasBeenDamagedByWeapon(WEAPONTYPE_RUGER)) {
+          if ($.player1.isShooting() && coke_boat4.hasBeenDamagedByWeapon(27 /* WEAPONTYPE_RUGER */)) {
             if ($.you_want_some_samp == 0) {
               if ($.audio_is_loading == 0) {
                 Audio.LoadMissionAudio(2, "COK4_14" as any);
@@ -1448,7 +1448,7 @@ $.player_z = _res95.z;
   coke_boat2.delete();
   coke_boat3.delete();
   coke_boat4.delete();
-  125 /* heli_chopper */.delete();
+  $.heli_chopper.delete();
   boat_pilot1.delete();
   boat_pilot3.delete();
   boat_pilot4.delete();
@@ -1631,7 +1631,7 @@ async function mission_baron4_passed() {
   Stat.PlayerMadeProgress(1);
   $.clothes_pickup9 = Pickup.CreateClothes(-917.4, 885.1, 11.0, 10);
   $.clothes9_created = 1;
-  // START_NEW_SCRIPT cloth8
+  // START_NEW_SCRIPT cloth8 
   $.baron_contact_blip.remove();
 }
 
@@ -1650,12 +1650,12 @@ async function cleanup() {
   Streaming.MarkModelAsNoLongerNeeded(RUGER);
   Streaming.MarkModelAsNoLongerNeeded(marquis);
   Streaming.MarkModelAsNoLongerNeeded(CBa);
-  Streaming.MarkModelAsNoLongerNeeded(178 /* UZI */);
+  Streaming.MarkModelAsNoLongerNeeded(UZI);
   Streaming.MarkModelAsNoLongerNeeded(TEC9);
   Streaming.MarkModelAsNoLongerNeeded(sparrow);
   Streaming.MarkModelAsNoLongerNeeded(ruger);
-  Streaming.MarkModelAsNoLongerNeeded(1344 /* barrel4 */);
-  125 /* heli_chopper */.markAsNoLongerNeeded();
+  Streaming.MarkModelAsNoLongerNeeded(barrel4);
+  $.heli_chopper.markAsNoLongerNeeded();
   Weather.Release();
   $.scplayer.detachFromCar();
   $.buddy.removeElegantly();

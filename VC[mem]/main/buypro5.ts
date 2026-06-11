@@ -1,6 +1,6 @@
 // Generated from main/buypro5.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_buypro5() {
 
@@ -27,17 +27,17 @@ async function mission_start_buypro5() {
   while (Camera.GetFadingStatus()) {
     await asyncWait(0);
     if (!($.player1.isPlaying())) {
-      $.nbmnbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.nbmnbuyX, $.nbmnbuyY, $.nbmnbuyZ, RADAR_SPRITE_SAVEHOUSE);
+      $.nbmnbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.nbmnbuyX, $.nbmnbuyY, $.nbmnbuyZ, 19 /* RADAR_SPRITE_SAVEHOUSE */);
       $.nbmnbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
-      // START_NEW_SCRIPT nbmnsave1_save_loop
+      // START_NEW_SCRIPT nbmnsave1_save_loop 
       return; // TERMINATE_THIS_SCRIPT
     }
   }
 
 
-  $.nbmnbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.nbmnbuyX, $.nbmnbuyY, $.nbmnbuyZ, RADAR_SPRITE_SAVEHOUSE);
+  $.nbmnbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.nbmnbuyX, $.nbmnbuyY, $.nbmnbuyZ, 19 /* RADAR_SPRITE_SAVEHOUSE */);
   $.nbmnbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
-  // START_NEW_SCRIPT nbmnsave1_save_loop
+  // START_NEW_SCRIPT nbmnsave1_save_loop 
 
 
   World.ClearArea(428.3730, 608.9806, 11.6898, 1.0, true /* TRUE */);
@@ -68,7 +68,7 @@ async function mission_start_buypro5() {
   $.safehouse_created5 = 1;
   Text.PrintWithNumberBig("NBMNBUY", $.nbmnbuy_price, 5000, 6); //"Elswanko Casa purchased: $ 15000"
   Stat.AddMoneySpentOnProperty($.nbmnbuy_price);
-  Stat.SetPropertyAsOwned(PROP_EL_SWANKO);
+  Stat.SetPropertyAsOwned(10 /* PROP_EL_SWANKO */);
   //	nbmnbuy_price *= -1
   //	ADD_SCORE player1 nbmnbuy_price
 

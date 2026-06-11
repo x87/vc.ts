@@ -1,6 +1,6 @@
 // Generated from main/kickstart.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_kickstart() {
 
@@ -543,7 +543,7 @@ async function mission_start_kickstart() {
 
   $.player1.setControl(false /* OFF */);
   Game.SetIsInStadium(true /* TRUE */);
-  Streaming.SetAreaVisible(VIS_DIRT);
+  Streaming.SetAreaVisible(14 /* VIS_DIRT */);
   World.SetExtraColors(9, false /* FALSE */);
   Streaming.LoadScene(-1331.889, 1498.615, 298.140);
 
@@ -952,7 +952,7 @@ async function mission_start_kickstart() {
   Hud.DisplayCounterWithString($.$id.number_of_checkpoints_kickstart, 0 /* COUNTER_DISPLAY_NUMBER */, "KICK1_9");
 
 
-  Hud.DisplayTimerWithString($.$id.race_timer_kickstart, TIMER_UP, "KICK1_T");
+  Hud.DisplayTimerWithString($.$id.race_timer_kickstart, 0 /* TIMER_UP */, "KICK1_T");
 
 
   TIMERA = 0;
@@ -1639,7 +1639,7 @@ async function mission_cleanup_kickstart() {
 
 
   if (!(HAS_DEATHARREST_BEEN_EXECUTED()) || $.flag_kickstart_mission1_passed == 1) {
-    Streaming.SetAreaVisible(VIS_MAIN_MAP);
+    Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
     Streaming.LoadScene(-1101.0, 1331.0, 19.1);
     if ($.player1.isInAnyCar()) {
       $.player1.warpFromCarToCoord(-1101.0, 1331.0, 19.1);
@@ -1807,7 +1807,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint1_x_kickstart, $.checkpoint1_y_kickstart, $.checkpoint1_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint1_x_kickstart, $.checkpoint1_y_kickstart, $.checkpoint1_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint1_x_kickstart, $.checkpoint1_y_kickstart, $.checkpoint1_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint1_x_kickstart, $.checkpoint1_y_kickstart, $.checkpoint1_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint1_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -1834,7 +1834,7 @@ $.bike_z_kickstart = _res315.z;
 
 
         }
-        Sound.AddOneOffSound($.checkpoint2_x_kickstart, $.checkpoint2_y_kickstart, $.checkpoint2_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint2_x_kickstart, $.checkpoint2_y_kickstart, $.checkpoint2_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint2_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -1853,7 +1853,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint3_x_kickstart, $.checkpoint3_y_kickstart, $.checkpoint3_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint3_x_kickstart, $.checkpoint3_y_kickstart, $.checkpoint3_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint3_x_kickstart, $.checkpoint3_y_kickstart, $.checkpoint3_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint3_x_kickstart, $.checkpoint3_y_kickstart, $.checkpoint3_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint3_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -1872,7 +1872,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint4_x_kickstart, $.checkpoint4_y_kickstart, $.checkpoint4_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint4_x_kickstart, $.checkpoint4_y_kickstart, $.checkpoint4_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint4_x_kickstart, $.checkpoint4_y_kickstart, $.checkpoint4_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint4_x_kickstart, $.checkpoint4_y_kickstart, $.checkpoint4_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint4_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -1891,7 +1891,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint5_x_kickstart, $.checkpoint5_y_kickstart, $.checkpoint5_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint5_x_kickstart, $.checkpoint5_y_kickstart, $.checkpoint5_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint5_x_kickstart, $.checkpoint5_y_kickstart, $.checkpoint5_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint5_x_kickstart, $.checkpoint5_y_kickstart, $.checkpoint5_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint5_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -1918,7 +1918,7 @@ $.bike_z_kickstart = _res315.z;
 
 
         }
-        Sound.AddOneOffSound($.checkpoint6_x_kickstart, $.checkpoint6_y_kickstart, $.checkpoint6_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint6_x_kickstart, $.checkpoint6_y_kickstart, $.checkpoint6_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint6_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -1945,7 +1945,7 @@ $.bike_z_kickstart = _res315.z;
 
 
         }
-        Sound.AddOneOffSound($.checkpoint7_x_kickstart, $.checkpoint7_y_kickstart, $.checkpoint7_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint7_x_kickstart, $.checkpoint7_y_kickstart, $.checkpoint7_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint7_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -1972,7 +1972,7 @@ $.bike_z_kickstart = _res315.z;
 
 
         }
-        Sound.AddOneOffSound($.checkpoint8_x_kickstart, $.checkpoint8_y_kickstart, $.checkpoint8_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint8_x_kickstart, $.checkpoint8_y_kickstart, $.checkpoint8_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint8_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -1991,7 +1991,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint9_x_kickstart, $.checkpoint9_y_kickstart, $.checkpoint9_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint9_x_kickstart, $.checkpoint9_y_kickstart, $.checkpoint9_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint9_x_kickstart, $.checkpoint9_y_kickstart, $.checkpoint9_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint9_x_kickstart, $.checkpoint9_y_kickstart, $.checkpoint9_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint9_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2010,7 +2010,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint10_x_kickstart, $.checkpoint10_y_kickstart, $.checkpoint10_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint10_x_kickstart, $.checkpoint10_y_kickstart, $.checkpoint10_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint10_x_kickstart, $.checkpoint10_y_kickstart, $.checkpoint10_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint10_x_kickstart, $.checkpoint10_y_kickstart, $.checkpoint10_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint10_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2029,7 +2029,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint11_x_kickstart, $.checkpoint11_y_kickstart, $.checkpoint11_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint11_x_kickstart, $.checkpoint11_y_kickstart, $.checkpoint11_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint11_x_kickstart, $.checkpoint11_y_kickstart, $.checkpoint11_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint11_x_kickstart, $.checkpoint11_y_kickstart, $.checkpoint11_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint11_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2048,7 +2048,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint12_x_kickstart, $.checkpoint12_y_kickstart, $.checkpoint12_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint12_x_kickstart, $.checkpoint12_y_kickstart, $.checkpoint12_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint12_x_kickstart, $.checkpoint12_y_kickstart, $.checkpoint12_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint12_x_kickstart, $.checkpoint12_y_kickstart, $.checkpoint12_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint12_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2067,7 +2067,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint13_x_kickstart, $.checkpoint13_y_kickstart, $.checkpoint13_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint13_x_kickstart, $.checkpoint13_y_kickstart, $.checkpoint13_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint13_x_kickstart, $.checkpoint13_y_kickstart, $.checkpoint13_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint13_x_kickstart, $.checkpoint13_y_kickstart, $.checkpoint13_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint13_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2086,7 +2086,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint14_x_kickstart, $.checkpoint14_y_kickstart, $.checkpoint14_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint14_x_kickstart, $.checkpoint14_y_kickstart, $.checkpoint14_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint14_x_kickstart, $.checkpoint14_y_kickstart, $.checkpoint14_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint14_x_kickstart, $.checkpoint14_y_kickstart, $.checkpoint14_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint14_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2105,7 +2105,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint15_x_kickstart, $.checkpoint15_y_kickstart, $.checkpoint15_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint15_x_kickstart, $.checkpoint15_y_kickstart, $.checkpoint15_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint15_x_kickstart, $.checkpoint15_y_kickstart, $.checkpoint15_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint15_x_kickstart, $.checkpoint15_y_kickstart, $.checkpoint15_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint15_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2124,7 +2124,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint16_x_kickstart, $.checkpoint16_y_kickstart, $.checkpoint16_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint16_x_kickstart, $.checkpoint16_y_kickstart, $.checkpoint16_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint16_x_kickstart, $.checkpoint16_y_kickstart, $.checkpoint16_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint16_x_kickstart, $.checkpoint16_y_kickstart, $.checkpoint16_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint16_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2143,7 +2143,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint17_x_kickstart, $.checkpoint17_y_kickstart, $.checkpoint17_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint17_x_kickstart, $.checkpoint17_y_kickstart, $.checkpoint17_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint17_x_kickstart, $.checkpoint17_y_kickstart, $.checkpoint17_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint17_x_kickstart, $.checkpoint17_y_kickstart, $.checkpoint17_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint17_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2162,7 +2162,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint18_x_kickstart, $.checkpoint18_y_kickstart, $.checkpoint18_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint18_x_kickstart, $.checkpoint18_y_kickstart, $.checkpoint18_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint18_x_kickstart, $.checkpoint18_y_kickstart, $.checkpoint18_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint18_x_kickstart, $.checkpoint18_y_kickstart, $.checkpoint18_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint18_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2181,7 +2181,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint19_x_kickstart, $.checkpoint19_y_kickstart, $.checkpoint19_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint19_x_kickstart, $.checkpoint19_y_kickstart, $.checkpoint19_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint19_x_kickstart, $.checkpoint19_y_kickstart, $.checkpoint19_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint19_x_kickstart, $.checkpoint19_y_kickstart, $.checkpoint19_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint19_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2200,7 +2200,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint20_x_kickstart, $.checkpoint20_y_kickstart, $.checkpoint20_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint20_x_kickstart, $.checkpoint20_y_kickstart, $.checkpoint20_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint20_x_kickstart, $.checkpoint20_y_kickstart, $.checkpoint20_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint20_x_kickstart, $.checkpoint20_y_kickstart, $.checkpoint20_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint20_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2219,7 +2219,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint21_x_kickstart, $.checkpoint21_y_kickstart, $.checkpoint21_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint21_x_kickstart, $.checkpoint21_y_kickstart, $.checkpoint21_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint21_x_kickstart, $.checkpoint21_y_kickstart, $.checkpoint21_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint21_x_kickstart, $.checkpoint21_y_kickstart, $.checkpoint21_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint21_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2238,7 +2238,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint22_x_kickstart, $.checkpoint22_y_kickstart, $.checkpoint22_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint22_x_kickstart, $.checkpoint22_y_kickstart, $.checkpoint22_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint22_x_kickstart, $.checkpoint22_y_kickstart, $.checkpoint22_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint22_x_kickstart, $.checkpoint22_y_kickstart, $.checkpoint22_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint22_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2257,7 +2257,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint23_x_kickstart, $.checkpoint23_y_kickstart, $.checkpoint23_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint23_x_kickstart, $.checkpoint23_y_kickstart, $.checkpoint23_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint23_x_kickstart, $.checkpoint23_y_kickstart, $.checkpoint23_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint23_x_kickstart, $.checkpoint23_y_kickstart, $.checkpoint23_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint23_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2276,7 +2276,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint24_x_kickstart, $.checkpoint24_y_kickstart, $.checkpoint24_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint24_x_kickstart, $.checkpoint24_y_kickstart, $.checkpoint24_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint24_x_kickstart, $.checkpoint24_y_kickstart, $.checkpoint24_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint24_x_kickstart, $.checkpoint24_y_kickstart, $.checkpoint24_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint24_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2295,7 +2295,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint25_x_kickstart, $.checkpoint25_y_kickstart, $.checkpoint25_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint25_x_kickstart, $.checkpoint25_y_kickstart, $.checkpoint25_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint25_x_kickstart, $.checkpoint25_y_kickstart, $.checkpoint25_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint25_x_kickstart, $.checkpoint25_y_kickstart, $.checkpoint25_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint25_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2314,7 +2314,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint26_x_kickstart, $.checkpoint26_y_kickstart, $.checkpoint26_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint26_x_kickstart, $.checkpoint26_y_kickstart, $.checkpoint26_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint26_x_kickstart, $.checkpoint26_y_kickstart, $.checkpoint26_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint26_x_kickstart, $.checkpoint26_y_kickstart, $.checkpoint26_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint26_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2333,7 +2333,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint27_x_kickstart, $.checkpoint27_y_kickstart, $.checkpoint27_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint27_x_kickstart, $.checkpoint27_y_kickstart, $.checkpoint27_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint27_x_kickstart, $.checkpoint27_y_kickstart, $.checkpoint27_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint27_x_kickstart, $.checkpoint27_y_kickstart, $.checkpoint27_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint27_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2352,7 +2352,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint28_x_kickstart, $.checkpoint28_y_kickstart, $.checkpoint28_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint28_x_kickstart, $.checkpoint28_y_kickstart, $.checkpoint28_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint28_x_kickstart, $.checkpoint28_y_kickstart, $.checkpoint28_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint28_x_kickstart, $.checkpoint28_y_kickstart, $.checkpoint28_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint28_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2371,7 +2371,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint29_x_kickstart, $.checkpoint29_y_kickstart, $.checkpoint29_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint29_x_kickstart, $.checkpoint29_y_kickstart, $.checkpoint29_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint29_x_kickstart, $.checkpoint29_y_kickstart, $.checkpoint29_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint29_x_kickstart, $.checkpoint29_y_kickstart, $.checkpoint29_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint29_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2390,7 +2390,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint30_x_kickstart, $.checkpoint30_y_kickstart, $.checkpoint30_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint30_x_kickstart, $.checkpoint30_y_kickstart, $.checkpoint30_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint30_x_kickstart, $.checkpoint30_y_kickstart, $.checkpoint30_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint30_x_kickstart, $.checkpoint30_y_kickstart, $.checkpoint30_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint30_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2409,7 +2409,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint31_x_kickstart, $.checkpoint31_y_kickstart, $.checkpoint31_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint31_x_kickstart, $.checkpoint31_y_kickstart, $.checkpoint31_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint31_x_kickstart, $.checkpoint31_y_kickstart, $.checkpoint31_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint31_x_kickstart, $.checkpoint31_y_kickstart, $.checkpoint31_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint31_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;
@@ -2428,7 +2428,7 @@ $.bike_z_kickstart = _res315.z;
     Fx.DrawCorona($.checkpoint32_x_kickstart, $.checkpoint32_y_kickstart, $.checkpoint32_z_kickstart, 1.0, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 255, 137, 205);
     if ($.player1.locateAnyMeans3D($.checkpoint32_x_kickstart, $.checkpoint32_y_kickstart, $.checkpoint32_z_kickstart, 1.5, 1.5, 1.5, false /* FALSE */)) {
       if ($.player1.isInModel(SANCHEZ)) {
-        Sound.AddOneOffSound($.checkpoint32_x_kickstart, $.checkpoint32_y_kickstart, $.checkpoint32_z_kickstart, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.checkpoint32_x_kickstart, $.checkpoint32_y_kickstart, $.checkpoint32_z_kickstart, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("KICK1_6", 1000, 1); //"Well done now on to the next checkpoint!"
         $.checkpoint32_blip_kickstart.remove();
         ++$.player_checkpoint_kickstart;

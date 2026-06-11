@@ -1,6 +1,6 @@
 // Generated from main/lawyer3.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *******************************************************************************************
 // *******************************************************************************************
@@ -45,7 +45,7 @@ async function body() {
   Audio.LoadMissionAudio(1, "mono15" as any);
 
 
-  Streaming.SetAreaVisible(VIS_LAWYERS);
+  Streaming.SetAreaVisible(6 /* VIS_LAWYERS */);
 
 
   Streaming.LoadSpecialCharacter(1, "CSplay");
@@ -334,7 +334,7 @@ async function body() {
   // START OF MISSION
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   Streaming.LoadScene(117.1, -825.6, 9.8);
 
 
@@ -428,7 +428,7 @@ $.hammer_blokez = _res325.z;
   if (!(Char.IsDead(hit_n_run_bloke))) {
     if (!(Car.IsDead(hit_n_run_car))) {
       hit_n_run_bloke.setObjLeaveCar(hit_n_run_car);
-      hit_n_run_bloke.setPersonality(PEDSTAT_COWARD);
+      hit_n_run_bloke.setPersonality(39 /* PEDSTAT_COWARD */);
     }
   }
 
@@ -460,7 +460,7 @@ $.hammer_blokez = _res325.z;
   }
 
 
-  $.hardware_blip = Blip.AddSpriteForCoord($.hard1X, $.hard1Y, $.hard1Z, RADAR_SPRITE_HARDWARE);
+  $.hardware_blip = Blip.AddSpriteForCoord($.hard1X, $.hard1Y, $.hard1Z, 18 /* RADAR_SPRITE_HARDWARE */);
 
 
   $.player1.setControl(true /* ON */);
@@ -484,7 +484,7 @@ $.hammer_blokez = _res325.z;
 
   World.ClearArea(191.4, -1026.7, 9.4, 2.0, true /* TRUE */);
   $.jury_bloke1 = Char.Create(4 /* PEDTYPE_CIVMALE */, HMORI, 191.4, -1026.7, 9.4);
-  $.jury_bloke1.setPersonality(PEDSTAT_COWARD);
+  $.jury_bloke1.setPersonality(39 /* PEDSTAT_COWARD */);
   $.jury_bloke1.setOnlyDamagedByPlayer(true /* TRUE */);
   $.jury_bloke1_blip = Blip.AddForChar($.jury_bloke1);
   $.jury_bloke1.setHealth(300);
@@ -502,7 +502,7 @@ $.hammer_blokez = _res325.z;
 
 
   $.talk_guy = Char.Create(4 /* PEDTYPE_CIVMALE */, BFYBE, 191.6, -1028.0, 9.4); //chatting bloke
-  $.talk_guy.setPersonality(PEDSTAT_COWARD);
+  $.talk_guy.setPersonality(39 /* PEDSTAT_COWARD */);
   $.talk_guy.clearThreatSearch();
 
 
@@ -652,7 +652,7 @@ $.hammer_blokez = _res325.z;
               }
               if (!(Car.IsDead($.jury_car))) {
                 $.jury_car.setCanBurstTires(true /* TRUE */);
-                $.jury_car.burstTire(FRONT_LEFT_WHEEL);
+                $.jury_car.burstTire(0 /* FRONT_LEFT_WHEEL */);
                 $.jury_car.popBootUsingPhysics();
                 if (!(Car.IsDead($.jury_car_smash))) {
                   $.jury_car_smash.popBootUsingPhysics();
@@ -988,7 +988,7 @@ $.law_world_z = _res327.z;
           }
         }
       }
-      if ($.jury_bloke1.hasBeenDamagedByWeapon(WEAPONTYPE_ANYMELEE) || $.jury_bloke1.hasBeenDamagedByWeapon(17 /* WEAPONTYPE_RUNOVERBYCAR */) || $.jury_bloke1.hasBeenDamagedByWeapon(16 /* WEAPONTYPE_RAMMEDBYCAR */)) {
+      if ($.jury_bloke1.hasBeenDamagedByWeapon(46 /* WEAPONTYPE_ANYMELEE */) || $.jury_bloke1.hasBeenDamagedByWeapon(40 /* WEAPONTYPE_RUNOVERBYCAR */) || $.jury_bloke1.hasBeenDamagedByWeapon(39 /* WEAPONTYPE_RAMMEDBYCAR */)) {
         if (jury_bloke1_first_hit == 0) {
           $.wacked_by_weapon1++;
           $.jury_bloke1.clearLastWeaponDamage();
@@ -1001,7 +1001,7 @@ $.law_world_z = _res327.z;
           jury_bloke1_first_hit = 1;
         }
       }
-      if ($.jury_bloke1.hasBeenDamagedByWeapon(WEAPONTYPE_ANYMELEE) || $.jury_bloke1.hasBeenDamagedByWeapon(17 /* WEAPONTYPE_RUNOVERBYCAR */) || $.jury_bloke1.hasBeenDamagedByWeapon(16 /* WEAPONTYPE_RAMMEDBYCAR */)) {
+      if ($.jury_bloke1.hasBeenDamagedByWeapon(46 /* WEAPONTYPE_ANYMELEE */) || $.jury_bloke1.hasBeenDamagedByWeapon(40 /* WEAPONTYPE_RUNOVERBYCAR */) || $.jury_bloke1.hasBeenDamagedByWeapon(39 /* WEAPONTYPE_RAMMEDBYCAR */)) {
         if (jury_bloke1_second_hit == 0) {
           $.wacked_by_weapon1++;
           $.jury_bloke1.clearLastWeaponDamage();
@@ -1014,7 +1014,7 @@ $.law_world_z = _res327.z;
           jury_bloke1_second_hit = 1;
         }
       }
-      if ($.jury_bloke1.hasBeenDamagedByWeapon(WEAPONTYPE_ANYMELEE) || $.jury_bloke1.hasBeenDamagedByWeapon(17 /* WEAPONTYPE_RUNOVERBYCAR */) || $.jury_bloke1.hasBeenDamagedByWeapon(16 /* WEAPONTYPE_RAMMEDBYCAR */)) {
+      if ($.jury_bloke1.hasBeenDamagedByWeapon(46 /* WEAPONTYPE_ANYMELEE */) || $.jury_bloke1.hasBeenDamagedByWeapon(40 /* WEAPONTYPE_RUNOVERBYCAR */) || $.jury_bloke1.hasBeenDamagedByWeapon(39 /* WEAPONTYPE_RAMMEDBYCAR */)) {
         if (jury_bloke1_third_hit == 0) {
           $.wacked_by_weapon1++;
           $.jury_bloke1.clearLastWeaponDamage();
@@ -1210,7 +1210,7 @@ async function mission_lawyer3_passed() {
   Stat.RegisterMissionPassed("LAW_3");
   Stat.PlayerMadeProgress(1);
   $.armour_in_stock = 1;
-  // START_NEW_SCRIPT lawyer_mission4_loop
+  // START_NEW_SCRIPT lawyer_mission4_loop 
 }
 
 

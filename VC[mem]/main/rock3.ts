@@ -1,6 +1,6 @@
 // Generated from main/rock3.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_rock3() {
 
@@ -97,7 +97,7 @@ async function mission_start_rock3() {
   Streaming.LoadSpecialCharacter(5, "CSplay");
 
 
-  Streaming.SetAreaVisible(VIS_STUDIO);
+  Streaming.SetAreaVisible(9 /* VIS_STUDIO */);
 
 
   Streaming.LoadScene(-879.75, 1157.77, 17.81);
@@ -288,7 +288,7 @@ async function mission_start_rock3() {
   }
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   World.ClearExtraColors(false /* FALSE */);
@@ -311,7 +311,7 @@ async function mission_start_rock3() {
   Streaming.LoadScene(-871.90, 1159.46, 10.07);
 
 
-  $.player1.setMood(PLAYER_MOOD_WISECRACKING, 60000);
+  $.player1.setMood(3 /* PLAYER_MOOD_WISECRACKING */, 60000);
 
   // ****************************************END OF CUTSCENE**********************************
 
@@ -319,7 +319,7 @@ async function mission_start_rock3() {
   Weather.ForceNow(2 /* WEATHER_RAINY */);
 
 
-  Audio.SetRadioChannel(EMOTION, -1);
+  Audio.SetRadioChannel(7 /* EMOTION */, -1);
 
   // Waiting for the ped models to load
 
@@ -729,7 +729,7 @@ async function mission_start_rock3() {
   }
 
 
-  Audio.SetRadioChannel(V_ROCK, -1);
+  Audio.SetRadioChannel(4 /* V_ROCK */, -1);
   Text.PrintNow("RBM3_1", 5000, 1); //"Get the band to the venue!"
   $.venue_blip_rock3 = Blip.AddForCoord(-870.933, 1053.342, 9.90);
   $.flag_blip_added_rock3 = 1;
@@ -956,7 +956,7 @@ async function mission_start_rock3() {
 
 
   Camera.RestoreJumpcut();
-  Streaming.SetAreaVisible(VIS_CONCERT_HALL);
+  Streaming.SetAreaVisible(8 /* VIS_CONCERT_HALL */);
   $.flag_concert_visible_rock3 = 1;
   Streaming.LoadScene(-928.915, 1056.264, 12.28);
   World.SetExtraColors(12, false /* FALSE */); // TRY THIS AARON WILL HAVE A LOOK AND DECIDE IF ITS OK
@@ -1645,7 +1645,7 @@ async function mission_start_rock3() {
 
 
   World.ClearExtraColors(false /* FALSE */);
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   $.flag_concert_visible_rock3 = 0;
   Streaming.LoadScene(-885.396, 1054.467, 12.583);
 
@@ -1724,7 +1724,7 @@ async function mission_cleanup_rock3() {
   ONMISSION = 0;
 
 
-  Audio.SetRadioChannel(V_ROCK, -1);
+  Audio.SetRadioChannel(4 /* V_ROCK */, -1);
 
 
   if (!(Car.IsDead($.limo_rock3))) {
@@ -1743,7 +1743,7 @@ async function mission_cleanup_rock3() {
 
 
   if ($.flag_concert_visible_rock3 == 1) {
-    Streaming.SetAreaVisible(VIS_MAIN_MAP);
+    Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
     Streaming.LoadScene(-885.396, 1054.467, 12.583);
     Camera.SetFixedPosition(-887.965, 1054.653, 14.846, 0.0, 0.0, 0.0);
     Camera.PointAtPoint(-887.016, 1054.583, 14.538, 2 /* JUMP_CUT */);

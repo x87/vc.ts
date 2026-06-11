@@ -1,6 +1,6 @@
 // Generated from main/ovalring.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *****************************************************************************************
 // *****************************************************************************************
@@ -179,7 +179,7 @@ async function body() {
   $.cp10_z = 264.296;
 
 
-  Streaming.SetAreaVisible(VIS_OVALRING);
+  Streaming.SetAreaVisible(16 /* VIS_OVALRING */);
   Game.SetIsInStadium(true /* TRUE */);
   Hud.DisplayRadar(false /* FALSE */);
   World.SetExtraColors(11, false /* FALSE */);
@@ -549,7 +549,7 @@ async function ovalring_loop() {
         Camera.RestoreJumpcut();
         Hud.SwitchWidescreen(false /* OFF */);
         Text.PrintBig("races_4", 1100, 4);
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 97 /* SOUND_RACE_START_3 */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 7 /* SOUND_RACE_START_3 */);
         $.showcase_timer = $.game_timer + 1000;
         $.showcase = 6;
       }
@@ -559,7 +559,7 @@ async function ovalring_loop() {
     if ($.showcase == 6) {
       if ($.game_timer > $.showcase_timer) {
         Text.PrintBig("races_5", 1100, 4);
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 98 /* SOUND_RACE_START_2 */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 8 /* SOUND_RACE_START_2 */);
         $.showcase_timer = $.game_timer + 1000;
         $.showcase = 7;
       }
@@ -567,7 +567,7 @@ async function ovalring_loop() {
     if ($.showcase == 7) {
       if ($.game_timer > $.showcase_timer) {
         Text.PrintBig("races_6", 1100, 4);
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 99 /* SOUND_RACE_START_1 */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 9 /* SOUND_RACE_START_1 */);
         $.showcase_timer = $.game_timer + 1000;
         $.showcase = 8;
       }
@@ -578,7 +578,7 @@ async function ovalring_loop() {
           $.true_false = 0;
           await freeze_all_cars();  // SCM GOSUB freeze_all_cars
           Text.PrintBig("races_7", 800, 4);
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 100 /* SOUND_RACE_START_GO */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 10 /* SOUND_RACE_START_GO */);
           $.player1.setControl(true /* ON */);
           Game.SetEveryoneIgnorePlayer($.player1, false /* FALSE */);
           Game.SetAllCarsCanBeDamaged(true /* TRUE */);
@@ -591,7 +591,7 @@ async function ovalring_loop() {
           $.player_cpcounter = $.gosub_cpcounter;
           Hud.DisplayNthCounterWithString($.nascar_laps, 0 /* COUNTER_DISPLAY_NUMBER */, 2, "HOTR_06");
           Hud.DisplayNthCounterWithString($.position, 0 /* COUNTER_DISPLAY_NUMBER */, 3, "HOTR_09");
-          Hud.DisplayTimerWithString($.$id.nascar_time, TIMER_UP, "HOTR_10");
+          Hud.DisplayTimerWithString($.$id.nascar_time, 0 /* TIMER_UP */, "HOTR_10");
           $.nascar_lap_timer_start = $.game_timer;
           $.showcase = 9;
         }
@@ -649,7 +649,7 @@ async function ovalring_loop() {
             }
           }
           $.nascar_lap_timer_start = $.game_timer;
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         }
       }
       $.player_result = $.nascar_laps * 100;
@@ -2084,7 +2084,7 @@ async function onFailed() {
     while (Camera.GetFadingStatus()) {
       await asyncWait(0);
     }
-    Streaming.SetAreaVisible(VIS_MAIN_MAP);
+    Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
     World.ClearExtraColors(false /* FALSE */);
     Game.SetIsInStadium(false /* FALSE */);
     Hud.DisplayRadar(true /* TRUE */);
@@ -2116,7 +2116,7 @@ async function mission_ovalring_passed() {
 
 
   if (!(HAS_DEATHARREST_BEEN_EXECUTED())) {
-    Streaming.SetAreaVisible(VIS_MAIN_MAP);
+    Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
     World.ClearExtraColors(false /* FALSE */);
     Game.SetIsInStadium(false /* FALSE */);
     Hud.DisplayRadar(true /* TRUE */);

@@ -1,6 +1,6 @@
 // Generated from main/buypro3.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_buypro3() {
 
@@ -29,7 +29,7 @@ async function mission_start_buypro3() {
     await asyncWait(0);
     if (!($.player1.isPlaying())) {
       $.bankjob_contact_blip = Blip.AddSpriteForContactPoint($.bankjobX, $.bankjobY, $.bankjobZ, $.the_bankjob_blip);
-      // START_NEW_SCRIPT bankjob_mission1_loop
+      // START_NEW_SCRIPT bankjob_mission1_loop 
       $.flag_bought_malibu = 1;
       return; // TERMINATE_THIS_SCRIPT
     }
@@ -54,7 +54,7 @@ async function mission_start_buypro3() {
     await asyncWait(0);
     if (!($.player1.isPlaying())) {
       $.bankjob_contact_blip = Blip.AddSpriteForContactPoint($.bankjobX, $.bankjobY, $.bankjobZ, $.the_bankjob_blip);
-      // START_NEW_SCRIPT bankjob_mission1_loop
+      // START_NEW_SCRIPT bankjob_mission1_loop 
       $.flag_bought_malibu = 1;
       return; // TERMINATE_THIS_SCRIPT
     }
@@ -63,7 +63,7 @@ async function mission_start_buypro3() {
 
   Text.PrintWithNumberBig("BANKBUY", $.bankbuy_price, 5000, 6); //"The Malibu purchased: $ 15000"
   Stat.AddMoneySpentOnProperty($.bankbuy_price);
-  Stat.SetPropertyAsOwned(PROP_MALIBU);
+  Stat.SetPropertyAsOwned(0 /* PROP_MALIBU */);
   Audio.PlayMissionPassedTune(1);
   Audio.SetMusicDoesFade(false /* FALSE */);
 
@@ -74,7 +74,7 @@ async function mission_start_buypro3() {
   if (!($.player1.isPlaying())) {
     Audio.SetMusicDoesFade(true /* TRUE */);
     $.bankjob_contact_blip = Blip.AddSpriteForContactPoint($.bankjobX, $.bankjobY, $.bankjobZ, $.the_bankjob_blip);
-    // START_NEW_SCRIPT bankjob_mission1_loop
+    // START_NEW_SCRIPT bankjob_mission1_loop 
     $.flag_bought_malibu = 1;
     return; // TERMINATE_THIS_SCRIPT
   }
@@ -89,7 +89,7 @@ async function mission_start_buypro3() {
     if (!($.player1.isPlaying())) {
       Audio.SetMusicDoesFade(true /* TRUE */);
       $.bankjob_contact_blip = Blip.AddSpriteForContactPoint($.bankjobX, $.bankjobY, $.bankjobZ, $.the_bankjob_blip);
-      // START_NEW_SCRIPT bankjob_mission1_loop
+      // START_NEW_SCRIPT bankjob_mission1_loop 
       $.flag_bought_malibu = 1;
       return; // TERMINATE_THIS_SCRIPT
     }
@@ -110,7 +110,7 @@ async function mission_start_buypro3() {
   $.bankjob_contact_blip = Blip.AddSpriteForContactPoint($.bankjobX, $.bankjobY, $.bankjobZ, $.the_bankjob_blip);
 
 
-  // START_NEW_SCRIPT bankjob_mission1_loop
+  // START_NEW_SCRIPT bankjob_mission1_loop 
 
 
   $.flag_bought_malibu = 1;
@@ -132,7 +132,7 @@ async function mission_start_buypro3() {
   Audio.SetMusicDoesFade(true /* TRUE */);
 
 
-  // START_NEW_SCRIPT malibu_save_loop
+  // START_NEW_SCRIPT malibu_save_loop 
 
 
   ONMISSION = 0;

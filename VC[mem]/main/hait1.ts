@@ -1,6 +1,6 @@
 // Generated from main/hait1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_haitian1() {
 
@@ -427,7 +427,7 @@ async function mission_start_haitian1() {
   Streaming.LoadScene(-962.697, 149.793, 10.21);
 
 
-  Streaming.SetAreaVisible(VIS_POLICE_STATION); // this is correct
+  Streaming.SetAreaVisible(12 /* VIS_POLICE_STATION */); // this is correct
 
 
   World.SetExtraColors(13, false /* FALSE */);
@@ -713,7 +713,7 @@ async function mission_start_haitian1() {
   World.ClearExtraColors(false /* FALSE */);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   World.SwitchRubbish(true /* ON */);
@@ -732,7 +732,7 @@ async function mission_start_haitian1() {
   // ******************************************END OF CUTSCENE********************************
 
 
-  $.player1.setMood(PLAYER_MOOD_CALM, 60000);
+  $.player1.setMood(0 /* PLAYER_MOOD_CALM */, 60000);
 
   // Requesting models
 
@@ -792,7 +792,7 @@ async function mission_start_haitian1() {
   $.cop3_case2_hait1.delete();
 
 
-  $.case2_hait1 = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, $.case2_x_hait1, $.case2_y_hait1, $.case2_z_hait1);
+  $.case2_hait1 = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, $.case2_x_hait1, $.case2_y_hait1, $.case2_z_hait1);
 
 
   $.radar_blip2_case2_hait1 = Blip.AddForPickup($.case2_hait1);
@@ -828,7 +828,7 @@ async function mission_start_haitian1() {
   $.cop1_case3_hait1.delete();
 
 
-  $.case3_hait1 = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, $.case3_x_hait1, $.case3_y_hait1, $.case3_z_hait1);
+  $.case3_hait1 = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, $.case3_x_hait1, $.case3_y_hait1, $.case3_z_hait1);
 
 
   $.radar_blip2_case3_hait1 = Blip.AddForPickup($.case3_hait1);
@@ -883,7 +883,7 @@ async function mission_start_haitian1() {
   // creates briefcase1
 
 
-  $.case1_hait1 = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, $.case1_x_hait1, $.case1_y_hait1, $.case1_z_hait1);
+  $.case1_hait1 = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, $.case1_x_hait1, $.case1_y_hait1, $.case1_z_hait1);
 
 
   $.radar_blip_case1_hait1 = Blip.AddForPickup($.case1_hait1);
@@ -960,9 +960,9 @@ async function mission_start_haitian1() {
       if ($.flag_cutscene_case1_done_hait1 == 1) {
         if ($.case2_created_hait1 == 0) {
           World.ClearArea($.case2_x_hait1, $.case2_y_hait1, $.case2_z_hait1, 1.0, false /* FALSE */);
-          $.case2_hait1 = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, $.case2_x_hait1, $.case2_y_hait1, $.case2_z_hait1);
+          $.case2_hait1 = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, $.case2_x_hait1, $.case2_y_hait1, $.case2_z_hait1);
           $.radar_blip_case2_hait1 = Blip.AddForPickup($.case2_hait1);
-          Hud.DisplayTimer($.$id.timer_case2_hait1, TIMER_DOWN);
+          Hud.DisplayTimer($.$id.timer_case2_hait1, 1 /* TIMER_DOWN */);
 
           // creates cop1 case 2
 
@@ -971,14 +971,14 @@ async function mission_start_haitian1() {
           $.cop1_case2_hait1.clearThreatSearch();
           $.cop1_case2_hait1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
           $.cop1_case2_hait1.setThreatSearch(1 /* THREAT_PLAYER1 */);
-          $.cop1_case2_hait1.giveWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */, 30000); // Set to infinate ammo
+          $.cop1_case2_hait1.giveWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */, 30000); // Set to infinate ammo
           $.cop1_case2_hait1.setStayInSamePlace(true /* TRUE */);
           $.cop1_case2_hait1.setObjKillPlayerOnFoot($.player1);
           World.ClearArea($.cop2_x_case2_hait1, $.cop2_y_case2_hait1, $.cop2_z_case2_hait1, 1.0, false /* FALSE */);
           $.cop2_case2_hait1 = Char.Create(4 /* PEDTYPE_CIVMALE */, SWAT, $.cop2_x_case2_hait1, $.cop2_y_case2_hait1, $.cop2_z_case2_hait1);
           $.cop2_case2_hait1.clearThreatSearch();
           $.cop2_case2_hait1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-          $.cop2_case2_hait1.giveWeapon(WEAPONTYPE_MP5, 30000); // Set to infinate ammo
+          $.cop2_case2_hait1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 30000); // Set to infinate ammo
           $.cop2_case2_hait1.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.cop2_case2_hait1.setHeedThreats(true /* TRUE */);
           $.cop2_case2_hait1.setHeading(90.0);
@@ -986,7 +986,7 @@ async function mission_start_haitian1() {
           $.cop3_case2_hait1 = Char.Create(4 /* PEDTYPE_CIVMALE */, SWAT, $.cop3_x_case2_hait1, $.cop3_y_case2_hait1, $.cop3_z_case2_hait1);
           $.cop3_case2_hait1.clearThreatSearch();
           $.cop3_case2_hait1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-          $.cop3_case2_hait1.giveWeapon(WEAPONTYPE_MP5, 30000); // Set to infinate ammo
+          $.cop3_case2_hait1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 30000); // Set to infinate ammo
           $.cop3_case2_hait1.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.cop3_case2_hait1.setHeedThreats(true /* TRUE */);
           $.cop3_case2_hait1.setHeading(90.0);
@@ -1098,9 +1098,9 @@ async function mission_start_haitian1() {
     if ($.case2_collected_hait1 == 1 || $.case2_collected_again_hait1 == 1) {
       if ($.case3_created_hait1 == 0) {
         World.ClearArea($.case3_x_hait1, $.case3_y_hait1, $.case3_z_hait1, 1.0, false /* FALSE */);
-        $.case3_hait1 = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, $.case3_x_hait1, $.case3_y_hait1, $.case3_z_hait1);
+        $.case3_hait1 = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, $.case3_x_hait1, $.case3_y_hait1, $.case3_z_hait1);
         $.radar_blip_case3_hait1 = Blip.AddForPickup($.case3_hait1);
-        Hud.DisplayTimer($.$id.timer_case3_hait1, TIMER_DOWN);
+        Hud.DisplayTimer($.$id.timer_case3_hait1, 1 /* TIMER_DOWN */);
         $.case3_created_hait1 = 1;
       }
 
@@ -1296,7 +1296,7 @@ async function mission_haitian1_passed() {
   Text.PrintWithNumberBig("M_PASS", 1000, 5000, 1); //"Mission Passed!"
   $.player1.addScore(1000);
   $.player1.clearWantedLevel();
-  // START_NEW_SCRIPT haitian_mission2_loop
+  // START_NEW_SCRIPT haitian_mission2_loop 
 }
 
 
@@ -1398,7 +1398,7 @@ async function case1_collection_hait1() {
     if ($.case1_created_hait1 == 1) {
       if ($.case1_hait1.hasBeenCollected()) {
         $.radar_blip_case1_hait1.remove();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         ++$.counter_cases_collected_hait1;
         $.case1_collected_hait1 = 1;
       }
@@ -1427,7 +1427,7 @@ async function case2_collection_hait1() {
           $.cop4_case1_hait1.markAsNoLongerNeeded();
           $.cop5_case1_hait1.markAsNoLongerNeeded();
           $.radar_blip_case2_hait1.remove();
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           Hud.ClearTimer($.$id.timer_case2_hait1);
           $.player1.alterWantedLevelNoDrop(4);
           Text.PrintNow("HAM1_4", 5000, 1); //"Good now get the next one!"
@@ -1461,7 +1461,7 @@ async function case2_collection2_hait1() {
       $.cop4_case1_hait1.markAsNoLongerNeeded();
       $.cop5_case1_hait1.markAsNoLongerNeeded();
       $.radar_blip2_case2_hait1.remove();
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       Text.PrintNow("HAM1_4", 5000, 1); //"Good now on to the nest one!"
       $.player1.alterWantedLevelNoDrop(4);
       ++$.counter_cases_collected_hait1;
@@ -1488,7 +1488,7 @@ async function case3_collection_hait1() {
           $.cop2_case2_hait1.markAsNoLongerNeeded();
           $.cop3_case2_hait1.markAsNoLongerNeeded();
           $.radar_blip_case3_hait1.remove();
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           Hud.ClearTimer($.$id.timer_case3_hait1);
           $.player1.alterWantedLevelNoDrop(5);
           ++$.counter_cases_collected_hait1;
@@ -1519,7 +1519,7 @@ async function case3_collection2_hait1() {
       $.cop2_case2_hait1.markAsNoLongerNeeded();
       $.cop3_case2_hait1.markAsNoLongerNeeded();
       $.radar_blip2_case3_hait1.remove();
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.player1.alterWantedLevelNoDrop(5);
       ++$.counter_cases_collected_hait1;
       $.flag_guards_case3_act_hait1 = 1;
@@ -1554,7 +1554,7 @@ $.player_z_hait1 = _res264.z;
     World.ClearArea($.cop1_x_case1_hait1, $.cop1_y_case1_hait1, $.cop1_z_case1_hait1, 1.0, false /* FALSE */);
     $.cop1_case1_hait1 = Char.Create(4 /* PEDTYPE_CIVMALE */, SWAT, $.cop1_x_case1_hait1, $.cop1_y_case1_hait1, $.cop1_z_case1_hait1);
     $.cop1_case1_hait1.clearThreatSearch();
-    $.cop1_case1_hait1.giveWeapon(WEAPONTYPE_MP5, 30000); // set to infinate ammo
+    $.cop1_case1_hait1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 30000); // set to infinate ammo
     $.cop1_case1_hait1.turnToFacePlayer($.player1);
     $.cop1_case1_hait1.setWaitState(14 /* WAITSTATE_PLAYANIM_DUCK */, 800);
     $.cop1_case1_hait1.setObjAimGunAtChar($.scplayer);
@@ -1569,7 +1569,7 @@ $.player_z_hait1 = _res264.z;
 
     $.cop5_case1_hait1 = Char.Create(6 /* PEDTYPE_COP */, SWAT, -1176.80, -22.20, 15.62);
     $.cop5_case1_hait1.clearThreatSearch();
-    $.cop5_case1_hait1.giveWeapon(WEAPONTYPE_NIGHTSTICK, 1); // set to infinate ammo
+    $.cop5_case1_hait1.giveWeapon(4 /* WEAPONTYPE_NIGHTSTICK */, 1); // set to infinate ammo
     $.cop5_case1_hait1.turnToFacePlayer($.player1);
     if (!(Char.IsDead($.cop1_case1_hait1))) {
       $.cop1_case1_hait1.setVisible(true /* TRUE */);
@@ -1599,7 +1599,7 @@ $.player_z_hait1 = _res264.z;
     World.ClearArea($.cop2_x_case1_hait1, $.cop2_y_case1_hait1, $.cop2_z_case1_hait1, 1.0, false /* FALSE */);
     $.cop2_case1_hait1 = Char.Create(4 /* PEDTYPE_CIVMALE */, SWAT, $.cop2_x_case1_hait1, $.cop2_y_case1_hait1, $.cop2_z_case1_hait1);
     $.cop2_case1_hait1.clearThreatSearch();
-    $.cop2_case1_hait1.giveWeapon(WEAPONTYPE_MP5, 30000); // set to infinate ammo
+    $.cop2_case1_hait1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 30000); // set to infinate ammo
     $.cop2_case1_hait1.turnToFacePlayer($.player1);
     $.cop2_case1_hait1.setWaitState(14 /* WAITSTATE_PLAYANIM_DUCK */, 2200);
     $.cop2_case1_hait1.setObjAimGunAtChar($.scplayer);
@@ -1609,7 +1609,7 @@ $.player_z_hait1 = _res264.z;
     World.ClearArea($.cop3_x_case1_hait1, $.cop3_y_case1_hait1, $.cop3_z_case1_hait1, 1.0, false /* FALSE */);
     $.cop3_case1_hait1 = Char.Create(4 /* PEDTYPE_CIVMALE */, SWAT, $.cop3_x_case1_hait1, $.cop3_y_case1_hait1, $.cop3_z_case1_hait1);
     $.cop3_case1_hait1.clearThreatSearch();
-    $.cop3_case1_hait1.giveWeapon(WEAPONTYPE_MP5, 30000); // set to infinate ammo
+    $.cop3_case1_hait1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 30000); // set to infinate ammo
     $.cop3_case1_hait1.turnToFacePlayer($.player1);
     $.cop3_case1_hait1.setWaitState(14 /* WAITSTATE_PLAYANIM_DUCK */, 5000);
     $.cop3_case1_hait1.setObjAimGunAtChar($.scplayer);
@@ -1619,7 +1619,7 @@ $.player_z_hait1 = _res264.z;
     World.ClearArea($.cop4_x_case1_hait1, $.cop4_y_case1_hait1, $.cop4_z_case1_hait1, 1.0, false /* FALSE */);
     $.cop4_case1_hait1 = Char.Create(4 /* PEDTYPE_CIVMALE */, SWAT, $.cop4_x_case1_hait1, $.cop4_y_case1_hait1, $.cop4_z_case1_hait1);
     $.cop4_case1_hait1.clearThreatSearch();
-    $.cop4_case1_hait1.giveWeapon(WEAPONTYPE_MP5, 30000); // set to infinate ammo
+    $.cop4_case1_hait1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 30000); // set to infinate ammo
     $.cop4_case1_hait1.turnToFacePlayer($.player1);
     $.cop4_case1_hait1.setWaitState(14 /* WAITSTATE_PLAYANIM_DUCK */, 5000);
     $.cop4_case1_hait1.setObjAimGunAtChar($.scplayer);
@@ -1685,7 +1685,7 @@ async function guards_case2_checks() {
 $.case2_x_hait1 = _res265.x;
 $.case2_y_hait1 = _res265.y;
 $.case2_z_hait1 = _res265.z;
-                $.case2_hait1 = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, $.case2_x_hait1, $.case2_y_hait1, $.case2_z_hait1);
+                $.case2_hait1 = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, $.case2_x_hait1, $.case2_y_hait1, $.case2_z_hait1);
                 $.radar_blip2_case2_hait1 = Blip.AddForPickup($.case2_hait1);
                 $.case2_created_again_hait1 = 1;
               }
@@ -1737,11 +1737,11 @@ $.case2_z_hait1 = _res265.z;
                 if ($.flag_cop2_case2_location_hait1 == 1) {
                   if (!($.cop2_case2_hait1.isWanderPathClear($.case2_x2_hait1, $.case2_y2_hait1, $.case2_z2_hait1, 4.0))) {
                     if ($.cop2_case2_follow_1sttime_hait1 == 0) {
-                      $.cop2_case2_hait1.followPath($.case2_x2_hait1, $.case2_y2_hait1, $.case2_z2_hait1, 0.1, RUN);
+                      $.cop2_case2_hait1.followPath($.case2_x2_hait1, $.case2_y2_hait1, $.case2_z2_hait1, 0.1, 1 /* RUN */);
                       $.cop2_case2_follow_1sttime_hait1 = 1;
                     }
                     if ($.timer_cops_case2_act_hait1 == 2) {
-                      $.cop2_case2_hait1.followPath($.case2_x2_hait1, $.case2_y2_hait1, $.case2_z2_hait1, 0.1, RUN);
+                      $.cop2_case2_hait1.followPath($.case2_x2_hait1, $.case2_y2_hait1, $.case2_z2_hait1, 0.1, 1 /* RUN */);
                     }
 
 
@@ -1827,7 +1827,7 @@ $.case2_z_hait1 = _res265.z;
 $.case2_x_hait1 = _res266.x;
 $.case2_y_hait1 = _res266.y;
 $.case2_z_hait1 = _res266.z;
-                $.case2_hait1 = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, $.case2_x_hait1, $.case2_y_hait1, $.case2_z_hait1);
+                $.case2_hait1 = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, $.case2_x_hait1, $.case2_y_hait1, $.case2_z_hait1);
                 $.radar_blip2_case2_hait1 = Blip.AddForPickup($.case2_hait1);
                 $.case2_created_again_hait1 = 1;
               }
@@ -1876,11 +1876,11 @@ $.case2_z_hait1 = _res266.z;
               if ($.flag_cop3_case2_location_hait1 == 1) {
                 if (!($.cop3_case2_hait1.isWanderPathClear($.case2_x2_hait1, $.case2_y2_hait1, $.case2_z2_hait1, 4.0))) {
                   if ($.cop3_case2_follow_1sttime_hait1 == 0) {
-                    $.cop3_case2_hait1.followPath($.case2_x2_hait1, $.case2_y2_hait1, $.case2_z2_hait1, 0.1, RUN);
+                    $.cop3_case2_hait1.followPath($.case2_x2_hait1, $.case2_y2_hait1, $.case2_z2_hait1, 0.1, 1 /* RUN */);
                     $.cop3_case2_follow_1sttime_hait1 = 1;
                   }
                   if ($.timer_cops_case2_act_hait1 == 2) {
-                    $.cop3_case2_hait1.followPath($.case2_x2_hait1, $.case2_y2_hait1, $.case2_z2_hait1, 0.1, RUN);
+                    $.cop3_case2_hait1.followPath($.case2_x2_hait1, $.case2_y2_hait1, $.case2_z2_hait1, 0.1, 1 /* RUN */);
                   }
 
 
@@ -1982,7 +1982,7 @@ async function cop_creation_case3_hait1() {
     $.cop1_case3_hait1.clearThreatSearch();
     $.cop1_case3_hait1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
     $.cop1_case3_hait1.setThreatSearch(1 /* THREAT_PLAYER1 */);
-    $.cop1_case3_hait1.giveWeapon(WEAPONTYPE_MP5, 30000); // set to infinate ammo
+    $.cop1_case3_hait1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 30000); // set to infinate ammo
     $.cop1_case3_hait1.setHeedThreats(true /* TRUE */);
 
     // cop2
@@ -1992,7 +1992,7 @@ async function cop_creation_case3_hait1() {
     $.cop2_case3_hait1.clearThreatSearch();
     $.cop2_case3_hait1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
     $.cop2_case3_hait1.setThreatSearch(1 /* THREAT_PLAYER1 */);
-    $.cop2_case3_hait1.giveWeapon(WEAPONTYPE_MP5, 30000); // set to infinate ammo
+    $.cop2_case3_hait1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 30000); // set to infinate ammo
     $.cop2_case3_hait1.setHeedThreats(true /* TRUE */);
     Char.SetThreatReactionRangeMultiplier(8.0);
     $.police_created_case3_hait1 = 1;
@@ -2023,7 +2023,7 @@ async function cops_case3_death_hait1() {
 $.case3_x_hait1 = _res267.x;
 $.case3_y_hait1 = _res267.y;
 $.case3_z_hait1 = _res267.z;
-                $.case3_hait1 = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, $.case3_x_hait1, $.case3_y_hait1, $.case3_z_hait1);
+                $.case3_hait1 = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, $.case3_x_hait1, $.case3_y_hait1, $.case3_z_hait1);
                 $.radar_blip2_case3_hait1 = Blip.AddForPickup($.case3_hait1);
                 $.case3_created_again_hait1 = 1;
               }
@@ -2077,11 +2077,11 @@ $.case3_z_hait1 = _res267.z;
                 if ($.flag_cop1_case3_location_hait1 == 1) {
                   if (!($.cop1_case3_hait1.isWanderPathClear($.case3_x2_hait1, $.case3_y2_hait1, $.case3_z2_hait1, 4.0))) {
                     if ($.cop2_case3_follow_1sttime_hait1 == 0) {
-                      $.cop1_case3_hait1.followPath($.case3_x2_hait1, $.case3_y2_hait1, $.case3_z2_hait1, 0.1, RUN);
+                      $.cop1_case3_hait1.followPath($.case3_x2_hait1, $.case3_y2_hait1, $.case3_z2_hait1, 0.1, 1 /* RUN */);
                       $.cop2_case3_follow_1sttime_hait1 = 1;
                     }
                     if ($.timer_cops_case3_act_hait1 == 2) {
-                      $.cop1_case3_hait1.followPath($.case3_x2_hait1, $.case3_y2_hait1, $.case3_z2_hait1, 0.1, RUN);
+                      $.cop1_case3_hait1.followPath($.case3_x2_hait1, $.case3_y2_hait1, $.case3_z2_hait1, 0.1, 1 /* RUN */);
                     }
 
 
@@ -2170,7 +2170,7 @@ $.case3_z_hait1 = _res267.z;
 $.case3_x_hait1 = _res268.x;
 $.case3_y_hait1 = _res268.y;
 $.case3_z_hait1 = _res268.z;
-                $.case3_hait1 = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, $.case3_x_hait1, $.case3_y_hait1, $.case3_z_hait1);
+                $.case3_hait1 = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, $.case3_x_hait1, $.case3_y_hait1, $.case3_z_hait1);
                 $.radar_blip2_case3_hait1 = Blip.AddForPickup($.case3_hait1);
                 $.case3_created_again_hait1 = 1;
               }
@@ -2217,11 +2217,11 @@ $.case3_z_hait1 = _res268.z;
               if ($.flag_cop2_case3_location_hait1 == 1) {
                 if (!($.cop2_case3_hait1.isWanderPathClear($.case3_x2_hait1, $.case3_y2_hait1, $.case3_z2_hait1, 4.0))) {
                   if ($.cop3_case3_follow_1sttime_hait1 == 0) {
-                    $.cop2_case3_hait1.followPath($.case3_x2_hait1, $.case3_y2_hait1, $.case3_z2_hait1, 0.1, RUN);
+                    $.cop2_case3_hait1.followPath($.case3_x2_hait1, $.case3_y2_hait1, $.case3_z2_hait1, 0.1, 1 /* RUN */);
                     $.cop3_case3_follow_1sttime_hait1 = 1;
                   }
                   if ($.timer_cops_case3_act_hait1 == 2) {
-                    $.cop2_case3_hait1.followPath($.case3_x2_hait1, $.case3_y2_hait1, $.case3_z2_hait1, 0.1, RUN);
+                    $.cop2_case3_hait1.followPath($.case3_x2_hait1, $.case3_y2_hait1, $.case3_z2_hait1, 0.1, 1 /* RUN */);
                   }
 
 

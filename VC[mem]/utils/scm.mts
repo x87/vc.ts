@@ -1,4 +1,4 @@
-// SCM.ts v0.5.0
+// SCM.ts v0.5.1
 
 assertCleoVersion('1.5.0');
 assert(isGTA3() || isVC() || isSA(), 'Unsupported game');
@@ -29,7 +29,7 @@ abstract class PrimitiveWrapper<T> {
   abstract set value(value: T);
 }
 
-class Float extends PrimitiveWrapper<float> {
+class Float extends PrimitiveWrapper<number> {
   constructor(id: number) {
     super(id);
   }
@@ -113,7 +113,7 @@ const SCM = {
     return obj;
   },
 
-  Float: Float.cast<float>,
+  Float: Float.cast<number>,
 };
 
 // -- Counters & Timers --
@@ -833,4 +833,10 @@ class TextDraw {
   }
 }
 
-export { SCM, Counter, Timer, type DisplayedCounter, type DisplayedTimer, VehiclePool, PedPool, ObjectPool, TextDraw };
+const CTimer_ms_fTimeStep = Memory.Translate('CTimer::ms_fTimeStep');
+
+function timed(value: number) {
+  return value * Memory.ReadFloat(CTimer_ms_fTimeStep, false);
+}
+
+export { SCM, Counter, Timer, type DisplayedCounter, type DisplayedTimer, VehiclePool, PedPool, ObjectPool, TextDraw, timed };

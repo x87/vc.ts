@@ -1,7 +1,7 @@
 // Generated from main/hait2.sc
 
-import { $ } from "../vars.mts";
-import { timed } from "../scm.mts";
+import { $ } from "../utils/vars.mts";
+import { timed } from "../utils/scm.mts";
 
 // *****************************************************************************************
 // ********************************* Haitian Mission 2 *************************************
@@ -87,7 +87,7 @@ async function body() {
   //////////////////////////
 
 
-  Streaming.SetAreaVisible(VIS_POLICE_STATION);
+  Streaming.SetAreaVisible(12 /* VIS_POLICE_STATION */);
   World.SetExtraColors(13, false /* FALSE */);
 
 
@@ -269,7 +269,7 @@ async function body() {
   World.ClearExtraColors(false /* FALSE */);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   World.SwitchRubbish(true /* ON */);
@@ -287,7 +287,7 @@ async function body() {
   //////////////////////////
 
 
-  $.player1.setMood(PLAYER_MOOD_CALM, 60000);
+  $.player1.setMood(0 /* PLAYER_MOOD_CALM */, 60000);
 
 
   Streaming.RequestModel(TOPFUN);
@@ -394,7 +394,7 @@ async function body() {
   $.cuban_dude02.setHeading(273.9880);
   $.cuban_dude02.setStayInSamePlace(true /* TRUE */);
   $.cuban_dude02.clearThreatSearch();
-  $.cuban_dude02.setWaitState(WAITSTATE_USE_ATM, 100);
+  $.cuban_dude02.setWaitState(25 /* WAITSTATE_USE_ATM */, 100);
   //ADD_BLIP_FOR_CHAR cuban_dude02 cuban_dude02_blip
 
   ////STANDING NEXT TO CUBAN SITTING ON STEPS - SPEEDER SHOOTER 3RD
@@ -411,7 +411,7 @@ async function body() {
   $.cuban_dude04.setHeading(93.2798);
   $.cuban_dude04.setStayInSamePlace(true /* TRUE */);
   $.cuban_dude04.clearThreatSearch();
-  $.cuban_dude04.setWaitState(WAITSTATE_SIT_IDLE, 100);
+  $.cuban_dude04.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 100);
   //ADD_BLIP_FOR_CHAR cuban_dude04 cuban_dude04_blip
 
   ////CHATTING ON PIER - JETMAX SHOOTER 5TH
@@ -437,7 +437,7 @@ async function body() {
   $.cuban_dude07.setHeading(6.0796);
   $.cuban_dude07.setStayInSamePlace(true /* TRUE */);
   $.cuban_dude07.clearThreatSearch();
-  $.cuban_dude07.setWaitState(WAITSTATE_USE_ATM, 100);
+  $.cuban_dude07.setWaitState(25 /* WAITSTATE_USE_ATM */, 100);
   //ADD_BLIP_FOR_CHAR cuban_dude07 cuban_dude07_blip
 
   //CHATTING ON PIER - COASTG BACK SHOOTER 8TH
@@ -485,7 +485,7 @@ async function body() {
   $.cuban_dude13.setHeading(185.2318);
   $.cuban_dude13.setStayInSamePlace(true /* TRUE */);
   $.cuban_dude13.clearThreatSearch();
-  $.cuban_dude13.setWaitState(WAITSTATE_USE_ATM, 100);
+  $.cuban_dude13.setWaitState(25 /* WAITSTATE_USE_ATM */, 100);
   //ADD_BLIP_FOR_CHAR cuban_dude13 cuban_dude13_blip
 
 
@@ -922,7 +922,7 @@ $.grenade_z = _res270.z;
       if ($.player_attacking_flag == 1) {
         if (cuban_dude01_flag == 0) {
           if (!(Car.IsDead($.rc_plane))) {
-            $.cuban_dude01.giveWeapon(WEAPONTYPE_RUGER, 9999);
+            $.cuban_dude01.giveWeapon(27 /* WEAPONTYPE_RUGER */, 9999);
             $.cuban_dude01.setObjDestroyCar($.rc_plane);
             cuban_dude01_timer = $.game_timer + 3500;
             cuban_dude01_flag = 1;
@@ -977,7 +977,7 @@ $.grenade_z = _res270.z;
     else {
       if (!(cuban_dude01_flag == -10)) {
         $.cuban_dude01_blip.remove();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         cuban_dude01_flag = -10;
       }
       ++$.dead_cubans;
@@ -990,7 +990,7 @@ $.grenade_z = _res270.z;
         if (cuban_dude02_flag == 0) {
           if (!(Car.IsDead($.rc_plane))) {
             $.cuban_dude02.setWaitState(0 /* WAITSTATE_FALSE */, 17);
-            $.cuban_dude02.giveWeapon(WEAPONTYPE_RUGER, 9999);
+            $.cuban_dude02.giveWeapon(27 /* WEAPONTYPE_RUGER */, 9999);
             $.cuban_dude02.setObjDestroyCar($.rc_plane);
             cuban_dude02_timer = $.game_timer + 3700;
             cuban_dude02_flag = 1;
@@ -1044,7 +1044,7 @@ $.grenade_z = _res270.z;
               if ($.game_timer > cuban_dude02_timer) {
                 if (!(Char.IsDead($.cuban_dude01))) {
                   //ATTACH_CHAR_TO_CAR cuban_dude02 cuban_speeder -0.6107 1.4015 1.3205 FACING_BACK 360.0 WEAPONTYPE_RUGER
-                  $.cuban_dude02.attachToCar($.cuban_speeder, 0.6462, 1.4897, 1.3333, 2 /* FACING_BACK */, 360.0, WEAPONTYPE_RUGER);
+                  $.cuban_dude02.attachToCar($.cuban_speeder, 0.6462, 1.4897, 1.3333, 2 /* FACING_BACK */, 360.0, 27 /* WEAPONTYPE_RUGER */);
                   $.cuban_dude02_blip.remove();
                   cuban_dude02_flag = 100;
                 }
@@ -1071,14 +1071,14 @@ $.grenade_z = _res270.z;
         }
       }
       else {
-        $.cuban_dude02.setWaitState(WAITSTATE_USE_ATM, 100);
+        $.cuban_dude02.setWaitState(25 /* WAITSTATE_USE_ATM */, 100);
       }
     }
     else {
       if (!(cuban_dude02_flag == -10)) {
         $.cuban_dude02_blip.remove();
         $.cuban_dude02.detachFromCar();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         cuban_dude02_flag = -10;
       }
       ++$.dead_cubans;
@@ -1090,7 +1090,7 @@ $.grenade_z = _res270.z;
       if ($.player_attacking_flag == 1) {
         if (cuban_dude03_flag == 0) {
           if (!(Car.IsDead($.rc_plane))) {
-            $.cuban_dude03.giveWeapon(WEAPONTYPE_RUGER, 9999);
+            $.cuban_dude03.giveWeapon(27 /* WEAPONTYPE_RUGER */, 9999);
             $.cuban_dude03.setObjDestroyCar($.rc_plane);
             cuban_dude03_timer = $.game_timer + 3900;
             cuban_dude03_flag = 1;
@@ -1133,7 +1133,7 @@ $.grenade_z = _res270.z;
               if ($.game_timer > cuban_dude03_timer) {
                 //OR LOCATE_CHAR_ON_FOOT_2D cuban_dude03 -535.0269 -230.2825 1.0 1.0 0
                 if (!(Char.IsDead($.cuban_dude01)) || !(Char.IsDead($.cuban_dude02))) {
-                  $.cuban_dude03.attachToCar($.cuban_speeder, -0.6107, 1.4015, 1.3205, 2 /* FACING_BACK */, 360.0, WEAPONTYPE_RUGER);
+                  $.cuban_dude03.attachToCar($.cuban_speeder, -0.6107, 1.4015, 1.3205, 2 /* FACING_BACK */, 360.0, 27 /* WEAPONTYPE_RUGER */);
                   $.cuban_dude03_blip.remove();
                   //ATTACH_CHAR_TO_CAR cuban_dude03 cuban_speeder 0.6462 1.4897 1.3333 FACING_BACK 360.0 WEAPONTYPE_RUGER
                   cuban_dude03_flag = 100;
@@ -1165,7 +1165,7 @@ $.grenade_z = _res270.z;
       if (!(cuban_dude03_flag == -10)) {
         $.cuban_dude03_blip.remove();
         $.cuban_dude03.detachFromCar();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         cuban_dude03_flag = -10;
       }
       ++$.dead_cubans;
@@ -1178,7 +1178,7 @@ $.grenade_z = _res270.z;
         if (cuban_dude04_flag == 0) {
           if (!(Car.IsDead($.rc_plane))) {
             $.cuban_dude04.setWaitState(0 /* WAITSTATE_FALSE */, 17);
-            $.cuban_dude04.giveWeapon(WEAPONTYPE_RUGER, 9999);
+            $.cuban_dude04.giveWeapon(27 /* WEAPONTYPE_RUGER */, 9999);
             $.cuban_dude04.setObjDestroyCar($.rc_plane);
             cuban_dude04_timer = $.game_timer + 1200;
             cuban_dude04_flag = 1;
@@ -1240,13 +1240,13 @@ $.grenade_z = _res270.z;
         }
       }
       else {
-        $.cuban_dude04.setWaitState(WAITSTATE_SIT_IDLE, 100);
+        $.cuban_dude04.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 100);
       }
     }
     else {
       if (!(cuban_dude04_flag == -10)) {
         $.cuban_dude04_blip.remove();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         cuban_dude04_flag = -10;
       }
       ++$.dead_cubans;
@@ -1259,7 +1259,7 @@ $.grenade_z = _res270.z;
         if (cuban_dude05_flag == 0) {
           if (!(Car.IsDead($.rc_plane))) {
             $.cuban_dude05.setWaitState(0 /* WAITSTATE_FALSE */, 17);
-            $.cuban_dude05.giveWeapon(WEAPONTYPE_RUGER, 9999);
+            $.cuban_dude05.giveWeapon(27 /* WEAPONTYPE_RUGER */, 9999);
             $.cuban_dude05.setObjDestroyCar($.rc_plane);
             cuban_dude05_timer = $.game_timer + 1500;
             cuban_dude05_flag = 1;
@@ -1301,7 +1301,7 @@ $.grenade_z = _res270.z;
             if ($.cuban_jetmax.isHealthGreater(250)) {
               if ($.game_timer > cuban_dude05_timer) {
                 if (!(Char.IsDead($.cuban_dude04))) {
-                  $.cuban_dude05.attachToCar($.cuban_jetmax, 0.2534, -0.2957, 1.4395, 2 /* FACING_BACK */, 360.0, WEAPONTYPE_RUGER);
+                  $.cuban_dude05.attachToCar($.cuban_jetmax, 0.2534, -0.2957, 1.4395, 2 /* FACING_BACK */, 360.0, 27 /* WEAPONTYPE_RUGER */);
                   $.cuban_dude05_blip.remove();
                   cuban_dude05_flag = 100;
                 }
@@ -1335,7 +1335,7 @@ $.grenade_z = _res270.z;
       if (!(cuban_dude05_flag == -10)) {
         $.cuban_dude05_blip.remove();
         $.cuban_dude05.detachFromCar();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         cuban_dude05_flag = -10;
       }
       ++$.dead_cubans;
@@ -1347,7 +1347,7 @@ $.grenade_z = _res270.z;
       if ($.player_attacking_flag == 1) {
         if (cuban_dude06_flag == 0) {
           if (!(Car.IsDead($.rc_plane))) {
-            $.cuban_dude06.giveWeapon(WEAPONTYPE_RUGER, 9999);
+            $.cuban_dude06.giveWeapon(27 /* WEAPONTYPE_RUGER */, 9999);
             $.cuban_dude06.setObjDestroyCar($.rc_plane);
             cuban_dude06_timer = $.game_timer + 1800;
             cuban_dude06_flag = 1;
@@ -1434,7 +1434,7 @@ $.grenade_z = _res270.z;
     else {
       if (!(cuban_dude06_flag == -10)) {
         $.cuban_dude06_blip.remove();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         cuban_dude06_flag = -10;
       }
       ++$.dead_cubans;
@@ -1447,7 +1447,7 @@ $.grenade_z = _res270.z;
         if (cuban_dude07_flag == 0) {
           if (!(Car.IsDead($.rc_plane))) {
             $.cuban_dude07.setWaitState(0 /* WAITSTATE_FALSE */, 17);
-            $.cuban_dude07.giveWeapon(WEAPONTYPE_RUGER, 9999);
+            $.cuban_dude07.giveWeapon(27 /* WEAPONTYPE_RUGER */, 9999);
             $.cuban_dude07.setObjDestroyCar($.rc_plane);
             cuban_dude07_timer = $.game_timer + 4100;
             cuban_dude07_flag = 1;
@@ -1500,7 +1500,7 @@ $.grenade_z = _res270.z;
             if ($.cuban_coastg.isHealthGreater(250)) {
               if ($.game_timer > cuban_dude07_timer) {
                 if (!(Char.IsDead($.cuban_dude06))) {
-                  $.cuban_dude07.attachToCar($.cuban_coastg, -0.1968, 2.0053, 0.8746, 2 /* FACING_BACK */, 360.0, WEAPONTYPE_RUGER);
+                  $.cuban_dude07.attachToCar($.cuban_coastg, -0.1968, 2.0053, 0.8746, 2 /* FACING_BACK */, 360.0, 27 /* WEAPONTYPE_RUGER */);
                   $.cuban_dude07_blip.remove();
                   cuban_dude07_flag = 100;
                 }
@@ -1527,14 +1527,14 @@ $.grenade_z = _res270.z;
         }
       }
       else {
-        $.cuban_dude07.setWaitState(WAITSTATE_USE_ATM, 100);
+        $.cuban_dude07.setWaitState(25 /* WAITSTATE_USE_ATM */, 100);
       }
     }
     else {
       if (!(cuban_dude07_flag == -10)) {
         $.cuban_dude07_blip.remove();
         $.cuban_dude07.detachFromCar();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         cuban_dude07_flag = -10;
       }
       ++$.dead_cubans;
@@ -1547,7 +1547,7 @@ $.grenade_z = _res270.z;
         if (cuban_dude08_flag == 0) {
           if (!(Car.IsDead($.rc_plane))) {
             $.cuban_dude08.setWaitState(0 /* WAITSTATE_FALSE */, 17);
-            $.cuban_dude08.giveWeapon(WEAPONTYPE_RUGER, 9999);
+            $.cuban_dude08.giveWeapon(27 /* WEAPONTYPE_RUGER */, 9999);
             $.cuban_dude08.setObjDestroyCar($.rc_plane);
             cuban_dude08_timer = $.game_timer + 3400;
             cuban_dude08_flag = 1;
@@ -1611,7 +1611,7 @@ $.grenade_z = _res270.z;
             if ($.cuban_coastg.isHealthGreater(250)) {
               if ($.game_timer > cuban_dude08_timer) {
                 if (!(Char.IsDead($.cuban_dude06)) || !(Char.IsDead($.cuban_dude07))) {
-                  $.cuban_dude08.attachToCar($.cuban_coastg, 0.0444, -1.8993, 1.0885, 2 /* FACING_BACK */, 360.0, WEAPONTYPE_RUGER);
+                  $.cuban_dude08.attachToCar($.cuban_coastg, 0.0444, -1.8993, 1.0885, 2 /* FACING_BACK */, 360.0, 27 /* WEAPONTYPE_RUGER */);
                   $.cuban_dude08_blip.remove();
                   cuban_dude08_flag = 100;
                 }
@@ -1642,7 +1642,7 @@ $.grenade_z = _res270.z;
       if (!(cuban_dude08_flag == -10)) {
         $.cuban_dude08_blip.remove();
         $.cuban_dude08.detachFromCar();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         cuban_dude08_flag = -10;
       }
       ++$.dead_cubans;
@@ -2038,7 +2038,7 @@ $.grenade_z = _res270.z;
         if ($.cuban_dude13_flag == 0) {
           if (!(Car.IsDead($.rc_plane))) {
             $.cuban_dude13.setWaitState(0 /* WAITSTATE_FALSE */, 17);
-            $.cuban_dude13.giveWeapon(WEAPONTYPE_RUGER, 9999);
+            $.cuban_dude13.giveWeapon(27 /* WEAPONTYPE_RUGER */, 9999);
             $.cuban_dude13.setObjDestroyCar($.rc_plane);
             $.cuban_dude13_timer = $.game_timer + 7000;
             $.cuban_dude13_flag = 1;
@@ -2096,7 +2096,7 @@ $.grenade_z = _res270.z;
     else {
       if (!($.cuban_dude13_flag == -10)) {
         $.cuban_dude13_blip.remove();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.cuban_dude13_flag = -10;
       }
       ++$.dead_cubans;
@@ -2854,7 +2854,7 @@ async function mission_haitian2_passed() {
   Stat.PlayerMadeProgress(1);
   Audio.PlayMissionPassedTune(1);
   if (!(Game.IsGerman())) {
-    // START_NEW_SCRIPT haitian_mission3_loop
+    // START_NEW_SCRIPT haitian_mission3_loop 
   }
   else {
     $.haitian_contact_blip.remove();

@@ -1,6 +1,6 @@
 // Generated from main/lawyer2.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *******************************************************************************************
 // *******************************************************************************************
@@ -59,7 +59,7 @@ async function body() {
 
 
 
-  Streaming.SetAreaVisible(VIS_LAWYERS);
+  Streaming.SetAreaVisible(6 /* VIS_LAWYERS */);
 
 
   Streaming.LoadSpecialCharacter(1, "CSplay");
@@ -272,7 +272,7 @@ async function body() {
   Streaming.MarkModelAsNoLongerNeeded(CUTOBJ04);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   Streaming.LoadScene(117.1, -825.6, 9.8);
 
 
@@ -371,7 +371,7 @@ async function kent_cut() {
 
 
   Streaming.RequestModel(infernus);
-  Streaming.RequestModel(173 /* colt45 */);
+  Streaming.RequestModel(colt45);
 
   // *******************************************START MEET KENT PAUL***********************************************
 
@@ -402,7 +402,7 @@ async function kent_cut() {
 
 
 
-  Streaming.SetAreaVisible(VIS_MALIBU_CLUB);
+  Streaming.SetAreaVisible(17 /* VIS_MALIBU_CLUB */);
   World.SetExtraColors(1, false /* FALSE */);
 
 
@@ -704,7 +704,7 @@ async function kent_cut() {
 
 
   World.ClearExtraColors(false /* FALSE */);
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   Streaming.LoadScene(493.1, -82.4, 9.8);
 
   // *******************************************END MEET KENT PAUL***********************************************
@@ -721,7 +721,7 @@ async function kent_cut() {
   Streaming.LoadAllModelsNow();
 
 
-  while (!(Streaming.HasModelLoaded(infernus)) || !(Streaming.HasModelLoaded(173 /* colt45 */))) {
+  while (!(Streaming.HasModelLoaded(infernus)) || !(Streaming.HasModelLoaded(colt45))) {
     await asyncWait(0);
 
 
@@ -859,7 +859,7 @@ async function kent_cut() {
               if ($.audio_has_loaded == 1) {
                 Audio.PlayMissionAudio(1);
                 Text.PrintNow("LAW2_3", 2000, 2); //Make me, you prick!
-                $.player1.setMood(PLAYER_MOOD_ANGRY, 60000);
+                $.player1.setMood(2 /* PLAYER_MOOD_ANGRY */, 60000);
                 $.ambush_bloke1.setWaitState(19 /* WAITSTATE_PLAYANIM_CHAT */, 1500);
                 if (Audio.HasMissionAudioFinished(1)) {
                   $.player1.shutUp(false /* FALSE */);
@@ -1266,7 +1266,7 @@ $.blokez = _res319.z;
   $.buddy.setAsPlayerFriend($.player1, true /* TRUE */);
   $.buddy.setNeverTargeted(true /* TRUE */);
   $.buddy.setSuffersCriticalHits(false /* FALSE */);
-  $.buddy.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 9999);
+  $.buddy.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 9999);
   $.buddy_blip = Blip.AddForChar($.buddy);
 
 
@@ -1286,15 +1286,15 @@ $.blokez = _res319.z;
   $.buddy.setStayInCarWhenJacked(true /* TRUE */);
 
 
-  $.player1.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 34);
-  $.player1.setCurrentWeapon(2 /* WEAPONTYPE_PISTOL */);
+  $.player1.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 34);
+  $.player1.setCurrentWeapon(17 /* WEAPONTYPE_PISTOL */);
 
 
   World.ClearArea(439.0, -567.7, 9.6, 1.0, false /* FALSE */);
   $.ambush_bloke2 = Char.Create(5 /* PEDTYPE_CIVFEMALE */, SPECIAL03, 439.2, -567.9, 9.6);
   $.ambush_bloke2.clearThreatSearch();
   $.ambush_bloke2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  $.ambush_bloke2.giveWeapon(WEAPONTYPE_CLEAVER, 0);
+  $.ambush_bloke2.giveWeapon(8 /* WEAPONTYPE_CLEAVER */, 0);
   $.ambush_bloke2.setHeading(154.0);
 
 
@@ -1302,7 +1302,7 @@ $.blokez = _res319.z;
   $.ambush_bloke3 = Char.Create(5 /* PEDTYPE_CIVFEMALE */, SPECIAL03, 438.2, -567.8, 9.6);
   $.ambush_bloke3.clearThreatSearch();
   $.ambush_bloke3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  $.ambush_bloke3.giveWeapon(WEAPONTYPE_KNIFE, 0);
+  $.ambush_bloke3.giveWeapon(5 /* WEAPONTYPE_KNIFE */, 0);
   $.ambush_bloke3.setHeading(154.0);
 
 
@@ -1310,7 +1310,7 @@ $.blokez = _res319.z;
   $.ambush_bloke4 = Char.Create(5 /* PEDTYPE_CIVFEMALE */, SPECIAL03, 437.2, -567.4, 9.6);
   $.ambush_bloke4.clearThreatSearch();
   $.ambush_bloke4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  $.ambush_bloke4.giveWeapon(WEAPONTYPE_CLEAVER, 0);
+  $.ambush_bloke4.giveWeapon(8 /* WEAPONTYPE_CLEAVER */, 0);
   $.ambush_bloke4.setHeading(154.0);
 
 
@@ -1408,7 +1408,7 @@ $.blokez = _res319.z;
 $.player_x = _res320.x;
 $.player_y = _res320.y;
 $.player_z = _res320.z;
-  Audio.SetRadioChannel(FEVER, -1);
+  Audio.SetRadioChannel(3 /* FEVER */, -1);
 
 
   Audio.LoadMissionAudio(1, "lanamu1" as any);
@@ -1503,17 +1503,17 @@ $.player_y = _res321.y;
 $.player_z = _res321.z;
       if (!(Char.IsDead($.ambush_bloke2))) {
         if (!($.ambush_bloke2.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-          $.ambush_bloke2.followPath($.player_x, $.player_y, $.player_z, 2.0, Run);
+          $.ambush_bloke2.followPath($.player_x, $.player_y, $.player_z, 2.0, 1 /* Run */);
         }
       }
       if (!(Char.IsDead($.ambush_bloke3))) {
         if (!($.ambush_bloke3.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-          $.ambush_bloke3.followPath($.player_x, $.player_y, $.player_z, 2.0, Run);
+          $.ambush_bloke3.followPath($.player_x, $.player_y, $.player_z, 2.0, 1 /* Run */);
         }
       }
       if (!(Char.IsDead($.ambush_bloke4))) {
         if (!($.ambush_bloke4.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-          $.ambush_bloke4.followPath($.player_x, $.player_y, $.player_z, 2.0, Run);
+          $.ambush_bloke4.followPath($.player_x, $.player_y, $.player_z, 2.0, 1 /* Run */);
         }
       }
       TIMERB = 0;
@@ -1562,7 +1562,7 @@ $.player_z = _res321.z;
 
   $.buddycar_blip.remove();
   $.buddy_blip.remove();
-  hotel_blip = Blip.AddSpriteForCoord($.ammu1X, $.ammu1Y, $.ammu1Z, RADAR_SPRITE_GUN);
+  hotel_blip = Blip.AddSpriteForCoord($.ammu1X, $.ammu1Y, $.ammu1Z, 16 /* RADAR_SPRITE_GUN */);
 
 
   await asyncWait(1000);
@@ -1673,17 +1673,17 @@ $.player_y = _res322.y;
 $.player_z = _res322.z;
       if (!(Char.IsDead($.ambush_bloke2))) {
         if (!($.ambush_bloke2.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-          $.ambush_bloke2.followPath($.player_x, $.player_y, $.player_z, 2.0, Run);
+          $.ambush_bloke2.followPath($.player_x, $.player_y, $.player_z, 2.0, 1 /* Run */);
         }
       }
       if (!(Char.IsDead($.ambush_bloke3))) {
         if (!($.ambush_bloke3.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-          $.ambush_bloke3.followPath($.player_x, $.player_y, $.player_z, 2.0, Run);
+          $.ambush_bloke3.followPath($.player_x, $.player_y, $.player_z, 2.0, 1 /* Run */);
         }
       }
       if (!(Char.IsDead($.ambush_bloke4))) {
         if (!($.ambush_bloke4.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-          $.ambush_bloke4.followPath($.player_x, $.player_y, $.player_z, 2.0, Run);
+          $.ambush_bloke4.followPath($.player_x, $.player_y, $.player_z, 2.0, 1 /* Run */);
         }
       }
       TIMERB = 0;
@@ -1979,17 +1979,17 @@ $.player_y = _res323.y;
 $.player_z = _res323.z;
       if (!(Char.IsDead($.ambush_bloke2))) {
         if (!($.ambush_bloke2.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-          $.ambush_bloke2.followPath($.player_x, $.player_y, $.player_z, 2.0, Run);
+          $.ambush_bloke2.followPath($.player_x, $.player_y, $.player_z, 2.0, 1 /* Run */);
         }
       }
       if (!(Char.IsDead($.ambush_bloke3))) {
         if (!($.ambush_bloke3.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-          $.ambush_bloke3.followPath($.player_x, $.player_y, $.player_z, 2.0, Run);
+          $.ambush_bloke3.followPath($.player_x, $.player_y, $.player_z, 2.0, 1 /* Run */);
         }
       }
       if (!(Char.IsDead($.ambush_bloke4))) {
         if (!($.ambush_bloke4.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-          $.ambush_bloke4.followPath($.player_x, $.player_y, $.player_z, 2.0, Run);
+          $.ambush_bloke4.followPath($.player_x, $.player_y, $.player_z, 2.0, 1 /* Run */);
         }
       }
       TIMERB = 0;
@@ -2197,7 +2197,7 @@ async function mission_lawyer2_passed() {
   $.player1.addScore(200);
   Stat.RegisterMissionPassed("LAW_2");
   Stat.PlayerMadeProgress(1);
-  // START_NEW_SCRIPT lawyer_mission3_loop
+  // START_NEW_SCRIPT lawyer_mission3_loop 
 }
 
 
@@ -2222,7 +2222,7 @@ async function cleanup() {
   $.timer_mobile_start = Clock.GetGameTimer();
   Streaming.MarkModelAsNoLongerNeeded(infernus);
   Streaming.MarkModelAsNoLongerNeeded(cleaver);
-  Streaming.MarkModelAsNoLongerNeeded(173 /* colt45 */);
+  Streaming.MarkModelAsNoLongerNeeded(colt45);
   Streaming.MarkModelAsNoLongerNeeded(cellphone);
   Streaming.MarkModelAsNoLongerNeeded(knifecur);
   Streaming.UnloadSpecialCharacter(3);

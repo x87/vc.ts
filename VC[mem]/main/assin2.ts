@@ -1,6 +1,6 @@
 // Generated from main/assin2.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_assin2() {
 
@@ -601,8 +601,8 @@ $.wifecar_z = _res27.nodeZ;
 
     if ($.wife_in_car > 0) {
       if (Car.IsDead($.wifecar) && Char.IsDead($.wife)) {
-        if (!($.wifecar.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON))) {
-          if (!($.wife.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON)) && $.playerinarea == 0) {
+        if (!($.wifecar.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */))) {
+          if (!($.wife.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */)) && $.playerinarea == 0) {
             // SCM GOTO → mission_assin2_passed (not lowered; manual jump required)
             throw new Error("unresolved GOTO mission_assin2_passed"); // fallback: would break linear control flow
           }
@@ -643,7 +643,7 @@ $.wifecar_z = _res27.nodeZ;
       if (!(Car.IsDead($.wifecar))) {
         if (!(Char.IsDead($.wife))) {
           if ($.wife.isInCar($.wifecar)) {
-            if ($.wifecar.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON)) {
+            if ($.wifecar.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */)) {
               Text.PrintNow("ASM2_7", 5000, 1); //It's got to look like an accident dont use weapons!
               // SCM GOTO → mission_assin2_failed (not lowered; manual jump required)
               throw new Error("unresolved GOTO mission_assin2_failed"); // fallback: would break linear control flow

@@ -1,13 +1,13 @@
 // Generated from main/junkfud.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_junkfud() {
 
 
 
 
-  // START_NEW_SCRIPT junkfud
+  // START_NEW_SCRIPT junkfud 
   //START_NEW_SCRIPT airport_security
   //START_NEW_SCRIPT aport2_security
 
@@ -1203,7 +1203,7 @@ async function transaction() {
     $.fud_health = $.fud_health * -1;
     $.player1.addScore($.fud_health);
     $.player1.setHealth(100);
-    Sound.AddOneOffSound($.fud_x, $.fud_y, $.fud_z, 94 /* SOUND_PART_MISSION_COMPLETE */);
+    Sound.AddOneOffSound($.fud_x, $.fud_y, $.fud_z, 1 /* SOUND_PART_MISSION_COMPLETE */);
   }
 }
 

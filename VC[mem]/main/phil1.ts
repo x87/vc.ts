@@ -1,6 +1,6 @@
 // Generated from main/phil1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_phil1() {
   Text.ClearThisPrint("M_FAIL");
@@ -237,9 +237,9 @@ async function mission_start_phil1() {
 
   if (!(Cutscene.WasSkipped())) {
     Fx.AddExplosion(-1091.6, 327.6, 10.5, 2 /* EXPLOSION_ROCKET */);
-    Fx.AddExplosion(-1091.6, 327.6, 10.5, 9 /* EXPLOSION_HELI_BOMB */);
+    Fx.AddExplosion(-1091.6, 327.6, 10.5, 11 /* EXPLOSION_HELI_BOMB */);
     Fx.AddExplosion(-1091.6, 327.6, 10.5, 1 /* EXPLOSION_MOLOTOV */);
-    Fx.AddExplosion(-1091.6, 327.6, 10.5, 5 /* EXPLOSION_HELI */);
+    Fx.AddExplosion(-1091.6, 327.6, 10.5, 6 /* EXPLOSION_HELI */);
   }
 
 
@@ -393,7 +393,7 @@ async function mission_start_phil1() {
   Camera.SetBehindPlayer();
   //------------------REQUEST_MODELS------------------------------
 
-  $.player1.setMood(PLAYER_MOOD_CALM, 60000);
+  $.player1.setMood(0 /* PLAYER_MOOD_CALM */, 60000);
 
 
   Streaming.RequestModel(walton);
@@ -412,10 +412,10 @@ async function mission_start_phil1() {
   Streaming.RequestModel(shotgspa);
   Streaming.RequestModel(ingramsl);
   Streaming.RequestModel(M60);
-  Streaming.RequestModel(178 /* uzi */);
+  Streaming.RequestModel(uzi);
 
 
-  while (!(Streaming.HasModelLoaded(python)) || !(Streaming.HasModelLoaded(shotgspa)) || !(Streaming.HasModelLoaded(ingramsl)) || !(Streaming.HasModelLoaded(M60)) || !(Streaming.HasModelLoaded(178 /* uzi */))) {
+  while (!(Streaming.HasModelLoaded(python)) || !(Streaming.HasModelLoaded(shotgspa)) || !(Streaming.HasModelLoaded(ingramsl)) || !(Streaming.HasModelLoaded(M60)) || !(Streaming.HasModelLoaded(uzi))) {
     await asyncWait(0);
   }
 
@@ -438,7 +438,7 @@ async function mission_start_phil1() {
 
   $.fake_plyr_car = Car.Create(patriot, -1073.4, 325.3, 10.2);
   $.fake_plyr_car.setHeading(259.7);
-  $.grenades_pickup = Pickup.CreateWithAmmo(182 /* bomb */, 3 /* PICKUP_ONCE */, 15, -1058.6, 325.9, 11.2);
+  $.grenades_pickup = Pickup.CreateWithAmmo(bomb, 3 /* PICKUP_ONCE */, 15, -1058.6, 325.9, 11.2);
 
 
 
@@ -461,11 +461,11 @@ async function mission_start_phil1() {
 
   $.box1 = ScriptObject.Create(gunbox, -757.6, 23.9, 10.0);
   $.box1.setCollision(false /* FALSE */);
-  $.mexican_gunner = Char.Create(PEDTYPE_GANG_SECURITY, WMYCR, -757.6, 23.9, 10.0);
-  $.mexican_gunner.setThreatSearch(THREAT_GANG_HAITIAN);
-  $.mexican_gunner.setThreatSearch(THREAT_GANG_CUBAN);
+  $.mexican_gunner = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, WMYCR, -757.6, 23.9, 10.0);
+  $.mexican_gunner.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
+  $.mexican_gunner.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
   $.mexican_gunner.setThreatSearch(64 /* THREAT_COP */);
-  $.mexican_gunner.attachToCar($.mexican_car, 0.0, -1.0, 0.9, 2 /* FACING_BACK */, 45.0, 3 /* WEAPONTYPE_UZI */);
+  $.mexican_gunner.attachToCar($.mexican_car, 0.0, -1.0, 0.9, 2 /* FACING_BACK */, 45.0, 23 /* WEAPONTYPE_UZI */);
 
   //car2
 
@@ -501,11 +501,11 @@ async function mission_start_phil1() {
   $.mexican_car3.wanderRandomly();
   $.mexican_car3.setAvoidLevelTransitions(true /* TRUE */);
   $.mexican_car3_blip = Blip.AddForCar($.mexican_car3);
-  $.mexican_gunner1 = Char.Create(PEDTYPE_GANG_SECURITY, WMYCR, -674.9, 788.4, 10.3);
-  $.mexican_gunner1.setThreatSearch(THREAT_GANG_HAITIAN);
-  $.mexican_gunner1.setThreatSearch(THREAT_GANG_CUBAN);
+  $.mexican_gunner1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, WMYCR, -674.9, 788.4, 10.3);
+  $.mexican_gunner1.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
+  $.mexican_gunner1.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
   $.mexican_gunner1.setThreatSearch(64 /* THREAT_COP */);
-  $.mexican_gunner1.attachToCar($.mexican_car3, 0.0, -1.0, 0.9, 2 /* FACING_BACK */, 45.0, 3 /* WEAPONTYPE_UZI */);
+  $.mexican_gunner1.attachToCar($.mexican_car3, 0.0, -1.0, 0.9, 2 /* FACING_BACK */, 45.0, 23 /* WEAPONTYPE_UZI */);
 
 
   $.box3 = ScriptObject.Create(gunbox, -674.9, 788.4, 10.3);
@@ -1196,7 +1196,7 @@ $.mexican_car_stuck_z = _res383.z;
             if ($.killing_bonus < 13) {
               if ($.first_time_trigger == 1) {
                 Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-                Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+                Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
                 $.player1.addScore(100);
                 $.killing_bonus++;
               }
@@ -1314,7 +1314,7 @@ $.mexican_car_stuck_z = _res387.z;
             if ($.killing_bonus < 13) {
               if ($.first_time_trigger == 1) {
                 Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-                Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+                Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
                 $.player1.addScore(100);
                 $.killing_bonus++;
               }
@@ -1432,7 +1432,7 @@ $.mexican_car_stuck_z = _res391.z;
             if ($.killing_bonus < 13) {
               if ($.first_time_trigger == 1) {
                 Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-                Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+                Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
                 $.player1.addScore(100);
                 $.killing_bonus++;
               }
@@ -1550,7 +1550,7 @@ $.mexican_car_stuck_z = _res395.z;
             if ($.killing_bonus < 10) {
               if ($.first_time_trigger == 1) {
                 Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-                Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+                Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
                 $.player1.addScore(100);
                 $.killing_bonus++;
               }
@@ -1788,7 +1788,7 @@ async function mission_cleanup_phil1() {
   Streaming.MarkModelAsNoLongerNeeded(M60);
   Streaming.MarkModelAsNoLongerNeeded(gunbox);
   Streaming.MarkModelAsNoLongerNeeded(patriot);
-  Streaming.MarkModelAsNoLongerNeeded(178 /* uzi */);
+  Streaming.MarkModelAsNoLongerNeeded(uzi);
   $.gungun1.remove();
   $.gungun2.remove();
   $.gungun3.remove();
@@ -1808,7 +1808,7 @@ async function gun_collected() {
   if ($.gun1_collected == 0) {
     if ($.create_gun1 == 1) {
       if ($.gungun1.hasBeenCollected()) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.gun_blip1.remove();
         $.player1_got_all_guns++;
         $.weapon_dropped--;
@@ -1829,7 +1829,7 @@ async function gun_collected() {
   if ($.gun2_collected == 0) {
     if ($.create_gun2 == 1) {
       if ($.gungun2.hasBeenCollected()) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.gun_blip2.remove();
         $.player1_got_all_guns++;
         $.weapon_dropped--;
@@ -1850,7 +1850,7 @@ async function gun_collected() {
   if ($.gun3_collected == 0) {
     if ($.create_gun3 == 1) {
       if ($.gungun3.hasBeenCollected()) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.gun_blip3.remove();
         $.player1_got_all_guns++;
         $.weapon_dropped--;
@@ -1873,7 +1873,7 @@ async function gun_collected() {
   if ($.gun4_collected == 0) {
     if ($.create_gun4 == 1) {
       if ($.gungun4.hasBeenCollected()) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.gun_blip4.remove();
         $.player1_got_all_guns++;
         $.weapon_dropped--;
@@ -2100,7 +2100,7 @@ async function make_cars() {
     $.press_driver1 = Char.CreateInsideCar($.press_moped1, 4 /* PEDTYPE_CIVMALE */, WMYCR);
 
 
-    $.press_driver1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+    $.press_driver1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
     $.press_moped1.setOnlyDamagedByPlayer(true /* TRUE */);
     $.press_moped1.setMission(5 /* MISSION_BLOCKPLAYER_CLOSE */);
     $.press_moped1.setDrivingStyle(2 /* DRIVINGMODE_AVOIDCARS */);
@@ -2122,7 +2122,7 @@ async function make_cars() {
     $.press_driver2 = Char.CreateInsideCar($.press_moped2, 4 /* PEDTYPE_CIVMALE */, WMYCR);
 
 
-    $.press_driver2.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+    $.press_driver2.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
     $.press_moped2.setOnlyDamagedByPlayer(true /* TRUE */);
     $.press_moped2.setMission(5 /* MISSION_BLOCKPLAYER_CLOSE */);
     $.press_moped2.setDrivingStyle(2 /* DRIVINGMODE_AVOIDCARS */);
@@ -2145,7 +2145,7 @@ async function make_cars() {
 
 
 
-    $.press_driver3.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+    $.press_driver3.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
     $.press_moped3.setOnlyDamagedByPlayer(true /* TRUE */);
     $.press_moped3.setMission(5 /* MISSION_BLOCKPLAYER_CLOSE */);
     $.press_moped3.setDrivingStyle(2 /* DRIVINGMODE_AVOIDCARS */);
@@ -2167,7 +2167,7 @@ async function make_cars() {
     $.press_driver4 = Char.CreateInsideCar($.press_moped4, 4 /* PEDTYPE_CIVMALE */, WMYCR);
 
 
-    $.press_driver4.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+    $.press_driver4.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
     $.press_moped4.setOnlyDamagedByPlayer(true /* TRUE */);
     $.press_moped4.setMission(5 /* MISSION_BLOCKPLAYER_CLOSE */);
     $.press_moped4.setDrivingStyle(2 /* DRIVINGMODE_AVOIDCARS */);

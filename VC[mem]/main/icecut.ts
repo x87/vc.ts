@@ -1,6 +1,6 @@
 // Generated from main/icecut.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_icecut() {
 
@@ -88,7 +88,7 @@ async function mission_start_icecut() {
 
 
   $.mcane = CutsceneObject.Create(CUTOBJ01);
-  $.mcane.attachToBone($.cs_maude, BONE_L_HAND);
+  $.mcane.attachToBone($.cs_maude, 34 /* BONE_L_HAND */);
 
 
   Camera.DoFade(1500, 1 /* FADE_IN */);
@@ -503,19 +503,19 @@ async function mission_start_icecut() {
 
 
   $.icebuy_blip.remove();
-  $.icebuy_blip = Blip.AddShortRangeSpriteForContactPoint(-878.5, -575.1, 11.2, 9 /* RADAR_SPRITE_ICE */);
+  $.icebuy_blip = Blip.AddShortRangeSpriteForContactPoint(-878.5, -575.1, 11.2, 21 /* RADAR_SPRITE_ICE */);
   $.icebuy_blip.changeDisplay(2 /* BLIP_ONLY */);
   Zone.SetPedInfo("ICCREAM", 1 /* DAY */, 13, 0, 0, 0, 0, 0, 0, 1000, 0, 0, 0);
   Zone.SetPedInfo("ICCREAM", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 1000, 0, 0, 0);
   Path.SwitchPedRoadsOn(-896.098, -593.101, 0.0, -855.09, -548.64, 30.0); //ICECREAM
 
 
-  Stat.SetPropertyAsOwned(PROP_ICECREAM);
+  Stat.SetPropertyAsOwned(3 /* PROP_ICECREAM */);
 
 
 
 
-  // START_NEW_SCRIPT icecream_save_loop
+  // START_NEW_SCRIPT icecream_save_loop 
 
 
 

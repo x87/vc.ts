@@ -1,6 +1,6 @@
 // Generated from main/bus.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function bus_inner() {
 
@@ -41,7 +41,7 @@ async function bus_inner() {
                 $.bus_fares = $.player1.getBusFaresCollected();
                 if ($.bus_fares > 0) {
                   Text.PrintWithNumberBig("BONUS", 5, 50, 1);
-                  Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+                  Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
                   $.player1.addScore(5);
                   $.time_to_get_start = Clock.GetGameTimer();
                   $.bus_fares = 0;

@@ -1,6 +1,6 @@
 // Generated from main/kent1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_kent1() {
 
@@ -619,7 +619,7 @@ async function mission_start_kent1() {
   World.SetExtraColors(1, false /* FALSE */);
 
 
-  Streaming.SetAreaVisible(VIS_MALIBU_CLUB);
+  Streaming.SetAreaVisible(17 /* VIS_MALIBU_CLUB */);
 
 
   Streaming.LoadScene(476.12, -63.377, 10.0);
@@ -781,7 +781,7 @@ async function mission_start_kent1() {
   World.ClearExtraColors(false);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   Streaming.LoadScene(495.74, -82.79, 9.03);
@@ -793,7 +793,7 @@ async function mission_start_kent1() {
   $.flag_player_in_malibu = 0;
 
 
-  $.player1.setMood(PLAYER_MOOD_ANGRY, 60000);
+  $.player1.setMood(2 /* PLAYER_MOOD_ANGRY */, 60000);
 
   // ******************************************END OF CUTSCENE********************************
 
@@ -830,7 +830,7 @@ async function mission_start_kent1() {
 
   Streaming.RequestModel(CLa); // Diaz guards
   Streaming.RequestModel(CLb); // Diaz guards
-  Streaming.RequestModel(178 /* UZI */);
+  Streaming.RequestModel(UZI);
   Streaming.RequestModel(SENTINEL);
   Streaming.RequestModel(COMET);
   Streaming.RequestModel(RUGER);
@@ -842,7 +842,7 @@ async function mission_start_kent1() {
   Streaming.LoadSpecialCharacter(3, "IGBUDDY");
 
 
-  while (!(Streaming.HasModelLoaded(CLa)) || !(Streaming.HasModelLoaded(CLb)) || !(Streaming.HasModelLoaded(178 /* UZI */)) || !(Streaming.HasSpecialCharacterLoaded(3)) || !(Streaming.HasModelLoaded(SENTINEL)) || !(Streaming.HasModelLoaded(COMET))) {
+  while (!(Streaming.HasModelLoaded(CLa)) || !(Streaming.HasModelLoaded(CLb)) || !(Streaming.HasModelLoaded(UZI)) || !(Streaming.HasSpecialCharacterLoaded(3)) || !(Streaming.HasModelLoaded(SENTINEL)) || !(Streaming.HasModelLoaded(COMET))) {
     await asyncWait(0);
 
 
@@ -904,7 +904,7 @@ async function mission_start_kent1() {
   // creates the executioner
 
 
-  $.executioner_kent1 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, $.executioner_x_kent1, $.executioner_y_kent1, $.executioner_z_kent1);
+  $.executioner_kent1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, $.executioner_x_kent1, $.executioner_y_kent1, $.executioner_z_kent1);
 
 
   $.executioner_kent1.clearThreatSearch();
@@ -915,7 +915,7 @@ async function mission_start_kent1() {
   // creates guard one, follows route 0 walks at the front gate
 
 
-  $.guard1_kent1 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, $.guard1_x_kent1, $.guard1_y_kent1, $.guard1_z_kent1);
+  $.guard1_kent1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, $.guard1_x_kent1, $.guard1_y_kent1, $.guard1_z_kent1);
 
 
   $.guard1_kent1.clearThreatSearch();
@@ -926,7 +926,7 @@ async function mission_start_kent1() {
   // Creates guard 2 does not patrol left hand side of shed that Lance is held in
 
 
-  $.guard2_kent1 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, $.guard2_x_kent1, $.guard2_y_kent1, $.guard2_z_kent1);
+  $.guard2_kent1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, $.guard2_x_kent1, $.guard2_y_kent1, $.guard2_z_kent1);
 
 
   $.guard2_kent1.clearThreatSearch();
@@ -937,7 +937,7 @@ async function mission_start_kent1() {
   // Creates guard3 does not patrol right hand side of shed that Lance is held in
 
 
-  $.guard3_kent1 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, $.guard3_x_kent1, $.guard3_y_kent1, $.guard3_z_kent1);
+  $.guard3_kent1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, $.guard3_x_kent1, $.guard3_y_kent1, $.guard3_z_kent1);
 
 
   $.guard3_kent1.clearThreatSearch();
@@ -948,7 +948,7 @@ async function mission_start_kent1() {
   // Creates guard4 follows partol route 1 walks beside the gate on left hand side
 
 
-  $.guard4_kent1 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, $.guard4_x_kent1, $.guard4_y_kent1, $.guard4_z_kent1);
+  $.guard4_kent1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, $.guard4_x_kent1, $.guard4_y_kent1, $.guard4_z_kent1);
 
 
   $.guard4_kent1.clearThreatSearch();
@@ -959,7 +959,7 @@ async function mission_start_kent1() {
   // Guard 6 on right hand side patrols along by burnt out tanker follow route 2
 
 
-  $.guard6_kent1 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, $.guard6_x_kent1, $.guard6_y_kent1, $.guard6_z_kent1);
+  $.guard6_kent1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, $.guard6_x_kent1, $.guard6_y_kent1, $.guard6_z_kent1);
 
 
   $.guard6_kent1.clearThreatSearch();
@@ -1003,7 +1003,7 @@ async function mission_start_kent1() {
   // Guard10
 
 
-  $.guard10_kent1 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -1252.871, 42.226, 12.313);
+  $.guard10_kent1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -1252.871, 42.226, 12.313);
 
 
   $.guard10_kent1.clearThreatSearch();
@@ -1014,7 +1014,7 @@ async function mission_start_kent1() {
   // guard11
 
 
-  $.guard11_kent1 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -1257.927, 79.620, 10.45);
+  $.guard11_kent1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -1257.927, 79.620, 10.45);
 
 
   $.guard11_kent1.clearThreatSearch();
@@ -1025,7 +1025,7 @@ async function mission_start_kent1() {
   // guard12
 
 
-  $.guard12_kent1 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -1257.345, 85.370, 10.45);
+  $.guard12_kent1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -1257.345, 85.370, 10.45);
 
 
   $.guard12_kent1.clearThreatSearch();
@@ -1052,32 +1052,32 @@ async function mission_start_kent1() {
     if ($.counter_no_of_guys_dead_kent1 >= 4) {
       if ($.flag_second_wave_created_kent1 == 0) {
         if ($.player1.isInArea3D(-1236.888, 15.474, 8.0, -1288.145, 122.990, 20.0, false /* FALSE */) || $.player1.isInArea3D(-1301.625, 59.126, 8.0, -1236.840, 15.482, 20.0, false /* FALSE */)) {
-          $.guard13_kent1 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -1307.682, 147.943, 10.45);
+          $.guard13_kent1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -1307.682, 147.943, 10.45);
           $.guard13_kent1.clearThreatSearch();
           $.guard13_kent1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
           $.guard13_kent1.setThreatSearch(1 /* THREAT_PLAYER1 */);
-          $.guard13_kent1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // Infinate ammo
+          $.guard13_kent1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // Infinate ammo
           //SET_CHAR_ACCURACY guard13_kent1 90
           $.guard13_kent1.setObjKillPlayerOnFoot($.player1);
-          $.guard14_kent1 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -1305.706, 149.732, 10.44);
+          $.guard14_kent1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -1305.706, 149.732, 10.44);
           $.guard14_kent1.clearThreatSearch();
           $.guard14_kent1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
           $.guard14_kent1.setThreatSearch(1 /* THREAT_PLAYER1 */);
-          $.guard14_kent1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // Infinate ammo
+          $.guard14_kent1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // Infinate ammo
           //SET_CHAR_ACCURACY guard14_kent1 90
           $.guard14_kent1.setObjKillPlayerOnFoot($.player1);
-          $.guard15_kent1 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -1305.314, 145.067, 10.45);
+          $.guard15_kent1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -1305.314, 145.067, 10.45);
           $.guard15_kent1.clearThreatSearch();
           $.guard15_kent1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
           $.guard15_kent1.setThreatSearch(1 /* THREAT_PLAYER1 */);
-          $.guard15_kent1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // Infinate ammo
+          $.guard15_kent1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // Infinate ammo
           //SET_CHAR_ACCURACY guard15_kent1 90
           $.guard15_kent1.setObjKillPlayerOnFoot($.player1);
-          $.guard16_kent1 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -1302.267, 146.640, 10.45);
+          $.guard16_kent1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -1302.267, 146.640, 10.45);
           $.guard16_kent1.clearThreatSearch();
           $.guard16_kent1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
           $.guard16_kent1.setThreatSearch(1 /* THREAT_PLAYER1 */);
-          $.guard16_kent1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // Infinate ammo
+          $.guard16_kent1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // Infinate ammo
           //SET_CHAR_ACCURACY guard16_kent1 90
           $.guard16_kent1.setObjKillPlayerOnFoot($.player1);
           $.flag_second_wave_created_kent1 = 1;
@@ -1389,7 +1389,7 @@ $.player_z = _res303.z;
                 //	PRINT_NOW ( KPM1_4 ) 5000 1 //"Get me outa here!"
                 if (!(Char.IsDead(buddy_kent1))) {
                   buddy_kent1.setBleeding(false /* FALSE */);
-                  buddy_kent1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+                  buddy_kent1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
                 }
                 else {
                   Text.PrintNow("KPM1_2", 5000, 1); //"You were supposed to get Lance out alive!"
@@ -1760,7 +1760,7 @@ async function mission_kent1_passed() {
   $.kent_contact_blip.remove();
   $.baron_contact_blip.remove();
   $.baron_contact_blip = Blip.AddSpriteForContactPoint($.baron2X, $.baron2Y, $.baron2Z, $.the_baron_blip);
-  // START_NEW_SCRIPT baron_mission5_loop
+  // START_NEW_SCRIPT baron_mission5_loop 
 }
 
 
@@ -1810,7 +1810,7 @@ async function mission_cleanup_kent1() {
 
   Streaming.MarkModelAsNoLongerNeeded(CLa);
   Streaming.MarkModelAsNoLongerNeeded(CLb);
-  Streaming.MarkModelAsNoLongerNeeded(178 /* UZI */);
+  Streaming.MarkModelAsNoLongerNeeded(UZI);
   Streaming.MarkModelAsNoLongerNeeded(SENTINEL);
   Streaming.MarkModelAsNoLongerNeeded(COMET);
   Streaming.MarkModelAsNoLongerNeeded(RUGER);
@@ -1868,7 +1868,7 @@ async function guard_death_check_kent1() {
       }
       if ($.flag_player_been_spotted_kent1 == 1) {
         if ($.frame_counter_kent1 == 0) {
-          $.guard1_kent1.followPath($.player_x, $.player_y, $.player_z, 0.5, RUN);
+          $.guard1_kent1.followPath($.player_x, $.player_y, $.player_z, 0.5, 1 /* RUN */);
           $.guard1_kent1.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -1961,13 +1961,13 @@ async function guard_death_check_kent1() {
       }
       if ($.flag_player_been_spotted_kent1 == 1) {
         if ($.flag_guard4_chase_kent1 == 0) {
-          $.guard4_kent1.followPath($.player_x, $.player_y, $.player_z, 0.5, RUN);
+          $.guard4_kent1.followPath($.player_x, $.player_y, $.player_z, 0.5, 1 /* RUN */);
           $.guard4_kent1.setObjKillPlayerOnFoot($.player1);
           $.flag_guard4_chase_kent1 = 1;
         }
         else {
           if ($.frame_counter_kent1 == 30) {
-            $.guard4_kent1.followPath($.player_x, $.player_y, $.player_z, 0.5, RUN);
+            $.guard4_kent1.followPath($.player_x, $.player_y, $.player_z, 0.5, 1 /* RUN */);
             $.guard4_kent1.setObjKillPlayerOnFoot($.player1);
           }
 
@@ -2001,13 +2001,13 @@ async function guard_death_check_kent1() {
       }
       if ($.flag_player_been_spotted_kent1 == 1) {
         if ($.flag_guard6_chase_kent1 == 0) {
-          $.guard6_kent1.followPath($.player_x, $.player_y, $.player_z, 0.5, RUN);
+          $.guard6_kent1.followPath($.player_x, $.player_y, $.player_z, 0.5, 1 /* RUN */);
           $.guard6_kent1.setObjKillPlayerOnFoot($.player1);
           $.flag_guard6_chase_kent1 = 1;
         }
         else {
           if ($.frame_counter_kent1 == 60) {
-            $.guard6_kent1.followPath($.player_x, $.player_y, $.player_z, 0.5, RUN);
+            $.guard6_kent1.followPath($.player_x, $.player_y, $.player_z, 0.5, 1 /* RUN */);
             $.guard6_kent1.setObjKillPlayerOnFoot($.player1);
           }
 
@@ -2123,7 +2123,7 @@ async function guard_death_check_kent1() {
           $.flag_guard10_chase_kent1 = 1;
         }
         if ($.frame_counter_kent1 == 90) {
-          $.guard10_kent1.followPath($.player_x, $.player_y, $.player_z, 1.0, RUN);
+          $.guard10_kent1.followPath($.player_x, $.player_y, $.player_z, 1.0, 1 /* RUN */);
           $.guard10_kent1.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -2159,7 +2159,7 @@ async function guard_death_check_kent1() {
           $.flag_guard11_chase_kent1 = 1;
         }
         if ($.frame_counter_kent1 == 120) {
-          $.guard11_kent1.followPath($.player_x, $.player_y, $.player_z, 1.0, RUN);
+          $.guard11_kent1.followPath($.player_x, $.player_y, $.player_z, 1.0, 1 /* RUN */);
           $.guard11_kent1.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -2195,7 +2195,7 @@ async function guard_death_check_kent1() {
           $.flag_guard12_chase_kent1 = 1;
         }
         if ($.frame_counter_kent1 == 150) {
-          $.guard12_kent1.followPath($.player_x, $.player_y, $.player_z, 1.0, RUN);
+          $.guard12_kent1.followPath($.player_x, $.player_y, $.player_z, 1.0, 1 /* RUN */);
           $.guard12_kent1.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -2218,7 +2218,7 @@ async function guard_death_check_kent1() {
       else {
         if (flag_buddy_joined_player == 1 || $.player1.isInArea2D(-1234.15, -1.0, -1367.51, 250.33, false /* FALSE */)) {
           if ($.frame_counter_kent1 == 180) {
-            $.guard13_kent1.followPath($.player_x, $.player_y, $.player_z, 1.0, RUN);
+            $.guard13_kent1.followPath($.player_x, $.player_y, $.player_z, 1.0, 1 /* RUN */);
             $.guard13_kent1.setObjKillPlayerOnFoot($.player1);
           }
 
@@ -2238,7 +2238,7 @@ async function guard_death_check_kent1() {
       else {
         if (flag_buddy_joined_player == 1 || $.player1.isInArea2D(-1234.15, -1.0, -1367.51, 250.33, false /* FALSE */)) {
           if ($.frame_counter_kent1 == 210) {
-            $.guard14_kent1.followPath($.player_x, $.player_y, $.player_z, 1.0, RUN);
+            $.guard14_kent1.followPath($.player_x, $.player_y, $.player_z, 1.0, 1 /* RUN */);
             $.guard14_kent1.setObjKillPlayerOnFoot($.player1);
           }
 
@@ -2258,7 +2258,7 @@ async function guard_death_check_kent1() {
       else {
         if (flag_buddy_joined_player == 1 || $.player1.isInArea2D(-1234.15, -1.0, -1367.51, 250.33, false /* FALSE */)) {
           if ($.frame_counter_kent1 == 240) {
-            $.guard15_kent1.followPath($.player_x, $.player_y, $.player_z, 1.0, RUN);
+            $.guard15_kent1.followPath($.player_x, $.player_y, $.player_z, 1.0, 1 /* RUN */);
             $.guard15_kent1.setObjKillPlayerOnFoot($.player1);
           }
 
@@ -2278,7 +2278,7 @@ async function guard_death_check_kent1() {
       else {
         if (flag_buddy_joined_player == 1 || $.player1.isInArea2D(-1234.15, -1.0, -1367.51, 250.33, false /* FALSE */)) {
           if ($.frame_counter_kent1 == 270) {
-            $.guard16_kent1.followPath($.player_x, $.player_y, $.player_z, 1.0, RUN);
+            $.guard16_kent1.followPath($.player_x, $.player_y, $.player_z, 1.0, 1 /* RUN */);
             $.guard16_kent1.setObjKillPlayerOnFoot($.player1);
           }
 
@@ -2354,7 +2354,7 @@ async function ambush_create_kent1() {
   $.car3_kent1 = Car.Create(COMET, -1066.072, -55.111, 10.262);
 
 
-  $.ambush_guard3_kent1 = Char.CreateInsideCar($.car3_kent1, PEDTYPE_GANG_DIAZ, CLb);
+  $.ambush_guard3_kent1 = Char.CreateInsideCar($.car3_kent1, 10 /* PEDTYPE_GANG_DIAZ */, CLb);
 
 
   $.car3_kent1.setHeading(355.752);
@@ -2372,7 +2372,7 @@ async function ambush_create_kent1() {
   $.ambush_guard3_kent1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
 
 
-  $.ambush_guard3_kent1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
+  $.ambush_guard3_kent1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
 
 
   $.car3_kent1.setForwardSpeed(20.0);
@@ -2398,7 +2398,7 @@ async function ambush_create_kent1() {
   $.car4_kent1.setHeading(5.6);
 
 
-  $.ambush_guard4_kent1 = Char.CreateInsideCar($.car4_kent1, PEDTYPE_GANG_DIAZ, CLa);
+  $.ambush_guard4_kent1 = Char.CreateInsideCar($.car4_kent1, 10 /* PEDTYPE_GANG_DIAZ */, CLa);
 
 
   $.ambush_guard4_kent1.clearThreatSearch();
@@ -2413,7 +2413,7 @@ async function ambush_create_kent1() {
   $.ambush_guard4_kent1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
 
 
-  $.ambush_guard4_kent1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
+  $.ambush_guard4_kent1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
 
 
   $.car4_kent1.setForwardSpeed(20.0);
@@ -2439,7 +2439,7 @@ async function ambush_create_kent1() {
   $.car5_kent1.setHeading(186.085);
 
 
-  $.ambush_guard5_kent1 = Char.CreateInsideCar($.car5_kent1, PEDTYPE_GANG_DIAZ, CLa);
+  $.ambush_guard5_kent1 = Char.CreateInsideCar($.car5_kent1, 10 /* PEDTYPE_GANG_DIAZ */, CLa);
 
 
   $.ambush_guard5_kent1.clearThreatSearch();
@@ -2454,7 +2454,7 @@ async function ambush_create_kent1() {
   $.ambush_guard5_kent1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
 
 
-  $.ambush_guard5_kent1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
+  $.ambush_guard5_kent1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
 
 
   $.car5_kent1.setForwardSpeed(20.0);
@@ -2480,7 +2480,7 @@ async function ambush_create_kent1() {
   $.car6_kent1.setHeading(178.162);
 
 
-  $.ambush_guard6_kent1 = Char.CreateInsideCar($.car6_kent1, PEDTYPE_GANG_DIAZ, CLa);
+  $.ambush_guard6_kent1 = Char.CreateInsideCar($.car6_kent1, 10 /* PEDTYPE_GANG_DIAZ */, CLa);
 
 
   $.ambush_guard6_kent1.clearThreatSearch();
@@ -2495,7 +2495,7 @@ async function ambush_create_kent1() {
   $.ambush_guard6_kent1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
 
 
-  $.ambush_guard6_kent1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
+  $.ambush_guard6_kent1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
 
 
   $.car6_kent1.setForwardSpeed(20.0);
@@ -2952,7 +2952,7 @@ async function guard_AI_kent1() {
         if (!(buddy_kent1.isWaitingForWorldCollision())) {
           buddy_kent1.clearThreatSearch();
           buddy_kent1.setOnlyDamagedByPlayer(true /* TRUE */);
-          buddy_kent1.setWaitState(WAITSTATE_LANCESITTING, 1000000);
+          buddy_kent1.setWaitState(34 /* WAITSTATE_LANCESITTING */, 1000000);
           buddy_kent1.setBleeding(true /* TRUE */);
           buddy_kent1.freezePosition(true /* TRUE */);
           buddy_kent1.setAsPlayerFriend($.player1, true /* TRUE */);
@@ -2975,7 +2975,7 @@ async function guard_AI_kent1() {
         if (!($.executioner_kent1.isWaitingForWorldCollision())) {
           $.executioner_kent1.clearThreatSearch();
           $.executioner_kent1.setThreatSearch(1 /* THREAT_PLAYER1 */);
-          $.executioner_kent1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
+          $.executioner_kent1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
           $.executioner_kent1.setAccuracy(80);
           $.executioner_kent1.setHeading(196.450);
           $.executioner_kent1.setStayInSamePlace(true /* TRUE */);
@@ -3000,7 +3000,7 @@ async function guard_AI_kent1() {
           $.guard1_kent1.clearThreatSearch();
           $.guard1_kent1.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.guard1_kent1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-          $.guard1_kent1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
+          $.guard1_kent1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
 
           //	SET_CHAR_ACCURACY guard1_kent1 80
 
@@ -3029,7 +3029,7 @@ async function guard_AI_kent1() {
           $.guard2_kent1.clearThreatSearch();
           $.guard2_kent1.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.guard2_kent1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-          $.guard2_kent1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
+          $.guard2_kent1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
 
           //	SET_CHAR_ACCURACY guard2_kent1 80
 
@@ -3056,7 +3056,7 @@ async function guard_AI_kent1() {
           $.guard3_kent1.clearThreatSearch();
           $.guard3_kent1.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.guard3_kent1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-          $.guard3_kent1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
+          $.guard3_kent1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
 
           //	SET_CHAR_ACCURACY guard3_kent1 80
 
@@ -3083,7 +3083,7 @@ async function guard_AI_kent1() {
           $.guard4_kent1.clearThreatSearch();
           $.guard4_kent1.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.guard4_kent1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-          $.guard4_kent1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
+          $.guard4_kent1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
 
           //	SET_CHAR_ACCURACY guard4_kent1 80
 
@@ -3116,7 +3116,7 @@ async function guard_AI_kent1() {
           $.guard6_kent1.clearThreatSearch();
           $.guard6_kent1.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.guard6_kent1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-          $.guard6_kent1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
+          $.guard6_kent1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
 
           //	SET_CHAR_ACCURACY guard6_kent1 80
 
@@ -3144,7 +3144,7 @@ async function guard_AI_kent1() {
           $.guard7_kent1.clearThreatSearch();
           $.guard7_kent1.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.guard7_kent1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-          $.guard7_kent1.giveWeapon(WEAPONTYPE_RUGER, 30000); // set infinate ammo
+          $.guard7_kent1.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30000); // set infinate ammo
           $.guard7_kent1.setAccuracy(80);
           $.guard7_kent1.setStayInSamePlace(true /* TRUE */);
           $.guard7_kent1.setObjKillPlayerOnFoot($.player1);
@@ -3169,7 +3169,7 @@ async function guard_AI_kent1() {
           $.guard8_kent1.setHeading(289.74);
           $.guard8_kent1.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.guard8_kent1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-          $.guard8_kent1.giveWeapon(WEAPONTYPE_RUGER, 30000); // set infinate ammo
+          $.guard8_kent1.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30000); // set infinate ammo
           $.guard8_kent1.setAccuracy(80);
           $.guard8_kent1.setStayInSamePlace(true /* TRUE */);
           $.guard8_kent1.setObjKillPlayerOnFoot($.player1);
@@ -3194,7 +3194,7 @@ async function guard_AI_kent1() {
           $.guard9_kent1.setHeading(289.74);
           $.guard9_kent1.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.guard9_kent1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-          $.guard9_kent1.giveWeapon(WEAPONTYPE_RUGER, 30000); // set infinate ammo
+          $.guard9_kent1.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30000); // set infinate ammo
           $.guard9_kent1.setAccuracy(80);
           $.guard9_kent1.setStayInSamePlace(true /* TRUE */);
           $.guard9_kent1.setObjKillPlayerOnFoot($.player1);
@@ -3219,7 +3219,7 @@ async function guard_AI_kent1() {
           $.guard10_kent1.setHeading(87.550);
           $.guard10_kent1.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.guard10_kent1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-          $.guard10_kent1.giveWeapon(WEAPONTYPE_RUGER, 30000); // set infinate ammo
+          $.guard10_kent1.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30000); // set infinate ammo
 
           //	SET_CHAR_ACCURACY guard10_kent1 80
 
@@ -3246,7 +3246,7 @@ async function guard_AI_kent1() {
           $.guard11_kent1.setHeading(128.477);
           $.guard11_kent1.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.guard11_kent1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-          $.guard11_kent1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
+          $.guard11_kent1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
 
           //SET_CHAR_ACCURACY guard11_kent1 80
 
@@ -3273,7 +3273,7 @@ async function guard_AI_kent1() {
           $.guard12_kent1.setHeading(98.364);
           $.guard12_kent1.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.guard12_kent1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-          $.guard12_kent1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
+          $.guard12_kent1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // set infinate ammo
 
           //SET_CHAR_ACCURACY guard12_kent1 80
 

@@ -1,6 +1,6 @@
 // Generated from main/lawyer4.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *******************************************************************************************
 // *******************************************************************************************
@@ -105,7 +105,7 @@ async function body() {
   }
 
 
-  Streaming.SetAreaVisible(VIS_LAWYERS);
+  Streaming.SetAreaVisible(6 /* VIS_LAWYERS */);
 
 
   Audio.LoadMissionAudio(1, "mono_8" as any);
@@ -407,7 +407,7 @@ async function body() {
   Streaming.MarkModelAsNoLongerNeeded(CUTOBJ04);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   Streaming.LoadScene(117.1, -825.6, 9.8);
 
 
@@ -420,13 +420,13 @@ async function body() {
   $.clothes_pickup2.remove();
 
 
-  $.player1.setMood(PLAYER_MOOD_PISSED_OFF, 60000);
+  $.player1.setMood(1 /* PLAYER_MOOD_PISSED_OFF */, 60000);
 
 
   Text.PrintNow("LAW1_1", 10000, 1); //GET A CHANGE OF CLOTHES
 
 
-  $.colar_cuffs_blip = Blip.AddSpriteForCoord($.clothes_shopX, $.clothes_shopY, $.clothes_shopZ, RADAR_SPRITE_TSHIRT);
+  $.colar_cuffs_blip = Blip.AddSpriteForCoord($.clothes_shopX, $.clothes_shopY, $.clothes_shopZ, 28 /* RADAR_SPRITE_TSHIRT */);
 
 
   $.lawyer_blip1 = Blip.AddForCoord(299.0, -314.6, 11.4);
@@ -439,8 +439,8 @@ async function body() {
   Streaming.LoadSpecialCharacter(5, "spandxb");
   Streaming.RequestModel(nitestick);
   Streaming.RequestModel(GDa);
-  Streaming.RequestModel(1344 /* barrel4 */);
-  Streaming.RequestModel(173 /* colt45 */);
+  Streaming.RequestModel(barrel4);
+  Streaming.RequestModel(colt45);
   Streaming.RequestAnimation("riot");
 
 
@@ -452,7 +452,7 @@ async function body() {
   }
 
 
-  while (!(Streaming.HasModelLoaded(spand)) || !(Streaming.HasModelLoaded(nitestick)) || !(Streaming.HasModelLoaded(GDa)) || !(Streaming.HasModelLoaded(1344 /* barrel4 */)) || !(Streaming.HasModelLoaded(173 /* colt45 */))) {
+  while (!(Streaming.HasModelLoaded(spand)) || !(Streaming.HasModelLoaded(nitestick)) || !(Streaming.HasModelLoaded(GDa)) || !(Streaming.HasModelLoaded(barrel4)) || !(Streaming.HasModelLoaded(colt45))) {
     await asyncWait(0);
 
 
@@ -484,7 +484,7 @@ async function body() {
   //SET_CHAR_HEADING rioter1 100.0
 
   $.rioter1.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter1.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter1.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter2 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL05, 302.8, -318.8, 10.9);
@@ -493,7 +493,7 @@ async function body() {
   //SET_CHAR_HEADING rioter2 100.0
 
   $.rioter2.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter2.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter2.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter3 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL04, 301.6, -316.7, 10.9);
@@ -502,7 +502,7 @@ async function body() {
   //SET_CHAR_HEADING rioter3 100.0
 
   $.rioter3.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter3.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter3.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter4 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL05, 299.8, -318.2, 10.9);
@@ -511,7 +511,7 @@ async function body() {
   //SET_CHAR_HEADING rioter4 100.0
 
   $.rioter4.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter4.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter4.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter5 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL04, 300.9, -321.6, 10.9);
@@ -520,7 +520,7 @@ async function body() {
   //SET_CHAR_HEADING rioter5 100.0
 
   $.rioter5.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter5.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter5.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter6 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL05, 299.0, -322.1, 10.9);
@@ -529,7 +529,7 @@ async function body() {
   //SET_CHAR_HEADING rioter6 100.0
 
   $.rioter6.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter6.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter6.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter7 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL04, 295.0, -320.7, 10.9);
@@ -538,7 +538,7 @@ async function body() {
   //SET_CHAR_HEADING rioter7 100.0
 
   $.rioter7.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter7.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter7.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter8 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL05, 293.5, -317.8, 10.9);
@@ -547,7 +547,7 @@ async function body() {
   //SET_CHAR_HEADING rioter8 100.0
 
   $.rioter8.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter8.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter8.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter9 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL04, 296.2, -325.3, 10.9);
@@ -556,7 +556,7 @@ async function body() {
   //SET_CHAR_HEADING rioter9 100.0
 
   $.rioter9.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter9.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter9.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter10 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL05, 299.3, -329.3, 10.9);
@@ -565,7 +565,7 @@ async function body() {
   //SET_CHAR_HEADING rioter10 100.0
 
   $.rioter10.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter10.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter10.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter11 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL04, 303.8, -329.7, 10.9);
@@ -574,7 +574,7 @@ async function body() {
   //SET_CHAR_HEADING rioter11 100.0
 
   $.rioter11.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter11.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter11.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter12 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL05, 308.5, -328.4, 10.9);
@@ -583,7 +583,7 @@ async function body() {
   //SET_CHAR_HEADING rioter12 100.0
 
   $.rioter12.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter12.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter12.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter13 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL04, 310.2, -324.2, 10.9);
@@ -592,7 +592,7 @@ async function body() {
   //SET_CHAR_HEADING rioter13 100.0
 
   $.rioter13.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter13.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter13.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter14 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL05, 305.6, -322.2, 10.9);
@@ -601,7 +601,7 @@ async function body() {
   //SET_CHAR_HEADING rioter14 100.0
 
   $.rioter14.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter14.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter14.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter15 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL04, 300.0, -317.5, 10.9);
@@ -610,7 +610,7 @@ async function body() {
   //SET_CHAR_HEADING rioter15 100.0
 
   $.rioter15.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter15.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter15.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter16 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL05, 294.9, -317.6, 10.9);
@@ -619,7 +619,7 @@ async function body() {
   //SET_CHAR_HEADING rioter16 100.0
 
   $.rioter16.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter16.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter16.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter17 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL04, 291.0, -320.0, 10.9);
@@ -628,7 +628,7 @@ async function body() {
   //SET_CHAR_HEADING rioter17 100.0
 
   $.rioter17.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter17.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter17.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter18 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL05, 293.0, -324.8, 10.9);
@@ -637,7 +637,7 @@ async function body() {
   //SET_CHAR_HEADING rioter18 100.0
 
   $.rioter18.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter18.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter18.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter19 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL04, 291.6, -317.2, 10.9);
@@ -646,7 +646,7 @@ async function body() {
   //SET_CHAR_HEADING rioter19 100.0
 
   $.rioter19.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter19.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter19.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter20 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL05, 301.1, -324.0, 10.9);
@@ -655,7 +655,7 @@ async function body() {
   //SET_CHAR_HEADING rioter20 100.0
 
   $.rioter20.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter20.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter20.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.rioter21 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL04, 297.6, -327.649, 10.9);
@@ -664,7 +664,7 @@ async function body() {
   //SET_CHAR_HEADING rioter21 100.0
 
   $.rioter21.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.rioter21.setWaitState(WAITSTATE_RIOT, 99999999);
+  $.rioter21.setWaitState(29 /* WAITSTATE_RIOT */, 99999999);
 
 
   $.securi_guard1 = Char.Create(5 /* PEDTYPE_CIVFEMALE */, GDa, 301.2, -311.5, 10.9);
@@ -672,7 +672,7 @@ async function body() {
   $.securi_guard1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.securi_guard1.setHeading(180.0);
   $.securi_guard1.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.securi_guard1.giveWeapon(WEAPONTYPE_NIGHTSTICK, 0);
+  $.securi_guard1.giveWeapon(4 /* WEAPONTYPE_NIGHTSTICK */, 0);
 
 
   $.securi_guard2 = Char.Create(5 /* PEDTYPE_CIVFEMALE */, GDa, 303.2, -311.5, 10.9);
@@ -680,7 +680,7 @@ async function body() {
   $.securi_guard2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.securi_guard2.setHeading(180.0);
   $.securi_guard2.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.securi_guard2.giveWeapon(WEAPONTYPE_NIGHTSTICK, 0);
+  $.securi_guard2.giveWeapon(4 /* WEAPONTYPE_NIGHTSTICK */, 0);
 
 
   $.securi_guard3 = Char.Create(5 /* PEDTYPE_CIVFEMALE */, GDa, 304.0, -298.7, 10.9);
@@ -689,7 +689,7 @@ async function body() {
   $.securi_guard3.setHeading(180.0);
   $.securi_guard3.setOnlyDamagedByPlayer(true /* TRUE */);
   $.securi_guard3.setHealth(70);
-  $.securi_guard3.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 300);
+  $.securi_guard3.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 300);
   $.securi_guard3.setStayInSamePlace(true /* TRUE */);
 
 
@@ -705,8 +705,8 @@ async function body() {
   $.company_van3.setHeading(90.0);
 
 
-  $.law4_barrel1 = ScriptObject.Create(1344 /* barrel4 */, 309.3, -298.6, 10.9);
-  $.law4_barrel2 = ScriptObject.Create(1344 /* barrel4 */, 284.3, -312.4, 10.9);
+  $.law4_barrel1 = ScriptObject.Create(barrel4, 309.3, -298.6, 10.9);
+  $.law4_barrel2 = ScriptObject.Create(barrel4, 284.3, -312.4, 10.9);
 
 
   $.law4_barrel2.makeTargetable();
@@ -1065,7 +1065,7 @@ $.guard_pickupx = _res328.x;
 $.guard_pickupy = _res328.y;
 $.guard_pickupz = _res328.z;
           $.guard_pickupz = $.guard_pickupz + 0.5;
-          $.securi_guard1_gun = Pickup.CreateWithAmmo(173 /* colt45 */, 3 /* PICKUP_ONCE */, 17, $.guard_pickupx, $.guard_pickupy, $.guard_pickupz);
+          $.securi_guard1_gun = Pickup.CreateWithAmmo(colt45, 3 /* PICKUP_ONCE */, 17, $.guard_pickupx, $.guard_pickupy, $.guard_pickupz);
         }
         $.dead_securi_guard1_drop = 1;
       }
@@ -1078,7 +1078,7 @@ $.guard_pickupx = _res329.x;
 $.guard_pickupy = _res329.y;
 $.guard_pickupz = _res329.z;
           $.guard_pickupz = $.guard_pickupz + 0.5;
-          $.securi_guard2_gun = Pickup.CreateWithAmmo(173 /* colt45 */, 3 /* PICKUP_ONCE */, 17, $.guard_pickupx, $.guard_pickupy, $.guard_pickupz);
+          $.securi_guard2_gun = Pickup.CreateWithAmmo(colt45, 3 /* PICKUP_ONCE */, 17, $.guard_pickupx, $.guard_pickupy, $.guard_pickupz);
         }
         $.dead_securi_guard2_drop = 1;
       }
@@ -1119,13 +1119,13 @@ $.guard_pickupz = _res329.z;
           if (!(Car.IsDead($.company_van3))) {
             $.company_van_blip3 = Blip.AddForCar($.company_van3);
           }
-          Sound.AddOneOffSound(298.0, -313.6, 11.0, SOUND_POLICE_CELL_DOOR_CLUNK);
-          $.gate_slide_loop = Sound.AddContinuous(298.0, -313.6, 11.0, SOUND_POLICE_CELL_DOOR_SLIDING_LOOP);
+          Sound.AddOneOffSound(298.0, -313.6, 11.0, 3 /* SOUND_POLICE_CELL_DOOR_CLUNK */);
+          $.gate_slide_loop = Sound.AddContinuous(298.0, -313.6, 11.0, 2 /* SOUND_POLICE_CELL_DOOR_SLIDING_LOOP */);
           while (!($.strike_gate.slide(304.0, -313.6, 11.0, 0.1, 0.1, 0.0, false /* FALSE */))) {
             await asyncWait(0);
           }
           $.gate_slide_loop.remove();
-          Sound.AddOneOffSound(304.0, -313.6, 11.0, SOUND_POLICE_CELL_DOOR_CLUNK);
+          Sound.AddOneOffSound(304.0, -313.6, 11.0, 3 /* SOUND_POLICE_CELL_DOOR_CLUNK */);
           if (!(Char.IsDead($.securi_guard1))) {
             $.securi_guard1.setPersonality(30 /* PEDSTAT_PSYCHO */);
             $.securi_guard1.setThreatSearch(16 /* THREAT_CIVMALE */);
@@ -1311,13 +1311,13 @@ $.guard_pickupz = _res329.z;
 
 
   if ($.gate_finished_opening == 0) {
-    Sound.AddOneOffSound(298.0, -313.6, 11.0, SOUND_POLICE_CELL_DOOR_CLUNK);
-    $.gate_slide_loop = Sound.AddContinuous(298.0, -313.6, 11.0, SOUND_POLICE_CELL_DOOR_SLIDING_LOOP);
+    Sound.AddOneOffSound(298.0, -313.6, 11.0, 3 /* SOUND_POLICE_CELL_DOOR_CLUNK */);
+    $.gate_slide_loop = Sound.AddContinuous(298.0, -313.6, 11.0, 2 /* SOUND_POLICE_CELL_DOOR_SLIDING_LOOP */);
     while (!($.strike_gate.slide(304.0, -313.6, 11.0, 0.15, 0.15, 0.0, false /* FALSE */))) {
       await asyncWait(0);
     }
     $.gate_slide_loop.remove();
-    Sound.AddOneOffSound(304.0, -313.6, 11.0, SOUND_POLICE_CELL_DOOR_CLUNK);
+    Sound.AddOneOffSound(304.0, -313.6, 11.0, 3 /* SOUND_POLICE_CELL_DOOR_CLUNK */);
   }
 
 
@@ -1360,9 +1360,9 @@ async function mission_lawyer4_passed() {
   $.bbat_in_stock = 1;
   $.clothes_pickup3 = Pickup.CreateClothes(364.2, 1086.1, 19.0, 3);
   $.clothes3_created = 1;
-  // START_NEW_SCRIPT cloth2
+  // START_NEW_SCRIPT cloth2 
   $.sergio_contact_blip = Blip.AddSpriteForContactPoint($.sergioX, $.sergioY, $.sergioZ, $.the_sergio_blip);
-  // START_NEW_SCRIPT serg_mission1_loop
+  // START_NEW_SCRIPT serg_mission1_loop 
 }
 
 
@@ -1383,8 +1383,8 @@ async function cleanup() {
   Streaming.MarkModelAsNoLongerNeeded(spand);
   Streaming.MarkModelAsNoLongerNeeded(nitestick);
   Streaming.MarkModelAsNoLongerNeeded(GDa);
-  Streaming.MarkModelAsNoLongerNeeded(1344 /* barrel4 */);
-  Streaming.MarkModelAsNoLongerNeeded(173 /* colt45 */);
+  Streaming.MarkModelAsNoLongerNeeded(barrel4);
+  Streaming.MarkModelAsNoLongerNeeded(colt45);
 
 
   if ($.clothes2_created == 1) {

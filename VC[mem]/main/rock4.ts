@@ -1,6 +1,6 @@
 // Generated from main/rock4.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_rock4() {
 

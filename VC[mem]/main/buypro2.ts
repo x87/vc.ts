@@ -1,6 +1,6 @@
 // Generated from main/buypro2.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_buypro2() {
 
@@ -32,7 +32,7 @@ async function mission_start_buypro2() {
     await asyncWait(0);
     if (!($.player1.isPlaying())) {
       $.porn_contact_blip = Blip.AddSpriteForContactPoint($.pornX, $.pornY, $.pornZ, $.the_porn_blip);
-      // START_NEW_SCRIPT porn_mission1_loop
+      // START_NEW_SCRIPT porn_mission1_loop 
       return; // TERMINATE_THIS_SCRIPT
     }
   }
@@ -75,7 +75,7 @@ async function mission_start_buypro2() {
     await asyncWait(0);
     if (!($.player1.isPlaying())) {
       $.porn_contact_blip = Blip.AddSpriteForContactPoint($.pornX, $.pornY, $.pornZ, $.the_porn_blip);
-      // START_NEW_SCRIPT porn_mission1_loop
+      // START_NEW_SCRIPT porn_mission1_loop 
       return; // TERMINATE_THIS_SCRIPT
     }
   }
@@ -83,7 +83,7 @@ async function mission_start_buypro2() {
 
   Text.PrintWithNumberBig("PORNBUY", $.pornbuy_price, 5000, 6); //"Film Studio purchased: $ 15000"
   Stat.AddMoneySpentOnProperty($.pornbuy_price);
-  Stat.SetPropertyAsOwned(PROP_FILMSTUDIO);
+  Stat.SetPropertyAsOwned(2 /* PROP_FILMSTUDIO */);
   Audio.PlayMissionPassedTune(1);
   Audio.SetMusicDoesFade(false /* FALSE */);
 
@@ -94,7 +94,7 @@ async function mission_start_buypro2() {
   if (!($.player1.isPlaying())) {
     Audio.SetMusicDoesFade(true /* TRUE */);
     $.porn_contact_blip = Blip.AddSpriteForContactPoint($.pornX, $.pornY, $.pornZ, $.the_porn_blip);
-    // START_NEW_SCRIPT porn_mission1_loop
+    // START_NEW_SCRIPT porn_mission1_loop 
     return; // TERMINATE_THIS_SCRIPT
   }
 
@@ -108,7 +108,7 @@ async function mission_start_buypro2() {
     if (!($.player1.isPlaying())) {
       Audio.SetMusicDoesFade(true /* TRUE */);
       $.porn_contact_blip = Blip.AddSpriteForContactPoint($.pornX, $.pornY, $.pornZ, $.the_porn_blip);
-      // START_NEW_SCRIPT porn_mission1_loop
+      // START_NEW_SCRIPT porn_mission1_loop 
       return; // TERMINATE_THIS_SCRIPT
     }
   }
@@ -128,7 +128,7 @@ async function mission_start_buypro2() {
   $.porn_contact_blip = Blip.AddSpriteForContactPoint($.pornX, $.pornY, $.pornZ, $.the_porn_blip);
 
 
-  // START_NEW_SCRIPT porn_mission1_loop
+  // START_NEW_SCRIPT porn_mission1_loop 
 
 
   Camera.SetFadingColor(0, 0, 1);
@@ -147,7 +147,7 @@ async function mission_start_buypro2() {
   Audio.SetMusicDoesFade(true /* TRUE */);
 
 
-  // START_NEW_SCRIPT porn_save_loop
+  // START_NEW_SCRIPT porn_save_loop 
 
 
   ONMISSION = 0;

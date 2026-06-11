@@ -1,6 +1,6 @@
 // Generated from main/bmx_2.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *****************************************************************************************
 // *****************************************************************************************
@@ -182,25 +182,25 @@ async function mulch() {
 
 
   if ($.counter_bmx_2_reward > 0) {
-    Streaming.RequestModel(1344 /* barrel4 */);
-    while (!(Streaming.HasModelLoaded(1344 /* barrel4 */))) {
+    Streaming.RequestModel(barrel4);
+    while (!(Streaming.HasModelLoaded(barrel4))) {
       await asyncWait(0);
     }
 
     //GET_GROUND_Z_FOR_3D_COORD -413.0 1434.4 50.0 ground_z
-    $.barrel_1 = ScriptObject.Create(1344 /* barrel4 */, -413.0, 1434.4, -100.0);
+    $.barrel_1 = ScriptObject.Create(barrel4, -413.0, 1434.4, -100.0);
     $.barrel_1.setCollision(true /* TRUE */);
     //SET_OBJECT_DYNAMIC barrel_1 TRUE
 
-    $.barrel_2 = ScriptObject.Create(1344 /* barrel4 */, -405.36, 1447.12, -100.0);
+    $.barrel_2 = ScriptObject.Create(barrel4, -405.36, 1447.12, -100.0);
     $.barrel_2.setCollision(true /* TRUE */);
     //SET_OBJECT_DYNAMIC barrel_2 TRUE
 
-    $.barrel_3 = ScriptObject.Create(1344 /* barrel4 */, -400.0, 1455.5, -100.0);
+    $.barrel_3 = ScriptObject.Create(barrel4, -400.0, 1455.5, -100.0);
     $.barrel_3.setCollision(true /* TRUE */);
     //SET_OBJECT_DYNAMIC barrel_3 TRUE
 
-    $.barrel_4 = ScriptObject.Create(1344 /* barrel4 */, -402.73, 1465.0, -100.0);
+    $.barrel_4 = ScriptObject.Create(barrel4, -402.73, 1465.0, -100.0);
     $.barrel_4.setCollision(true /* TRUE */);
     //SET_OBJECT_DYNAMIC barrel_4 TRUE
 
@@ -218,7 +218,7 @@ async function mulch() {
     $.blokes_car.changeColor(0, 0);
     $.blokes_car.setHeading(190.0);
     $.irrate_bloke = Char.CreateInsideCar($.blokes_car, 4 /* PEDTYPE_CIVMALE */, GDb);
-    $.irrate_bloke.giveWeapon(WEAPONTYPE_NIGHTSTICK, 0);
+    $.irrate_bloke.giveWeapon(4 /* WEAPONTYPE_NIGHTSTICK */, 0);
     $.irrate_bloke.setObjKillPlayerAnyMeans($.player1);
   }
 
@@ -233,7 +233,7 @@ async function mulch() {
     //time_lapsed = time_lapsed / 1000
 
     if ($.flag_timer == 0) {
-      Hud.DisplayTimerWithString($.$id.time_lapsed, TIMER_UP, "R_TIME");
+      Hud.DisplayTimerWithString($.$id.time_lapsed, 0 /* TIMER_UP */, "R_TIME");
       $.flag_timer = 1;
     }
     if ($.flag_bmx2_print == 0) {
@@ -252,7 +252,7 @@ async function mulch() {
       Fx.DrawCorona($.x_1, $.y_1, $.z_1, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 200, 200);
       if ($.player1.locateInCar3D($.x_1, $.y_1, $.z_1, 3.0, 3.0, 3.0, false /* false */)) {
         $.blip_1.remove();
-        Sound.AddOneOffSound($.x_1, $.y_1, $.z_1, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_1, $.y_1, $.z_1, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.counter_gates = 19;
         ++$.counter_laps;
         if ($.counter_laps < 3) {
@@ -266,7 +266,7 @@ async function mulch() {
       Fx.DrawCorona($.x_2, $.y_2, $.z_2, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 200, 200);
       if ($.player1.locateInCar3D($.x_2, $.y_2, $.z_2, 3.0, 3.0, 3.0, false /* false */)) {
         $.blip_2.remove();
-        Sound.AddOneOffSound($.x_2, $.y_2, $.z_2, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_2, $.y_2, $.z_2, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.blip_1 = Blip.AddForCoord($.x_1, $.y_1, $.z_1);
         --$.counter_gates;
       }
@@ -275,7 +275,7 @@ async function mulch() {
       Fx.DrawCorona($.x_3, $.y_3, $.z_3, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 200, 200);
       if ($.player1.locateInCar3D($.x_3, $.y_3, $.z_3, 3.0, 3.0, 3.0, false /* false */)) {
         $.blip_3.remove();
-        Sound.AddOneOffSound($.x_3, $.y_3, $.z_3, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_3, $.y_3, $.z_3, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.blip_2 = Blip.AddForCoord($.x_2, $.y_2, $.z_2);
         --$.counter_gates;
       }
@@ -284,7 +284,7 @@ async function mulch() {
       Fx.DrawCorona($.x_4, $.y_4, $.z_4, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 200, 200);
       if ($.player1.locateInCar3D($.x_4, $.y_4, $.z_4, 3.0, 3.0, 3.0, false /* false */)) {
         $.blip_4.remove();
-        Sound.AddOneOffSound($.x_4, $.y_4, $.z_4, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_4, $.y_4, $.z_4, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.blip_3 = Blip.AddForCoord($.x_3, $.y_3, $.z_3);
         --$.counter_gates;
       }
@@ -293,7 +293,7 @@ async function mulch() {
       Fx.DrawCorona($.x_5, $.y_5, $.z_5, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 200, 200);
       if ($.player1.locateInCar3D($.x_5, $.y_5, $.z_5, 3.0, 3.0, 3.0, false /* false */)) {
         $.blip_5.remove();
-        Sound.AddOneOffSound($.x_5, $.y_5, $.z_5, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_5, $.y_5, $.z_5, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.blip_4 = Blip.AddForCoord($.x_4, $.y_4, $.z_4);
         --$.counter_gates;
       }
@@ -302,7 +302,7 @@ async function mulch() {
       Fx.DrawCorona($.x_6, $.y_6, $.z_6, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 200, 200);
       if ($.player1.locateInCar3D($.x_6, $.y_6, $.z_6, 3.0, 3.0, 3.0, false /* false */)) {
         $.blip_6.remove();
-        Sound.AddOneOffSound($.x_6, $.y_6, $.z_6, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_6, $.y_6, $.z_6, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.blip_5 = Blip.AddForCoord($.x_5, $.y_5, $.z_5);
         --$.counter_gates;
       }
@@ -311,7 +311,7 @@ async function mulch() {
       Fx.DrawCorona($.x_7, $.y_7, $.z_7, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 200, 200);
       if ($.player1.locateInCar3D($.x_7, $.y_7, $.z_7, 3.0, 3.0, 3.0, false /* false */)) {
         $.blip_7.remove();
-        Sound.AddOneOffSound($.x_7, $.y_7, $.z_7, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_7, $.y_7, $.z_7, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.blip_6 = Blip.AddForCoord($.x_6, $.y_6, $.z_6);
         --$.counter_gates;
       }
@@ -320,7 +320,7 @@ async function mulch() {
       Fx.DrawCorona($.x_8, $.y_8, $.z_8, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 200, 200);
       if ($.player1.locateInCar3D($.x_8, $.y_8, $.z_8, 3.0, 3.0, 3.0, false /* false */)) {
         $.blip_8.remove();
-        Sound.AddOneOffSound($.x_8, $.y_8, $.z_8, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_8, $.y_8, $.z_8, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.blip_7 = Blip.AddForCoord($.x_7, $.y_7, $.z_7);
         --$.counter_gates;
       }
@@ -329,7 +329,7 @@ async function mulch() {
       Fx.DrawCorona($.x_9, $.y_9, $.z_9, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 200, 200);
       if ($.player1.locateInCar3D($.x_9, $.y_9, $.z_9, 3.0, 3.0, 3.0, false /* false */)) {
         $.blip_9.remove();
-        Sound.AddOneOffSound($.x_9, $.y_9, $.z_9, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_9, $.y_9, $.z_9, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.blip_8 = Blip.AddForCoord($.x_8, $.y_8, $.z_8);
         --$.counter_gates;
         if ($.flag_bmx2_print == 3 && $.time_lapsed > 12000 && $.counter_bmx_2_reward > 3) {
@@ -343,7 +343,7 @@ async function mulch() {
       Fx.DrawCorona($.x_10, $.y_10, $.z_10, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 200, 200);
       if ($.player1.locateInCar3D($.x_10, $.y_10, $.z_10, 3.0, 3.0, 3.0, false /* false */)) {
         $.blip_10.remove();
-        Sound.AddOneOffSound($.x_10, $.y_10, $.z_10, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_10, $.y_10, $.z_10, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.blip_9 = Blip.AddForCoord($.x_9, $.y_9, $.z_9);
         --$.counter_gates;
       }
@@ -352,7 +352,7 @@ async function mulch() {
       Fx.DrawCorona($.x_11, $.y_11, $.z_11, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 200, 200);
       if ($.player1.locateInCar3D($.x_11, $.y_11, $.z_11, 3.0, 3.0, 3.0, false /* false */)) {
         $.blip_11.remove();
-        Sound.AddOneOffSound($.x_11, $.y_11, $.z_11, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_11, $.y_11, $.z_11, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.blip_10 = Blip.AddForCoord($.x_10, $.y_10, $.z_10);
         --$.counter_gates;
       }
@@ -361,7 +361,7 @@ async function mulch() {
       Fx.DrawCorona($.x_12, $.y_12, $.z_12, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 200, 200);
       if ($.player1.locateInCar3D($.x_12, $.y_12, $.z_12, 3.0, 3.0, 3.0, false /* false */)) {
         $.blip_12.remove();
-        Sound.AddOneOffSound($.x_12, $.y_12, $.z_12, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_12, $.y_12, $.z_12, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.blip_11 = Blip.AddForCoord($.x_11, $.y_11, $.z_11);
         --$.counter_gates;
       }
@@ -370,7 +370,7 @@ async function mulch() {
       Fx.DrawCorona($.x_13, $.y_13, $.z_13, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 200, 200);
       if ($.player1.locateInCar3D($.x_13, $.y_13, $.z_13, 3.0, 3.0, 3.0, false /* false */)) {
         $.blip_13.remove();
-        Sound.AddOneOffSound($.x_13, $.y_13, $.z_13, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_13, $.y_13, $.z_13, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.blip_12 = Blip.AddForCoord($.x_12, $.y_12, $.z_12);
         --$.counter_gates;
       }
@@ -379,7 +379,7 @@ async function mulch() {
       Fx.DrawCorona($.x_14, $.y_14, $.z_14, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 200, 200);
       if ($.player1.locateInCar3D($.x_14, $.y_14, $.z_14, 3.0, 3.0, 3.0, false /* false */)) {
         $.blip_14.remove();
-        Sound.AddOneOffSound($.x_14, $.y_14, $.z_14, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_14, $.y_14, $.z_14, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.blip_13 = Blip.AddForCoord($.x_13, $.y_13, $.z_13);
         --$.counter_gates;
       }
@@ -388,7 +388,7 @@ async function mulch() {
       Fx.DrawCorona($.x_15, $.y_15, $.z_15, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 200, 200);
       if ($.player1.locateInCar3D($.x_15, $.y_15, $.z_15, 3.0, 3.0, 3.0, false /* false */)) {
         $.blip_15.remove();
-        Sound.AddOneOffSound($.x_15, $.y_15, $.z_15, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_15, $.y_15, $.z_15, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.blip_14 = Blip.AddForCoord($.x_14, $.y_14, $.z_14);
         --$.counter_gates;
       }
@@ -397,7 +397,7 @@ async function mulch() {
       Fx.DrawCorona($.x_16, $.y_16, $.z_16, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 200, 200);
       if ($.player1.locateInCar3D($.x_16, $.y_16, $.z_16, 3.0, 3.0, 3.0, false /* false */)) {
         $.blip_16.remove();
-        Sound.AddOneOffSound($.x_16, $.y_16, $.z_16, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_16, $.y_16, $.z_16, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.blip_15 = Blip.AddForCoord($.x_15, $.y_15, $.z_15);
         --$.counter_gates;
       }
@@ -406,7 +406,7 @@ async function mulch() {
       Fx.DrawCorona($.x_17, $.y_17, $.z_17, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 200, 200);
       if ($.player1.locateInCar3D($.x_17, $.y_17, $.z_17, 3.0, 3.0, 3.0, false /* false */)) {
         $.blip_17.remove();
-        Sound.AddOneOffSound($.x_17, $.y_17, $.z_17, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_17, $.y_17, $.z_17, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.blip_16 = Blip.AddForCoord($.x_16, $.y_16, $.z_16);
         --$.counter_gates;
       }
@@ -415,7 +415,7 @@ async function mulch() {
       Fx.DrawCorona($.x_18, $.y_18, $.z_18, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 200, 200);
       if ($.player1.locateInCar3D($.x_18, $.y_18, $.z_18, 3.0, 3.0, 3.0, false /* false */)) {
         $.blip_18.remove();
-        Sound.AddOneOffSound($.x_18, $.y_18, $.z_18, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_18, $.y_18, $.z_18, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.blip_17 = Blip.AddForCoord($.x_17, $.y_17, $.z_17);
         --$.counter_gates;
       }
@@ -424,7 +424,7 @@ async function mulch() {
       Fx.DrawCorona($.x_19, $.y_19, $.z_19, 1.0, 5 /* CORONATYPE_HEX */, 0 /* FLARETYPE_NONE */, 0, 200, 200);
       if ($.player1.locateInCar3D($.x_19, $.y_19, $.z_19, 3.0, 3.0, 3.0, false /* false */)) {
         $.blip_19.remove();
-        Sound.AddOneOffSound($.x_19, $.y_19, $.z_19, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_19, $.y_19, $.z_19, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.blip_18 = Blip.AddForCoord($.x_18, $.y_18, $.z_18);
         --$.counter_gates;
       }
@@ -560,7 +560,7 @@ async function cleanup() {
   $.blip_19.remove();
   //REMOVE_BLIP blip_20
 
-  Streaming.MarkModelAsNoLongerNeeded(1344 /* barrel4 */);
+  Streaming.MarkModelAsNoLongerNeeded(barrel4);
   Streaming.MarkModelAsNoLongerNeeded(rancher);
   Streaming.MarkModelAsNoLongerNeeded(nitestick);
   Streaming.MarkModelAsNoLongerNeeded(GDb);

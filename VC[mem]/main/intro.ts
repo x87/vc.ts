@@ -1,6 +1,6 @@
 // Generated from main/intro.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_intro() {
 
@@ -62,7 +62,7 @@ async function mission_start_intro() {
   World.SwitchRubbish(false /* OFF */);
 
 
-  Streaming.SetAreaVisible(VIS_HOTEL);
+  Streaming.SetAreaVisible(1 /* VIS_HOTEL */);
 
 
   World.SetVisibilityOfClosestObjectOfType(231.4, -1277.7, 19.0, 50.0, mob_mobroom2, true /* TRUE */);
@@ -688,7 +688,7 @@ async function mission_start_intro() {
   World.SetVisibilityOfClosestObjectOfType(231.4, -1277.7, 19.0, 50.0, mob_detailsb, false /* FALSE */);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   await asyncWait(0);
@@ -708,7 +708,7 @@ async function mission_start_intro() {
   await asyncWait(250);
 
 
-  Weather.ForceNow(WEATHER_EXTRA_SUNNY);
+  Weather.ForceNow(4 /* WEATHER_EXTRA_SUNNY */);
   Clock.SetTimeOfDay(12, 0);
 
 
@@ -2238,7 +2238,7 @@ async function skip_intro_here() {
   World.ClearExtraColors(false /* FALSE */);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   Streaming.UnloadSpecialCharacter(1);
@@ -2662,7 +2662,7 @@ async function skip_intro_here() {
   Text.ClearThisPrint("INTRO4");
 
 
-  Audio.SetRadioChannel(FLASH_FM, -1);
+  Audio.SetRadioChannel(1 /* FLASH_FM */, -1);
 
 
   Game.SetEveryoneIgnorePlayer($.player1, false /* OFF */);

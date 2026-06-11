@@ -1,6 +1,6 @@
 // Generated from main/cap_1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *****************************************************************************************
 // ********************************* Finale mission 1 **************************************
@@ -191,7 +191,7 @@ async function body() {
   Streaming.LoadSpecialCharacter(5, "printrc");
 
 
-  Streaming.SetAreaVisible(VIS_PRINT_WORKS);
+  Streaming.SetAreaVisible(18 /* VIS_PRINT_WORKS */);
   Streaming.LoadScene(-1071.5597, -278.9497, 12.3606);
 
 
@@ -359,7 +359,7 @@ async function body() {
   Streaming.UnloadSpecialCharacter(5);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   Streaming.LoadScene(-1059.8411, -278.7214, 10.4044);
   /////////////////////////////////////////////////////////////////////////////////////////////
   /////////////////////////////////////////////////////////////////////////////////////////////
@@ -383,7 +383,7 @@ async function body() {
 
   if ($.malibu_asset_acquired == 1) {
     //ADD_BLIP_FOR_COORD 499.7910 -63.8411 10.4539 malibu_blip //MALIBU BANK JOB CLUB	510.4471 -80.3717 9.4731
-    $.malibu_blip = Blip.AddShortRangeSpriteForCoord(499.7910, -63.8411, 10.4539, RADAR_SPRITE_MALIBUCLUB);
+    $.malibu_blip = Blip.AddShortRangeSpriteForCoord(499.7910, -63.8411, 10.4539, 13 /* RADAR_SPRITE_MALIBUCLUB */);
     $.malibu_blip.changeScale(2);
     $.malibu_blip.changeColor(5 /* PURPLE */);
   }
@@ -394,7 +394,7 @@ async function body() {
 
   if ($.porn_asset_acquired == 1) {
     //ADD_BLIP_FOR_COORD 8.5461 968.7767 9.8996 porn_blip //PORN STUDIO  16.1665 962.5446 9.9069
-    $.porn_blip = Blip.AddShortRangeSpriteForCoord(8.5461, 968.7767, 9.8996, RADAR_SPRITE_FILM);
+    $.porn_blip = Blip.AddShortRangeSpriteForCoord(8.5461, 968.7767, 9.8996, 15 /* RADAR_SPRITE_FILM */);
     $.porn_north_gate_closed.delete();
   }
   else {
@@ -404,7 +404,7 @@ async function body() {
 
   if ($.icecream_asset_acquired == 1) {
     //ADD_BLIP_FOR_COORD -863.9365 -576.4991 10.0646 icecream_blip //ICECREAM FACTORY	-852.5533 -568.4194 10.0567
-    $.icecream_blip = Blip.AddShortRangeSpriteForCoord(-863.9365, -576.4991, 10.0646, 9 /* RADAR_SPRITE_ICE */);
+    $.icecream_blip = Blip.AddShortRangeSpriteForCoord(-863.9365, -576.4991, 10.0646, 21 /* RADAR_SPRITE_ICE */);
   }
   else {
     $.icecream_done = 2;
@@ -413,7 +413,7 @@ async function body() {
 
   if ($.taxifirm_asset_acquired == 1) {
     //ADD_BLIP_FOR_COORD -997.1398 189.8333 10.3916 taxifirm_blip //TAXI FIRM	-1016.2645 199.9105 10.2062
-    $.taxifirm_blip = Blip.AddShortRangeSpriteForCoord(-997.1398, 189.8333, 10.3916, RADAR_SPRITE_KCABS);
+    $.taxifirm_blip = Blip.AddShortRangeSpriteForCoord(-997.1398, 189.8333, 10.3916, 22 /* RADAR_SPRITE_KCABS */);
   }
   else {
     $.taxifirm_done = 2;
@@ -422,7 +422,7 @@ async function body() {
 
   if ($.boatyard_asset_acquired == 1) {
     //ADD_BLIP_FOR_COORD -640.8567 -1491.8431 12.7580 boatyard_blip //BOAT YARD -726.0752 -1494.4872 10.3799
-    $.boatyard_blip = Blip.AddShortRangeSpriteForCoord(-640.8567, -1491.8431, 12.7580, RADAR_SPRITE_BOATYARD);
+    $.boatyard_blip = Blip.AddShortRangeSpriteForCoord(-640.8567, -1491.8431, 12.7580, 12 /* RADAR_SPRITE_BOATYARD */);
   }
   else {
     $.boatyard_done = 2;
@@ -431,7 +431,7 @@ async function body() {
 
   if ($.showroom_asset_acquired == 1) {
     //ADD_BLIP_FOR_COORD -1014.4678 -833.3465 12.0452 showroom_blip //CAR SHOWROOM -1054.7959 -862.4898 12.1155
-    $.showroom_blip = Blip.AddShortRangeSpriteForCoord(-1014.4678, -833.3465, 12.0452, RADAR_SPRITE_SUNYARD);
+    $.showroom_blip = Blip.AddShortRangeSpriteForCoord(-1014.4678, -833.3465, 12.0452, 26 /* RADAR_SPRITE_SUNYARD */);
   }
   else {
     $.showroom_done = 2;
@@ -459,7 +459,7 @@ async function body() {
 
 
 
-  $.collector1.giveWeapon(WEAPONTYPE_M4, 9999);
+  $.collector1.giveWeapon(26 /* WEAPONTYPE_M4 */, 9999);
   $.collector1.clearThreatSearch();
   $.collector1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.collector1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -474,7 +474,7 @@ async function body() {
 
 
 
-  $.collector1_dude1.giveWeapon(4 /* WEAPONTYPE_SHOTGUN */, 9999);
+  $.collector1_dude1.giveWeapon(19 /* WEAPONTYPE_SHOTGUN */, 9999);
   $.collector1_dude1.clearThreatSearch();
   $.collector1_dude1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.collector1_dude1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -535,7 +535,7 @@ $.z = _res119.z;
           $.collector1_blip = Blip.AddForChar($.collector1);
           $.collector1_blip.changeColor(0 /* RED */);
         }
-        $.player1.setMood(PLAYER_MOOD_ANGRY, 60000);
+        $.player1.setMood(2 /* PLAYER_MOOD_ANGRY */, 60000);
         $.done_bike_cutscene = 4;
       }
     }
@@ -712,7 +712,7 @@ $.z = _res121.z;
         $.collector2 = Char.CreateInsideCar($.collector2_car, 4 /* PEDTYPE_CIVMALE */, SPECIAL01);
 
 
-        $.collector2.giveWeapon(WEAPONTYPE_M4, 9999);
+        $.collector2.giveWeapon(26 /* WEAPONTYPE_M4 */, 9999);
         $.collector2.clearThreatSearch();
         $.collector2.setThreatSearch(1 /* THREAT_PLAYER1 */);
         $.collector2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -726,7 +726,7 @@ $.z = _res121.z;
         $.collector2_dude1 = Char.CreateAsPassenger($.collector2_car, 4 /* PEDTYPE_CIVMALE */, SPECIAL02, 0);
 
 
-        $.collector2_dude1.giveWeapon(4 /* WEAPONTYPE_SHOTGUN */, 9999);
+        $.collector2_dude1.giveWeapon(19 /* WEAPONTYPE_SHOTGUN */, 9999);
         $.collector2_dude1.clearThreatSearch();
         $.collector2_dude1.setThreatSearch(1 /* THREAT_PLAYER1 */);
         $.collector2_dude1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -875,7 +875,7 @@ $.z = _res122.z;
         $.collector3 = Char.CreateInsideCar($.collector3_car, 4 /* PEDTYPE_CIVMALE */, SPECIAL01);
 
 
-        $.collector3.giveWeapon(WEAPONTYPE_M4, 9999);
+        $.collector3.giveWeapon(26 /* WEAPONTYPE_M4 */, 9999);
         $.collector3.clearThreatSearch();
         $.collector3.setThreatSearch(1 /* THREAT_PLAYER1 */);
         $.collector3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -889,7 +889,7 @@ $.z = _res122.z;
         $.collector3_dude1 = Char.CreateAsPassenger($.collector3_car, 4 /* PEDTYPE_CIVMALE */, SPECIAL02, 0);
 
 
-        $.collector3_dude1.giveWeapon(4 /* WEAPONTYPE_SHOTGUN */, 9999);
+        $.collector3_dude1.giveWeapon(19 /* WEAPONTYPE_SHOTGUN */, 9999);
         $.collector3_dude1.clearThreatSearch();
         $.collector3_dude1.setThreatSearch(1 /* THREAT_PLAYER1 */);
         $.collector3_dude1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -1815,7 +1815,7 @@ $.z = _res127.z;
                           $.collector_dude1 = Char.CreateAsPassenger($.collector_car, 4 /* PEDTYPE_CIVMALE */, SPECIAL02, 0);
 
 
-                          $.collector_dude1.giveWeapon(4 /* WEAPONTYPE_SHOTGUN */, 9999);
+                          $.collector_dude1.giveWeapon(19 /* WEAPONTYPE_SHOTGUN */, 9999);
                           $.collector_dude1.clearThreatSearch();
                           $.collector_dude1.setThreatSearch(1 /* THREAT_PLAYER1 */);
                           $.collector_dude1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);

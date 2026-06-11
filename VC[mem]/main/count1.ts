@@ -1,6 +1,6 @@
 // Generated from main/count1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_counter1() {
 
@@ -270,7 +270,7 @@ async function mission_start_counter1() {
   Streaming.LoadSpecialCharacter(2, "CSkelly");
 
 
-  Streaming.SetAreaVisible(VIS_PRINT_WORKS);
+  Streaming.SetAreaVisible(18 /* VIS_PRINT_WORKS */);
 
 
   Streaming.LoadScene(-1070.05, -280.06, 11.09);
@@ -475,7 +475,7 @@ async function mission_start_counter1() {
   }
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   World.SwitchRubbish(true /* ON */);
@@ -492,7 +492,7 @@ async function mission_start_counter1() {
   // *************************************** END OF CUT SCENE ********************************
 
 
-  $.player1.setMood(PLAYER_MOOD_CALM, 60000);
+  $.player1.setMood(0 /* PLAYER_MOOD_CALM */, 60000);
 
 
   Shortcut.SetUpTaxi(-1047.664, -298.188, 11.0, 266.280, 512.591, -74.900, 9.573, 189.24); // used to warp player from print works to Malibu
@@ -640,7 +640,7 @@ async function mission_start_counter1() {
   Streaming.LoadSpecialCharacter(3, "floozya");
 
 
-  Streaming.SetAreaVisible(VIS_MALIBU_CLUB);
+  Streaming.SetAreaVisible(17 /* VIS_MALIBU_CLUB */);
 
 
   Streaming.LoadScene(470.495, -57.014, 10.04);
@@ -864,7 +864,7 @@ async function mission_start_counter1() {
   Text.PrintBig("BEACH3", 3000, 2); //"Vice Point"
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   World.ClearExtraColors(false /* FALSE */);
@@ -885,7 +885,7 @@ async function mission_start_counter1() {
   // ************************************* END OF CUTSCENE TWO *******************************
 
 
-  $.player1.setMood(PLAYER_MOOD_ANGRY, 60000);
+  $.player1.setMood(2 /* PLAYER_MOOD_ANGRY */, 60000);
 
   // fades the screen in
 
@@ -926,7 +926,7 @@ async function mission_start_counter1() {
   // creates guard1 patrols on left hand side of boat along by the gang planks
 
 
-  $.guard1_count1 = Char.Create(PEDTYPE_GANG_SECURITY, GDa, -662.12, -1326.81, 15.26);
+  $.guard1_count1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, GDa, -662.12, -1326.81, 15.26);
 
 
   ++$.counter_blokes_alive_count1;
@@ -935,7 +935,7 @@ async function mission_start_counter1() {
   $.guard1_count1.clearThreatSearch();
 
 
-  $.guard1_count1.giveWeapon(WEAPONTYPE_MP5, 30000); // sets it to infinate ammo
+  $.guard1_count1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 30000); // sets it to infinate ammo
 
 
   $.guard1_count1.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -976,7 +976,7 @@ async function mission_start_counter1() {
   // creates guard2 in left hand side of boat beside gang plank player uses. Follows route 1
 
 
-  $.guard2_count1 = Char.Create(PEDTYPE_GANG_SECURITY, GDb, -659.26, -1330.93, 15.26);
+  $.guard2_count1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, GDb, -659.26, -1330.93, 15.26);
 
 
   ++$.counter_blokes_alive_count1;
@@ -985,7 +985,7 @@ async function mission_start_counter1() {
   $.guard2_count1.clearThreatSearch();
 
 
-  $.guard2_count1.giveWeapon(WEAPONTYPE_MP5, 30000); // sets it to infinate ammo
+  $.guard2_count1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 30000); // sets it to infinate ammo
 
 
   $.guard2_count1.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -1014,7 +1014,7 @@ async function mission_start_counter1() {
   // creates guard3 in rigt hand side of boat follows path 2
 
 
-  $.guard3_count1 = Char.Create(PEDTYPE_GANG_SECURITY, GDa, -609.85, -1381.29, 15.25);
+  $.guard3_count1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, GDa, -609.85, -1381.29, 15.25);
 
 
   ++$.counter_blokes_alive_count1;
@@ -1023,7 +1023,7 @@ async function mission_start_counter1() {
   $.guard3_count1.clearThreatSearch();
 
 
-  $.guard3_count1.giveWeapon(WEAPONTYPE_MP5, 30000); // sets it to infinate ammo
+  $.guard3_count1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 30000); // sets it to infinate ammo
 
 
   $.guard3_count1.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -1052,7 +1052,7 @@ async function mission_start_counter1() {
   // Guard4 patrols right hand side of the boat near the middle section follows path 3
 
 
-  $.guard4_count1 = Char.Create(PEDTYPE_GANG_SECURITY, GDb, -627.04, -1339.79, 15.27);
+  $.guard4_count1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, GDb, -627.04, -1339.79, 15.27);
 
 
   ++$.counter_blokes_alive_count1;
@@ -1061,7 +1061,7 @@ async function mission_start_counter1() {
   $.guard4_count1.clearThreatSearch();
 
 
-  $.guard4_count1.giveWeapon(WEAPONTYPE_MP5, 30000); // sets it to infinate ammo
+  $.guard4_count1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 30000); // sets it to infinate ammo
 
 
   $.guard4_count1.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -1096,7 +1096,7 @@ async function mission_start_counter1() {
   // Guard5 on rigt hand side of boat closest to the main cabin bit follows route 4
 
 
-  $.guard5_count1 = Char.Create(PEDTYPE_GANG_SECURITY, GDa, -653.46, -1279.55, 15.26);
+  $.guard5_count1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, GDa, -653.46, -1279.55, 15.26);
 
 
   ++$.counter_blokes_alive_count1;
@@ -1105,7 +1105,7 @@ async function mission_start_counter1() {
   $.guard5_count1.clearThreatSearch();
 
 
-  $.guard5_count1.giveWeapon(WEAPONTYPE_MP5, 30000); // sets it to infinate ammo
+  $.guard5_count1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 30000); // sets it to infinate ammo
 
 
   $.guard5_count1.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -1134,7 +1134,7 @@ async function mission_start_counter1() {
   // Guard6 side pod left hand side
 
 
-  $.guard6_count1 = Char.Create(PEDTYPE_GANG_SECURITY, GDb, -691.13, -1260.50, 31.93);
+  $.guard6_count1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, GDb, -691.13, -1260.50, 31.93);
 
 
   ++$.counter_blokes_alive_count1;
@@ -1146,7 +1146,7 @@ async function mission_start_counter1() {
   $.guard6_count1.clearThreatSearch();
 
 
-  $.guard6_count1.giveWeapon(WEAPONTYPE_M4, 30000); // sets it to infinate ammo
+  $.guard6_count1.giveWeapon(26 /* WEAPONTYPE_M4 */, 30000); // sets it to infinate ammo
 
 
   $.guard6_count1.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -1157,7 +1157,7 @@ async function mission_start_counter1() {
   // Guard7 side pod right hand side
 
 
-  $.guard7_count1 = Char.Create(PEDTYPE_GANG_SECURITY, GDa, -667.68, -1249.14, 31.93);
+  $.guard7_count1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, GDa, -667.68, -1249.14, 31.93);
 
 
   ++$.counter_blokes_alive_count1;
@@ -1169,7 +1169,7 @@ async function mission_start_counter1() {
   $.guard7_count1.clearThreatSearch();
 
 
-  $.guard7_count1.giveWeapon(WEAPONTYPE_M4, 30000); // sets it to infinate ammo
+  $.guard7_count1.giveWeapon(26 /* WEAPONTYPE_M4 */, 30000); // sets it to infinate ammo
 
 
   $.guard7_count1.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -1180,7 +1180,7 @@ async function mission_start_counter1() {
   // Guard8 patrols back of boat on ground follows path 5
 
 
-  $.guard8_count1 = Char.Create(PEDTYPE_GANG_SECURITY, GDb, -690.94, -1218.18, 15.28);
+  $.guard8_count1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, GDb, -690.94, -1218.18, 15.28);
 
 
   ++$.counter_blokes_alive_count1;
@@ -1189,7 +1189,7 @@ async function mission_start_counter1() {
   $.guard8_count1.clearThreatSearch();
 
 
-  $.guard8_count1.giveWeapon(WEAPONTYPE_MP5, 30000); // sets it to infinate ammo
+  $.guard8_count1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 30000); // sets it to infinate ammo
 
 
   $.guard8_count1.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -1207,7 +1207,7 @@ async function mission_start_counter1() {
   // Guard9 3rd deck up stands guard does not run
 
 
-  $.guard9_count1 = Char.Create(PEDTYPE_GANG_SECURITY, GDb, -690.69, -1229.06, 22.46);
+  $.guard9_count1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, GDb, -690.69, -1229.06, 22.46);
 
 
   ++$.counter_blokes_alive_count1;
@@ -1219,7 +1219,7 @@ async function mission_start_counter1() {
   $.guard9_count1.clearThreatSearch();
 
 
-  $.guard9_count1.giveWeapon(WEAPONTYPE_MP5, 30000); // sets it to infinate ammo
+  $.guard9_count1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 30000); // sets it to infinate ammo
 
 
   $.guard9_count1.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -1230,7 +1230,7 @@ async function mission_start_counter1() {
   // Guard10 2nd floor of the boat left hand side by the steps
 
 
-  $.guard10_count1 = Char.Create(PEDTYPE_GANG_SECURITY, GDb, -689.14, -1242.03, 30.14);
+  $.guard10_count1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, GDb, -689.14, -1242.03, 30.14);
 
 
   ++$.counter_blokes_alive_count1;
@@ -1242,7 +1242,7 @@ async function mission_start_counter1() {
   $.guard10_count1.clearThreatSearch();
 
 
-  $.guard10_count1.giveWeapon(WEAPONTYPE_MP5, 30000); // sets it to infinate ammo
+  $.guard10_count1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 30000); // sets it to infinate ammo
 
 
   $.guard10_count1.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -1253,7 +1253,7 @@ async function mission_start_counter1() {
   // Guard11
 
 
-  $.guard11_count1 = Char.Create(PEDTYPE_GANG_SECURITY, GDa, -670.709, -1296.564, 18.940);
+  $.guard11_count1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, GDa, -670.709, -1296.564, 18.940);
 
 
   ++$.counter_blokes_alive_count1;
@@ -1265,7 +1265,7 @@ async function mission_start_counter1() {
   $.guard11_count1.clearThreatSearch();
 
 
-  $.guard11_count1.giveWeapon(WEAPONTYPE_M4, 30000); // sets it to infinate ammo
+  $.guard11_count1.giveWeapon(26 /* WEAPONTYPE_M4 */, 30000); // sets it to infinate ammo
 
 
   $.guard11_count1.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -1334,7 +1334,7 @@ $.player_z_count1 = _res159.z;
           $.player1.alterWantedLevelNoDrop(2);
           $.radar_blip_escape_count1 = Blip.AddForCoord(-1052.579, -282.013, 10.279);
           if ($.alarm_raised_count1 == 0) {
-            $.alarm_count1 = Sound.AddContinuous(-692.33, -1258.94, 15.25, SOUND_BANK_ALARM_LOOP);
+            $.alarm_count1 = Sound.AddContinuous(-692.33, -1258.94, 15.25, 0 /* SOUND_BANK_ALARM_LOOP */);
             $.flag_all_guards_react_count1 = 1;
             $.alarm_raised_count1 = 1;
           }
@@ -1356,7 +1356,7 @@ $.player_z_count1 = _res159.z;
     if ($.timer_shooting_started_count1 == 2) {
       if (TIMERA >= 30000) {
         if ($.alarm_raised_count1 == 0) {
-          $.alarm_count1 = Sound.AddContinuous(-692.33, -1258.94, 15.25, SOUND_BANK_ALARM_LOOP);
+          $.alarm_count1 = Sound.AddContinuous(-692.33, -1258.94, 15.25, 0 /* SOUND_BANK_ALARM_LOOP */);
           $.flag_all_guards_react_count1 = 1;
           $.alarm_raised_count1 = 1;
         }
@@ -1488,7 +1488,7 @@ async function mission_counter1_passed() {
   $.player1.clearWantedLevel();
   Text.PrintWithNumberBig("M_PASS", 2000, 5000, 1); //"Mission Passed!"
   $.player1.addScore(2000);
-  // START_NEW_SCRIPT counter_mission2_loop
+  // START_NEW_SCRIPT counter_mission2_loop 
 }
 
 
@@ -1547,16 +1547,16 @@ async function guard_checks_count1() {
       if (Char.IsDead($.guard1_count1)) {
         --$.counter_blokes_alive_count1;
         if ($.timer_shooting_started_count1 == 0) {
-          if ($.guard1_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_GRENADE */) || $.guard1_count1.hasBeenDamagedByWeapon(WEAPONTYPE_DETONATOR_GRENADE) || $.guard1_count1.hasBeenDamagedByWeapon(10 /* WEAPONTYPE_MOLOTOV */) || $.guard1_count1.hasBeenDamagedByWeapon(8 /* WEAPONTYPE_ROCKET */) || $.guard1_count1.hasBeenDamagedByWeapon(2 /* WEAPONTYPE_PISTOL */) || $.guard1_count1.hasBeenDamagedByWeapon(WEAPONTYPE_PYTHON)) {
+          if ($.guard1_count1.hasBeenDamagedByWeapon(12 /* WEAPONTYPE_GRENADE */) || $.guard1_count1.hasBeenDamagedByWeapon(13 /* WEAPONTYPE_DETONATOR_GRENADE */) || $.guard1_count1.hasBeenDamagedByWeapon(15 /* WEAPONTYPE_MOLOTOV */) || $.guard1_count1.hasBeenDamagedByWeapon(16 /* WEAPONTYPE_ROCKET */) || $.guard1_count1.hasBeenDamagedByWeapon(17 /* WEAPONTYPE_PISTOL */) || $.guard1_count1.hasBeenDamagedByWeapon(18 /* WEAPONTYPE_PYTHON */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard1_count1.hasBeenDamagedByWeapon(4 /* WEAPONTYPE_SHOTGUN */) || $.guard1_count1.hasBeenDamagedByWeapon(WEAPONTYPE_SPAS12_SHOTGUN) || $.guard1_count1.hasBeenDamagedByWeapon(WEAPONTYPE_STUBBY_SHOTGUN) || $.guard1_count1.hasBeenDamagedByWeapon(WEAPONTYPE_RUGER) || $.guard1_count1.hasBeenDamagedByWeapon(WEAPONTYPE_TEC9) || $.guard1_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M4)) {
+          if ($.guard1_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_SHOTGUN */) || $.guard1_count1.hasBeenDamagedByWeapon(20 /* WEAPONTYPE_SPAS12_SHOTGUN */) || $.guard1_count1.hasBeenDamagedByWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */) || $.guard1_count1.hasBeenDamagedByWeapon(27 /* WEAPONTYPE_RUGER */) || $.guard1_count1.hasBeenDamagedByWeapon(22 /* WEAPONTYPE_TEC9 */) || $.guard1_count1.hasBeenDamagedByWeapon(26 /* WEAPONTYPE_M4 */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard1_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MP5) || $.guard1_count1.hasBeenDamagedByWeapon(3 /* WEAPONTYPE_UZI */) || $.guard1_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard1_count1.hasBeenDamagedByWeapon(9 /* WEAPONTYPE_FLAMETHROWER */) || $.guard1_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M60) || $.guard1_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MINIGUN)) {
+          if ($.guard1_count1.hasBeenDamagedByWeapon(25 /* WEAPONTYPE_MP5 */) || $.guard1_count1.hasBeenDamagedByWeapon(23 /* WEAPONTYPE_UZI */) || $.guard1_count1.hasBeenDamagedByWeapon(42 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard1_count1.hasBeenDamagedByWeapon(31 /* WEAPONTYPE_FLAMETHROWER */) || $.guard1_count1.hasBeenDamagedByWeapon(32 /* WEAPONTYPE_M60 */) || $.guard1_count1.hasBeenDamagedByWeapon(33 /* WEAPONTYPE_MINIGUN */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard1_count1.hasBeenDamagedByWeapon(WEAPONTYPE_CHAINSAW)) {
+          if ($.guard1_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_CHAINSAW */)) {
             $.timer_shooting_started_count1 = 1;
           }
 
@@ -1572,7 +1572,7 @@ async function guard_checks_count1() {
         //	GET_CHAR_HEALTH guard1_count1 guard1_health_count1
 
         if ($.flag_player_been_on_boat_count1 == 1) {
-          if ($.guard1_count1.hasSpottedPlayer($.player1) || $.guard1_count1.canSeeDeadChar(PEDTYPE_GANG_SECURITY) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
+          if ($.guard1_count1.hasSpottedPlayer($.player1) || $.guard1_count1.canSeeDeadChar(11 /* PEDTYPE_GANG_SECURITY */) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
             if ($.alarm_raised_count1 == 0) {
               if ($.flag_guard1_shouted_count1 == 0) {
                 Text.PrintNow("CM1_3", 5000, 1); //"Intruder alert raise the alarm!"
@@ -1581,16 +1581,16 @@ async function guard_checks_count1() {
               }
               if ($.guard1_in_alert_position_count1 == 0 || $.guard1_alarm_run_count1 == 1) {
                 if ($.flag_guard1_go_for_alert_count1 == 0) {
-                  $.guard1_count1.followPath(-697.39, -1250.62, 15.24, 0.5, RUN);
+                  $.guard1_count1.followPath(-697.39, -1250.62, 15.24, 0.5, 1 /* RUN */);
                   $.flag_guard1_go_for_alert_count1 = 1;
                 }
                 if ($.flag_guard1_go_for_alert_count1 == 1) {
                   if ($.guard1_count1.locateOnFoot2D(-697.39, -1250.62, 1.0, 1.0, false /* FALSE */)) {
                     if ($.alarm_raised_count1 == 0) {
-                      $.alarm_count1 = Sound.AddContinuous(-692.33, -1258.94, 15.25, SOUND_BANK_ALARM_LOOP);
+                      $.alarm_count1 = Sound.AddContinuous(-692.33, -1258.94, 15.25, 0 /* SOUND_BANK_ALARM_LOOP */);
                       $.alarm_raised_count1 = 1;
                     }
-                    $.guard1_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+                    $.guard1_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
                     $.guard1_count1.setThreatSearch(1 /* THREAT_PLAYER1 */);
                     $.guard1_count1.setObjKillPlayerOnFoot($.player1);
                     $.flag_all_guards_react_count1 = 1;
@@ -1608,13 +1608,13 @@ async function guard_checks_count1() {
             }
             else {
               if ($.flag_guard1_kill_player_count1 == 0) {
-                $.guard1_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+                $.guard1_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
                 $.guard1_count1.setObjKillPlayerOnFoot($.player1);
                 $.flag_guard1_kill_player_count1 = 1;
               }
 
               //	IF timer_guards_react_count1 = 2
-              $.guard1_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+              $.guard1_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
               $.guard1_count1.setObjKillPlayerOnFoot($.player1);
               //	ENDIF
 
@@ -1644,16 +1644,16 @@ async function guard_checks_count1() {
       if (Char.IsDead($.guard2_count1)) {
         --$.counter_blokes_alive_count1;
         if ($.timer_shooting_started_count1 == 0) {
-          if ($.guard2_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_GRENADE */) || $.guard2_count1.hasBeenDamagedByWeapon(WEAPONTYPE_DETONATOR_GRENADE) || $.guard2_count1.hasBeenDamagedByWeapon(10 /* WEAPONTYPE_MOLOTOV */) || $.guard2_count1.hasBeenDamagedByWeapon(8 /* WEAPONTYPE_ROCKET */) || $.guard2_count1.hasBeenDamagedByWeapon(2 /* WEAPONTYPE_PISTOL */) || $.guard2_count1.hasBeenDamagedByWeapon(WEAPONTYPE_PYTHON)) {
+          if ($.guard2_count1.hasBeenDamagedByWeapon(12 /* WEAPONTYPE_GRENADE */) || $.guard2_count1.hasBeenDamagedByWeapon(13 /* WEAPONTYPE_DETONATOR_GRENADE */) || $.guard2_count1.hasBeenDamagedByWeapon(15 /* WEAPONTYPE_MOLOTOV */) || $.guard2_count1.hasBeenDamagedByWeapon(16 /* WEAPONTYPE_ROCKET */) || $.guard2_count1.hasBeenDamagedByWeapon(17 /* WEAPONTYPE_PISTOL */) || $.guard2_count1.hasBeenDamagedByWeapon(18 /* WEAPONTYPE_PYTHON */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard2_count1.hasBeenDamagedByWeapon(4 /* WEAPONTYPE_SHOTGUN */) || $.guard2_count1.hasBeenDamagedByWeapon(WEAPONTYPE_SPAS12_SHOTGUN) || $.guard2_count1.hasBeenDamagedByWeapon(WEAPONTYPE_STUBBY_SHOTGUN) || $.guard2_count1.hasBeenDamagedByWeapon(WEAPONTYPE_RUGER) || $.guard2_count1.hasBeenDamagedByWeapon(WEAPONTYPE_TEC9) || $.guard2_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M4)) {
+          if ($.guard2_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_SHOTGUN */) || $.guard2_count1.hasBeenDamagedByWeapon(20 /* WEAPONTYPE_SPAS12_SHOTGUN */) || $.guard2_count1.hasBeenDamagedByWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */) || $.guard2_count1.hasBeenDamagedByWeapon(27 /* WEAPONTYPE_RUGER */) || $.guard2_count1.hasBeenDamagedByWeapon(22 /* WEAPONTYPE_TEC9 */) || $.guard2_count1.hasBeenDamagedByWeapon(26 /* WEAPONTYPE_M4 */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard2_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MP5) || $.guard2_count1.hasBeenDamagedByWeapon(3 /* WEAPONTYPE_UZI */) || $.guard2_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard2_count1.hasBeenDamagedByWeapon(9 /* WEAPONTYPE_FLAMETHROWER */) || $.guard2_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M60) || $.guard2_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MINIGUN)) {
+          if ($.guard2_count1.hasBeenDamagedByWeapon(25 /* WEAPONTYPE_MP5 */) || $.guard2_count1.hasBeenDamagedByWeapon(23 /* WEAPONTYPE_UZI */) || $.guard2_count1.hasBeenDamagedByWeapon(42 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard2_count1.hasBeenDamagedByWeapon(31 /* WEAPONTYPE_FLAMETHROWER */) || $.guard2_count1.hasBeenDamagedByWeapon(32 /* WEAPONTYPE_M60 */) || $.guard2_count1.hasBeenDamagedByWeapon(33 /* WEAPONTYPE_MINIGUN */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard2_count1.hasBeenDamagedByWeapon(WEAPONTYPE_CHAINSAW)) {
+          if ($.guard2_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_CHAINSAW */)) {
             $.timer_shooting_started_count1 = 1;
           }
 
@@ -1667,7 +1667,7 @@ async function guard_checks_count1() {
         //GET_CHAR_HEALTH guard2_count1 guard2_health_count1
 
         if ($.flag_player_been_on_boat_count1 == 1) {
-          if ($.guard2_count1.canSeeDeadChar(PEDTYPE_GANG_SECURITY) || $.guard2_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
+          if ($.guard2_count1.canSeeDeadChar(11 /* PEDTYPE_GANG_SECURITY */) || $.guard2_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
             if ($.alarm_raised_count1 == 0) {
               if ($.flag_guard2_shouted_count1 == 0) {
                 Text.PrintNow("CM1_3", 5000, 1); //"Intruder alert raise the alarm!"
@@ -1679,13 +1679,13 @@ async function guard_checks_count1() {
 
             }
             if ($.guard2_in_alert_state_count1 == 0) {
-              $.guard2_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+              $.guard2_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
               $.guard2_count1.setObjKillPlayerOnFoot($.player1);
               $.guard2_in_alert_state_count1 = 1;
             }
 
             //IF timer_guards_react_count1 = 2
-            $.guard2_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+            $.guard2_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
             $.guard2_count1.setObjKillPlayerOnFoot($.player1);
             //	ENDIF
 
@@ -1712,16 +1712,16 @@ async function guard_checks_count1() {
       if (Char.IsDead($.guard3_count1)) {
         --$.counter_blokes_alive_count1;
         if ($.timer_shooting_started_count1 == 0) {
-          if ($.guard3_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_GRENADE */) || $.guard3_count1.hasBeenDamagedByWeapon(WEAPONTYPE_DETONATOR_GRENADE) || $.guard3_count1.hasBeenDamagedByWeapon(10 /* WEAPONTYPE_MOLOTOV */) || $.guard3_count1.hasBeenDamagedByWeapon(8 /* WEAPONTYPE_ROCKET */) || $.guard3_count1.hasBeenDamagedByWeapon(2 /* WEAPONTYPE_PISTOL */) || $.guard3_count1.hasBeenDamagedByWeapon(WEAPONTYPE_PYTHON)) {
+          if ($.guard3_count1.hasBeenDamagedByWeapon(12 /* WEAPONTYPE_GRENADE */) || $.guard3_count1.hasBeenDamagedByWeapon(13 /* WEAPONTYPE_DETONATOR_GRENADE */) || $.guard3_count1.hasBeenDamagedByWeapon(15 /* WEAPONTYPE_MOLOTOV */) || $.guard3_count1.hasBeenDamagedByWeapon(16 /* WEAPONTYPE_ROCKET */) || $.guard3_count1.hasBeenDamagedByWeapon(17 /* WEAPONTYPE_PISTOL */) || $.guard3_count1.hasBeenDamagedByWeapon(18 /* WEAPONTYPE_PYTHON */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard3_count1.hasBeenDamagedByWeapon(4 /* WEAPONTYPE_SHOTGUN */) || $.guard3_count1.hasBeenDamagedByWeapon(WEAPONTYPE_SPAS12_SHOTGUN) || $.guard3_count1.hasBeenDamagedByWeapon(WEAPONTYPE_STUBBY_SHOTGUN) || $.guard3_count1.hasBeenDamagedByWeapon(WEAPONTYPE_RUGER) || $.guard3_count1.hasBeenDamagedByWeapon(WEAPONTYPE_TEC9) || $.guard3_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M4)) {
+          if ($.guard3_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_SHOTGUN */) || $.guard3_count1.hasBeenDamagedByWeapon(20 /* WEAPONTYPE_SPAS12_SHOTGUN */) || $.guard3_count1.hasBeenDamagedByWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */) || $.guard3_count1.hasBeenDamagedByWeapon(27 /* WEAPONTYPE_RUGER */) || $.guard3_count1.hasBeenDamagedByWeapon(22 /* WEAPONTYPE_TEC9 */) || $.guard3_count1.hasBeenDamagedByWeapon(26 /* WEAPONTYPE_M4 */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard3_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MP5) || $.guard3_count1.hasBeenDamagedByWeapon(3 /* WEAPONTYPE_UZI */) || $.guard3_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard3_count1.hasBeenDamagedByWeapon(9 /* WEAPONTYPE_FLAMETHROWER */) || $.guard3_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M60) || $.guard3_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MINIGUN)) {
+          if ($.guard3_count1.hasBeenDamagedByWeapon(25 /* WEAPONTYPE_MP5 */) || $.guard3_count1.hasBeenDamagedByWeapon(23 /* WEAPONTYPE_UZI */) || $.guard3_count1.hasBeenDamagedByWeapon(42 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard3_count1.hasBeenDamagedByWeapon(31 /* WEAPONTYPE_FLAMETHROWER */) || $.guard3_count1.hasBeenDamagedByWeapon(32 /* WEAPONTYPE_M60 */) || $.guard3_count1.hasBeenDamagedByWeapon(33 /* WEAPONTYPE_MINIGUN */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard3_count1.hasBeenDamagedByWeapon(WEAPONTYPE_CHAINSAW)) {
+          if ($.guard3_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_CHAINSAW */)) {
             $.timer_shooting_started_count1 = 1;
           }
 
@@ -1737,7 +1737,7 @@ async function guard_checks_count1() {
         //GET_CHAR_HEALTH guard3_count1 guard3_health_count1
 
         if ($.flag_player_been_on_boat_count1 == 1) {
-          if ($.guard3_count1.canSeeDeadChar(PEDTYPE_GANG_SECURITY) || $.guard3_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
+          if ($.guard3_count1.canSeeDeadChar(11 /* PEDTYPE_GANG_SECURITY */) || $.guard3_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
             if ($.alarm_raised_count1 == 0) {
               if ($.flag_guard3_shouted_count1 == 0) {
                 Text.PrintNow("CM1_3", 5000, 1); //"Intruder alert raise the alarm!"
@@ -1749,13 +1749,13 @@ async function guard_checks_count1() {
 
             }
             if ($.guard3_in_alert_state_count1 == 0) {
-              $.guard3_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+              $.guard3_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
               $.guard3_count1.setObjKillPlayerOnFoot($.player1);
               $.guard3_in_alert_state_count1 = 1;
             }
 
             //	IF timer_guards_react_count1 = 2
-            $.guard3_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+            $.guard3_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
             $.guard3_count1.setObjKillPlayerOnFoot($.player1);
             //	ENDIF
 
@@ -1782,16 +1782,16 @@ async function guard_checks_count1() {
       if (Char.IsDead($.guard4_count1)) {
         --$.counter_blokes_alive_count1;
         if ($.timer_shooting_started_count1 == 0) {
-          if ($.guard4_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_GRENADE */) || $.guard4_count1.hasBeenDamagedByWeapon(WEAPONTYPE_DETONATOR_GRENADE) || $.guard4_count1.hasBeenDamagedByWeapon(10 /* WEAPONTYPE_MOLOTOV */) || $.guard4_count1.hasBeenDamagedByWeapon(8 /* WEAPONTYPE_ROCKET */) || $.guard4_count1.hasBeenDamagedByWeapon(2 /* WEAPONTYPE_PISTOL */) || $.guard4_count1.hasBeenDamagedByWeapon(WEAPONTYPE_PYTHON)) {
+          if ($.guard4_count1.hasBeenDamagedByWeapon(12 /* WEAPONTYPE_GRENADE */) || $.guard4_count1.hasBeenDamagedByWeapon(13 /* WEAPONTYPE_DETONATOR_GRENADE */) || $.guard4_count1.hasBeenDamagedByWeapon(15 /* WEAPONTYPE_MOLOTOV */) || $.guard4_count1.hasBeenDamagedByWeapon(16 /* WEAPONTYPE_ROCKET */) || $.guard4_count1.hasBeenDamagedByWeapon(17 /* WEAPONTYPE_PISTOL */) || $.guard4_count1.hasBeenDamagedByWeapon(18 /* WEAPONTYPE_PYTHON */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard4_count1.hasBeenDamagedByWeapon(4 /* WEAPONTYPE_SHOTGUN */) || $.guard4_count1.hasBeenDamagedByWeapon(WEAPONTYPE_SPAS12_SHOTGUN) || $.guard4_count1.hasBeenDamagedByWeapon(WEAPONTYPE_STUBBY_SHOTGUN) || $.guard4_count1.hasBeenDamagedByWeapon(WEAPONTYPE_RUGER) || $.guard4_count1.hasBeenDamagedByWeapon(WEAPONTYPE_TEC9) || $.guard4_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M4)) {
+          if ($.guard4_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_SHOTGUN */) || $.guard4_count1.hasBeenDamagedByWeapon(20 /* WEAPONTYPE_SPAS12_SHOTGUN */) || $.guard4_count1.hasBeenDamagedByWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */) || $.guard4_count1.hasBeenDamagedByWeapon(27 /* WEAPONTYPE_RUGER */) || $.guard4_count1.hasBeenDamagedByWeapon(22 /* WEAPONTYPE_TEC9 */) || $.guard4_count1.hasBeenDamagedByWeapon(26 /* WEAPONTYPE_M4 */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard4_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MP5) || $.guard4_count1.hasBeenDamagedByWeapon(3 /* WEAPONTYPE_UZI */) || $.guard4_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard4_count1.hasBeenDamagedByWeapon(9 /* WEAPONTYPE_FLAMETHROWER */) || $.guard4_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M60) || $.guard4_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MINIGUN)) {
+          if ($.guard4_count1.hasBeenDamagedByWeapon(25 /* WEAPONTYPE_MP5 */) || $.guard4_count1.hasBeenDamagedByWeapon(23 /* WEAPONTYPE_UZI */) || $.guard4_count1.hasBeenDamagedByWeapon(42 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard4_count1.hasBeenDamagedByWeapon(31 /* WEAPONTYPE_FLAMETHROWER */) || $.guard4_count1.hasBeenDamagedByWeapon(32 /* WEAPONTYPE_M60 */) || $.guard4_count1.hasBeenDamagedByWeapon(33 /* WEAPONTYPE_MINIGUN */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard4_count1.hasBeenDamagedByWeapon(WEAPONTYPE_CHAINSAW)) {
+          if ($.guard4_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_CHAINSAW */)) {
             $.timer_shooting_started_count1 = 1;
           }
 
@@ -1805,7 +1805,7 @@ async function guard_checks_count1() {
         //	GET_CHAR_HEALTH guard4_count1 guard4_health_count1
 
         if ($.flag_player_been_on_boat_count1 == 1) {
-          if ($.guard4_count1.canSeeDeadChar(PEDTYPE_GANG_SECURITY) || $.guard4_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
+          if ($.guard4_count1.canSeeDeadChar(11 /* PEDTYPE_GANG_SECURITY */) || $.guard4_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
             if ($.alarm_raised_count1 == 0) {
               if ($.flag_guard4_shouted_count1 == 0) {
                 Text.PrintNow("CM1_3", 5000, 1); //"Intruder alert raise the alarm!"
@@ -1817,13 +1817,13 @@ async function guard_checks_count1() {
 
             }
             if ($.guard4_in_alert_state_count1 == 0) {
-              $.guard4_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+              $.guard4_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
               $.guard4_count1.setObjKillPlayerOnFoot($.player1);
               $.guard4_in_alert_state_count1 = 1;
             }
 
             //	IF timer_guards_react_count1 = 2
-            $.guard4_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+            $.guard4_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
             $.guard4_count1.setObjKillPlayerOnFoot($.player1);
             //ENDIF
 
@@ -1850,16 +1850,16 @@ async function guard_checks_count1() {
       if (Char.IsDead($.guard5_count1)) {
         --$.counter_blokes_alive_count1;
         if ($.timer_shooting_started_count1 == 0) {
-          if ($.guard5_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_GRENADE */) || $.guard5_count1.hasBeenDamagedByWeapon(WEAPONTYPE_DETONATOR_GRENADE) || $.guard5_count1.hasBeenDamagedByWeapon(10 /* WEAPONTYPE_MOLOTOV */) || $.guard5_count1.hasBeenDamagedByWeapon(8 /* WEAPONTYPE_ROCKET */) || $.guard5_count1.hasBeenDamagedByWeapon(2 /* WEAPONTYPE_PISTOL */) || $.guard5_count1.hasBeenDamagedByWeapon(WEAPONTYPE_PYTHON)) {
+          if ($.guard5_count1.hasBeenDamagedByWeapon(12 /* WEAPONTYPE_GRENADE */) || $.guard5_count1.hasBeenDamagedByWeapon(13 /* WEAPONTYPE_DETONATOR_GRENADE */) || $.guard5_count1.hasBeenDamagedByWeapon(15 /* WEAPONTYPE_MOLOTOV */) || $.guard5_count1.hasBeenDamagedByWeapon(16 /* WEAPONTYPE_ROCKET */) || $.guard5_count1.hasBeenDamagedByWeapon(17 /* WEAPONTYPE_PISTOL */) || $.guard5_count1.hasBeenDamagedByWeapon(18 /* WEAPONTYPE_PYTHON */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard5_count1.hasBeenDamagedByWeapon(4 /* WEAPONTYPE_SHOTGUN */) || $.guard5_count1.hasBeenDamagedByWeapon(WEAPONTYPE_SPAS12_SHOTGUN) || $.guard5_count1.hasBeenDamagedByWeapon(WEAPONTYPE_STUBBY_SHOTGUN) || $.guard5_count1.hasBeenDamagedByWeapon(WEAPONTYPE_RUGER) || $.guard5_count1.hasBeenDamagedByWeapon(WEAPONTYPE_TEC9) || $.guard5_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M4)) {
+          if ($.guard5_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_SHOTGUN */) || $.guard5_count1.hasBeenDamagedByWeapon(20 /* WEAPONTYPE_SPAS12_SHOTGUN */) || $.guard5_count1.hasBeenDamagedByWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */) || $.guard5_count1.hasBeenDamagedByWeapon(27 /* WEAPONTYPE_RUGER */) || $.guard5_count1.hasBeenDamagedByWeapon(22 /* WEAPONTYPE_TEC9 */) || $.guard5_count1.hasBeenDamagedByWeapon(26 /* WEAPONTYPE_M4 */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard5_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MP5) || $.guard5_count1.hasBeenDamagedByWeapon(3 /* WEAPONTYPE_UZI */) || $.guard5_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard5_count1.hasBeenDamagedByWeapon(9 /* WEAPONTYPE_FLAMETHROWER */) || $.guard5_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M60) || $.guard5_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MINIGUN)) {
+          if ($.guard5_count1.hasBeenDamagedByWeapon(25 /* WEAPONTYPE_MP5 */) || $.guard5_count1.hasBeenDamagedByWeapon(23 /* WEAPONTYPE_UZI */) || $.guard5_count1.hasBeenDamagedByWeapon(42 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard5_count1.hasBeenDamagedByWeapon(31 /* WEAPONTYPE_FLAMETHROWER */) || $.guard5_count1.hasBeenDamagedByWeapon(32 /* WEAPONTYPE_M60 */) || $.guard5_count1.hasBeenDamagedByWeapon(33 /* WEAPONTYPE_MINIGUN */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard5_count1.hasBeenDamagedByWeapon(WEAPONTYPE_CHAINSAW)) {
+          if ($.guard5_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_CHAINSAW */)) {
             $.timer_shooting_started_count1 = 1;
           }
 
@@ -1873,7 +1873,7 @@ async function guard_checks_count1() {
         //GET_CHAR_HEALTH guard5_count1 guard5_health_count1
 
         if ($.flag_player_been_on_boat_count1 == 1) {
-          if ($.guard5_count1.canSeeDeadChar(PEDTYPE_GANG_SECURITY) || $.guard5_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
+          if ($.guard5_count1.canSeeDeadChar(11 /* PEDTYPE_GANG_SECURITY */) || $.guard5_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
             if ($.alarm_raised_count1 == 0) {
               if ($.flag_guard5_shouted_count1 == 0) {
                 Text.PrintNow("CM1_3", 5000, 1); //"Intruder alert raise the alarm!"
@@ -1885,13 +1885,13 @@ async function guard_checks_count1() {
 
             }
             if ($.guard5_in_alert_state_count1 == 0) {
-              $.guard5_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+              $.guard5_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
               $.guard5_count1.setObjKillPlayerOnFoot($.player1);
               $.guard5_in_alert_state_count1 = 1;
             }
 
             //	IF timer_guards_react_count1 = 2
-            $.guard5_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+            $.guard5_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
             $.guard5_count1.setObjKillPlayerOnFoot($.player1);
             //	ENDIF
 
@@ -1918,16 +1918,16 @@ async function guard_checks_count1() {
       if (Char.IsDead($.guard6_count1)) {
         --$.counter_blokes_alive_count1;
         if ($.timer_shooting_started_count1 == 0) {
-          if ($.guard6_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_GRENADE */) || $.guard6_count1.hasBeenDamagedByWeapon(WEAPONTYPE_DETONATOR_GRENADE) || $.guard6_count1.hasBeenDamagedByWeapon(10 /* WEAPONTYPE_MOLOTOV */) || $.guard6_count1.hasBeenDamagedByWeapon(8 /* WEAPONTYPE_ROCKET */) || $.guard6_count1.hasBeenDamagedByWeapon(2 /* WEAPONTYPE_PISTOL */) || $.guard6_count1.hasBeenDamagedByWeapon(WEAPONTYPE_PYTHON)) {
+          if ($.guard6_count1.hasBeenDamagedByWeapon(12 /* WEAPONTYPE_GRENADE */) || $.guard6_count1.hasBeenDamagedByWeapon(13 /* WEAPONTYPE_DETONATOR_GRENADE */) || $.guard6_count1.hasBeenDamagedByWeapon(15 /* WEAPONTYPE_MOLOTOV */) || $.guard6_count1.hasBeenDamagedByWeapon(16 /* WEAPONTYPE_ROCKET */) || $.guard6_count1.hasBeenDamagedByWeapon(17 /* WEAPONTYPE_PISTOL */) || $.guard6_count1.hasBeenDamagedByWeapon(18 /* WEAPONTYPE_PYTHON */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard6_count1.hasBeenDamagedByWeapon(4 /* WEAPONTYPE_SHOTGUN */) || $.guard6_count1.hasBeenDamagedByWeapon(WEAPONTYPE_SPAS12_SHOTGUN) || $.guard6_count1.hasBeenDamagedByWeapon(WEAPONTYPE_STUBBY_SHOTGUN) || $.guard6_count1.hasBeenDamagedByWeapon(WEAPONTYPE_RUGER) || $.guard6_count1.hasBeenDamagedByWeapon(WEAPONTYPE_TEC9) || $.guard6_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M4)) {
+          if ($.guard6_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_SHOTGUN */) || $.guard6_count1.hasBeenDamagedByWeapon(20 /* WEAPONTYPE_SPAS12_SHOTGUN */) || $.guard6_count1.hasBeenDamagedByWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */) || $.guard6_count1.hasBeenDamagedByWeapon(27 /* WEAPONTYPE_RUGER */) || $.guard6_count1.hasBeenDamagedByWeapon(22 /* WEAPONTYPE_TEC9 */) || $.guard6_count1.hasBeenDamagedByWeapon(26 /* WEAPONTYPE_M4 */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard6_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MP5) || $.guard6_count1.hasBeenDamagedByWeapon(3 /* WEAPONTYPE_UZI */) || $.guard6_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard6_count1.hasBeenDamagedByWeapon(9 /* WEAPONTYPE_FLAMETHROWER */) || $.guard6_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M60) || $.guard6_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MINIGUN)) {
+          if ($.guard6_count1.hasBeenDamagedByWeapon(25 /* WEAPONTYPE_MP5 */) || $.guard6_count1.hasBeenDamagedByWeapon(23 /* WEAPONTYPE_UZI */) || $.guard6_count1.hasBeenDamagedByWeapon(42 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard6_count1.hasBeenDamagedByWeapon(31 /* WEAPONTYPE_FLAMETHROWER */) || $.guard6_count1.hasBeenDamagedByWeapon(32 /* WEAPONTYPE_M60 */) || $.guard6_count1.hasBeenDamagedByWeapon(33 /* WEAPONTYPE_MINIGUN */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard6_count1.hasBeenDamagedByWeapon(WEAPONTYPE_CHAINSAW)) {
+          if ($.guard6_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_CHAINSAW */)) {
             $.timer_shooting_started_count1 = 1;
           }
 
@@ -1941,7 +1941,7 @@ async function guard_checks_count1() {
         //	GET_CHAR_HEALTH guard6_count1 guard6_health_count1
 
         if ($.flag_player_been_on_boat_count1 == 1) {
-          if ($.guard6_count1.canSeeDeadChar(PEDTYPE_GANG_SECURITY) || $.guard6_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
+          if ($.guard6_count1.canSeeDeadChar(11 /* PEDTYPE_GANG_SECURITY */) || $.guard6_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
             if ($.alarm_raised_count1 == 0) {
               if ($.flag_guard6_shouted_count1 == 0) {
                 Text.PrintNow("CM1_3", 5000, 1); //"Intruder alert raise the alarm!"
@@ -1980,16 +1980,16 @@ async function guard_checks_count1() {
       if (Char.IsDead($.guard7_count1)) {
         --$.counter_blokes_alive_count1;
         if ($.timer_shooting_started_count1 == 0) {
-          if ($.guard7_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_GRENADE */) || $.guard7_count1.hasBeenDamagedByWeapon(WEAPONTYPE_DETONATOR_GRENADE) || $.guard7_count1.hasBeenDamagedByWeapon(10 /* WEAPONTYPE_MOLOTOV */) || $.guard7_count1.hasBeenDamagedByWeapon(8 /* WEAPONTYPE_ROCKET */) || $.guard7_count1.hasBeenDamagedByWeapon(2 /* WEAPONTYPE_PISTOL */) || $.guard7_count1.hasBeenDamagedByWeapon(WEAPONTYPE_PYTHON)) {
+          if ($.guard7_count1.hasBeenDamagedByWeapon(12 /* WEAPONTYPE_GRENADE */) || $.guard7_count1.hasBeenDamagedByWeapon(13 /* WEAPONTYPE_DETONATOR_GRENADE */) || $.guard7_count1.hasBeenDamagedByWeapon(15 /* WEAPONTYPE_MOLOTOV */) || $.guard7_count1.hasBeenDamagedByWeapon(16 /* WEAPONTYPE_ROCKET */) || $.guard7_count1.hasBeenDamagedByWeapon(17 /* WEAPONTYPE_PISTOL */) || $.guard7_count1.hasBeenDamagedByWeapon(18 /* WEAPONTYPE_PYTHON */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard7_count1.hasBeenDamagedByWeapon(4 /* WEAPONTYPE_SHOTGUN */) || $.guard7_count1.hasBeenDamagedByWeapon(WEAPONTYPE_SPAS12_SHOTGUN) || $.guard7_count1.hasBeenDamagedByWeapon(WEAPONTYPE_STUBBY_SHOTGUN) || $.guard7_count1.hasBeenDamagedByWeapon(WEAPONTYPE_RUGER) || $.guard7_count1.hasBeenDamagedByWeapon(WEAPONTYPE_TEC9) || $.guard7_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M4)) {
+          if ($.guard7_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_SHOTGUN */) || $.guard7_count1.hasBeenDamagedByWeapon(20 /* WEAPONTYPE_SPAS12_SHOTGUN */) || $.guard7_count1.hasBeenDamagedByWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */) || $.guard7_count1.hasBeenDamagedByWeapon(27 /* WEAPONTYPE_RUGER */) || $.guard7_count1.hasBeenDamagedByWeapon(22 /* WEAPONTYPE_TEC9 */) || $.guard7_count1.hasBeenDamagedByWeapon(26 /* WEAPONTYPE_M4 */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard7_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MP5) || $.guard7_count1.hasBeenDamagedByWeapon(3 /* WEAPONTYPE_UZI */) || $.guard7_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard7_count1.hasBeenDamagedByWeapon(9 /* WEAPONTYPE_FLAMETHROWER */) || $.guard7_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M60) || $.guard7_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MINIGUN)) {
+          if ($.guard7_count1.hasBeenDamagedByWeapon(25 /* WEAPONTYPE_MP5 */) || $.guard7_count1.hasBeenDamagedByWeapon(23 /* WEAPONTYPE_UZI */) || $.guard7_count1.hasBeenDamagedByWeapon(42 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard7_count1.hasBeenDamagedByWeapon(31 /* WEAPONTYPE_FLAMETHROWER */) || $.guard7_count1.hasBeenDamagedByWeapon(32 /* WEAPONTYPE_M60 */) || $.guard7_count1.hasBeenDamagedByWeapon(33 /* WEAPONTYPE_MINIGUN */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard7_count1.hasBeenDamagedByWeapon(WEAPONTYPE_CHAINSAW)) {
+          if ($.guard7_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_CHAINSAW */)) {
             $.timer_shooting_started_count1 = 1;
           }
 
@@ -2003,7 +2003,7 @@ async function guard_checks_count1() {
         //GET_CHAR_HEALTH guard7_count1 guard7_health_count1
 
         if ($.flag_player_been_on_boat_count1 == 1) {
-          if ($.guard7_count1.canSeeDeadChar(PEDTYPE_GANG_SECURITY) || $.guard7_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
+          if ($.guard7_count1.canSeeDeadChar(11 /* PEDTYPE_GANG_SECURITY */) || $.guard7_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
             if ($.alarm_raised_count1 == 0) {
               if ($.flag_guard7_shouted_count1 == 0) {
                 Text.PrintNow("CM1_3", 5000, 1); //"Intruder alert raise the alarm!"
@@ -2042,16 +2042,16 @@ async function guard_checks_count1() {
       if (Char.IsDead($.guard8_count1)) {
         --$.counter_blokes_alive_count1;
         if ($.timer_shooting_started_count1 == 0) {
-          if ($.guard8_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_GRENADE */) || $.guard8_count1.hasBeenDamagedByWeapon(WEAPONTYPE_DETONATOR_GRENADE) || $.guard8_count1.hasBeenDamagedByWeapon(10 /* WEAPONTYPE_MOLOTOV */) || $.guard8_count1.hasBeenDamagedByWeapon(8 /* WEAPONTYPE_ROCKET */) || $.guard8_count1.hasBeenDamagedByWeapon(2 /* WEAPONTYPE_PISTOL */) || $.guard8_count1.hasBeenDamagedByWeapon(WEAPONTYPE_PYTHON)) {
+          if ($.guard8_count1.hasBeenDamagedByWeapon(12 /* WEAPONTYPE_GRENADE */) || $.guard8_count1.hasBeenDamagedByWeapon(13 /* WEAPONTYPE_DETONATOR_GRENADE */) || $.guard8_count1.hasBeenDamagedByWeapon(15 /* WEAPONTYPE_MOLOTOV */) || $.guard8_count1.hasBeenDamagedByWeapon(16 /* WEAPONTYPE_ROCKET */) || $.guard8_count1.hasBeenDamagedByWeapon(17 /* WEAPONTYPE_PISTOL */) || $.guard8_count1.hasBeenDamagedByWeapon(18 /* WEAPONTYPE_PYTHON */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard8_count1.hasBeenDamagedByWeapon(4 /* WEAPONTYPE_SHOTGUN */) || $.guard8_count1.hasBeenDamagedByWeapon(WEAPONTYPE_SPAS12_SHOTGUN) || $.guard8_count1.hasBeenDamagedByWeapon(WEAPONTYPE_STUBBY_SHOTGUN) || $.guard8_count1.hasBeenDamagedByWeapon(WEAPONTYPE_RUGER) || $.guard8_count1.hasBeenDamagedByWeapon(WEAPONTYPE_TEC9) || $.guard8_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M4)) {
+          if ($.guard8_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_SHOTGUN */) || $.guard8_count1.hasBeenDamagedByWeapon(20 /* WEAPONTYPE_SPAS12_SHOTGUN */) || $.guard8_count1.hasBeenDamagedByWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */) || $.guard8_count1.hasBeenDamagedByWeapon(27 /* WEAPONTYPE_RUGER */) || $.guard8_count1.hasBeenDamagedByWeapon(22 /* WEAPONTYPE_TEC9 */) || $.guard8_count1.hasBeenDamagedByWeapon(26 /* WEAPONTYPE_M4 */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard8_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MP5) || $.guard8_count1.hasBeenDamagedByWeapon(3 /* WEAPONTYPE_UZI */) || $.guard8_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard8_count1.hasBeenDamagedByWeapon(9 /* WEAPONTYPE_FLAMETHROWER */) || $.guard8_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M60) || $.guard8_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MINIGUN)) {
+          if ($.guard8_count1.hasBeenDamagedByWeapon(25 /* WEAPONTYPE_MP5 */) || $.guard8_count1.hasBeenDamagedByWeapon(23 /* WEAPONTYPE_UZI */) || $.guard8_count1.hasBeenDamagedByWeapon(42 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard8_count1.hasBeenDamagedByWeapon(31 /* WEAPONTYPE_FLAMETHROWER */) || $.guard8_count1.hasBeenDamagedByWeapon(32 /* WEAPONTYPE_M60 */) || $.guard8_count1.hasBeenDamagedByWeapon(33 /* WEAPONTYPE_MINIGUN */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard8_count1.hasBeenDamagedByWeapon(WEAPONTYPE_CHAINSAW)) {
+          if ($.guard8_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_CHAINSAW */)) {
             $.timer_shooting_started_count1 = 1;
           }
 
@@ -2065,7 +2065,7 @@ async function guard_checks_count1() {
         //	GET_CHAR_HEALTH guard8_count1 guard8_health_count1
 
         if ($.flag_player_been_on_boat_count1 == 1) {
-          if ($.guard8_count1.canSeeDeadChar(PEDTYPE_GANG_SECURITY) || $.guard8_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
+          if ($.guard8_count1.canSeeDeadChar(11 /* PEDTYPE_GANG_SECURITY */) || $.guard8_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
             if ($.alarm_raised_count1 == 0) {
               if ($.flag_guard8_shouted_count1 == 0) {
                 Text.PrintNow("CM1_3", 5000, 1); //"Intruder alert raise the alarm!"
@@ -2077,13 +2077,13 @@ async function guard_checks_count1() {
 
             }
             if ($.guard8_in_alert_state_count1 == 0) {
-              $.guard8_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+              $.guard8_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
               $.guard8_count1.setObjKillPlayerOnFoot($.player1);
               $.guard8_in_alert_state_count1 = 1;
             }
 
             //	IF timer_guards_react_count1 = 2
-            $.guard8_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+            $.guard8_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
             $.guard8_count1.setObjKillPlayerOnFoot($.player1);
             //	ENDIF
 
@@ -2110,16 +2110,16 @@ async function guard_checks_count1() {
       if (Char.IsDead($.guard9_count1)) {
         --$.counter_blokes_alive_count1;
         if ($.timer_shooting_started_count1 == 0) {
-          if ($.guard9_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_GRENADE */) || $.guard9_count1.hasBeenDamagedByWeapon(WEAPONTYPE_DETONATOR_GRENADE) || $.guard9_count1.hasBeenDamagedByWeapon(10 /* WEAPONTYPE_MOLOTOV */) || $.guard9_count1.hasBeenDamagedByWeapon(8 /* WEAPONTYPE_ROCKET */) || $.guard9_count1.hasBeenDamagedByWeapon(2 /* WEAPONTYPE_PISTOL */) || $.guard9_count1.hasBeenDamagedByWeapon(WEAPONTYPE_PYTHON)) {
+          if ($.guard9_count1.hasBeenDamagedByWeapon(12 /* WEAPONTYPE_GRENADE */) || $.guard9_count1.hasBeenDamagedByWeapon(13 /* WEAPONTYPE_DETONATOR_GRENADE */) || $.guard9_count1.hasBeenDamagedByWeapon(15 /* WEAPONTYPE_MOLOTOV */) || $.guard9_count1.hasBeenDamagedByWeapon(16 /* WEAPONTYPE_ROCKET */) || $.guard9_count1.hasBeenDamagedByWeapon(17 /* WEAPONTYPE_PISTOL */) || $.guard9_count1.hasBeenDamagedByWeapon(18 /* WEAPONTYPE_PYTHON */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard9_count1.hasBeenDamagedByWeapon(4 /* WEAPONTYPE_SHOTGUN */) || $.guard9_count1.hasBeenDamagedByWeapon(WEAPONTYPE_SPAS12_SHOTGUN) || $.guard9_count1.hasBeenDamagedByWeapon(WEAPONTYPE_STUBBY_SHOTGUN) || $.guard9_count1.hasBeenDamagedByWeapon(WEAPONTYPE_RUGER) || $.guard9_count1.hasBeenDamagedByWeapon(WEAPONTYPE_TEC9) || $.guard9_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M4)) {
+          if ($.guard9_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_SHOTGUN */) || $.guard9_count1.hasBeenDamagedByWeapon(20 /* WEAPONTYPE_SPAS12_SHOTGUN */) || $.guard9_count1.hasBeenDamagedByWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */) || $.guard9_count1.hasBeenDamagedByWeapon(27 /* WEAPONTYPE_RUGER */) || $.guard9_count1.hasBeenDamagedByWeapon(22 /* WEAPONTYPE_TEC9 */) || $.guard9_count1.hasBeenDamagedByWeapon(26 /* WEAPONTYPE_M4 */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard9_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MP5) || $.guard9_count1.hasBeenDamagedByWeapon(3 /* WEAPONTYPE_UZI */) || $.guard9_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard9_count1.hasBeenDamagedByWeapon(9 /* WEAPONTYPE_FLAMETHROWER */) || $.guard9_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M60) || $.guard9_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MINIGUN)) {
+          if ($.guard9_count1.hasBeenDamagedByWeapon(25 /* WEAPONTYPE_MP5 */) || $.guard9_count1.hasBeenDamagedByWeapon(23 /* WEAPONTYPE_UZI */) || $.guard9_count1.hasBeenDamagedByWeapon(42 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard9_count1.hasBeenDamagedByWeapon(31 /* WEAPONTYPE_FLAMETHROWER */) || $.guard9_count1.hasBeenDamagedByWeapon(32 /* WEAPONTYPE_M60 */) || $.guard9_count1.hasBeenDamagedByWeapon(33 /* WEAPONTYPE_MINIGUN */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard9_count1.hasBeenDamagedByWeapon(WEAPONTYPE_CHAINSAW)) {
+          if ($.guard9_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_CHAINSAW */)) {
             $.timer_shooting_started_count1 = 1;
           }
 
@@ -2133,7 +2133,7 @@ async function guard_checks_count1() {
         //GET_CHAR_HEALTH guard9_count1 guard9_health_count1
 
         if ($.flag_player_been_on_boat_count1 == 1) {
-          if ($.guard9_count1.canSeeDeadChar(PEDTYPE_GANG_SECURITY) || $.guard9_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
+          if ($.guard9_count1.canSeeDeadChar(11 /* PEDTYPE_GANG_SECURITY */) || $.guard9_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
             if ($.alarm_raised_count1 == 0) {
               if ($.flag_guard9_shouted_count1 == 0) {
                 Text.PrintNow("CM1_3", 5000, 1); //"Intruder alert raise the alarm!"
@@ -2172,16 +2172,16 @@ async function guard_checks_count1() {
       if (Char.IsDead($.guard10_count1)) {
         --$.counter_blokes_alive_count1;
         if ($.timer_shooting_started_count1 == 0) {
-          if ($.guard10_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_GRENADE */) || $.guard10_count1.hasBeenDamagedByWeapon(WEAPONTYPE_DETONATOR_GRENADE) || $.guard10_count1.hasBeenDamagedByWeapon(10 /* WEAPONTYPE_MOLOTOV */) || $.guard10_count1.hasBeenDamagedByWeapon(8 /* WEAPONTYPE_ROCKET */) || $.guard10_count1.hasBeenDamagedByWeapon(2 /* WEAPONTYPE_PISTOL */) || $.guard10_count1.hasBeenDamagedByWeapon(WEAPONTYPE_PYTHON)) {
+          if ($.guard10_count1.hasBeenDamagedByWeapon(12 /* WEAPONTYPE_GRENADE */) || $.guard10_count1.hasBeenDamagedByWeapon(13 /* WEAPONTYPE_DETONATOR_GRENADE */) || $.guard10_count1.hasBeenDamagedByWeapon(15 /* WEAPONTYPE_MOLOTOV */) || $.guard10_count1.hasBeenDamagedByWeapon(16 /* WEAPONTYPE_ROCKET */) || $.guard10_count1.hasBeenDamagedByWeapon(17 /* WEAPONTYPE_PISTOL */) || $.guard10_count1.hasBeenDamagedByWeapon(18 /* WEAPONTYPE_PYTHON */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard10_count1.hasBeenDamagedByWeapon(4 /* WEAPONTYPE_SHOTGUN */) || $.guard10_count1.hasBeenDamagedByWeapon(WEAPONTYPE_SPAS12_SHOTGUN) || $.guard10_count1.hasBeenDamagedByWeapon(WEAPONTYPE_STUBBY_SHOTGUN) || $.guard10_count1.hasBeenDamagedByWeapon(WEAPONTYPE_RUGER) || $.guard10_count1.hasBeenDamagedByWeapon(WEAPONTYPE_TEC9) || $.guard10_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M4)) {
+          if ($.guard10_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_SHOTGUN */) || $.guard10_count1.hasBeenDamagedByWeapon(20 /* WEAPONTYPE_SPAS12_SHOTGUN */) || $.guard10_count1.hasBeenDamagedByWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */) || $.guard10_count1.hasBeenDamagedByWeapon(27 /* WEAPONTYPE_RUGER */) || $.guard10_count1.hasBeenDamagedByWeapon(22 /* WEAPONTYPE_TEC9 */) || $.guard10_count1.hasBeenDamagedByWeapon(26 /* WEAPONTYPE_M4 */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard10_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MP5) || $.guard10_count1.hasBeenDamagedByWeapon(3 /* WEAPONTYPE_UZI */) || $.guard10_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard10_count1.hasBeenDamagedByWeapon(9 /* WEAPONTYPE_FLAMETHROWER */) || $.guard10_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M60) || $.guard10_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MINIGUN)) {
+          if ($.guard10_count1.hasBeenDamagedByWeapon(25 /* WEAPONTYPE_MP5 */) || $.guard10_count1.hasBeenDamagedByWeapon(23 /* WEAPONTYPE_UZI */) || $.guard10_count1.hasBeenDamagedByWeapon(42 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard10_count1.hasBeenDamagedByWeapon(31 /* WEAPONTYPE_FLAMETHROWER */) || $.guard10_count1.hasBeenDamagedByWeapon(32 /* WEAPONTYPE_M60 */) || $.guard10_count1.hasBeenDamagedByWeapon(33 /* WEAPONTYPE_MINIGUN */)) {
             $.timer_shooting_started_count1 = 1;
           }
-          if ($.guard10_count1.hasBeenDamagedByWeapon(WEAPONTYPE_CHAINSAW)) {
+          if ($.guard10_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_CHAINSAW */)) {
             $.timer_shooting_started_count1 = 1;
           }
 
@@ -2195,7 +2195,7 @@ async function guard_checks_count1() {
         //	GET_CHAR_HEALTH guard10_count1 guard10_health_count1
 
         if ($.flag_player_been_on_boat_count1 == 1) {
-          if ($.guard10_count1.canSeeDeadChar(PEDTYPE_GANG_SECURITY) || $.guard10_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
+          if ($.guard10_count1.canSeeDeadChar(11 /* PEDTYPE_GANG_SECURITY */) || $.guard10_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
             if ($.alarm_raised_count1 == 0) {
               if ($.flag_guard10_shouted_count1 == 0) {
                 Text.PrintNow("CM1_3", 5000, 1); //"Intruder alert raise the alarm!"
@@ -2233,16 +2233,16 @@ async function guard_checks_count1() {
     if (Char.IsDead($.guard11_count1)) {
       --$.counter_blokes_alive_count1;
       if ($.timer_shooting_started_count1 == 0) {
-        if ($.guard11_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_GRENADE */) || $.guard11_count1.hasBeenDamagedByWeapon(WEAPONTYPE_DETONATOR_GRENADE) || $.guard11_count1.hasBeenDamagedByWeapon(10 /* WEAPONTYPE_MOLOTOV */) || $.guard11_count1.hasBeenDamagedByWeapon(8 /* WEAPONTYPE_ROCKET */) || $.guard11_count1.hasBeenDamagedByWeapon(2 /* WEAPONTYPE_PISTOL */) || $.guard11_count1.hasBeenDamagedByWeapon(WEAPONTYPE_PYTHON)) {
+        if ($.guard11_count1.hasBeenDamagedByWeapon(12 /* WEAPONTYPE_GRENADE */) || $.guard11_count1.hasBeenDamagedByWeapon(13 /* WEAPONTYPE_DETONATOR_GRENADE */) || $.guard11_count1.hasBeenDamagedByWeapon(15 /* WEAPONTYPE_MOLOTOV */) || $.guard11_count1.hasBeenDamagedByWeapon(16 /* WEAPONTYPE_ROCKET */) || $.guard11_count1.hasBeenDamagedByWeapon(17 /* WEAPONTYPE_PISTOL */) || $.guard11_count1.hasBeenDamagedByWeapon(18 /* WEAPONTYPE_PYTHON */)) {
           $.timer_shooting_started_count1 = 1;
         }
-        if ($.guard11_count1.hasBeenDamagedByWeapon(4 /* WEAPONTYPE_SHOTGUN */) || $.guard11_count1.hasBeenDamagedByWeapon(WEAPONTYPE_SPAS12_SHOTGUN) || $.guard11_count1.hasBeenDamagedByWeapon(WEAPONTYPE_STUBBY_SHOTGUN) || $.guard11_count1.hasBeenDamagedByWeapon(WEAPONTYPE_RUGER) || $.guard11_count1.hasBeenDamagedByWeapon(WEAPONTYPE_TEC9) || $.guard11_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M4)) {
+        if ($.guard11_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_SHOTGUN */) || $.guard11_count1.hasBeenDamagedByWeapon(20 /* WEAPONTYPE_SPAS12_SHOTGUN */) || $.guard11_count1.hasBeenDamagedByWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */) || $.guard11_count1.hasBeenDamagedByWeapon(27 /* WEAPONTYPE_RUGER */) || $.guard11_count1.hasBeenDamagedByWeapon(22 /* WEAPONTYPE_TEC9 */) || $.guard11_count1.hasBeenDamagedByWeapon(26 /* WEAPONTYPE_M4 */)) {
           $.timer_shooting_started_count1 = 1;
         }
-        if ($.guard11_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MP5) || $.guard11_count1.hasBeenDamagedByWeapon(3 /* WEAPONTYPE_UZI */) || $.guard11_count1.hasBeenDamagedByWeapon(19 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard11_count1.hasBeenDamagedByWeapon(9 /* WEAPONTYPE_FLAMETHROWER */) || $.guard11_count1.hasBeenDamagedByWeapon(WEAPONTYPE_M60) || $.guard11_count1.hasBeenDamagedByWeapon(WEAPONTYPE_MINIGUN)) {
+        if ($.guard11_count1.hasBeenDamagedByWeapon(25 /* WEAPONTYPE_MP5 */) || $.guard11_count1.hasBeenDamagedByWeapon(23 /* WEAPONTYPE_UZI */) || $.guard11_count1.hasBeenDamagedByWeapon(42 /* WEAPONTYPE_UZI_DRIVEBY */) || $.guard11_count1.hasBeenDamagedByWeapon(31 /* WEAPONTYPE_FLAMETHROWER */) || $.guard11_count1.hasBeenDamagedByWeapon(32 /* WEAPONTYPE_M60 */) || $.guard11_count1.hasBeenDamagedByWeapon(33 /* WEAPONTYPE_MINIGUN */)) {
           $.timer_shooting_started_count1 = 1;
         }
-        if ($.guard11_count1.hasBeenDamagedByWeapon(WEAPONTYPE_CHAINSAW)) {
+        if ($.guard11_count1.hasBeenDamagedByWeapon(11 /* WEAPONTYPE_CHAINSAW */)) {
           $.timer_shooting_started_count1 = 1;
         }
 
@@ -2258,7 +2258,7 @@ async function guard_checks_count1() {
       //	GET_CHAR_HEALTH guard11_count1 guard11_health_count1
 
       if ($.flag_player_been_on_boat_count1 == 1) {
-        if ($.guard11_count1.canSeeDeadChar(PEDTYPE_GANG_SECURITY) || $.guard11_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
+        if ($.guard11_count1.canSeeDeadChar(11 /* PEDTYPE_GANG_SECURITY */) || $.guard11_count1.hasSpottedPlayer($.player1) || $.alarm_raised_count1 == 1 || $.flag_all_guards_react_count1 == 1) {
           if ($.alarm_raised_count1 == 0) {
             if ($.flag_guard11_shouted_count1 == 0) {
               Text.PrintNow("CM1_3", 5000, 1); //"Intruder alert raise the alarm!"
@@ -2315,56 +2315,56 @@ async function alarm_guard_creation_count1() {
             $.guard_number_count1 = -1;
             if ($.flag_guard1_state_count1 == 0 || $.flag_guard1_state_count1 == 2) {
               World.ClearArea(-689.73, -1259.37, 15.24, 1.0, false /* FALSE */);
-              $.created_guard1_count1 = Char.Create(PEDTYPE_GANG_SECURITY, GDa, -689.73, -1259.37, 15.24);
+              $.created_guard1_count1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, GDa, -689.73, -1259.37, 15.24);
               $.guard_number_count1 = $.created_guard1_count1;
               $.flag_guard1_state_count1 = 1;
             }
             else {
               if ($.flag_guard2_state_count1 == 0 || $.flag_guard2_state_count1 == 2) {
                 World.ClearArea(-689.73, -1259.37, 15.24, 1.0, false /* FALSE */);
-                $.created_guard2_count1 = Char.Create(PEDTYPE_GANG_SECURITY, GDa, -689.73, -1259.37, 15.24);
+                $.created_guard2_count1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, GDa, -689.73, -1259.37, 15.24);
                 $.guard_number_count1 = $.created_guard2_count1;
                 $.flag_guard2_state_count1 = 1;
               }
               else {
                 if ($.flag_guard3_state_count1 == 0 || $.flag_guard3_state_count1 == 2) {
                   World.ClearArea(-689.73, -1259.37, 15.24, 1.0, false /* FALSE */);
-                  $.created_guard3_count1 = Char.Create(PEDTYPE_GANG_SECURITY, GDa, -689.73, -1259.37, 15.24);
+                  $.created_guard3_count1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, GDa, -689.73, -1259.37, 15.24);
                   $.guard_number_count1 = $.created_guard3_count1;
                   $.flag_guard3_state_count1 = 1;
                 }
                 else {
                   if ($.flag_guard4_state_count1 == 0 || $.flag_guard4_state_count1 == 2) {
                     World.ClearArea(-689.73, -1259.37, 15.24, 1.0, false /* FALSE */);
-                    $.created_guard4_count1 = Char.Create(PEDTYPE_GANG_SECURITY, GDa, -689.73, -1259.37, 15.24);
+                    $.created_guard4_count1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, GDa, -689.73, -1259.37, 15.24);
                     $.guard_number_count1 = $.created_guard4_count1;
                     $.flag_guard4_state_count1 = 1;
                   }
                   else {
                     if ($.flag_guard5_state_count1 == 0 || $.flag_guard5_state_count1 == 2) {
                       World.ClearArea(-689.73, -1259.37, 15.24, 1.0, false /* FALSE */);
-                      $.created_guard5_count1 = Char.Create(PEDTYPE_GANG_SECURITY, GDa, -689.73, -1259.37, 15.24);
+                      $.created_guard5_count1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, GDa, -689.73, -1259.37, 15.24);
                       $.guard_number_count1 = $.created_guard5_count1;
                       $.flag_guard5_state_count1 = 1;
                     }
                     else {
                       if ($.flag_guard6_state_count1 == 0 || $.flag_guard6_state_count1 == 2) {
                         World.ClearArea(-689.73, -1259.37, 15.24, 1.0, false /* FALSE */);
-                        $.created_guard6_count1 = Char.Create(PEDTYPE_GANG_SECURITY, GDa, -689.73, -1259.37, 15.24);
+                        $.created_guard6_count1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, GDa, -689.73, -1259.37, 15.24);
                         $.guard_number_count1 = $.created_guard6_count1;
                         $.flag_guard6_state_count1 = 1;
                       }
                       else {
                         if ($.flag_guard7_state_count1 == 0 || $.flag_guard7_state_count1 == 2) {
                           World.ClearArea(-689.73, -1259.37, 15.24, 1.0, false /* FALSE */);
-                          $.created_guard7_count1 = Char.Create(PEDTYPE_GANG_SECURITY, GDa, -689.73, -1259.37, 15.24);
+                          $.created_guard7_count1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, GDa, -689.73, -1259.37, 15.24);
                           $.guard_number_count1 = $.created_guard7_count1;
                           $.flag_guard7_state_count1 = 1;
                         }
                         else {
                           if ($.flag_guard8_state_count1 == 0 || $.flag_guard8_state_count1 == 2) {
                             World.ClearArea(-689.73, -1259.37, 15.24, 1.0, false /* FALSE */);
-                            $.created_guard8_count1 = Char.Create(PEDTYPE_GANG_SECURITY, GDa, -689.73, -1259.37, 15.24);
+                            $.created_guard8_count1 = Char.Create(11 /* PEDTYPE_GANG_SECURITY */, GDa, -689.73, -1259.37, 15.24);
                             $.guard_number_count1 = $.created_guard8_count1;
                             $.flag_guard8_state_count1 = 1;
                           }
@@ -2428,8 +2428,8 @@ async function guard_AI_count1() {
   if ($.flag_created_bloke_in_area_count1 == 1) {
     if (!(Char.IsDead($.guard_number_count1))) {
       if ($.guard_number_count1.locateOnFoot2D(-688.40, -1262.07, 1.0, 1.0, false /* FALSE */)) {
-        $.guard_number_count1.giveWeapon(WEAPONTYPE_MP5, 30000); // Set to infinate ammo
-        $.guard_number_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+        $.guard_number_count1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 30000); // Set to infinate ammo
+        $.guard_number_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
         $.guard_number_count1.setObjKillPlayerOnFoot($.player1);
         $.flag_created_bloke_in_area_count1 = 2;
       }
@@ -2461,7 +2461,7 @@ async function alarm_guard_death_check_count1() {
       else {
 
         //	IF timer_alarm_guards_react_count1 = 2
-        $.created_guard1_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+        $.created_guard1_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
         $.created_guard1_count1.setObjKillPlayerOnFoot($.player1);
         //	ENDIF
 
@@ -2485,7 +2485,7 @@ async function alarm_guard_death_check_count1() {
       else {
 
         //	IF timer_alarm_guards_react_count1 = 2
-        $.created_guard2_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+        $.created_guard2_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
         $.created_guard2_count1.setObjKillPlayerOnFoot($.player1);
         //ENDIF
 
@@ -2509,7 +2509,7 @@ async function alarm_guard_death_check_count1() {
       else {
 
         //	IF timer_alarm_guards_react_count1 = 2
-        $.created_guard3_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+        $.created_guard3_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
         $.created_guard3_count1.setObjKillPlayerOnFoot($.player1);
         //	ENDIF
 
@@ -2533,7 +2533,7 @@ async function alarm_guard_death_check_count1() {
       else {
 
         //	IF timer_alarm_guards_react_count1 = 2
-        $.created_guard4_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+        $.created_guard4_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
         $.created_guard4_count1.setObjKillPlayerOnFoot($.player1);
         //	ENDIF
 
@@ -2557,7 +2557,7 @@ async function alarm_guard_death_check_count1() {
       else {
 
         //	IF timer_alarm_guards_react_count1 = 2
-        $.created_guard5_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+        $.created_guard5_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
         $.created_guard5_count1.setObjKillPlayerOnFoot($.player1);
         //	ENDIF
 
@@ -2581,7 +2581,7 @@ async function alarm_guard_death_check_count1() {
       else {
 
         //	IF timer_alarm_guards_react_count1 = 2
-        $.created_guard6_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+        $.created_guard6_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
         $.created_guard6_count1.setObjKillPlayerOnFoot($.player1);
         //	ENDIF
 
@@ -2605,7 +2605,7 @@ async function alarm_guard_death_check_count1() {
       else {
 
         //	IF timer_alarm_guards_react_count1 = 2
-        $.created_guard7_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+        $.created_guard7_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
         $.created_guard7_count1.setObjKillPlayerOnFoot($.player1);
         //	ENDIF
 
@@ -2629,7 +2629,7 @@ async function alarm_guard_death_check_count1() {
       else {
 
         //	IF timer_alarm_guards_react_count1 = 2
-        $.created_guard8_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, RUN);
+        $.created_guard8_count1.followPath($.player_x_count1, $.player_y_count1, $.player_z_count1, 0.5, 1 /* RUN */);
         $.created_guard8_count1.setObjKillPlayerOnFoot($.player1);
         //	ENDIF
 

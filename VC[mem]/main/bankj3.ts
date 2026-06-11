@@ -1,6 +1,6 @@
 // Generated from main/bankj3.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_bankjob3() {
 
@@ -78,7 +78,7 @@ async function mission_start_bankjob3() {
   Streaming.LoadSpecialModel(CUTOBJ03, "colphon");
 
 
-  Streaming.SetAreaVisible(VIS_MALIBU_CLUB);
+  Streaming.SetAreaVisible(17 /* VIS_MALIBU_CLUB */);
 
 
   Streaming.LoadScene(481.03, -64.21, 8.98);
@@ -310,7 +310,7 @@ async function mission_start_bankjob3() {
   Streaming.MarkModelAsNoLongerNeeded(CUTOBJ03);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   World.ClearExtraColors(false /* FALSE */);
@@ -471,7 +471,7 @@ async function mission_start_bankjob3() {
   // ******************************** END OF CUTSCENE TWO ************************************
 
 
-  $.player1.setMood(PLAYER_MOOD_PISSED_OFF, 60000);
+  $.player1.setMood(1 /* PLAYER_MOOD_PISSED_OFF */, 60000);
 
   // **************************************** Race Coordinates *******************************
 
@@ -732,7 +732,7 @@ async function mission_start_bankjob3() {
 
     }
     $.car_health_bankjob3 = $.racer1_bankjob3.getHealth();
-    if ($.car_health_bankjob3 < 1000 || $.racer1_bankjob3.isTireBurst(ANY_WHEEL)) {
+    if ($.car_health_bankjob3 < 1000 || $.racer1_bankjob3.isTireBurst(4 /* ANY_WHEEL */)) {
       $.car_health_bankjob3 = 9;
       // SCM GOTO → race_start_bankjob3 (not lowered; manual jump required)
       throw new Error("unresolved GOTO race_start_bankjob3"); // fallback: would break linear control flow
@@ -787,7 +787,7 @@ async function mission_start_bankjob3() {
       throw new Error("unresolved GOTO mission_bankjob3_failed"); // fallback: would break linear control flow
     }
     $.car_health_bankjob3 = $.racer1_bankjob3.getHealth();
-    if ($.car_health_bankjob3 < 1000 || $.racer1_bankjob3.isTireBurst(ANY_WHEEL)) {
+    if ($.car_health_bankjob3 < 1000 || $.racer1_bankjob3.isTireBurst(4 /* ANY_WHEEL */)) {
       $.car_health_bankjob3 = 9;
       // SCM GOTO → race_start_bankjob3 (not lowered; manual jump required)
       throw new Error("unresolved GOTO race_start_bankjob3"); // fallback: would break linear control flow
@@ -814,19 +814,19 @@ async function race_start_bankjob3() {
     Game.SetEveryoneIgnorePlayer($.player1, true /* ON */);
     Game.SetPoliceIgnorePlayer($.player1, true /* ON */);
     Text.PrintBig("RACE2", 1500, 4); //"3"
-    Sound.AddOneOffSound(0.0, 0.0, 0.0, 97 /* SOUND_RACE_START_3 */);
+    Sound.AddOneOffSound(0.0, 0.0, 0.0, 7 /* SOUND_RACE_START_3 */);
     await asyncWait(1500);
     World.ClearArea(481.704, -155.509, 10.900, 1.0, false /* FALSE */);
     Camera.SetFixedPosition(481.704, -155.509, 10.900, 0.0, 0.0, 0.0);
     Camera.PointAtPoint(481.675, -154.522, 10.741, 2 /* JUMP_CUT */);
     Text.PrintBig("RACE3", 1500, 4); //"2"
-    Sound.AddOneOffSound(0.0, 0.0, 0.0, 98 /* SOUND_RACE_START_2 */);
+    Sound.AddOneOffSound(0.0, 0.0, 0.0, 8 /* SOUND_RACE_START_2 */);
     await asyncWait(1500);
     World.ClearArea(487.907, -148.861, 11.167, 1.0, false /* FALSE */);
     Camera.SetFixedPosition(487.907, -148.861, 11.167, 0.0, 0.0, 0.0);
     Camera.PointAtPoint(486.924, -148.899, 10.98, 2 /* JUMP_CUT */);
     Text.PrintBig("RACE4", 1500, 4); //"1"
-    Sound.AddOneOffSound(0.0, 0.0, 0.0, 99 /* SOUND_RACE_START_1 */);
+    Sound.AddOneOffSound(0.0, 0.0, 0.0, 9 /* SOUND_RACE_START_1 */);
     await asyncWait(1500);
     Camera.SetBehindPlayer();
     Camera.RestoreJumpcut();
@@ -840,7 +840,7 @@ async function race_start_bankjob3() {
       throw new Error("unresolved GOTO mission_bankjob3_failed"); // fallback: would break linear control flow
     }
     Text.PrintBig("RACE5", 800, 4); //"GO"
-    Sound.AddOneOffSound(0.0, 0.0, 0.0, 100 /* SOUND_RACE_START_GO */);
+    Sound.AddOneOffSound(0.0, 0.0, 0.0, 10 /* SOUND_RACE_START_GO */);
     Camera.SetBehindPlayer();
     Camera.RestoreJumpcut();
     $.player1.setControl(true /* ON */);
@@ -890,7 +890,7 @@ async function race_start_bankjob3() {
   $.racer1_bankjob3.gotoCoordinates($.racer1_cp_x_bankjob3, $.racer1_cp_y_bankjob3, $.racer1_cp_z_bankjob3);
 
 
-  Hud.DisplayTimerWithString($.$id.race_timer_bankjob3, TIMER_UP, "R_TIME");
+  Hud.DisplayTimerWithString($.$id.race_timer_bankjob3, 0 /* TIMER_UP */, "R_TIME");
 
   // waiting for the race to be finished
 
@@ -985,7 +985,7 @@ async function race_start_bankjob3() {
     $.position_bankjob3 = 0;
     if ($.player1.locateInCar3D($.player1_cp_x_bankjob3, $.player1_cp_y_bankjob3, $.player1_cp_z_bankjob3, 6.0, 6.0, 6.0, false) && !($.player1.isInAnyBoat()) && !($.player1.isInFlyingVehicle())) {
       ++$.player1_cpcounter_bankjob3;
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */); // This might not work
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */); // This might not work
       $.blip_chase_bankjob3.remove();
       $.second_blip_chase_bankjob3.remove();
       $.gosub_cpcounter_bankjob3 = $.player1_cpcounter_bankjob3;
@@ -1413,7 +1413,7 @@ async function mission_bankjob3_passed() {
   }
 
 
-  // START_NEW_SCRIPT bankjob_mission4_loop
+  // START_NEW_SCRIPT bankjob_mission4_loop 
 }
 
 

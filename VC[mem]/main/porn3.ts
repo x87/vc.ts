@@ -1,6 +1,6 @@
 // Generated from main/porn3.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_porn3() {
   Text.ClearThisPrint("M_FAIL");
@@ -361,7 +361,7 @@ async function mission_start_porn3() {
   Camera.SetBehindPlayer();
   //------------------REQUEST_MODELS ------------------------------
 
-  $.player1.setMood(PLAYER_MOOD_CALM, 60000);
+  $.player1.setMood(0 /* PLAYER_MOOD_CALM */, 60000);
 
 
   Streaming.LoadSpecialCharacter(1, "IGCandy");
@@ -373,10 +373,10 @@ async function mission_start_porn3() {
 
 
   Streaming.RequestModel(HMYRI);
-  Streaming.RequestModel(camera);
+  Streaming.RequestModel(46 /* camera */);
   Streaming.RequestModel(fbi);
   Streaming.RequestModel(GDa);
-  Streaming.RequestModel(178 /* uzi */);
+  Streaming.RequestModel(uzi);
 
 
   Streaming.RequestModel(sparrow);
@@ -386,7 +386,7 @@ async function mission_start_porn3() {
 
 
 
-  while (!(Streaming.HasModelLoaded(HMYRI)) || !(Streaming.HasModelLoaded(camera)) || !(Streaming.HasModelLoaded(fbi)) || !(Streaming.HasModelLoaded(GDa)) || !(Streaming.HasModelLoaded(178 /* uzi */))) {
+  while (!(Streaming.HasModelLoaded(HMYRI)) || !(Streaming.HasModelLoaded(46 /* camera */)) || !(Streaming.HasModelLoaded(fbi)) || !(Streaming.HasModelLoaded(GDa)) || !(Streaming.HasModelLoaded(uzi))) {
     await asyncWait(0);
   }
 
@@ -421,7 +421,7 @@ async function mission_start_porn3() {
 
   //giving player weapons
 
-  $.player1.giveWeapon(WEAPONTYPE_CAMERA, 12);
+  $.player1.giveWeapon(36 /* WEAPONTYPE_CAMERA */, 12);
   $.camera_film = 12;
 
 
@@ -429,7 +429,7 @@ async function mission_start_porn3() {
 
   $.slut = Char.Create(5 /* PEDTYPE_CIVFEMALE */, SPECIAL01, -40.4, 945.0, 9.9);
   $.slut.setAsPlayerFriend($.player1, true /* TRUE */);
-  $.slut.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+  $.slut.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
   $.slut.clearThreatSearch();
   $.slut.setHeading(296.8);
   $.slut.setOnlyDamagedByPlayer(true /* TRUE */);
@@ -470,7 +470,7 @@ async function mission_start_porn3() {
 
   $.lookoutleader = Char.Create(4 /* PEDTYPE_CIVMALE */, fbi, 477.6, 30.1, 29.9);
   $.lookoutleader.setHeading(286.6);
-  $.lookoutleader.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+  $.lookoutleader.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
   $.lookoutleader.clearThreatSearch();
   $.lookoutleader.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.lookoutleader.setHeedThreats(true /* TRUE */);
@@ -479,7 +479,7 @@ async function mission_start_porn3() {
 
 
   $.lookout_1 = Char.Create(4 /* PEDTYPE_CIVMALE */, fbi, 458.8, 18.1, 32.0);
-  $.lookout_1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+  $.lookout_1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
   $.lookout_1.clearThreatSearch();
   $.lookout_1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.lookout_1.setHeedThreats(true /* TRUE */);
@@ -491,7 +491,7 @@ async function mission_start_porn3() {
 
 
   $.lookout_2 = Char.Create(4 /* PEDTYPE_CIVMALE */, fbi, 458.4, 42.9, 32.0);
-  $.lookout_2.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+  $.lookout_2.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
   $.lookout_2.clearThreatSearch();
   $.lookout_2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.lookout_2.setHeedThreats(true /* TRUE */);
@@ -503,7 +503,7 @@ async function mission_start_porn3() {
 
 
   $.lookout_3 = Char.Create(4 /* PEDTYPE_CIVMALE */, fbi, 455.0, 37.6, 33.8);
-  $.lookout_3.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+  $.lookout_3.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
   $.lookout_3.clearThreatSearch();
   $.lookout_3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.lookout_3.setHeedThreats(true /* TRUE */);
@@ -517,7 +517,7 @@ async function mission_start_porn3() {
 
   $.doorman_1 = Char.Create(4 /* PEDTYPE_CIVMALE */, GDa, 474.9, 31.9, 11.0);
   $.doorman_1.setHeading(269.6);
-  $.doorman_1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+  $.doorman_1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
   $.doorman_1.clearThreatSearch();
   $.doorman_1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.doorman_1.setHeedThreats(true /* TRUE */);
@@ -527,7 +527,7 @@ async function mission_start_porn3() {
 
   $.doorman_2 = Char.Create(4 /* PEDTYPE_CIVMALE */, GDa, 474.9, 28.9, 11.0);
   $.doorman_2.setHeading(269.6);
-  $.doorman_2.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+  $.doorman_2.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
   $.doorman_2.clearThreatSearch();
   $.doorman_2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.doorman_2.setHeedThreats(true /* TRUE */);
@@ -688,7 +688,7 @@ async function following_slut_to_hotel_loop() {
               $.slut.delete();
               $.slut = Char.CreateAsPassenger($.stretch_limo, 5 /* PEDTYPE_CIVFEMALE */, SPECIAL01, 2);
               $.slut.setAsPlayerFriend($.player1, true /* TRUE */);
-              $.slut.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+              $.slut.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
               $.slut.clearThreatSearch();
               $.slut.setOnlyDamagedByPlayer(true /* TRUE */);
               $.stretch_limo.gotoCoordinates(485.9, 31.3, 10.7);
@@ -1086,7 +1086,7 @@ async function taking_picture_loop() {
 
     if (!(Char.IsDead($.congressman))) {
       if ($.congressman.hasBeenPhotographed()) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.pictures_taken++;
       }
       if ($.pictures_taken > 2) {
@@ -1201,7 +1201,7 @@ async function getting_away_with_it() {
         //north entrance to porn islands
         $.porn_fbi1 = Char.Create(4 /* PEDTYPE_CIVMALE */, fbi, 14.3, 966.0, 9.9);
         $.porn_fbi1.setHeading(327.1);
-        $.porn_fbi1.giveWeapon(WEAPONTYPE_M4, 30000);
+        $.porn_fbi1.giveWeapon(26 /* WEAPONTYPE_M4 */, 30000);
         $.porn_fbi1.clearThreatSearch();
         $.porn_fbi1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
         $.porn_fbi1.setHeedThreats(true /* TRUE */);
@@ -1212,7 +1212,7 @@ async function getting_away_with_it() {
         $.porn_fbi1.setHealth(150);
         $.porn_fbi2 = Char.Create(4 /* PEDTYPE_CIVMALE */, fbi, 13.2, 960.4, 9.9);
         $.porn_fbi2.setHeading(191.9);
-        $.porn_fbi2.giveWeapon(WEAPONTYPE_M4, 30000);
+        $.porn_fbi2.giveWeapon(26 /* WEAPONTYPE_M4 */, 30000);
         $.porn_fbi2.clearThreatSearch();
         $.porn_fbi2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
         $.porn_fbi2.setHeedThreats(true /* TRUE */);
@@ -1223,7 +1223,7 @@ async function getting_away_with_it() {
         $.porn_fbi2.setHealth(150);
         $.porn_fbi5 = Char.Create(4 /* PEDTYPE_CIVMALE */, fbi, 10.1, 965.7, 9.9);
         $.porn_fbi5.setHeading(121.8);
-        $.porn_fbi5.giveWeapon(WEAPONTYPE_M4, 30000);
+        $.porn_fbi5.giveWeapon(26 /* WEAPONTYPE_M4 */, 30000);
         $.porn_fbi5.clearThreatSearch();
         $.porn_fbi5.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
         $.porn_fbi5.setHeedThreats(true /* TRUE */);
@@ -1238,7 +1238,7 @@ async function getting_away_with_it() {
         //south entrance to porn islands
         $.porn_fbi3 = Char.Create(4 /* PEDTYPE_CIVMALE */, fbi, -6.9, 883.8, 9.7);
         $.porn_fbi3.setHeading(254.8);
-        $.porn_fbi3.giveWeapon(WEAPONTYPE_M4, 30000);
+        $.porn_fbi3.giveWeapon(26 /* WEAPONTYPE_M4 */, 30000);
         $.porn_fbi3.clearThreatSearch();
         $.porn_fbi3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
         $.porn_fbi3.setHeedThreats(true /* TRUE */);
@@ -1249,7 +1249,7 @@ async function getting_away_with_it() {
         $.porn_fbi3.setHealth(150);
         $.porn_fbi4 = Char.Create(4 /* PEDTYPE_CIVMALE */, fbi, -12.6, 877.7, 9.8);
         $.porn_fbi4.setHeading(222.4);
-        $.porn_fbi4.giveWeapon(WEAPONTYPE_M4, 30000);
+        $.porn_fbi4.giveWeapon(26 /* WEAPONTYPE_M4 */, 30000);
         $.porn_fbi4.clearThreatSearch();
         $.porn_fbi4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
         $.porn_fbi4.setHeedThreats(true /* TRUE */);
@@ -1451,7 +1451,7 @@ async function mission_passed_porn3() {
   $.player1.addScore(4000);
   Stat.PlayerMadeProgress(1);
   Stat.RegisterMissionPassed("PORN_3");
-  // START_NEW_SCRIPT porn_mission4_loop
+  // START_NEW_SCRIPT porn_mission4_loop 
   $.flag_porn_mission3_passed = 1;
 }
 
@@ -1472,10 +1472,10 @@ async function mission_cleanup_porn3() {
   Streaming.UnloadSpecialCharacter(2);
   Streaming.MarkModelAsNoLongerNeeded(HMYRI);
   Streaming.MarkModelAsNoLongerNeeded(stretch);
-  Streaming.MarkModelAsNoLongerNeeded(camera);
+  Streaming.MarkModelAsNoLongerNeeded(46 /* camera */);
   Streaming.MarkModelAsNoLongerNeeded(fbi);
   Streaming.MarkModelAsNoLongerNeeded(GDa);
-  Streaming.MarkModelAsNoLongerNeeded(178 /* uzi */);
+  Streaming.MarkModelAsNoLongerNeeded(uzi);
   Streaming.MarkModelAsNoLongerNeeded(sparrow);
   Streaming.MarkModelAsNoLongerNeeded(rancher);
   Streaming.MarkModelAsNoLongerNeeded(m4);
@@ -1484,7 +1484,7 @@ async function mission_cleanup_porn3() {
   Path.RemoveRoute(2);
   Path.RemoveRoute(3);
   Path.SwitchPedRoadsOn(479.9, -1.4, 11.0, 450.3, 59.5, 40.0); //test
-  $.player1.setAmmo(WEAPONTYPE_CAMERA, 0);
+  $.player1.setAmmo(36 /* WEAPONTYPE_CAMERA */, 0);
 
 
   if ($.player1.isInArea2D(585.7, 52.8, 555.9, 8.1, false /* FALSE */)) {
@@ -1633,7 +1633,7 @@ async function hotel_california() {
 async function camera_check() {
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  $.camera_film = $.player1.getAmmoInWeapon(WEAPONTYPE_CAMERA);
+  $.camera_film = $.player1.getAmmoInWeapon(36 /* WEAPONTYPE_CAMERA */);
   if ($.camera_film == 0) {
     $.deadslut = 4;
   }
@@ -1642,7 +1642,7 @@ async function camera_check() {
   if (TIMERB > 280) {
     if ($.cam_audio1 == 1) {
       if ($.cam_audio2 == 1) {
-        if ($.player1.isCurrentWeapon(WEAPONTYPE_CAMERA)) {
+        if ($.player1.isCurrentWeapon(36 /* WEAPONTYPE_CAMERA */)) {
           //	IF IS_PLAYER_SHOOTING player1
 
           if (Pad.IsButtonPressed(0 /* PAD1 */, 6 /* RIGHTSHOULDER1 */)) {

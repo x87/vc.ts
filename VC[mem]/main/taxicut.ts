@@ -1,6 +1,6 @@
 // Generated from main/taxicut.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_taxi_cut() {
 
@@ -22,7 +22,7 @@ async function mission_start_taxi_cut() {
 
 
   if (ONMISSION == 0) {
-    $.taxibuy_blip = Blip.AddShortRangeSpriteForContactPoint($.taxibuyX, $.taxibuyY, $.taxibuyZ, RADAR_SPRITE_PROPERTY);
+    $.taxibuy_blip = Blip.AddShortRangeSpriteForContactPoint($.taxibuyX, $.taxibuyY, $.taxibuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
   }
 
 
@@ -427,7 +427,7 @@ async function mission_start_taxi_cut() {
 
   Text.PrintWithNumberBig("TAXIBUY", $.taxibuy_price, 7000, 6); //
   Stat.AddMoneySpentOnProperty($.taxibuy_price);
-  Stat.SetPropertyAsOwned(PROP_TAXICO);
+  Stat.SetPropertyAsOwned(5 /* PROP_TAXICO */);
 
 
   await asyncWait(7000);
@@ -444,7 +444,7 @@ async function mission_start_taxi_cut() {
   $.taxiwar_contact_blip = Blip.AddSpriteForContactPoint($.taxiwarX, $.taxiwarY, $.taxiwarZ, $.the_taxiwar_blip);
 
 
-  // START_NEW_SCRIPT taxiwar_save_loop
+  // START_NEW_SCRIPT taxiwar_save_loop 
   Stat.PlayerMadeProgress(1);
   Camera.RestoreJumpcut();
 

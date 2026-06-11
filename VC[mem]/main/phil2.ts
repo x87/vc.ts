@@ -1,6 +1,6 @@
 // Generated from main/phil2.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_phil2() {
   Text.ClearThisPrint("M_FAIL");
@@ -195,8 +195,8 @@ async function mission_start_phil2() {
 
   if (!(Cutscene.WasSkipped())) {
     Fx.AddExplosion(-1083.8, 352.7, 11.3, 2 /* EXPLOSION_ROCKET */);
-    Fx.AddExplosion(-1083.8, 352.7, 11.3, 9 /* EXPLOSION_HELI_BOMB */);
-    Fx.AddExplosion(-1083.8, 352.7, 11.3, 5 /* EXPLOSION_HELI */);
+    Fx.AddExplosion(-1083.8, 352.7, 11.3, 11 /* EXPLOSION_HELI_BOMB */);
+    Fx.AddExplosion(-1083.8, 352.7, 11.3, 6 /* EXPLOSION_HELI */);
   }
 
 
@@ -339,7 +339,7 @@ async function mission_start_phil2() {
   Camera.SetBehindPlayer();
   //------------------REQUEST_MODELS ------------------------------
 
-  $.player1.setMood(PLAYER_MOOD_CALM, 60000);
+  $.player1.setMood(0 /* PLAYER_MOOD_CALM */, 60000);
 
 
   Streaming.RequestModel(patriot);
@@ -809,7 +809,7 @@ $.player_z = _res413.z;
                 $.phil2_car.setCoordinates(-1183.0, -664.2, 10.5);
                 $.phil2_car.setHeading($.car_heading);
                 $.phil_noarm.setObjLeaveAnyCar();
-                $.phil_noarm.setAnimGroup(17 /* ANIM_OLD_WOMANPED */);
+                $.phil_noarm.setAnimGroup(48 /* ANIM_OLD_WOMANPED */);
               }
               Camera.SetFixedPosition(-1178.1, -676.3, 15.5, 0.0, 0.0, 0.0);
               Camera.PointAtPoint(-1183.7, -656.7, 11.1, 2 /* JUMP_CUT */);
@@ -897,7 +897,7 @@ $.player_z = _res413.z;
               $.phils_m60 = Pickup.Create(M60, 1 /* PICKUP_IN_SHOP */, -1105.9, 335.3, 11.1);
               $.phils_rocketla = Pickup.Create(rocketla, 1 /* PICKUP_IN_SHOP */, -1105.9, 330.3, 11.1);
               $.phils_flame = Pickup.Create(minigun, 1 /* PICKUP_IN_SHOP */, -1105.9, 325.3, 11.1);
-              $.phils_bomb = Pickup.Create(182 /* bomb */, 1 /* PICKUP_IN_SHOP */, -1105.9, 320.3, 11.1);
+              $.phils_bomb = Pickup.Create(bomb, 1 /* PICKUP_IN_SHOP */, -1105.9, 320.3, 11.1);
               Streaming.LoadScene(-1038.4, 309.7, 20.9);
               Camera.SetFixedPosition(-1038.4, 309.7, 20.9, 0.0, 0.0, 0.0);
               Camera.PointAtPoint(-1065.6, 322.1, 21.7, 2 /* JUMP_CUT */);
@@ -1023,34 +1023,34 @@ async function bloody_nuts() {
 $.player_x = _res415.x;
 $.player_y = _res415.y;
 $.player_z = _res415.z;
-    Fx.CreateSingleParticle(65 /* PARTICLE_TEST */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.0, 0.1);
-    Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(6 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 1.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(6 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 1.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(6 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 1.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(6 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 1.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(6 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 1.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(6 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 1.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(6 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 1.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(PARTICLE_BLOODDROP, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(PARTICLE_BLOODDROP, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(PARTICLE_BLOODDROP, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(PARTICLE_BLOODDROP, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-    Fx.CreateSingleParticle(PARTICLE_BLOODDROP, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(76 /* PARTICLE_TEST */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.0, 0.1);
+    Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(8 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 1.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(8 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 1.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(8 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 1.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(8 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 1.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(8 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 1.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(8 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 1.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(8 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 1.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(41 /* PARTICLE_BLOODDROP */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(41 /* PARTICLE_BLOODDROP */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(41 /* PARTICLE_BLOODDROP */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(41 /* PARTICLE_BLOODDROP */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+    Fx.CreateSingleParticle(41 /* PARTICLE_BLOODDROP */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
   }
   ///////////////////////////////////////////////////////////////////////////////////
 }
@@ -1066,31 +1066,31 @@ async function splurt() {
 $.player_x = _res416.x;
 $.player_y = _res416.y;
 $.player_z = _res416.z;
-  Fx.CreateSingleParticle(65 /* PARTICLE_TEST */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.0, 0.1);
-  Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-  Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-  Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-  Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-  Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-  Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-  Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-  Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-  Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-  Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-  Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-  Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-  Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-  Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
-  Fx.CreateSingleParticle(5 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+  Fx.CreateSingleParticle(76 /* PARTICLE_TEST */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.0, 0.1);
+  Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+  Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+  Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+  Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+  Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+  Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+  Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+  Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+  Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+  Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+  Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+  Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+  Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+  Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
+  Fx.CreateSingleParticle(7 /* PARTICLE_BLOOD_SMALL */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.03, 0.0);
 
 
-  Fx.CreateSingleParticle(6 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 0.1, 0.03, 0.0);
-  Fx.CreateSingleParticle(6 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 0.1, 0.03, 0.0);
-  Fx.CreateSingleParticle(6 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 0.1, 0.03, 0.0);
-  Fx.CreateSingleParticle(6 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 0.1, 0.03, 0.0);
-  Fx.CreateSingleParticle(6 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 0.1, 0.03, 0.0);
-  Fx.CreateSingleParticle(6 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 0.1, 0.03, 0.0);
-  Fx.CreateSingleParticle(6 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 0.1, 0.03, 0.0);
+  Fx.CreateSingleParticle(8 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 0.1, 0.03, 0.0);
+  Fx.CreateSingleParticle(8 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 0.1, 0.03, 0.0);
+  Fx.CreateSingleParticle(8 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 0.1, 0.03, 0.0);
+  Fx.CreateSingleParticle(8 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 0.1, 0.03, 0.0);
+  Fx.CreateSingleParticle(8 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 0.1, 0.03, 0.0);
+  Fx.CreateSingleParticle(8 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 0.1, 0.03, 0.0);
+  Fx.CreateSingleParticle(8 /* PARTICLE_BLOOD_SPURT */, $.player_x, $.player_y, $.player_z, 0.0, 0.1, 0.03, 0.0);
   ///////////////////////////////////////////////////////////////////////////////////
 
   return;

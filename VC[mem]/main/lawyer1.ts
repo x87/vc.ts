@@ -1,6 +1,6 @@
 // Generated from main/lawyer1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *******************************************************************************************
 // *******************************************************************************************
@@ -55,7 +55,7 @@ async function body() {
   Audio.LoadMissionAudio(1, "mono_1" as any);
 
 
-  Streaming.SetAreaVisible(VIS_LAWYERS);
+  Streaming.SetAreaVisible(6 /* VIS_LAWYERS */);
 
 
   Streaming.LoadSpecialCharacter(1, "CSplay");
@@ -383,7 +383,7 @@ async function body() {
   Streaming.MarkModelAsNoLongerNeeded(CUTOBJ05);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   Streaming.LoadScene(117.1, -825.6, 9.8);
 
 
@@ -434,7 +434,7 @@ async function body() {
 
 
   Text.PrintNow("LAW1_1", 10000, 1); //GET A CHANGE OF CLOTHES
-  $.colar_cuffs_blip = Blip.AddSpriteForCoord($.clothes_shopX, $.clothes_shopY, $.clothes_shopZ, RADAR_SPRITE_TSHIRT);
+  $.colar_cuffs_blip = Blip.AddSpriteForCoord($.clothes_shopX, $.clothes_shopY, $.clothes_shopZ, 28 /* RADAR_SPRITE_TSHIRT */);
 
 
   await asyncWait(3500);
@@ -1697,7 +1697,7 @@ $.the_yacht_z = _res318.z;
   merc_blip = Blip.AddForChar($.cols_daughter);
   merc_blip.remove();
   $.cols_daughter.setHeading(276.0);
-  $.cols_daughter.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+  $.cols_daughter.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
   $.cols_daughter.setRunning(true /* TRUE */);
 
 
@@ -2050,7 +2050,7 @@ async function mission_lawyer1_passed() {
   $.player1.addScore(100);
   Stat.RegisterMissionPassed("LAW_1");
   Stat.PlayerMadeProgress(1);
-  // START_NEW_SCRIPT lawyer_mission2_loop
+  // START_NEW_SCRIPT lawyer_mission2_loop 
 
 
   Zone.SetCivilianCarInfo("OCEAND1", 1 /* DAY */, 200, 0, 200, 300, 0, 0, 100, 100, 100, 500, 500);
@@ -2087,7 +2087,7 @@ async function mission_lawyer1_passed() {
 
   $.clothes_pickup2 = Pickup.CreateClothes(97.5, -1133.6, 10.4, 2);
   $.clothes2_created = 1;
-  // START_NEW_SCRIPT cloth1
+  // START_NEW_SCRIPT cloth1 
 }
 
 

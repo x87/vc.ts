@@ -1,6 +1,6 @@
 // Generated from main/bike3.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_bike3() {
 
@@ -206,7 +206,7 @@ async function mission_start_bike3() {
   Streaming.LoadSpecialCharacter(3, "mserver");
 
 
-  Streaming.SetAreaVisible(VIS_BIKER_BAR);
+  Streaming.SetAreaVisible(11 /* VIS_BIKER_BAR */);
 
 
   Streaming.LoadScene(-597.02, 642.46, 11.0);
@@ -378,7 +378,7 @@ async function mission_start_bike3() {
   Streaming.UnloadSpecialCharacter(3);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   World.ClearExtraColors(false /* FALSE */);
@@ -389,7 +389,7 @@ async function mission_start_bike3() {
   // ****************************************END OF CUTSCENE**********************************
 
 
-  $.player1.setMood(PLAYER_MOOD_PISSED_OFF, 60000);
+  $.player1.setMood(1 /* PLAYER_MOOD_PISSED_OFF */, 60000);
 
 
   $.player1.setControl(false /* OFF */);
@@ -627,37 +627,37 @@ async function mission_skip_bike3() {
   }
 
 
-  $.alarm_bike3 = Sound.AddContinuous(-702.16, 1215.37, 23.17, SOUND_BANK_ALARM_LOOP);
+  $.alarm_bike3 = Sound.AddContinuous(-702.16, 1215.37, 23.17, 0 /* SOUND_BANK_ALARM_LOOP */);
   $.alarm_bike3.remove();
 
 
   $.chase_car1_bike3 = Car.Create(GANGBUR, -518.54, 694.10, 10.89);
-  $.chase_guard1_bike3 = Char.CreateInsideCar($.chase_car1_bike3, PEDTYPE_GANG_STREET, SGb);
-  $.chase_guard5_bike3 = Char.CreateAsPassenger($.chase_car1_bike3, PEDTYPE_GANG_STREET, SGb, 0);
+  $.chase_guard1_bike3 = Char.CreateInsideCar($.chase_car1_bike3, 9 /* PEDTYPE_GANG_STREET */, SGb);
+  $.chase_guard5_bike3 = Char.CreateAsPassenger($.chase_car1_bike3, 9 /* PEDTYPE_GANG_STREET */, SGb, 0);
   $.chase_guard1_bike3.delete();
   $.chase_guard5_bike3.delete();
   $.chase_car1_bike3.delete();
 
 
   $.chase_car2_bike3 = Car.Create(GANGBUR, -296.53, 1254.60, 10.11);
-  $.chase_guard2_bike3 = Char.CreateInsideCar($.chase_car2_bike3, PEDTYPE_GANG_STREET, SGa);
-  $.chase_guard6_bike3 = Char.CreateAsPassenger($.chase_car2_bike3, PEDTYPE_GANG_STREET, SGb, 0);
+  $.chase_guard2_bike3 = Char.CreateInsideCar($.chase_car2_bike3, 9 /* PEDTYPE_GANG_STREET */, SGa);
+  $.chase_guard6_bike3 = Char.CreateAsPassenger($.chase_car2_bike3, 9 /* PEDTYPE_GANG_STREET */, SGb, 0);
   $.chase_guard2_bike3.delete();
   $.chase_guard6_bike3.delete();
   $.chase_car2_bike3.delete();
 
 
   $.chase_car3_bike3 = Car.Create(GANGBUR, -857.96, 1137.78, 9.79);
-  $.chase_guard3_bike3 = Char.CreateInsideCar($.chase_car3_bike3, PEDTYPE_GANG_STREET, SGa);
-  $.chase_guard7_bike3 = Char.CreateAsPassenger($.chase_car3_bike3, PEDTYPE_GANG_STREET, SGb, 0);
+  $.chase_guard3_bike3 = Char.CreateInsideCar($.chase_car3_bike3, 9 /* PEDTYPE_GANG_STREET */, SGa);
+  $.chase_guard7_bike3 = Char.CreateAsPassenger($.chase_car3_bike3, 9 /* PEDTYPE_GANG_STREET */, SGb, 0);
   $.chase_guard3_bike3.delete();
   $.chase_guard7_bike3.delete();
   $.chase_car3_bike3.delete();
 
 
   $.chase_car4_bike3 = Car.Create(GANGBUR, -604.24, 664.34, 9.91);
-  $.chase_guard4_bike3 = Char.CreateInsideCar($.chase_car4_bike3, PEDTYPE_GANG_STREET, SGb);
-  $.chase_guard8_bike3 = Char.CreateAsPassenger($.chase_car4_bike3, PEDTYPE_GANG_STREET, SGb, 0);
+  $.chase_guard4_bike3 = Char.CreateInsideCar($.chase_car4_bike3, 9 /* PEDTYPE_GANG_STREET */, SGb);
+  $.chase_guard8_bike3 = Char.CreateAsPassenger($.chase_car4_bike3, 9 /* PEDTYPE_GANG_STREET */, SGb, 0);
   $.chase_guard4_bike3.delete();
   $.chase_guard8_bike3.delete();
   $.chase_car4_bike3.delete();
@@ -696,7 +696,7 @@ async function mission_skip_bike3() {
   // Creates guard1 on roof left hand side follows route 0
 
 
-  $.guard1_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGa, -750.93, 1235.44, 23.73);
+  $.guard1_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -750.93, 1235.44, 23.73);
 
 
   $.guard1_bike3.clearThreatSearch();
@@ -710,7 +710,7 @@ async function mission_skip_bike3() {
   // Creates guard2 on roof right hand side follows route 1
 
 
-  $.guard2_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGa, -659.81, 1257.07, 23.17);
+  $.guard2_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -659.81, 1257.07, 23.17);
 
 
   $.guard2_bike3.clearThreatSearch();
@@ -724,7 +724,7 @@ async function mission_skip_bike3() {
   // Creates guard3 on left hand side by the bike in the garage, patrols by the door that extra guards come out of Route 2
 
 
-  $.guard3_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGa, -692.32, 1250.27, 10.20);
+  $.guard3_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -692.32, 1250.27, 10.20);
 
 
   $.guard3_bike3.clearThreatSearch();
@@ -738,7 +738,7 @@ async function mission_skip_bike3() {
   // Creates guard4 on left hand side by chain link fence follows route 3
 
 
-  $.guard4_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGb, -757.70, 1214.37, 10.07);
+  $.guard4_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGb, -757.70, 1214.37, 10.07);
 
 
   $.guard4_bike3.clearThreatSearch();
@@ -752,7 +752,7 @@ async function mission_skip_bike3() {
   // Creates guard5 on right hand side of bike working on it
 
 
-  $.guard5_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGa, -699.21, 1300.28, 10.76);
+  $.guard5_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -699.21, 1300.28, 10.76);
 
 
   $.guard5_bike3.clearThreatSearch();
@@ -766,7 +766,7 @@ async function mission_skip_bike3() {
   // Creates guard6 on left hand side of bike working on it
 
 
-  $.guard6_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGb, -701.04, 1300.24, 10.76);
+  $.guard6_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGb, -701.04, 1300.24, 10.76);
 
 
   $.guard6_bike3.clearThreatSearch();
@@ -1009,7 +1009,7 @@ async function cut_skip_bike3() {
   $.scplayer.setObjNoObj();
 
 
-  $.bike_driver_bike3 = Char.Create(PEDTYPE_GANG_BIKER, BKa, -608.72, 650.20, 10.06);
+  $.bike_driver_bike3 = Char.Create(12 /* PEDTYPE_GANG_BIKER */, BKa, -608.72, 650.20, 10.06);
   $.bike_driver_bike3.clearThreatSearch();
   $.bike_driver_bike3.setRunning(true /* TRUE */);
 
@@ -1209,9 +1209,9 @@ async function guard_check_bike3() {
           if ($.flag_alarm_sounded_bike3 == 0) {
             if ($.flag_ped1_go_for_alarm_bike3 == 1) {
               if ($.guard1_bike3.locateStoppedOnFoot3D(-693.58, 1213.18, 23.16, 1.0, 1.0, 2.0, false /* FALSE */)) {
-                $.alarm_bike3 = Sound.AddContinuous(-693.58, 1213.18, 23.16, SOUND_BANK_ALARM_LOOP);
+                $.alarm_bike3 = Sound.AddContinuous(-693.58, 1213.18, 23.16, 0 /* SOUND_BANK_ALARM_LOOP */);
                 $.flag_attack_player_bike3 = 1;
-                $.guard1_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 1.0, RUN);
+                $.guard1_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 1.0, 1 /* RUN */);
                 $.guard1_bike3.setObjKillPlayerOnFoot($.player1);
                 $.flag_alarm_sounded_bike3 = 1;
               }
@@ -1222,7 +1222,7 @@ async function guard_check_bike3() {
 
           }
           else {
-            $.guard1_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+            $.guard1_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
             $.guard1_bike3.setObjKillPlayerOnFoot($.player1);
           }
 
@@ -1260,9 +1260,9 @@ async function guard_check_bike3() {
           if ($.flag_alarm_sounded_bike3 == 0) {
             if ($.flag_ped2_go_for_alarm_bike3 == 1) {
               if ($.guard2_bike3.locateStoppedOnFoot3D(-693.58, 1213.18, 23.16, 1.0, 1.0, 2.0, false /* FALSE */)) {
-                $.alarm_bike3 = Sound.AddContinuous(-693.58, 1213.18, 23.16, SOUND_BANK_ALARM_LOOP);
+                $.alarm_bike3 = Sound.AddContinuous(-693.58, 1213.18, 23.16, 0 /* SOUND_BANK_ALARM_LOOP */);
                 $.flag_attack_player_bike3 = 1;
-                $.guard2_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+                $.guard2_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
                 $.guard2_bike3.setObjKillPlayerOnFoot($.player1);
                 $.flag_alarm_sounded_bike3 = 1;
               }
@@ -1273,7 +1273,7 @@ async function guard_check_bike3() {
 
           }
           else {
-            $.guard2_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+            $.guard2_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
             $.guard2_bike3.setObjKillPlayerOnFoot($.player1);
           }
 
@@ -1308,7 +1308,7 @@ async function guard_check_bike3() {
             //		guard3_got_ai_1time_bike3 = 1
             //	ENDIF
 
-            $.guard3_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+            $.guard3_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
             $.guard3_bike3.setObjKillPlayerOnFoot($.player1);
 
 
@@ -1345,7 +1345,7 @@ async function guard_check_bike3() {
             //		guard4_got_ai_1time_bike3 = 1
             //	ENDIF
 
-            $.guard4_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+            $.guard4_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
             $.guard4_bike3.setObjKillPlayerOnFoot($.player1);
 
 
@@ -1382,7 +1382,7 @@ async function guard_check_bike3() {
             ////		guard5_got_ai_1time_bike3 = 1
             //	ENDIF
 
-            $.guard5_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+            $.guard5_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
             $.guard5_bike3.setObjKillPlayerOnFoot($.player1);
 
 
@@ -1419,7 +1419,7 @@ async function guard_check_bike3() {
             //		guard6_got_ai_1time_bike3 = 1
             //	ENDIF
 
-            $.guard6_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+            $.guard6_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
             $.guard6_bike3.setObjKillPlayerOnFoot($.player1);
 
 
@@ -1479,56 +1479,56 @@ async function alarm_guard_creation_bike3() {
               $.guard_number_bike3 = -1;
               if ($.flag_guard1_state_bike3 == 0 || $.flag_guard1_state_bike3 == 2) {
                 World.ClearArea(-690.84, 1298.62, 10.76, 4.0, false /* FALSE */);
-                $.created_guard1_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGa, -690.84, 1298.62, 10.76);
+                $.created_guard1_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -690.84, 1298.62, 10.76);
                 $.guard_number_bike3 = $.created_guard1_bike3;
                 $.flag_guard1_state_bike3 = 1;
               }
               else {
                 if ($.flag_guard2_state_bike3 == 0 || $.flag_guard2_state_bike3 == 2) {
                   World.ClearArea(-690.84, 1298.62, 10.76, 4.0, false /* FALSE */);
-                  $.created_guard2_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGa, -690.84, 1298.62, 10.76);
+                  $.created_guard2_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -690.84, 1298.62, 10.76);
                   $.guard_number_bike3 = $.created_guard2_bike3;
                   $.flag_guard2_state_bike3 = 1;
                 }
                 else {
                   if ($.flag_guard3_state_bike3 == 0 || $.flag_guard3_state_bike3 == 2) {
                     World.ClearArea(-690.84, 1298.62, 10.76, 4.0, false /* FALSE */);
-                    $.created_guard3_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGa, -690.84, 1298.62, 10.76);
+                    $.created_guard3_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -690.84, 1298.62, 10.76);
                     $.guard_number_bike3 = $.created_guard3_bike3;
                     $.flag_guard3_state_bike3 = 1;
                   }
                   else {
                     if ($.flag_guard4_state_bike3 == 0 || $.flag_guard4_state_bike3 == 2) {
                       World.ClearArea(-690.84, 1298.62, 10.76, 4.0, false /* FALSE */);
-                      $.created_guard4_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGa, -690.84, 1298.62, 10.76);
+                      $.created_guard4_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -690.84, 1298.62, 10.76);
                       $.guard_number_bike3 = $.created_guard4_bike3;
                       $.flag_guard4_state_bike3 = 1;
                     }
                     else {
                       if ($.flag_guard5_state_bike3 == 0 || $.flag_guard5_state_bike3 == 2) {
                         World.ClearArea(-690.84, 1298.62, 10.76, 4.0, false /* FALSE */);
-                        $.created_guard5_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGa, -690.84, 1298.62, 10.76);
+                        $.created_guard5_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -690.84, 1298.62, 10.76);
                         $.guard_number_bike3 = $.created_guard5_bike3;
                         $.flag_guard5_state_bike3 = 1;
                       }
                       else {
                         if ($.flag_guard6_state_bike3 == 0 || $.flag_guard6_state_bike3 == 2) {
                           World.ClearArea(-690.84, 1298.62, 10.76, 4.0, false /* FALSE */);
-                          $.created_guard6_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGa, -690.84, 1298.62, 10.76);
+                          $.created_guard6_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -690.84, 1298.62, 10.76);
                           $.guard_number_bike3 = $.created_guard6_bike3;
                           $.flag_guard6_state_bike3 = 1;
                         }
                         else {
                           if ($.flag_guard7_state_bike3 == 0 || $.flag_guard7_state_bike3 == 2) {
                             World.ClearArea(-690.84, 1298.62, 10.76, 4.0, false /* FALSE */);
-                            $.created_guard7_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGa, -690.84, 1298.62, 10.76);
+                            $.created_guard7_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -690.84, 1298.62, 10.76);
                             $.guard_number_bike3 = $.created_guard7_bike3;
                             $.flag_guard7_state_bike3 = 1;
                           }
                           else {
                             if ($.flag_guard8_state_bike3 == 0 || $.flag_guard8_state_bike3 == 2) {
                               World.ClearArea(-690.84, 1298.62, 10.76, 4.0, false /* FALSE */);
-                              $.created_guard8_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGa, -690.84, 1298.62, 10.76);
+                              $.created_guard8_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -690.84, 1298.62, 10.76);
                               $.guard_number_bike3 = $.created_guard8_bike3;
                               $.flag_guard8_state_bike3 = 1;
                             }
@@ -1583,14 +1583,14 @@ async function alarm_guard_creation_bike3() {
               $.guard_number2_bike3 = -1;
               if ($.flag_guard9_state_bike3 == 0 || $.flag_guard9_state_bike3 == 2) {
                 World.ClearArea(-733.7, 1263.0, 10.8, 4.0, false /* FALSE */);
-                $.created_guard9_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGb, -733.7, 1263.0, 10.8);
+                $.created_guard9_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGb, -733.7, 1263.0, 10.8);
                 $.guard_number2_bike3 = $.created_guard9_bike3;
                 $.flag_guard9_state_bike3 = 1;
               }
               else {
                 if ($.flag_guard10_state_bike3 == 0 || $.flag_guard10_state_bike3 == 2) {
                   World.ClearArea(-733.7, 1263.0, 10.8, 4.0, false /* FALSE */);
-                  $.created_guard10_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGb, -733.7, 1263.0, 10.8);
+                  $.created_guard10_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGb, -733.7, 1263.0, 10.8);
                   $.guard_number2_bike3 = $.created_guard10_bike3;
                   $.flag_guard10_state_bike3 = 1;
                 }
@@ -1599,42 +1599,42 @@ async function alarm_guard_creation_bike3() {
 
                   if ($.flag_guard11_state_bike3 == 0 || $.flag_guard11_state_bike3 == 2) {
                     World.ClearArea(-733.7, 1263.0, 10.8, 4.0, false /* FALSE */);
-                    $.created_guard11_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGb, -733.7, 1263.0, 10.8);
+                    $.created_guard11_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGb, -733.7, 1263.0, 10.8);
                     $.guard_number2_bike3 = $.created_guard11_bike3;
                     $.flag_guard11_state_bike3 = 1;
                   }
                   else {
                     if ($.flag_guard12_state_bike3 == 0 || $.flag_guard12_state_bike3 == 2) {
                       World.ClearArea(-733.7, 1263.0, 10.8, 4.0, false /* FALSE */);
-                      $.created_guard12_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGb, -733.7, 1263.0, 10.8);
+                      $.created_guard12_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGb, -733.7, 1263.0, 10.8);
                       $.guard_number2_bike3 = $.created_guard12_bike3;
                       $.flag_guard12_state_bike3 = 1;
                     }
                     else {
                       if ($.flag_guard13_state_bike3 == 0 || $.flag_guard13_state_bike3 == 2) {
                         World.ClearArea(-733.7, 1263.0, 10.8, 4.0, false /* FALSE */);
-                        $.created_guard13_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGb, -733.7, 1263.0, 10.8);
+                        $.created_guard13_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGb, -733.7, 1263.0, 10.8);
                         $.guard_number2_bike3 = $.created_guard13_bike3;
                         $.flag_guard13_state_bike3 = 1;
                       }
                       else {
                         if ($.flag_guard14_state_bike3 == 0 || $.flag_guard14_state_bike3 == 2) {
                           World.ClearArea(-733.7, 1263.0, 10.8, 4.0, false /* FALSE */);
-                          $.created_guard14_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGb, -733.7, 1263.0, 10.8);
+                          $.created_guard14_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGb, -733.7, 1263.0, 10.8);
                           $.guard_number2_bike3 = $.created_guard14_bike3;
                           $.flag_guard14_state_bike3 = 1;
                         }
                         else {
                           if ($.flag_guard15_state_bike3 == 0 || $.flag_guard15_state_bike3 == 2) {
                             World.ClearArea(-733.7, 1263.0, 10.8, 4.0, false /* FALSE */);
-                            $.created_guard15_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGb, -733.7, 1263.0, 10.8);
+                            $.created_guard15_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGb, -733.7, 1263.0, 10.8);
                             $.guard_number2_bike3 = $.created_guard15_bike3;
                             $.flag_guard15_state_bike3 = 1;
                           }
                           else {
                             if ($.flag_guard16_state_bike3 == 0 || $.flag_guard16_state_bike3 == 2) {
                               World.ClearArea(-733.7, 1263.0, 10.8, 4.0, false /* FALSE */);
-                              $.created_guard16_bike3 = Char.Create(PEDTYPE_GANG_STREET, SGb, -733.7, 1263.0, 10.8);
+                              $.created_guard16_bike3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGb, -733.7, 1263.0, 10.8);
                               $.guard_number2_bike3 = $.created_guard16_bike3;
                               $.flag_guard16_state_bike3 = 1;
                             }
@@ -1703,12 +1703,12 @@ async function guard_AI_bike3() {
       if ($.guard_number_bike3.locateOnFoot3D(-691.25, 1294.99, 10.76, 1.0, 1.0, 2.0, false /* FALSE */)) {
         if ($.total_guards_created_bike3 > 29) {
           $.guard_number_bike3.setHealth(200);
-          $.guard_number_bike3.giveWeapon(WEAPONTYPE_M4, 30000); // Set to infinate ammo
+          $.guard_number_bike3.giveWeapon(26 /* WEAPONTYPE_M4 */, 30000); // Set to infinate ammo
         }
         else {
-          $.guard_number_bike3.giveWeapon(WEAPONTYPE_TEC9, 30000); // Set to infinate ammo
+          $.guard_number_bike3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000); // Set to infinate ammo
         }
-        $.guard_number_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+        $.guard_number_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
         $.guard_number_bike3.setObjKillPlayerOnFoot($.player1);
         $.flag_created_bloke_in_area_bike3 = 2;
       }
@@ -1729,12 +1729,12 @@ async function guard_AI_bike3() {
       if ($.guard_number2_bike3.locateOnFoot3D(-730.6, 1262.8, 10.8, 1.0, 1.0, 2.0, false /* FALSE */)) {
         if ($.total_guards_created_bike3 > 29) {
           $.guard_number2_bike3.setHealth(200);
-          $.guard_number2_bike3.giveWeapon(WEAPONTYPE_M4, 30000); // Set to infinate ammo
+          $.guard_number2_bike3.giveWeapon(26 /* WEAPONTYPE_M4 */, 30000); // Set to infinate ammo
         }
         else {
-          $.guard_number2_bike3.giveWeapon(WEAPONTYPE_TEC9, 30000); // Set to infinate ammo
+          $.guard_number2_bike3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000); // Set to infinate ammo
         }
-        $.guard_number2_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+        $.guard_number2_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
         $.guard_number2_bike3.setObjKillPlayerOnFoot($.player1);
         $.flag_created_bloke_in_area2_bike3 = 2;
       }
@@ -1765,7 +1765,7 @@ async function alarm_guard_death_bike3() {
           $.flag_guard1_state_bike3 = 2;
         }
         else {
-          $.created_guard1_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+          $.created_guard1_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
           $.created_guard1_bike3.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -1782,7 +1782,7 @@ async function alarm_guard_death_bike3() {
           $.flag_guard2_state_bike3 = 2;
         }
         else {
-          $.created_guard2_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+          $.created_guard2_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
           $.created_guard2_bike3.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -1799,7 +1799,7 @@ async function alarm_guard_death_bike3() {
           $.flag_guard3_state_bike3 = 2;
         }
         else {
-          $.created_guard3_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+          $.created_guard3_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
           $.created_guard3_bike3.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -1816,7 +1816,7 @@ async function alarm_guard_death_bike3() {
           $.flag_guard4_state_bike3 = 2;
         }
         else {
-          $.created_guard4_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+          $.created_guard4_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
           $.created_guard4_bike3.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -1833,7 +1833,7 @@ async function alarm_guard_death_bike3() {
           $.flag_guard5_state_bike3 = 2;
         }
         else {
-          $.created_guard5_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+          $.created_guard5_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
           $.created_guard5_bike3.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -1850,7 +1850,7 @@ async function alarm_guard_death_bike3() {
           $.flag_guard7_state_bike3 = 2;
         }
         else {
-          $.created_guard7_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+          $.created_guard7_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
           $.created_guard7_bike3.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -1867,7 +1867,7 @@ async function alarm_guard_death_bike3() {
           $.flag_guard8_state_bike3 = 2;
         }
         else {
-          $.created_guard8_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+          $.created_guard8_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
           $.created_guard8_bike3.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -1884,7 +1884,7 @@ async function alarm_guard_death_bike3() {
           $.flag_guard9_state_bike3 = 2;
         }
         else {
-          $.created_guard9_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+          $.created_guard9_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
           $.created_guard9_bike3.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -1901,7 +1901,7 @@ async function alarm_guard_death_bike3() {
           $.flag_guard10_state_bike3 = 2;
         }
         else {
-          $.created_guard10_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+          $.created_guard10_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
           $.created_guard10_bike3.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -1918,7 +1918,7 @@ async function alarm_guard_death_bike3() {
           $.flag_guard11_state_bike3 = 2;
         }
         else {
-          $.created_guard11_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+          $.created_guard11_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
           $.created_guard11_bike3.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -1935,7 +1935,7 @@ async function alarm_guard_death_bike3() {
           $.flag_guard12_state_bike3 = 2;
         }
         else {
-          $.created_guard12_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+          $.created_guard12_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
           $.created_guard12_bike3.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -1952,7 +1952,7 @@ async function alarm_guard_death_bike3() {
           $.flag_guard13_state_bike3 = 2;
         }
         else {
-          $.created_guard13_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+          $.created_guard13_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
           $.created_guard13_bike3.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -1969,7 +1969,7 @@ async function alarm_guard_death_bike3() {
           $.flag_guard14_state_bike3 = 2;
         }
         else {
-          $.created_guard14_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+          $.created_guard14_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
           $.created_guard14_bike3.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -1986,7 +1986,7 @@ async function alarm_guard_death_bike3() {
           $.flag_guard15_state_bike3 = 2;
         }
         else {
-          $.created_guard15_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+          $.created_guard15_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
           $.created_guard15_bike3.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -2003,7 +2003,7 @@ async function alarm_guard_death_bike3() {
           $.flag_guard16_state_bike3 = 2;
         }
         else {
-          $.created_guard16_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, RUN);
+          $.created_guard16_bike3.followPath($.player_x_bike3, $.player_y_bike3, $.player_z_bike3, 0.5, 1 /* RUN */);
           $.created_guard16_bike3.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -2082,14 +2082,14 @@ async function chase_creation_bike3() {
 
     $.chase_car1_bike3 = Car.Create(GANGBUR, -783.346, 1367.562, 10.603);
     $.chase_car1_bike3.setHeading(192.0);
-    $.chase_guard1_bike3 = Char.CreateInsideCar($.chase_car1_bike3, PEDTYPE_GANG_STREET, SGb);
-    $.chase_guard5_bike3 = Char.CreateAsPassenger($.chase_car1_bike3, PEDTYPE_GANG_STREET, SGa, 0);
+    $.chase_guard1_bike3 = Char.CreateInsideCar($.chase_car1_bike3, 9 /* PEDTYPE_GANG_STREET */, SGb);
+    $.chase_guard5_bike3 = Char.CreateAsPassenger($.chase_car1_bike3, 9 /* PEDTYPE_GANG_STREET */, SGa, 0);
     $.chase_guard1_bike3.clearThreatSearch();
     $.chase_guard5_bike3.clearThreatSearch();
     $.chase_guard1_bike3.setThreatSearch(1 /* THREAT_PLAYER1 */);
-    $.chase_guard1_bike3.giveWeapon(WEAPONTYPE_TEC9, 30000); // Set to infinate ammo
+    $.chase_guard1_bike3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000); // Set to infinate ammo
     $.chase_guard5_bike3.setThreatSearch(1 /* THREAT_PLAYER1 */);
-    $.chase_guard5_bike3.giveWeapon(WEAPONTYPE_TEC9, 30000); // Set to infinate ammo
+    $.chase_guard5_bike3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000); // Set to infinate ammo
     $.chase_guard1_bike3.setObjKillPlayerAnyMeans($.player1);
     $.chase_guard5_bike3.setObjKillPlayerAnyMeans($.player1);
     $.chase_car1_bike3.setForwardSpeed(30.0);
@@ -2099,14 +2099,14 @@ async function chase_creation_bike3() {
 
     $.chase_car2_bike3 = Car.Create(GANGBUR, -791.841, 1376.640, 10.422);
     $.chase_car2_bike3.setHeading(258.512);
-    $.chase_guard2_bike3 = Char.CreateInsideCar($.chase_car2_bike3, PEDTYPE_GANG_STREET, SGa);
+    $.chase_guard2_bike3 = Char.CreateInsideCar($.chase_car2_bike3, 9 /* PEDTYPE_GANG_STREET */, SGa);
     $.chase_guard2_bike3.clearThreatSearch();
     $.chase_guard2_bike3.setThreatSearch(1 /* THREAT_PLAYER1 */);
-    $.chase_guard2_bike3.giveWeapon(WEAPONTYPE_TEC9, 30000); // Set to infinate ammo
-    $.chase_guard6_bike3 = Char.CreateAsPassenger($.chase_car2_bike3, PEDTYPE_GANG_STREET, SGb, 0);
+    $.chase_guard2_bike3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000); // Set to infinate ammo
+    $.chase_guard6_bike3 = Char.CreateAsPassenger($.chase_car2_bike3, 9 /* PEDTYPE_GANG_STREET */, SGb, 0);
     $.chase_guard6_bike3.clearThreatSearch();
     $.chase_guard6_bike3.setThreatSearch(1 /* THREAT_PLAYER1 */);
-    $.chase_guard6_bike3.giveWeapon(WEAPONTYPE_TEC9, 30000); // Set to infinate ammo
+    $.chase_guard6_bike3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000); // Set to infinate ammo
     $.chase_guard2_bike3.setObjKillPlayerAnyMeans($.player1);
     $.chase_guard6_bike3.setObjKillPlayerAnyMeans($.player1);
     $.chase_car2_bike3.setForwardSpeed(30.0);
@@ -2116,14 +2116,14 @@ async function chase_creation_bike3() {
 
     $.chase_car3_bike3 = Car.Create(GANGBUR, -295.967, 1255.681, 10.142);
     $.chase_car3_bike3.setHeading(357.556);
-    $.chase_guard3_bike3 = Char.CreateInsideCar($.chase_car3_bike3, PEDTYPE_GANG_STREET, SGa);
+    $.chase_guard3_bike3 = Char.CreateInsideCar($.chase_car3_bike3, 9 /* PEDTYPE_GANG_STREET */, SGa);
     $.chase_guard3_bike3.clearThreatSearch();
     $.chase_guard3_bike3.setThreatSearch(1 /* THREAT_PLAYER1 */);
-    $.chase_guard3_bike3.giveWeapon(WEAPONTYPE_TEC9, 30000); // Set to infinate ammo
-    $.chase_guard7_bike3 = Char.CreateAsPassenger($.chase_car3_bike3, PEDTYPE_GANG_STREET, SGb, 0);
+    $.chase_guard3_bike3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000); // Set to infinate ammo
+    $.chase_guard7_bike3 = Char.CreateAsPassenger($.chase_car3_bike3, 9 /* PEDTYPE_GANG_STREET */, SGb, 0);
     $.chase_guard7_bike3.clearThreatSearch();
     $.chase_guard7_bike3.setThreatSearch(1 /* THREAT_PLAYER1 */);
-    $.chase_guard7_bike3.giveWeapon(WEAPONTYPE_TEC9, 30000); // Set to infinate ammo
+    $.chase_guard7_bike3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000); // Set to infinate ammo
     $.chase_guard3_bike3.setObjKillPlayerAnyMeans($.player1);
     $.chase_guard7_bike3.setObjKillPlayerAnyMeans($.player1);
     $.chase_car3_bike3.setForwardSpeed(30.0);
@@ -2133,14 +2133,14 @@ async function chase_creation_bike3() {
 
     $.chase_car4_bike3 = Car.Create(GANGBUR, -585.145, 666.533, 9.917);
     $.chase_car4_bike3.setHeading(286.737);
-    $.chase_guard4_bike3 = Char.CreateInsideCar($.chase_car4_bike3, PEDTYPE_GANG_STREET, SGb);
+    $.chase_guard4_bike3 = Char.CreateInsideCar($.chase_car4_bike3, 9 /* PEDTYPE_GANG_STREET */, SGb);
     $.chase_guard4_bike3.clearThreatSearch();
     $.chase_guard4_bike3.setThreatSearch(1 /* THREAT_PLAYER1 */);
-    $.chase_guard4_bike3.giveWeapon(WEAPONTYPE_TEC9, 30000); // Set to infinate ammo
-    $.chase_guard8_bike3 = Char.CreateAsPassenger($.chase_car4_bike3, PEDTYPE_GANG_STREET, SGb, 0);
+    $.chase_guard4_bike3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000); // Set to infinate ammo
+    $.chase_guard8_bike3 = Char.CreateAsPassenger($.chase_car4_bike3, 9 /* PEDTYPE_GANG_STREET */, SGb, 0);
     $.chase_guard8_bike3.clearThreatSearch();
     $.chase_guard8_bike3.setThreatSearch(1 /* THREAT_PLAYER1 */);
-    $.chase_guard8_bike3.giveWeapon(WEAPONTYPE_TEC9, 30000); // Set to infinate ammo
+    $.chase_guard8_bike3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000); // Set to infinate ammo
     $.chase_guard4_bike3.setObjKillPlayerAnyMeans($.player1);
     $.chase_guard8_bike3.setObjKillPlayerAnyMeans($.player1);
     $.chase_car4_bike3.setForwardSpeed(30.0);
@@ -2163,7 +2163,7 @@ async function guard_AI2_bike3() {
         if (!($.guard1_bike3.isWaitingForWorldCollision())) {
           $.guard1_bike3.clearThreatSearch();
           $.guard1_bike3.setThreatSearch(1 /* THREAT_PLAYER1 */);
-          $.guard1_bike3.giveWeapon(WEAPONTYPE_TEC9, 30000); // sets the gun to infinate ammo
+          $.guard1_bike3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000); // sets the gun to infinate ammo
           Path.AddRoutePoint(0, -751.91, 1212.63, 23.17);
           Path.AddRoutePoint(0, -751.87, 1204.57, 23.17);
           Path.AddRoutePoint(0, -746.22, 1200.42, 23.17);
@@ -2194,7 +2194,7 @@ async function guard_AI2_bike3() {
         if (!($.guard2_bike3.isWaitingForWorldCollision())) {
           $.guard2_bike3.clearThreatSearch();
           $.guard2_bike3.setThreatSearch(1 /* THREAT_PLAYER1 */);
-          $.guard2_bike3.giveWeapon(WEAPONTYPE_TEC9, 30000); // sets the gun to infinate ammo
+          $.guard2_bike3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000); // sets the gun to infinate ammo
           Path.AddRoutePoint(1, -659.65, 1239.53, 23.17);
           Path.AddRoutePoint(1, -659.42, 1214.94, 23.87);
           Path.AddRoutePoint(1, -659.33, 1202.42, 23.29);
@@ -2225,7 +2225,7 @@ async function guard_AI2_bike3() {
         if (!($.guard3_bike3.isWaitingForWorldCollision())) {
           $.guard3_bike3.clearThreatSearch();
           $.guard3_bike3.setThreatSearch(1 /* THREAT_PLAYER1 */);
-          $.guard3_bike3.giveWeapon(WEAPONTYPE_TEC9, 30000); // sets the gun to infinate ammo
+          $.guard3_bike3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000); // sets the gun to infinate ammo
           Path.AddRoutePoint(2, -690.88, 1271.50, 10.76);
           Path.AddRoutePoint(2, -691.99, 1294.35, 10.76);
           Path.AddRoutePoint(2, -690.88, 1271.50, 10.76);
@@ -2248,7 +2248,7 @@ async function guard_AI2_bike3() {
         if (!($.guard4_bike3.isWaitingForWorldCollision())) {
           $.guard4_bike3.clearThreatSearch();
           $.guard4_bike3.setThreatSearch(1 /* THREAT_PLAYER1 */);
-          $.guard4_bike3.giveWeapon(WEAPONTYPE_TEC9, 30000); // sets the gun to infinate ammo
+          $.guard4_bike3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000); // sets the gun to infinate ammo
           Path.AddRoutePoint(3, -756.20, 1227.72, 10.07);
           Path.AddRoutePoint(3, -755.89, 1243.83, 10.07);
           Path.AddRoutePoint(3, -755.94, 1257.21, 10.38);

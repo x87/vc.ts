@@ -1,6 +1,6 @@
 // Generated from main/rcplne1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_rcplane() {
 
@@ -366,16 +366,16 @@ async function rcp_race_start() {
   Game.SetEveryoneIgnorePlayer($.player1, true /* TRUE */);
   Game.SetAllCarsCanBeDamaged(false /* FALSE */);
   Text.PrintBig("RACE2", 1100, 4);
-  Sound.AddOneOffSound(0.0, 0.0, 0.0, 97 /* SOUND_RACE_START_3 */);
+  Sound.AddOneOffSound(0.0, 0.0, 0.0, 7 /* SOUND_RACE_START_3 */);
   await asyncWait(1000);
   Text.PrintBig("RACE3", 1100, 4);
-  Sound.AddOneOffSound(0.0, 0.0, 0.0, 98 /* SOUND_RACE_START_2 */);
+  Sound.AddOneOffSound(0.0, 0.0, 0.0, 8 /* SOUND_RACE_START_2 */);
   await asyncWait(1000);
   Text.PrintBig("RACE4", 1100, 4);
-  Sound.AddOneOffSound(0.0, 0.0, 0.0, 99 /* SOUND_RACE_START_1 */);
+  Sound.AddOneOffSound(0.0, 0.0, 0.0, 9 /* SOUND_RACE_START_1 */);
   await asyncWait(1000);
   Text.PrintBig("RACE5", 800, 4); //"GO!"
-  Sound.AddOneOffSound(0.0, 0.0, 0.0, 100 /* SOUND_RACE_START_GO */);
+  Sound.AddOneOffSound(0.0, 0.0, 0.0, 10 /* SOUND_RACE_START_GO */);
   $.player1.setControl(true /* ON */);
   Game.SetEveryoneIgnorePlayer($.player1, false /* FALSE */);
   Game.SetAllCarsCanBeDamaged(true /* TRUE */);
@@ -466,7 +466,7 @@ async function rcp_race_start() {
   //GET_GAME_TIMER rcp_race_timer_start
 
   $.rcp_race_timer = 0;
-  Hud.DisplayTimerWithString($.$id.rcp_race_timer, TIMER_UP, "RCH1_5");
+  Hud.DisplayTimerWithString($.$id.rcp_race_timer, 0 /* TIMER_UP */, "RCH1_5");
 
 
   if (Car.IsDead($.rcp_playerplane)) {
@@ -491,7 +491,7 @@ async function rcp_race_start() {
       if ($.rcp_playerplane.locate3D($.rcp_player1_cp_x, $.rcp_player1_cp_y, $.rcp_player1_cp_z, 7.5, 7.5, 7.5, false)) {
         ++$.rcp_player_cpcounter;
         $.rcp_blip_chase.remove();
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.rcp_second_blip.remove();
         $.rcp_gosub_cpcounter = $.rcp_player_cpcounter;
         await rcp_get_next_checkpoint();  // SCM GOSUB rcp_get_next_checkpoint

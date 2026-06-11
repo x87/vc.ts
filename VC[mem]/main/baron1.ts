@@ -1,6 +1,6 @@
 // Generated from main/baron1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *******************************************************************************************
 // *******************************************************************************************
@@ -46,7 +46,7 @@ async function body() {
   Audio.LoadMissionAudio(1, "mono10" as any);
 
 
-  Streaming.SetAreaVisible(VIS_MANSION);
+  Streaming.SetAreaVisible(2 /* VIS_MANSION */);
 
 
   Streaming.LoadSpecialCharacter(1, "CSplay");
@@ -183,7 +183,7 @@ async function body() {
 
 
   if (!(Cutscene.WasSkipped())) {
-    Fx.AddMovingParticleEffect(15 /* POBJECT_FIREBALL_AND_SMOKE */, -375.4, -595.8, 25.75, 0.05, 0.05, 0.05, 0.2, 0, 0, 0, 30000);
+    Fx.AddMovingParticleEffect(17 /* POBJECT_FIREBALL_AND_SMOKE */, -375.4, -595.8, 25.75, 0.05, 0.05, 0.05, 0.2, 0, 0, 0, 30000);
   }
 
 
@@ -297,7 +297,7 @@ async function body() {
   Streaming.MarkModelAsNoLongerNeeded(CUTOBJ02);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   Streaming.LoadScene(-379.2, -536.4, 16.2);
 
 
@@ -316,13 +316,13 @@ async function body() {
   Streaming.LoadSpecialCharacter(5, "SGc");
   Streaming.RequestModel(bfinject);
   Streaming.RequestModel(ruger);
-  Streaming.RequestModel(1344 /* barrel4 */);
+  Streaming.RequestModel(barrel4);
   Streaming.RequestModel(faggio);
-  Streaming.RequestModel(1385 /* faketarget */);
+  Streaming.RequestModel(faketarget);
   Streaming.RequestModel(SGa);
 
 
-  while (!(Streaming.HasSpecialCharacterLoaded(5)) || !(Streaming.HasModelLoaded(bfinject)) || !(Streaming.HasModelLoaded(ruger)) || !(Streaming.HasModelLoaded(1344 /* barrel4 */)) || !(Streaming.HasModelLoaded(faggio)) || !(Streaming.HasModelLoaded(1385 /* faketarget */))) {
+  while (!(Streaming.HasSpecialCharacterLoaded(5)) || !(Streaming.HasModelLoaded(bfinject)) || !(Streaming.HasModelLoaded(ruger)) || !(Streaming.HasModelLoaded(barrel4)) || !(Streaming.HasModelLoaded(faggio)) || !(Streaming.HasModelLoaded(faketarget))) {
     await asyncWait(0);
 
 
@@ -505,16 +505,16 @@ async function skip_bloke_at_window_cut() {
   $.player1.setVisible(true /* TRUE */);
 
 
-  roof_barrel1 = ScriptObject.Create(1344 /* barrel4 */, 347.5, 417.4, 20.6);
-  roof_barrel2 = ScriptObject.Create(1344 /* barrel4 */, 352.9, 416.5, 20.6);
+  roof_barrel1 = ScriptObject.Create(barrel4, 347.5, 417.4, 20.6);
+  roof_barrel2 = ScriptObject.Create(barrel4, 352.9, 416.5, 20.6);
 
 
   if (!(Char.IsDead(traitor))) {
     World.ClearArea(358.7, 277.0, 22.5, 3.0, true /* TRUE */);
     traitor.setCoordinates(358.7, 277.0, 22.5);
     traitor.setHeading(247.0);
-    traitor.giveWeapon(WEAPONTYPE_RUGER, 30000);
-    traitor.setCurrentWeapon(WEAPONTYPE_RUGER);
+    traitor.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30000);
+    traitor.setCurrentWeapon(27 /* WEAPONTYPE_RUGER */);
   }
 
 
@@ -548,7 +548,7 @@ async function skip_bloke_at_window_cut() {
 
   $.player1.setControl(false /* OFF */);
   Hud.SwitchWidescreen(true /* ON */);
-  $.player1.setMood(PLAYER_MOOD_PISSED_OFF, 300000);
+  $.player1.setMood(1 /* PLAYER_MOOD_PISSED_OFF */, 300000);
 
 
   if (!(Char.IsDead(traitor))) {
@@ -577,7 +577,7 @@ async function skip_bloke_at_window_cut() {
       $.player1.setHeading(50.0);
       cheating_biker = $.player1.storeCarIsIn();
       Game.SetEveryoneIgnorePlayer($.player1, false /* Off */);
-      fake_player = ScriptObject.Create(1385 /* faketarget */, 371.6, 267.7, 22.0);
+      fake_player = ScriptObject.Create(faketarget, 371.6, 267.7, 22.0);
       traitor.setAccuracy(100);
       traitor.setObjDestroyObject(fake_player);
     }
@@ -791,8 +791,8 @@ async function skip_bloke_at_window_cut() {
               if (!(Car.IsDead($.traitors_car))) {
                 $.traitors_car.setStrong(true /* TRUE */);
                 $.traitors_car.setCoordinates(368.4, 478.6, 10.4);
-                traitors_mate = Char.CreateInsideCar($.traitors_car, PEDTYPE_GANG_STREET, SGa);
-                traitors_mate.giveWeapon(WEAPONTYPE_RUGER, 30000);
+                traitors_mate = Char.CreateInsideCar($.traitors_car, 9 /* PEDTYPE_GANG_STREET */, SGa);
+                traitors_mate.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30000);
                 traitors_mate.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
                 traitors_mate.clearThreatSearch();
                 $.traitors_car.setHeading(311.0);
@@ -877,7 +877,7 @@ async function skip_bloke_at_window_cut() {
       traitor.shutUp(false /* FALSE */);
       traitor.setObjNoObj();
       traitor.warpFromCarToCoord(349.4, 278.0, 18.6);
-      traitor.attachToCar($.traitors_car, 0.4, 0.0, 1.0, 2 /* FACING_BACK */, 180.0, WEAPONTYPE_RUGER);
+      traitor.attachToCar($.traitors_car, 0.4, 0.0, 1.0, 2 /* FACING_BACK */, 180.0, 27 /* WEAPONTYPE_RUGER */);
       traitor.setThreatSearch(1 /* THREAT_PLAYER1 */);
       traitor.setAccuracy(50);
       traitor.setObjKillPlayerOnFoot($.player1);
@@ -1167,7 +1167,7 @@ async function mission_baron1_passed() {
   Stat.PlayerMadeProgress(1);
   $.stubby_in_stock = 1;
   $.katana_in_stock = 1;
-  // START_NEW_SCRIPT baron_mission2_loop
+  // START_NEW_SCRIPT baron_mission2_loop 
 }
 
 
@@ -1181,9 +1181,9 @@ async function cleanup() {
   $.baron_blip1.remove();
   Streaming.MarkModelAsNoLongerNeeded(bfinject);
   Streaming.MarkModelAsNoLongerNeeded(ruger);
-  Streaming.MarkModelAsNoLongerNeeded(1344 /* barrel4 */);
+  Streaming.MarkModelAsNoLongerNeeded(barrel4);
   Streaming.MarkModelAsNoLongerNeeded(faggio);
-  Streaming.MarkModelAsNoLongerNeeded(1385 /* faketarget */);
+  Streaming.MarkModelAsNoLongerNeeded(faketarget);
   Streaming.MarkModelAsNoLongerNeeded(sga);
   $.traitors_car.markAsNoLongerNeeded();
   traitor.markAsNoLongerNeeded();

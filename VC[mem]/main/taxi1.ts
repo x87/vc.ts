@@ -1,6 +1,6 @@
 // Generated from main/taxi1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *******************************************************************************************
 // *******************************************************************************************
@@ -202,19 +202,19 @@ async function ped_get_in_taxi() {
     Text.PrintNow("TAXI7", 4000, 1); //I ain't getting in that heap of shit!!
     if ($.player1.isInZone("BEACH1") || $.player1.isInZone("BEACH2") || $.player1.isInZone("STARI")) {
       $.spray_taxi.remove();
-      $.spray_taxi = Blip.AddSpriteForCoord(-3.8, -1265.8, 12.0, 18 /* RADAR_SPRITE_SPRAY */); //South beach
+      $.spray_taxi = Blip.AddSpriteForCoord(-3.8, -1265.8, 12.0, 27 /* RADAR_SPRITE_SPRAY */); //South beach
     }
     if ($.player1.isInZone("BEACH3") || $.player1.isInZone("PORNI") || $.player1.isInZone("GOLFC")) {
       $.spray_taxi.remove();
-      $.spray_taxi = Blip.AddSpriteForCoord(319.0, 441.3, 12.0, 18 /* RADAR_SPRITE_SPRAY */); //Vice Point
+      $.spray_taxi = Blip.AddSpriteForCoord(319.0, 441.3, 12.0, 27 /* RADAR_SPRITE_SPRAY */); //Vice Point
     }
     if ($.player1.isInZone("DOCKS") || $.player1.isInZone("A_PORT")) {
       $.spray_taxi.remove();
-      $.spray_taxi = Blip.AddSpriteForCoord(-903.0, -1261.1, 12.0, 18 /* RADAR_SPRITE_SPRAY */); //Docks
+      $.spray_taxi = Blip.AddSpriteForCoord(-903.0, -1261.1, 12.0, 27 /* RADAR_SPRITE_SPRAY */); //Docks
     }
     if ($.player1.isInZone("HAITI") || $.player1.isInZone("HAVANA") || $.player1.isInZone("DTOWN") || $.player1.isInZone("JUNKY")) {
       $.spray_taxi.remove();
-      $.spray_taxi = Blip.AddSpriteForCoord(-876.2, -105.5, 12.0, 18 /* RADAR_SPRITE_SPRAY */); //Main road haiti
+      $.spray_taxi = Blip.AddSpriteForCoord(-876.2, -105.5, 12.0, 27 /* RADAR_SPRITE_SPRAY */); //Main road haiti
     }
     if ($.spray_blip_onscreen == 0) {
       $.spray_blip_onscreen = 1;
@@ -759,7 +759,7 @@ async function passenger_destination() {
 
   if ($.taxi_countdown_already_started == 0) {
     //DISPLAY_ONSCREEN_TIMER taxi_countdown TIMER_DOWN
-    Hud.DisplayTimerWithString($.$id.taxi_countdown, TIMER_DOWN, "SEG3_1");
+    Hud.DisplayTimerWithString($.$id.taxi_countdown, 1 /* TIMER_DOWN */, "SEG3_1");
     $.taxi_countdown_already_started = 1;
   }
 
@@ -846,7 +846,7 @@ async function score() {
 
   $.player1.addScore($.score_for_this_fare);
   Text.PrintWithNumberBig("TSCORE2", $.score_for_this_fare, 6000, 6); //Your score is...
-  Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+  Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
   $.taxi_score = $.taxi_score + $.score_for_this_fare;
 
 

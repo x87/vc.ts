@@ -1,6 +1,6 @@
 // Generated from main/ambulance.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *****************************************************************************************
 // *****************************************************************************************
@@ -167,7 +167,7 @@ async function mission_root() {
   $.time_chunk /= 2;
 
 
-  Hud.DisplayTimer($.$id.ped_time_limit, TIMER_DOWN);
+  Hud.DisplayTimer($.$id.ped_time_limit, 1 /* TIMER_DOWN */);
 
 
   if (ONMISSION == 0) {
@@ -1177,10 +1177,10 @@ $.sound_z = _res3.z;
       $.time_drop = $.time_drop * 50;
       $.ped_time_limit = $.ped_time_limit - $.time_drop;
       if ($.ped_var_for_gosub.isMale()) {
-        Sound.AddOneOffSound($.sound_x, $.sound_y, $.sound_z, SOUND_MALE_AMBULANCE_OUCH);
+        Sound.AddOneOffSound($.sound_x, $.sound_y, $.sound_z, 19 /* SOUND_MALE_AMBULANCE_OUCH */);
       }
       else {
-        Sound.AddOneOffSound($.sound_x, $.sound_y, $.sound_z, SOUND_FEMALE_AMBULANCE_OUCH);
+        Sound.AddOneOffSound($.sound_x, $.sound_y, $.sound_z, 20 /* SOUND_FEMALE_AMBULANCE_OUCH */);
       }
       if ($.ped_time_limit < 0) {
         $.ped_time_limit = 0;
@@ -1261,7 +1261,7 @@ $.sound_z = _res3.z;
         $.ped_time_limit += $.time_chunk;
         ++$.bonus_time_flag;
       }
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       ++$.saved_peds;
       Stat.RegisterLifeSaved();
       $.ped_var_for_gosub_flag = 0;

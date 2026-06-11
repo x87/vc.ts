@@ -1,6 +1,6 @@
 // Generated from main/copcar.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *****************************************************************************************
 // *****************************************************************************************
@@ -83,23 +83,23 @@ async function body() {
   criminal3_car_speed = 0.0;
 
 
-  Streaming.RequestModel(173 /* COLT45 */);
+  Streaming.RequestModel(COLT45);
   Streaming.RequestModel(TEC9);
   Streaming.RequestModel(RUGER);
   Streaming.RequestModel(CHROMEGUN);
   Streaming.RequestModel(MACHETE);
-  Streaming.RequestModel(172 /* BAT */);
+  Streaming.RequestModel(BAT);
 
 
   Streaming.LoadAllModelsNow();
 
 
-  while (!(Streaming.HasModelLoaded(173 /* COLT45 */)) || !(Streaming.HasModelLoaded(TEC9)) || !(Streaming.HasModelLoaded(RUGER)) || !(Streaming.HasModelLoaded(CHROMEGUN))) {
+  while (!(Streaming.HasModelLoaded(COLT45)) || !(Streaming.HasModelLoaded(TEC9)) || !(Streaming.HasModelLoaded(RUGER)) || !(Streaming.HasModelLoaded(CHROMEGUN))) {
     await asyncWait(0);
   }
 
 
-  while (!(Streaming.HasModelLoaded(MACHETE)) || !(Streaming.HasModelLoaded(172 /* BAT */))) {
+  while (!(Streaming.HasModelLoaded(MACHETE)) || !(Streaming.HasModelLoaded(BAT))) {
     await asyncWait(0);
   }
 
@@ -661,7 +661,7 @@ $.player_z = _res137.z;
       $.cop_time_limit = 45000;
     }
     $.cop_time_limit += 30000;
-    Hud.DisplayTimer($.$id.cop_time_limit, TIMER_DOWN);
+    Hud.DisplayTimer($.$id.cop_time_limit, 1 /* TIMER_DOWN */);
     $.timer_on_screen_flag = 1;
   }
 
@@ -877,7 +877,7 @@ $.z = _res139.z;
         if ($.criminal1_dead_flag == 0) {
           ++$.total_criminals_killed;
           Stat.RegisterCriminalCaught();
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           if ($.total_criminals_killed == 1) {
             Hud.DisplayCounterWithString($.$id.total_criminals_killed, 0 /* COUNTER_DISPLAY_NUMBER */, "KILLS");
           }
@@ -937,7 +937,7 @@ $.z = _res139.z;
         if ($.criminal1_thug1_dead_flag == 0) {
           ++$.total_criminals_killed;
           Stat.RegisterCriminalCaught();
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           if ($.total_criminals_killed == 1) {
             Hud.DisplayCounterWithString($.$id.total_criminals_killed, 0 /* COUNTER_DISPLAY_NUMBER */, "KILLS");
           }
@@ -948,7 +948,7 @@ $.z = _res139.z;
         if ($.criminal1_thug2_dead_flag == 0) {
           ++$.total_criminals_killed;
           Stat.RegisterCriminalCaught();
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           if ($.total_criminals_killed == 1) {
             Hud.DisplayCounterWithString($.$id.total_criminals_killed, 0 /* COUNTER_DISPLAY_NUMBER */, "KILLS");
           }
@@ -959,7 +959,7 @@ $.z = _res139.z;
         if ($.criminal1_thug3_dead_flag == 0) {
           ++$.total_criminals_killed;
           Stat.RegisterCriminalCaught();
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           if ($.total_criminals_killed == 1) {
             Hud.DisplayCounterWithString($.$id.total_criminals_killed, 0 /* COUNTER_DISPLAY_NUMBER */, "KILLS");
           }
@@ -1182,7 +1182,7 @@ $.z = _res143.z;
         if ($.criminal2_dead_flag == 0) {
           ++$.total_criminals_killed;
           Stat.RegisterCriminalCaught();
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           if ($.total_criminals_killed == 1) {
             Hud.DisplayCounterWithString($.$id.total_criminals_killed, 0 /* COUNTER_DISPLAY_NUMBER */, "KILLS");
           }
@@ -1242,7 +1242,7 @@ $.z = _res143.z;
         if ($.criminal2_thug1_dead_flag == 0) {
           ++$.total_criminals_killed;
           Stat.RegisterCriminalCaught();
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           if ($.total_criminals_killed == 1) {
             Hud.DisplayCounterWithString($.$id.total_criminals_killed, 0 /* COUNTER_DISPLAY_NUMBER */, "KILLS");
           }
@@ -1253,7 +1253,7 @@ $.z = _res143.z;
         if ($.criminal2_thug2_dead_flag == 0) {
           ++$.total_criminals_killed;
           Stat.RegisterCriminalCaught();
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           if ($.total_criminals_killed == 1) {
             Hud.DisplayCounterWithString($.$id.total_criminals_killed, 0 /* COUNTER_DISPLAY_NUMBER */, "KILLS");
           }
@@ -1264,7 +1264,7 @@ $.z = _res143.z;
         if ($.criminal2_thug3_dead_flag == 0) {
           ++$.total_criminals_killed;
           Stat.RegisterCriminalCaught();
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           if ($.total_criminals_killed == 1) {
             Hud.DisplayCounterWithString($.$id.total_criminals_killed, 0 /* COUNTER_DISPLAY_NUMBER */, "KILLS");
           }
@@ -1487,7 +1487,7 @@ $.z = _res147.z;
         if ($.criminal3_dead_flag == 0) {
           ++$.total_criminals_killed;
           Stat.RegisterCriminalCaught();
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           if ($.total_criminals_killed == 1) {
             Hud.DisplayCounterWithString($.$id.total_criminals_killed, 0 /* COUNTER_DISPLAY_NUMBER */, "KILLS");
           }
@@ -1547,7 +1547,7 @@ $.z = _res147.z;
         if ($.criminal3_thug1_dead_flag == 0) {
           ++$.total_criminals_killed;
           Stat.RegisterCriminalCaught();
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           if ($.total_criminals_killed == 1) {
             Hud.DisplayCounterWithString($.$id.total_criminals_killed, 0 /* COUNTER_DISPLAY_NUMBER */, "KILLS");
           }
@@ -1558,7 +1558,7 @@ $.z = _res147.z;
         if ($.criminal3_thug2_dead_flag == 0) {
           ++$.total_criminals_killed;
           Stat.RegisterCriminalCaught();
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           if ($.total_criminals_killed == 1) {
             Hud.DisplayCounterWithString($.$id.total_criminals_killed, 0 /* COUNTER_DISPLAY_NUMBER */, "KILLS");
           }
@@ -1569,7 +1569,7 @@ $.z = _res147.z;
         if ($.criminal3_thug3_dead_flag == 0) {
           ++$.total_criminals_killed;
           Stat.RegisterCriminalCaught();
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           if ($.total_criminals_killed == 1) {
             Hud.DisplayCounterWithString($.$id.total_criminals_killed, 0 /* COUNTER_DISPLAY_NUMBER */, "KILLS");
           }
@@ -1740,12 +1740,12 @@ async function cleanup() {
   Hud.ClearCounter($.$id.total_criminals_killed);
   Streaming.MarkModelAsNoLongerNeeded($.random_car_model);
   Streaming.MarkModelAsNoLongerNeeded($.random_ped_model);
-  Streaming.MarkModelAsNoLongerNeeded(173 /* COLT45 */);
+  Streaming.MarkModelAsNoLongerNeeded(COLT45);
   Streaming.MarkModelAsNoLongerNeeded(TEC9);
   Streaming.MarkModelAsNoLongerNeeded(RUGER);
   Streaming.MarkModelAsNoLongerNeeded(CHROMEGUN);
   Streaming.MarkModelAsNoLongerNeeded(MACHETE);
-  Streaming.MarkModelAsNoLongerNeeded(172 /* BAT */);
+  Streaming.MarkModelAsNoLongerNeeded(BAT);
 
 
   $.timer_mobile_start = Clock.GetGameTimer();
@@ -2400,14 +2400,14 @@ async function setup_ped_threats_etc() {
   $.ped.setThreatSearch(16 /* THREAT_CIVMALE */);
   $.ped.setThreatSearch(32 /* THREAT_CIVFEMALE */);
   $.ped.setThreatSearch(64 /* THREAT_COP */);
-  $.ped.setThreatSearch(THREAT_GANG_CUBAN);
-  $.ped.setThreatSearch(THREAT_GANG_HAITIAN);
-  $.ped.setThreatSearch(THREAT_GANG_STREET);
-  $.ped.setThreatSearch(THREAT_GANG_DIAZ);
-  $.ped.setThreatSearch(THREAT_GANG_SECURITY);
-  $.ped.setThreatSearch(THREAT_GANG_BIKER);
-  $.ped.setThreatSearch(THREAT_GANG_PLAYER);
-  $.ped.setThreatSearch(THREAT_GANG_GOLFER);
+  $.ped.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
+  $.ped.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
+  $.ped.setThreatSearch(512 /* THREAT_GANG_STREET */);
+  $.ped.setThreatSearch(1024 /* THREAT_GANG_DIAZ */);
+  $.ped.setThreatSearch(2048 /* THREAT_GANG_SECURITY */);
+  $.ped.setThreatSearch(4096 /* THREAT_GANG_BIKER */);
+  $.ped.setThreatSearch(8192 /* THREAT_GANG_PLAYER */);
+  $.ped.setThreatSearch(16384 /* THREAT_GANG_GOLFER */);
   $.ped.setThreatSearch(65536 /* THREAT_EMERGENCY */);
   $.ped.setThreatSearch(131072 /* THREAT_PROSTITUTE */);
   $.ped.setThreatSearch(262144 /* THREAT_CRIMINAL */);
@@ -2447,31 +2447,31 @@ async function setup_ped_threats_etc() {
   if ($.random_int == 0) {
     $.random_int = Math.RandomIntInRange(10, 13);
     if ($.random_int == 10) {
-      $.ped.giveWeapon(WEAPONTYPE_MACHETE, 9999);
+      $.ped.giveWeapon(9 /* WEAPONTYPE_MACHETE */, 9999);
     }
     if ($.random_int == 11) {
-      $.ped.giveWeapon(1 /* WEAPONTYPE_BASEBALLBAT */, 9999);
+      $.ped.giveWeapon(6 /* WEAPONTYPE_BASEBALLBAT */, 9999);
     }
   }
 
 
   if ($.random_int == 1) {
-    $.ped.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 9999);
+    $.ped.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 9999);
   }
 
 
   if ($.random_int == 2) {
-    $.ped.giveWeapon(WEAPONTYPE_TEC9, 9999);
+    $.ped.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 9999);
   }
 
 
   if ($.random_int == 3) {
-    $.ped.giveWeapon(WEAPONTYPE_RUGER, 9999);
+    $.ped.giveWeapon(27 /* WEAPONTYPE_RUGER */, 9999);
   }
 
 
   if ($.random_int == 4 || $.random_int == 5) {
-    $.ped.giveWeapon(4 /* WEAPONTYPE_SHOTGUN */, 9999);
+    $.ped.giveWeapon(19 /* WEAPONTYPE_SHOTGUN */, 9999);
   }
 
 

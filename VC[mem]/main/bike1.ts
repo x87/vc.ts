@@ -1,6 +1,6 @@
 // Generated from main/bike1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_bike1() {
 
@@ -140,7 +140,7 @@ async function mission_start_bike1() {
   Streaming.LoadSpecialModel(CUTOBJ02, "polbals");
 
 
-  Streaming.SetAreaVisible(VIS_BIKER_BAR);
+  Streaming.SetAreaVisible(11 /* VIS_BIKER_BAR */);
 
 
   Streaming.LoadScene(-597.02, 642.46, 11.0);
@@ -413,7 +413,7 @@ async function mission_start_bike1() {
   World.ClearExtraColors(false /* FALSE */);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   Streaming.LoadScene(-597.25, 655.87, 10.06);
@@ -423,13 +423,13 @@ async function mission_start_bike1() {
   // **************************************** Race Coordinates *******************************
 
 
-  $.player1.setMood(PLAYER_MOOD_PISSED_OFF, 60000);
+  $.player1.setMood(1 /* PLAYER_MOOD_PISSED_OFF */, 60000);
 
 
   Char.SetEnterCarRangeMultiplier(6.0);
 
 
-  Audio.SetRadioChannel(V_ROCK, -1);
+  Audio.SetRadioChannel(4 /* V_ROCK */, -1);
 
 
   $.total_checkpoints_bike1 = 18;
@@ -616,7 +616,7 @@ async function mission_start_bike1() {
   Streaming.RequestModel(ANGEL);
 
 
-  Streaming.RequestModel(178 /* UZI */);
+  Streaming.RequestModel(UZI);
 
 
   Audio.LoadMissionAudio(1, "bikerev" as any); // BIKE rev
@@ -625,7 +625,7 @@ async function mission_start_bike1() {
   Audio.LoadMissionAudio(2, "BIKE1_1" as any); // How good are you
 
 
-  while (!(Streaming.HasModelLoaded(BKa)) || !(Streaming.HasModelLoaded(BKb)) || !(Streaming.HasModelLoaded(ANGEL)) || !(Streaming.HasModelLoaded(178 /* UZI */)) || !(Audio.HasMissionAudioLoaded(1)) || !(Audio.HasMissionAudioLoaded(2))) {
+  while (!(Streaming.HasModelLoaded(BKa)) || !(Streaming.HasModelLoaded(BKb)) || !(Streaming.HasModelLoaded(ANGEL)) || !(Streaming.HasModelLoaded(UZI)) || !(Audio.HasMissionAudioLoaded(1)) || !(Audio.HasMissionAudioLoaded(2))) {
     await asyncWait(0);
 
 
@@ -868,7 +868,7 @@ async function mission_start_bike1() {
     // Checks the health of bike 1 and rider1
 
     $.bike_health_bike1 = $.race_bike1.getHealth();
-    if ($.bike_health_bike1 <= 999 || $.race_bike1.isTireBurst(ANY_WHEEL)) {
+    if ($.bike_health_bike1 <= 999 || $.race_bike1.isTireBurst(4 /* ANY_WHEEL */)) {
       $.bike_health_bike1 = 9;
       // SCM GOTO → race_start_bike1 (not lowered; manual jump required)
       throw new Error("unresolved GOTO race_start_bike1"); // fallback: would break linear control flow
@@ -897,7 +897,7 @@ async function mission_start_bike1() {
     // Checks for bike2 and rider2
 
     $.bike2_health_bike1 = $.race_bike2_bike1.getHealth();
-    if ($.bike2_health_bike1 <= 999 || $.race_bike2_bike1.isTireBurst(ANY_WHEEL)) {
+    if ($.bike2_health_bike1 <= 999 || $.race_bike2_bike1.isTireBurst(4 /* ANY_WHEEL */)) {
       $.bike2_health_bike1 = 9;
       // SCM GOTO → race_start_bike1 (not lowered; manual jump required)
       throw new Error("unresolved GOTO race_start_bike1"); // fallback: would break linear control flow
@@ -926,7 +926,7 @@ async function mission_start_bike1() {
     // Checks for bike3 and rider3
 
     $.bike3_health_bike1 = $.race_bike3_bike1.getHealth();
-    if ($.bike3_health_bike1 <= 999 || $.race_bike3_bike1.isTireBurst(ANY_WHEEL)) {
+    if ($.bike3_health_bike1 <= 999 || $.race_bike3_bike1.isTireBurst(4 /* ANY_WHEEL */)) {
       $.bike3_health_bike1 = 9;
       // SCM GOTO → race_start_bike1 (not lowered; manual jump required)
       throw new Error("unresolved GOTO race_start_bike1"); // fallback: would break linear control flow
@@ -976,22 +976,22 @@ async function race_start_bike1() {
     Game.SetEveryoneIgnorePlayer($.player1, true /* TRUE */);
     Game.SetAllCarsCanBeDamaged(false /* FALSE */);
     Text.PrintBig("RACE2", 1100, 4); //"THREE"
-    Sound.AddOneOffSound(0.0, 0.0, 0.0, 97 /* SOUND_RACE_START_3 */);
+    Sound.AddOneOffSound(0.0, 0.0, 0.0, 7 /* SOUND_RACE_START_3 */);
     await asyncWait(1000);
     Text.PrintBig("RACE3", 1100, 4); //"TWO"
-    Sound.AddOneOffSound(0.0, 0.0, 0.0, 98 /* SOUND_RACE_START_2 */);
+    Sound.AddOneOffSound(0.0, 0.0, 0.0, 8 /* SOUND_RACE_START_2 */);
     if (Audio.HasMissionAudioFinished(2)) {
       Text.ClearThisPrint("BIKE1_1");
     }
     await asyncWait(1000);
     Text.PrintBig("RACE4", 1100, 4); //"ONE"
-    Sound.AddOneOffSound(0.0, 0.0, 0.0, 99 /* SOUND_RACE_START_1 */);
+    Sound.AddOneOffSound(0.0, 0.0, 0.0, 9 /* SOUND_RACE_START_1 */);
     if (Audio.HasMissionAudioFinished(2)) {
       Text.ClearThisPrint("BIKE1_1");
     }
     await asyncWait(1000);
     Text.PrintBig("RACE5", 800, 4); //"GO!"
-    Sound.AddOneOffSound(0.0, 0.0, 0.0, 100 /* SOUND_RACE_START_GO */);
+    Sound.AddOneOffSound(0.0, 0.0, 0.0, 10 /* SOUND_RACE_START_GO */);
     if (Audio.HasMissionAudioFinished(2)) {
       Text.ClearThisPrint("BIKE1_1");
     }
@@ -1182,7 +1182,7 @@ async function race_start_bike1() {
   // Starts the game timer
 
 
-  Hud.DisplayTimerWithString($.$id.race_timer_bike1, TIMER_UP, "R_TIME");
+  Hud.DisplayTimerWithString($.$id.race_timer_bike1, 0 /* TIMER_UP */, "R_TIME");
 
   // The race code
 
@@ -1195,7 +1195,7 @@ async function race_start_bike1() {
 
     if ($.player1.locateAnyMeans3D($.player1_cp_x_bike1, $.player1_cp_y_bike1, $.player1_cp_z_bike1, 6.0, 6.0, 6.0, false)) {
       if ($.player1.isInModel(FREEWAY) || $.player1.isInModel(ANGEL)) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         ++$.player1_cpcounter_bike1;
         $.blip_chase_bike1.remove();
         $.second_blip_bike1_bike1.remove();
@@ -1482,7 +1482,7 @@ async function mission_bike1_passed() {
 
 
   if ($.biker_bar_sound2_added == 0) {
-    $.bike_bar_loop2 = Sound.AddContinuous(-596.018, 640.916, 12.0, SOUND_NEW_BUILDING_BAR_2); //Biker bar
+    $.bike_bar_loop2 = Sound.AddContinuous(-596.018, 640.916, 12.0, 37 /* SOUND_NEW_BUILDING_BAR_2 */); //Biker bar
     $.biker_bar_sound2_added = 1;
   }
 
@@ -1513,10 +1513,10 @@ async function mission_bike1_passed() {
 
 
   if (Game.IsGerman()) {
-    // START_NEW_SCRIPT bikers_mission3_loop
+    // START_NEW_SCRIPT bikers_mission3_loop 
   }
   else {
-    // START_NEW_SCRIPT bikers_mission2_loop
+    // START_NEW_SCRIPT bikers_mission2_loop 
   }
 }
 
@@ -1540,7 +1540,7 @@ async function mission_cleanup_bike1() {
   Streaming.MarkModelAsNoLongerNeeded(BKa);
   Streaming.MarkModelAsNoLongerNeeded(BKb);
   Streaming.MarkModelAsNoLongerNeeded(ANGEL);
-  Streaming.MarkModelAsNoLongerNeeded(178 /* UZI */);
+  Streaming.MarkModelAsNoLongerNeeded(UZI);
   Hud.ClearTimer($.$id.race_timer_bike1);
   $.timer_mobile_start = Clock.GetGameTimer();
   Mission.Finish();
@@ -1978,7 +1978,7 @@ $.bike_z_bike1 = _res104.z;
         }
         else {
           $.gosub_rider_bike1.setObjKillPlayerOnFoot($.player1);
-          $.gosub_rider_bike1.giveWeapon(3 /* WEAPONTYPE_UZI */, 300000); // set to infinate ammo
+          $.gosub_rider_bike1.giveWeapon(23 /* WEAPONTYPE_UZI */, 300000); // set to infinate ammo
         }
 
 

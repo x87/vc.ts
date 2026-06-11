@@ -1,6 +1,6 @@
 // Generated from main/carbuy.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_carbuy() {
 
@@ -257,7 +257,7 @@ async function mission_start_carbuy() {
   Audio.PlayMissionPassedTune(1);
   Text.PrintWithNumberBig("CARBUY", $.carbuy_price, 7000, 6); //
   Stat.AddMoneySpentOnProperty($.carbuy_price);
-  Stat.SetPropertyAsOwned(PROP_CARSHOWROOM);
+  Stat.SetPropertyAsOwned(4 /* PROP_CARSHOWROOM */);
   $.carbuy_save_garage1.changeType(27 /* GARAGE_HIDEOUT_SEVEN */);
   $.carbuy_save_garage2.changeType(28 /* GARAGE_HIDEOUT_EIGHT */);
   $.carbuy_save_garage3.changeType(29 /* GARAGE_HIDEOUT_NINE */);
@@ -291,16 +291,16 @@ async function mission_start_carbuy() {
 
 
   $.carbuy_blip.remove();
-  $.carbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.carbuyX, $.carbuyY, $.carbuyZ, RADAR_SPRITE_SUNYARD);
+  $.carbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.carbuyX, $.carbuyY, $.carbuyZ, 26 /* RADAR_SPRITE_SUNYARD */);
   $.carbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
   $.import_export_sign1 = ScriptObject.CreateNoOffset(lh_imp_exp01, -981.754, -841.278, 8.586);
   $.import_export_sign1.dontRemove();
   Zone.SetPedInfo("CARYRD", 1 /* DAY */, 13, 0, 0, 0, 0, 0, 0, 1000, 0, 0, 0);
   Zone.SetPedInfo("CARYRD", 0 /* NIGHT */, 5, 0, 0, 0, 0, 0, 0, 1000, 0, 0, 0);
   Path.SwitchPedRoadsOn(-1031.494, -902.312, 0.0, -949.479, -821.592, 30.0); //CAR YARD
-  // START_NEW_SCRIPT races_loop
-  // START_NEW_SCRIPT carshow_save_loop
-  // START_NEW_SCRIPT import1_loop
+  // START_NEW_SCRIPT races_loop 
+  // START_NEW_SCRIPT carshow_save_loop 
+  // START_NEW_SCRIPT import1_loop 
   $.collect_all_cars1.changeType(8 /* GARAGE_COLLECTCARS_1 */);
   Camera.SetFadingColor(0, 0, 1);
   Camera.DoFade(1500, 1 /* FADE_IN */);

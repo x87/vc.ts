@@ -1,11 +1,11 @@
-import defaultIde from "./../../../data/default.ide";
+import defaultIde from "../../data/default.ide";
 
 /**
  *
  * @param {string} name model name as defined in default.ide
  * @returns {number} model id
  */
-export function car([name] : TemplateStringsArray) {
+export function car([name]) {
   let nameLower = name.toLowerCase();
   const models = defaultIde.cars;
 
@@ -22,7 +22,7 @@ export function car([name] : TemplateStringsArray) {
  * @param {string} name model name as defined in default.ide
  * @returns {number} model id
  */
-export function hier([name] : TemplateStringsArray) {
+export function hier([name]) {
   let nameLower = name.toLowerCase();
   const models = defaultIde.hier;
 
@@ -39,13 +39,12 @@ export function hier([name] : TemplateStringsArray) {
  * @param {string} name model name as defined in default.ide
  * @returns {number} model id
  */
-export function ped([name] : TemplateStringsArray) {
+export function ped([name]) {
   let nameLower = name.toLowerCase();
-  if (nameLower === 'player') {
-    return 0;
-  }
   const models = defaultIde.peds;
+
   const model = models.find((line) => line[1].toLowerCase() === nameLower);
+
   if (model) {
     return parseInt(model[0]);
   }

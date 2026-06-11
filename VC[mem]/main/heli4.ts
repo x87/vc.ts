@@ -1,6 +1,6 @@
 // Generated from main/heli4.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *******************************************************************************************
 // ************************************* heli 4 **********************************************
@@ -164,7 +164,7 @@ async function body() {
   $.heli_timer = 0;
 
 
-  Hud.DisplayTimerWithString($.$id.heli_timer, TIMER_UP, "RACES");
+  Hud.DisplayTimerWithString($.$id.heli_timer, 0 /* TIMER_UP */, "RACES");
 
 
   if ($.player1.isInAnyCar()) {
@@ -187,7 +187,7 @@ async function body() {
       throw new Error("unresolved GOTO mission_heli4_failed"); // fallback: would break linear control flow
     }
     if ($.player1.locateInCar3D($.heli_cp_x, $.heli_cp_y, $.heli_cp_z, 5.0, 5.0, 5.0, false)) {
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       ++$.heli_cpcounter;
       $.heli_blip.remove();
       $.heli_2nd_blip.remove();

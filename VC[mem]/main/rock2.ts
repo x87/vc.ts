@@ -1,6 +1,6 @@
 // Generated from main/rock2.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_rock2() {
 
@@ -325,7 +325,7 @@ async function mission_start_rock2() {
   Streaming.LoadSpecialCharacter(5, "CSplay");
 
 
-  Streaming.SetAreaVisible(VIS_STUDIO);
+  Streaming.SetAreaVisible(9 /* VIS_STUDIO */);
 
 
   Streaming.LoadScene(-880.527, 1157.64, 18.67);
@@ -571,7 +571,7 @@ async function mission_start_rock2() {
   }
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   World.ClearExtraColors(false /* FALSE */);
@@ -592,7 +592,7 @@ async function mission_start_rock2() {
   Streaming.LoadScene(-871.90, 1159.46, 10.07);
 
 
-  $.player1.setMood(PLAYER_MOOD_WISECRACKING, 60000);
+  $.player1.setMood(3 /* PLAYER_MOOD_WISECRACKING */, 60000);
 
   // ****************************************END OF CUTSCENE**********************************
 
@@ -611,10 +611,10 @@ async function mission_start_rock2() {
   Streaming.LoadSpecialCharacter(6, "psycho");
 
 
-  Streaming.RequestModel(178 /* UZI */);
+  Streaming.RequestModel(UZI);
 
 
-  Streaming.RequestModel(173 /* COLT45 */);
+  Streaming.RequestModel(COLT45);
 
 
   Streaming.RequestModel(LOVEFIST);
@@ -641,7 +641,7 @@ async function mission_start_rock2() {
   Streaming.RequestModel(lf_mediastage);
 
 
-  while (!(Streaming.HasModelLoaded(GDa)) || !(Streaming.HasModelLoaded(SENTINEL)) || !(Streaming.HasModelLoaded(178 /* uzi */)) || !(Streaming.HasModelLoaded(TRASH)) || !(Streaming.HasSpecialCharacterLoaded(6)) || !(Streaming.HasModelLoaded(lf_mediastage))) {
+  while (!(Streaming.HasModelLoaded(GDa)) || !(Streaming.HasModelLoaded(SENTINEL)) || !(Streaming.HasModelLoaded(uzi)) || !(Streaming.HasModelLoaded(TRASH)) || !(Streaming.HasSpecialCharacterLoaded(6)) || !(Streaming.HasModelLoaded(lf_mediastage))) {
     await asyncWait(0);
 
 
@@ -661,7 +661,7 @@ async function mission_start_rock2() {
   }
 
 
-  while (!(Streaming.HasAnimationLoaded("RIOT")) || !(Streaming.HasModelLoaded(BKA)) || !(Streaming.HasModelLoaded(BKB)) || !(Streaming.HasModelLoaded(173 /* COLT45 */))) {
+  while (!(Streaming.HasAnimationLoaded("RIOT")) || !(Streaming.HasModelLoaded(BKA)) || !(Streaming.HasModelLoaded(BKB)) || !(Streaming.HasModelLoaded(COLT45))) {
     await asyncWait(0);
 
 
@@ -768,7 +768,7 @@ async function mission_start_rock2() {
   $.groupie1_rock2.setHeading(276.0);
 
 
-  $.groupie1_rock2.setWaitState(WAITSTATE_RIOT, 1000000);
+  $.groupie1_rock2.setWaitState(29 /* WAITSTATE_RIOT */, 1000000);
 
   // Creates groupie 2
 
@@ -794,7 +794,7 @@ async function mission_start_rock2() {
   $.nutter_rock2.setHeading(276.0);
 
 
-  $.nutter_rock2.setWaitState(WAITSTATE_RIOT, 1000000);
+  $.nutter_rock2.setWaitState(29 /* WAITSTATE_RIOT */, 1000000);
 
   // Creates groupie 3
 
@@ -883,7 +883,7 @@ async function mission_start_rock2() {
   $.groupie9_rock2.setHeading(211.157);
 
 
-  $.groupie9_rock2.setWaitState(WAITSTATE_RIOT, 1000000);
+  $.groupie9_rock2.setWaitState(29 /* WAITSTATE_RIOT */, 1000000);
 
   // Creates groupie 10
 
@@ -897,7 +897,7 @@ async function mission_start_rock2() {
   $.groupie10_rock2.setHeading(191.085);
 
 
-  $.groupie10_rock2.setWaitState(WAITSTATE_RIOT, 1000000);
+  $.groupie10_rock2.setWaitState(29 /* WAITSTATE_RIOT */, 1000000);
 
   // Creates groupie 11 ( bloke who uses riot anim )
 
@@ -911,7 +911,7 @@ async function mission_start_rock2() {
   $.groupie11_rock2.setHeading(207.253);
 
 
-  $.groupie11_rock2.setWaitState(WAITSTATE_RIOT, 1000000);
+  $.groupie11_rock2.setWaitState(29 /* WAITSTATE_RIOT */, 1000000);
 
   // Creates groupie 12 ( bloke who uses riot anim )
 
@@ -925,7 +925,7 @@ async function mission_start_rock2() {
   $.groupie12_rock2.setHeading(205.828);
 
 
-  $.groupie12_rock2.setWaitState(WAITSTATE_RIOT, 1000000);
+  $.groupie12_rock2.setWaitState(29 /* WAITSTATE_RIOT */, 1000000);
 
   // Creates groupie 13
 
@@ -939,7 +939,7 @@ async function mission_start_rock2() {
   $.groupie13_rock2.setHeading(141.694);
 
 
-  $.groupie13_rock2.setWaitState(WAITSTATE_RIOT, 1000000);
+  $.groupie13_rock2.setWaitState(29 /* WAITSTATE_RIOT */, 1000000);
 
   // Creates groupie 14
 
@@ -953,7 +953,7 @@ async function mission_start_rock2() {
   $.groupie14_rock2.setHeading(165.718);
 
 
-  $.groupie14_rock2.setWaitState(WAITSTATE_RIOT, 1000000);
+  $.groupie14_rock2.setWaitState(29 /* WAITSTATE_RIOT */, 1000000);
 
   // Creates groupie 15
 
@@ -967,7 +967,7 @@ async function mission_start_rock2() {
   $.groupie15_rock2.setHeading(175.0);
 
 
-  $.groupie15_rock2.setWaitState(WAITSTATE_RIOT, 1000000);
+  $.groupie15_rock2.setWaitState(29 /* WAITSTATE_RIOT */, 1000000);
 
   // Creates groupie 16
 
@@ -981,7 +981,7 @@ async function mission_start_rock2() {
   $.groupie16_rock2.setHeading(186.374);
 
 
-  $.groupie16_rock2.setWaitState(WAITSTATE_RIOT, 1000000);
+  $.groupie16_rock2.setWaitState(29 /* WAITSTATE_RIOT */, 1000000);
 
   // Creates groupie 17
 
@@ -995,7 +995,7 @@ async function mission_start_rock2() {
   $.groupie17_rock2.setHeading(150.524);
 
 
-  $.groupie17_rock2.setWaitState(WAITSTATE_RIOT, 1000000);
+  $.groupie17_rock2.setWaitState(29 /* WAITSTATE_RIOT */, 1000000);
 
   // Creates the media stage
 
@@ -1359,7 +1359,7 @@ async function mission_start_rock2() {
             $.car_rock2.setOnlyDamagedByPlayer(true /* TRUE */);
             Audio.PlayMissionAudio(2);
             Text.PrintNow("PSYCH_1", 5000, 1); //"Love fist ruined my life!"
-            $.nutter_rock2.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 30000); // Infinate ammo
+            $.nutter_rock2.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 30000); // Infinate ammo
             if (!(Char.IsDead($.security2_rock2))) {
               $.security2_rock2.setHealth(20);
               $.security2_rock2.turnToFaceChar($.nutter_rock2);
@@ -1485,91 +1485,91 @@ async function mission_start_rock2() {
       if (!(Char.IsDead($.groupie3_rock2))) {
         $.groupie3_rock2.clearWaitState();
         $.groupie3_rock2.clearAllAnims();
-        $.groupie3_rock2.setPersonality(PEDSTAT_COWARD);
+        $.groupie3_rock2.setPersonality(39 /* PEDSTAT_COWARD */);
         $.groupie3_rock2.setObjFleeCharOnFootAlways($.nutter_rock2);
       }
       if (!(Char.IsDead($.groupie4_rock2))) {
         $.groupie4_rock2.clearWaitState();
         $.groupie4_rock2.clearAllAnims();
-        $.groupie4_rock2.setPersonality(PEDSTAT_COWARD);
+        $.groupie4_rock2.setPersonality(39 /* PEDSTAT_COWARD */);
         $.groupie4_rock2.setObjFleeCharOnFootAlways($.nutter_rock2);
       }
       if (!(Char.IsDead($.groupie5_rock2))) {
         $.groupie5_rock2.clearWaitState();
         $.groupie5_rock2.clearAllAnims();
-        $.groupie5_rock2.setPersonality(PEDSTAT_COWARD);
+        $.groupie5_rock2.setPersonality(39 /* PEDSTAT_COWARD */);
         $.groupie5_rock2.setObjFleeCharOnFootAlways($.nutter_rock2);
       }
       if (!(Char.IsDead($.groupie6_rock2))) {
         $.groupie6_rock2.clearWaitState();
         $.groupie6_rock2.clearAllAnims();
-        $.groupie6_rock2.setPersonality(PEDSTAT_COWARD);
+        $.groupie6_rock2.setPersonality(39 /* PEDSTAT_COWARD */);
         $.groupie6_rock2.setObjFleeCharOnFootAlways($.nutter_rock2);
       }
       if (!(Char.IsDead($.groupie7_rock2))) {
         $.groupie7_rock2.clearWaitState();
         $.groupie7_rock2.clearAllAnims();
-        $.groupie7_rock2.setPersonality(PEDSTAT_COWARD);
+        $.groupie7_rock2.setPersonality(39 /* PEDSTAT_COWARD */);
         $.groupie7_rock2.setObjFleeCharOnFootAlways($.nutter_rock2);
       }
       if (!(Char.IsDead($.groupie8_rock2))) {
         $.groupie8_rock2.clearWaitState();
         $.groupie8_rock2.clearAllAnims();
-        $.groupie8_rock2.setPersonality(PEDSTAT_COWARD);
+        $.groupie8_rock2.setPersonality(39 /* PEDSTAT_COWARD */);
         $.groupie8_rock2.setObjFleeCharOnFootAlways($.nutter_rock2);
       }
       if (!(Char.IsDead($.groupie9_rock2))) {
         $.groupie9_rock2.clearWaitState();
         $.groupie9_rock2.clearAllAnims();
-        $.groupie9_rock2.setPersonality(PEDSTAT_COWARD);
+        $.groupie9_rock2.setPersonality(39 /* PEDSTAT_COWARD */);
         $.groupie9_rock2.setObjFleeCharOnFootAlways($.nutter_rock2);
       }
       if (!(Char.IsDead($.groupie10_rock2))) {
         $.groupie10_rock2.clearWaitState();
         $.groupie10_rock2.clearAllAnims();
-        $.groupie10_rock2.setPersonality(PEDSTAT_COWARD);
+        $.groupie10_rock2.setPersonality(39 /* PEDSTAT_COWARD */);
         $.groupie10_rock2.setObjFleeCharOnFootAlways($.nutter_rock2);
       }
       if (!(Char.IsDead($.groupie11_rock2))) {
         $.groupie11_rock2.clearWaitState();
         $.groupie11_rock2.clearAllAnims();
-        $.groupie11_rock2.setPersonality(PEDSTAT_COWARD);
+        $.groupie11_rock2.setPersonality(39 /* PEDSTAT_COWARD */);
         $.groupie11_rock2.setObjFleeCharOnFootAlways($.nutter_rock2);
       }
       if (!(Char.IsDead($.groupie12_rock2))) {
         $.groupie12_rock2.clearWaitState();
         $.groupie12_rock2.clearAllAnims();
-        $.groupie12_rock2.setPersonality(PEDSTAT_COWARD);
+        $.groupie12_rock2.setPersonality(39 /* PEDSTAT_COWARD */);
         $.groupie12_rock2.setObjFleeCharOnFootAlways($.nutter_rock2);
       }
       if (!(Char.IsDead($.groupie13_rock2))) {
         $.groupie13_rock2.clearWaitState();
         $.groupie13_rock2.clearAllAnims();
-        $.groupie13_rock2.setPersonality(PEDSTAT_COWARD);
+        $.groupie13_rock2.setPersonality(39 /* PEDSTAT_COWARD */);
         $.groupie13_rock2.setObjFleeCharOnFootAlways($.nutter_rock2);
       }
       if (!(Char.IsDead($.groupie14_rock2))) {
         $.groupie14_rock2.clearWaitState();
         $.groupie14_rock2.clearAllAnims();
-        $.groupie14_rock2.setPersonality(PEDSTAT_COWARD);
+        $.groupie14_rock2.setPersonality(39 /* PEDSTAT_COWARD */);
         $.groupie14_rock2.setObjFleeCharOnFootAlways($.nutter_rock2);
       }
       if (!(Char.IsDead($.groupie15_rock2))) {
         $.groupie15_rock2.clearWaitState();
         $.groupie15_rock2.clearAllAnims();
-        $.groupie15_rock2.setPersonality(PEDSTAT_COWARD);
+        $.groupie15_rock2.setPersonality(39 /* PEDSTAT_COWARD */);
         $.groupie15_rock2.setObjFleeCharOnFootAlways($.nutter_rock2);
       }
       if (!(Char.IsDead($.groupie16_rock2))) {
         $.groupie16_rock2.clearWaitState();
         $.groupie16_rock2.clearAllAnims();
-        $.groupie16_rock2.setPersonality(PEDSTAT_COWARD);
+        $.groupie16_rock2.setPersonality(39 /* PEDSTAT_COWARD */);
         $.groupie16_rock2.setObjFleeCharOnFootAlways($.nutter_rock2);
       }
       if (!(Char.IsDead($.groupie17_rock2))) {
         $.groupie17_rock2.clearWaitState();
         $.groupie17_rock2.clearAllAnims();
-        $.groupie17_rock2.setPersonality(PEDSTAT_COWARD);
+        $.groupie17_rock2.setPersonality(39 /* PEDSTAT_COWARD */);
         $.groupie17_rock2.setObjFleeCharOnFootAlways($.nutter_rock2);
       }
 
@@ -1735,7 +1735,7 @@ async function mission_start_rock2() {
     if (!(Char.IsDead($.nutter_rock2))) {
       if ($.nutter_been_in_car_once_rock2 == 1) {
         if (!($.nutter_rock2.isInAnyCar())) {
-          $.nutter_rock2.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // Infinate ammo
+          $.nutter_rock2.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // Infinate ammo
           $.nutter_been_in_car_once_rock2 = 0;
         }
 
@@ -1922,7 +1922,7 @@ async function mission_rock2_passed() {
   $.player1.clearWantedLevel();
   Text.PrintWithNumberBig("M_PASS", 4000, 5000, 1); //"Mission Passed!"
   $.player1.addScore(4000);
-  // START_NEW_SCRIPT rock_mission3_loop
+  // START_NEW_SCRIPT rock_mission3_loop 
 }
 
 
@@ -2073,8 +2073,8 @@ async function mission_cleanup_rock2() {
   Streaming.MarkModelAsNoLongerNeeded(GDa);
   Streaming.MarkModelAsNoLongerNeeded(SENTINEL);
   Streaming.MarkModelAsNoLongerNeeded(TRASH);
-  Streaming.MarkModelAsNoLongerNeeded(178 /* UZI */);
-  Streaming.MarkModelAsNoLongerNeeded(173 /* COLT45 */);
+  Streaming.MarkModelAsNoLongerNeeded(UZI);
+  Streaming.MarkModelAsNoLongerNeeded(COLT45);
   Streaming.MarkModelAsNoLongerNeeded(WFYG1);
   Streaming.MarkModelAsNoLongerNeeded(WFYG2);
   Streaming.MarkModelAsNoLongerNeeded(LOVEFIST);

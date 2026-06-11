@@ -1,7 +1,7 @@
 // Generated from main/range.sc
 
-import { $ } from "../vars.mts";
-import { timed } from "../scm.mts";
+import { $ } from "../utils/vars.mts";
+import { timed } from "../utils/scm.mts";
 
 async function mission_start_range() {
 
@@ -226,7 +226,7 @@ async function mission_start_range() {
   $.player1.shutUp(true /* TRUE */);
 
 
-  Streaming.RequestModel(173 /* COLT45 */);
+  Streaming.RequestModel(COLT45);
 
 
   Streaming.RequestModel(tar_frame);
@@ -247,7 +247,7 @@ async function mission_start_range() {
   Streaming.RequestModel(tar_upright);
 
 
-  Streaming.RequestModel(1385 /* faketarget */);
+  Streaming.RequestModel(faketarget);
 
 
   Audio.LoadMissionAudio(1, "BNK2_1" as any); // Live Ammo
@@ -256,7 +256,7 @@ async function mission_start_range() {
   Audio.LoadMissionAudio(2, "BNK2_2" as any); // Aim 3-2-1 fire
 
 
-  while (!(Streaming.HasModelLoaded(173 /* COLT45 */)) || !(Audio.HasMissionAudioLoaded(1)) || !(Audio.HasMissionAudioLoaded(2)) || !(Streaming.HasModelLoaded(1385 /* faketarget */))) {
+  while (!(Streaming.HasModelLoaded(COLT45)) || !(Audio.HasMissionAudioLoaded(1)) || !(Audio.HasMissionAudioLoaded(2)) || !(Streaming.HasModelLoaded(faketarget))) {
     await asyncWait(0);
 
 
@@ -272,7 +272,7 @@ async function mission_start_range() {
   // Creates the invisible target to stick palyer on
 
 
-  $.object1_bankjob2 = ScriptObject.CreateNoOffset(1385 /* faketarget */, -668.42, 1231.65, 10.08);
+  $.object1_bankjob2 = ScriptObject.CreateNoOffset(faketarget, -668.42, 1231.65, 10.08);
   $.object1_bankjob2.dontRemove();
   $.object1_bankjob2.setHeading(90.0);
 
@@ -285,10 +285,10 @@ $.slot4_ammo_bank2 = _res447.weaponAmmo;
 $.slot4_model_bank2 = _res447.weaponModel;
 
 
-  $.scplayer.attachToObject($.object1_bankjob2, 0.0, -2.0, 1.0, 0 /* FACING_FORWARD */, 60.0, 2 /* WEAPONTYPE_PISTOL */);
+  $.scplayer.attachToObject($.object1_bankjob2, 0.0, -2.0, 1.0, 0 /* FACING_FORWARD */, 60.0, 17 /* WEAPONTYPE_PISTOL */);
   $.scplayer.setCurrentWeapon(0 /* WEAPONTYPE_UNARMED */);
-  $.scplayer.setCurrentWeapon(2 /* WEAPONTYPE_PISTOL */);
-  $.player1.setAmmo(2 /* WEAPONTYPE_PISTOL */, 100);
+  $.scplayer.setCurrentWeapon(17 /* WEAPONTYPE_PISTOL */);
+  $.player1.setAmmo(17 /* WEAPONTYPE_PISTOL */, 100);
   $.ammo_given_round1_bankjob2 = 100;
 
   // fades the screen in
@@ -467,7 +467,7 @@ async function mission_skip_range() {
   Text.ClearThisPrint("BNK2_2"); // FIRE
 
 
-  Hud.DisplayTimer($.$id.timer_round1_bankjob2, TIMER_DOWN);
+  Hud.DisplayTimer($.$id.timer_round1_bankjob2, 1 /* TIMER_DOWN */);
 
 
   Hud.DisplayNthCounterWithString($.score_to_beat_bankjob2, 0 /* COUNTER_DISPLAY_NUMBER */, 2, "BJM2_18");
@@ -479,7 +479,7 @@ async function mission_skip_range() {
   TIMERA = 0;
 
 
-  $.target_moving_sound_bank2 = Sound.AddContinuous(-679.403, 1232.564, 11.105, SOUND_SHOOTING_RANGE_TARGET_MOVING_LOOP);
+  $.target_moving_sound_bank2 = Sound.AddContinuous(-679.403, 1232.564, 11.105, 11 /* SOUND_SHOOTING_RANGE_TARGET_MOVING_LOOP */);
 
 
   while ($.flag_round1_finished_bankjob2 == 0) {
@@ -504,7 +504,7 @@ async function mission_skip_range() {
 
     }
     $.player1.clearWantedLevel();
-    $.ammo_round1_bankjob = $.player1.getAmmoInWeapon(2 /* WEAPONTYPE_PISTOL */);
+    $.ammo_round1_bankjob = $.player1.getAmmoInWeapon(17 /* WEAPONTYPE_PISTOL */);
     if ($.timer_round1_bankjob2 == 0 || $.ammo_round1_bankjob == 0) {
       if ($.flag_time_out_round1_bank2 == 0) {
         TIMERA = 0;
@@ -1297,14 +1297,14 @@ async function mission_cleanup_range() {
   Hud.ClearCounter($.$id.player_score_bankjob2);
   Hud.ClearCounter($.$id.score_to_beat_bankjob2);
   Hud.ClearTimer($.$id.timer_round1_bankjob2);
-  Streaming.MarkModelAsNoLongerNeeded(173 /* COLT45 */);
+  Streaming.MarkModelAsNoLongerNeeded(COLT45);
   Streaming.MarkModelAsNoLongerNeeded(tar_frame);
   Streaming.MarkModelAsNoLongerNeeded(tar_downleft);
   Streaming.MarkModelAsNoLongerNeeded(tar_downright);
   Streaming.MarkModelAsNoLongerNeeded(tar_top);
   Streaming.MarkModelAsNoLongerNeeded(tar_upleft);
   Streaming.MarkModelAsNoLongerNeeded(tar_upright);
-  Streaming.MarkModelAsNoLongerNeeded(1385 /* faketarget */);
+  Streaming.MarkModelAsNoLongerNeeded(faketarget);
   $.timer_mobile_start = Clock.GetGameTimer();
   Mission.Finish();
 }

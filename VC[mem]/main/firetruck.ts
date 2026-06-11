@@ -1,6 +1,6 @@
 // Generated from main/firetruck.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *****************************************************************************************
 // *****************************************************************************************
@@ -710,7 +710,7 @@ $.player_z = _res187.z;
 
 
   if ($.displayed_timer == 0) {
-    Hud.DisplayTimer($.$id.fire_time_limit, TIMER_DOWN);
+    Hud.DisplayTimer($.$id.fire_time_limit, 1 /* TIMER_DOWN */);
     $.displayed_timer = 1;
   }
   else {
@@ -1033,7 +1033,7 @@ async function do_fire_on_car_bit() {
             Hud.DisplayCounterWithString($.$id.fires_extinguished, 0 /* COUNTER_DISPLAY_NUMBER */, "F_EXTIN");
             $.displayed_counter = 1;
           }
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           $.onfire_car_flag = 10;
           ++$.fires_extinguished;
           ++$.fires_extinguished_this_round;
@@ -1050,7 +1050,7 @@ async function do_fire_on_car_bit() {
             Hud.DisplayCounterWithString($.$id.fires_extinguished, 0 /* COUNTER_DISPLAY_NUMBER */, "F_EXTIN");
             $.displayed_counter = 1;
           }
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           $.onfire_car_flag = 10;
           ++$.fires_extinguished;
           ++$.fires_extinguished_this_round;
@@ -1091,7 +1091,7 @@ async function do_fire_on_ped_bit() {
             Hud.DisplayCounterWithString($.$id.fires_extinguished, 0 /* COUNTER_DISPLAY_NUMBER */, "F_EXTIN");
             $.displayed_counter = 1;
           }
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           ++$.fires_extinguished;
           ++$.fires_extinguished_this_round;
           $.onfire_ped_flag = 2;
@@ -1108,7 +1108,7 @@ async function do_fire_on_ped_bit() {
             Hud.DisplayCounterWithString($.$id.fires_extinguished, 0 /* COUNTER_DISPLAY_NUMBER */, "F_EXTIN");
             $.displayed_counter = 1;
           }
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           ++$.fires_extinguished;
           ++$.fires_extinguished_this_round;
           $.onfire_ped_flag = 2;

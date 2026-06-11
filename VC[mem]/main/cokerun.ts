@@ -1,6 +1,6 @@
 // Generated from main/cokerun.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *****************************************************************************************
 // *****************************************************************************************
@@ -68,7 +68,7 @@ async function body() {
   }
   if ($.flag_cokerun_passed == 1) {
     $.countdown_boat = $.countdown_boat - 5000;
-    Weather.ForceNow(WEATHER_EXTRA_SUNNY);
+    Weather.ForceNow(4 /* WEATHER_EXTRA_SUNNY */);
   }
   if ($.flag_cokerun_passed == 2) {
     $.countdown_boat = $.countdown_boat - 10000;
@@ -145,7 +145,7 @@ async function skip_cokerun_cut() {
   Camera.RestoreJumpcut();
 
 
-  Hud.DisplayTimer($.$id.countdown_boat, TIMER_DOWN);
+  Hud.DisplayTimer($.$id.countdown_boat, 1 /* TIMER_DOWN */);
 
 
   while (!(counter_cokerun > 25)) {
@@ -160,7 +160,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(-540.1, -1526.9, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(-540.1, -1526.9, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(-540.1, -1526.9, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(-458.2, -1575.2, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -175,7 +175,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(-458.2, -1575.2, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(-458.2, -1575.2, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(-458.2, -1575.2, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(-361.2, -1599.6, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -190,7 +190,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(-361.2, -1599.6, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(-361.2, -1599.6, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(-361.2, -1599.6, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(-333.0, -1678.1, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -205,7 +205,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(-333.0, -1678.1, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(-333.0, -1678.1, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(-333.0, -1678.1, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(-401.3, -1730.7, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -220,7 +220,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(-401.3, -1730.7, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(-401.3, -1730.7, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(-401.3, -1730.7, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(-312.3, -1715.6, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -235,7 +235,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(-312.3, -1715.6, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(-312.3, -1715.6, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(-312.3, -1715.6, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(-273.3, -1556.2, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -250,7 +250,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(-273.3, -1556.2, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(-273.3, -1556.2, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(-273.3, -1556.2, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(-272.4, -1449.7, 13.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -265,7 +265,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(-272.4, -1449.7, 13.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(-272.4, -1449.7, 13.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(-272.4, -1449.7, 13.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(-272.7, -1360.2, 13.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -280,7 +280,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(-275.4, -1360.2, 13.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(-275.4, -1360.2, 13.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(-275.4, -1360.2, 13.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(-305.6, -1214.4, 13.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -295,7 +295,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(-305.6, -1214.4, 13.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(-305.6, -1214.4, 13.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(-305.6, -1214.4, 13.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(-298.6, -1074.4, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -310,7 +310,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(-298.6, -1074.4, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(-298.6, -1074.4, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(-298.6, -1074.4, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(-252.0, -939.9, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -325,7 +325,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(-252.0, -939.9, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(-252.0, -939.9, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(-252.0, -939.9, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(-85.0, -766.0, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -340,7 +340,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(-85.0, -766.0, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(-85.0, -766.0, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(-85.0, -766.0, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(158.0, -634.0, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -355,7 +355,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(158.0, -634.0, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(158.0, -634.0, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(158.0, -634.0, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(279.0, -475.0, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -370,7 +370,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(279.0, -475.0, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(279.0, -475.0, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(279.0, -475.0, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(410.0, -269.0, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -385,7 +385,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(410.0, -269.0, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(410.0, -269.0, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(410.0, -269.0, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(392.0, 20.0, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -400,7 +400,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(392.0, 20.0, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(392.0, 20.0, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(392.0, 20.0, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(249.0, 100.0, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -415,7 +415,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(249.0, 100.0, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(249.0, 100.0, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(249.0, 100.0, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(194.0, -170.0, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -430,7 +430,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(194.0, -170.0, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(194.0, -170.0, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(194.0, -170.0, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(49.0, -150.0, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -445,7 +445,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(49.0, -150.0, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(49.0, -150.0, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(49.0, -150.0, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(-64.0, -156.0, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -460,7 +460,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(-64.0, -156.0, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(-64.0, -156.0, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(-64.0, -156.0, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(-93.0, 67.0, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -475,7 +475,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(-93.0, 67.0, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(-93.0, 67.0, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(-93.0, 67.0, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(-70.0, 294.0, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -490,7 +490,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(-70.0, 294.0, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(-70.0, 294.0, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(-70.0, 294.0, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(25.0, 394.0, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -505,7 +505,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(25.0, 394.0, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(25.0, 394.0, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(25.0, 394.0, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(196.0, 403.0, 8.0);
         ++counter_cokerun;
         cokerun_bigboat = Car.Create(marquis, 324.0, 604.0, 6.0);
@@ -522,7 +522,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(196.0, 403.0, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(196.0, 403.0, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(196.0, 403.0, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         blipcoke_1 = Blip.AddForCoord(304.4, 540.6, 8.0);
         ++counter_cokerun;
         create_coke_pickup = 0;
@@ -537,7 +537,7 @@ async function skip_cokerun_cut() {
       if ($.player1.locateInCar3D(304.4, 540.6, 8.0, 5.0, 5.0, 3.0, false /* FALSE */)) {
         blipcoke_1.remove();
         coke_pickup.remove();
-        Sound.AddOneOffSound(304.4, 540.6, 8.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(304.4, 540.6, 8.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         if (!(Car.IsDead(cokerun_bigboat))) {
           blipcoke_1 = Blip.AddForCar(cokerun_bigboat);
         }

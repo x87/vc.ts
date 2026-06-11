@@ -1,6 +1,6 @@
 // Generated from main/finale.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *****************************************************************************************
 // ********************************* Finale mission 2  *************************************
@@ -217,7 +217,7 @@ async function body() {
   $.stored_player_score = $.player1.storeScore();
 
 
-  Streaming.SetAreaVisible(VIS_MANSION);
+  Streaming.SetAreaVisible(2 /* VIS_MANSION */);
   $.flag_player_in_mansion = 1;
   Path.SwitchPedRoadsOff(-522.414, -662.451, -9.357, -222.414, -502.451, 90.643); // ENTIRE MANSION AREA
   World.SwitchRubbish(false /* OFF */);
@@ -729,7 +729,7 @@ async function body() {
   //REQUEST_MODEL KNIFECUR
 
   Streaming.RequestModel(TEC9);
-  Streaming.RequestModel(173 /* COLT45 */);
+  Streaming.RequestModel(COLT45);
   Streaming.LoadSpecialCharacter(1, "IGBUDDY");
   Streaming.LoadSpecialCharacter(2, "IGSONNY");
   Streaming.LoadSpecialCharacter(3, "MBA");
@@ -739,7 +739,7 @@ async function body() {
   Streaming.LoadAllModelsNow();
 
 
-  while (!(Streaming.HasModelLoaded(STRETCH)) || !(Streaming.HasModelLoaded(TEC9)) || !(Streaming.HasModelLoaded(RUGER)) || !(Streaming.HasModelLoaded(173 /* COLT45 */))) {
+  while (!(Streaming.HasModelLoaded(STRETCH)) || !(Streaming.HasModelLoaded(TEC9)) || !(Streaming.HasModelLoaded(RUGER)) || !(Streaming.HasModelLoaded(COLT45))) {
     //OR NOT HAS_MODEL_LOADED KNIFECUR
     await asyncWait(0);
   }
@@ -753,17 +753,17 @@ async function body() {
 
   Zone.SetPedInfo("GANG1", 1 /* DAY */, 14, 0, 0, 300, 0, 0, 0, 700, 0, 0, 0); // Mansion
   Zone.SetPedInfo("GANG1", 0 /* NIGHT */, 14, 0, 0, 300, 0, 0, 0, 700, 0, 0, 0);
-  Game.SetThreatForPedType(PEDTYPE_GANG_PLAYER, THREAT_GANG_STREET);
-  Game.SetThreatForPedType(PEDTYPE_GANG_STREET, THREAT_GANG_PLAYER);
-  Game.SetThreatForPedType(PEDTYPE_GANG_STREET, 1 /* THREAT_PLAYER1 */);
-  Gang.SetWeapons(GANG_PLAYER, 2 /* WEAPONTYPE_PISTOL */, 2 /* WEAPONTYPE_PISTOL */);
-  Gang.SetWeapons(GANG_STREET, 2 /* WEAPONTYPE_PISTOL */, 2 /* WEAPONTYPE_PISTOL */);
-  Gang.SetPedModels(GANG_STREET, SPECIAL03, SPECIAL04);
-  $.scplayer.setCanBeDamagedByMembersOfGang(GANG_PLAYER, false /* FALSE */);
+  Game.SetThreatForPedType(13 /* PEDTYPE_GANG_PLAYER */, 512 /* THREAT_GANG_STREET */);
+  Game.SetThreatForPedType(9 /* PEDTYPE_GANG_STREET */, 8192 /* THREAT_GANG_PLAYER */);
+  Game.SetThreatForPedType(9 /* PEDTYPE_GANG_STREET */, 1 /* THREAT_PLAYER1 */);
+  Gang.SetWeapons(6 /* GANG_PLAYER */, 17 /* WEAPONTYPE_PISTOL */, 17 /* WEAPONTYPE_PISTOL */);
+  Gang.SetWeapons(2 /* GANG_STREET */, 17 /* WEAPONTYPE_PISTOL */, 17 /* WEAPONTYPE_PISTOL */);
+  Gang.SetPedModels(2 /* GANG_STREET */, SPECIAL03, SPECIAL04);
+  $.scplayer.setCanBeDamagedByMembersOfGang(6 /* GANG_PLAYER */, false /* FALSE */);
   //dirty commands
 
 
-  Streaming.SetAreaVisible(VIS_MANSION);
+  Streaming.SetAreaVisible(2 /* VIS_MANSION */);
   $.flag_player_in_mansion = 1;
   World.SwitchRubbish(false /* OFF */);
   World.SetExtraColors(7, false /* FALSE */);
@@ -812,33 +812,33 @@ async function body() {
 
 
   if (ONMISSION == 0) {
-    $.random_mafia = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.mafia_1 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.mafia_2 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.mafia_3 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.mafia_4 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.mafia_5 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.mafia_6 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.mafia_7 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.mafia_8 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.mafia_9 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.boss_guard1 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.boss_guard2 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.boss_guard3 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.boss_guard4 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.boss_guard5 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.boss_guard6 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.boss_guard7 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.boss_guard8 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.boss_guard9 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.boss_guard10 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.boss_guard11 = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
-    $.health_pickup = Pickup.Create(1362 /* HEALTH */, 2 /* PICKUP_ON_STREET */, -336.6208, -568.9940, 11.6022);
-    $.armour_pickup = Pickup.Create(1364 /* BODYARMOUR */, 2 /* PICKUP_ON_STREET */, -336.6208, -570.9940, 11.6022);
+    $.random_mafia = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.mafia_1 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.mafia_2 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.mafia_3 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.mafia_4 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.mafia_5 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.mafia_6 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.mafia_7 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.mafia_8 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.mafia_9 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.boss_guard1 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.boss_guard2 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.boss_guard3 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.boss_guard4 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.boss_guard5 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.boss_guard6 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.boss_guard7 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.boss_guard8 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.boss_guard9 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.boss_guard10 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.boss_guard11 = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
+    $.health_pickup = Pickup.Create(HEALTH, 2 /* PICKUP_ON_STREET */, -336.6208, -568.9940, 11.6022);
+    $.armour_pickup = Pickup.Create(BODYARMOUR, 2 /* PICKUP_ON_STREET */, -336.6208, -570.9940, 11.6022);
     $.python_pickup = Pickup.CreateWithAmmo(TEC9, 2 /* PICKUP_ON_STREET */, 120, -336.6208, -572.9940, 11.6022);
     $.python_pickup2 = Pickup.CreateWithAmmo(TEC9, 2 /* PICKUP_ON_STREET */, 120, -336.6208, -572.9940, 11.6022);
-    $.health_pickup2 = Pickup.Create(1362 /* HEALTH */, 2 /* PICKUP_ON_STREET */, -336.6208, -568.9940, 11.6022);
-    $.health_pickup_on_roof = Pickup.Create(1362 /* HEALTH */, 2 /* PICKUP_ON_STREET */, -336.6208, -568.9940, 11.6022);
+    $.health_pickup2 = Pickup.Create(HEALTH, 2 /* PICKUP_ON_STREET */, -336.6208, -568.9940, 11.6022);
+    $.health_pickup_on_roof = Pickup.Create(HEALTH, 2 /* PICKUP_ON_STREET */, -336.6208, -568.9940, 11.6022);
   }
 
 
@@ -846,8 +846,8 @@ async function body() {
   $.armour_pickup.remove();
   $.python_pickup.remove();
   $.python_pickup2.remove();
-  $.health_pickup = Pickup.Create(1362 /* HEALTH */, 2 /* PICKUP_ON_STREET */, -406.2503, -566.4947, 19.5804);
-  $.armour_pickup = Pickup.Create(1364 /* BODYARMOUR */, 2 /* PICKUP_ON_STREET */, -406.2992, -564.5820, 19.5804);
+  $.health_pickup = Pickup.Create(HEALTH, 2 /* PICKUP_ON_STREET */, -406.2503, -566.4947, 19.5804);
+  $.armour_pickup = Pickup.Create(BODYARMOUR, 2 /* PICKUP_ON_STREET */, -406.2992, -564.5820, 19.5804);
   $.python_pickup = Pickup.CreateWithAmmo(PYTHON, 2 /* PICKUP_ON_STREET */, 120, -401.7512, -566.0168, 19.5804);
   $.python_pickup2 = Pickup.CreateWithAmmo(PYTHON, 3 /* PICKUP_ONCE */, 120, -374.4366, -587.5957, 25.3355);
 
@@ -868,7 +868,7 @@ async function body() {
   $.stored_player_score = $.player1.storeScore();
 
 
-  $.player1.setMood(PLAYER_MOOD_ANGRY, 60000);
+  $.player1.setMood(2 /* PLAYER_MOOD_ANGRY */, 60000);
 }
 
 
@@ -1026,7 +1026,7 @@ async function mission_finale2_loop() {
       World.ClearArea(-378.0434, -579.1422, 18.5385, 2.0, true);
       $.player1.setCoordinates(-378.0434, -579.1422, 18.5385);
       $.dummy_player = Char.Create(4 /* PEDTYPE_CIVMALE */, NULL, -378.4288, -582.1033, 24.2735);
-      $.dummy_player.giveWeapon(WEAPONTYPE_PYTHON, 9);
+      $.dummy_player.giveWeapon(18 /* WEAPONTYPE_PYTHON */, 9);
       //		SET_CHAR_HEADING dummy_player 168.0084
       $.dummy_player.turnToFaceChar($.vance);
       $.dummy_player.clearThreatSearch();
@@ -1131,7 +1131,7 @@ async function mission_finale2_loop() {
           }
           $.avoid_a_nasty_crash_flag++;
           if ($.avoid_a_nasty_crash_flag > 2) {
-            if ($.vance.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON) || $.player1.locateAnyMeans3D(-378.523, -561.41, 29.034, 18.0, 6.0, 2.5, false)) {
+            if ($.vance.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */) || $.player1.locateAnyMeans3D(-378.523, -561.41, 29.034, 18.0, 6.0, 2.5, false)) {
               $.vance.setObjSprintToCoord(-335.4508, -560.4796);
               $.vance.setUsePednodeSeek(false /* FALSE */);
               $.vance_flag = 6;
@@ -1157,7 +1157,7 @@ async function mission_finale2_loop() {
             //vance_timer	= game_timer + 1000
             $.vance_flag = 8;
           }
-          if ($.player1.locateAnyMeans3D(-347.4754, -559.3594, 27.5816, 2.0, 2.0, 2.0, false) || $.vance.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON)) {
+          if ($.player1.locateAnyMeans3D(-347.4754, -559.3594, 27.5816, 2.0, 2.0, 2.0, false) || $.vance.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */)) {
             //vance_timer	= game_timer - 1000
             $.vance_flag = 8;
           }
@@ -1168,7 +1168,7 @@ async function mission_finale2_loop() {
         }
         if ($.vance_flag == 8) {
           //IF vance_timer < game_timer
-          if ($.player1.locateAnyMeans3D(-347.4754, -559.3594, 27.5816, 2.0, 2.0, 2.0, false) || $.vance.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON)) {
+          if ($.player1.locateAnyMeans3D(-347.4754, -559.3594, 27.5816, 2.0, 2.0, 2.0, false) || $.vance.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */)) {
             $.vance.setObjSprintToCoord(-334.3681, -579.2608);
             $.vance.setUsePednodeSeek(false /* FALSE */);
             $.vance_flag = 9;
@@ -1192,7 +1192,7 @@ async function mission_finale2_loop() {
             //vance_timer	= game_timer + 1000
             $.vance_flag = 11;
           }
-          if ($.player1.locateAnyMeans3D(-336.1548, -565.9336, 27.5698, 2.0, 2.0, 2.0, false) || $.vance.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON)) {
+          if ($.player1.locateAnyMeans3D(-336.1548, -565.9336, 27.5698, 2.0, 2.0, 2.0, false) || $.vance.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */)) {
             //vance_timer	= game_timer - 1000
             $.vance_flag = 11;
           }
@@ -1203,7 +1203,7 @@ async function mission_finale2_loop() {
         }
         if ($.vance_flag == 11) {
           //IF vance_timer < game_timer
-          if ($.player1.locateAnyMeans3D(-336.1548, -565.9336, 27.5698, 2.0, 2.0, 2.0, false) || $.vance.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON)) {
+          if ($.player1.locateAnyMeans3D(-336.1548, -565.9336, 27.5698, 2.0, 2.0, 2.0, false) || $.vance.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */)) {
             $.vance.setObjSprintToCoord(-325.5564, -578.9694);
             $.vance.setUsePednodeSeek(false /* FALSE */);
             $.vance_flag = 12;
@@ -1233,7 +1233,7 @@ async function mission_finale2_loop() {
           //					audio_bit_flag = 1
           //				ENDIF
           //			ENDIF
-          if ($.player1.locateAnyMeans3D(-323.0355, -573.3547, 28.5367, 2.0, 2.0, 2.0, false) || $.player1.locateAnyMeans3D(-330.993, -578.541, 20.332, 3.134, 1.732, 1.81, false) || $.vance.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON) || $.player1.locateAnyMeans3D(-330.8983, -578.8625, 11.6069, 2.0, 2.0, 2.0, false)) {
+          if ($.player1.locateAnyMeans3D(-323.0355, -573.3547, 28.5367, 2.0, 2.0, 2.0, false) || $.player1.locateAnyMeans3D(-330.993, -578.541, 20.332, 3.134, 1.732, 1.81, false) || $.vance.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */) || $.player1.locateAnyMeans3D(-330.8983, -578.8625, 11.6069, 2.0, 2.0, 2.0, false)) {
             $.vance.setCrouch(false /* FALSE */, 200);
             $.vance_timer = $.game_timer - 1000;
             $.vance_flag = 14;
@@ -1244,7 +1244,7 @@ async function mission_finale2_loop() {
         }
         if ($.vance_flag == 14) {
           //IF vance_timer < game_timer
-          if ($.player1.locateAnyMeans3D(-323.0355, -573.3547, 28.5367, 2.0, 2.0, 2.0, false) || $.player1.locateAnyMeans3D(-330.993, -578.541, 20.332, 3.134, 1.732, 1.81, false) || $.vance.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON) || $.player1.locateAnyMeans3D(-330.8983, -578.8625, 11.6069, 2.0, 2.0, 2.0, false)) {
+          if ($.player1.locateAnyMeans3D(-323.0355, -573.3547, 28.5367, 2.0, 2.0, 2.0, false) || $.player1.locateAnyMeans3D(-330.993, -578.541, 20.332, 3.134, 1.732, 1.81, false) || $.vance.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */) || $.player1.locateAnyMeans3D(-330.8983, -578.8625, 11.6069, 2.0, 2.0, 2.0, false)) {
             $.vance.setCrouch(false /* FALSE */, 200);
             $.vance.setObjSprintToCoord(-318.4535, -583.2459); //BACK OF STAIRS
             $.vance.setUsePednodeSeek(false /* FALSE */);
@@ -1296,54 +1296,54 @@ $.player_z = _res179.z;
             await set_up_vance_shite();  // SCM GOSUB set_up_vance_shite
             $.vance.setHealth(500);
             $.vance.setObjKillPlayerOnFoot($.player1);
-            $.boss_guard1 = Char.Create(PEDTYPE_GANG_STREET, SPECIAL03, -358.9860, -573.5510, 35.9023); //kill player
+            $.boss_guard1 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL03, -358.9860, -573.5510, 35.9023); //kill player
             $.random_mafia = $.boss_guard1;
             await setup_goon_shite();  // SCM GOSUB setup_goon_shite
             $.boss_guard1.setStayInSamePlace(false /* FALSE */);
             $.boss_guard1.setObjKillPlayerOnFoot($.player1);
-            $.boss_guard2 = Char.Create(PEDTYPE_GANG_STREET, SPECIAL04, -360.4153, -581.7871, 35.9036); //crouching
+            $.boss_guard2 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL04, -360.4153, -581.7871, 35.9036); //crouching
             $.random_mafia = $.boss_guard2;
             await setup_goon_shite();  // SCM GOSUB setup_goon_shite
             $.boss_guard2.setObjKillPlayerOnFoot($.player1);
-            $.boss_guard4 = Char.Create(PEDTYPE_GANG_STREET, SPECIAL04, -358.8662, -572.5509, 35.9024); //crouch
+            $.boss_guard4 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL04, -358.8662, -572.5509, 35.9024); //crouch
             $.random_mafia = $.boss_guard4;
             await setup_goon_shite();  // SCM GOSUB setup_goon_shite
             $.boss_guard4.setCrouch(true /* TRUE */, 99999999);
             $.boss_guard4.setObjKillPlayerOnFoot($.player1);
-            $.boss_guard5 = Char.Create(PEDTYPE_GANG_STREET, SPECIAL03, -360.1348, -576.5894, 35.9036); //kill player
+            $.boss_guard5 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL03, -360.1348, -576.5894, 35.9036); //kill player
             $.random_mafia = $.boss_guard5;
             await setup_goon_shite();  // SCM GOSUB setup_goon_shite
             $.boss_guard5.setObjKillPlayerOnFoot($.player1);
-            $.boss_guard6 = Char.Create(PEDTYPE_GANG_STREET, SPECIAL04, -359.1239, -578.4683, 35.9022); //kill player
+            $.boss_guard6 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL04, -359.1239, -578.4683, 35.9022); //kill player
             $.random_mafia = $.boss_guard6;
             await setup_goon_shite();  // SCM GOSUB setup_goon_shite
             $.boss_guard6.setStayInSamePlace(false /* FALSE */);
             $.boss_guard6.setObjKillPlayerOnFoot($.player1);
-            $.boss_guard7 = Char.Create(PEDTYPE_GANG_STREET, SPECIAL03, -357.0746, -575.2473, 35.9037); //kill player
+            $.boss_guard7 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL03, -357.0746, -575.2473, 35.9037); //kill player
             $.random_mafia = $.boss_guard7;
             await setup_goon_shite();  // SCM GOSUB setup_goon_shite
             $.boss_guard7.setObjKillPlayerOnFoot($.player1);
-            $.barrel01 = ScriptObject.CreateNoOffset(1336 /* barrel2 */, -359.73, -580.773, 36.291);
+            $.barrel01 = ScriptObject.CreateNoOffset(barrel2, -359.73, -580.773, 36.291);
             $.barrel01.setDynamic(false /* FALSE */);
-            $.barrel02 = ScriptObject.CreateNoOffset(1336 /* barrel2 */, -358.514, -581.288, 36.291);
+            $.barrel02 = ScriptObject.CreateNoOffset(barrel2, -358.514, -581.288, 36.291);
             $.barrel02.setDynamic(false /* FALSE */);
-            $.barrel03 = ScriptObject.CreateNoOffset(1336 /* barrel2 */, -358.991, -582.344, 36.291);
+            $.barrel03 = ScriptObject.CreateNoOffset(barrel2, -358.991, -582.344, 36.291);
             $.barrel03.setDynamic(false /* FALSE */);
-            $.barrel04 = ScriptObject.CreateNoOffset(1336 /* barrel2 */, -360.921, -573.17, 37.412);
+            $.barrel04 = ScriptObject.CreateNoOffset(barrel2, -360.921, -573.17, 37.412);
             $.barrel04.setDynamic(false /* FALSE */);
-            $.barrel05 = ScriptObject.CreateNoOffset(1336 /* barrel2 */, -361.612, -573.052, 36.291);
+            $.barrel05 = ScriptObject.CreateNoOffset(barrel2, -361.612, -573.052, 36.291);
             $.barrel05.setDynamic(false /* FALSE */);
-            $.barrel06 = ScriptObject.CreateNoOffset(1336 /* barrel2 */, -360.718, -573.451, 36.291);
+            $.barrel06 = ScriptObject.CreateNoOffset(barrel2, -360.718, -573.451, 36.291);
             $.barrel06.setDynamic(false /* FALSE */);
-            $.barrel07 = ScriptObject.CreateNoOffset(1336 /* barrel2 */, -361.612, -573.947, 36.291);
+            $.barrel07 = ScriptObject.CreateNoOffset(barrel2, -361.612, -573.947, 36.291);
             $.barrel07.setDynamic(false /* FALSE */);
-            $.barrel08 = ScriptObject.CreateNoOffset(1336 /* barrel2 */, -360.917, -572.457, 36.291);
+            $.barrel08 = ScriptObject.CreateNoOffset(barrel2, -360.917, -572.457, 36.291);
             $.barrel08.setDynamic(false /* FALSE */);
-            $.barrel09 = ScriptObject.CreateNoOffset(1336 /* barrel2 */, -360.024, -571.964, 36.291);
+            $.barrel09 = ScriptObject.CreateNoOffset(barrel2, -360.024, -571.964, 36.291);
             $.barrel09.setDynamic(false /* FALSE */);
-            $.barrel10 = ScriptObject.CreateNoOffset(1336 /* barrel2 */, -360.917, -571.564, 36.291);
+            $.barrel10 = ScriptObject.CreateNoOffset(barrel2, -360.917, -571.564, 36.291);
             $.barrel10.setDynamic(false /* FALSE */);
-            $.barrel11 = ScriptObject.CreateNoOffset(1344 /* barrel4 */, -365.268, -581.761, 36.281);
+            $.barrel11 = ScriptObject.CreateNoOffset(barrel4, -365.268, -581.761, 36.281);
             $.barrel11.setDynamic(false /* FALSE */);
             $.barrel11.makeTargetable();
 
@@ -1354,27 +1354,27 @@ $.player_z = _res179.z;
             //CREATE_OBJECT_NO_OFFSET barrel2 -359.451 -558.796 36.291 barrel13
             //SET_OBJECT_DYNAMIC barrel13 FALSE
 
-            $.barrel14 = ScriptObject.CreateNoOffset(1336 /* barrel2 */, -344.03, -574.41, 36.291);
+            $.barrel14 = ScriptObject.CreateNoOffset(barrel2, -344.03, -574.41, 36.291);
             $.barrel14.setDynamic(false /* FALSE */);
-            $.barrel15 = ScriptObject.CreateNoOffset(1336 /* barrel2 */, -344.646, -575.077, 36.291);
+            $.barrel15 = ScriptObject.CreateNoOffset(barrel2, -344.646, -575.077, 36.291);
             $.barrel15.setDynamic(false /* FALSE */);
-            $.barrel16 = ScriptObject.CreateNoOffset(1336 /* barrel2 */, -344.081, -575.753, 36.291);
+            $.barrel16 = ScriptObject.CreateNoOffset(barrel2, -344.081, -575.753, 36.291);
             $.barrel16.setDynamic(false /* FALSE */);
-            $.barrel17 = ScriptObject.CreateNoOffset(1336 /* barrel2 */, -343.878, -576.62, 36.291);
+            $.barrel17 = ScriptObject.CreateNoOffset(barrel2, -343.878, -576.62, 36.291);
             $.barrel17.setDynamic(false /* FALSE */);
-            $.barrel18 = ScriptObject.CreateNoOffset(1336 /* barrel2 */, -344.491, -577.278, 36.291);
+            $.barrel18 = ScriptObject.CreateNoOffset(barrel2, -344.491, -577.278, 36.291);
             $.barrel18.setDynamic(false /* FALSE */);
-            $.barrel19 = ScriptObject.CreateNoOffset(1336 /* barrel2 */, -344.317, -576.168, 37.412);
+            $.barrel19 = ScriptObject.CreateNoOffset(barrel2, -344.317, -576.168, 37.412);
             $.barrel19.setDynamic(false /* FALSE */);
-            $.barrel20 = ScriptObject.CreateNoOffset(1336 /* barrel2 */, -344.691, -576.371, 36.291);
+            $.barrel20 = ScriptObject.CreateNoOffset(barrel2, -344.691, -576.371, 36.291);
             $.barrel20.setDynamic(false /* FALSE */);
             $.health_pickup_on_roof.remove();
-            $.health_pickup_on_roof = Pickup.Create(1362 /* HEALTH */, 2 /* PICKUP_ON_STREET */, -408.2314, -586.6186, 38.5);
+            $.health_pickup_on_roof = Pickup.Create(HEALTH, 2 /* PICKUP_ON_STREET */, -408.2314, -586.6186, 38.5);
             $.vance_flag = 18;
           }
         }
         if ($.vance_flag == 18) {
-          if ($.vance.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON)) {
+          if ($.vance.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */)) {
             if ($.audio_bit_flag == 3) {
               $.audio_bit_flag = 4;
             }
@@ -1513,9 +1513,9 @@ $.player_z = _res179.z;
 
     if ($.boss_guard7_flag > 1 || $.boss_guard7_flag == -1) {
       if ($.boss_guard8_flag == 0) {
-        $.boss_guard8 = Char.Create(PEDTYPE_GANG_STREET, SPECIAL03, -357.9117, -560.4049, 18.5529); //GOONS BOTTOM CORRIDOR
+        $.boss_guard8 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL03, -357.9117, -560.4049, 18.5529); //GOONS BOTTOM CORRIDOR
         $.boss_guard8.setStayInSamePlace(true /* TRUE */);
-        $.boss_guard8.giveWeapon(WEAPONTYPE_TEC9, 9999);
+        $.boss_guard8.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 9999);
         $.boss_guard8.setAccuracy(75);
         $.boss_guard8.clearThreatSearch();
         $.boss_guard8.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -1547,9 +1547,9 @@ $.player_z = _res179.z;
 
     if ($.boss_guard7_flag > 1 || $.boss_guard7_flag == -1) {
       if ($.boss_guard9_flag == 0) {
-        $.boss_guard9 = Char.Create(PEDTYPE_GANG_STREET, SPECIAL04, -358.5610, -560.1335, 26.5396); //GOONS UPPER CORRIDOR
+        $.boss_guard9 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL04, -358.5610, -560.1335, 26.5396); //GOONS UPPER CORRIDOR
         $.boss_guard9.setStayInSamePlace(true /* TRUE */);
-        $.boss_guard9.giveWeapon(WEAPONTYPE_TEC9, 9999);
+        $.boss_guard9.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 9999);
         $.boss_guard9.setAccuracy(75);
         $.boss_guard9.clearThreatSearch();
         $.boss_guard9.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -1582,9 +1582,9 @@ $.player_z = _res179.z;
     if ($.boss_guard9_flag > 0 || $.boss_guard9_flag == -1) {
       if ($.boss_guard10_flag == 0) {
         if (!(World.IsPointObscuredByAMissionEntity(-358.5610, -560.1335, 26.5396, 1.0, 1.0, 2.0))) {
-          $.boss_guard10 = Char.Create(PEDTYPE_GANG_STREET, SPECIAL03, -358.5610, -560.1335, 26.5396); //GOONS UPPER CORRIDOR
+          $.boss_guard10 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL03, -358.5610, -560.1335, 26.5396); //GOONS UPPER CORRIDOR
           $.boss_guard10.setStayInSamePlace(true /* TRUE */);
-          $.boss_guard10.giveWeapon(WEAPONTYPE_TEC9, 9999);
+          $.boss_guard10.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 9999);
           $.boss_guard10.setAccuracy(75);
           $.boss_guard10.clearThreatSearch();
           $.boss_guard10.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -1619,9 +1619,9 @@ $.player_z = _res179.z;
 
     if ($.boss_guard10_flag > 1 || $.boss_guard10_flag == -1) {
       if ($.boss_guard11_flag == 0) {
-        $.boss_guard11 = Char.Create(PEDTYPE_GANG_STREET, SPECIAL04, -358.5610, -560.1335, 26.5396); //GOONS UPPER CORRIDOR
+        $.boss_guard11 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL04, -358.5610, -560.1335, 26.5396); //GOONS UPPER CORRIDOR
         $.boss_guard11.setStayInSamePlace(true /* TRUE */);
-        $.boss_guard11.giveWeapon(WEAPONTYPE_TEC9, 9999);
+        $.boss_guard11.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 9999);
         $.boss_guard11.setAccuracy(75);
         $.boss_guard11.clearThreatSearch();
         $.boss_guard11.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -1696,7 +1696,7 @@ $.player_z = _res179.z;
           $.sonni.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
           //SET_CHAR_THREAT_SEARCH sonni THREAT_PLAYER1
           //SET_CHAR_THREAT_SEARCH sonni THREAT_GANG_PLAYER
-          $.sonni.giveWeapon(WEAPONTYPE_RUGER, 9999);
+          $.sonni.giveWeapon(27 /* WEAPONTYPE_RUGER */, 9999);
           $.sonni.setStayInSamePlace(true /* TRUE */);
           $.sonni.setHealth(1000);
           $.sonni.setAccuracy(100);
@@ -1705,8 +1705,8 @@ $.player_z = _res179.z;
           $.sonni.setAsPlayerFriend($.player1, true /* TRUE */);
           $.sonni.setSuffersCriticalHits(false /* FALSE */);
           $.sonni.setCanBeShotInVehicle(false /* FALSE */);
-          $.sonni.setCanBeDamagedByMembersOfGang(GANG_PLAYER, false /* FALSE */);
-          $.sonni.setCanBeDamagedByMembersOfGang(GANG_STREET, false /* FALSE */);
+          $.sonni.setCanBeDamagedByMembersOfGang(6 /* GANG_PLAYER */, false /* FALSE */);
+          $.sonni.setCanBeDamagedByMembersOfGang(2 /* GANG_STREET */, false /* FALSE */);
           Audio.LoadMissionAudio(1, "FIN_11a" as any); //Player: You took fifteen years from me Sonny...
           Audio.LoadMissionAudio(2, "FIN_11b" as any); //Player: And now Im gonna make you pay!
           $.player1.setControl(false /* OFF */);
@@ -1718,14 +1718,14 @@ $.player_z = _res179.z;
           World.ClearArea(-378.0434, -579.1422, 18.5385, 2.0, true);
           $.player1.setCoordinates(-378.0434, -579.1422, 18.5385);
           $.dummy_player = Char.Create(4 /* PEDTYPE_CIVMALE */, NULL, -378.7225, -581.9664, 24.2737);
-          $.dummy_player.giveWeapon(WEAPONTYPE_PYTHON, 9);
+          $.dummy_player.giveWeapon(18 /* WEAPONTYPE_PYTHON */, 9);
           $.dummy_player.clearThreatSearch();
           $.dummy_player.setObjGotoCoordOnFoot(-378.7615, -578.0532);
           $.dummy_player.setUsePednodeSeek(false /* FALSE */);
           $.dummy_player.shutUp(true /* TRUE */);
-          $.boss_guard1 = Char.Create(PEDTYPE_GANG_STREET, SPECIAL03, -377.4021, -556.0059, 18.6338); //RHS DOORWAY GOTO 2
+          $.boss_guard1 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL03, -377.4021, -556.0059, 18.6338); //RHS DOORWAY GOTO 2
           $.boss_guard1.setStayInSamePlace(true /* TRUE */);
-          $.boss_guard1.giveWeapon(WEAPONTYPE_TEC9, 9999);
+          $.boss_guard1.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 9999);
           $.boss_guard1.setAccuracy(75);
           $.boss_guard1.clearThreatSearch();
           $.boss_guard1.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -1734,9 +1734,9 @@ $.player_z = _res179.z;
           $.boss_guard1.setObjAimGunAtChar($.dummy_player);
 
 
-          $.boss_guard2 = Char.Create(PEDTYPE_GANG_STREET, SPECIAL04, -379.5223, -556.0323, 18.6338); //LHS DOORWAY GOTO 2
+          $.boss_guard2 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL04, -379.5223, -556.0323, 18.6338); //LHS DOORWAY GOTO 2
           $.boss_guard2.setStayInSamePlace(true /* TRUE */);
-          $.boss_guard2.giveWeapon(WEAPONTYPE_TEC9, 9999);
+          $.boss_guard2.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 9999);
           $.boss_guard2.setAccuracy(75);
           $.boss_guard2.clearThreatSearch();
           $.boss_guard2.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -1908,7 +1908,7 @@ $.player_z = _res179.z;
 
             $.player_in_scripted_cutscene = 0;
             $.health_pickup2.remove();
-            $.health_pickup2 = Pickup.Create(1362 /* HEALTH */, 2 /* PICKUP_ON_STREET */, -378.5680, -598.7501, 25.4); //SCARFACE ROOM
+            $.health_pickup2 = Pickup.Create(HEALTH, 2 /* PICKUP_ON_STREET */, -378.5680, -598.7501, 25.4); //SCARFACE ROOM
             $.python_pickup2.remove();
             $.python_pickup2 = Pickup.CreateWithAmmo(SHOTGSPA, 3 /* PICKUP_ONCE */, 400, -374.4366, -587.5957, 25.3355);
             Text.Print("FIN_B2", 5000, 1); //~p~Sonni~g~ is coming to kill you.
@@ -2026,9 +2026,9 @@ $.player_z = _res179.z;
 
     if ($.boss_guard2_flag > 1 || $.boss_guard2_flag == -1) {
       if ($.boss_guard3_flag == 0) {
-        $.boss_guard3 = Char.Create(PEDTYPE_GANG_STREET, SPECIAL04, -384.1820, -553.5216, 18.5431); //LHS DOORWAY GOON
+        $.boss_guard3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL04, -384.1820, -553.5216, 18.5431); //LHS DOORWAY GOON
         $.boss_guard3.setStayInSamePlace(true /* TRUE */);
-        $.boss_guard3.giveWeapon(WEAPONTYPE_TEC9, 9999);
+        $.boss_guard3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 9999);
         $.boss_guard3.setAccuracy(75);
         $.boss_guard3.clearThreatSearch();
         $.boss_guard3.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -2074,9 +2074,9 @@ $.player_z = _res179.z;
 
     if ($.boss_guard1_flag > 1 || $.boss_guard1_flag == -1) {
       if ($.boss_guard4_flag == 0) {
-        $.boss_guard4 = Char.Create(PEDTYPE_GANG_STREET, SPECIAL03, -373.9800, -553.4843, 18.5448); //RHS DOORWAY GOON
+        $.boss_guard4 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL03, -373.9800, -553.4843, 18.5448); //RHS DOORWAY GOON
         $.boss_guard4.setStayInSamePlace(true /* TRUE */);
-        $.boss_guard4.giveWeapon(WEAPONTYPE_TEC9, 9999);
+        $.boss_guard4.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 9999);
         $.boss_guard4.setAccuracy(75);
         $.boss_guard4.clearThreatSearch();
         $.boss_guard4.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -2122,9 +2122,9 @@ $.player_z = _res179.z;
 
     if ($.boss_guard4_flag > 1 || $.boss_guard4_flag == -1) {
       if ($.boss_guard5_flag == 0) {
-        $.boss_guard5 = Char.Create(PEDTYPE_GANG_STREET, SPECIAL04, -373.9800, -553.4843, 18.5448); //RHS DOORWAY GOON
+        $.boss_guard5 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL04, -373.9800, -553.4843, 18.5448); //RHS DOORWAY GOON
         $.boss_guard5.setStayInSamePlace(true /* TRUE */);
-        $.boss_guard5.giveWeapon(WEAPONTYPE_TEC9, 9999);
+        $.boss_guard5.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 9999);
         $.boss_guard5.setAccuracy(75);
         $.boss_guard5.clearThreatSearch();
         $.boss_guard5.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -2163,9 +2163,9 @@ $.player_z = _res179.z;
 
     if ($.boss_guard3_flag > 1 || $.boss_guard3_flag == -1) {
       if ($.boss_guard6_flag == 0) {
-        $.boss_guard6 = Char.Create(PEDTYPE_GANG_STREET, SPECIAL04, -384.1820, -553.5216, 18.5431); //LHS DOORWAY GOON
+        $.boss_guard6 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL04, -384.1820, -553.5216, 18.5431); //LHS DOORWAY GOON
         $.boss_guard6.setStayInSamePlace(true /* TRUE */);
-        $.boss_guard6.giveWeapon(WEAPONTYPE_TEC9, 9999);
+        $.boss_guard6.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 9999);
         $.boss_guard6.setAccuracy(75);
         $.boss_guard6.clearThreatSearch();
         $.boss_guard6.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -2204,9 +2204,9 @@ $.player_z = _res179.z;
 
     if ($.boss_guard4_flag > 2 || $.boss_guard4_flag == -1) {
       if ($.boss_guard7_flag == 0) {
-        $.boss_guard7 = Char.Create(PEDTYPE_GANG_STREET, SPECIAL03, -357.9117, -560.4049, 18.5529); //GOONS BOTTOM CORRIDOR
+        $.boss_guard7 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL03, -357.9117, -560.4049, 18.5529); //GOONS BOTTOM CORRIDOR
         $.boss_guard7.setStayInSamePlace(true /* TRUE */);
-        $.boss_guard7.giveWeapon(WEAPONTYPE_TEC9, 9999);
+        $.boss_guard7.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 9999);
         $.boss_guard7.setAccuracy(75);
         $.boss_guard7.clearThreatSearch();
         $.boss_guard7.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -2479,13 +2479,13 @@ async function set_up_vance_shite() {
   $.vance.clearThreatSearch();
   $.vance.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.vance.setThreatSearch(1 /* THREAT_PLAYER1 */);
-  $.vance.giveWeapon(WEAPONTYPE_RUGER, 9999);
+  $.vance.giveWeapon(27 /* WEAPONTYPE_RUGER */, 9999);
   $.vance.setHealth(1000);
   $.vance.setAccuracy(85);
   $.vance.setStayInSamePlace(true /* TRUE */);
   $.vance.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.vance.setCanBeDamagedByMembersOfGang(GANG_PLAYER, false /* FALSE */);
-  $.vance.setCanBeDamagedByMembersOfGang(GANG_STREET, false /* FALSE */);
+  $.vance.setCanBeDamagedByMembersOfGang(6 /* GANG_PLAYER */, false /* FALSE */);
+  $.vance.setCanBeDamagedByMembersOfGang(2 /* GANG_STREET */, false /* FALSE */);
   $.vance.setSuffersCriticalHits(false /* FALSE */);
   $.vance.setCanBeShotInVehicle(false /* FALSE */);
 }
@@ -2498,7 +2498,7 @@ async function setup_goon_shite() {
   //////////////////////////////////////////////////////////////////////////////////////////
 
   $.random_mafia.setStayInSamePlace(true /* TRUE */);
-  $.random_mafia.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 9999);
+  $.random_mafia.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 9999);
   $.random_mafia.clearThreatSearch();
   $.random_mafia.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.random_mafia.setHeedThreats(true /* TRUE */);
@@ -2522,7 +2522,7 @@ $.x = _res180.x;
 $.y = _res180.y;
 $.z = _res180.z;
         if (!(Camera.IsPointOnScreen($.x, $.y, $.z, 4.0))) {
-          $.random_mafia = Char.CreateAsPassenger($.mafia_limo_1, PEDTYPE_GANG_STREET, SPECIAL03, 1);
+          $.random_mafia = Char.CreateAsPassenger($.mafia_limo_1, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
           $.random_mafia_counter = -1;
         }
         else {
@@ -2545,7 +2545,7 @@ $.x = _res181.x;
 $.y = _res181.y;
 $.z = _res181.z;
         if (!(Camera.IsPointOnScreen($.x, $.y, $.z, 4.0))) {
-          $.random_mafia = Char.CreateAsPassenger($.mafia_limo_2, PEDTYPE_GANG_STREET, SPECIAL04, 1);
+          $.random_mafia = Char.CreateAsPassenger($.mafia_limo_2, 9 /* PEDTYPE_GANG_STREET */, SPECIAL04, 1);
           $.random_mafia_counter = -1;
         }
         else {
@@ -2568,7 +2568,7 @@ $.x = _res182.x;
 $.y = _res182.y;
 $.z = _res182.z;
         if (!(Camera.IsPointOnScreen($.x, $.y, $.z, 4.0))) {
-          $.random_mafia = Char.CreateAsPassenger($.mafia_limo_3, PEDTYPE_GANG_STREET, SPECIAL03, 1);
+          $.random_mafia = Char.CreateAsPassenger($.mafia_limo_3, 9 /* PEDTYPE_GANG_STREET */, SPECIAL03, 1);
           $.random_mafia_counter = -1;
         }
         else {
@@ -2586,7 +2586,7 @@ $.z = _res182.z;
   if ($.random_mafia_counter == 3) {
     if (!(World.IsPointObscuredByAMissionEntity(-354.0382, -527.9669, 11.7155, 1.0, 1.0, 2.0))) {
       if (!(Camera.IsPointOnScreen(-354.0382, -527.9669, 11.7155, 2.0))) {
-        $.random_mafia = Char.Create(PEDTYPE_GANG_STREET, SPECIAL04, -354.0382, -527.9669, 11.7155);
+        $.random_mafia = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL04, -354.0382, -527.9669, 11.7155);
         $.random_mafia_counter = -1;
       }
       else {
@@ -2600,7 +2600,7 @@ $.z = _res182.z;
   if ($.random_mafia_counter == 4) {
     if (!(World.IsPointObscuredByAMissionEntity(-390.1438, -541.0243, 16.2431, 1.0, 1.0, 2.0))) {
       if (!(Camera.IsPointOnScreen(-390.1438, -541.0243, 16.2431, 2.0))) {
-        $.random_mafia = Char.Create(PEDTYPE_GANG_STREET, SPECIAL03, -390.1438, -541.0243, 16.2431);
+        $.random_mafia = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL03, -390.1438, -541.0243, 16.2431);
         $.random_mafia_counter = -1;
       }
       else {
@@ -2614,7 +2614,7 @@ $.z = _res182.z;
   if ($.random_mafia_counter == 5) {
     if (!(World.IsPointObscuredByAMissionEntity(-458.3071, -606.5378, 11.7988, 1.0, 1.0, 2.0))) {
       if (!(Camera.IsPointOnScreen(-458.3071, -606.5378, 11.7988, 2.0))) {
-        $.random_mafia = Char.Create(PEDTYPE_GANG_STREET, SPECIAL04, -458.3071, -606.5378, 11.7988);
+        $.random_mafia = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL04, -458.3071, -606.5378, 11.7988);
         $.random_mafia_counter = -1;
       }
       else {
@@ -2628,7 +2628,7 @@ $.z = _res182.z;
   if ($.random_mafia_counter == 6) {
     if (!(World.IsPointObscuredByAMissionEntity(-455.4113, -561.6190, 11.7620, 1.0, 1.0, 2.0))) {
       if (!(Camera.IsPointOnScreen(-455.4113, -561.6190, 11.7620, 2.0))) {
-        $.random_mafia = Char.Create(PEDTYPE_GANG_STREET, SPECIAL03, -455.4113, -561.6190, 11.7620);
+        $.random_mafia = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL03, -455.4113, -561.6190, 11.7620);
         $.random_mafia_counter = -1;
       }
       else {
@@ -2642,7 +2642,7 @@ $.z = _res182.z;
   if ($.random_mafia_counter == 7) {
     if (!(World.IsPointObscuredByAMissionEntity(-412.1893, -605.7213, 16.2433, 1.0, 1.0, 2.0))) {
       if (!(Camera.IsPointOnScreen(-412.1893, -605.7213, 16.2433, 2.0))) {
-        $.random_mafia = Char.Create(PEDTYPE_GANG_STREET, SPECIAL04, -412.1893, -605.7213, 16.2433);
+        $.random_mafia = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL04, -412.1893, -605.7213, 16.2433);
         $.random_mafia_counter = -1;
       }
       else {
@@ -2656,7 +2656,7 @@ $.z = _res182.z;
   if ($.random_mafia_counter == 8) {
     if (!(World.IsPointObscuredByAMissionEntity(-370.0882, -615.1937, 9.3386, 1.0, 1.0, 2.0))) {
       if (!(Camera.IsPointOnScreen(-370.0882, -615.1937, 9.3386, 2.0))) {
-        $.random_mafia = Char.Create(PEDTYPE_GANG_STREET, SPECIAL03, -370.0882, -615.1937, 9.3386);
+        $.random_mafia = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL03, -370.0882, -615.1937, 9.3386);
         $.random_mafia_counter = -1;
       }
       else {
@@ -2683,7 +2683,7 @@ $.z = _res182.z;
   if ($.random_mafia_counter == 9) {
     if (!(World.IsPointObscuredByAMissionEntity(-335.9248, -579.0020, 18.5231, 1.0, 1.0, 2.0))) {
       if (!(Camera.IsPointOnScreen(-335.9248, -579.0020, 18.5231, 2.0))) {
-        $.random_mafia = Char.Create(PEDTYPE_GANG_STREET, SPECIAL03, -335.9248, -579.0020, 18.5231);
+        $.random_mafia = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL03, -335.9248, -579.0020, 18.5231);
         $.random_mafia_counter = -1;
       }
       else {
@@ -2697,7 +2697,7 @@ $.z = _res182.z;
   if ($.random_mafia_counter == 10) {
     if (!(World.IsPointObscuredByAMissionEntity(-329.9831, -582.3398, 34.5103, 1.0, 1.0, 2.0))) {
       if (!(Camera.IsPointOnScreen(-329.9831, -582.3398, 34.5103, 2.0))) {
-        $.random_mafia = Char.Create(PEDTYPE_GANG_STREET, SPECIAL04, -329.9831, -582.3398, 34.5103);
+        $.random_mafia = Char.Create(9 /* PEDTYPE_GANG_STREET */, SPECIAL04, -329.9831, -582.3398, 34.5103);
         $.random_mafia_counter = -1;
       }
       else {
@@ -2710,7 +2710,7 @@ $.z = _res182.z;
   }
   if ($.random_mafia_counter == -1) {
     $.random_mafia.setStayInSamePlace(true /* TRUE */);
-    $.random_mafia.giveWeapon(WEAPONTYPE_TEC9, 9999);
+    $.random_mafia.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 9999);
     $.random_mafia.clearThreatSearch();
     $.random_mafia.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.random_mafia.setCeaseAttackTimer(1500);
@@ -3157,7 +3157,7 @@ async function final_cutscene() {
   Cutscene.SetOffset(-378.62, -552.676, 18.534);
 
 
-  Streaming.SetAreaVisible(VIS_MANSION);
+  Streaming.SetAreaVisible(2 /* VIS_MANSION */);
   $.flag_player_in_mansion = 1;
   World.SwitchRubbish(false /* OFF */);
   World.SetExtraColors(7, false /* FALSE */);
@@ -3389,7 +3389,7 @@ async function final_cutscene() {
   Hud.SwitchWidescreen(true /* ON */);
   Game.SetEveryoneIgnorePlayer($.player1, true /* TRUE */);
   Game.SetAllCarsCanBeDamaged(false /* FALSE */);
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   $.flag_player_in_mansion = 0;
   World.SwitchRubbish(true /* ON */);
   World.ClearExtraColors(false /* FALSE */);
@@ -3655,7 +3655,7 @@ async function final_cutscene() {
   $.player1.setCoordinates(-379.2, -536.4, 16.2);
   $.player1.setHeading(0.0);
   Camera.SetBehindPlayer();
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   $.flag_player_in_mansion = 0;
   World.SwitchRubbish(true /* ON */);
   World.ClearExtraColors(false /* FALSE */);
@@ -3672,7 +3672,7 @@ async function final_cutscene() {
   World.ClearArea(-354.419, -569.529, 30.0, 200.0, false);
 
 
-  $.player1.setMood(PLAYER_MOOD_CALM, 60000);
+  $.player1.setMood(0 /* PLAYER_MOOD_CALM */, 60000);
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////
@@ -3693,13 +3693,13 @@ async function onFailed() {
 
   // handle when the player dies and he has killed sonny
 
-  Game.ClearThreatForPedType(PEDTYPE_GANG_PLAYER, THREAT_GANG_STREET);
-  Game.ClearThreatForPedType(PEDTYPE_GANG_STREET, THREAT_GANG_PLAYER);
-  Game.ClearThreatForPedType(PEDTYPE_GANG_STREET, 1 /* THREAT_PLAYER1 */);
-  Gang.SetWeapons(GANG_PLAYER, WEAPONTYPE_TEC9, 0 /* WEAPONTYPE_UNARMED */);
-  Gang.SetWeapons(GANG_STREET, 2 /* WEAPONTYPE_PISTOL */, 0 /* WEAPONTYPE_UNARMED */);
-  Gang.SetPedModels(GANG_STREET, SGA, SGB);
-  $.scplayer.setCanBeDamagedByMembersOfGang(GANG_PLAYER, true /* TRUE */);
+  Game.ClearThreatForPedType(13 /* PEDTYPE_GANG_PLAYER */, 512 /* THREAT_GANG_STREET */);
+  Game.ClearThreatForPedType(9 /* PEDTYPE_GANG_STREET */, 8192 /* THREAT_GANG_PLAYER */);
+  Game.ClearThreatForPedType(9 /* PEDTYPE_GANG_STREET */, 1 /* THREAT_PLAYER1 */);
+  Gang.SetWeapons(6 /* GANG_PLAYER */, 22 /* WEAPONTYPE_TEC9 */, 0 /* WEAPONTYPE_UNARMED */);
+  Gang.SetWeapons(2 /* GANG_STREET */, 17 /* WEAPONTYPE_PISTOL */, 0 /* WEAPONTYPE_UNARMED */);
+  Gang.SetPedModels(2 /* GANG_STREET */, SGA, SGB);
+  $.scplayer.setCanBeDamagedByMembersOfGang(6 /* GANG_PLAYER */, true /* TRUE */);
   $.player_score = $.player1.storeScore();
   $.player_score *= -1;
   $.player1.addScore($.player_score);
@@ -3722,20 +3722,20 @@ async function mission_finale2_passed() {
   Audio.PlayMissionPassedTune(1);
   Stat.RegisterMissionPassed("FIN_1");
   Stat.PlayerMadeProgress(1);
-  Game.ClearThreatForPedType(PEDTYPE_GANG_PLAYER, THREAT_GANG_STREET);
-  Game.ClearThreatForPedType(PEDTYPE_GANG_STREET, THREAT_GANG_PLAYER);
-  Game.ClearThreatForPedType(PEDTYPE_GANG_STREET, 1 /* THREAT_PLAYER1 */);
-  Gang.SetWeapons(GANG_PLAYER, 3 /* WEAPONTYPE_UZI */, 0 /* WEAPONTYPE_UNARMED */);
-  Gang.SetWeapons(GANG_STREET, 2 /* WEAPONTYPE_PISTOL */, 0 /* WEAPONTYPE_UNARMED */);
-  Gang.SetPedModels(GANG_STREET, SGA, SGB);
-  $.scplayer.setCanBeDamagedByMembersOfGang(GANG_PLAYER, true /* TRUE */);
-  // START_NEW_SCRIPT gang_member_loop
+  Game.ClearThreatForPedType(13 /* PEDTYPE_GANG_PLAYER */, 512 /* THREAT_GANG_STREET */);
+  Game.ClearThreatForPedType(9 /* PEDTYPE_GANG_STREET */, 8192 /* THREAT_GANG_PLAYER */);
+  Game.ClearThreatForPedType(9 /* PEDTYPE_GANG_STREET */, 1 /* THREAT_PLAYER1 */);
+  Gang.SetWeapons(6 /* GANG_PLAYER */, 23 /* WEAPONTYPE_UZI */, 0 /* WEAPONTYPE_UNARMED */);
+  Gang.SetWeapons(2 /* GANG_STREET */, 17 /* WEAPONTYPE_PISTOL */, 0 /* WEAPONTYPE_UNARMED */);
+  Gang.SetPedModels(2 /* GANG_STREET */, SGA, SGB);
+  $.scplayer.setCanBeDamagedByMembersOfGang(6 /* GANG_PLAYER */, true /* TRUE */);
+  // START_NEW_SCRIPT gang_member_loop 
   Weather.SetAllowHurricanes(true /* TRUE */);
 
 
   $.baron_contact_blip.remove();
   $.protect_contact_blip.remove();
-  $.protect_contact_blip = Blip.AddShortRangeSpriteForCoord(-378.3, -579.8, 24.5, RADAR_SPRITE_TOMMY);
+  $.protect_contact_blip = Blip.AddShortRangeSpriteForCoord(-378.3, -579.8, 24.5, 29 /* RADAR_SPRITE_TOMMY */);
 
 
   World.SetPedDensityMultiplier(1.0);
@@ -3777,7 +3777,7 @@ async function cleanup() {
 
 
   Streaming.MarkModelAsNoLongerNeeded(STRETCH);
-  Streaming.MarkModelAsNoLongerNeeded(173 /* COLT45 */);
+  Streaming.MarkModelAsNoLongerNeeded(COLT45);
   Streaming.MarkModelAsNoLongerNeeded(RUGER);
   //MARK_MODEL_AS_NO_LONGER_NEEDED KNIFECUR
 

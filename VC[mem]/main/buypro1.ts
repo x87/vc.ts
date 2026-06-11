@@ -1,6 +1,6 @@
 // Generated from main/buypro1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_buypro1() {
 
@@ -32,7 +32,7 @@ async function mission_start_buypro1() {
     await asyncWait(0);
     if (!($.player1.isPlaying())) {
       $.counter_contact_blip = Blip.AddSpriteForContactPoint($.counterX, $.counterY, $.counterZ, $.the_counter_blip);
-      // START_NEW_SCRIPT counter_mission1_loop
+      // START_NEW_SCRIPT counter_mission1_loop 
       return; // TERMINATE_THIS_SCRIPT
     }
   }
@@ -56,7 +56,7 @@ async function mission_start_buypro1() {
     await asyncWait(0);
     if (!($.player1.isPlaying())) {
       $.counter_contact_blip = Blip.AddSpriteForContactPoint($.counterX, $.counterY, $.counterZ, $.the_counter_blip);
-      // START_NEW_SCRIPT counter_mission1_loop
+      // START_NEW_SCRIPT counter_mission1_loop 
       return; // TERMINATE_THIS_SCRIPT
     }
   }
@@ -64,7 +64,7 @@ async function mission_start_buypro1() {
 
   Text.PrintWithNumberBig("CNTBUY1", $.printworks_price, 4000, 6); //"Printworks purchased: $ 15000"
   Stat.AddMoneySpentOnProperty($.printworks_price);
-  Stat.SetPropertyAsOwned(PROP_PRINTWORKS);
+  Stat.SetPropertyAsOwned(1 /* PROP_PRINTWORKS */);
 
 
   Audio.PlayMissionPassedTune(1);
@@ -77,7 +77,7 @@ async function mission_start_buypro1() {
   if (!($.player1.isPlaying())) {
     Audio.SetMusicDoesFade(true /* TRUE */);
     $.counter_contact_blip = Blip.AddSpriteForContactPoint($.counterX, $.counterY, $.counterZ, $.the_counter_blip);
-    // START_NEW_SCRIPT counter_mission1_loop
+    // START_NEW_SCRIPT counter_mission1_loop 
     return; // TERMINATE_THIS_SCRIPT
   }
 
@@ -91,7 +91,7 @@ async function mission_start_buypro1() {
     if (!($.player1.isPlaying())) {
       Audio.SetMusicDoesFade(true /* TRUE */);
       $.counter_contact_blip = Blip.AddSpriteForContactPoint($.counterX, $.counterY, $.counterZ, $.the_counter_blip);
-      // START_NEW_SCRIPT counter_mission1_loop
+      // START_NEW_SCRIPT counter_mission1_loop 
       return; // TERMINATE_THIS_SCRIPT
     }
   }
@@ -110,7 +110,7 @@ async function mission_start_buypro1() {
   $.counter_contact_blip = Blip.AddSpriteForContactPoint($.counterX, $.counterY, $.counterZ, $.the_counter_blip);
 
 
-  // START_NEW_SCRIPT counter_mission1_loop
+  // START_NEW_SCRIPT counter_mission1_loop 
 
 
   Camera.SetFadingColor(0, 0, 1);
@@ -129,7 +129,7 @@ async function mission_start_buypro1() {
   Audio.SetMusicDoesFade(true /* TRUE */);
 
 
-  // START_NEW_SCRIPT printers_save_loop
+  // START_NEW_SCRIPT printers_save_loop 
 
 
   ONMISSION = 0;

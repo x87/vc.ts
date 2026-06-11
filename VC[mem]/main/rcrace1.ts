@@ -1,6 +1,6 @@
 // Generated from main/rcrace1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_rc_races_start() {
 
@@ -394,7 +394,7 @@ async function mission_rc_races_start() {
 
 
   Clock.SetTimeOfDay(10, 0);
-  Weather.ForceNow(WEATHER_EXTRA_SUNNY);
+  Weather.ForceNow(4 /* WEATHER_EXTRA_SUNNY */);
 
 
   Camera.DoFade(2000, 1 /* FADE_IN */);
@@ -491,16 +491,16 @@ async function rc_race_start() {
   Game.SetEveryoneIgnorePlayer($.player1, true /* TRUE */);
   Game.SetAllCarsCanBeDamaged(false /* FALSE */);
   Text.PrintBig("RACE2", 1100, 4);
-  Sound.AddOneOffSound(0.0, 0.0, 0.0, 97 /* SOUND_RACE_START_3 */);
+  Sound.AddOneOffSound(0.0, 0.0, 0.0, 7 /* SOUND_RACE_START_3 */);
   await asyncWait(1000);
   Text.PrintBig("RACE3", 1100, 4);
-  Sound.AddOneOffSound(0.0, 0.0, 0.0, 98 /* SOUND_RACE_START_2 */);
+  Sound.AddOneOffSound(0.0, 0.0, 0.0, 8 /* SOUND_RACE_START_2 */);
   await asyncWait(1000);
   Text.PrintBig("RACE4", 1100, 4);
-  Sound.AddOneOffSound(0.0, 0.0, 0.0, 99 /* SOUND_RACE_START_1 */);
+  Sound.AddOneOffSound(0.0, 0.0, 0.0, 9 /* SOUND_RACE_START_1 */);
   await asyncWait(1000);
   Text.PrintBig("RACE5", 800, 4); //"GO!"
-  Sound.AddOneOffSound(0.0, 0.0, 0.0, 100 /* SOUND_RACE_START_GO */);
+  Sound.AddOneOffSound(0.0, 0.0, 0.0, 10 /* SOUND_RACE_START_GO */);
   $.player1.setControl(true /* ON */);
   Game.SetEveryoneIgnorePlayer($.player1, false /* FALSE */);
 
@@ -575,7 +575,7 @@ async function rc_race_start() {
 
 
   $.rc_race_timer = 0;
-  Hud.DisplayTimerWithString($.$id.rc_race_timer, TIMER_UP, "RCH1_5");
+  Hud.DisplayTimerWithString($.$id.rc_race_timer, 0 /* TIMER_UP */, "RCH1_5");
 
 
   if (Car.IsDead($.rc_playercar)) {
@@ -594,7 +594,7 @@ async function rc_race_start() {
     if (!(Car.IsDead($.rc_playercar))) {
       if ($.rc_playercar.locate2D($.rc_player1_cp_x, $.rc_player1_cp_y, 4.2, 4.2, false /* FALSE */)) {
         ++$.rc_player_cpcounter;
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.rc_blip_chase.remove();
         $.rc_second_blip.remove();
         $.rc_gosub_cpcounter = $.rc_player_cpcounter;

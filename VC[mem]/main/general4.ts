@@ -1,7 +1,7 @@
 // Generated from main/general4.sc
 
-import { $ } from "../vars.mts";
-import { timed } from "../scm.mts";
+import { $ } from "../utils/vars.mts";
+import { timed } from "../utils/scm.mts";
 
 // *****************************************************************************************
 // *********************************** General Mission 4 ***********************************
@@ -401,7 +401,7 @@ $.the_yacht_z = _res210.z;
   /////////////////////////////////////////////////////////////////////////////////////////////
 
 
-  $.player1.setMood(PLAYER_MOOD_PISSED_OFF, 60000);
+  $.player1.setMood(1 /* PLAYER_MOOD_PISSED_OFF */, 60000);
 
 
   Streaming.RequestModel(RHINO);
@@ -504,25 +504,25 @@ $.the_yacht_z = _res210.z;
   $.escort2_attached_01 = Char.Create(4 /* PEDTYPE_CIVMALE */, ARMY, -686.0, 665.0, 10.1);
   $.dude = $.escort2_attached_01;
   await setup_initial_ped_stuff();  // SCM GOSUB setup_initial_ped_stuff
-  $.escort2_attached_01.attachToCar($.escort2, 0.4242, -0.0679, 1.1322, 3 /* FACING_RIGHT */, 270.0, WEAPONTYPE_RUGER); //FRONT RIGHT
+  $.escort2_attached_01.attachToCar($.escort2, 0.4242, -0.0679, 1.1322, 3 /* FACING_RIGHT */, 270.0, 27 /* WEAPONTYPE_RUGER */); //FRONT RIGHT
 
 
   $.escort2_attached_02 = Char.Create(4 /* PEDTYPE_CIVMALE */, ARMY, -686.0, 664.0, 10.1);
   $.dude = $.escort2_attached_02;
   await setup_initial_ped_stuff();  // SCM GOSUB setup_initial_ped_stuff
-  $.escort2_attached_02.attachToCar($.escort2, -0.7608, -1.4, 1.1138, 1 /* FACING_LEFT */, 270.0, WEAPONTYPE_RUGER); //FRONT LEFT
+  $.escort2_attached_02.attachToCar($.escort2, -0.7608, -1.4, 1.1138, 1 /* FACING_LEFT */, 270.0, 27 /* WEAPONTYPE_RUGER */); //FRONT LEFT
 
 
   $.escort2_attached_03 = Char.Create(4 /* PEDTYPE_CIVMALE */, ARMY, -686.0, 663.0, 10.1);
   $.dude = $.escort2_attached_03;
   await setup_initial_ped_stuff();  // SCM GOSUB setup_initial_ped_stuff
-  $.escort2_attached_03.attachToCar($.escort2, -0.7595, -3.5704, 1.1108, 2 /* FACING_BACK */, 270.0, WEAPONTYPE_RUGER); //BACK LEFT
+  $.escort2_attached_03.attachToCar($.escort2, -0.7595, -3.5704, 1.1108, 2 /* FACING_BACK */, 270.0, 27 /* WEAPONTYPE_RUGER */); //BACK LEFT
 
 
   $.escort2_attached_04 = Char.Create(4 /* PEDTYPE_CIVMALE */, ARMY, -686.0, 662.0, 10.1);
   $.dude = $.escort2_attached_04;
   await setup_initial_ped_stuff();  // SCM GOSUB setup_initial_ped_stuff
-  $.escort2_attached_04.attachToCar($.escort2, 0.7158, -3.6996, 1.1162, 2 /* FACING_BACK */, 270.0, WEAPONTYPE_RUGER); //BACK RIGHT
+  $.escort2_attached_04.attachToCar($.escort2, 0.7158, -3.6996, 1.1162, 2 /* FACING_BACK */, 270.0, 27 /* WEAPONTYPE_RUGER */); //BACK RIGHT
 
 
   $.escort2.gotoCoordinatesAccurate(-848.7084, -1482.7328, 10.9920);
@@ -554,7 +554,7 @@ $.the_yacht_z = _res210.z;
   $.tank_attached_dude = Char.Create(4 /* PEDTYPE_CIVMALE */, ARMY, -686.0, 662.0, 10.1);
   $.dude = $.tank_attached_dude;
   await setup_initial_ped_stuff();  // SCM GOSUB setup_initial_ped_stuff
-  $.tank_attached_dude.attachToCar($.tank, 0.0455, -1.0043, 1.9962, 0 /* FACING_FORWARD */, 360.0, WEAPONTYPE_RUGER); //BACK RIGHT
+  $.tank_attached_dude.attachToCar($.tank, 0.0455, -1.0043, 1.9962, 0 /* FACING_FORWARD */, 360.0, 27 /* WEAPONTYPE_RUGER */); //BACK RIGHT
 
 
   $.tank.gotoCoordinatesAccurate(-838.3314, -1492.5, 11.0623);
@@ -586,25 +586,25 @@ $.the_yacht_z = _res210.z;
   $.escort3_attached_01 = Char.Create(4 /* PEDTYPE_CIVMALE */, ARMY, -686.0, 665.0, 10.1);
   $.dude = $.escort3_attached_01;
   await setup_initial_ped_stuff();  // SCM GOSUB setup_initial_ped_stuff
-  $.escort3_attached_01.attachToCar($.escort3, 0.4242, -0.0679, 1.1322, 3 /* FACING_RIGHT */, 270.0, WEAPONTYPE_RUGER); //FRONT RIGHT
+  $.escort3_attached_01.attachToCar($.escort3, 0.4242, -0.0679, 1.1322, 3 /* FACING_RIGHT */, 270.0, 27 /* WEAPONTYPE_RUGER */); //FRONT RIGHT
 
 
   $.escort3_attached_02 = Char.Create(4 /* PEDTYPE_CIVMALE */, ARMY, -686.0, 664.0, 10.1);
   $.dude = $.escort3_attached_02;
   await setup_initial_ped_stuff();  // SCM GOSUB setup_initial_ped_stuff
-  $.escort3_attached_02.attachToCar($.escort3, -0.7608, -1.4, 1.1138, 1 /* FACING_LEFT */, 270.0, WEAPONTYPE_RUGER); //FRONT LEFT
+  $.escort3_attached_02.attachToCar($.escort3, -0.7608, -1.4, 1.1138, 1 /* FACING_LEFT */, 270.0, 27 /* WEAPONTYPE_RUGER */); //FRONT LEFT
 
 
   $.escort3_attached_03 = Char.Create(4 /* PEDTYPE_CIVMALE */, ARMY, -686.0, 663.0, 10.1);
   $.dude = $.escort3_attached_03;
   await setup_initial_ped_stuff();  // SCM GOSUB setup_initial_ped_stuff
-  $.escort3_attached_03.attachToCar($.escort3, -0.7595, -3.5704, 1.1108, 2 /* FACING_BACK */, 270.0, WEAPONTYPE_RUGER); //BACK LEFT
+  $.escort3_attached_03.attachToCar($.escort3, -0.7595, -3.5704, 1.1108, 2 /* FACING_BACK */, 270.0, 27 /* WEAPONTYPE_RUGER */); //BACK LEFT
 
 
   $.escort3_attached_04 = Char.Create(4 /* PEDTYPE_CIVMALE */, ARMY, -686.0, 662.0, 10.1);
   $.dude = $.escort3_attached_04;
   await setup_initial_ped_stuff();  // SCM GOSUB setup_initial_ped_stuff
-  $.escort3_attached_04.attachToCar($.escort3, 0.7158, -3.6996, 1.1162, 2 /* FACING_BACK */, 270.0, WEAPONTYPE_RUGER); //BACK RIGHT
+  $.escort3_attached_04.attachToCar($.escort3, 0.7158, -3.6996, 1.1162, 2 /* FACING_BACK */, 270.0, 27 /* WEAPONTYPE_RUGER */); //BACK RIGHT
 
 
   $.escort3.gotoCoordinatesAccurate(-856.1463, -1480.3773, 10.9387);
@@ -757,12 +757,12 @@ async function mission_general4_loop() {
                     }
                   }
                 }
-                if ($.escort1.hasBeenDamagedByWeapon(16 /* WEAPONTYPE_RAMMEDBYCAR */)) {
+                if ($.escort1.hasBeenDamagedByWeapon(39 /* WEAPONTYPE_RAMMEDBYCAR */)) {
                   if ($.player1.locateAnyMeansCar2D($.escort1, 20.0, 20.0, false)) {
                     $.escort1_has_been_rammed_by_player = 1;
                   }
                 }
-                if ($.escort1.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON)) {
+                if ($.escort1.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */)) {
                   $.escort1_health = $.escort1.getHealth();
                   if ($.escort1_health < 800) {
                     $.attack_player = 1;
@@ -920,12 +920,12 @@ async function mission_general4_loop() {
                     $.attack_player = 1;
                   }
                 }
-                if ($.escort2.hasBeenDamagedByWeapon(16 /* WEAPONTYPE_RAMMEDBYCAR */)) {
+                if ($.escort2.hasBeenDamagedByWeapon(39 /* WEAPONTYPE_RAMMEDBYCAR */)) {
                   if ($.player1.locateAnyMeansCar2D($.escort2, 20.0, 20.0, false)) {
                     $.escort2_has_been_rammed_by_player = 1;
                   }
                 }
-                if ($.escort2.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON)) {
+                if ($.escort2.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */)) {
                   $.escort2_health = $.escort2.getHealth();
                   if ($.escort2_health < 800) {
                     $.attack_player = 1;
@@ -1154,7 +1154,7 @@ async function mission_general4_loop() {
 $.x = _res217.x;
 $.y = _res217.y;
 $.z = _res217.z;
-                  $.tank_dude1_bodyarmour = Pickup.Create(1364 /* bodyarmour */, 3 /* PICKUP_ONCE */, $.x, $.y, $.z);
+                  $.tank_dude1_bodyarmour = Pickup.Create(bodyarmour, 3 /* PICKUP_ONCE */, $.x, $.y, $.z);
                 }
                 $.attack_player = 1;
               }
@@ -1168,7 +1168,7 @@ $.z = _res217.z;
 $.x = _res218.x;
 $.y = _res218.y;
 $.z = _res218.z;
-                  $.tank_dude2_bodyarmour = Pickup.Create(1364 /* bodyarmour */, 3 /* PICKUP_ONCE */, $.x, $.y, $.z);
+                  $.tank_dude2_bodyarmour = Pickup.Create(bodyarmour, 3 /* PICKUP_ONCE */, $.x, $.y, $.z);
                 }
                 $.attack_player = 1;
               }
@@ -1678,7 +1678,7 @@ $.z = _res230.z;
                     $.garage_col4_destination.open();
                     $.garage_guard1 = Char.Create(4 /* PEDTYPE_CIVMALE */, ARMY, -830.7947, -1500.0537, 11.0670);
                     $.garage_guard1.setHeading(2.1778);
-                    $.garage_guard1.giveWeapon(WEAPONTYPE_RUGER, 9999);
+                    $.garage_guard1.giveWeapon(27 /* WEAPONTYPE_RUGER */, 9999);
                     $.garage_guard1.clearThreatSearch();
                     $.garage_guard1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
                     $.garage_guard1.setOnlyDamagedByPlayer(true /* TRUE */);
@@ -1686,7 +1686,7 @@ $.z = _res230.z;
                     $.garage_guard1.setUsePednodeSeek(false /* FALSE */);
                     $.garage_guard2 = Char.Create(4 /* PEDTYPE_CIVMALE */, ARMY, -824.3466, -1488.2743, 10.9186);
                     $.garage_guard2.setHeading(117.4210);
-                    $.garage_guard2.giveWeapon(WEAPONTYPE_RUGER, 9999);
+                    $.garage_guard2.giveWeapon(27 /* WEAPONTYPE_RUGER */, 9999);
                     $.garage_guard2.clearThreatSearch();
                     $.garage_guard2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
                     $.garage_guard2.setOnlyDamagedByPlayer(true /* TRUE */);
@@ -2532,12 +2532,12 @@ $.z = _res235.z;
                     $.attack_player = 1;
                   }
                 }
-                if ($.escort3.hasBeenDamagedByWeapon(16 /* WEAPONTYPE_RAMMEDBYCAR */)) {
+                if ($.escort3.hasBeenDamagedByWeapon(39 /* WEAPONTYPE_RAMMEDBYCAR */)) {
                   if ($.player1.locateAnyMeansCar2D($.escort3, 20.0, 20.0, false)) {
                     $.escort3_has_been_rammed_by_player = 1;
                   }
                 }
-                if ($.escort3.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON)) {
+                if ($.escort3.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */)) {
                   $.escort3_health = $.escort3.getHealth();
                   if ($.escort3_health < 800) {
                     $.attack_player = 1;
@@ -4120,7 +4120,7 @@ $.z = _res238.nodeZ;
 
 
 async function setup_initial_ped_stuff() {
-  $.dude.giveWeapon(WEAPONTYPE_RUGER, 9999);
+  $.dude.giveWeapon(27 /* WEAPONTYPE_RUGER */, 9999);
   $.dude.clearThreatSearch();
   $.dude.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.dude.setRunning(true /* TRUE */);

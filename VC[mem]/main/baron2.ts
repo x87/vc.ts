@@ -1,6 +1,6 @@
 // Generated from main/baron2.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *******************************************************************************************
 // *******************************************************************************************
@@ -46,7 +46,7 @@ async function body() {
   World.SetPedDensityMultiplier(0.0);
 
 
-  Streaming.SetAreaVisible(VIS_MANSION);
+  Streaming.SetAreaVisible(2 /* VIS_MANSION */);
   World.SetExtraColors(8, false /* FALSE */);
 
 
@@ -317,7 +317,7 @@ async function body() {
   }
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   Streaming.LoadScene(-380.9, -565.7, 40.0);
 
 
@@ -449,7 +449,7 @@ async function body() {
   Streaming.RequestModel(M60);
   Streaming.RequestModel(tec9);
   Streaming.RequestModel(bobcat);
-  Streaming.RequestModel(1344 /* barrel4 */);
+  Streaming.RequestModel(barrel4);
   Streaming.RequestModel(ruger);
   Streaming.RequestModel(gangbur);
   Streaming.RequestModel(sparrow);
@@ -466,7 +466,7 @@ async function body() {
   }
 
 
-  while (!(Streaming.HasModelLoaded(1344 /* barrel4 */)) || !(Streaming.HasModelLoaded(ruger)) || !(Streaming.HasModelLoaded(sparrow)) || !(Streaming.HasModelLoaded(gangbur))) {
+  while (!(Streaming.HasModelLoaded(barrel4)) || !(Streaming.HasModelLoaded(ruger)) || !(Streaming.HasModelLoaded(sparrow)) || !(Streaming.HasModelLoaded(gangbur))) {
     await asyncWait(0);
 
 
@@ -503,7 +503,7 @@ async function body() {
     Camera.SetFixedPosition(-386.772, -581.461, 40.134, 0.0, 0.0, 0.0);
     Camera.PointAtPoint(-387.379, -580.692, 40.335, 2 /* JUMP_CUT */);
     $.buddy_heli.setStabiliser(true /* TRUE */);
-    Audio.SetRadioChannel(FEVER, -1);
+    Audio.SetRadioChannel(3 /* FEVER */, -1);
   }
 
 
@@ -532,7 +532,7 @@ async function body() {
 
 
   if (!(Car.IsDead($.buddy_heli))) {
-    $.scplayer.attachToCar($.buddy_heli, -1.4, 1.0, -0.1, 1 /* FACING_LEFT */, 90.0, WEAPONTYPE_M60);
+    $.scplayer.attachToCar($.buddy_heli, -1.4, 1.0, -0.1, 1 /* FACING_LEFT */, 90.0, 32 /* WEAPONTYPE_M60 */);
   }
 
 
@@ -593,9 +593,9 @@ async function body() {
         //SET_CAR_HEADING sgang_car3 136.0
 
         $.sgang2 = Char.Create(4 /* PEDTYPE_CIVMALE */, WMYGO, -151.4, 493.2, 15.3); //GOLFERS
-        $.sgang2.setPersonality(PEDSTAT_COWARD);
+        $.sgang2.setPersonality(39 /* PEDSTAT_COWARD */);
         $.sgang3 = Char.Create(4 /* PEDTYPE_CIVMALE */, WMYGO, -150.5, 496.3, 15.4); //GOLFERS
-        $.sgang3.setPersonality(PEDSTAT_COWARD);
+        $.sgang3.setPersonality(39 /* PEDSTAT_COWARD */);
         Game.SetCharsChatting($.sgang2, $.sgang3, 999999);
         $.sgang_car4 = Car.Create(caddy, -145.6, 496.0, 14.8); //GOLF CADDY
         $.sgang_car4.setHealth(500);
@@ -637,40 +637,40 @@ async function body() {
           $.sgang1.setObjDestroyCar($.buddy_heli);
           $.sgang1.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.sgang1.lookAtPlayerAlways($.player1);
-          $.sgang1.giveWeapon(WEAPONTYPE_TEC9, 30000);
+          $.sgang1.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
           $.sgang1.setHealth(50);
           $.sgang2 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGb, 75.0, 1106.9, -100.0);
           $.sgang2.setStayInSamePlace(true /* TRUE */);
           $.sgang2.setObjDestroyCar($.buddy_heli);
           $.sgang2.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.sgang2.lookAtPlayerAlways($.player1);
-          $.sgang2.giveWeapon(WEAPONTYPE_TEC9, 30000);
+          $.sgang2.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
           $.sgang2.setHealth(50);
           $.sgang3 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGa, 71.5, 1099.0, -100.0);
           $.sgang3.setStayInSamePlace(true /* TRUE */);
           $.sgang3.setObjDestroyCar($.buddy_heli);
           $.sgang3.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.sgang3.lookAtPlayerAlways($.player1);
-          $.sgang3.giveWeapon(WEAPONTYPE_TEC9, 30000);
+          $.sgang3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
           $.sgang3.setHealth(50);
           $.sgang4 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGb, 78.4, 1101.6, -100.0);
           $.sgang4.setStayInSamePlace(true /* TRUE */);
           $.sgang4.setObjDestroyCar($.buddy_heli);
           $.sgang4.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.sgang4.lookAtPlayerAlways($.player1);
-          $.sgang4.giveWeapon(WEAPONTYPE_TEC9, 30000);
+          $.sgang4.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
           $.sgang4.setHealth(50);
           $.sgang5 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGa, 76.0, 1095.6, -100.0);
           $.sgang5.setStayInSamePlace(true /* TRUE */);
           $.sgang5.setObjDestroyCar($.buddy_heli);
           $.sgang5.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.sgang5.lookAtPlayerAlways($.player1);
-          $.sgang5.giveWeapon(WEAPONTYPE_TEC9, 30000);
+          $.sgang5.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
           $.sgang5.setHealth(50);
         }
-        $.gang_barrel1 = ScriptObject.Create(1344 /* barrel4 */, 65.6, 1104.6, 31.5);
-        $.gang_barrel2 = ScriptObject.Create(1344 /* barrel4 */, 65.7, 1107.5, 31.5);
-        $.gang_barrel3 = ScriptObject.Create(1344 /* barrel4 */, 86.7, 1114.3, 31.5);
+        $.gang_barrel1 = ScriptObject.Create(barrel4, 65.6, 1104.6, 31.5);
+        $.gang_barrel2 = ScriptObject.Create(barrel4, 65.7, 1107.5, 31.5);
+        $.gang_barrel3 = ScriptObject.Create(barrel4, 86.7, 1114.3, 31.5);
         $.sgangs_creation = 1;
       }
 
@@ -923,27 +923,27 @@ async function move_on1() {
     $.sgang1 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGa, 59.0, 1117.7, 17.7); //bottom north
     $.sgang1.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang1.lookAtPlayerAlways($.player1);
-    $.sgang1.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang1.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang1.setHealth(50);
     $.sgang2 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGb, 64.7, 1089.8, 17.7); //bottom south
     $.sgang2.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang2.lookAtPlayerAlways($.player1);
-    $.sgang2.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang2.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang2.setHealth(50);
     $.sgang3 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGa, 61.0, 1091.1, 24.4); //top south
     $.sgang3.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang3.lookAtPlayerAlways($.player1);
-    $.sgang3.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang3.setHealth(50);
     $.sgang4 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGb, 58.2, 1118.7, 24.4); //top north
     $.sgang4.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang4.lookAtPlayerAlways($.player1);
-    $.sgang4.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang4.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang4.setHealth(50);
     $.sgang5 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGa, 64.9, 1119.0, 24.4); //top north front
     $.sgang5.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang5.lookAtPlayerAlways($.player1);
-    $.sgang5.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang5.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang5.setHealth(50);
   }
 
@@ -1068,10 +1068,10 @@ async function move_on2() {
   $.sgang_car3.setHeading(34.6);
 
 
-  gang_barrel7 = ScriptObject.Create(1344 /* barrel4 */, 14.6, 1177.9, 22.5);
-  gang_barrel8 = ScriptObject.Create(1344 /* barrel4 */, 7.2, 1193.1, 17.8);
-  gang_barrel9 = ScriptObject.Create(1344 /* barrel4 */, -13.2, 1217.7, 20.4);
-  gang_barrel10 = ScriptObject.Create(1344 /* barrel4 */, -18.3, 1217.5, 20.4);
+  gang_barrel7 = ScriptObject.Create(barrel4, 14.6, 1177.9, 22.5);
+  gang_barrel8 = ScriptObject.Create(barrel4, 7.2, 1193.1, 17.8);
+  gang_barrel9 = ScriptObject.Create(barrel4, -13.2, 1217.7, 20.4);
+  gang_barrel10 = ScriptObject.Create(barrel4, -18.3, 1217.5, 20.4);
 
 
   $.sgang1.delete();
@@ -1088,12 +1088,12 @@ async function move_on2() {
     $.sgang1.setObjDestroyCar($.buddy_heli);
     $.sgang1.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang1.lookAtPlayerAlways($.player1);
-    $.sgang1.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang1.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang1.setHealth(50);
     $.gang_drive = Car.Create(gangbur, 43.8, 1129.6, 17.9);
     $.gang_drive.setHeading(0.0);
     $.sgang2 = Char.CreateInsideCar($.gang_drive, 4 /* PEDTYPE_CIVMALE */, SGb);
-    $.sgang2.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang2.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang2.setHealth(50);
     $.sgang2.lookAtPlayerAlways($.player1);
     $.sgang2.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -1106,56 +1106,56 @@ async function move_on2() {
     $.sgang3.setObjDestroyCar($.buddy_heli);
     $.sgang3.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang3.lookAtPlayerAlways($.player1);
-    $.sgang3.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang3.setHealth(50);
     $.sgang4 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGb, -11.8, 1208.5, 22.5); //Back of bobcat2
     $.sgang4.setStayInSamePlace(true /* TRUE */);
     $.sgang4.setObjDestroyCar($.buddy_heli);
     $.sgang4.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang4.lookAtPlayerAlways($.player1);
-    $.sgang4.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang4.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang4.setHealth(50);
     $.sgang5 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGa, -22.9, 1198.6, 22.1); //next to bobcat3
     $.sgang5.setStayInSamePlace(true /* TRUE */);
     $.sgang5.setObjDestroyCar($.buddy_heli);
     $.sgang5.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang5.lookAtPlayerAlways($.player1);
-    $.sgang5.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang5.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang5.setHealth(50);
     $.sgang6 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGb, -34.7, 1202.3, 20.4); // basketball court front
     $.sgang6.setStayInSamePlace(true /* TRUE */);
     $.sgang6.setObjDestroyCar($.buddy_heli);
     $.sgang6.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang6.lookAtPlayerAlways($.player1);
-    $.sgang6.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang6.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang6.setHealth(50);
     $.sgang7 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGb, -40.5, 1195.1, 20.4); // basketball court back
     $.sgang7.setStayInSamePlace(true /* TRUE */);
     $.sgang7.setObjDestroyCar($.buddy_heli);
     $.sgang7.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang7.lookAtPlayerAlways($.player1);
-    $.sgang7.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang7.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang7.setHealth(50);
     $.sgang8 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGa, -22.3, 1218.0, 20.4); // behind guard house
     $.sgang8.setStayInSamePlace(true /* TRUE */);
     $.sgang8.setObjDestroyCar($.buddy_heli);
     $.sgang8.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang8.lookAtPlayerAlways($.player1);
-    $.sgang8.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang8.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang8.setHealth(50);
     $.sgang9 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGa, 27.3, 1196.4, 19.6); // Next to swimming pool
     $.sgang9.setStayInSamePlace(true /* TRUE */);
     $.sgang9.setObjDestroyCar($.buddy_heli);
     $.sgang9.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang9.lookAtPlayerAlways($.player1);
-    $.sgang9.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang9.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang9.setHealth(50);
     $.sgang10 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGa, 0.8, 1212.9, 20.4); // infront of bobcats
     $.sgang10.setStayInSamePlace(true /* TRUE */);
     $.sgang10.setObjDestroyCar($.buddy_heli);
     $.sgang10.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang10.lookAtPlayerAlways($.player1);
-    $.sgang10.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang10.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang5.setHealth(50);
 
 
@@ -1361,42 +1361,42 @@ async function move_on4() {
     $.sgang1.setObjDestroyCar($.buddy_heli);
     $.sgang1.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang1.lookAtPlayerAlways($.player1);
-    $.sgang1.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang1.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang1.setHealth(50);
     $.sgang2 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGa, -59.3, 1113.0, -100.0);
     $.sgang2.setStayInSamePlace(true /* TRUE */);
     $.sgang2.setObjDestroyCar($.buddy_heli);
     $.sgang2.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang2.lookAtPlayerAlways($.player1);
-    $.sgang2.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang2.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang2.setHealth(50);
     $.sgang3 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGb, -57.8, 1121.4, -100.0);
     $.sgang3.setStayInSamePlace(true /* TRUE */);
     $.sgang3.setObjDestroyCar($.buddy_heli);
     $.sgang3.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang3.lookAtPlayerAlways($.player1);
-    $.sgang3.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang3.setHealth(50);
     $.sgang4 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGa, -44.4, 1119.6, -100.0);
     $.sgang4.setStayInSamePlace(true /* TRUE */);
     $.sgang4.setObjDestroyCar($.buddy_heli);
     $.sgang4.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang4.lookAtPlayerAlways($.player1);
-    $.sgang4.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang4.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang4.setHealth(50);
     $.sgang5 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGb, -45.0, 1123.6, -100.0);
     $.sgang5.setStayInSamePlace(true /* TRUE */);
     $.sgang5.setObjDestroyCar($.buddy_heli);
     $.sgang5.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang5.lookAtPlayerAlways($.player1);
-    $.sgang5.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang5.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang5.setHealth(50);
   }
 
 
-  $.gang_barrel4 = ScriptObject.Create(1344 /* barrel4 */, -41.1, 1106.3, 29.9);
-  $.gang_barrel5 = ScriptObject.Create(1344 /* barrel4 */, -60.8, 1102.7, 29.9);
-  gang_barrel6 = ScriptObject.Create(1344 /* barrel4 */, -46.6, 1118.5, 29.9);
+  $.gang_barrel4 = ScriptObject.Create(barrel4, -41.1, 1106.3, 29.9);
+  $.gang_barrel5 = ScriptObject.Create(barrel4, -60.8, 1102.7, 29.9);
+  gang_barrel6 = ScriptObject.Create(barrel4, -46.6, 1118.5, 29.9);
 
 
   if (!(Car.IsDead($.buddy_heli))) {
@@ -1485,35 +1485,35 @@ async function move_on5() {
     $.sgang1.setObjDestroyCar($.buddy_heli);
     $.sgang1.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang1.lookAtPlayerAlways($.player1);
-    $.sgang1.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang1.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang1.setHealth(50);
     $.sgang2 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGa, 21.9, 1146.7, -100.0); //Top balcony right
     $.sgang2.setStayInSamePlace(true /* TRUE */);
     $.sgang2.setObjDestroyCar($.buddy_heli);
     $.sgang2.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang2.lookAtPlayerAlways($.player1);
-    $.sgang2.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang2.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang2.setHealth(50);
     $.sgang3 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGa, 11.3, 1147.0, 22.5); //lower balcony left
     $.sgang3.setStayInSamePlace(true /* TRUE */);
     $.sgang3.setObjDestroyCar($.buddy_heli);
     $.sgang3.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang3.lookAtPlayerAlways($.player1);
-    $.sgang3.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang3.setHealth(50);
     $.sgang4 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGa, 28.9, 1146.3, 20.5); //lower balcony right
     $.sgang4.setStayInSamePlace(true /* TRUE */);
     $.sgang4.setObjDestroyCar($.buddy_heli);
     $.sgang4.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang4.lookAtPlayerAlways($.player1);
-    $.sgang4.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang4.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang4.setHealth(50);
     $.sgang5 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGb, 15.9, 1145.5, 22.5); //lower balcony centre
     $.sgang5.setStayInSamePlace(true /* TRUE */);
     $.sgang5.setObjDestroyCar($.buddy_heli);
     $.sgang5.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.sgang5.lookAtPlayerAlways($.player1);
-    $.sgang5.giveWeapon(WEAPONTYPE_TEC9, 30000);
+    $.sgang5.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
     $.sgang5.setHealth(50);
   }
 
@@ -1576,20 +1576,20 @@ async function move_on6() {
     $.sgang_boss = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL05, 68.7, 1098.2, 31.7);
     $.sgang_boss.setStayInSamePlace(true /* TRUE */);
     $.sgang_boss.lookAtPlayerAlways($.player1);
-    $.sgang_boss.giveWeapon(WEAPONTYPE_RUGER, 30000);
+    $.sgang_boss.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30000);
     $.sgang_boss.setHealth(100);
     $.sgang_boss.setHeading(90.0);
     $.sgang1 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGb, 62.8, 1098.2, 31.7);
     $.sgang1.setStayInSamePlace(true /* TRUE */);
     $.sgang1.setObjKillPlayerOnFoot($.player1);
     $.sgang1.lookAtPlayerAlways($.player1);
-    $.sgang1.giveWeapon(WEAPONTYPE_RUGER, 30000);
+    $.sgang1.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30000);
     $.sgang1.setHealth(50);
     $.sgang2 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGb, 66.6, 1093.7, 31.7);
     $.sgang2.setStayInSamePlace(true /* TRUE */);
     $.sgang2.setObjKillPlayerOnFoot($.player1);
     $.sgang2.lookAtPlayerAlways($.player1);
-    $.sgang2.giveWeapon(WEAPONTYPE_RUGER, 30000);
+    $.sgang2.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30000);
     $.sgang2.setHealth(50);
 
 
@@ -1715,7 +1715,7 @@ async function move_on6() {
   }
 
 
-  $.briefcase_baron2 = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, 68.7, 1098.2, 32.5);
+  $.briefcase_baron2 = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, 68.7, 1098.2, 32.5);
 
 
   if (!(Car.IsDead($.buddy_heli))) {
@@ -1771,8 +1771,8 @@ async function move_on6() {
 
 
   $.scplayer.detachFromCar();
-  $.player1.giveWeapon(WEAPONTYPE_M60, 100);
-  $.player1.setCurrentWeapon(WEAPONTYPE_M60);
+  $.player1.giveWeapon(32 /* WEAPONTYPE_M60 */, 100);
+  $.player1.setCurrentWeapon(32 /* WEAPONTYPE_M60 */);
   Game.SetMaxWantedLevel(5);
   $.player1.shutUp(false /* FALSE */);
 
@@ -1800,7 +1800,7 @@ async function move_on6() {
   $.sgang1.setObjKillPlayerOnFoot($.player1);
   $.sgang1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.sgang1.lookAtPlayerAlways($.player1);
-  $.sgang1.giveWeapon(WEAPONTYPE_TEC9, 30000);
+  $.sgang1.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
   $.sgang1.setHealth(50);
 
 
@@ -1809,7 +1809,7 @@ async function move_on6() {
   $.sgang2.setObjKillPlayerOnFoot($.player1);
   $.sgang2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.sgang2.lookAtPlayerAlways($.player1);
-  $.sgang2.giveWeapon(WEAPONTYPE_TEC9, 30000);
+  $.sgang2.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
   $.sgang2.setHealth(50);
 
 
@@ -1818,7 +1818,7 @@ async function move_on6() {
   $.sgang3.setObjKillPlayerOnFoot($.player1);
   $.sgang3.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.sgang3.lookAtPlayerAlways($.player1);
-  $.sgang3.giveWeapon(WEAPONTYPE_TEC9, 30000);
+  $.sgang3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
   $.sgang3.setHealth(50);
 
 
@@ -1827,7 +1827,7 @@ async function move_on6() {
   $.sgang4.setObjKillPlayerOnFoot($.player1);
   $.sgang4.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.sgang4.lookAtPlayerAlways($.player1);
-  $.sgang4.giveWeapon(WEAPONTYPE_TEC9, 30000);
+  $.sgang4.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
   $.sgang4.setHealth(50);
 
 
@@ -1836,7 +1836,7 @@ async function move_on6() {
   $.sgang5.setObjKillPlayerOnFoot($.player1);
   $.sgang5.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.sgang5.lookAtPlayerAlways($.player1);
-  $.sgang5.giveWeapon(WEAPONTYPE_TEC9, 30000);
+  $.sgang5.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
   $.sgang5.setHealth(50);
 
 
@@ -1845,7 +1845,7 @@ async function move_on6() {
   $.sgang6.setObjKillPlayerOnFoot($.player1);
   $.sgang6.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.sgang6.lookAtPlayerAlways($.player1);
-  $.sgang6.giveWeapon(WEAPONTYPE_TEC9, 30000);
+  $.sgang6.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
   $.sgang6.setHealth(50);
 
 
@@ -1854,7 +1854,7 @@ async function move_on6() {
   $.sgang7.setObjKillPlayerOnFoot($.player1);
   $.sgang7.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.sgang7.lookAtPlayerAlways($.player1);
-  $.sgang7.giveWeapon(WEAPONTYPE_TEC9, 30000);
+  $.sgang7.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 30000);
   $.sgang7.setHealth(50);
 
 
@@ -2017,12 +2017,12 @@ async function mission_baron2_passed() {
   Path.SwitchPedRoadsOn(-99.8, 1041.9, 0.0, -129.0, 1097.4, 30.0); //  porn island road block
   Path.SwitchRoadsOn(-99.8, 1041.9, 0.0, -129.0, 1097.4, 30.0); // porn island road block
   $.porn_roadblock.delete();
-  Audio.PlayAnnouncement(ANNOUNCEMENT_TRACK_BRIDGE_OPEN);
+  Audio.PlayAnnouncement(1 /* ANNOUNCEMENT_TRACK_BRIDGE_OPEN */);
   $.gen_car15.switch(101);
   $.gen_car38.switch(101);
   $.gen_car13.switch(101);
   $.gen_car14.switch(101);
-  // START_NEW_SCRIPT baron_mission3_loop
+  // START_NEW_SCRIPT baron_mission3_loop 
 }
 
 
@@ -2041,7 +2041,7 @@ async function cleanup() {
   Streaming.MarkModelAsNoLongerNeeded(tec9);
   Streaming.MarkModelAsNoLongerNeeded(ruger);
   Streaming.MarkModelAsNoLongerNeeded(bobcat);
-  Streaming.MarkModelAsNoLongerNeeded(1344 /* barrel4 */);
+  Streaming.MarkModelAsNoLongerNeeded(barrel4);
   Streaming.MarkModelAsNoLongerNeeded(SGa);
   Streaming.MarkModelAsNoLongerNeeded(SGb);
   Streaming.MarkModelAsNoLongerNeeded(maverick);

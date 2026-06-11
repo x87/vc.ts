@@ -1,6 +1,6 @@
 // Generated from main/debug.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function delete_gates() {
 
@@ -84,7 +84,7 @@ async function mission_start_debug() {
           await asyncWait(300);
         }
         if (weather_crap == 2) {
-          Weather.ForceNow(WEATHER_EXTRA_SUNNY);
+          Weather.ForceNow(4 /* WEATHER_EXTRA_SUNNY */);
           Text.PrintNow("WEATHE2", 1000, 1); //CHEAT MODE ON
           await asyncWait(300);
         }
@@ -225,7 +225,7 @@ async function mission_start_debug() {
       // SCM label next_pickup
       await asyncWait(0);
       ++counter_create_pickup;
-      if (counter_create_pickup > camera) {
+      if (counter_create_pickup > 46 /* camera */) {
         counter_create_pickup = brassknuckle;
       }
       if (counter_create_pickup == missile) {
@@ -451,7 +451,7 @@ $.rsticky = _res178.rightStickY;
             Hud.DisplayNthCounterWithString(onscreen_1, 1 /* COUNTER_DISPLAY_BAR */, 1, "BUSTED");
             Hud.DisplayNthCounterWithString(onscreen_2, 0 /* COUNTER_DISPLAY_NUMBER */, 2, "BUSTED");
             Hud.DisplayNthCounterWithString(onscreen_3, 0 /* COUNTER_DISPLAY_NUMBER */, 3, "BUSTED");
-            Hud.DisplayTimerWithString(onscreen_4, TIMER_UP, "BUSTED");
+            Hud.DisplayTimerWithString(onscreen_4, 0 /* TIMER_UP */, "BUSTED");
             Text.PrintWithNumberBig("M_PASS", print_stuff_counter, 2000, 1);
           }
           if (print_stuff_counter == 2) {
@@ -462,7 +462,7 @@ $.rsticky = _res178.rightStickY;
             Hud.DisplayNthCounterWithString(onscreen_1, 1 /* COUNTER_DISPLAY_BAR */, 1, "BUSTED");
             Hud.DisplayNthCounterWithString(onscreen_2, 0 /* COUNTER_DISPLAY_NUMBER */, 2, "BUSTED");
             Hud.DisplayNthCounterWithString(onscreen_3, 0 /* COUNTER_DISPLAY_NUMBER */, 3, "BUSTED");
-            Hud.DisplayTimerWithString(onscreen_4, TIMER_UP, "BUSTED");
+            Hud.DisplayTimerWithString(onscreen_4, 0 /* TIMER_UP */, "BUSTED");
             Text.PrintWithNumberBig("M_PASS", print_stuff_counter, 2000, 2);
           }
           if (print_stuff_counter == 3) {
@@ -473,7 +473,7 @@ $.rsticky = _res178.rightStickY;
             Hud.DisplayNthCounterWithString(onscreen_1, 1 /* COUNTER_DISPLAY_BAR */, 1, "BUSTED");
             Hud.DisplayNthCounterWithString(onscreen_2, 0 /* COUNTER_DISPLAY_NUMBER */, 2, "BUSTED");
             Hud.DisplayNthCounterWithString(onscreen_3, 0 /* COUNTER_DISPLAY_NUMBER */, 3, "BUSTED");
-            Hud.DisplayTimerWithString(onscreen_4, TIMER_UP, "BUSTED");
+            Hud.DisplayTimerWithString(onscreen_4, 0 /* TIMER_UP */, "BUSTED");
             Text.PrintWithNumberBig("M_PASS", print_stuff_counter, 2000, 3);
           }
           if (print_stuff_counter == 4) {
@@ -484,7 +484,7 @@ $.rsticky = _res178.rightStickY;
             Hud.DisplayNthCounterWithString(onscreen_1, 1 /* COUNTER_DISPLAY_BAR */, 1, "BUSTED");
             Hud.DisplayNthCounterWithString(onscreen_2, 0 /* COUNTER_DISPLAY_NUMBER */, 2, "BUSTED");
             Hud.DisplayNthCounterWithString(onscreen_3, 0 /* COUNTER_DISPLAY_NUMBER */, 3, "BUSTED");
-            Hud.DisplayTimerWithString(onscreen_4, TIMER_UP, "BUSTED");
+            Hud.DisplayTimerWithString(onscreen_4, 0 /* TIMER_UP */, "BUSTED");
             Text.PrintWithNumberBig("M_PASS", print_stuff_counter, 2000, 4);
           }
           if (print_stuff_counter == 5) {
@@ -495,7 +495,7 @@ $.rsticky = _res178.rightStickY;
             Hud.DisplayNthCounterWithString(onscreen_1, 1 /* COUNTER_DISPLAY_BAR */, 1, "BUSTED");
             Hud.DisplayNthCounterWithString(onscreen_2, 0 /* COUNTER_DISPLAY_NUMBER */, 2, "BUSTED");
             Hud.DisplayNthCounterWithString(onscreen_3, 0 /* COUNTER_DISPLAY_NUMBER */, 3, "BUSTED");
-            Hud.DisplayTimerWithString(onscreen_4, TIMER_UP, "BUSTED");
+            Hud.DisplayTimerWithString(onscreen_4, 0 /* TIMER_UP */, "BUSTED");
             Text.PrintWithNumberBig("M_PASS", print_stuff_counter, 2000, 5);
           }
           if (print_stuff_counter == 6) {
@@ -506,7 +506,7 @@ $.rsticky = _res178.rightStickY;
             Hud.DisplayNthCounterWithString(onscreen_1, 1 /* COUNTER_DISPLAY_BAR */, 1, "BUSTED");
             Hud.DisplayNthCounterWithString(onscreen_2, 0 /* COUNTER_DISPLAY_NUMBER */, 2, "BUSTED");
             Hud.DisplayNthCounterWithString(onscreen_3, 0 /* COUNTER_DISPLAY_NUMBER */, 3, "BUSTED");
-            Hud.DisplayTimerWithString(onscreen_4, TIMER_UP, "BUSTED");
+            Hud.DisplayTimerWithString(onscreen_4, 0 /* TIMER_UP */, "BUSTED");
             Text.PrintWithNumberBig("M_PASS", print_stuff_counter, 2000, 6);
           }
         }
@@ -770,7 +770,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("CUT", 2000, 1);
           await asyncWait(80);
           $.flag_hotel_mission1_passed = 0;
-          // START_NEW_SCRIPT hotel_mission1_loop
+          // START_NEW_SCRIPT hotel_mission1_loop 
           goto_thereX = hotelX_d;
           goto_thereY = $.hotelY;
           goto_thereZ = $.hotelZ;
@@ -780,7 +780,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("LAW", 2000, 1);
           await asyncWait(80);
           $.flag_lawyer_mission1_passed = 0;
-          // START_NEW_SCRIPT lawyer_mission1_loop
+          // START_NEW_SCRIPT lawyer_mission1_loop 
           $.lawyer_contact_blip = Blip.AddSpriteForContactPoint($.lawyerX, $.lawyerY, $.lawyerZ, $.the_lawyer_blip);
           goto_thereX = lawyerX_d;
           goto_thereY = $.lawyerY;
@@ -791,7 +791,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("LAW", 2000, 1);
           await asyncWait(80);
           $.flag_lawyer_mission2_passed = 0;
-          // START_NEW_SCRIPT lawyer_mission2_loop
+          // START_NEW_SCRIPT lawyer_mission2_loop 
           $.lawyer_contact_blip = Blip.AddSpriteForContactPoint($.lawyerX, $.lawyerY, $.lawyerZ, $.the_lawyer_blip);
           goto_thereX = lawyerX_d;
           goto_thereY = $.lawyerY;
@@ -802,7 +802,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("LAW", 2000, 1);
           await asyncWait(80);
           $.flag_lawyer_mission3_passed = 0;
-          // START_NEW_SCRIPT lawyer_mission3_loop
+          // START_NEW_SCRIPT lawyer_mission3_loop 
           $.lawyer_contact_blip = Blip.AddSpriteForContactPoint($.lawyerX, $.lawyerY, $.lawyerZ, $.the_lawyer_blip);
           goto_thereX = lawyerX_d;
           goto_thereY = $.lawyerY;
@@ -813,7 +813,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("LAW", 2000, 1);
           await asyncWait(80);
           $.flag_lawyer_mission4_passed = 0;
-          // START_NEW_SCRIPT lawyer_mission4_loop
+          // START_NEW_SCRIPT lawyer_mission4_loop 
           $.lawyer_contact_blip = Blip.AddSpriteForContactPoint($.lawyerX, $.lawyerY, $.lawyerZ, $.the_lawyer_blip);
           goto_thereX = lawyerX_d;
           goto_thereY = $.lawyerY;
@@ -826,7 +826,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("GENERAL", 2000, 1);
           await asyncWait(80);
           $.flag_general_mission1_passed = 0;
-          // START_NEW_SCRIPT general_mission1_loop
+          // START_NEW_SCRIPT general_mission1_loop 
           $.general_contact_blip = Blip.AddSpriteForContactPoint($.generalX, $.generalY, $.generalZ, $.the_general_blip);
           goto_thereX = $.generalX;
           goto_thereY = generalY_d;
@@ -837,7 +837,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("GENERAL", 2000, 1);
           await asyncWait(80);
           $.flag_general_mission2_passed = 0;
-          // START_NEW_SCRIPT general_mission2_loop
+          // START_NEW_SCRIPT general_mission2_loop 
           $.general_contact_blip = Blip.AddSpriteForContactPoint($.generalX, $.generalY, $.generalZ, $.the_general_blip);
           goto_thereX = $.generalX;
           goto_thereY = generalY_d;
@@ -848,7 +848,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("GENERAL", 2000, 1);
           await asyncWait(80);
           $.flag_general_mission3_passed = 0;
-          // START_NEW_SCRIPT general_mission3_loop
+          // START_NEW_SCRIPT general_mission3_loop 
           $.general_contact_blip = Blip.AddSpriteForContactPoint($.generalX, $.generalY, $.generalZ, $.the_general_blip);
           goto_thereX = $.generalX;
           goto_thereY = generalY_d;
@@ -859,7 +859,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("GENERAL", 2000, 1);
           await asyncWait(80);
           $.flag_general_mission4_passed = 0;
-          // START_NEW_SCRIPT general_mission4_loop
+          // START_NEW_SCRIPT general_mission4_loop 
           $.general_contact_blip = Blip.AddSpriteForContactPoint($.generalX, $.generalY, $.generalZ, $.the_general_blip);
           goto_thereX = $.generalX;
           goto_thereY = generalY_d;
@@ -869,7 +869,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintBig("COL_5", 1000, 4); //"General mission 5"
           Text.PrintNow("GENERAL", 2000, 1);
           await asyncWait(80);
-          // START_NEW_SCRIPT general_mission5_loop
+          // START_NEW_SCRIPT general_mission5_loop 
           $.general_contact_blip = Blip.AddSpriteForContactPoint($.generalX, $.generalY, $.generalZ, $.the_general_blip);
           goto_thereX = $.generalX;
           goto_thereY = generalY_d;
@@ -880,7 +880,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("COKE", 2000, 1);
           await asyncWait(80);
           $.flag_baron_mission1_passed = 0;
-          // START_NEW_SCRIPT baron_mission1_loop
+          // START_NEW_SCRIPT baron_mission1_loop 
           $.baron_contact_blip = Blip.AddSpriteForContactPoint($.baronX, $.baronY, $.baronZ, $.the_baron_blip);
           goto_thereX = $.baronX;
           goto_thereY = baronY_d;
@@ -891,7 +891,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("COKE", 2000, 1);
           await asyncWait(80);
           $.flag_baron_mission2_passed = 0;
-          // START_NEW_SCRIPT baron_mission2_loop
+          // START_NEW_SCRIPT baron_mission2_loop 
           $.baron_contact_blip = Blip.AddSpriteForContactPoint($.baronX, $.baronY, $.baronZ, $.the_baron_blip);
           goto_thereX = $.baronX;
           goto_thereY = baronY_d;
@@ -902,7 +902,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("COKE", 2000, 1);
           await asyncWait(80);
           $.flag_baron_mission3_passed = 0;
-          // START_NEW_SCRIPT baron_mission3_loop
+          // START_NEW_SCRIPT baron_mission3_loop 
           $.baron_contact_blip = Blip.AddSpriteForContactPoint($.baronX, $.baronY, $.baronZ, $.the_baron_blip);
           goto_thereX = $.baronX;
           goto_thereY = baronY_d;
@@ -913,7 +913,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("COKE", 2000, 1);
           await asyncWait(80);
           $.flag_baron_mission4_passed = 0;
-          // START_NEW_SCRIPT baron_mission4_loop
+          // START_NEW_SCRIPT baron_mission4_loop 
           $.baron_contact_blip = Blip.AddSpriteForContactPoint($.baronX, $.baronY, $.baronZ, $.the_baron_blip);
           goto_thereX = $.baronX;
           goto_thereY = baronY_d;
@@ -925,7 +925,7 @@ $.rsticky = _res178.rightStickY;
           await asyncWait(80);
           $.flag_kent_mission1_passed = 0;
           $.flag_kent_mission_active = 1;
-          // START_NEW_SCRIPT kent_mission1_loop
+          // START_NEW_SCRIPT kent_mission1_loop 
           $.kent_contact_blip = Blip.AddSpriteForContactPoint(491.0, -77.7, 10.4, $.the_kent_blip);
           goto_thereX = 495.604;
           goto_thereY = -82.80;
@@ -936,7 +936,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("COKE", 2000, 1);
           await asyncWait(80);
           $.flag_baron_mission5_passed = 0;
-          // START_NEW_SCRIPT baron_mission5_loop
+          // START_NEW_SCRIPT baron_mission5_loop 
           $.baron_contact_blip = Blip.AddSpriteForContactPoint($.baron2X, $.baron2Y, $.baron2Z, 7);
           goto_thereX = $.baron2X;
           goto_thereY = baron2Y_d;
@@ -947,7 +947,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("AVERY", 2000, 1);
           await asyncWait(80);
           $.flag_sergio_mission1_passed = 0;
-          // START_NEW_SCRIPT serg_mission1_loop
+          // START_NEW_SCRIPT serg_mission1_loop 
           $.sergio_contact_blip = Blip.AddSpriteForContactPoint($.sergiox, $.sergioy, $.sergioz, $.the_sergio_blip);
           goto_thereX = $.sergioX;
           goto_thereY = sergioY_d;
@@ -958,7 +958,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("AVERY", 2000, 1);
           await asyncWait(80);
           $.flag_sergio_mission2_passed = 0;
-          // START_NEW_SCRIPT serg_mission2_loop
+          // START_NEW_SCRIPT serg_mission2_loop 
           $.sergio_contact_blip = Blip.AddSpriteForContactPoint($.sergiox, $.sergioy, $.sergioz, $.the_sergio_blip);
           goto_thereX = $.sergioX;
           goto_thereY = sergioY_d;
@@ -969,7 +969,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("AVERY", 2000, 1);
           await asyncWait(80);
           $.flag_sergio_mission3_passed = 0;
-          // START_NEW_SCRIPT serg_mission3_loop
+          // START_NEW_SCRIPT serg_mission3_loop 
           $.sergio_contact_blip = Blip.AddSpriteForContactPoint($.sergiox, $.sergioy, $.sergioz, $.the_sergio_blip);
           goto_thereX = $.sergioX;
           goto_thereY = sergioY_d;
@@ -980,7 +980,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("BANK", 2000, 1);
           await asyncWait(80);
           $.flag_bankjob_mission1_passed = 0;
-          // START_NEW_SCRIPT bankjob_mission1_loop
+          // START_NEW_SCRIPT bankjob_mission1_loop 
           $.bankjob_contact_blip = Blip.AddSpriteForContactPoint($.bankjobX, $.bankjobY, $.bankjobZ, $.the_bankjob_blip);
           goto_thereX = 491.0;
           goto_thereY = -77.7;
@@ -991,7 +991,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("BANK", 2000, 1);
           await asyncWait(80);
           $.flag_bankjob_mission2_passed = 0;
-          // START_NEW_SCRIPT bankjob_mission2_loop
+          // START_NEW_SCRIPT bankjob_mission2_loop 
           $.bankjob_contact_blip = Blip.AddSpriteForContactPoint($.bankjobX, $.bankjobY, $.bankjobZ, $.the_bankjob_blip);
           goto_thereX = 491.0;
           goto_thereY = -77.7;
@@ -1002,7 +1002,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("BANK", 2000, 1);
           await asyncWait(80);
           $.flag_bankjob_mission3_passed = 0;
-          // START_NEW_SCRIPT bankjob_mission3_loop
+          // START_NEW_SCRIPT bankjob_mission3_loop 
           $.bankjob_contact_blip = Blip.AddSpriteForContactPoint($.bankjobX, $.bankjobY, $.bankjobZ, $.the_bankjob_blip);
           goto_thereX = 491.0;
           goto_thereY = -77.7;
@@ -1013,7 +1013,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("BANK", 2000, 1);
           await asyncWait(80);
           $.flag_bankjob_mission4_passed = 0;
-          // START_NEW_SCRIPT bankjob_mission4_loop
+          // START_NEW_SCRIPT bankjob_mission4_loop 
           $.bankjob_contact_blip = Blip.AddSpriteForContactPoint($.bankjobX, $.bankjobY, $.bankjobZ, $.the_bankjob_blip);
           goto_thereX = 491.0;
           goto_thereY = -77.7;
@@ -1024,7 +1024,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("PHIL", 2000, 1);
           await asyncWait(80);
           $.flag_phil_mission1_passed = 0;
-          // START_NEW_SCRIPT phil_mission1_loop
+          // START_NEW_SCRIPT phil_mission1_loop 
           $.phil_contact_blip = Blip.AddSpriteForContactPoint($.philX, $.philY, $.philZ, $.the_phil_blip);
           goto_thereX = $.philX;
           goto_thereY = philY_d;
@@ -1035,7 +1035,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("PHIL", 2000, 1);
           await asyncWait(80);
           $.flag_phil_mission2_passed = 0;
-          // START_NEW_SCRIPT phil_mission2_loop
+          // START_NEW_SCRIPT phil_mission2_loop 
           $.phil_contact_blip = Blip.AddSpriteForContactPoint($.philX, $.philY, $.philZ, $.the_phil_blip);
           goto_thereX = $.philX;
           goto_thereY = philY_d;
@@ -1046,7 +1046,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("PORN", 2000, 1);
           await asyncWait(80);
           $.flag_porn_mission1_passed = 0;
-          // START_NEW_SCRIPT porn_mission1_loop
+          // START_NEW_SCRIPT porn_mission1_loop 
           $.porn_contact_blip = Blip.AddSpriteForContactPoint($.pornX, $.pornY, $.pornZ, $.the_porn_blip);
           goto_thereX = $.pornX;
           goto_thereY = pornY_d;
@@ -1057,7 +1057,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("PORN", 2000, 1);
           await asyncWait(80);
           $.flag_porn_mission2_passed = 0;
-          // START_NEW_SCRIPT porn_mission2_loop
+          // START_NEW_SCRIPT porn_mission2_loop 
           $.porn_contact_blip = Blip.AddSpriteForContactPoint($.pornX, $.pornY, $.pornZ, $.the_porn_blip);
           goto_thereX = $.pornX;
           goto_thereY = pornY_d;
@@ -1068,7 +1068,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("PORN", 2000, 1);
           await asyncWait(80);
           $.flag_porn_mission3_passed = 0;
-          // START_NEW_SCRIPT porn_mission3_loop
+          // START_NEW_SCRIPT porn_mission3_loop 
           $.porn_contact_blip = Blip.AddSpriteForContactPoint($.pornX, $.pornY, $.pornZ, $.the_porn_blip);
           goto_thereX = $.pornX;
           goto_thereY = pornY_d;
@@ -1079,7 +1079,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("PORN", 2000, 1);
           await asyncWait(80);
           $.flag_porn_mission4_passed = 0;
-          // START_NEW_SCRIPT porn_mission4_loop
+          // START_NEW_SCRIPT porn_mission4_loop 
           $.porn_contact_blip = Blip.AddSpriteForContactPoint($.pornX, $.pornY, $.pornZ, $.the_porn_blip);
           goto_thereX = $.pornX;
           goto_thereY = pornY_d;
@@ -1090,8 +1090,8 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("PROT", 2000, 1);
           await asyncWait(80);
           $.flag_protect_mission1_passed = 0;
-          // START_NEW_SCRIPT protect_mission1_loop
-          $.protect_contact_blip = Blip.AddSpriteForContactPoint(-378.3, -579.8, 24.5, RADAR_SPRITE_TOMMY);
+          // START_NEW_SCRIPT protect_mission1_loop 
+          $.protect_contact_blip = Blip.AddSpriteForContactPoint(-378.3, -579.8, 24.5, 29 /* RADAR_SPRITE_TOMMY */);
           goto_thereX = $.baronX;
           goto_thereY = baronY_d;
           goto_thereZ = $.baronZ;
@@ -1101,8 +1101,8 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("PROT", 2000, 1);
           await asyncWait(80);
           $.flag_protect_mission2_passed = 0;
-          // START_NEW_SCRIPT protect_mission2_loop
-          $.protect_contact_blip = Blip.AddSpriteForContactPoint(-397.4, -561.3, 18.7, RADAR_SPRITE_TOMMY);
+          // START_NEW_SCRIPT protect_mission2_loop 
+          $.protect_contact_blip = Blip.AddSpriteForContactPoint(-397.4, -561.3, 18.7, 29 /* RADAR_SPRITE_TOMMY */);
           goto_thereX = $.baronX;
           goto_thereY = baronY_d;
           goto_thereZ = $.baronZ;
@@ -1112,8 +1112,8 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("PROT", 2000, 1);
           await asyncWait(80);
           $.flag_protect_mission3_passed = 0;
-          // START_NEW_SCRIPT protect_mission3_loop
-          $.protect_contact_blip = Blip.AddSpriteForContactPoint(-348.5, -541.8, 16.4, RADAR_SPRITE_TOMMY);
+          // START_NEW_SCRIPT protect_mission3_loop 
+          $.protect_contact_blip = Blip.AddSpriteForContactPoint(-348.5, -541.8, 16.4, 29 /* RADAR_SPRITE_TOMMY */);
           goto_thereX = $.baronX;
           goto_thereY = baronY_d;
           goto_thereZ = $.baronZ;
@@ -1123,7 +1123,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("COUNT", 2000, 1);
           await asyncWait(80);
           $.flag_counter_mission1_passed = 0;
-          // START_NEW_SCRIPT counter_mission1_loop
+          // START_NEW_SCRIPT counter_mission1_loop 
           $.counter_contact_blip = Blip.AddSpriteForContactPoint($.counterX, $.counterY, $.counterZ, $.the_counter_blip);
           goto_thereX = $.counterX;
           goto_thereY = counterY_d;
@@ -1134,7 +1134,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("COUNT", 2000, 1);
           await asyncWait(80);
           $.flag_counter_mission2_passed = 0;
-          // START_NEW_SCRIPT counter_mission2_loop
+          // START_NEW_SCRIPT counter_mission2_loop 
           $.counter_contact_blip = Blip.AddSpriteForContactPoint($.counterX, $.counterY, $.counterZ, $.the_counter_blip);
           goto_thereX = $.counterX;
           goto_thereY = counterY_d;
@@ -1151,7 +1151,7 @@ $.rsticky = _res178.rightStickY;
           $.taxifirm_asset_acquired = 1;
           $.boatyard_asset_acquired = 1;
           $.showroom_asset_acquired = 1;
-          // START_NEW_SCRIPT finale_mission1_loop
+          // START_NEW_SCRIPT finale_mission1_loop 
           $.baron_contact_blip = Blip.AddSpriteForContactPoint($.counterX, $.counterY, $.counterZ, $.the_counter_blip);
           goto_thereX = $.counterX;
           goto_thereY = counterY_d;
@@ -1162,8 +1162,8 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("FIN", 2000, 1);
           await asyncWait(80);
           $.flag_finale_mission2_passed = 0;
-          // START_NEW_SCRIPT finale_mission2_loop
-          $.baron_contact_blip = Blip.AddSpriteForContactPoint(-378.3, -579.8, 24.5, RADAR_SPRITE_TOMMY);
+          // START_NEW_SCRIPT finale_mission2_loop 
+          $.baron_contact_blip = Blip.AddSpriteForContactPoint(-378.3, -579.8, 24.5, 29 /* RADAR_SPRITE_TOMMY */);
           goto_thereX = $.baronX;
           goto_thereY = baronY_d;
           goto_thereZ = $.baronZ;
@@ -1173,7 +1173,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("BIKE", 2000, 1);
           await asyncWait(80);
           $.flag_bikers_mission1_passed = 0;
-          // START_NEW_SCRIPT bikers_mission1_loop
+          // START_NEW_SCRIPT bikers_mission1_loop 
           $.bikers_contact_blip = Blip.AddSpriteForContactPoint($.bikersX, $.bikersY, $.bikersZ, $.the_biker_blip);
           goto_thereX = $.bikersX;
           goto_thereY = bikersY_d;
@@ -1184,7 +1184,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("BIKE", 2000, 1);
           await asyncWait(80);
           $.flag_bikers_mission2_passed = 0;
-          // START_NEW_SCRIPT bikers_mission2_loop
+          // START_NEW_SCRIPT bikers_mission2_loop 
           $.bikers_contact_blip = Blip.AddSpriteForContactPoint($.bikersX, $.bikersY, $.bikersZ, $.the_biker_blip);
           goto_thereX = $.bikersX;
           goto_thereY = bikersY_d;
@@ -1195,7 +1195,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("BIKE", 2000, 1);
           await asyncWait(80);
           $.flag_bikers_mission3_passed = 0;
-          // START_NEW_SCRIPT bikers_mission3_loop
+          // START_NEW_SCRIPT bikers_mission3_loop 
           $.bikers_contact_blip = Blip.AddSpriteForContactPoint($.bikersX, $.bikersY, $.bikersZ, $.the_biker_blip);
           goto_thereX = $.bikersX;
           goto_thereY = bikersY_d;
@@ -1206,7 +1206,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("ROCK", 2000, 1);
           await asyncWait(80);
           $.flag_rock_mission1_passed = 0;
-          // START_NEW_SCRIPT rock_mission1_loop
+          // START_NEW_SCRIPT rock_mission1_loop 
           $.rock_contact_blip = Blip.AddSpriteForContactPoint($.rockX, $.rockY, $.rockZ, $.the_rock_blip);
           goto_thereX = rockX_d;
           goto_thereY = rockY_d;
@@ -1217,7 +1217,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("ROCK", 2000, 1);
           await asyncWait(80);
           $.flag_rock_mission2_passed = 0;
-          // START_NEW_SCRIPT rock_mission2_loop
+          // START_NEW_SCRIPT rock_mission2_loop 
           $.rock_contact_blip = Blip.AddSpriteForContactPoint($.rockX, $.rockY, $.rockZ, $.the_rock_blip);
           goto_thereX = rockX_d;
           goto_thereY = rockY_d;
@@ -1228,7 +1228,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("ROCK", 2000, 1);
           await asyncWait(80);
           $.flag_rock_mission3_passed = 0;
-          // START_NEW_SCRIPT rock_mission3_loop
+          // START_NEW_SCRIPT rock_mission3_loop 
           $.rock_contact_blip = Blip.AddSpriteForContactPoint($.rockX, $.rockY, $.rockZ, $.the_rock_blip);
           goto_thereX = rockX_d;
           goto_thereY = rockY_d;
@@ -1239,7 +1239,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("CUBANM", 2000, 1);
           await asyncWait(80);
           $.flag_cuban_mission1_passed = 0;
-          // START_NEW_SCRIPT cuban_mission1_loop
+          // START_NEW_SCRIPT cuban_mission1_loop 
           $.cuban_contact_blip = Blip.AddSpriteForContactPoint($.cubanX, $.cubanY, $.cubanZ, $.the_cuban_blip);
           goto_thereX = $.cubanX;
           goto_thereY = cubanY_d;
@@ -1250,7 +1250,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("CUBANM", 2000, 1);
           await asyncWait(80);
           $.flag_cuban_mission2_passed = 0;
-          // START_NEW_SCRIPT cuban_mission2_loop
+          // START_NEW_SCRIPT cuban_mission2_loop 
           $.cuban_contact_blip = Blip.AddSpriteForContactPoint($.cubanX, $.cubanY, $.cubanZ, $.the_cuban_blip);
           goto_thereX = $.cubanX;
           goto_thereY = cubanY_d;
@@ -1261,7 +1261,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("CUBANM", 2000, 1);
           await asyncWait(80);
           $.flag_cuban_mission3_passed = 0;
-          // START_NEW_SCRIPT cuban_mission3_loop
+          // START_NEW_SCRIPT cuban_mission3_loop 
           $.cuban_contact_blip = Blip.AddSpriteForContactPoint($.cubanX, $.cubanY, $.cubanZ, $.the_cuban_blip);
           goto_thereX = $.cubanX;
           goto_thereY = cubanY_d;
@@ -1273,7 +1273,7 @@ $.rsticky = _res178.rightStickY;
           await asyncWait(80);
           $.flag_cuban_mission4_passed = 0;
           $.flag_haitian_mission3_passed = 1;
-          // START_NEW_SCRIPT cuban_mission4_loop
+          // START_NEW_SCRIPT cuban_mission4_loop 
           $.cuban_contact_blip = Blip.AddSpriteForContactPoint($.cubanX, $.cubanY, $.cubanZ, $.the_cuban_blip);
           goto_thereX = $.cubanX;
           goto_thereY = cubanY_d;
@@ -1284,7 +1284,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("HAIT", 2000, 1);
           await asyncWait(80);
           $.flag_haitian_mission1_passed = 0;
-          // START_NEW_SCRIPT haitian_mission1_loop
+          // START_NEW_SCRIPT haitian_mission1_loop 
           $.haitian_contact_blip = Blip.AddSpriteForContactPoint($.haitianX, $.haitianY, $.haitianZ, $.the_haitian_blip);
           goto_thereX = $.haitianX;
           goto_thereY = haitianY_d;
@@ -1295,7 +1295,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("HAIT", 2000, 1);
           await asyncWait(80);
           $.flag_haitian_mission2_passed = 0;
-          // START_NEW_SCRIPT haitian_mission2_loop
+          // START_NEW_SCRIPT haitian_mission2_loop 
           $.haitian_contact_blip = Blip.AddSpriteForContactPoint($.haitianX, $.haitianY, $.haitianZ, $.the_haitian_blip);
           goto_thereX = $.haitianX;
           goto_thereY = haitianY_d;
@@ -1306,7 +1306,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("HAIT", 2000, 1);
           await asyncWait(80);
           $.flag_haitian_mission3_passed = 0;
-          // START_NEW_SCRIPT haitian_mission3_loop
+          // START_NEW_SCRIPT haitian_mission3_loop 
           $.haitian_contact_blip = Blip.AddSpriteForContactPoint($.haitianX, $.haitianY, $.haitianZ, $.the_haitian_blip);
           goto_thereX = $.haitianX;
           goto_thereY = haitianY_d;
@@ -1317,7 +1317,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("ASM", 2000, 1);
           await asyncWait(80);
           $.flag_assin_mission1_passed = 0;
-          // START_NEW_SCRIPT assin_mission1_loop
+          // START_NEW_SCRIPT assin_mission1_loop 
           $.assasin_contact_blip = Blip.AddSpriteForContactPoint($.ass_1_x, $.ass_1_y, $.ass_1_z, $.the_assasin_blip);
           goto_thereX = $.ass_1_x;
           goto_thereY = $.ass_1_y;
@@ -1328,7 +1328,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("ASM", 2000, 1);
           await asyncWait(80);
           $.flag_assin_mission2_passed = 0;
-          // START_NEW_SCRIPT assin_mission2_loop
+          // START_NEW_SCRIPT assin_mission2_loop 
           $.assasin_contact_blip = Blip.AddSpriteForContactPoint($.ass_2_x, $.ass_2_y, $.ass_2_z, $.the_assasin_blip);
           goto_thereX = $.ass_2_x;
           goto_thereY = $.ass_2_y;
@@ -1339,7 +1339,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("ASM", 2000, 1);
           await asyncWait(80);
           $.flag_assin_mission3_passed = 0;
-          // START_NEW_SCRIPT assin_mission3_loop
+          // START_NEW_SCRIPT assin_mission3_loop 
           $.assasin_contact_blip = Blip.AddSpriteForContactPoint($.ass_3_x, $.ass_3_y, $.ass_3_z, $.the_assasin_blip);
           goto_thereX = $.ass_3_x;
           goto_thereY = $.ass_3_y;
@@ -1350,7 +1350,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("ASM", 2000, 1);
           await asyncWait(80);
           $.flag_assin_mission4_passed = 0;
-          // START_NEW_SCRIPT assin_mission4_loop
+          // START_NEW_SCRIPT assin_mission4_loop 
           $.assasin_contact_blip = Blip.AddSpriteForContactPoint($.ass_4_x, $.ass_4_y, $.ass_4_z, $.the_assasin_blip);
           goto_thereX = $.ass_4_x;
           goto_thereY = $.ass_4_y;
@@ -1361,7 +1361,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("ASM", 2000, 1);
           await asyncWait(80);
           $.flag_assin_mission5_passed = 0;
-          // START_NEW_SCRIPT assin_mission5_loop
+          // START_NEW_SCRIPT assin_mission5_loop 
           $.assasin_contact_blip = Blip.AddSpriteForContactPoint($.ass_5_x, $.ass_5_y, $.ass_5_z, $.the_assasin_blip);
           goto_thereX = $.ass_5_x;
           goto_thereY = $.ass_5_y;
@@ -1372,7 +1372,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("TAX_1", 2000, 1);
           await asyncWait(80);
           $.flag_taxiwar_mission1_passed = 0;
-          // START_NEW_SCRIPT taxiwar_mission1_loop
+          // START_NEW_SCRIPT taxiwar_mission1_loop 
           $.taxiwar_contact_blip = Blip.AddSpriteForContactPoint($.taxiwarX, $.taxiwarY, $.taxiwarZ, $.the_taxiwar_blip);
         }
         if (button_pressed_main == 56) {
@@ -1380,7 +1380,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("TAX_1", 2000, 1);
           await asyncWait(80);
           $.flag_taxiwar_mission2_passed = 0;
-          // START_NEW_SCRIPT taxiwar_mission2_loop
+          // START_NEW_SCRIPT taxiwar_mission2_loop 
           $.taxiwar_contact_blip = Blip.AddSpriteForContactPoint($.taxiwarX, $.taxiwarY, $.taxiwarZ, $.the_taxiwar_blip);
           goto_thereX = $.taxiwarX;
           goto_thereY = taxiwarY_d;
@@ -1391,7 +1391,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("TAX_1", 2000, 1);
           await asyncWait(80);
           $.flag_taxiwar_mission3_passed = 0;
-          // START_NEW_SCRIPT taxiwar_mission3_loop
+          // START_NEW_SCRIPT taxiwar_mission3_loop 
           $.taxiwar_contact_blip = Blip.AddSpriteForContactPoint($.taxiwarX, $.taxiwarY, $.taxiwarZ, $.the_taxiwar_blip);
           goto_thereX = $.taxiwarX;
           goto_thereY = taxiwarY_d;
@@ -1402,7 +1402,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("HELIODD", 2000, 1);
           await asyncWait(80);
           test_heli1_created = 0;
-          // START_NEW_SCRIPT heli_mission1_loop
+          // START_NEW_SCRIPT heli_mission1_loop 
           goto_thereX = $.heli1X;
           goto_thereY = heli1Y_d;
           goto_thereZ = $.heli1Z;
@@ -1412,7 +1412,7 @@ $.rsticky = _res178.rightStickY;
           await asyncWait(80);
           $.taxibuy_pickup.remove();
           $.taxibuy_pickup = Pickup.CreateForSaleProperty($.taxibuyX, $.taxibuyY, $.taxibuyZ, $.taxibuy_price, "TAXI_L"); //Press R3 to purchase the Taxi Company for $~1~
-          // START_NEW_SCRIPT taxibuy_loop
+          // START_NEW_SCRIPT taxibuy_loop 
           goto_thereX = $.taxiwarX;
           goto_thereY = $.taxiwarY;
           goto_thereZ = $.taxiwarz;
@@ -1422,7 +1422,7 @@ $.rsticky = _res178.rightStickY;
           await asyncWait(80);
           $.icebuy_pickup.remove();
           $.icebuy_pickup = Pickup.CreateForSaleProperty($.icecreamX, $.icecreamY, $.icecreamZ, $.icebuy_price, "ICE_L"); //Press R3 to purchase the Taxi Company for $~1~
-          // START_NEW_SCRIPT icebuy_loop
+          // START_NEW_SCRIPT icebuy_loop 
           goto_thereX = $.icecreamX;
           goto_thereY = $.icecreamY;
           goto_thereZ = $.icecreamZ;
@@ -1432,7 +1432,7 @@ $.rsticky = _res178.rightStickY;
           await asyncWait(80);
           $.boatbuy_pickup.remove();
           $.boatbuy_pickup = Pickup.CreateForSaleProperty($.boatbuyX, $.boatbuyY, $.boatbuyZ, $.boatbuy_price, "BOAT_L"); //Press R3 to purchase the Taxi Company for $~1~
-          // START_NEW_SCRIPT boatbuy_loop
+          // START_NEW_SCRIPT boatbuy_loop 
           goto_thereX = $.boatbuyX;
           goto_thereY = $.boatbuyY;
           goto_thereZ = $.boatbuyZ;
@@ -1442,7 +1442,7 @@ $.rsticky = _res178.rightStickY;
           await asyncWait(80);
           $.carbuy_pickup.remove();
           $.carbuy_pickup = Pickup.CreateForSaleProperty($.carbuyX, $.carbuyY, $.carbuyZ, $.carbuy_price, "CAR_L"); //Press R3 to purchase the Taxi Company for $~1~
-          // START_NEW_SCRIPT property_car_loop
+          // START_NEW_SCRIPT property_car_loop 
           goto_thereX = $.carbuyX;
           goto_thereY = $.carbuyY;
           goto_thereZ = $.carbuyZ;
@@ -1469,7 +1469,7 @@ $.rsticky = _res178.rightStickY;
           await asyncWait(80);
           $.carbuy_pickup.remove();
           $.carbuy_pickup = Pickup.CreateForSaleProperty($.carbuyX, $.carbuyY, $.carbuyZ, $.carbuy_price, "CAR_L"); //Press R3 to purchase the Taxi Company for $~1~
-          // START_NEW_SCRIPT property_car_loop
+          // START_NEW_SCRIPT property_car_loop 
           goto_thereX = $.carbuyX;
           goto_thereY = $.carbuyY;
           goto_thereZ = $.carbuyZ;
@@ -1479,7 +1479,7 @@ $.rsticky = _res178.rightStickY;
           await asyncWait(80);
           $.boatbuy_pickup.remove();
           $.boatbuy_pickup = Pickup.CreateForSaleProperty($.boatbuyX, $.boatbuyY, $.boatbuyZ, $.boatbuy_price, "BOAT_L"); //Press R3 to purchase the Taxi Company for $~1~
-          // START_NEW_SCRIPT boatbuy_loop
+          // START_NEW_SCRIPT boatbuy_loop 
           goto_thereX = $.boatbuyX;
           goto_thereZ = $.boatbuyZ;
           goto_thereY = $.boatbuyY;
@@ -1489,7 +1489,7 @@ $.rsticky = _res178.rightStickY;
           await asyncWait(80);
           $.icebuy_pickup.remove();
           $.icebuy_pickup = Pickup.CreateForSaleProperty($.icecreamX, $.icecreamY, $.icecreamZ, $.icebuy_price, "ICE_L"); //Press R3 to purchase the Taxi Company for $~1~
-          // START_NEW_SCRIPT icebuy_loop
+          // START_NEW_SCRIPT icebuy_loop 
           goto_thereX = $.icecreamX;
           goto_thereY = $.icecreamY;
           goto_thereZ = $.icecreamZ;
@@ -1499,7 +1499,7 @@ $.rsticky = _res178.rightStickY;
           await asyncWait(80);
           $.taxibuy_pickup.remove();
           $.taxibuy_pickup = Pickup.CreateForSaleProperty($.taxibuyX, $.taxibuyY, $.taxibuyZ, $.taxibuy_price, "TAXI_L"); //Press R3 to purchase the Taxi Company for $~1~
-          // START_NEW_SCRIPT taxibuy_loop
+          // START_NEW_SCRIPT taxibuy_loop 
           goto_thereX = $.taxiwarX;
           goto_thereY = taxiwarY_d;
           goto_thereZ = $.taxiwarz;
@@ -1509,7 +1509,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("HELIODD", 2000, 1);
           await asyncWait(80);
           test_heli1_created = 0;
-          // START_NEW_SCRIPT heli_mission1_loop
+          // START_NEW_SCRIPT heli_mission1_loop 
           goto_thereX = $.heli1X;
           goto_thereY = heli1Y_d;
           goto_thereZ = $.heli1Z;
@@ -1519,7 +1519,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("TAX_1", 2000, 1);
           await asyncWait(80);
           $.flag_taxiwar_mission3_passed = 0;
-          // START_NEW_SCRIPT taxiwar_mission3_loop
+          // START_NEW_SCRIPT taxiwar_mission3_loop 
           $.taxiwar_contact_blip = Blip.AddSpriteForContactPoint($.taxiwarX, $.taxiwarY, $.taxiwarZ, $.the_taxiwar_blip);
           goto_thereX = $.taxiwarX;
           goto_thereY = taxiwarY_d;
@@ -1530,7 +1530,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("TAX_1", 2000, 1);
           await asyncWait(80);
           $.flag_taxiwar_mission2_passed = 0;
-          // START_NEW_SCRIPT taxiwar_mission2_loop
+          // START_NEW_SCRIPT taxiwar_mission2_loop 
           $.taxiwar_contact_blip = Blip.AddSpriteForContactPoint($.taxiwarX, $.taxiwarY, $.taxiwarZ, $.the_taxiwar_blip);
           goto_thereX = $.taxiwarX;
           goto_thereY = taxiwarY_d;
@@ -1541,7 +1541,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("TAX_1", 2000, 1);
           await asyncWait(80);
           $.flag_taxiwar_mission1_passed = 0;
-          // START_NEW_SCRIPT taxiwar_mission1_loop
+          // START_NEW_SCRIPT taxiwar_mission1_loop 
           $.taxiwar_contact_blip = Blip.AddSpriteForContactPoint($.taxiwarX, $.taxiwarY, $.taxiwarZ, $.the_taxiwar_blip);
           goto_thereX = $.taxiwarX;
           goto_thereY = taxiwarY_d;
@@ -1552,7 +1552,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("ASM", 2000, 1);
           await asyncWait(80);
           $.flag_assin_mission5_passed = 0;
-          // START_NEW_SCRIPT assin_mission5_loop
+          // START_NEW_SCRIPT assin_mission5_loop 
           $.assasin_contact_blip = Blip.AddSpriteForContactPoint($.ass_5_x, $.ass_5_y, $.ass_5_z, $.the_assasin_blip);
           goto_thereX = $.ass_5_x;
           goto_thereY = $.ass_5_y;
@@ -1563,7 +1563,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("ASM", 2000, 1);
           await asyncWait(80);
           $.flag_assin_mission4_passed = 0;
-          // START_NEW_SCRIPT assin_mission4_loop
+          // START_NEW_SCRIPT assin_mission4_loop 
           $.assasin_contact_blip = Blip.AddSpriteForContactPoint($.ass_4_x, $.ass_4_y, $.ass_4_z, $.the_assasin_blip);
           goto_thereX = $.ass_4_x;
           goto_thereY = $.ass_4_y;
@@ -1574,7 +1574,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("ASM", 2000, 1);
           await asyncWait(80);
           $.flag_assin_mission3_passed = 0;
-          // START_NEW_SCRIPT assin_mission3_loop
+          // START_NEW_SCRIPT assin_mission3_loop 
           $.assasin_contact_blip = Blip.AddSpriteForContactPoint($.ass_3_x, $.ass_3_y, $.ass_3_z, $.the_assasin_blip);
           goto_thereX = $.ass_3_x;
           goto_thereY = $.ass_3_y;
@@ -1585,7 +1585,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("ASM", 2000, 1);
           await asyncWait(80);
           $.flag_assin_mission2_passed = 0;
-          // START_NEW_SCRIPT assin_mission2_loop
+          // START_NEW_SCRIPT assin_mission2_loop 
           $.assasin_contact_blip = Blip.AddSpriteForContactPoint($.ass_2_x, $.ass_2_y, $.ass_2_z, $.the_assasin_blip);
           goto_thereX = $.ass_2_x;
           goto_thereY = $.ass_2_y;
@@ -1596,7 +1596,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("ASM", 2000, 1);
           await asyncWait(80);
           $.flag_assin_mission1_passed = 0;
-          // START_NEW_SCRIPT assin_mission1_loop
+          // START_NEW_SCRIPT assin_mission1_loop 
           $.assasin_contact_blip = Blip.AddSpriteForContactPoint($.ass_1_x, $.ass_1_y, $.ass_1_z, $.the_assasin_blip);
           goto_thereX = $.ass_1_x;
           goto_thereY = $.ass_1_y;
@@ -1607,7 +1607,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("HAIT", 2000, 1);
           await asyncWait(80);
           $.flag_haitian_mission3_passed = 0;
-          // START_NEW_SCRIPT haitian_mission3_loop
+          // START_NEW_SCRIPT haitian_mission3_loop 
           $.haitian_contact_blip = Blip.AddSpriteForContactPoint($.haitianX, $.haitianY, $.haitianZ, $.the_haitian_blip);
           goto_thereX = $.haitianX;
           goto_thereY = haitianY_d;
@@ -1618,7 +1618,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("HAIT", 2000, 1);
           await asyncWait(80);
           $.flag_haitian_mission2_passed = 0;
-          // START_NEW_SCRIPT haitian_mission2_loop
+          // START_NEW_SCRIPT haitian_mission2_loop 
           $.haitian_contact_blip = Blip.AddSpriteForContactPoint($.haitianX, $.haitianY, $.haitianZ, $.the_haitian_blip);
           goto_thereX = $.haitianX;
           goto_thereY = haitianY_d;
@@ -1629,7 +1629,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("HAIT", 2000, 1);
           await asyncWait(80);
           $.flag_haitian_mission1_passed = 0;
-          // START_NEW_SCRIPT haitian_mission1_loop
+          // START_NEW_SCRIPT haitian_mission1_loop 
           $.haitian_contact_blip = Blip.AddSpriteForContactPoint($.haitianX, $.haitianY, $.haitianZ, $.the_haitian_blip);
           goto_thereX = $.haitianX;
           goto_thereY = haitianY_d;
@@ -1641,7 +1641,7 @@ $.rsticky = _res178.rightStickY;
           await asyncWait(80);
           $.flag_cuban_mission4_passed = 0;
           $.flag_haitian_mission3_passed = 1;
-          // START_NEW_SCRIPT cuban_mission4_loop
+          // START_NEW_SCRIPT cuban_mission4_loop 
           $.cuban_contact_blip = Blip.AddSpriteForContactPoint($.cubanX, $.cubanY, $.cubanZ, $.the_cuban_blip);
           goto_thereX = $.cubanX;
           goto_thereY = cubanY_d;
@@ -1652,7 +1652,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("CUBANM", 2000, 1);
           await asyncWait(80);
           $.flag_cuban_mission3_passed = 0;
-          // START_NEW_SCRIPT cuban_mission3_loop
+          // START_NEW_SCRIPT cuban_mission3_loop 
           $.cuban_contact_blip = Blip.AddSpriteForContactPoint($.cubanX, $.cubanY, $.cubanZ, $.the_cuban_blip);
           goto_thereX = $.cubanX;
           goto_thereY = cubanY_d;
@@ -1663,7 +1663,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("CUBANM", 2000, 1);
           await asyncWait(80);
           $.flag_cuban_mission2_passed = 0;
-          // START_NEW_SCRIPT cuban_mission2_loop
+          // START_NEW_SCRIPT cuban_mission2_loop 
           $.cuban_contact_blip = Blip.AddSpriteForContactPoint($.cubanX, $.cubanY, $.cubanZ, $.the_cuban_blip);
           goto_thereX = $.cubanX;
           goto_thereY = cubanY_d;
@@ -1674,7 +1674,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("CUBANM", 2000, 1);
           await asyncWait(80);
           $.flag_cuban_mission1_passed = 0;
-          // START_NEW_SCRIPT cuban_mission1_loop
+          // START_NEW_SCRIPT cuban_mission1_loop 
           $.cuban_contact_blip = Blip.AddSpriteForContactPoint($.cubanX, $.cubanY, $.cubanZ, $.the_cuban_blip);
           goto_thereX = $.cubanX;
           goto_thereY = cubanY_d;
@@ -1685,7 +1685,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("ROCK", 2000, 1);
           await asyncWait(80);
           $.flag_rock_mission3_passed = 0;
-          // START_NEW_SCRIPT rock_mission3_loop
+          // START_NEW_SCRIPT rock_mission3_loop 
           $.rock_contact_blip = Blip.AddSpriteForContactPoint($.rockX, $.rockY, $.rockZ, $.the_rock_blip);
           goto_thereX = rockX_d;
           goto_thereY = rockY_d;
@@ -1696,7 +1696,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("ROCK", 2000, 1);
           await asyncWait(80);
           $.flag_rock_mission2_passed = 0;
-          // START_NEW_SCRIPT rock_mission2_loop
+          // START_NEW_SCRIPT rock_mission2_loop 
           $.rock_contact_blip = Blip.AddSpriteForContactPoint($.rockX, $.rockY, $.rockZ, $.the_rock_blip);
           goto_thereX = rockX_d;
           goto_thereY = rockY_d;
@@ -1707,7 +1707,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("ROCK", 2000, 1);
           await asyncWait(80);
           $.flag_rock_mission1_passed = 0;
-          // START_NEW_SCRIPT rock_mission1_loop
+          // START_NEW_SCRIPT rock_mission1_loop 
           $.rock_contact_blip = Blip.AddSpriteForContactPoint($.rockX, $.rockY, $.rockZ, $.the_rock_blip);
           goto_thereX = rockX_d;
           goto_thereY = rockY_d;
@@ -1718,7 +1718,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("BIKE", 2000, 1);
           await asyncWait(80);
           $.flag_bikers_mission3_passed = 0;
-          // START_NEW_SCRIPT bikers_mission3_loop
+          // START_NEW_SCRIPT bikers_mission3_loop 
           $.bikers_contact_blip = Blip.AddSpriteForContactPoint($.bikersX, $.bikersY, $.bikersZ, $.the_biker_blip);
           goto_thereX = $.bikersX;
           goto_thereY = bikersY_d;
@@ -1729,7 +1729,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("BIKE", 2000, 1);
           await asyncWait(80);
           $.flag_bikers_mission2_passed = 0;
-          // START_NEW_SCRIPT bikers_mission2_loop
+          // START_NEW_SCRIPT bikers_mission2_loop 
           $.bikers_contact_blip = Blip.AddSpriteForContactPoint($.bikersX, $.bikersY, $.bikersZ, $.the_biker_blip);
           goto_thereX = $.bikersX;
           goto_thereY = bikersY_d;
@@ -1740,7 +1740,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("BIKE", 2000, 1);
           await asyncWait(80);
           $.flag_bikers_mission1_passed = 0;
-          // START_NEW_SCRIPT bikers_mission1_loop
+          // START_NEW_SCRIPT bikers_mission1_loop 
           $.bikers_contact_blip = Blip.AddSpriteForContactPoint($.bikersX, $.bikersY, $.bikersZ, $.the_biker_blip);
           goto_thereX = $.bikersX;
           goto_thereY = bikersY_d;
@@ -1751,8 +1751,8 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("FIN", 2000, 1);
           await asyncWait(80);
           $.flag_finale_mission2_passed = 0;
-          // START_NEW_SCRIPT finale_mission2_loop
-          $.baron_contact_blip = Blip.AddSpriteForContactPoint(-378.3, -579.8, 24.5, RADAR_SPRITE_TOMMY);
+          // START_NEW_SCRIPT finale_mission2_loop 
+          $.baron_contact_blip = Blip.AddSpriteForContactPoint(-378.3, -579.8, 24.5, 29 /* RADAR_SPRITE_TOMMY */);
           goto_thereX = $.baronX;
           goto_thereY = baronY_d;
           goto_thereZ = $.baronZ;
@@ -1768,7 +1768,7 @@ $.rsticky = _res178.rightStickY;
           $.taxifirm_asset_acquired = 1;
           $.boatyard_asset_acquired = 1;
           $.showroom_asset_acquired = 1;
-          // START_NEW_SCRIPT finale_mission1_loop
+          // START_NEW_SCRIPT finale_mission1_loop 
           $.baron_contact_blip = Blip.AddSpriteForContactPoint($.counterX, $.counterY, $.counterZ, $.the_counter_blip);
           goto_thereX = $.counterX;
           goto_thereY = counterY_d;
@@ -1779,7 +1779,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("COUNT", 2000, 1);
           await asyncWait(80);
           $.flag_counter_mission2_passed = 0;
-          // START_NEW_SCRIPT counter_mission2_loop
+          // START_NEW_SCRIPT counter_mission2_loop 
           $.counter_contact_blip = Blip.AddSpriteForContactPoint($.counterX, $.counterY, $.counterZ, $.the_counter_blip);
           goto_thereX = $.counterX;
           goto_thereY = counterY_d;
@@ -1790,7 +1790,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("COUNT", 2000, 1);
           await asyncWait(80);
           $.flag_counter_mission1_passed = 0;
-          // START_NEW_SCRIPT counter_mission1_loop
+          // START_NEW_SCRIPT counter_mission1_loop 
           $.counter_contact_blip = Blip.AddSpriteForContactPoint($.counterX, $.counterY, $.counterZ, $.the_counter_blip);
           goto_thereX = $.counterX;
           goto_thereY = counterY_d;
@@ -1801,8 +1801,8 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("PROT", 2000, 1);
           await asyncWait(80);
           $.flag_protect_mission3_passed = 0;
-          // START_NEW_SCRIPT protect_mission3_loop
-          $.protect_contact_blip = Blip.AddSpriteForContactPoint(-348.5, -541.8, 16.4, RADAR_SPRITE_TOMMY);
+          // START_NEW_SCRIPT protect_mission3_loop 
+          $.protect_contact_blip = Blip.AddSpriteForContactPoint(-348.5, -541.8, 16.4, 29 /* RADAR_SPRITE_TOMMY */);
           goto_thereX = $.baronX;
           goto_thereY = baronY_d;
           goto_thereZ = $.baronZ;
@@ -1812,8 +1812,8 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("PROT", 2000, 1);
           await asyncWait(80);
           $.flag_protect_mission2_passed = 0;
-          // START_NEW_SCRIPT protect_mission2_loop
-          $.protect_contact_blip = Blip.AddSpriteForContactPoint(-397.4, -561.3, 18.7, RADAR_SPRITE_TOMMY);
+          // START_NEW_SCRIPT protect_mission2_loop 
+          $.protect_contact_blip = Blip.AddSpriteForContactPoint(-397.4, -561.3, 18.7, 29 /* RADAR_SPRITE_TOMMY */);
           goto_thereX = $.baronX;
           goto_thereY = baronY_d;
           goto_thereZ = $.baronZ;
@@ -1823,8 +1823,8 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("PROT", 2000, 1);
           await asyncWait(80);
           $.flag_protect_mission1_passed = 0;
-          // START_NEW_SCRIPT protect_mission1_loop
-          $.protect_contact_blip = Blip.AddSpriteForContactPoint(-378.3, -579.8, 24.5, RADAR_SPRITE_TOMMY);
+          // START_NEW_SCRIPT protect_mission1_loop 
+          $.protect_contact_blip = Blip.AddSpriteForContactPoint(-378.3, -579.8, 24.5, 29 /* RADAR_SPRITE_TOMMY */);
           goto_thereX = $.baronX;
           goto_thereY = baronY_d;
           goto_thereZ = $.baronZ;
@@ -1834,7 +1834,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("PORN", 2000, 1);
           await asyncWait(80);
           $.flag_porn_mission4_passed = 0;
-          // START_NEW_SCRIPT porn_mission4_loop
+          // START_NEW_SCRIPT porn_mission4_loop 
           $.porn_contact_blip = Blip.AddSpriteForContactPoint($.pornX, $.pornY, $.pornZ, $.the_porn_blip);
           goto_thereX = $.pornX;
           goto_thereY = pornY_d;
@@ -1845,7 +1845,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("PORN", 2000, 1);
           await asyncWait(80);
           $.flag_porn_mission3_passed = 0;
-          // START_NEW_SCRIPT porn_mission3_loop
+          // START_NEW_SCRIPT porn_mission3_loop 
           $.porn_contact_blip = Blip.AddSpriteForContactPoint($.pornX, $.pornY, $.pornZ, $.the_porn_blip);
           goto_thereX = $.pornX;
           goto_thereY = pornY_d;
@@ -1856,7 +1856,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("PORN", 2000, 1);
           await asyncWait(80);
           $.flag_porn_mission2_passed = 0;
-          // START_NEW_SCRIPT porn_mission2_loop
+          // START_NEW_SCRIPT porn_mission2_loop 
           $.porn_contact_blip = Blip.AddSpriteForContactPoint($.pornX, $.pornY, $.pornZ, $.the_porn_blip);
           goto_thereX = $.pornX;
           goto_thereY = pornY_d;
@@ -1867,7 +1867,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("PORN", 2000, 1);
           await asyncWait(80);
           $.flag_porn_mission1_passed = 0;
-          // START_NEW_SCRIPT porn_mission1_loop
+          // START_NEW_SCRIPT porn_mission1_loop 
           $.porn_contact_blip = Blip.AddSpriteForContactPoint($.pornX, $.pornY, $.pornZ, $.the_porn_blip);
           goto_thereX = $.pornX;
           goto_thereY = pornY_d;
@@ -1878,7 +1878,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("PHIL", 2000, 1);
           await asyncWait(80);
           $.flag_phil_mission2_passed = 0;
-          // START_NEW_SCRIPT phil_mission2_loop
+          // START_NEW_SCRIPT phil_mission2_loop 
           $.phil_contact_blip = Blip.AddSpriteForContactPoint($.philX, $.philY, $.philZ, $.the_phil_blip);
           goto_thereX = $.philX;
           goto_thereY = philY_d;
@@ -1889,7 +1889,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("PHIL", 2000, 1);
           await asyncWait(80);
           $.flag_phil_mission1_passed = 0;
-          // START_NEW_SCRIPT phil_mission1_loop
+          // START_NEW_SCRIPT phil_mission1_loop 
           $.phil_contact_blip = Blip.AddSpriteForContactPoint($.philX, $.philY, $.philZ, $.the_phil_blip);
           goto_thereX = $.philX;
           goto_thereY = philY_d;
@@ -1900,7 +1900,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("BANK", 2000, 1);
           await asyncWait(80);
           $.flag_bankjob_mission4_passed = 0;
-          // START_NEW_SCRIPT bankjob_mission4_loop
+          // START_NEW_SCRIPT bankjob_mission4_loop 
           $.bankjob_contact_blip = Blip.AddSpriteForContactPoint($.bankjobX, $.bankjobY, $.bankjobZ, $.the_bankjob_blip);
           goto_thereX = 491.0;
           goto_thereY = -77.7;
@@ -1911,7 +1911,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("BANK", 2000, 1);
           await asyncWait(80);
           $.flag_bankjob_mission3_passed = 0;
-          // START_NEW_SCRIPT bankjob_mission3_loop
+          // START_NEW_SCRIPT bankjob_mission3_loop 
           $.bankjob_contact_blip = Blip.AddSpriteForContactPoint($.bankjobX, $.bankjobY, $.bankjobZ, $.the_bankjob_blip);
           goto_thereX = 491.0;
           goto_thereY = -77.7;
@@ -1922,7 +1922,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("BANK", 2000, 1);
           await asyncWait(80);
           $.flag_bankjob_mission2_passed = 0;
-          // START_NEW_SCRIPT bankjob_mission2_loop
+          // START_NEW_SCRIPT bankjob_mission2_loop 
           $.bankjob_contact_blip = Blip.AddSpriteForContactPoint($.bankjobX, $.bankjobY, $.bankjobZ, $.the_bankjob_blip);
           goto_thereX = 491.0;
           goto_thereY = -77.7;
@@ -1933,7 +1933,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("BANK", 2000, 1);
           await asyncWait(80);
           $.flag_bankjob_mission1_passed = 0;
-          // START_NEW_SCRIPT bankjob_mission1_loop
+          // START_NEW_SCRIPT bankjob_mission1_loop 
           $.bankjob_contact_blip = Blip.AddSpriteForContactPoint($.bankjobX, $.bankjobY, $.bankjobZ, $.the_bankjob_blip);
           goto_thereX = 491.0;
           goto_thereY = -77.7;
@@ -1944,7 +1944,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("AVERY", 2000, 1);
           await asyncWait(80);
           $.flag_sergio_mission3_passed = 0;
-          // START_NEW_SCRIPT serg_mission3_loop
+          // START_NEW_SCRIPT serg_mission3_loop 
           $.sergio_contact_blip = Blip.AddSpriteForContactPoint($.sergiox, $.sergioy, $.sergioz, $.the_sergio_blip);
           goto_thereX = $.sergioX;
           goto_thereY = sergioY_d;
@@ -1955,7 +1955,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("AVERY", 2000, 1);
           await asyncWait(80);
           $.flag_sergio_mission2_passed = 0;
-          // START_NEW_SCRIPT serg_mission2_loop
+          // START_NEW_SCRIPT serg_mission2_loop 
           $.sergio_contact_blip = Blip.AddSpriteForContactPoint($.sergiox, $.sergioy, $.sergioz, $.the_sergio_blip);
           goto_thereX = $.sergioX;
           goto_thereY = sergioY_d;
@@ -1966,7 +1966,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("AVERY", 2000, 1);
           await asyncWait(80);
           $.flag_sergio_mission1_passed = 0;
-          // START_NEW_SCRIPT serg_mission1_loop
+          // START_NEW_SCRIPT serg_mission1_loop 
           $.sergio_contact_blip = Blip.AddSpriteForContactPoint($.sergiox, $.sergioy, $.sergioz, $.the_sergio_blip);
           goto_thereX = $.sergioX;
           goto_thereY = sergioY_d;
@@ -1977,7 +1977,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("COKE", 2000, 1);
           await asyncWait(80);
           $.flag_baron_mission5_passed = 0;
-          // START_NEW_SCRIPT baron_mission5_loop
+          // START_NEW_SCRIPT baron_mission5_loop 
           $.baron_contact_blip = Blip.AddSpriteForContactPoint($.baron2X, $.baron2Y, $.baron2Z, 7);
           goto_thereX = $.baron2X;
           goto_thereY = baron2Y_d;
@@ -1989,7 +1989,7 @@ $.rsticky = _res178.rightStickY;
           await asyncWait(80);
           $.flag_kent_mission1_passed = 0;
           $.flag_kent_mission_active = 1;
-          // START_NEW_SCRIPT kent_mission1_loop
+          // START_NEW_SCRIPT kent_mission1_loop 
           $.kent_contact_blip = Blip.AddSpriteForContactPoint(491.0, -77.7, 10.4, $.the_kent_blip);
           goto_thereX = 495.60;
           goto_thereY = -82.80;
@@ -2000,7 +2000,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("COKE", 2000, 1);
           await asyncWait(80);
           $.flag_baron_mission4_passed = 0;
-          // START_NEW_SCRIPT baron_mission4_loop
+          // START_NEW_SCRIPT baron_mission4_loop 
           $.baron_contact_blip = Blip.AddSpriteForContactPoint($.baronX, $.baronY, $.baronZ, $.the_baron_blip);
           goto_thereX = $.baronX;
           goto_thereY = baronY_d;
@@ -2011,7 +2011,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("COKE", 2000, 1);
           await asyncWait(80);
           $.flag_baron_mission3_passed = 0;
-          // START_NEW_SCRIPT baron_mission3_loop
+          // START_NEW_SCRIPT baron_mission3_loop 
           $.baron_contact_blip = Blip.AddSpriteForContactPoint($.baronX, $.baronY, $.baronZ, $.the_baron_blip);
           goto_thereX = $.baronX;
           goto_thereY = baronY_d;
@@ -2022,7 +2022,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("COKE", 2000, 1);
           await asyncWait(80);
           $.flag_baron_mission2_passed = 0;
-          // START_NEW_SCRIPT baron_mission2_loop
+          // START_NEW_SCRIPT baron_mission2_loop 
           $.baron_contact_blip = Blip.AddSpriteForContactPoint($.baronX, $.baronY, $.baronZ, $.the_baron_blip);
           goto_thereX = $.baronX;
           goto_thereY = baronY_d;
@@ -2033,7 +2033,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("COKE", 2000, 1);
           await asyncWait(80);
           $.flag_baron_mission1_passed = 0;
-          // START_NEW_SCRIPT baron_mission1_loop
+          // START_NEW_SCRIPT baron_mission1_loop 
           $.baron_contact_blip = Blip.AddSpriteForContactPoint($.baronX, $.baronY, $.baronZ, $.the_baron_blip);
           goto_thereX = $.baronX;
           goto_thereY = baronY_d;
@@ -2043,7 +2043,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintBig("COL_5", 1000, 4); //"General mission 5"
           Text.PrintNow("GENERAL", 2000, 1);
           await asyncWait(80);
-          // START_NEW_SCRIPT general_mission5_loop
+          // START_NEW_SCRIPT general_mission5_loop 
           $.general_contact_blip = Blip.AddSpriteForContactPoint($.generalX, $.generalY, $.generalZ, $.the_general_blip);
           goto_thereX = $.generalX;
           goto_thereY = generalY_d;
@@ -2054,7 +2054,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("GENERAL", 2000, 1);
           await asyncWait(80);
           $.flag_general_mission4_passed = 0;
-          // START_NEW_SCRIPT general_mission4_loop
+          // START_NEW_SCRIPT general_mission4_loop 
           $.general_contact_blip = Blip.AddSpriteForContactPoint($.generalX, $.generalY, $.generalZ, $.the_general_blip);
           goto_thereX = $.generalX;
           goto_thereY = generalY_d;
@@ -2065,7 +2065,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("GENERAL", 2000, 1);
           await asyncWait(80);
           $.flag_general_mission3_passed = 0;
-          // START_NEW_SCRIPT general_mission3_loop
+          // START_NEW_SCRIPT general_mission3_loop 
           $.general_contact_blip = Blip.AddSpriteForContactPoint($.generalX, $.generalY, $.generalZ, $.the_general_blip);
           goto_thereX = $.generalX;
           goto_thereY = generalY_d;
@@ -2076,7 +2076,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("GENERAL", 2000, 1);
           await asyncWait(80);
           $.flag_general_mission2_passed = 0;
-          // START_NEW_SCRIPT general_mission2_loop
+          // START_NEW_SCRIPT general_mission2_loop 
           $.general_contact_blip = Blip.AddSpriteForContactPoint($.generalX, $.generalY, $.generalZ, $.the_general_blip);
           goto_thereX = $.generalX;
           goto_thereY = generalY_d;
@@ -2087,7 +2087,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("GENERAL", 2000, 1);
           await asyncWait(80);
           $.flag_general_mission1_passed = 0;
-          // START_NEW_SCRIPT general_mission1_loop
+          // START_NEW_SCRIPT general_mission1_loop 
           $.general_contact_blip = Blip.AddSpriteForContactPoint($.generalX, $.generalY, $.generalZ, $.the_general_blip);
           goto_thereX = $.generalX;
           goto_thereY = generalY_d;
@@ -2098,7 +2098,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("LAW", 2000, 1);
           await asyncWait(80);
           $.flag_lawyer_mission4_passed = 0;
-          // START_NEW_SCRIPT lawyer_mission4_loop
+          // START_NEW_SCRIPT lawyer_mission4_loop 
           $.lawyer_contact_blip = Blip.AddSpriteForContactPoint($.lawyerX, $.lawyerY, $.lawyerZ, $.the_lawyer_blip);
           goto_thereX = lawyerX_d;
           goto_thereY = $.lawyerY;
@@ -2109,7 +2109,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("LAW", 2000, 1);
           await asyncWait(80);
           $.flag_lawyer_mission3_passed = 0;
-          // START_NEW_SCRIPT lawyer_mission3_loop
+          // START_NEW_SCRIPT lawyer_mission3_loop 
           $.lawyer_contact_blip = Blip.AddSpriteForContactPoint($.lawyerX, $.lawyerY, $.lawyerZ, $.the_lawyer_blip);
           goto_thereX = lawyerX_d;
           goto_thereY = $.lawyerY;
@@ -2120,7 +2120,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("LAW", 2000, 1);
           await asyncWait(80);
           $.flag_lawyer_mission2_passed = 0;
-          // START_NEW_SCRIPT lawyer_mission2_loop
+          // START_NEW_SCRIPT lawyer_mission2_loop 
           $.lawyer_contact_blip = Blip.AddSpriteForContactPoint($.lawyerX, $.lawyerY, $.lawyerZ, $.the_lawyer_blip);
           goto_thereX = lawyerX_d;
           goto_thereY = $.lawyerY;
@@ -2131,7 +2131,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("LAW", 2000, 1);
           await asyncWait(80);
           $.flag_lawyer_mission1_passed = 0;
-          // START_NEW_SCRIPT lawyer_mission1_loop
+          // START_NEW_SCRIPT lawyer_mission1_loop 
           $.lawyer_contact_blip = Blip.AddSpriteForContactPoint($.lawyerX, $.lawyerY, $.lawyerZ, $.the_lawyer_blip);
           goto_thereX = lawyerX_d;
           goto_thereY = $.lawyerY;
@@ -2142,7 +2142,7 @@ $.rsticky = _res178.rightStickY;
           Text.PrintNow("CUT", 2000, 1);
           await asyncWait(80);
           $.flag_hotel_mission1_passed = 0;
-          // START_NEW_SCRIPT hotel_mission1_loop
+          // START_NEW_SCRIPT hotel_mission1_loop 
           goto_thereX = hotelX_d;
           goto_thereY = $.hotelY;
           goto_thereZ = $.hotelZ;
@@ -2177,7 +2177,7 @@ async function load_and_warp_player() {
 
 
   if ($.player1.isPlaying()) {
-    Streaming.SetAreaVisible(VIS_MAIN_MAP);
+    Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
     Streaming.LoadScene(goto_thereX, goto_thereY, goto_thereZ);
     $.player1.setCoordinates(goto_thereX, goto_thereY, goto_thereZ);
   }
@@ -2333,54 +2333,54 @@ async function terminate_all_scripts() {
   if (Pad.IsButtonPressed(1 /* PAD2 */, 16 /* CROSS */)) {
     if (open_up_the_property_pickups == 0) {
       $.print_works_pickup.remove();
-      $.print_works_blip = Blip.AddShortRangeSpriteForContactPoint($.printbuyX, $.printbuyY, $.printbuyZ, RADAR_SPRITE_PROPERTY);
+      $.print_works_blip = Blip.AddShortRangeSpriteForContactPoint($.printbuyX, $.printbuyY, $.printbuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
       $.print_works_blip.changeDisplay(2 /* BLIP_ONLY */);
       $.print_works_pickup = Pickup.CreateForSaleProperty($.printbuyX, $.printbuyY, $.printbuyZ, $.printworks_price, "PRNT_L"); //Press R3 to purchase the Print Works for $~1~
-      // START_NEW_SCRIPT print_buy_loop
+      // START_NEW_SCRIPT print_buy_loop 
       //CAR SHOWROOM PURCHASING PICKUP
       $.carbuy_pickup.remove();
-      $.carbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.carbuyX, $.carbuyY, $.carbuyZ, RADAR_SPRITE_PROPERTY);
+      $.carbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.carbuyX, $.carbuyY, $.carbuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
       $.carbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
       $.carbuy_pickup = Pickup.CreateForSaleProperty($.carbuyX, $.carbuyY, $.carbuyZ, $.carbuy_price, "CAR_L"); //Press R3 to purchase the Car Showroom for $~1~
       //FILM STUDIO PURCHASING PICKUP
       $.pornbuy_pickup.remove();
-      $.pornbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.pornbuyX, $.pornbuyY, $.pornbuyZ, RADAR_SPRITE_PROPERTY);
+      $.pornbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.pornbuyX, $.pornbuyY, $.pornbuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
       $.pornbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
       $.pornbuy_pickup = Pickup.CreateForSaleProperty($.pornbuyX, $.pornbuyY, $.pornbuyZ, $.pornbuy_price, "PORN_L"); //Press R3 to purchase the Film Studios for $~1~
-      // START_NEW_SCRIPT pornbuy_loop
+      // START_NEW_SCRIPT pornbuy_loop 
       //ICECREAM FACTORY PURCHASING PICKUP
       $.icebuy_pickup.remove();
-      $.icebuy_blip = Blip.AddShortRangeSpriteForContactPoint($.icebuyX, $.icebuyY, $.icebuyZ, RADAR_SPRITE_PROPERTY);
+      $.icebuy_blip = Blip.AddShortRangeSpriteForContactPoint($.icebuyX, $.icebuyY, $.icebuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
       $.icebuy_blip.changeDisplay(2 /* BLIP_ONLY */);
       $.icebuy_pickup = Pickup.CreateForSaleProperty($.icebuyX, $.icebuyY, $.icebuyZ, $.icebuy_price, "ICE_L"); //Press R3 to purchase the Icecream Factory for $~1~
       //TAXI FIRM PURCHASING PICKUP
       $.taxibuy_pickup.remove();
-      $.taxibuy_blip = Blip.AddShortRangeSpriteForContactPoint($.taxibuyX, $.taxibuyY, $.taxibuyZ, RADAR_SPRITE_PROPERTY);
+      $.taxibuy_blip = Blip.AddShortRangeSpriteForContactPoint($.taxibuyX, $.taxibuyY, $.taxibuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
       $.taxibuy_blip.changeDisplay(2 /* BLIP_ONLY */);
       $.taxibuy_pickup = Pickup.CreateForSaleProperty($.taxibuyX, $.taxibuyY, $.taxibuyZ, $.taxibuy_price, "TAXI_L"); //Press R3 to purchase the Taxi Company for $~1~
       //THE MALIBU PURCHASING PICKUP
       $.bankbuy_pickup.remove();
-      $.bankbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.bankbuyX, $.bankbuyY, $.bankbuyZ, RADAR_SPRITE_PROPERTY);
+      $.bankbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.bankbuyX, $.bankbuyY, $.bankbuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
       $.bankbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
       $.bankbuy_pickup = Pickup.CreateForSaleProperty($.bankbuyX, $.bankbuyY, $.bankbuyZ, $.bankbuy_price, "BANK_L"); //Press R3 to purchase The Malibu for $~1~
-      // START_NEW_SCRIPT bankbuy_loop
+      // START_NEW_SCRIPT bankbuy_loop 
       //BOAT YARD PURCHASING PICKUP
       $.boatbuy_pickup.remove();
-      $.boatbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.boatbuyX, $.boatbuyY, $.boatbuyZ, RADAR_SPRITE_PROPERTY);
+      $.boatbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.boatbuyX, $.boatbuyY, $.boatbuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
       $.boatbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
       $.boatbuy_pickup = Pickup.CreateForSaleProperty($.boatbuyX, $.boatbuyY, $.boatbuyZ, $.boatbuy_price, "BOAT_L"); //Press R3 to purchase the Boat Yard for $~1~
       //STRIP CLUB PURCHASING PICKUP
       $.strpbuy_pickup.remove();
       $.strpbuy_pickup = Pickup.CreateForSaleProperty($.strpbuyX, $.strpbuyY, $.strpbuyZ, $.strpbuy_price, "STRP_L"); //Press R3 to purchase the Car Showroom for $~1~
-      $.strpbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.strpbuyX, $.strpbuyY, $.strpbuyZ, RADAR_SPRITE_PROPERTY);
+      $.strpbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.strpbuyX, $.strpbuyY, $.strpbuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
       $.strpbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
-      // START_NEW_SCRIPT strpbuy_loop
+      // START_NEW_SCRIPT strpbuy_loop 
       open_up_the_property_pickups = 1;
     }
-    // START_NEW_SCRIPT icebuy_loop
-    // START_NEW_SCRIPT taxibuy_loop
-    // START_NEW_SCRIPT boatbuy_loop
-    // START_NEW_SCRIPT property_car_loop
+    // START_NEW_SCRIPT icebuy_loop 
+    // START_NEW_SCRIPT taxibuy_loop 
+    // START_NEW_SCRIPT boatbuy_loop 
+    // START_NEW_SCRIPT property_car_loop 
   }
 }
 

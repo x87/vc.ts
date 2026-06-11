@@ -1,6 +1,6 @@
 // Generated from main/serg1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_serg1() {
 
@@ -190,7 +190,7 @@ async function mission_start_serg1() {
 
 
   Clock.SetTimeOfDay(10, 0);
-  Weather.ForceNow(WEATHER_EXTRA_SUNNY);
+  Weather.ForceNow(4 /* WEATHER_EXTRA_SUNNY */);
 
 
 
@@ -530,7 +530,7 @@ $.vect_z = _res476.z;
 
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   Camera.DoFade(1500, 1 /* FADE_IN */);
@@ -556,7 +556,7 @@ $.vect_z = _res476.z;
   //get golf costume from clothes shop
 
   if ($.has_player_been_to_clothes_shop == 0) {
-    $.clothesblip = Blip.AddSpriteForCoord($.clothes_shopX, $.clothes_shopY, $.clothes_shopZ, RADAR_SPRITE_TSHIRT);
+    $.clothesblip = Blip.AddSpriteForCoord($.clothes_shopX, $.clothes_shopY, $.clothes_shopZ, 28 /* RADAR_SPRITE_TSHIRT */);
     Text.PrintNow("TEX1_1", 7000, 2);
     $.has_player_been_to_clothes_shop = 1;
   }
@@ -773,7 +773,7 @@ async function mission_sergio1_loop() {
     if ($.golfhelptext_s1 == 0) {
       if ($.player1.isInModel(caddy)) {
         Text.PrintHelp("TEX1_8");
-        Audio.SetRadioChannel(RADIO_ESPANTOSO, -1);
+        Audio.SetRadioChannel(6 /* RADIO_ESPANTOSO */, -1);
         $.golfhelptext_s1 = 1;
       }
     }
@@ -790,27 +790,27 @@ async function mission_sergio1_loop() {
       Game.SetWantedMultiplier(0.1);
       $.player1.alterWantedLevel(0);
       $.bodyguard1_s1 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL01, $.bodyguard1x_s1, $.bodyguard1y_s1, $.bodyguard1z_s1);
-      $.bodyguard1_s1.giveWeapon(WEAPONTYPE_GOLFCLUB, 3000);
+      $.bodyguard1_s1.giveWeapon(3 /* WEAPONTYPE_GOLFCLUB */, 3000);
       $.bodyguard1_s1.setOnlyDamagedByPlayer(true /* TRUE */);
       $.bodyguard1_s1.setHealth(250);
       $.bodyguard1_s1.setHeading($.bodyguard1_s1heading);
       $.bodyguard2_s1 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL02, $.bodyguard2x_s1, $.bodyguard2y_s1, $.bodyguard2z_s1);
-      $.bodyguard2_s1.giveWeapon(WEAPONTYPE_GOLFCLUB, 3000);
+      $.bodyguard2_s1.giveWeapon(3 /* WEAPONTYPE_GOLFCLUB */, 3000);
       $.bodyguard2_s1.setOnlyDamagedByPlayer(true /* TRUE */);
       $.bodyguard2_s1.setHealth(250);
       $.bodyguard2_s1.setHeading($.bodyguard1_s1heading);
       $.bodyguard3_s1 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL01, $.bodyguard3x_s1, $.bodyguard3y_s1, $.bodyguard3z_s1);
-      $.bodyguard3_s1.giveWeapon(WEAPONTYPE_GOLFCLUB, 3000);
+      $.bodyguard3_s1.giveWeapon(3 /* WEAPONTYPE_GOLFCLUB */, 3000);
       $.bodyguard3_s1.setOnlyDamagedByPlayer(true /* TRUE */);
       $.bodyguard3_s1.setHealth(250);
       $.bodyguard3_s1.setHeading($.bodyguard1_s1heading);
       $.bodyguard4_s1 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL02, $.bodyguard4x_s1, $.bodyguard4y_s1, $.bodyguard4z_s1);
-      $.bodyguard4_s1.giveWeapon(WEAPONTYPE_GOLFCLUB, 3000);
+      $.bodyguard4_s1.giveWeapon(3 /* WEAPONTYPE_GOLFCLUB */, 3000);
       $.bodyguard4_s1.setOnlyDamagedByPlayer(true /* TRUE */);
       $.bodyguard4_s1.setHealth(250);
       $.bodyguard4_s1.setHeading($.bodyguard1_s1heading);
       $.golfped_target = Char.Create(4 /* PEDTYPE_CIVMALE */, WMYGO, $.golfped_targetx, $.golfped_targety, $.golfped_targetz);
-      $.golfped_target.giveWeapon(WEAPONTYPE_GOLFCLUB, 3000);
+      $.golfped_target.giveWeapon(3 /* WEAPONTYPE_GOLFCLUB */, 3000);
       $.golfped_target.clearThreatSearch();
       $.golfped_target.setHealth(250);
       $.golfped_target.setOnlyDamagedByPlayer(true /* TRUE */);
@@ -854,7 +854,7 @@ async function mission_sergio1_loop() {
       Camera.PointAtPoint(81.941216, 582.814148, 18.665253, 2 /* JUMP_CUT */);
       TIMERA = 0;
       if (!(Char.IsDead($.golfped_target))) {
-        $.golfped_target.setWaitState(WAITSTATE_GROUND_ATTACK, -1);
+        $.golfped_target.setWaitState(33 /* WAITSTATE_GROUND_ATTACK */, -1);
       }
       while (TIMERA < 2500) {
         await asyncWait(0);
@@ -995,7 +995,7 @@ async function mission_sergio1_loop() {
       if ($.char_has_seen_player == 0) {
         if (TIMERA > 1500) {
           if (!(Char.IsDead($.golfped_target))) {
-            $.golfped_target.setWaitState(WAITSTATE_GROUND_ATTACK, -1);
+            $.golfped_target.setWaitState(33 /* WAITSTATE_GROUND_ATTACK */, -1);
           }
         }
         if (TIMERA > 4000) {
@@ -1143,7 +1143,7 @@ async function mission_sergio1_loop() {
           if ($.target_state == 4) {
             if (TIMERB > 1000) {
               if (!(Char.IsDead($.golfped_target))) {
-                $.golfped_target.followPath($.golf_x, $.golf_y, $.golf_z, 2.0, RUN);
+                $.golfped_target.followPath($.golf_x, $.golf_y, $.golf_z, 2.0, 1 /* RUN */);
               }
               TIMERB = 0;
             }
@@ -1184,7 +1184,7 @@ async function mission_sergio1_loop() {
             if (!(Char.IsDead($.golfped_target))) {
               if (!($.golfped_target.isInAnyCar())) {
                 if (TIMERA > 1000) {
-                  $.golfped_target.followPath($.escapex_s1, $.escapey_s1, $.escapez_s1, 1.0, RUN);
+                  $.golfped_target.followPath($.escapex_s1, $.escapey_s1, $.escapez_s1, 1.0, 1 /* RUN */);
                   TIMERA = 0;
                 }
               }
@@ -1585,10 +1585,10 @@ async function mission_serg1_passed() {
   $.player1.addScore(500);
   Stat.RegisterMissionPassed("TEX_1");
   Stat.PlayerMadeProgress(1);
-  // START_NEW_SCRIPT serg_mission2_loop
+  // START_NEW_SCRIPT serg_mission2_loop 
   $.clothes_pickup4 = Pickup.CreateClothes(106.5, 253.0, 21.7, 4);
   $.clothes4_created = 1;
-  // START_NEW_SCRIPT cloth3
+  // START_NEW_SCRIPT cloth3 
 }
 
 
@@ -1800,7 +1800,7 @@ $.golfcaddyz_s1 = _res481.z;
     }
     if ($.newcar_s1 == -1 || $.no_of_times_picked_a_new_car > 3) {
       $.golfped_target.setObjNoObj();
-      $.golfped_target.followPath($.golf_x, $.golf_y, $.golf_z, 15.0, RUN);
+      $.golfped_target.followPath($.golf_x, $.golf_y, $.golf_z, 15.0, 1 /* RUN */);
       $.golfped_target.setRunning(true /* TRUE */);
       $.target_state = 4;
       TIMERB = 0;

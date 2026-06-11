@@ -1,6 +1,6 @@
 // Generated from main/mm.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_mm() {
   Text.ClearThisPrint("M_FAIL");
@@ -11,7 +11,7 @@ async function mission_start_mm() {
   Clock.SetTimeOfDay(10, 0);
   //forcing weather to be nice
 
-  Weather.ForceNow(WEATHER_EXTRA_SUNNY);
+  Weather.ForceNow(4 /* WEATHER_EXTRA_SUNNY */);
   Game.SetIsInStadium(true /* TRUE */);
   $.player1.setFreeHealthCare(true /* TRUE */);
   await asyncWait(0);
@@ -85,7 +85,7 @@ async function mission_start_mm() {
   $.player1.clearWantedLevel();
 
 
-  Streaming.SetAreaVisible(VIS_BLOOD);
+  Streaming.SetAreaVisible(15 /* VIS_BLOOD */);
   World.SwitchRubbish(false /* OFF */);
   World.SetCarDensityMultiplier(0.0);
   World.SetPedDensityMultiplier(0.0);
@@ -510,20 +510,20 @@ async function skip_mm_initial_cutscene() {
 
 
   Text.PrintBig("RACE2", 1100, 4); //"THREE"
-  Sound.AddOneOffSound(0.0, 0.0, 0.0, 97 /* SOUND_RACE_START_3 */);
+  Sound.AddOneOffSound(0.0, 0.0, 0.0, 7 /* SOUND_RACE_START_3 */);
   await asyncWait(1000);
   Text.PrintBig("RACE3", 1100, 4); //"TWO"
-  Sound.AddOneOffSound(0.0, 0.0, 0.0, 98 /* SOUND_RACE_START_2 */);
+  Sound.AddOneOffSound(0.0, 0.0, 0.0, 8 /* SOUND_RACE_START_2 */);
 
 
   await asyncWait(1000);
   Text.PrintBig("RACE4", 1100, 4); //"ONE"
-  Sound.AddOneOffSound(0.0, 0.0, 0.0, 99 /* SOUND_RACE_START_1 */);
+  Sound.AddOneOffSound(0.0, 0.0, 0.0, 9 /* SOUND_RACE_START_1 */);
 
 
   await asyncWait(1000);
   Text.PrintBig("RACE5", 800, 4); //"GO!"
-  Sound.AddOneOffSound(0.0, 0.0, 0.0, 100 /* SOUND_RACE_START_GO */);
+  Sound.AddOneOffSound(0.0, 0.0, 0.0, 10 /* SOUND_RACE_START_GO */);
 
 
   await asyncWait(800);
@@ -638,7 +638,7 @@ async function skip_mm_initial_cutscene() {
   }
 
 
-  Hud.DisplayTimer($.$id.mm_countdown, TIMER_DOWN);
+  Hud.DisplayTimer($.$id.mm_countdown, 1 /* TIMER_DOWN */);
   //DISPLAY_NTH_ONSCREEN_COUNTER_WITH_STRING time_to_beat/*mm_cars_killed*/ COUNTER_DISPLAY_NUMBER 2 ( BLOD_08 )
 
   Hud.DisplayNthCounterWithString($.mm_car_health_divided, 1 /* COUNTER_DISPLAY_BAR */, 1, "BLOD_04");
@@ -705,7 +705,7 @@ async function skip_mm_initial_cutscene() {
         }
       }
       $.mm_countdown += 15000;
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       await cunty_hoarz();  // SCM GOSUB cunty_hoarz
     }
     if (!(Car.IsDead($.mm_car3))) {
@@ -1583,7 +1583,7 @@ async function mission_cleanup_mm() {
 
 
   if (!(HAS_DEATHARREST_BEEN_EXECUTED())) {
-    Streaming.SetAreaVisible(VIS_MAIN_MAP);
+    Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
     Streaming.LoadScene(-1101.0, 1331.0, 19.1);
     if ($.player1.isInAnyCar()) {
       $.player1.warpFromCarToCoord(-1101.0, 1331.0, 19.1);
@@ -1617,7 +1617,7 @@ async function create_cars_mm() {
   if (Car.IsDead($.mm_car1)) {
     if ($.player1.isInArea2D(-1530.0, 995.0, -1384.0, 923.0, false /* FALSE */)) {
       Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.player1.addScore(100);
     }
     StuckCarCheck.Remove($.mm_car1);
@@ -1644,7 +1644,7 @@ async function create_cars_mm() {
   if (Car.IsDead($.mm_car2)) {
     if ($.player1.isInArea2D(-1530.0, 995.0, -1384.0, 923.0, false /* FALSE */)) {
       Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.player1.addScore(100);
     }
     StuckCarCheck.Remove($.mm_car2);
@@ -1671,7 +1671,7 @@ async function create_cars_mm() {
   if (Car.IsDead($.mm_car3)) {
     if ($.player1.isInArea2D(-1530.0, 995.0, -1384.0, 923.0, false /* FALSE */)) {
       Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.player1.addScore(100);
     }
     StuckCarCheck.Remove($.mm_car3);
@@ -1698,7 +1698,7 @@ async function create_cars_mm() {
   if (Car.IsDead($.mm_car4)) {
     if ($.player1.isInArea2D(-1530.0, 995.0, -1384.0, 923.0, false /* FALSE */)) {
       Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.player1.addScore(100);
     }
     StuckCarCheck.Remove($.mm_car4);
@@ -1725,7 +1725,7 @@ async function create_cars_mm() {
   if (Car.IsDead($.mm_car5)) {
     if ($.player1.isInArea2D(-1530.0, 995.0, -1384.0, 1076.0, false /* FALSE */)) {
       Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.player1.addScore(100);
     }
     StuckCarCheck.Remove($.mm_car5);
@@ -1752,7 +1752,7 @@ async function create_cars_mm() {
   if (Car.IsDead($.mm_car6)) {
     if ($.player1.isInArea2D(-1530.0, 995.0, -1384.0, 1076.0, false /* FALSE */)) {
       Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.player1.addScore(100);
     }
     StuckCarCheck.Remove($.mm_car6);
@@ -1780,7 +1780,7 @@ async function create_cars_mm() {
   if (Car.IsDead($.mm_car7)) {
     if ($.player1.isInArea2D(-1530.0, 995.0, -1384.0, 1076.0, false /* FALSE */)) {
       Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.player1.addScore(100);
     }
     StuckCarCheck.Remove($.mm_car7);
@@ -1807,7 +1807,7 @@ async function create_cars_mm() {
   if (Car.IsDead($.mm_car8)) {
     if ($.player1.isInArea2D(-1530.0, 995.0, -1384.0, 1076.0, false /* FALSE */)) {
       Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.player1.addScore(100);
     }
     StuckCarCheck.Remove($.mm_car8);
@@ -1834,7 +1834,7 @@ async function create_cars_mm() {
   if (Car.IsDead($.mm_car9)) {
     if ($.player1.isInArea2D(-1265.0, 995.0, -1384.0, 923.0, false /* FALSE */)) {
       Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.player1.addScore(100);
     }
     StuckCarCheck.Remove($.mm_car9);
@@ -1861,7 +1861,7 @@ async function create_cars_mm() {
   if (Car.IsDead($.mm_car10)) {
     if ($.player1.isInArea2D(-1265.0, 995.0, -1384.0, 923.0, false /* FALSE */)) {
       Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.player1.addScore(100);
     }
     StuckCarCheck.Remove($.mm_car10);
@@ -1888,7 +1888,7 @@ async function create_cars_mm() {
   if (Car.IsDead($.mm_car11)) {
     if ($.player1.isInArea2D(-1265.0, 995.0, -1384.0, 923.0, false /* FALSE */)) {
       Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.player1.addScore(100);
     }
     StuckCarCheck.Remove($.mm_car11);
@@ -1915,7 +1915,7 @@ async function create_cars_mm() {
   if (Car.IsDead($.mm_car12)) {
     if ($.player1.isInArea2D(-1265.0, 995.0, -1384.0, 923.0, false /* FALSE */)) {
       Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.player1.addScore(100);
     }
     StuckCarCheck.Remove($.mm_car12);
@@ -1942,7 +1942,7 @@ async function create_cars_mm() {
   if (Car.IsDead($.mm_car13)) {
     if ($.player1.isInArea2D(-1265.0, 995.0, -1384.0, 1076.0, false /* FALSE */)) {
       Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.player1.addScore(100);
     }
     StuckCarCheck.Remove($.mm_car13);
@@ -1969,7 +1969,7 @@ async function create_cars_mm() {
   if (Car.IsDead($.mm_car14)) {
     if ($.player1.isInArea2D(-1265.0, 995.0, -1384.0, 1076.0, false /* FALSE */)) {
       Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.player1.addScore(100);
     }
     StuckCarCheck.Remove($.mm_car14);
@@ -1996,7 +1996,7 @@ async function create_cars_mm() {
   if (Car.IsDead($.mm_car15)) {
     if ($.player1.isInArea2D(-1265.0, 995.0, -1384.0, 1076.0, false /* FALSE */)) {
       Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.player1.addScore(100);
     }
     StuckCarCheck.Remove($.mm_car15);
@@ -2023,7 +2023,7 @@ async function create_cars_mm() {
   if (Car.IsDead($.mm_car16)) {
     if ($.player1.isInArea2D(-1265.0, 995.0, -1384.0, 1076.0, false /* FALSE */)) {
       Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.player1.addScore(100);
     }
     StuckCarCheck.Remove($.mm_car16);

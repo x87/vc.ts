@@ -1,6 +1,6 @@
 // Generated from main/assin3.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_assin3() {
 
@@ -283,14 +283,14 @@ async function missionloopassin3() {
     //locate player at phone
 
     if ($.gotophoneblip == 0) {
-      Hud.DisplayTimerWithString($.$id.timer_a3, TIMER_DOWN, "ASM3_11"); ///change
+      Hud.DisplayTimerWithString($.$id.timer_a3, 1 /* TIMER_DOWN */, "ASM3_11"); ///change
       $.gotophoneblip = 1;
     }
 
 
     if ($.gotophoneblip == 1) {
       $.sniper_a3 = Pickup.CreateWithAmmo(7 /* SNIPER */, 3 /* PICKUP_ONCE */, 12, $.sniper_a3x, $.sniper_a3y, $.sniper_a3z);
-      $.uzi_a3 = Pickup.CreateWithAmmo(178 /* UZI */, 3 /* PICKUP_ONCE */, 180, -43.075539, -1052.055786, 10.471653);
+      $.uzi_a3 = Pickup.CreateWithAmmo(UZI, 3 /* PICKUP_ONCE */, 180, -43.075539, -1052.055786, 10.471653);
       $.sniper_a3blip = Blip.AddForPickup($.sniper_a3);
       $.sniper_a3blip.changeColor(6 /* CYAN */);
       World.ClearArea(-41.6449, -1039.3809, 9.4545, 1.5, false /* FALSE */);
@@ -332,8 +332,8 @@ async function missionloopassin3() {
       $.firstguyblip = Blip.AddForChar($.firstguy_a3);
       $.firstguy_a3.setStayInSamePlace(true /* TRUE */);
       Text.PrintNow("ASM3_13", 8000, 2);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
-      $.player1.setMood(PLAYER_MOOD_ANGRY, 350000);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
+      $.player1.setMood(2 /* PLAYER_MOOD_ANGRY */, 350000);
       $.getfirstguy = 2;
     }
 
@@ -348,7 +348,7 @@ async function missionloopassin3() {
       }
       else {
         if ($.playerhasmissed1 == 0) {
-          $.firstguy_a3.setWaitState(WAITSTATE_USE_ATM, 60000);
+          $.firstguy_a3.setWaitState(25 /* WAITSTATE_USE_ATM */, 60000);
         }
 
 
@@ -364,7 +364,7 @@ async function missionloopassin3() {
           $.getfirstguy = 3;
           $.getsecondguy = 1;
           $.firstguyblip.remove();
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         }
       }
     }
@@ -387,7 +387,7 @@ async function missionloopassin3() {
       $.secondguyscar.setOnlyDamagedByPlayer(true /* TRUE */);
       $.secondguyscar.setHeavy(true /* TRUE */);
       Text.PrintNow("ASM3_14", 8000, 2);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.getsecondguy = 2;
     }
 
@@ -419,7 +419,7 @@ async function missionloopassin3() {
         if (!(Char.IsDead($.secondguy_a3))) {
           if ($.secondguy_a3.isOnScreen()) {
             if ($.player1.locateAnyMeansChar3D($.secondguy_a3, 11.0, 11.0, 2.0, false /* FALSE */)) {
-              if ($.player1.isCurrentWeapon(WEAPONTYPE_ANYWEAPON)) {
+              if ($.player1.isCurrentWeapon(47 /* WEAPONTYPE_ANYWEAPON */)) {
                 if (!(Car.IsDead($.secondguyscar))) {
                   if ($.secondguyscar.isOnScreen()) {
                     if (!($.secondguy_a3.isLeavingVehicleToDie())) {
@@ -439,7 +439,7 @@ async function missionloopassin3() {
     if ($.getsecondguy == 2) {
       if ($.secondguygotshot == 0) {
         if (!(Car.IsDead($.secondguyscar))) {
-          if ($.secondguyscar.isTireBurst(ANY_WHEEL)) {
+          if ($.secondguyscar.isTireBurst(4 /* ANY_WHEEL */)) {
             $.locateplayer2 = 20;
           }
         }
@@ -571,7 +571,7 @@ $.secondguyscarz = _res29.nodeZ;
       //passenger
       $.thirdguy2_a3 = Char.CreateAsPassenger($.thirdguyscar, 4 /* PEDTYPE_CIVMALE */, HMYAP, 0);
       $.thirdguy2blip = Blip.AddForChar($.thirdguy2_a3);
-      $.thirdguy2_a3.giveWeapon(WEAPONTYPE_STUBBY_SHOTGUN, 30000);
+      $.thirdguy2_a3.giveWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */, 30000);
       $.thirdguy2_a3.setAccuracy(95);
       $.thirdguy2_a3.clearThreatSearch();
       $.thirdguy2_a3.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -580,7 +580,7 @@ $.secondguyscarz = _res29.nodeZ;
       $.thirdguyscar.lockDoors(3 /* CARLOCK_LOCKOUT_PLAYER_ONLY */);
       $.thirdguyscar.setOnlyDamagedByPlayer(true /* TRUE */);
       Text.PrintNow("ASM3_15", 8000, 2);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.getthirdguy = 2;
     }
 
@@ -614,7 +614,7 @@ $.secondguyscarz = _res29.nodeZ;
         if (!(Char.IsDead($.thirdguy_a3))) {
           if ($.thirdguy_a3.isOnScreen()) {
             if ($.player1.locateAnyMeansChar3D($.thirdguy_a3, 20.0, 20.0, 2.0, false /* FALSE */)) {
-              if ($.player1.isCurrentWeapon(WEAPONTYPE_ANYWEAPON)) {
+              if ($.player1.isCurrentWeapon(47 /* WEAPONTYPE_ANYWEAPON */)) {
                 $.locateplayer3 = 20;
               }
             }
@@ -628,7 +628,7 @@ $.secondguyscarz = _res29.nodeZ;
     if ($.getthirdguy == 2) {
       if ($.thirdguygotshot == 0) {
         if (!(Car.IsDead($.thirdguyscar))) {
-          if ($.thirdguyscar.isTireBurst(ANY_WHEEL)) {
+          if ($.thirdguyscar.isTireBurst(4 /* ANY_WHEEL */)) {
             $.locateplayer3 = 20;
           }
         }
@@ -797,7 +797,7 @@ $.thirdguyscarz = _res31.nodeZ;
       $.fourthguy_a3.setStayInSamePlace(true /* TRUE */);
       $.fourthguy_a3.setWaitState(13 /* WAITSTATE_LOOK_ABOUT */, 800000);
       Text.PrintNow("ASM3_16", 8000, 2);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.fourthguy_a3.clearThreatSearch();
       $.getfourthguy = 2;
     }
@@ -885,7 +885,7 @@ $.thirdguyscarz = _res31.nodeZ;
       $.fifthguyscar.setDrivingStyle(1 /* DRIVINGMODE_SLOWDOWNFORCARS */);
       $.fifthguyscar.setOnlyDamagedByPlayer(true /* TRUE */);
       Text.PrintNow("ASM3_17", 8000, 2);
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       $.getfifthguy = 2;
     }
 

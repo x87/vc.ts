@@ -1,6 +1,6 @@
 // Generated from main/general2.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *****************************************************************************************
 // ************************************ General Mission 2 **********************************
@@ -283,12 +283,12 @@ $.the_yacht_z = _res196.z;
   //////////////////////////
 
 
-  $.player1.setMood(PLAYER_MOOD_CALM, 60000);
+  $.player1.setMood(0 /* PLAYER_MOOD_CALM */, 60000);
 
 
   Streaming.RequestModel(PCJ600);
-  Streaming.RequestModel(173 /* COLT45 */);
-  Streaming.RequestModel(178 /* UZI */);
+  Streaming.RequestModel(COLT45);
+  Streaming.RequestModel(UZI);
   Streaming.LoadSpecialCharacter(1, "fsfa");
   Streaming.LoadSpecialCharacter(2, "courier");
 
@@ -300,7 +300,7 @@ $.the_yacht_z = _res196.z;
   Streaming.LoadAllModelsNow();
 
 
-  while (!(Streaming.HasModelLoaded(PCJ600)) || !(Streaming.HasModelLoaded(173 /* COLT45 */)) || !(Streaming.HasModelLoaded(178 /* UZI */)) || !(Streaming.HasSpecialCharacterLoaded(1)) || !(Streaming.HasSpecialCharacterLoaded(2))) {
+  while (!(Streaming.HasModelLoaded(PCJ600)) || !(Streaming.HasModelLoaded(COLT45)) || !(Streaming.HasModelLoaded(UZI)) || !(Streaming.HasSpecialCharacterLoaded(1)) || !(Streaming.HasSpecialCharacterLoaded(2))) {
     await asyncWait(0);
   }
 
@@ -379,7 +379,7 @@ async function mall_shootout_loop() {
       }
       if ($.mall_shootout_counter < 1) {
         if (!(the_seller.isHealthGreater(95))) {
-          the_seller.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+          the_seller.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
           the_seller.setObjKillPlayerOnFoot($.player1);
         }
       }
@@ -394,7 +394,7 @@ async function mall_shootout_loop() {
         Text.ClearHelp();
         Text.PrintHelp("AMMUHLP"); //If you need any weapons vist Ammunation. It is marked on the radar by a blue gun blip.
         $.weapon_shop1_blip.remove();
-        $.weapon_shop1_blip = Blip.AddSpriteForCoord($.ammu1X, $.ammu1Y, $.ammu1Z, RADAR_SPRITE_GUN);
+        $.weapon_shop1_blip = Blip.AddSpriteForCoord($.ammu1X, $.ammu1Y, $.ammu1Z, 16 /* RADAR_SPRITE_GUN */);
         Hud.FlashObject(8 /* HUD_FLASH_RADAR */);
         $.ammunation_help_timer = $.game_timer + 3000;
         $.ammunation_help_flag = 1;
@@ -520,13 +520,13 @@ async function mall_shootout_loop() {
             french_security5.setHeedThreats(true /* TRUE */);
             french_security5.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
             french_security5.setThreatSearch(1 /* THREAT_PLAYER1 */);
-            french_security5.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 999);
+            french_security5.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 999);
             french_security5.setObjKillPlayerOnFoot($.player1);
             french_security6 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL01, -15.6727, -929.0634, 15.066);
             french_security6.setHeedThreats(true /* TRUE */);
             french_security6.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
             french_security6.setThreatSearch(1 /* THREAT_PLAYER1 */);
-            french_security6.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 999);
+            french_security6.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 999);
             french_security6.setObjKillPlayerOnFoot($.player1);
 
 
@@ -534,13 +534,13 @@ async function mall_shootout_loop() {
             french_security7.setHeedThreats(true /* TRUE */);
             french_security7.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
             french_security7.setThreatSearch(1 /* THREAT_PLAYER1 */);
-            french_security7.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 999);
+            french_security7.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 999);
             french_security7.setObjKillPlayerOnFoot($.player1);
             french_security8 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL01, -9.9934, -939.7717, 9.4492);
             french_security8.setHeedThreats(true /* TRUE */);
             french_security8.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
             french_security8.setThreatSearch(1 /* THREAT_PLAYER1 */);
-            french_security8.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 999);
+            french_security8.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 999);
             french_security8.setObjKillPlayerOnFoot($.player1);
 
 
@@ -549,7 +549,7 @@ async function mall_shootout_loop() {
             french_security9.setHeedThreats(true /* TRUE */);
             french_security9.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
             french_security9.setThreatSearch(1 /* THREAT_PLAYER1 */);
-            french_security9.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 999);
+            french_security9.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 999);
             french_security9.setObjKillPlayerOnFoot($.player1);
 
 
@@ -557,28 +557,28 @@ async function mall_shootout_loop() {
               french_security1.setHeedThreats(true /* TRUE */);
               french_security1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
               french_security1.setThreatSearch(1 /* THREAT_PLAYER1 */);
-              french_security1.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 999);
+              french_security1.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 999);
               french_security1.setObjKillPlayerOnFoot($.player1);
             }
             if (!(Char.IsDead(french_security2))) {
               french_security2.setHeedThreats(true /* TRUE */);
               french_security2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
               french_security2.setThreatSearch(1 /* THREAT_PLAYER1 */);
-              french_security2.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 999);
+              french_security2.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 999);
               french_security2.setObjKillPlayerOnFoot($.player1);
             }
             if (!(Char.IsDead(french_security3))) {
               french_security3.setHeedThreats(true /* TRUE */);
               french_security3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
               french_security3.setThreatSearch(1 /* THREAT_PLAYER1 */);
-              french_security3.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 999);
+              french_security3.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 999);
               french_security3.setObjKillPlayerOnFoot($.player1);
             }
             if (!(Char.IsDead(french_security4))) {
               french_security4.setHeedThreats(true /* TRUE */);
               french_security4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
               french_security4.setThreatSearch(1 /* THREAT_PLAYER1 */);
-              french_security4.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 999);
+              french_security4.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 999);
               french_security4.setObjKillPlayerOnFoot($.player1);
             }
             if (!(Char.IsDead(the_seller))) {
@@ -799,7 +799,7 @@ async function mall_shootout_loop() {
         World.ClearArea(3.6782, -939.0247, 16.0038, 6.0, false /* FALSE */);
         //CLEAR_TAXI_SHORTCUT
         $.weapon_shop1_blip.remove();
-        $.weapon_shop1_blip = Blip.AddShortRangeSpriteForCoord($.ammu1X, $.ammu1Y, $.ammu1Z, RADAR_SPRITE_GUN);
+        $.weapon_shop1_blip = Blip.AddShortRangeSpriteForCoord($.ammu1X, $.ammu1Y, $.ammu1Z, 16 /* RADAR_SPRITE_GUN */);
         $.mall_shootout_counter = 1;
       }
     }
@@ -880,8 +880,8 @@ $.the_seller_z = _res197.z;
               }
             }
             else {
-              if (!(the_seller.isCurrentWeapon(3 /* WEAPONTYPE_UZI */))) {
-                the_seller.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+              if (!(the_seller.isCurrentWeapon(23 /* WEAPONTYPE_UZI */))) {
+                the_seller.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
                 the_seller.setObjNoObj();
               }
               if ($.audio_4_flag == 0) {
@@ -975,8 +975,8 @@ $.z = _res199.z;
             }
           }
           else {
-            if (!(the_seller.isCurrentWeapon(3 /* WEAPONTYPE_UZI */))) {
-              the_seller.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+            if (!(the_seller.isCurrentWeapon(23 /* WEAPONTYPE_UZI */))) {
+              the_seller.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
               the_seller.setObjNoObj();
             }
             if ($.audio_4_flag == 0) {
@@ -1321,10 +1321,10 @@ $.z = _res203.z;
 $.x = _res204.x;
 $.y = _res204.y;
 $.z = _res204.z;
-              the_chips = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, $.x, $.y, $.z);
+              the_chips = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, $.x, $.y, $.z);
             }
             else {
-              the_chips = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, $.the_seller_x, $.the_seller_y, $.the_seller_z);
+              the_chips = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, $.the_seller_x, $.the_seller_y, $.the_seller_z);
             }
             $.the_seller_blip.remove();
             $.the_seller_blip = Blip.AddForPickup(the_chips);
@@ -1342,7 +1342,7 @@ $.z = _res204.z;
             $.the_seller_blip.remove();
             $.the_seller_blip = Blip.AddForCoord(-245.0020, -1360.8174, 7.0786);
             Text.PrintNow("COL2_B3", 5000, 1); //"~g~Take the guidance chips back to the Colonel"
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           }
         }
         if ($.chips_pickup_flag == 2) {
@@ -1416,7 +1416,7 @@ async function mission_general2_passed() {
   Audio.PlayMissionPassedTune(1);
   Stat.PlayerMadeProgress(1);
   $.shotgun_in_stock = 1;
-  // START_NEW_SCRIPT general_mission3_loop
+  // START_NEW_SCRIPT general_mission3_loop 
 }
 
 
@@ -1449,7 +1449,7 @@ async function cleanup() {
 
 
   $.weapon_shop1_blip.remove();
-  $.weapon_shop1_blip = Blip.AddShortRangeSpriteForCoord($.ammu1X, $.ammu1Y, $.ammu1Z, RADAR_SPRITE_GUN);
+  $.weapon_shop1_blip = Blip.AddShortRangeSpriteForCoord($.ammu1X, $.ammu1Y, $.ammu1Z, 16 /* RADAR_SPRITE_GUN */);
   $.the_seller_blip.remove();
 
 
@@ -1457,8 +1457,8 @@ async function cleanup() {
 
 
   Streaming.MarkModelAsNoLongerNeeded(PCJ600);
-  Streaming.MarkModelAsNoLongerNeeded(173 /* COLT45 */);
-  Streaming.MarkModelAsNoLongerNeeded(178 /* UZI */);
+  Streaming.MarkModelAsNoLongerNeeded(COLT45);
+  Streaming.MarkModelAsNoLongerNeeded(UZI);
   Streaming.UnloadSpecialCharacter(1);
   Streaming.UnloadSpecialCharacter(2);
 

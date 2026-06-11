@@ -1,6 +1,6 @@
 // Generated from main/buypro8.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_ochebuy() {
 
@@ -28,17 +28,17 @@ async function mission_start_ochebuy() {
   while (Camera.GetFadingStatus()) {
     await asyncWait(0);
     if (!($.player1.isPlaying())) {
-      $.ochebuy_blip = Blip.AddShortRangeSpriteForContactPoint($.ochebuyX, $.ochebuyY, $.ochebuyZ, RADAR_SPRITE_SAVEHOUSE);
+      $.ochebuy_blip = Blip.AddShortRangeSpriteForContactPoint($.ochebuyX, $.ochebuyY, $.ochebuyZ, 19 /* RADAR_SPRITE_SAVEHOUSE */);
       $.ochebuy_blip.changeDisplay(2 /* BLIP_ONLY */);
-      // START_NEW_SCRIPT ochesave1_save_loop
+      // START_NEW_SCRIPT ochesave1_save_loop 
       return; // TERMINATE_THIS_SCRIPT
     }
   }
 
 
-  $.ochebuy_blip = Blip.AddShortRangeSpriteForContactPoint($.ochebuyX, $.ochebuyY, $.ochebuyZ, RADAR_SPRITE_SAVEHOUSE);
+  $.ochebuy_blip = Blip.AddShortRangeSpriteForContactPoint($.ochebuyX, $.ochebuyY, $.ochebuyZ, 19 /* RADAR_SPRITE_SAVEHOUSE */);
   $.ochebuy_blip.changeDisplay(2 /* BLIP_ONLY */);
-  // START_NEW_SCRIPT ochesave1_save_loop
+  // START_NEW_SCRIPT ochesave1_save_loop 
 
 
   World.ClearArea(14.4571, -1498.5939, 12.1974, 1.0, true /* TRUE */);
@@ -69,7 +69,7 @@ async function mission_start_ochebuy() {
   $.safehouse_created7 = 1;
   Text.PrintWithNumberBig("OCHEBUY", $.ochebuy_price, 5000, 6); //Ocean Heights Apartment purchased: $ ~1~
   Stat.AddMoneySpentOnProperty($.ochebuy_price);
-  Stat.SetPropertyAsOwned(PROP_OCEANHEIGHTS);
+  Stat.SetPropertyAsOwned(12 /* PROP_OCEANHEIGHTS */);
   //ochebuy_price *= -1
   //ADD_SCORE player1 ochebuy_price
 

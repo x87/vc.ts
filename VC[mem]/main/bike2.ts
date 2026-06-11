@@ -1,6 +1,6 @@
 // Generated from main/bike2.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_bike2() {
 
@@ -60,7 +60,7 @@ async function mission_start_bike2() {
   Streaming.LoadSpecialCharacter(4, "mserver");
 
 
-  Streaming.SetAreaVisible(VIS_BIKER_BAR);
+  Streaming.SetAreaVisible(11 /* VIS_BIKER_BAR */);
 
 
   Streaming.LoadScene(-597.02, 642.46, 11.0);
@@ -314,7 +314,7 @@ async function mission_start_bike2() {
   Streaming.UnloadSpecialCharacter(4);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   World.ClearExtraColors(false /* FALSE */);
@@ -326,7 +326,7 @@ async function mission_start_bike2() {
   // ****************************************END OF CUTSCENE**********************************
 
 
-  $.player1.setMood(PLAYER_MOOD_ANGRY, 60000);
+  $.player1.setMood(2 /* PLAYER_MOOD_ANGRY */, 60000);
 
   // fades the screen in
 
@@ -352,7 +352,7 @@ async function mission_start_bike2() {
   TIMERA = 0;
 
 
-  Hud.DisplayTimer($.$id.timer_bike2, TIMER_DOWN);
+  Hud.DisplayTimer($.$id.timer_bike2, 1 /* TIMER_DOWN */);
 
 
   while ($.flag_chaos_meter_full == 0) {
@@ -378,7 +378,7 @@ async function mission_start_bike2() {
       if ($.flag_havoc_added_bike2 == 0) {
         if ($.chaosmeter_bike2 <= 99) {
           $.chaosmeter_bike2 = $.chaosmeter_bike2 + 5;
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         }
         else {
           $.chaosmeter_bike2 = 100;
@@ -447,14 +447,14 @@ async function mission_bike2_passed() {
 
 
   if ($.biker_bar_sound3_added == 0) {
-    $.bike_bar_loop3 = Sound.AddContinuous(-596.018, 640.916, 12.0, SOUND_NEW_BUILDING_BAR_3); //Biker bar
+    $.bike_bar_loop3 = Sound.AddContinuous(-596.018, 640.916, 12.0, 38 /* SOUND_NEW_BUILDING_BAR_3 */); //Biker bar
     $.biker_bar_sound3_added = 1;
   }
 
 
   Text.PrintWithNumberBig("M_PASS", 2000, 5000, 1); //"Mission Passed!"
   $.player1.addScore(2000);
-  // START_NEW_SCRIPT bikers_mission3_loop
+  // START_NEW_SCRIPT bikers_mission3_loop 
 }
 
 

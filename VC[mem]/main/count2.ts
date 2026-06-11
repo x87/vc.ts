@@ -1,6 +1,6 @@
 // Generated from main/count2.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *****************************************************************************************
 // ******************** Counterfeiting Mission 2 - Plates Courier **************************
@@ -127,7 +127,7 @@ async function body() {
   //LOAD_SPECIAL_MODEL cut_obj2 LAWYERH
 
 
-  Streaming.SetAreaVisible(VIS_PRINT_WORKS);
+  Streaming.SetAreaVisible(18 /* VIS_PRINT_WORKS */);
   Streaming.LoadScene(-1071.5597, -278.9497, 12.3606);
 
 
@@ -281,18 +281,18 @@ async function body() {
   Streaming.UnloadSpecialCharacter(3);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   Streaming.LoadScene(-1059.8411, -278.7214, 10.4044);
   //////////////////////////
   //////////////////////////
 
 
-  $.player1.setMood(PLAYER_MOOD_WISECRACKING, 60000);
+  $.player1.setMood(3 /* PLAYER_MOOD_WISECRACKING */, 60000);
 
 
   Streaming.RequestModel(SENTINEL);
-  Streaming.RequestModel(173 /* COLT45 */);
-  Streaming.RequestModel(1319 /* briefcase */);
+  Streaming.RequestModel(COLT45);
+  Streaming.RequestModel(briefcase);
   Streaming.RequestModel(MAVERICK);
   Streaming.RequestModel(7 /* SNIPER */);
   Streaming.RequestModel(TEC9);
@@ -302,24 +302,24 @@ async function body() {
   Streaming.RequestModel(WFORI);
   Streaming.RequestModel(BFYST);
   Streaming.RequestModel(WFYBU);
-  Streaming.RequestModel(178 /* UZI */);
+  Streaming.RequestModel(UZI);
   Streaming.RequestModel(CHROMEGUN);
 
 
   Streaming.LoadAllModelsNow();
 
 
-  while (!(Streaming.HasModelLoaded(SENTINEL)) || !(Streaming.HasModelLoaded(173 /* COLT45 */)) || !(Streaming.HasModelLoaded(HFORI)) || !(Streaming.HasModelLoaded(HFYBU)) || !(Streaming.HasModelLoaded(WFYRI)) || !(Streaming.HasModelLoaded(WFORI))) {
+  while (!(Streaming.HasModelLoaded(SENTINEL)) || !(Streaming.HasModelLoaded(COLT45)) || !(Streaming.HasModelLoaded(HFORI)) || !(Streaming.HasModelLoaded(HFYBU)) || !(Streaming.HasModelLoaded(WFYRI)) || !(Streaming.HasModelLoaded(WFORI))) {
     await asyncWait(0);
   }
 
 
-  while (!(Streaming.HasModelLoaded(1319 /* briefcase */)) || !(Streaming.HasModelLoaded(MAVERICK)) || !(Streaming.HasModelLoaded(7 /* SNIPER */)) || !(Streaming.HasModelLoaded(TEC9)) || !(Streaming.HasModelLoaded(BFYST)) || !(Streaming.HasModelLoaded(WFYBU))) {
+  while (!(Streaming.HasModelLoaded(briefcase)) || !(Streaming.HasModelLoaded(MAVERICK)) || !(Streaming.HasModelLoaded(7 /* SNIPER */)) || !(Streaming.HasModelLoaded(TEC9)) || !(Streaming.HasModelLoaded(BFYST)) || !(Streaming.HasModelLoaded(WFYBU))) {
     await asyncWait(0);
   }
 
 
-  while (!(Streaming.HasModelLoaded(CHROMEGUN)) || !(Streaming.HasModelLoaded(178 /* UZI */))) {
+  while (!(Streaming.HasModelLoaded(CHROMEGUN)) || !(Streaming.HasModelLoaded(UZI))) {
     await asyncWait(0);
   }
 
@@ -337,28 +337,28 @@ async function body() {
   $.courier_heli.setForwardSpeed(10.0);
 
 
-  $.courier_car2_guard3 = Char.CreateInsideCar($.courier_heli, PEDTYPE_GANG_STREET, WFORI);
-  $.courier_car2_guard3.giveWeapon(WEAPONTYPE_TEC9, 9999);
+  $.courier_car2_guard3 = Char.CreateInsideCar($.courier_heli, 9 /* PEDTYPE_GANG_STREET */, WFORI);
+  $.courier_car2_guard3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 9999);
   $.courier_car2_guard3.clearThreatSearch();
   $.courier_car2_guard3.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.courier_car2_guard3.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
   $.courier_car2_guard3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.courier_car2_guard3.setRunning(true /* TRUE */);
-  $.courier_car2_guard3.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+  $.courier_car2_guard3.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
   $.courier_car2_guard3.setLoadCollisionFlag(false /* FALSE */);
 
 
-  $.courier = Char.CreateAsPassenger($.courier_heli, PEDTYPE_GANG_STREET, HFYBU, 0);
+  $.courier = Char.CreateAsPassenger($.courier_heli, 9 /* PEDTYPE_GANG_STREET */, HFYBU, 0);
 
 
 
-  $.courier.giveWeapon(4 /* WEAPONTYPE_SHOTGUN */, 6);
+  $.courier.giveWeapon(19 /* WEAPONTYPE_SHOTGUN */, 6);
   $.courier.clearThreatSearch();
   $.courier.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.courier.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
   $.courier.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.courier.setRunning(true /* TRUE */);
-  $.courier.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+  $.courier.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
   $.courier.setLoadCollisionFlag(false /* FALSE */);
   $.mission_blip = Blip.AddForChar($.courier);
   $.mission_blip.changeScale(3);
@@ -455,9 +455,9 @@ async function body() {
   ///ENTRANCE GUARDS & CAR1 DUDES//////////////////////////////////////
   /////////////////////////////////////////////////////////////////////
 
-  $.courier_car1_guard1 = Char.Create(PEDTYPE_GANG_STREET, HFORI, -718.9443, -1530.9095, 11.2232);
+  $.courier_car1_guard1 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HFORI, -718.9443, -1530.9095, 11.2232);
   $.courier_car1_guard1.setHeading(299.6208);
-  $.courier_car1_guard1.giveWeapon(4 /* WEAPONTYPE_SHOTGUN */, 2);
+  $.courier_car1_guard1.giveWeapon(19 /* WEAPONTYPE_SHOTGUN */, 2);
   $.courier_car1_guard1.clearThreatSearch();
   $.courier_car1_guard1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.courier_car1_guard1.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
@@ -465,28 +465,28 @@ async function body() {
   $.courier_car1_guard1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.courier_car1_guard1.setRunning(true /* TRUE */);
   $.courier_car1_guard1.setObjGuardSpot(-718.9443, -1530.9095, 11.2232);
-  $.courier_car1_guard1.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+  $.courier_car1_guard1.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
   //SET_CHAR_STAY_IN_SAME_PLACE courier_car1_guard1 TRUE
 
 
-  $.courier_car1_guard2 = Char.Create(PEDTYPE_GANG_STREET, HFORI, -716.1127, -1533.7849, 11.2238); //SITTING
+  $.courier_car1_guard2 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HFORI, -716.1127, -1533.7849, 11.2238); //SITTING
   $.courier_car1_guard2.setHeading(258.1555);
-  $.courier_car1_guard2.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.courier_car1_guard2.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.courier_car1_guard2.clearThreatSearch();
   $.courier_car1_guard2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.courier_car1_guard2.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
   $.courier_car1_guard2.setThreatSearch(1048576 /* THREAT_GUN */);
   $.courier_car1_guard2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.courier_car1_guard2.setRunning(true /* TRUE */);
-  $.courier_car1_guard2.setWaitState(WAITSTATE_SIT_IDLE, 60000000);
+  $.courier_car1_guard2.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 60000000);
   $.courier_car1_guard2.setObjGuardSpot(-716.1127, -1533.7849, 11.2238);
-  $.courier_car1_guard2.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+  $.courier_car1_guard2.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
   //SET_CHAR_STAY_IN_SAME_PLACE courier_car1_guard2 TRUE
 
 
-  $.courier_car1_guard3 = Char.Create(PEDTYPE_GANG_STREET, WFORI, -715.5613, -1535.6270, 11.2565);
+  $.courier_car1_guard3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, WFORI, -715.5613, -1535.6270, 11.2565);
   $.courier_car1_guard3.setHeading(16.6536);
-  $.courier_car1_guard3.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 9999);
+  $.courier_car1_guard3.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 9999);
   $.courier_car1_guard3.clearThreatSearch();
   $.courier_car1_guard3.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.courier_car1_guard3.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
@@ -495,13 +495,13 @@ async function body() {
   $.courier_car1_guard3.setRunning(true /* TRUE */);
   $.courier_car1_guard3.setWaitState(19 /* WAITSTATE_PLAYANIM_CHAT */, 60000000);
   $.courier_car1_guard3.setObjGuardSpot(-715.5613, -1535.6270, 11.2565);
-  $.courier_car1_guard3.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+  $.courier_car1_guard3.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
   //SET_CHAR_STAY_IN_SAME_PLACE courier_car1_guard3 TRUE
 
 
-  $.courier_car1_guard4 = Char.Create(PEDTYPE_GANG_STREET, WFYRI, -710.0019, -1543.7793, 11.4329);
+  $.courier_car1_guard4 = Char.Create(9 /* PEDTYPE_GANG_STREET */, WFYRI, -710.0019, -1543.7793, 11.4329);
   $.courier_car1_guard4.setHeading(22.8506);
-  $.courier_car1_guard4.giveWeapon(WEAPONTYPE_TEC9, 9999);
+  $.courier_car1_guard4.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 9999);
   $.courier_car1_guard4.clearThreatSearch();
   $.courier_car1_guard4.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.courier_car1_guard4.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
@@ -510,14 +510,14 @@ async function body() {
   $.courier_car1_guard4.setRunning(true /* TRUE */);
   $.courier_car1_guard4.setWaitState(13 /* WAITSTATE_LOOK_ABOUT */, 60000000);
   $.courier_car1_guard4.setObjGuardSpot(-710.0019, -1543.7793, 11.4329);
-  $.courier_car1_guard4.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+  $.courier_car1_guard4.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
   //SET_CHAR_STAY_IN_SAME_PLACE courier_car1_guard4 TRUE
 
   ///CRANE GUARDS & CAR2 DUDES/////////////////////////////////////////
 
-  $.courier_car2_guard1 = Char.Create(PEDTYPE_GANG_STREET, WFORI, -681.0981, -1557.2467, 11.4438);
+  $.courier_car2_guard1 = Char.Create(9 /* PEDTYPE_GANG_STREET */, WFORI, -681.0981, -1557.2467, 11.4438);
   $.courier_car2_guard1.setHeading(334.7375);
-  $.courier_car2_guard1.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.courier_car2_guard1.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.courier_car2_guard1.clearThreatSearch();
   $.courier_car2_guard1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.courier_car2_guard1.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
@@ -525,13 +525,13 @@ async function body() {
   $.courier_car2_guard1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.courier_car2_guard1.setRunning(true /* TRUE */);
   $.courier_car2_guard1.setObjGuardSpot(-681.0981, -1557.2467, 11.4438);
-  $.courier_car2_guard1.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+  $.courier_car2_guard1.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
   //SET_CHAR_STAY_IN_SAME_PLACE courier_car2_guard1 TRUE
 
 
-  $.courier_car2_guard2 = Char.Create(PEDTYPE_GANG_STREET, WFYBU, -679.4094, -1559.0453, 11.4483);
+  $.courier_car2_guard2 = Char.Create(9 /* PEDTYPE_GANG_STREET */, WFYBU, -679.4094, -1559.0453, 11.4483);
   $.courier_car2_guard2.setHeading(223.2479);
-  $.courier_car2_guard2.giveWeapon(WEAPONTYPE_TEC9, 9999);
+  $.courier_car2_guard2.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 9999);
   $.courier_car2_guard2.clearThreatSearch();
   $.courier_car2_guard2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.courier_car2_guard2.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
@@ -539,15 +539,15 @@ async function body() {
   $.courier_car2_guard2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.courier_car2_guard2.setRunning(true /* TRUE */);
   $.courier_car2_guard2.setObjGuardSpot(-679.4094, -1559.0453, 11.4483);
-  $.courier_car2_guard2.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+  $.courier_car2_guard2.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
   //SET_CHAR_STAY_IN_SAME_PLACE courier_car2_guard2 TRUE
 
   ///COURTYARD GUARDS & CAR3 DUDES/////////////////////////////////////
   //STANDING ON WALKWAY////////////////////////////////////////////////
 
-  $.courier_car3_guard1 = Char.Create(PEDTYPE_GANG_STREET, HFORI, -718.4953, -1560.2139, 13.8580);
+  $.courier_car3_guard1 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HFORI, -718.4953, -1560.2139, 13.8580);
   $.courier_car3_guard1.setHeading(14.0515);
-  $.courier_car3_guard1.giveWeapon(4 /* WEAPONTYPE_SHOTGUN */, 2);
+  $.courier_car3_guard1.giveWeapon(19 /* WEAPONTYPE_SHOTGUN */, 2);
   $.courier_car3_guard1.clearThreatSearch();
   $.courier_car3_guard1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.courier_car3_guard1.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
@@ -555,14 +555,14 @@ async function body() {
   $.courier_car3_guard1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.courier_car3_guard1.setRunning(true /* TRUE */);
   $.courier_car3_guard1.setObjGuardSpot(-718.4953, -1560.2139, 13.8580);
-  $.courier_car3_guard1.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+  $.courier_car3_guard1.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
   //SET_CHAR_STAY_IN_SAME_PLACE courier_car3_guard1 TRUE
 
   //SITTING ON WALL
 
-  $.courier_car3_guard2 = Char.Create(PEDTYPE_GANG_STREET, WFYBU, -722.6389, -1557.0291, 13.8587);
+  $.courier_car3_guard2 = Char.Create(9 /* PEDTYPE_GANG_STREET */, WFYBU, -722.6389, -1557.0291, 13.8587);
   $.courier_car3_guard2.setHeading(344.0981);
-  $.courier_car3_guard2.giveWeapon(WEAPONTYPE_TEC9, 9999);
+  $.courier_car3_guard2.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 9999);
   $.courier_car3_guard2.clearThreatSearch();
   $.courier_car3_guard2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.courier_car3_guard2.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
@@ -570,14 +570,14 @@ async function body() {
   $.courier_car3_guard2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.courier_car3_guard2.setRunning(true /* TRUE */);
   $.courier_car3_guard2.setObjGuardSpot(-722.6389, -1557.0291, 13.8587);
-  $.courier_car3_guard2.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+  $.courier_car3_guard2.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
   //SET_CHAR_STAY_IN_SAME_PLACE courier_car3_guard2 TRUE
 
   //END OF WALKWAY AT ENTRANCE
 
-  $.courier_car3_guard3 = Char.Create(PEDTYPE_GANG_STREET, WFYRI, -721.5871, -1542.4771, 13.8572);
+  $.courier_car3_guard3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, WFYRI, -721.5871, -1542.4771, 13.8572);
   $.courier_car3_guard3.setHeading(344.0981);
-  $.courier_car3_guard3.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.courier_car3_guard3.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.courier_car3_guard3.clearThreatSearch();
   $.courier_car3_guard3.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.courier_car3_guard3.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
@@ -585,14 +585,14 @@ async function body() {
   $.courier_car3_guard3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.courier_car3_guard3.setRunning(true /* TRUE */);
   $.courier_car3_guard3.setObjGuardSpot(-721.5871, -1542.4771, 13.8572);
-  $.courier_car3_guard3.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+  $.courier_car3_guard3.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
   //SET_CHAR_STAY_IN_SAME_PLACE courier_car3_guard3 TRUE
 
   //BASE OF WALKWAY INFRONT CARS
 
-  $.courier_car3_guard4 = Char.Create(PEDTYPE_GANG_STREET, WFYRI, -721.0208, -1548.8218, 11.4844);
+  $.courier_car3_guard4 = Char.Create(9 /* PEDTYPE_GANG_STREET */, WFYRI, -721.0208, -1548.8218, 11.4844);
   $.courier_car3_guard4.setHeading(263.0088);
-  $.courier_car3_guard4.giveWeapon(WEAPONTYPE_TEC9, 9999);
+  $.courier_car3_guard4.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 9999);
   $.courier_car3_guard4.clearThreatSearch();
   $.courier_car3_guard4.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.courier_car3_guard4.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
@@ -600,7 +600,7 @@ async function body() {
   $.courier_car3_guard4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.courier_car3_guard4.setRunning(true /* TRUE */);
   $.courier_car3_guard4.setObjGuardSpot(-721.0208, -1548.8218, 11.4844);
-  $.courier_car3_guard4.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+  $.courier_car3_guard4.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
   //SET_CHAR_STAY_IN_SAME_PLACE courier_car3_guard4 TRUE
 
 
@@ -611,9 +611,9 @@ async function body() {
 
   //SNIPER POSITION LIL ROOF IN COURTYARD
 
-  $.sniper1 = Char.Create(PEDTYPE_GANG_STREET, BFYST, -703.3905, -1573.1348, 15.6165);
+  $.sniper1 = Char.Create(9 /* PEDTYPE_GANG_STREET */, BFYST, -703.3905, -1573.1348, 15.6165);
   $.sniper1.setHeading(312.8055);
-  $.sniper1.giveWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */, 9999);
+  $.sniper1.giveWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */, 9999);
   $.sniper1.clearThreatSearch();
   $.sniper1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.sniper1.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
@@ -626,9 +626,9 @@ async function body() {
 
   //SNIPER POSITION ON CRANE
 
-  $.sniper2 = Char.Create(PEDTYPE_GANG_STREET, BFYST, -671.9470, -1553.9062, 22.7296);
+  $.sniper2 = Char.Create(9 /* PEDTYPE_GANG_STREET */, BFYST, -671.9470, -1553.9062, 22.7296);
   $.sniper2.setHeading(3.9435);
-  $.sniper2.giveWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */, 9999);
+  $.sniper2.giveWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */, 9999);
   $.sniper2.clearThreatSearch();
   $.sniper2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.sniper2.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
@@ -641,9 +641,9 @@ async function body() {
 
   //SNIPER POSITION ON LIL ROOF ENTRANCE
 
-  $.sniper3 = Char.Create(PEDTYPE_GANG_STREET, BFYST, -722.8923, -1528.6473, 15.9040);
+  $.sniper3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, BFYST, -722.8923, -1528.6473, 15.9040);
   $.sniper3.setHeading(331.8096);
-  $.sniper3.giveWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */, 9999);
+  $.sniper3.giveWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */, 9999);
   $.sniper3.clearThreatSearch();
   $.sniper3.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.sniper3.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
@@ -656,9 +656,9 @@ async function body() {
 
   //SNIPER ON CORNER BUILDING
 
-  $.sniper4 = Char.Create(PEDTYPE_GANG_STREET, BFYST, -728.5547, -1554.0133, 21.8729);
+  $.sniper4 = Char.Create(9 /* PEDTYPE_GANG_STREET */, BFYST, -728.5547, -1554.0133, 21.8729);
   $.sniper4.setHeading(275.5398);
-  $.sniper4.giveWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */, 9999);
+  $.sniper4.giveWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */, 9999);
   $.sniper4.clearThreatSearch();
   $.sniper4.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.sniper4.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
@@ -670,9 +670,9 @@ async function body() {
   $.sniper4.setHeedThreats(true /* TRUE */);
 
 
-  $.docks_guard = Char.Create(PEDTYPE_GANG_STREET, WFYRI, -721.8732, -1500.1005, 10.3946);
+  $.docks_guard = Char.Create(9 /* PEDTYPE_GANG_STREET */, WFYRI, -721.8732, -1500.1005, 10.3946);
   $.docks_guard.setHeading(44.3659);
-  $.docks_guard.giveWeapon(4 /* WEAPONTYPE_SHOTGUN */, 9999);
+  $.docks_guard.giveWeapon(19 /* WEAPONTYPE_SHOTGUN */, 9999);
   $.docks_guard.setRunning(true /* TRUE */);
   $.docks_guard.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
 
@@ -726,11 +726,11 @@ $.player_z = _res160.z;
         if (!(Car.IsDead($.courier_heli))) {
           if ($.player1.isInCar($.courier_heli)) {
             if (!(Char.IsDead($.sniper1))) {
-              $.sniper1.giveWeapon(4 /* WEAPONTYPE_SHOTGUN */, 999);
+              $.sniper1.giveWeapon(19 /* WEAPONTYPE_SHOTGUN */, 999);
               $.sniper1.setObjDestroyCar($.courier_heli);
             }
             if (!(Char.IsDead($.sniper2))) {
-              $.sniper2.giveWeapon(4 /* WEAPONTYPE_SHOTGUN */, 999);
+              $.sniper2.giveWeapon(19 /* WEAPONTYPE_SHOTGUN */, 999);
               $.sniper2.setObjDestroyCar($.courier_heli);
             }
             $.shoot_heli_down_flag = 1;
@@ -1408,7 +1408,7 @@ $.player_z = _res160.z;
         if ($.courier_flag2 == 4) {
           if ($.courier.locateStoppedOnFoot2D(-987.1808, 266.6001, 1.5, 1.5, false)) {
             $.courier.setObjGuardSpot(-987.1808, 266.6001, 7.7758);
-            $.courier.giveWeapon(4 /* WEAPONTYPE_SHOTGUN */, 9999);
+            $.courier.giveWeapon(19 /* WEAPONTYPE_SHOTGUN */, 9999);
             $.courier.setHeading(270.0);
             $.courier_flag2 = 5;
           }
@@ -1438,7 +1438,7 @@ $.z = _res161.z;
                 // SCM GOTO → mission_counter2_failed (not lowered; manual jump required)
                 throw new Error("unresolved GOTO mission_counter2_failed"); // fallback: would break linear control flow
               }
-              $.plates = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, $.x, $.y, $.z);
+              $.plates = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, $.x, $.y, $.z);
               $.mission_blip = Blip.AddForPickup($.plates);
               Text.PrintNow("CNT2_06", 5000, 1); //The courier has died and dropped the plates, get to them before anyone else.
               $.courier_in_car = 2;
@@ -1588,7 +1588,7 @@ $.z = _res161.z;
 
     if ($.courier_in_car == 3) {
       $.mission_blip.remove();
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       Text.PrintNow("CNT2_05", 5000, 1); //"You have the countfeit plates."
       $.mission_blip = Blip.AddForCoord($.counterX, $.counterY, $.counterZ);
       $.courier_in_car = 4;
@@ -1688,7 +1688,7 @@ $.z = _res162.z;
           }
           if ($.shoot_from_car_counter == 2) {
             if (!(Char.IsDead($.shooting_char))) {
-              $.shooting_char.attachToCar($.courier_car2, 0.0, -0.3, 0.8, 2 /* FACING_BACK */, 360.0, WEAPONTYPE_TEC9);
+              $.shooting_char.attachToCar($.courier_car2, 0.0, -0.3, 0.8, 2 /* FACING_BACK */, 360.0, 22 /* WEAPONTYPE_TEC9 */);
               $.shoot_from_car_counter = 3;
             }
           }
@@ -1703,20 +1703,20 @@ $.z = _res162.z;
               }
               if ($.shooting_char == $.courier_car2_guard1) {
                 $.courier_car2_guard1.delete();
-                $.courier_car2_guard1 = Char.CreateAsPassenger($.courier_car2, PEDTYPE_GANG_STREET, WFORI, $.passenger_seat);
+                $.courier_car2_guard1 = Char.CreateAsPassenger($.courier_car2, 9 /* PEDTYPE_GANG_STREET */, WFORI, $.passenger_seat);
                 $.shooting_char = $.courier_car2_guard1;
               }
               if ($.shooting_char == $.courier_car2_guard2) {
                 $.courier_car2_guard2.delete();
-                $.courier_car2_guard2 = Char.CreateAsPassenger($.courier_car2, PEDTYPE_GANG_STREET, WFYBU, $.passenger_seat);
+                $.courier_car2_guard2 = Char.CreateAsPassenger($.courier_car2, 9 /* PEDTYPE_GANG_STREET */, WFYBU, $.passenger_seat);
                 $.shooting_char = $.courier_car2_guard2;
               }
               if ($.shooting_char == $.courier_car2_guard3) {
                 $.courier_car2_guard3.delete();
-                $.courier_car2_guard3 = Char.CreateAsPassenger($.courier_car2, PEDTYPE_GANG_STREET, WFORI, $.passenger_seat);
+                $.courier_car2_guard3 = Char.CreateAsPassenger($.courier_car2, 9 /* PEDTYPE_GANG_STREET */, WFORI, $.passenger_seat);
                 $.shooting_char = $.courier_car2_guard3;
               }
-              $.shooting_char.giveWeapon(WEAPONTYPE_TEC9, 9999);
+              $.shooting_char.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 9999);
               $.shooting_char.clearThreatSearch();
               $.shooting_char.setThreatSearch(1 /* THREAT_PLAYER1 */);
               $.shooting_char.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
@@ -1894,7 +1894,7 @@ $.z = _res162.z;
               if ($.courier_car2.isUpright()) {
                 if (!($.courier_car2.isStopped())) {
                   if (courier_car2_speed > 15.0) {
-                    if ($.courier_car2.hasBeenDamagedByWeapon(16 /* WEAPONTYPE_RAMMEDBYCAR */) && !($.courier_car2.isHealthGreater($.courier_car2_health_shoot))) {
+                    if ($.courier_car2.hasBeenDamagedByWeapon(39 /* WEAPONTYPE_RAMMEDBYCAR */) && !($.courier_car2.isHealthGreater($.courier_car2_health_shoot))) {
                       $.shoot_from_car = 0;
                     }
                     else {
@@ -2193,45 +2193,45 @@ $.z = _res162.z;
       if ($.car2_location_counter == 1) {
         if ($.sniper_dudes_counter == 0) {
           $.sniper1.markAsNoLongerNeeded();
-          $.sniper1 = Char.Create(PEDTYPE_GANG_STREET, BFYST, -987.1808, 266.6001, 7.7758);
-          $.sniper1.giveWeapon(4 /* WEAPONTYPE_SHOTGUN */, 9999);
+          $.sniper1 = Char.Create(9 /* PEDTYPE_GANG_STREET */, BFYST, -987.1808, 266.6001, 7.7758);
+          $.sniper1.giveWeapon(19 /* WEAPONTYPE_SHOTGUN */, 9999);
           $.sniper1.clearThreatSearch();
           $.sniper1.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.sniper1.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
           $.sniper1.setThreatSearch(1048576 /* THREAT_GUN */);
           $.sniper1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
           $.sniper1.setRunning(true /* TRUE */);
-          $.sniper1.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+          $.sniper1.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
           $.sniper2.markAsNoLongerNeeded();
-          $.sniper2 = Char.Create(PEDTYPE_GANG_STREET, BFYST, -985.7646, 266.4785, 7.7755);
-          $.sniper2.giveWeapon(4 /* WEAPONTYPE_SHOTGUN */, 9999);
+          $.sniper2 = Char.Create(9 /* PEDTYPE_GANG_STREET */, BFYST, -985.7646, 266.4785, 7.7755);
+          $.sniper2.giveWeapon(19 /* WEAPONTYPE_SHOTGUN */, 9999);
           $.sniper2.clearThreatSearch();
           $.sniper2.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.sniper2.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
           $.sniper2.setThreatSearch(1048576 /* THREAT_GUN */);
           $.sniper2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
           $.sniper2.setRunning(true /* TRUE */);
-          $.sniper2.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+          $.sniper2.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
           $.sniper3.markAsNoLongerNeeded();
-          $.sniper3 = Char.Create(PEDTYPE_GANG_STREET, BFYST, -984.2117, 266.6248, 7.7751);
-          $.sniper3.giveWeapon(4 /* WEAPONTYPE_SHOTGUN */, 9999);
+          $.sniper3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, BFYST, -984.2117, 266.6248, 7.7751);
+          $.sniper3.giveWeapon(19 /* WEAPONTYPE_SHOTGUN */, 9999);
           $.sniper3.clearThreatSearch();
           $.sniper3.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.sniper3.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
           $.sniper3.setThreatSearch(1048576 /* THREAT_GUN */);
           $.sniper3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
           $.sniper3.setRunning(true /* TRUE */);
-          $.sniper3.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+          $.sniper3.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
           $.sniper4.markAsNoLongerNeeded();
-          $.sniper4 = Char.Create(PEDTYPE_GANG_STREET, BFYST, -982.5906, 266.5252, 7.7803);
-          $.sniper4.giveWeapon(4 /* WEAPONTYPE_SHOTGUN */, 9999);
+          $.sniper4 = Char.Create(9 /* PEDTYPE_GANG_STREET */, BFYST, -982.5906, 266.5252, 7.7803);
+          $.sniper4.giveWeapon(19 /* WEAPONTYPE_SHOTGUN */, 9999);
           $.sniper4.clearThreatSearch();
           $.sniper4.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.sniper4.setThreatSearch(4194304 /* THREAT_FAST_CAR */);
           $.sniper4.setThreatSearch(1048576 /* THREAT_GUN */);
           $.sniper4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
           $.sniper4.setRunning(true /* TRUE */);
-          $.sniper4.setAnimGroup(15 /* ANIM_SEXY_WOMANPED */);
+          $.sniper4.setAnimGroup(46 /* ANIM_SEXY_WOMANPED */);
           $.sniper_dudes_counter = 1;
         }
       }
@@ -2580,10 +2580,10 @@ async function cleanup() {
   $.docks_blip.remove();
 
 
-  Streaming.MarkModelAsNoLongerNeeded(178 /* UZI */);
+  Streaming.MarkModelAsNoLongerNeeded(UZI);
   Streaming.MarkModelAsNoLongerNeeded(SENTINEL);
-  Streaming.MarkModelAsNoLongerNeeded(173 /* COLT45 */);
-  Streaming.MarkModelAsNoLongerNeeded(1319 /* briefcase */);
+  Streaming.MarkModelAsNoLongerNeeded(COLT45);
+  Streaming.MarkModelAsNoLongerNeeded(briefcase);
   Streaming.MarkModelAsNoLongerNeeded(MAVERICK);
   Streaming.MarkModelAsNoLongerNeeded(7 /* SNIPER */);
   Streaming.MarkModelAsNoLongerNeeded(TEC9);

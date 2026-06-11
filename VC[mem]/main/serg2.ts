@@ -1,6 +1,6 @@
 // Generated from main/serg2.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_serg3() {
   Stat.RegisterMissionGiven();
@@ -424,7 +424,7 @@ $.vect_z = _res482.z;
   Streaming.MarkModelAsNoLongerNeeded(CUTOBJ01);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   Camera.DoFade(1500, 1 /* FADE_IN */);
@@ -486,7 +486,7 @@ $.vect_z = _res482.z;
   if (!($.player1.isWearing("player5"))) {
     // ********************GET NEW COSTUME****************************
     Text.PrintNow("TEX_2c", 5000, 1); //GET A CHANGE OF CLOTHES
-    $.cuban_clothes_blip = Blip.AddSpriteForCoord($.clothes_shopX, $.clothes_shopY, $.clothes_shopZ, RADAR_SPRITE_TSHIRT);
+    $.cuban_clothes_blip = Blip.AddSpriteForCoord($.clothes_shopX, $.clothes_shopY, $.clothes_shopZ, 28 /* RADAR_SPRITE_TSHIRT */);
     while (!($.player1.locateOnFoot3D($.clothes_shopX, $.clothes_shopY, $.clothes_shopZ, 1.2, 1.2, 3.0, true /* TRUE */))) {
       await asyncWait(0);
 
@@ -540,7 +540,7 @@ $.vect_z = _res482.z;
   Text.PrintNow("TEX_2d", 10000, 1);
 
 
-  Game.SetThreatForPedType(PEDTYPE_GANG_HAITIAN, 1 /* THREAT_PLAYER1 */);
+  Game.SetThreatForPedType(8 /* PEDTYPE_GANG_HAITIAN */, 1 /* THREAT_PLAYER1 */);
   $.mission_blip1 = Blip.AddForCoord($.ped_group_x, $.ped_group_y, 20.0);
   Path.SwitchRoadsOff(min_x, min_y, 14.0, max_x, max_y, 20.0);
 
@@ -571,8 +571,8 @@ $.vect_z = _res482.z;
   }
 
 
-  Streaming.RequestModel(1385 /* faketarget */);
-  while (!(Streaming.HasModelLoaded(1385 /* faketarget */))) {
+  Streaming.RequestModel(faketarget);
+  while (!(Streaming.HasModelLoaded(faketarget))) {
     await asyncWait(0);
   }
 
@@ -592,7 +592,7 @@ $.vect_z = _res482.z;
   $.car_1 = Car.Create(VOODOO, -1063.0, 40.0, 11.0);
   $.car_1.setHeading(180.0);
   $.car_1.changeColor(0, 0);
-  $.driver_1 = Char.CreateInsideCar($.car_1, PEDTYPE_GANG_HAITIAN, HNB);
+  $.driver_1 = Char.CreateInsideCar($.car_1, 8 /* PEDTYPE_GANG_HAITIAN */, HNB);
   $.driver_1.clearThreatSearch();
   $.car_1.setIdle();
   /*
@@ -607,7 +607,7 @@ $.vect_z = _res482.z;
   $.car_3 = Car.Create(ROMERO, -1063.0, 55.0, 11.0);
   $.car_3.setHeading(180.0);
   $.car_3.changeColor(0, 0);
-  $.driver_3 = Char.CreateInsideCar($.car_3, PEDTYPE_GANG_HAITIAN, HNA);
+  $.driver_3 = Char.CreateInsideCar($.car_3, 8 /* PEDTYPE_GANG_HAITIAN */, HNA);
   $.driver_3.clearThreatSearch();
   $.car_3.setHealth(2000);
   $.car_3.setIdle();
@@ -616,7 +616,7 @@ $.vect_z = _res482.z;
   $.car_4 = Car.Create(ROMERO, -1057.05, 69.64, 11.05);
   $.car_4.setHeading(90.0);
   $.car_4.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.driver_4 = Char.CreateInsideCar($.car_4, PEDTYPE_GANG_HAITIAN, HNA);
+  $.driver_4 = Char.CreateInsideCar($.car_4, 8 /* PEDTYPE_GANG_HAITIAN */, HNA);
 
 
 
@@ -630,85 +630,85 @@ $.vect_z = _res482.z;
 
   $.car_5 = Car.Create(VOODOO, -1070.0, 18.6, 11.0);
   $.car_5.setHeading(270.0);
-  $.gang_1 = Char.CreateInsideCar($.car_5, PEDTYPE_GANG_HAITIAN, HNB);
+  $.gang_1 = Char.CreateInsideCar($.car_5, 8 /* PEDTYPE_GANG_HAITIAN */, HNB);
   $.gang_1.clearThreatSearch();
   $.car_5.setIdle();
 
 
   $.car_6 = Car.Create(VOODOO, -1070.0, 75.4, 11.0);
   $.car_6.setHeading(270.0);
-  $.gang_2 = Char.CreateInsideCar($.car_6, PEDTYPE_GANG_HAITIAN, HNB);
+  $.gang_2 = Char.CreateInsideCar($.car_6, 8 /* PEDTYPE_GANG_HAITIAN */, HNB);
   $.gang_2.clearThreatSearch();
   $.car_6.setIdle();
 
 
-  ped_1 = Char.Create(PEDTYPE_GANG_HAITIAN, HNB, $.ped1_x, $.ped1_y, $.ped_zed);
+  ped_1 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNB, $.ped1_x, $.ped1_y, $.ped_zed);
   ped_1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   //SET_CHAR_THREAT_SEARCH ped_1 THREAT_PLAYER1
 
   ped_1.setHeading(75.0);
-  ped_1.giveWeapon(WEAPONTYPE_tec9, 9999);
+  ped_1.giveWeapon(22 /* WEAPONTYPE_tec9 */, 9999);
   ped_1.setWaitState(13 /* WAITSTATE_LOOK_ABOUT */, 999999);
 
 
-  ped_2 = Char.Create(PEDTYPE_GANG_HAITIAN, HNA, $.ped2_x, $.ped2_y, $.ped_zed);
+  ped_2 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNA, $.ped2_x, $.ped2_y, $.ped_zed);
   ped_2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   //SET_CHAR_THREAT_SEARCH ped_2 THREAT_PLAYER1
 
   ped_2.setHeading(12.0);
-  ped_2.giveWeapon(WEAPONTYPE_tec9, 9999);
+  ped_2.giveWeapon(22 /* WEAPONTYPE_tec9 */, 9999);
   ped_2.setWaitState(3 /* WAITSTATE_CROSS_ROAD_LOOK */, 999999);
 
 
-  ped_3 = Char.Create(PEDTYPE_GANG_HAITIAN, HNB, $.ped3_x, $.ped3_y, $.ped_zed);
+  ped_3 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNB, $.ped3_x, $.ped3_y, $.ped_zed);
   ped_3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   //SET_CHAR_THREAT_SEARCH ped_3 THREAT_PLAYER1
 
   ped_3.setHeading(280.0);
-  ped_3.giveWeapon(WEAPONTYPE_m4, 9999);
+  ped_3.giveWeapon(26 /* WEAPONTYPE_m4 */, 9999);
   ped_3.clearThreatSearch();
   ped_3.setThreatSearch(1 /* THREAT_PLAYER1 */);
   ped_3.setHeedThreats(true /* TRUE */);
   ped_3.setWaitState(13 /* WAITSTATE_LOOK_ABOUT */, 999999);
 
 
-  ped_4 = Char.Create(PEDTYPE_GANG_HAITIAN, HNA, ped4_x, ped4_y, $.ped_zed);
+  ped_4 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNA, ped4_x, ped4_y, $.ped_zed);
   ped_4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   //SET_CHAR_THREAT_SEARCH ped_4 THREAT_PLAYER1
 
   ped_4.setHeading(165.0);
-  ped_4.giveWeapon(WEAPONTYPE_tec9, 9999);
+  ped_4.giveWeapon(22 /* WEAPONTYPE_tec9 */, 9999);
   ped_4.setWaitState(13 /* WAITSTATE_LOOK_ABOUT */, 999999);
 
 
-  ped_5 = Char.Create(PEDTYPE_GANG_HAITIAN, HNB, ped5_x, ped5_y, $.ped_zed);
+  ped_5 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNB, ped5_x, ped5_y, $.ped_zed);
   ped_5.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   //SET_CHAR_THREAT_SEARCH ped_5 THREAT_PLAYER1
 
   ped_5.setHeading(97.0);
-  ped_5.giveWeapon(WEAPONTYPE_tec9, 9999);
+  ped_5.giveWeapon(22 /* WEAPONTYPE_tec9 */, 9999);
   ped_5.setWaitState(3 /* WAITSTATE_CROSS_ROAD_LOOK */, 999999);
 
 
-  bodyguard_1 = Char.Create(PEDTYPE_GANG_HAITIAN, HNA, -1047.8, 54.8, 13.3);
+  bodyguard_1 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNA, -1047.8, 54.8, 13.3);
   bodyguard_1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   bodyguard_1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   bodyguard_1.setHeading(140.0);
   bodyguard_1.setStayInSamePlace(true /* TRUE */);
-  bodyguard_1.giveWeapon(WEAPONTYPE_M4, 9999);
+  bodyguard_1.giveWeapon(26 /* WEAPONTYPE_M4 */, 9999);
   bodyguard_1.setWaitState(13 /* WAITSTATE_LOOK_ABOUT */, 999999);
 
 
-  bodyguard_2 = Char.Create(PEDTYPE_GANG_HAITIAN, HNA, -1042.44, 64.96, 15.5);
+  bodyguard_2 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNA, -1042.44, 64.96, 15.5);
   bodyguard_2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   bodyguard_2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   bodyguard_2.setHeading(80.0);
   bodyguard_1.setStayInSamePlace(true /* TRUE */);
-  bodyguard_2.giveWeapon(WEAPONTYPE_M4, 9999);
+  bodyguard_2.giveWeapon(26 /* WEAPONTYPE_M4 */, 9999);
   bodyguard_2.setWaitState(13 /* WAITSTATE_LOOK_ABOUT */, 999999);
 
 
-  $.ped_7 = Char.Create(PEDTYPE_GANG_HAITIAN, HNA, $.ped_group_x, $.ped_group_y, $.ped_zed);
+  $.ped_7 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNA, $.ped_group_x, $.ped_group_y, $.ped_zed);
   $.ped_7.clearThreatSearch();
   //SET_CHAR_PERSONALITY ped_7 PEDSTAT_TOUGH_GUY
 
@@ -722,7 +722,7 @@ $.vect_z = _res482.z;
   $.ped_group_y = $.ped_group_y + 1.0;
 
 
-  ped_6 = Char.Create(PEDTYPE_GANG_HAITIAN, HNB, $.ped_group_x, $.ped_group_y, $.ped_zed);
+  ped_6 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNB, $.ped_group_x, $.ped_group_y, $.ped_zed);
   ped_6.clearThreatSearch();
   //SET_CHAR_PERSONALITY ped_6 PEDSTAT_TOUGH_GUY
 
@@ -734,7 +734,7 @@ $.vect_z = _res482.z;
   //ped_group_y	= ped_group_y - 1.0
 
 
-  $.ped_8 = Char.Create(PEDTYPE_GANG_HAITIAN, HNB, $.ped_group_x, $.ped_group_y, $.ped_zed);
+  $.ped_8 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNB, $.ped_group_x, $.ped_group_y, $.ped_zed);
   $.ped_8.clearThreatSearch();
   //SET_CHAR_PERSONALITY ped_8 PEDSTAT_TOUGH_GUY
 
@@ -823,7 +823,7 @@ $.vect_z = _res482.z;
                 $.ped_7.setObjLeaveCar($.car_3);
                 $.car_3.setCruiseSpeed(0.0);
                 if (!(Char.IsDead($.driver_3))) {
-                  $.driver_3.giveWeapon(WEAPONTYPE_tec9, 60);
+                  $.driver_3.giveWeapon(22 /* WEAPONTYPE_tec9 */, 60);
                   $.driver_3.setObjKillPlayerOnFoot($.player1);
                   //SET_CHAR_OBJ_LEAVE_CAR driver_1 car_1
                   //SET_CHAR_THREAT_SEARCH driver_1 THREAT_PLAYER1
@@ -856,7 +856,7 @@ $.vect_z = _res482.z;
           $.ped_7.setThreatSearch(1 /* THREAT_PLAYER1 */);
           $.ped_7.setHeedThreats(true /* TRUE */);
           $.ped_7.turnToFacePlayer($.player1);
-          $.ped_7.giveWeapon(WEAPONTYPE_M4, 9999);
+          $.ped_7.giveWeapon(26 /* WEAPONTYPE_M4 */, 9999);
           $.flag_arm_ped7 = 1;
         }
         $.flag_ped7 = 3;
@@ -937,7 +937,7 @@ async function mission_serg3_passed() {
 
   $.clothes_pickup5 = Pickup.CreateClothes(-1025.2, -429.2, 10.8, 5);
   $.clothes5_created = 1;
-  // START_NEW_SCRIPT cloth4
+  // START_NEW_SCRIPT cloth4 
 
 
 
@@ -955,8 +955,8 @@ async function mission_serg3_passed() {
   $.player1.addScore(2500);
   Stat.RegisterMissionPassed("TEX_2");
   Stat.PlayerMadeProgress(1);
-  Game.SetThreatForPedType(PEDTYPE_GANG_HAITIAN, THREAT_GANG_CUBAN);
-  Game.SetThreatForPedType(PEDTYPE_GANG_CUBAN, THREAT_GANG_HAITIAN);
+  Game.SetThreatForPedType(8 /* PEDTYPE_GANG_HAITIAN */, 128 /* THREAT_GANG_CUBAN */);
+  Game.SetThreatForPedType(7 /* PEDTYPE_GANG_CUBAN */, 256 /* THREAT_GANG_HAITIAN */);
 
 
   Zone.SetPedInfo("GHETTO1", 1 /* DAY */, 13, 60, 100, 0, 0, 0, 0, 0, 0, 0, 20); //Haitians
@@ -1002,7 +1002,7 @@ async function mission_cleanup_serg3() {
   Path.SwitchRoadsOn(min_x, min_y, 14.0, max_x, max_y, 20.0);
 
 
-  Game.ClearThreatForPedType(PEDTYPE_GANG_HAITIAN, 1 /* THREAT_PLAYER1 */);
+  Game.ClearThreatForPedType(8 /* PEDTYPE_GANG_HAITIAN */, 1 /* THREAT_PLAYER1 */);
 
 
   $.mission_blip1.remove();
@@ -1088,7 +1088,7 @@ async function mission_cleanup_serg3() {
   Streaming.MarkModelAsNoLongerNeeded(M4);
   Streaming.MarkModelAsNoLongerNeeded(HNA);
   Streaming.MarkModelAsNoLongerNeeded(HNB);
-  Streaming.MarkModelAsNoLongerNeeded(1385 /* faketarget */);
+  Streaming.MarkModelAsNoLongerNeeded(faketarget);
   Streaming.MarkModelAsNoLongerNeeded(jw_coffin);
   Streaming.MarkModelAsNoLongerNeeded(tec9);
 
@@ -1285,7 +1285,7 @@ async function ostrich() {
         GIVE_WEAPON_TO_CHAR ped_8 WEAPONTYPE_tec9 60
         SET_CHAR_OBJ_KILL_PLAYER_ANY_MEANS ped_8 player1
         ENDIF*/
-        $.ped_8.giveWeapon(WEAPONTYPE_tec9, 60);
+        $.ped_8.giveWeapon(22 /* WEAPONTYPE_tec9 */, 60);
         $.ped_8.setObjKillPlayerAnyMeans($.player1);
       }
       $.flag_jobby = 1;
@@ -1542,7 +1542,7 @@ async function spotted() {
   $.flag_spotted = 1;
   if ($.flag_print == 0) {
     Text.PrintNow("TEX_2a", 5000, 1); //EXCELLENT! YOU'VE BEEN SPOTTED!
-    Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+    Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
     $.flag_print = 1;
   }
 }
@@ -1742,7 +1742,7 @@ async function tex2_car_routine() {
       $.ped_7.setObjFleePlayerOnFootTillSafe($.player1);
       $.var_tex2_car.setCruiseSpeed(0.0);
       if (!(Char.IsDead($.driver_4))) {
-        $.driver_4.giveWeapon(WEAPONTYPE_tec9, 60);
+        $.driver_4.giveWeapon(22 /* WEAPONTYPE_tec9 */, 60);
         $.driver_4.setObjKillPlayerOnFoot($.player1);
         //SET_CHAR_OBJ_LEAVE_CAR driver_4 var_tex2_car
         //SET_CHAR_THREAT_SEARCH driver_4 THREAT_PLAYER1

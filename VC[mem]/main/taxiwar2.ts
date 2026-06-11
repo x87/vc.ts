@@ -1,6 +1,6 @@
 // Generated from main/taxiwar2.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *******************************************************************************************
 // *******************************************************************************************
@@ -128,11 +128,11 @@ async function skip_passed_taxi2_cut() {
 
   Streaming.RequestModel(taxi);
   Streaming.RequestModel(WMOCA);
-  Streaming.RequestModel(178 /* uzi */);
+  Streaming.RequestModel(uzi);
   Streaming.RequestModel(kaufman);
 
 
-  while (!(Streaming.HasModelLoaded(taxi)) || !(Streaming.HasModelLoaded(WMOCA)) || !(Streaming.HasModelLoaded(178 /* uzi */)) || !(Streaming.HasModelLoaded(kaufman))) {
+  while (!(Streaming.HasModelLoaded(taxi)) || !(Streaming.HasModelLoaded(WMOCA)) || !(Streaming.HasModelLoaded(uzi)) || !(Streaming.HasModelLoaded(kaufman))) {
     await asyncWait(0);
 
 
@@ -194,7 +194,7 @@ async function skip_passed_taxi2_cut() {
       $.blip1_taxicab1.remove();
       $.dead_taxicab1 = 1;
       ++$.counter_taxiwar;
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
     }
     if (!(Car.IsDead($.taxicab1))) {
       if (!($.taxicab1.isHealthGreater(999))) {
@@ -221,7 +221,7 @@ async function skip_passed_taxi2_cut() {
       $.blip2_taxicab2.remove();
       $.dead_taxicab2 = 1;
       ++$.counter_taxiwar;
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
     }
     if (!(Car.IsDead($.taxicab2))) {
       if (!($.taxicab2.isHealthGreater(999))) {
@@ -248,7 +248,7 @@ async function skip_passed_taxi2_cut() {
       $.blip3_taxicab3.remove();
       $.dead_taxicab3 = 1;
       ++$.counter_taxiwar;
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
     }
     if (!(Car.IsDead($.taxicab3))) {
       if (!($.taxicab3.isHealthGreater(999))) {
@@ -308,7 +308,7 @@ async function mission_taxiwar2_passed() {
   $.player1.addScore(2000);
   Stat.RegisterMissionPassed("TAXI_2");
   Stat.PlayerMadeProgress(1);
-  // START_NEW_SCRIPT taxiwar_mission3_loop
+  // START_NEW_SCRIPT taxiwar_mission3_loop 
 }
 
 
@@ -325,7 +325,7 @@ async function cleanup() {
   $.blip3_taxicab3.remove();
   Streaming.MarkModelAsNoLongerNeeded(taxi);
   Streaming.MarkModelAsNoLongerNeeded(WMOCA);
-  Streaming.MarkModelAsNoLongerNeeded(178 /* uzi */);
+  Streaming.MarkModelAsNoLongerNeeded(uzi);
   Streaming.MarkModelAsNoLongerNeeded(kaufman);
   $.flag_taxi1_mission_launched = 0;
   Audio.ClearMissionAudio(1);

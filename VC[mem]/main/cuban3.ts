@@ -1,6 +1,6 @@
 // Generated from main/cuban3.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_cuban3() {
   Text.ClearThisPrint("M_FAIL");
@@ -47,7 +47,7 @@ async function mission_start_cuban3() {
 
   // ****************************************START OF CUTSCENE********************************
 
-  Streaming.SetAreaVisible(VIS_COFFEE_SHOP);
+  Streaming.SetAreaVisible(7 /* VIS_COFFEE_SHOP */);
   Cutscene.DisableShadows();
   World.ClearAreaOfChars(-1174.8, -609.0, 10.4, -116.3, -632.5, 15.3);
   World.SetCarDensityMultiplier(0.0);
@@ -311,7 +311,7 @@ async function mission_start_cuban3() {
   Streaming.UnloadSpecialCharacter(3);
   Streaming.UnloadSpecialCharacter(4);
   Streaming.UnloadSpecialCharacter(5);
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   $.flag_player_in_cafe = 0;
   World.SetCarDensityMultiplier(1.0);
   World.SetPedDensityMultiplier(1.0);
@@ -322,10 +322,10 @@ async function mission_start_cuban3() {
   Camera.SetBehindPlayer();
   //------------------REQUEST_MODELS ------------------------------
 
-  $.player1.setMood(PLAYER_MOOD_PISSED_OFF, 60000);
+  $.player1.setMood(1 /* PLAYER_MOOD_PISSED_OFF */, 60000);
 
 
-  Game.SetThreatForPedType(PEDTYPE_GANG_HAITIAN, 1 /* THREAT_PLAYER1 */);
+  Game.SetThreatForPedType(8 /* PEDTYPE_GANG_HAITIAN */, 1 /* THREAT_PLAYER1 */);
 
 
   Streaming.RequestModel(tropic);
@@ -334,15 +334,15 @@ async function mission_start_cuban3() {
   Streaming.RequestModel(jetmax);
 
 
-  Streaming.RequestModel(178 /* uzi */);
+  Streaming.RequestModel(uzi);
   Streaming.RequestModel(SGa);
-  Streaming.RequestModel(170 /* grenade */);
+  Streaming.RequestModel(grenade);
   Streaming.RequestModel(dinghy);
 
 
   Streaming.RequestModel(SGb);
   Streaming.RequestModel(CBb);
-  Streaming.RequestModel(1319 /* briefcase */);
+  Streaming.RequestModel(briefcase);
   Streaming.RequestModel(ruger);
   Streaming.RequestModel(buddyshot);
 
@@ -353,12 +353,12 @@ async function mission_start_cuban3() {
   }
 
 
-  while (!(Streaming.HasModelLoaded(SGa)) || !(Streaming.HasModelLoaded(178 /* uzi */)) || !(Streaming.HasModelLoaded(170 /* grenade */)) || !(Streaming.HasModelLoaded(dinghy))) {
+  while (!(Streaming.HasModelLoaded(SGa)) || !(Streaming.HasModelLoaded(uzi)) || !(Streaming.HasModelLoaded(grenade)) || !(Streaming.HasModelLoaded(dinghy))) {
     await asyncWait(0);
   }
 
 
-  while (!(Streaming.HasModelLoaded(SGb)) || !(Streaming.HasModelLoaded(CBb)) || !(Streaming.HasModelLoaded(1319 /* briefcase */)) || !(Streaming.HasModelLoaded(ruger)) || !(Streaming.HasModelLoaded(buddyshot))) {
+  while (!(Streaming.HasModelLoaded(SGb)) || !(Streaming.HasModelLoaded(CBb)) || !(Streaming.HasModelLoaded(briefcase)) || !(Streaming.HasModelLoaded(ruger)) || !(Streaming.HasModelLoaded(buddyshot))) {
     await asyncWait(0);
   }
 
@@ -379,7 +379,7 @@ async function mission_start_cuban3() {
   $.radar_blip_playrs_boat = Blip.AddForCoord(-725.4, -1166.8, 9.7);
 
 
-  $.boat_driver = Char.Create(PEDTYPE_GANG_CUBAN, CBb, -724.3, -1166.5, 9.7);
+  $.boat_driver = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, CBb, -724.3, -1166.5, 9.7);
   $.boat_driver.setAsPlayerFriend($.player1, true /* TRUE */);
   $.boat_driver.setHeading(103.3);
 
@@ -408,7 +408,7 @@ async function mission_start_cuban3() {
   Hud.SwitchWidescreen(true /* ON */);
 
 
-  Audio.SetRadioChannel(RADIO_ESPANTOSO, -1);
+  Audio.SetRadioChannel(6 /* RADIO_ESPANTOSO */, -1);
   $.playrs_boat = Car.Create(jetmax, -722.6, -1163.7, 5.0);
   $.playrs_boat.setHeading(32.0);
   $.playrs_boat.anchor(true /* TRUE */);
@@ -556,8 +556,8 @@ async function end_cut_cub3_1() {
 
   Camera.SetFadingColor(1, 1, 1);
   Camera.DoFade(1500, 0 /* FADE_OUT */);
-  if (!($.player1.hasGotWeapon(WEAPONTYPE_M4)) && !($.player1.hasGotWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */)) && !($.player1.hasGotWeapon(WEAPONTYPE_LASERSCOPE))) {
-    $.player1.giveWeapon(WEAPONTYPE_RUGER, 30);
+  if (!($.player1.hasGotWeapon(26 /* WEAPONTYPE_M4 */)) && !($.player1.hasGotWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */)) && !($.player1.hasGotWeapon(29 /* WEAPONTYPE_LASERSCOPE */))) {
+    $.player1.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30);
   }
 
 
@@ -569,7 +569,7 @@ async function end_cut_cub3_1() {
   $.boat_driver.delete();
   if (!(Car.IsDead($.playrs_boat))) {
     $.scplayer.attachToCar($.playrs_boat, 0.0, -0.4, 1.5, 2 /* FACING_BACK */, 360.0, 0 /* WEAPONTYPE_UNARMED */);
-    $.boat_driver = Char.CreateInsideCar($.playrs_boat, PEDTYPE_GANG_CUBAN, CBb);
+    $.boat_driver = Char.CreateInsideCar($.playrs_boat, 7 /* PEDTYPE_GANG_CUBAN */, CBb);
     $.boat_driver.setAsPlayerFriend($.player1, true /* TRUE */);
     $.playrs_boat.goto(-754.0, -425.7, 6.6);
     $.boat_driver.setOnlyDamagedByPlayer(true /* TRUE */);
@@ -590,28 +590,28 @@ async function end_cut_cub3_1() {
   $.haitian_big_boat2.anchor(true /* TRUE */);
 
 
-  $.haitian_ob4 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -647.0, -256.7, 5.0);
-  $.haitian_ob4.attachToCar($.haitian_big_boat2, 0.0, -4.0, 1.2, 1 /* FACING_LEFT */, 360.0, 3 /* WEAPONTYPE_UZI */); //ON LOWER DECK OF RIGHT BOAT
+  $.haitian_ob4 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -647.0, -256.7, 5.0);
+  $.haitian_ob4.attachToCar($.haitian_big_boat2, 0.0, -4.0, 1.2, 1 /* FACING_LEFT */, 360.0, 23 /* WEAPONTYPE_UZI */); //ON LOWER DECK OF RIGHT BOAT
   $.haitian_ob4.setHeading(227.4);
   $.haitian_ob4.clearThreatSearch();
   $.haitian_ob4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.haitian_ob4.setHeedThreats(true /* TRUE */);
 
 
-  $.haitian_ob5 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -647.0, -256.7, 5.0);
+  $.haitian_ob5 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -647.0, -256.7, 5.0);
   //ATTACH_CHAR_TO_CAR haitian_ob5 haitian_big_boat2 0.5 2.5 3.8 FACING_BACK 360.0 WEAPONTYPE_uzi  //RIGHT HAND DRIVERS SEAT
 
-  $.haitian_ob5.attachToCar($.haitian_big_boat2, 2.3, 0.0, 2.0, 2 /* FACING_BACK */, 360.0, 3 /* WEAPONTYPE_UZI */); //ON LOWER DECK OF RIGHT BOAT (side)
+  $.haitian_ob5.attachToCar($.haitian_big_boat2, 2.3, 0.0, 2.0, 2 /* FACING_BACK */, 360.0, 23 /* WEAPONTYPE_UZI */); //ON LOWER DECK OF RIGHT BOAT (side)
   $.haitian_ob5.setHeading(140.4);
   $.haitian_ob5.clearThreatSearch();
   $.haitian_ob5.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.haitian_ob5.setHeedThreats(true /* TRUE */);
 
 
-  $.haitian_ob6 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -647.0, -256.7, 5.0);
+  $.haitian_ob6 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -647.0, -256.7, 5.0);
   //ATTACH_CHAR_TO_CAR haitian_ob6 haitian_big_boat2 -0.3 2.5 3.8 FACING_BACK 360.0 WEAPONTYPE_uzi  //LEFT HAND DRIVERS SEAT
 
-  $.haitian_ob6.attachToCar($.haitian_big_boat2, 0.0, -1.3, 3.8, 2 /* FACING_BACK */, 360.0, WEAPONTYPE_RUGER); //ON UPPER DECK OF RIGHT BOAT
+  $.haitian_ob6.attachToCar($.haitian_big_boat2, 0.0, -1.3, 3.8, 2 /* FACING_BACK */, 360.0, 27 /* WEAPONTYPE_RUGER */); //ON UPPER DECK OF RIGHT BOAT
   $.haitian_ob6.setHeading(140.4);
   $.haitian_ob6.clearThreatSearch();
   $.haitian_ob6.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -625,25 +625,25 @@ async function end_cut_cub3_1() {
   $.haitian_big_boat1 = Car.Create(tropic, -647.0, -256.7, 5.0); //LEFT BOAT when looking at deal from players boat
   $.haitian_big_boat1.setHeading(317.0);
   $.haitian_big_boat1.anchor(true /* TRUE */);
-  $.haitian_ob1 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -647.0, -256.7, 5.0);
-  $.haitian_ob1.attachToCar($.haitian_big_boat1, 0.0, -4.0, 1.2, 0 /* FACING_FORWARD */, 360.0, 3 /* WEAPONTYPE_UZI */); //ON LOWER DECK OF LEFT BOAT
+  $.haitian_ob1 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -647.0, -256.7, 5.0);
+  $.haitian_ob1.attachToCar($.haitian_big_boat1, 0.0, -4.0, 1.2, 0 /* FACING_FORWARD */, 360.0, 23 /* WEAPONTYPE_UZI */); //ON LOWER DECK OF LEFT BOAT
   $.haitian_ob1.setHeading(102.4);
   $.haitian_ob1.clearThreatSearch();
   $.haitian_ob1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.haitian_ob1.setHeedThreats(true /* TRUE */);
 
 
-  $.haitian_ob2 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -647.0, -256.7, 5.0);
-  $.haitian_ob2.attachToCar($.haitian_big_boat1, -2.3, 0.0, 2.0, 3 /* FACING_RIGHT */, 360.0, WEAPONTYPE_RUGER); //ON LOWER DECK OF LEFT BOAT (side)
+  $.haitian_ob2 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -647.0, -256.7, 5.0);
+  $.haitian_ob2.attachToCar($.haitian_big_boat1, -2.3, 0.0, 2.0, 3 /* FACING_RIGHT */, 360.0, 27 /* WEAPONTYPE_RUGER */); //ON LOWER DECK OF LEFT BOAT (side)
   $.haitian_ob2.clearThreatSearch();
   $.haitian_ob2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.haitian_ob2.setHeedThreats(true /* TRUE */);
 
 
-  $.haitian_ob3 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -647.0, -256.7, 5.0);
+  $.haitian_ob3 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -647.0, -256.7, 5.0);
   //ATTACH_CHAR_TO_CAR haitian_ob3 haitian_big_boat1 -0.3 2.5 3.8 FACING_RIGHT 360.0 WEAPONTYPE_uzi  //DRIVERS SEAT
 
-  $.haitian_ob3.attachToCar($.haitian_big_boat1, 0.2, -1.3, 3.8, 3 /* FACING_RIGHT */, 360.0, 3 /* WEAPONTYPE_UZI */); //ON UPPER DECK OF LEFT BOAT
+  $.haitian_ob3.attachToCar($.haitian_big_boat1, 0.2, -1.3, 3.8, 3 /* FACING_RIGHT */, 360.0, 23 /* WEAPONTYPE_UZI */); //ON UPPER DECK OF LEFT BOAT
   $.haitian_ob3.setHeading(322.4);
   $.haitian_ob3.clearThreatSearch();
   $.haitian_ob3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -658,7 +658,7 @@ async function end_cut_cub3_1() {
 
   //HAITIAN WITH MONEY
 
-  $.haitian_with_money = Char.Create(PEDTYPE_GANG_HAITIAN, HNb, -649.9, -269.6, 8.5);
+  $.haitian_with_money = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNb, -649.9, -269.6, 8.5);
   $.haitian_with_money.setHeading(229.2);
   $.haitian_with_money.clearThreatSearch();
   $.haitian_with_money.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -666,7 +666,7 @@ async function end_cut_cub3_1() {
   $.haitian_with_money.setStayInSamePlace(true /* TRUE */);
 
 
-  $.haitian_bodyguard1 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -650.1, -267.7, 8.5);
+  $.haitian_bodyguard1 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -650.1, -267.7, 8.5);
   $.haitian_bodyguard1.setHeading(60.6);
   $.haitian_bodyguard1.clearThreatSearch();
   $.haitian_bodyguard1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -674,7 +674,7 @@ async function end_cut_cub3_1() {
   $.haitian_bodyguard1.setStayInSamePlace(true /* TRUE */);
 
 
-  $.haitian_bodyguard2 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -651.6, -269.0, 8.5);
+  $.haitian_bodyguard2 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -651.6, -269.0, 8.5);
   $.haitian_bodyguard2.setHeading(222.9);
   $.haitian_bodyguard2.clearThreatSearch();
   $.haitian_bodyguard2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -683,7 +683,7 @@ async function end_cut_cub3_1() {
 
   //CREATING DRUG DEALERS
 
-  $.drug_dealer = Char.Create(PEDTYPE_GANG_STREET, SGb, -648.8, -270.8, 8.5);
+  $.drug_dealer = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGb, -648.8, -270.8, 8.5);
   $.drug_dealer.setHeading(49.2);
   $.drug_dealer.clearThreatSearch();
   $.drug_dealer.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -691,7 +691,7 @@ async function end_cut_cub3_1() {
   $.drug_dealer.setStayInSamePlace(true /* TRUE */);
 
 
-  $.drug_dealer_bodyguard1 = Char.Create(PEDTYPE_GANG_STREET, SGa, -647.4, -270.8, 8.5); //left looking at guy
+  $.drug_dealer_bodyguard1 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -647.4, -270.8, 8.5); //left looking at guy
   $.drug_dealer_bodyguard1.setHeading(34.2);
   $.drug_dealer_bodyguard1.clearThreatSearch();
   $.drug_dealer_bodyguard1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -699,7 +699,7 @@ async function end_cut_cub3_1() {
   $.drug_dealer_bodyguard1.setStayInSamePlace(true /* TRUE */);
 
 
-  $.drug_dealer_bodyguard2 = Char.Create(PEDTYPE_GANG_STREET, SGa, -649.3, -272.5, 8.5); //right looking at guy
+  $.drug_dealer_bodyguard2 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -649.3, -272.5, 8.5); //right looking at guy
   $.drug_dealer_bodyguard2.setHeading(33.0);
   $.drug_dealer_bodyguard2.clearThreatSearch();
   $.drug_dealer_bodyguard2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -707,7 +707,7 @@ async function end_cut_cub3_1() {
   $.drug_dealer_bodyguard2.setStayInSamePlace(true /* TRUE */);
 
 
-  $.drug_dealer_sniper = Char.Create(PEDTYPE_GANG_STREET, SGa, -621.9, -307.8, 25.9);
+  $.drug_dealer_sniper = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -621.9, -307.8, 25.9);
   $.drug_dealer_sniper.setHeading(35.4);
   $.drug_dealer_sniper.clearThreatSearch();
   $.drug_dealer_sniper.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -844,21 +844,21 @@ async function waiting_for_player_to_shoot() {
     if ($.player1.isShooting()) {
       Char.SetThreatReactionRangeMultiplier(5.0);
       if (!(Char.IsDead($.drug_dealer))) {
-        $.drug_dealer.setThreatSearch(THREAT_GANG_HAITIAN);
-        $.drug_dealer.giveWeapon(WEAPONTYPE_RUGER, 30000);
+        $.drug_dealer.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
+        $.drug_dealer.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30000);
       }
       if (!(Char.IsDead($.drug_dealer_bodyguard1))) {
-        $.drug_dealer_bodyguard1.setThreatSearch(THREAT_GANG_HAITIAN);
-        $.drug_dealer_bodyguard1.giveWeapon(WEAPONTYPE_RUGER, 30000);
+        $.drug_dealer_bodyguard1.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
+        $.drug_dealer_bodyguard1.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30000);
       }
       if (!(Char.IsDead($.drug_dealer_bodyguard2))) {
-        $.drug_dealer_bodyguard2.setThreatSearch(THREAT_GANG_HAITIAN);
-        $.drug_dealer_bodyguard2.giveWeapon(WEAPONTYPE_RUGER, 30000);
+        $.drug_dealer_bodyguard2.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
+        $.drug_dealer_bodyguard2.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30000);
       }
       if (!(Char.IsDead($.drug_dealer_sniper))) {
-        $.drug_dealer_sniper.setThreatSearch(THREAT_GANG_HAITIAN);
+        $.drug_dealer_sniper.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
         $.drug_dealer_sniper.setThreatSearch(1 /* THREAT_PLAYER1 */);
-        $.drug_dealer_sniper.giveWeapon(WEAPONTYPE_RUGER, 30000);
+        $.drug_dealer_sniper.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30000);
       }
       if (!(Char.IsDead($.haitian_with_money))) {
         $.haitian_with_money.setStayInSamePlace(false /* FALSE */);
@@ -1054,7 +1054,7 @@ async function fight() {
 
     if (Char.IsDead($.haitian_with_money)) {
       if ($.dropped_money_flag == 0) {
-        $.dropped_money = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, -650.4, -268.5, 9.0);
+        $.dropped_money = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, -650.4, -268.5, 9.0);
         $.dropped_money_blip = Blip.AddForCoord(-650.4, -268.5, $.leader_coordsz);
         $.dropped_money_flag = 1;
       }
@@ -1285,7 +1285,7 @@ async function jetty_cutscene() {
   Camera.SetFixedPosition(-642.3, -241.4, 10.0, 0.0, 0.0, 0.0);
   Camera.PointAtPoint(-630.5, -261.4, 7.0, 2 /* JUMP_CUT */);
   World.ClearAreaOfCars(-530.2, -186.3, 10.0, -791.8, -447.8, 0.0);
-  Audio.SetRadioChannel(RADIO_ESPANTOSO, -1);
+  Audio.SetRadioChannel(6 /* RADIO_ESPANTOSO */, -1);
 
 
   if (!(Car.IsDead($.playrs_boat))) {
@@ -1366,87 +1366,87 @@ async function waiting_on_boat_to_dock() {
       if (!(Char.IsDead($.drug_dealer))) {
         $.drug_dealer.setStayInSamePlace(true /* TRUE */);
         $.drug_dealer.setThreatSearch(1 /* THREAT_PLAYER1 */);
-        $.drug_dealer.giveWeapon(WEAPONTYPE_RUGER, 30000);
+        $.drug_dealer.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30000);
         $.drug_dealer.setObjKillPlayerOnFoot($.player1);
       }
       if (!(Char.IsDead($.drug_dealer_bodyguard1))) {
         $.drug_dealer_bodyguard1.setStayInSamePlace(true /* TRUE */);
         $.drug_dealer_bodyguard1.setThreatSearch(1 /* THREAT_PLAYER1 */);
-        $.drug_dealer_bodyguard1.giveWeapon(WEAPONTYPE_RUGER, 30000);
+        $.drug_dealer_bodyguard1.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30000);
         $.drug_dealer_bodyguard1.setObjKillPlayerOnFoot($.player1);
       }
       if (!(Char.IsDead($.drug_dealer_bodyguard2))) {
         $.drug_dealer_bodyguard2.setStayInSamePlace(true /* TRUE */);
         $.drug_dealer_bodyguard2.setThreatSearch(1 /* THREAT_PLAYER1 */);
-        $.drug_dealer_bodyguard2.giveWeapon(WEAPONTYPE_RUGER, 30000);
+        $.drug_dealer_bodyguard2.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30000);
         $.drug_dealer_bodyguard2.setObjKillPlayerOnFoot($.player1);
       }
 
       //guy with briefcase
-      $.drug_dealer_with_briefcases = Char.Create(PEDTYPE_GANG_STREET, SGb, -629.9, -300.4, 11.0);
+      $.drug_dealer_with_briefcases = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGb, -629.9, -300.4, 11.0);
       $.drug_dealer_with_briefcases.setHeading(66.4);
       $.drug_dealer_with_briefcases.clearThreatSearch();
       $.drug_dealer_with_briefcases.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
       $.drug_dealer_with_briefcases.setHeedThreats(true /* TRUE */);
       $.drug_dealer_with_briefcases.setStayInSamePlace(true /* TRUE */);
       $.drug_dealer_with_briefcases.setThreatSearch(1 /* THREAT_PLAYER1 */);
-      $.drug_dealer_with_briefcases.giveWeapon(WEAPONTYPE_ruger, 30000);
+      $.drug_dealer_with_briefcases.giveWeapon(27 /* WEAPONTYPE_ruger */, 30000);
       $.drug_dealer_with_briefcases.setObjKillPlayerOnFoot($.player1);
 
 
       //in front of door
-      $.drug_dealer_backup1 = Char.Create(PEDTYPE_GANG_STREET, SGa, -627.3, -310.8, 12.1);
+      $.drug_dealer_backup1 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -627.3, -310.8, 12.1);
       $.drug_dealer_backup1.setHeading(69.4);
       $.drug_dealer_backup1.clearThreatSearch();
       $.drug_dealer_backup1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
       $.drug_dealer_backup1.setHeedThreats(true /* TRUE */);
       $.drug_dealer_backup1.setStayInSamePlace(true /* TRUE */);
       $.drug_dealer_backup1.setThreatSearch(1 /* THREAT_PLAYER1 */);
-      $.drug_dealer_backup1.giveWeapon(WEAPONTYPE_RUGER, 30000);
+      $.drug_dealer_backup1.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30000);
       $.drug_dealer_backup1.setObjKillPlayerOnFoot($.player1);
 
       //on porch
-      $.drug_dealer_backup2 = Char.Create(PEDTYPE_GANG_STREET, SGa, -631.1, -313.0, 12.1);
+      $.drug_dealer_backup2 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -631.1, -313.0, 12.1);
       $.drug_dealer_backup2.setHeading(49.2);
       $.drug_dealer_backup2.clearThreatSearch();
       $.drug_dealer_backup2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
       $.drug_dealer_backup2.setHeedThreats(true /* TRUE */);
       $.drug_dealer_backup2.setStayInSamePlace(true /* TRUE */);
       $.drug_dealer_backup2.setThreatSearch(1 /* THREAT_PLAYER1 */);
-      $.drug_dealer_backup2.giveWeapon(WEAPONTYPE_ruger, 30000);
+      $.drug_dealer_backup2.giveWeapon(27 /* WEAPONTYPE_ruger */, 30000);
       $.drug_dealer_backup2.setObjKillPlayerOnFoot($.player1);
 
       //left side of house looking at deal
-      $.drug_dealer_backup3 = Char.Create(PEDTYPE_GANG_STREET, SGa, -648.6, -326.2, 11.0);
+      $.drug_dealer_backup3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -648.6, -326.2, 11.0);
       $.drug_dealer_backup3.setHeading(2.7);
       $.drug_dealer_backup3.clearThreatSearch();
       $.drug_dealer_backup3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
       $.drug_dealer_backup3.setHeedThreats(true /* TRUE */);
       $.drug_dealer_backup3.setStayInSamePlace(true /* TRUE */);
       $.drug_dealer_backup3.setThreatSearch(1 /* THREAT_PLAYER1 */);
-      $.drug_dealer_backup3.giveWeapon(WEAPONTYPE_STUBBY_SHOTGUN, 30000);
+      $.drug_dealer_backup3.giveWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */, 30000);
       $.drug_dealer_backup3.setObjKillPlayerOnFoot($.player1);
 
       //right side of house looking at deal
-      $.drug_dealer_backup4 = Char.Create(PEDTYPE_GANG_STREET, SGa, -608.5, -294.6, 11.0);
+      $.drug_dealer_backup4 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -608.5, -294.6, 11.0);
       $.drug_dealer_backup4.setHeading(46.2);
       $.drug_dealer_backup4.clearThreatSearch();
       $.drug_dealer_backup4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
       $.drug_dealer_backup4.setHeedThreats(true /* TRUE */);
       $.drug_dealer_backup4.setStayInSamePlace(true /* TRUE */);
       $.drug_dealer_backup4.setThreatSearch(1 /* THREAT_PLAYER1 */);
-      $.drug_dealer_backup4.giveWeapon(WEAPONTYPE_STUBBY_SHOTGUN, 30000);
+      $.drug_dealer_backup4.giveWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */, 30000);
       $.drug_dealer_backup4.setObjKillPlayerOnFoot($.player1);
 
       //waiting for player to run through archway on left looking at deal
-      $.drug_dealer_backup5 = Char.Create(PEDTYPE_GANG_STREET, SGa, -592.6, -255.9, 9.5);
+      $.drug_dealer_backup5 = Char.Create(9 /* PEDTYPE_GANG_STREET */, SGa, -592.6, -255.9, 9.5);
       $.drug_dealer_backup5.setHeading(10.7);
       $.drug_dealer_backup5.clearThreatSearch();
       $.drug_dealer_backup5.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
       $.drug_dealer_backup5.setHeedThreats(true /* TRUE */);
       $.drug_dealer_backup5.setStayInSamePlace(true /* TRUE */);
       $.drug_dealer_backup5.setThreatSearch(1 /* THREAT_PLAYER1 */);
-      $.drug_dealer_backup5.giveWeapon(WEAPONTYPE_STUBBY_SHOTGUN, 30000);
+      $.drug_dealer_backup5.giveWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */, 30000);
       $.drug_dealer_backup5.setObjKillPlayerOnFoot($.player1);
       if ($.briefcase_dropped_flag == 0) {
         $.briefcase_dropped_1_blip = Blip.AddForCoord(-641.0, -309.0, 11.5);
@@ -1517,14 +1517,14 @@ async function final_fight() {
       $.drug_dealer_with_briefcases.markAsNoLongerNeeded();
       if ($.briefcase_dropped_flag == 0) {
         $.leader_coordsy -= 1.0;
-        $.briefcase_dropped_1 = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, $.leader_coordsx, $.leader_coordsy, $.leader_coordsz);
+        $.briefcase_dropped_1 = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, $.leader_coordsx, $.leader_coordsy, $.leader_coordsz);
         $.briefcase_dropped_1_blip.remove();
         $.briefcase_dropped_1_blip = Blip.AddForCoord($.leader_coordsx, $.leader_coordsy, $.leader_coordsz);
         $.briefcase_dropped_flag = 1;
       }
       if ($.briefcase_dropped_flag == 1) {
         $.leader_coordsy += 2.0;
-        $.briefcase_dropped_2 = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, $.leader_coordsx, $.leader_coordsy, $.leader_coordsz);
+        $.briefcase_dropped_2 = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, $.leader_coordsx, $.leader_coordsy, $.leader_coordsz);
         $.briefcase_dropped_2_blip = Blip.AddForCoord($.leader_coordsx, $.leader_coordsy, $.leader_coordsz);
         $.briefcase_dropped_flag = 2;
       }
@@ -1591,10 +1591,10 @@ $.leader_coordsz = _res175.z;
       $.haitian_dinghy = Car.Create(dinghy, -635.5, -237.7, 5.5);
       $.haitian_dinghy.setHeading(159.0);
       $.haitian_dinghy.anchor(true /* TRUE */);
-      $.haitian_ob1 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -635.5, -237.7, 6.0);
-      $.haitian_ob1.attachToCar($.haitian_dinghy, 0.0, 1.8, 1.2, 0 /* FACING_FORWARD */, 360.0, 11 /* WEAPONTYPE_GRENADE */); //guy throwing grenade
-      $.haitian_ob2 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -635.5, -237.7, 6.0);
-      $.haitian_ob2.attachToCar($.haitian_dinghy, 0.4, -1.8, 1.2, 0 /* FACING_FORWARD */, 360.0, 11 /* WEAPONTYPE_GRENADE */); //guy driving dinghy
+      $.haitian_ob1 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -635.5, -237.7, 6.0);
+      $.haitian_ob1.attachToCar($.haitian_dinghy, 0.0, 1.8, 1.2, 0 /* FACING_FORWARD */, 360.0, 12 /* WEAPONTYPE_GRENADE */); //guy throwing grenade
+      $.haitian_ob2 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -635.5, -237.7, 6.0);
+      $.haitian_ob2.attachToCar($.haitian_dinghy, 0.4, -1.8, 1.2, 0 /* FACING_FORWARD */, 360.0, 12 /* WEAPONTYPE_GRENADE */); //guy driving dinghy
       $.haitian_ob2.setWaitState(14 /* WAITSTATE_PLAYANIM_DUCK */, 100000);
       $.haitian_dinghy.goto(-637.0, -239.0, 5.5);
       $.haitian_dinghy.setCruiseSpeed(0.0);
@@ -1633,10 +1633,10 @@ $.player_y = _res176.y;
 $.player_z = _res176.z;
         $.playrs_boat.explode();
         Fx.AddExplosion($.player_x, $.player_y, $.player_z, 2 /* EXPLOSION_ROCKET */);
-        Fx.AddExplosion($.player_x, $.player_y, $.player_z, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion($.player_x, $.player_y, $.player_z, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion($.player_x, $.player_y, $.player_z, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion($.player_x, $.player_y, $.player_z, 5 /* EXPLOSION_HELI */);
-        Fx.AddMovingParticleEffect(15 /* POBJECT_FIREBALL_AND_SMOKE */, $.player_x, $.player_y, $.player_z, 0.1, 0.0, 0.2, 0.8, 0, 0, 0, 11000);
+        Fx.AddExplosion($.player_x, $.player_y, $.player_z, 6 /* EXPLOSION_HELI */);
+        Fx.AddMovingParticleEffect(17 /* POBJECT_FIREBALL_AND_SMOKE */, $.player_x, $.player_y, $.player_z, 0.1, 0.0, 0.2, 0.8, 0, 0, 0, 11000);
       }
       await asyncWait(2000);
       if (!(Char.IsDead($.haitian_ob1))) {
@@ -1647,7 +1647,7 @@ $.player_z = _res176.z;
         $.haitian_ob1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
         $.haitian_ob1.setHeedThreats(true /* TRUE */);
         $.haitian_ob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
-        $.haitian_ob1.giveWeapon(WEAPONTYPE_RUGER, 30000);
+        $.haitian_ob1.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30000);
         $.haitian_ob1.setObjKillPlayerOnFoot($.player1);
       }
       if (!(Char.IsDead($.haitian_ob2))) {
@@ -1659,7 +1659,7 @@ $.player_z = _res176.z;
         $.haitian_ob2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
         $.haitian_ob2.setHeedThreats(true /* TRUE */);
         $.haitian_ob2.setThreatSearch(1 /* THREAT_PLAYER1 */);
-        $.haitian_ob2.giveWeapon(WEAPONTYPE_RUGER, 30000);
+        $.haitian_ob2.giveWeapon(27 /* WEAPONTYPE_RUGER */, 30000);
         $.haitian_ob2.setObjKillPlayerOnFoot($.player1);
       }
 
@@ -1778,7 +1778,7 @@ async function mission_passed_cuban3() {
   $.player1.addScore(4000);
   Stat.PlayerMadeProgress(1);
   Stat.RegisterMissionPassed("CUB_3");
-  // START_NEW_SCRIPT cuban_mission4_loop
+  // START_NEW_SCRIPT cuban_mission4_loop 
   $.flag_cuban_mission3_passed = 1;
 }
 
@@ -1792,20 +1792,20 @@ async function mission_cleanup_cuban3() {
 
 
   $.player1.setControl(true /* on */);
-  Game.ClearThreatForPedType(PEDTYPE_GANG_HAITIAN, 1 /* THREAT_PLAYER1 */);
+  Game.ClearThreatForPedType(8 /* PEDTYPE_GANG_HAITIAN */, 1 /* THREAT_PLAYER1 */);
   Streaming.MarkModelAsNoLongerNeeded(tropic);
   Streaming.MarkModelAsNoLongerNeeded(HNa);
   Streaming.MarkModelAsNoLongerNeeded(HNb);
   Streaming.MarkModelAsNoLongerNeeded(jetmax);
   Streaming.MarkModelAsNoLongerNeeded(SGa);
-  Streaming.MarkModelAsNoLongerNeeded(170 /* grenade */);
+  Streaming.MarkModelAsNoLongerNeeded(grenade);
   Streaming.MarkModelAsNoLongerNeeded(dinghy);
   Streaming.MarkModelAsNoLongerNeeded(SGb);
   Streaming.MarkModelAsNoLongerNeeded(CBb);
-  Streaming.MarkModelAsNoLongerNeeded(1319 /* briefcase */);
+  Streaming.MarkModelAsNoLongerNeeded(briefcase);
   Streaming.MarkModelAsNoLongerNeeded(ruger);
   Streaming.MarkModelAsNoLongerNeeded(buddyshot);
-  Streaming.MarkModelAsNoLongerNeeded(178 /* uzi */);
+  Streaming.MarkModelAsNoLongerNeeded(uzi);
   $.radar_blip_playrs_boat.remove();
   $.dropped_money_blip.remove();
   $.briefcase_dropped_1_blip.remove();

@@ -1,6 +1,6 @@
 // Generated from main/cargen.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function car_park_inner() {
 

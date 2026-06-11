@@ -1,6 +1,6 @@
 // Generated from main/buypro9.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_washbuy() {
 
@@ -27,17 +27,17 @@ async function mission_start_washbuy() {
   while (Camera.GetFadingStatus()) {
     await asyncWait(0);
     if (!($.player1.isPlaying())) {
-      $.washbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.washbuyX, $.washbuyY, $.washbuyZ, RADAR_SPRITE_SAVEHOUSE);
+      $.washbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.washbuyX, $.washbuyY, $.washbuyZ, 19 /* RADAR_SPRITE_SAVEHOUSE */);
       $.washbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
-      // START_NEW_SCRIPT washsave1_save_loop
+      // START_NEW_SCRIPT washsave1_save_loop 
       return; // TERMINATE_THIS_SCRIPT
     }
   }
 
 
-  $.washbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.washbuyX, $.washbuyY, $.washbuyZ, RADAR_SPRITE_SAVEHOUSE);
+  $.washbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.washbuyX, $.washbuyY, $.washbuyZ, 19 /* RADAR_SPRITE_SAVEHOUSE */);
   $.washbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
-  // START_NEW_SCRIPT washsave1_save_loop
+  // START_NEW_SCRIPT washsave1_save_loop 
 
 
   World.ClearArea(90.7810, -806.1213, 10.3349, 1.0, true /* TRUE */);
@@ -70,7 +70,7 @@ async function mission_start_washbuy() {
 
   Text.PrintWithNumberBig("WASHBUY", $.washbuy_price, 5000, 6); //1102 Washington Street purchased: $ ~1~
   Stat.AddMoneySpentOnProperty($.washbuy_price);
-  Stat.SetPropertyAsOwned(PROP_WASHINGTON_STREET);
+  Stat.SetPropertyAsOwned(11 /* PROP_WASHINGTON_STREET */);
   //washbuy_price *= -1
   //ADD_SCORE player1 washbuy_price
 

@@ -1,6 +1,6 @@
 // Generated from main/assin5.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_assin5() {
 
@@ -33,7 +33,7 @@ async function mission_start_assin5() {
 
   //REQUEST_MODEL bodyarmour
 
-  Streaming.RequestModel(1344 /* barrel4 */);
+  Streaming.RequestModel(barrel4);
   //REQUEST_MODEL health
 
 
@@ -43,7 +43,7 @@ async function mission_start_assin5() {
   }
 
 
-  while (!(Streaming.HasModelLoaded(admiral)) || !(Streaming.HasModelLoaded(pony)) || !(Streaming.HasModelLoaded(maverick)) || !(Streaming.HasModelLoaded(1344 /* barrel4 */))) {
+  while (!(Streaming.HasModelLoaded(admiral)) || !(Streaming.HasModelLoaded(pony)) || !(Streaming.HasModelLoaded(maverick)) || !(Streaming.HasModelLoaded(barrel4))) {
     await asyncWait(0);
   }
 
@@ -276,7 +276,7 @@ async function endasm5cs() {
   //the deal guys
 
   $.badguyboss1 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL01, -888.0087, -516.6854, 28.1699);
-  $.badguyboss1.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguyboss1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguyboss1.setHeading(112.8337);
   $.badguyboss1.clearThreatSearch();
   $.badguyboss1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -285,7 +285,7 @@ async function endasm5cs() {
 
 
   $.badguyboss2 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL02, -886.0616, -514.7507, 28.1699);
-  $.badguyboss2.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguyboss2.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguyboss2.setHeading(105.2930);
   $.badguyboss2.clearThreatSearch();
   $.badguyboss2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -294,7 +294,7 @@ async function endasm5cs() {
 
 
   $.badguyboss3 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL01, -886.1217, -518.1573, 28.16999);
-  $.badguyboss3.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguyboss3.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguyboss3.setHeading(104.0362);
   $.badguyboss3.clearThreatSearch();
   $.badguyboss3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -303,7 +303,7 @@ async function endasm5cs() {
 
 
   $.otherguy1 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGa, -893.7256, -517.1300, 28.1754);
-  $.otherguy1.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.otherguy1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.otherguy1.setHeading(279.8910);
   $.otherguy1.clearThreatSearch();
   $.otherguy1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -312,7 +312,7 @@ async function endasm5cs() {
 
 
   $.otherguy2 = Char.Create(4 /* PEDTYPE_CIVMALE */, SGb, -894.7341, -515.9601, 28.1754);
-  $.otherguy2.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.otherguy2.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.otherguy2.setHeading(285.9840);
   $.otherguy2.clearThreatSearch();
   $.otherguy2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -324,9 +324,9 @@ async function endasm5cs() {
 
   //create barrels
 
-  $.barrel3_a5 = ScriptObject.Create(1344 /* barrel4 */, -927.3963, -528.213, 10.134);
+  $.barrel3_a5 = ScriptObject.Create(barrel4, -927.3963, -528.213, 10.134);
   $.barrel3_a5.makeTargetable();
-  $.barrel4_a5 = ScriptObject.Create(1344 /* barrel4 */, -904.3218, -566.7883, 9.7807);
+  $.barrel4_a5 = ScriptObject.Create(barrel4, -904.3218, -566.7883, 9.7807);
 
   //create helicopter
 
@@ -345,7 +345,7 @@ async function endasm5cs() {
   //guys behind car
 
   $.badguy1 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL01, -939.6057, -512.2731, 9.9113);
-  $.badguy1.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy1.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy1.setHeading(90.5315);
   $.badguy1.clearThreatSearch();
   $.badguy1.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -355,7 +355,7 @@ async function endasm5cs() {
 
 
   $.badguy2 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL02, -939.5907, -516.5395, 9.9532);
-  $.badguy2.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy2.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy2.setHeading(90.1574);
   $.badguy2.clearThreatSearch();
   $.badguy2.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -367,7 +367,7 @@ async function endasm5cs() {
   //stairs
 
   $.badguy3 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL02, -905.3917, -512.3774, 16.9633);
-  $.badguy3.giveWeapon(WEAPONTYPE_MP5, 3000);
+  $.badguy3.giveWeapon(25 /* WEAPONTYPE_MP5 */, 3000);
   $.badguy3.setHeading(119.0373);
   $.badguy3.clearThreatSearch();
   $.badguy3.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -376,7 +376,7 @@ async function endasm5cs() {
 
 
   $.badguy4 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL01, -900.4265, -545.6013, 21.4256);
-  $.badguy4.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy4.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy4.setHeading(81.1633);
   $.badguy4.clearThreatSearch();
   $.badguy4.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -386,7 +386,7 @@ async function endasm5cs() {
   //advertising boards
 
   $.badguy5 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL02, -919.222, -544.302, 10.490);
-  $.badguy5.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy5.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy5.setHeading(8.948461);
   $.badguy5.setOnlyDamagedByPlayer(true /* TRUE */);
   $.badguy5.setStayInSamePlace(true /* TRUE */);
@@ -401,7 +401,7 @@ async function endasm5cs() {
 
 
   $.badguy6 = Char.CreateInsideCar($.car3_a5, 21 /* PEDTYPE_SPECIAL */, SPECIAL01);
-  $.badguy6.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy6.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy6.clearThreatSearch();
   $.badguy6.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.badguy6.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -410,7 +410,7 @@ async function endasm5cs() {
 
 
   $.badguy7 = Char.CreateAsPassenger($.car3_a5, 21 /* PEDTYPE_SPECIAL */, SPECIAL02, 0);
-  $.badguy7.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy7.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy7.clearThreatSearch();
   $.badguy7.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.badguy7.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -419,7 +419,7 @@ async function endasm5cs() {
 
 
   $.badguy8 = Char.CreateAsPassenger($.car3_a5, 21 /* PEDTYPE_SPECIAL */, SPECIAL01, 1);
-  $.badguy8.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy8.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy8.clearThreatSearch();
   $.badguy8.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.badguy8.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -428,7 +428,7 @@ async function endasm5cs() {
 
 
   $.badguy9 = Char.CreateAsPassenger($.car3_a5, 21 /* PEDTYPE_SPECIAL */, SPECIAL01, 2);
-  $.badguy9.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy9.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy9.clearThreatSearch();
   $.badguy9.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.badguy9.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
@@ -449,7 +449,7 @@ async function endasm5cs() {
   //create first set of guys in the first area with boxes
 
   $.badguy12 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL02, -910.9335, -549.9265, 10.5692); //by crate
-  $.badguy12.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy12.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy12.setHeading(357.5166);
   $.badguy12.clearThreatSearch();
   $.badguy12.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -459,7 +459,7 @@ async function endasm5cs() {
 
 
   $.badguy13 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL01, -919.4705, -564.1069, 10.1924); //by crate
-  $.badguy13.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy13.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy13.setHeading(11.0530);
   $.badguy13.clearThreatSearch();
   $.badguy13.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -469,7 +469,7 @@ async function endasm5cs() {
 
 
   $.badguy14 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL02, -907.8641, -562.6886, 10.3168); //by crate
-  $.badguy14.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy14.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy14.setHeading(354.8635);
   $.badguy14.clearThreatSearch();
   $.badguy14.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -479,7 +479,7 @@ async function endasm5cs() {
 
 
   $.badguy16 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL02, -898.9297, -605.6819, 11.8547); //on the crate
-  $.badguy16.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy16.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy16.setHeading(182.2136);
   $.badguy16.clearThreatSearch();
   $.badguy16.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -489,7 +489,7 @@ async function endasm5cs() {
 
 
   $.badguy17 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL01, -909.2119, -602.8759, 9.5246); //next to crate
-  $.badguy17.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy17.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy17.setHeading(12.6305);
   $.badguy17.clearThreatSearch();
   $.badguy17.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -499,7 +499,7 @@ async function endasm5cs() {
 
 
   $.badguy18 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL01, -916.5301, -562.2043, 12.0173); //on the crate
-  $.badguy18.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy18.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy18.setHeading(137.8030);
   $.badguy18.clearThreatSearch();
   $.badguy18.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -509,7 +509,7 @@ async function endasm5cs() {
 
 
   $.badguy19 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL02, -881.8743, -584.6597, 18.6255); //near two icecreams
-  $.badguy19.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy19.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy19.setHeading(192.3254);
   $.badguy19.clearThreatSearch();
   $.badguy19.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -521,7 +521,7 @@ async function endasm5cs() {
 
 
   $.badguy21 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL01, -931.1354, -585.5306, 9.1849);
-  $.badguy21.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy21.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy21.setHeading(18.2377);
   $.badguy21.clearThreatSearch();
   $.badguy21.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -530,7 +530,7 @@ async function endasm5cs() {
 
 
   $.badguy22 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL02, -925.1932, -615.1325, 12.7716); //ducking guy
-  $.badguy22.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy22.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy22.setHeading(18.3567);
   $.badguy22.clearThreatSearch();
   $.badguy22.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -540,7 +540,7 @@ async function endasm5cs() {
 
 
   $.badguy23 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL02, -929.0777, -614.6532, 14.9469); //ducking guy
-  $.badguy23.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy23.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy23.setHeading(17.6835);
   $.badguy23.clearThreatSearch();
   $.badguy23.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -550,7 +550,7 @@ async function endasm5cs() {
 
 
   $.badguy24 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL01, -927.3255, -620.7064, 14.9642);
-  $.badguy24.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy24.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy24.setHeading(1.3416);
   $.badguy24.clearThreatSearch();
   $.badguy24.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -560,7 +560,7 @@ async function endasm5cs() {
 
 
   $.badguy25 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL02, -897.9171, -632.6987, 15.5191); //ducking guy
-  $.badguy25.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy25.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy25.setHeading(102.1576);
   $.badguy25.clearThreatSearch();
   $.badguy25.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -570,7 +570,7 @@ async function endasm5cs() {
 
 
   $.badguy26 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL01, -878.5259, -624.2981, 14.7945); //ducking guy
-  $.badguy26.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy26.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy26.setHeading(346.1281);
   $.badguy26.clearThreatSearch();
   $.badguy26.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -580,7 +580,7 @@ async function endasm5cs() {
 
 
   $.badguy27 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL02, -867.2620, -608.2192, 23.1638); //advertising boards
-  $.badguy27.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy27.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy27.setHeading(138.8068);
   $.badguy27.clearThreatSearch();
   $.badguy27.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -590,7 +590,7 @@ async function endasm5cs() {
 
 
   $.badguy28 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL01, -874.3932, -605.0528, 14.7369); //ducking guy
-  $.badguy28.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy28.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy28.setHeading(101.4750);
   $.badguy28.clearThreatSearch();
   $.badguy28.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -600,7 +600,7 @@ async function endasm5cs() {
 
 
   $.badguy29 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL01, -924.4441, -575.0138, 9.2581); //ducking guy
-  $.badguy29.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy29.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy29.setHeading(1.4189);
   $.badguy29.clearThreatSearch();
   $.badguy29.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -610,7 +610,7 @@ async function endasm5cs() {
 
 
   $.badguy30 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL01, -867.9724, -601.2151, 23.1638); //advertising boards
-  $.badguy30.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy30.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy30.setHeading(127.6761);
   $.badguy30.clearThreatSearch();
   $.badguy30.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -620,7 +620,7 @@ async function endasm5cs() {
 
 
   $.badguy31 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL02, -896.634, -565.709, 12.025); //rear doors of factory
-  $.badguy31.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy31.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy31.setHeading(37.43);
   $.badguy31.clearThreatSearch();
   $.badguy31.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -631,7 +631,7 @@ async function endasm5cs() {
 
 
   $.badguy32 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL02, -878.1485, -571.4688, 18.6207); //inbetween two icecreams
-  $.badguy32.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy32.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy32.setHeading(138.0790);
   $.badguy32.clearThreatSearch();
   $.badguy32.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -641,7 +641,7 @@ async function endasm5cs() {
 
 
   $.badguy33 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL01, -892.1982, -552.9963, 23.8094); //inbetween two icecreams stairs
-  $.badguy33.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy33.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy33.setHeading(190.8916);
   $.badguy33.clearThreatSearch();
   $.badguy33.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -652,7 +652,7 @@ async function endasm5cs() {
 
 
   $.badguy34 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL01, -929.8420, -637.3516, 14.9582); //slant on roof
-  $.badguy34.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy34.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy34.setHeading(10.5009);
   $.badguy34.clearThreatSearch();
   $.badguy34.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -662,7 +662,7 @@ async function endasm5cs() {
 
 
   $.badguy35 = Char.Create(21 /* PEDTYPE_SPECIAL */, SPECIAL01, -914.1021, -530.2435, 10.1809); //first crate
-  $.badguy35.giveWeapon(WEAPONTYPE_MP5, 300000);
+  $.badguy35.giveWeapon(25 /* WEAPONTYPE_MP5 */, 300000);
   $.badguy35.setHeading(45.0281);
   $.badguy35.clearThreatSearch();
   $.badguy35.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -711,9 +711,9 @@ async function assin5loop() {
 
 
     if ($.create_goons == 0) {
-      $.bodyarmour_am5 = Pickup.Create(1364 /* bodyarmour */, 3 /* PICKUP_ONCE */, -883.108, -615.856, 11.134);
-      $.health_am5 = Pickup.Create(1362 /* health */, 3 /* PICKUP_ONCE */, -867.2684, -615.3924, 15.7369);
-      $.briefcase_am5 = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, -891.4261, -516.9407, 29.1699);
+      $.bodyarmour_am5 = Pickup.Create(bodyarmour, 3 /* PICKUP_ONCE */, -883.108, -615.856, 11.134);
+      $.health_am5 = Pickup.Create(health, 3 /* PICKUP_ONCE */, -867.2684, -615.3924, 15.7369);
+      $.briefcase_am5 = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, -891.4261, -516.9407, 29.1699);
       $.briefcase_am5blip = Blip.AddForPickup($.briefcase_am5);
       $.m4_a5 = Pickup.CreateWithAmmo(M4, 3 /* PICKUP_ONCE */, 130, -973.5544, -518.9319, 10.926);
       $.sg_a5 = Pickup.CreateWithAmmo(shotgspa, 3 /* PICKUP_ONCE */, 50, -898.9763, -549.0946, 22.4320);
@@ -808,7 +808,7 @@ async function assin5loop() {
 
           //run at player continously when close
           if ($.killplayer1_flag == 0) {
-            if ($.player1.locateAnyMeansChar2D($.badguy1, 5.0, 5.0, false /* FALSE */) || $.player1.isCurrentWeapon(WEAPONTYPE_ROCKETLAUNCHER) || $.player1.isCurrentWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(WEAPONTYPE_LASERSCOPE)) {
+            if ($.player1.locateAnyMeansChar2D($.badguy1, 5.0, 5.0, false /* FALSE */) || $.player1.isCurrentWeapon(30 /* WEAPONTYPE_ROCKETLAUNCHER */) || $.player1.isCurrentWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(29 /* WEAPONTYPE_LASERSCOPE */)) {
               $.badguy1.setCrouch(false /* FALSE */, 100);
               $.badguy1.setStayInSamePlace(false /* FALSE */);
               $.badguy1.setObjKillPlayerOnFoot($.player1);
@@ -937,7 +937,7 @@ async function assin5loop() {
           //run at player continously when close
           if ($.killplayer12_flag == 0) {
             if ($.player1.isShooting()) {
-              if ($.player1.locateAnyMeansChar2D($.badguy12, 7.0, 7.0, false /* FALSE */) || $.player1.isCurrentWeapon(WEAPONTYPE_ROCKETLAUNCHER) || $.player1.isCurrentWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(WEAPONTYPE_LASERSCOPE)) {
+              if ($.player1.locateAnyMeansChar2D($.badguy12, 7.0, 7.0, false /* FALSE */) || $.player1.isCurrentWeapon(30 /* WEAPONTYPE_ROCKETLAUNCHER */) || $.player1.isCurrentWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(29 /* WEAPONTYPE_LASERSCOPE */)) {
                 $.badguy12.setCrouch(false /* FALSE */, 100);
                 $.badguy12.setStayInSamePlace(false /* FALSE */);
                 $.badguy12.setObjKillPlayerOnFoot($.player1);
@@ -980,7 +980,7 @@ async function assin5loop() {
 
           //run at player continously when close
           if ($.killplayer13_flag == 0) {
-            if ($.player1.locateAnyMeansChar2D($.badguy13, 7.0, 7.0, false /* FALSE */) || $.player1.isCurrentWeapon(WEAPONTYPE_ROCKETLAUNCHER) || $.player1.isCurrentWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(WEAPONTYPE_LASERSCOPE)) {
+            if ($.player1.locateAnyMeansChar2D($.badguy13, 7.0, 7.0, false /* FALSE */) || $.player1.isCurrentWeapon(30 /* WEAPONTYPE_ROCKETLAUNCHER */) || $.player1.isCurrentWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(29 /* WEAPONTYPE_LASERSCOPE */)) {
               $.badguy13.setAccuracy(90);
               $.killplayer13_flag = 1;
             }
@@ -1125,7 +1125,7 @@ async function assin5loop() {
           if ($.badguy3.isOnScreen()) {
             if ($.player1.isShooting()) {
               if ($.player1.isShooting()) {
-                if ($.player1.locateAnyMeansChar2D($.badguy3, 30.0, 30.0, false /* FALSE */) || $.player1.isCurrentWeapon(WEAPONTYPE_ROCKETLAUNCHER) || $.player1.isCurrentWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(WEAPONTYPE_LASERSCOPE)) {
+                if ($.player1.locateAnyMeansChar2D($.badguy3, 30.0, 30.0, false /* FALSE */) || $.player1.isCurrentWeapon(30 /* WEAPONTYPE_ROCKETLAUNCHER */) || $.player1.isCurrentWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(29 /* WEAPONTYPE_LASERSCOPE */)) {
                   $.badguy3.setAccuracy(95);
                   $.killplayer3_flag = 1;
                 }
@@ -1210,7 +1210,7 @@ async function assin5loop() {
           //run at player continously when close
           if ($.killplayer23_flag == 0) {
             if ($.player1.isShooting()) {
-              if ($.player1.locateAnyMeansChar2D($.badguy23, 10.0, 10.0, false /* FALSE */) || $.player1.isCurrentWeapon(WEAPONTYPE_ROCKETLAUNCHER) || $.player1.isCurrentWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(WEAPONTYPE_LASERSCOPE)) {
+              if ($.player1.locateAnyMeansChar2D($.badguy23, 10.0, 10.0, false /* FALSE */) || $.player1.isCurrentWeapon(30 /* WEAPONTYPE_ROCKETLAUNCHER */) || $.player1.isCurrentWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(29 /* WEAPONTYPE_LASERSCOPE */)) {
                 $.badguy23.setAccuracy(90);
                 $.killplayer23_flag = 1;
               }
@@ -1250,7 +1250,7 @@ async function assin5loop() {
           //run at player continously when close
           if ($.killplayer24_flag == 0) {
             if ($.player1.isShooting()) {
-              if ($.player1.locateAnyMeansChar2D($.badguy24, 7.0, 7.0, false /* FALSE */) || $.player1.isCurrentWeapon(WEAPONTYPE_ROCKETLAUNCHER) || $.player1.isCurrentWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(WEAPONTYPE_LASERSCOPE)) {
+              if ($.player1.locateAnyMeansChar2D($.badguy24, 7.0, 7.0, false /* FALSE */) || $.player1.isCurrentWeapon(30 /* WEAPONTYPE_ROCKETLAUNCHER */) || $.player1.isCurrentWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(29 /* WEAPONTYPE_LASERSCOPE */)) {
                 $.badguy24.setAccuracy(90);
                 $.killplayer24_flag = 1;
               }
@@ -1292,7 +1292,7 @@ async function assin5loop() {
           //run at player continously when close
           if ($.killplayer25_flag == 0) {
             if ($.player1.isShooting()) {
-              if ($.player1.locateAnyMeansChar2D($.badguy25, 10.0, 10.0, false /* FALSE */) || $.player1.isCurrentWeapon(WEAPONTYPE_ROCKETLAUNCHER) || $.player1.isCurrentWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(WEAPONTYPE_LASERSCOPE)) {
+              if ($.player1.locateAnyMeansChar2D($.badguy25, 10.0, 10.0, false /* FALSE */) || $.player1.isCurrentWeapon(30 /* WEAPONTYPE_ROCKETLAUNCHER */) || $.player1.isCurrentWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(29 /* WEAPONTYPE_LASERSCOPE */)) {
                 $.badguy25.setAccuracy(90);
                 $.killplayer25_flag = 1;
               }
@@ -1410,7 +1410,7 @@ async function assin5loop() {
           //run at player continously when close
           if ($.killplayer28_flag == 0) {
             if ($.player1.isShooting()) {
-              if ($.player1.locateAnyMeansChar2D($.badguy28, 2.0, 2.0, false /* FALSE */) || $.player1.isCurrentWeapon(WEAPONTYPE_ROCKETLAUNCHER) || $.player1.isCurrentWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(WEAPONTYPE_LASERSCOPE)) {
+              if ($.player1.locateAnyMeansChar2D($.badguy28, 2.0, 2.0, false /* FALSE */) || $.player1.isCurrentWeapon(30 /* WEAPONTYPE_ROCKETLAUNCHER */) || $.player1.isCurrentWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(29 /* WEAPONTYPE_LASERSCOPE */)) {
                 $.badguy28.setCrouch(false /* FALSE */, 100);
                 $.badguy28.setStayInSamePlace(false /* FALSE */);
                 $.badguy28.setObjKillPlayerOnFoot($.player1);
@@ -1469,7 +1469,7 @@ async function assin5loop() {
         if (!(Char.IsDead($.badguy21))) {
           if ($.badguy21.isOnScreen()) {
             if ($.player1.isShooting()) {
-              if ($.player1.locateAnyMeansChar2D($.badguy21, 20.0, 20.0, false /* FALSE */) || $.player1.isCurrentWeapon(WEAPONTYPE_ROCKETLAUNCHER) || $.player1.isCurrentWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(WEAPONTYPE_LASERSCOPE)) {
+              if ($.player1.locateAnyMeansChar2D($.badguy21, 20.0, 20.0, false /* FALSE */) || $.player1.isCurrentWeapon(30 /* WEAPONTYPE_ROCKETLAUNCHER */) || $.player1.isCurrentWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(29 /* WEAPONTYPE_LASERSCOPE */)) {
                 $.badguy21.setAccuracy(90);
                 $.killplayer21_flag = 1;
               }
@@ -1504,7 +1504,7 @@ async function assin5loop() {
           //run at player continously when close
           if ($.killplayer30_flag == 0) {
             if ($.player1.isShooting()) {
-              if ($.player1.locateAnyMeansChar2D($.badguy30, 10.0, 10.0, false /* FALSE */) || $.player1.isCurrentWeapon(WEAPONTYPE_ROCKETLAUNCHER) || $.player1.isCurrentWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(WEAPONTYPE_LASERSCOPE)) {
+              if ($.player1.locateAnyMeansChar2D($.badguy30, 10.0, 10.0, false /* FALSE */) || $.player1.isCurrentWeapon(30 /* WEAPONTYPE_ROCKETLAUNCHER */) || $.player1.isCurrentWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(29 /* WEAPONTYPE_LASERSCOPE */)) {
                 $.badguy30.setCrouch(false /* FALSE */, 100);
                 $.badguy30.setStayInSamePlace(false /* FALSE */);
                 $.badguy30.setObjKillPlayerOnFoot($.player1);
@@ -1546,7 +1546,7 @@ async function assin5loop() {
           //run at player continously when close
           if ($.killplayer31_flag == 0) {
             if ($.player1.isShooting()) {
-              if ($.player1.locateAnyMeansChar2D($.badguy31, 5.0, 5.0, false /* FALSE */) || $.player1.isCurrentWeapon(WEAPONTYPE_ROCKETLAUNCHER) || $.player1.isCurrentWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(WEAPONTYPE_LASERSCOPE)) {
+              if ($.player1.locateAnyMeansChar2D($.badguy31, 5.0, 5.0, false /* FALSE */) || $.player1.isCurrentWeapon(30 /* WEAPONTYPE_ROCKETLAUNCHER */) || $.player1.isCurrentWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(29 /* WEAPONTYPE_LASERSCOPE */)) {
                 $.badguy31.setObjKillPlayerOnFoot($.player1);
                 $.badguy31.setAccuracy(90);
                 $.killplayer31_flag = 1;
@@ -1665,7 +1665,7 @@ async function assin5loop() {
           //run at player continously when close
           if ($.killplayer34_flag == 0) {
             if ($.player1.isShooting()) {
-              if ($.player1.locateAnyMeansChar2D($.badguy34, 3.0, 3.0, false /* FALSE */) || $.player1.isCurrentWeapon(WEAPONTYPE_ROCKETLAUNCHER) || $.player1.isCurrentWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(WEAPONTYPE_LASERSCOPE)) {
+              if ($.player1.locateAnyMeansChar2D($.badguy34, 3.0, 3.0, false /* FALSE */) || $.player1.isCurrentWeapon(30 /* WEAPONTYPE_ROCKETLAUNCHER */) || $.player1.isCurrentWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */) || $.player1.isCurrentWeapon(29 /* WEAPONTYPE_LASERSCOPE */)) {
                 $.badguy34.setAccuracy(95);
                 $.killplayer34_flag = 1;
               }
@@ -1872,7 +1872,7 @@ async function mission_cleanup_assin5() {
   Streaming.MarkModelAsNoLongerNeeded(admiral);
   Streaming.MarkModelAsNoLongerNeeded(pony);
   Streaming.MarkModelAsNoLongerNeeded(maverick);
-  Streaming.MarkModelAsNoLongerNeeded(1344 /* barrel4 */);
+  Streaming.MarkModelAsNoLongerNeeded(barrel4);
 
 
   Streaming.UnloadSpecialCharacter(1);

@@ -1,6 +1,6 @@
 // Generated from main/prot1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_protec1() {
   Text.ClearThisPrint("M_FAIL");
@@ -62,7 +62,7 @@ async function mission_start_protec1() {
   // ****************************************START OF CUTSCENE********************************
 
 
-  Streaming.SetAreaVisible(VIS_MANSION);
+  Streaming.SetAreaVisible(2 /* VIS_MANSION */);
   $.flag_player_in_mansion = 1;
 
 
@@ -279,7 +279,7 @@ async function mission_start_protec1() {
 
 
   $.flag_player_in_mansion = 0;
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
   // ******************************************END OF CUTSCENE********************************
 
@@ -291,7 +291,7 @@ async function mission_start_protec1() {
   Camera.SetBehindPlayer();
   //------------------REQUEST_MODELS ------------------------------
 
-  $.player1.setMood(PLAYER_MOOD_WISECRACKING, 60000);
+  $.player1.setMood(3 /* PLAYER_MOOD_WISECRACKING */, 60000);
   $.weapon_shop2_blip.remove();
   $.hardware_shop2.remove();
 
@@ -305,7 +305,7 @@ async function mission_start_protec1() {
 
 
   $.free_stinger = Car.Create(stinger, -345.3, -524.6, 11.5);
-  $.ram_raid_gun = Pickup.CreateWithAmmo(178 /* uzi */, 3 /* PICKUP_ONCE */, 250, -347.8, -527.2, 12.7);
+  $.ram_raid_gun = Pickup.CreateWithAmmo(uzi, 3 /* PICKUP_ONCE */, 250, -347.8, -527.2, 12.7);
 
 
   Camera.DoFade(1500, 1 /* FADE_IN */);
@@ -359,7 +359,7 @@ async function mission_start_protec1() {
   $.glass25_blip = Blip.AddForCoord(425.1, 1021.8, 18.1);
 
 
-  Hud.DisplayTimer($.$id.ram_time, TIMER_DOWN);
+  Hud.DisplayTimer($.$id.ram_time, 1 /* TIMER_DOWN */);
 }
 
 
@@ -388,7 +388,7 @@ async function ram_raid_loop() {
               $.shop1_rammed++;
               $.glass1_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass1_blip.remove();
             }
           }
@@ -397,7 +397,7 @@ async function ram_raid_loop() {
               $.shop1_rammed++;
               $.glass2_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass2_blip.remove();
             }
           }
@@ -438,7 +438,7 @@ async function ram_raid_loop() {
               $.shop2_rammed++;
               $.glass3_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass3_blip.remove();
             }
           }
@@ -447,7 +447,7 @@ async function ram_raid_loop() {
               $.shop2_rammed++;
               $.glass4_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass4_blip.remove();
             }
           }
@@ -456,7 +456,7 @@ async function ram_raid_loop() {
               $.shop2_rammed++;
               $.glass5_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass5_blip.remove();
             }
           }
@@ -483,7 +483,7 @@ async function ram_raid_loop() {
               $.shop3_rammed++;
               $.glass6_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass6_blip.remove();
             }
           }
@@ -492,7 +492,7 @@ async function ram_raid_loop() {
               $.shop3_rammed++;
               $.glass7_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass7_blip.remove();
             }
           }
@@ -533,7 +533,7 @@ async function ram_raid_loop() {
               $.shop4_rammed++;
               $.glass8_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass8_blip.remove();
             }
           }
@@ -542,7 +542,7 @@ async function ram_raid_loop() {
               $.shop4_rammed++;
               $.glass9_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass9_blip.remove();
             }
           }
@@ -551,7 +551,7 @@ async function ram_raid_loop() {
               $.shop4_rammed++;
               $.glass10_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass10_blip.remove();
             }
           }
@@ -562,7 +562,7 @@ async function ram_raid_loop() {
               $.shop4_rammed++;
               $.glass11_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass11_blip.remove();
             }
           }
@@ -571,7 +571,7 @@ async function ram_raid_loop() {
               $.shop4_rammed++;
               $.glass12_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass12_blip.remove();
             }
           }
@@ -580,7 +580,7 @@ async function ram_raid_loop() {
               $.shop4_rammed++;
               $.glass13_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass13_blip.remove();
             }
           }
@@ -607,7 +607,7 @@ async function ram_raid_loop() {
               $.shop5_rammed++;
               $.glass14_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass14_blip.remove();
             }
           }
@@ -616,7 +616,7 @@ async function ram_raid_loop() {
               $.shop5_rammed++;
               $.glass15_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass15_blip.remove();
             }
           }
@@ -625,7 +625,7 @@ async function ram_raid_loop() {
               $.shop5_rammed++;
               $.glass16_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass16_blip.remove();
             }
           }
@@ -636,7 +636,7 @@ async function ram_raid_loop() {
               $.shop5_rammed++;
               $.glass17_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass17_blip.remove();
             }
           }
@@ -645,7 +645,7 @@ async function ram_raid_loop() {
               $.shop5_rammed++;
               $.glass18_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass18_blip.remove();
             }
           }
@@ -654,7 +654,7 @@ async function ram_raid_loop() {
               $.shop5_rammed++;
               $.glass19_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass19_blip.remove();
             }
           }
@@ -667,7 +667,7 @@ async function ram_raid_loop() {
               $.shop5_rammed++;
               $.glass20_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass20_blip.remove();
             }
           }
@@ -676,7 +676,7 @@ async function ram_raid_loop() {
               $.shop5_rammed++;
               $.glass21_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass21_blip.remove();
             }
           }
@@ -685,7 +685,7 @@ async function ram_raid_loop() {
               $.shop5_rammed++;
               $.glass22_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass22_blip.remove();
             }
           }
@@ -696,7 +696,7 @@ async function ram_raid_loop() {
               $.shop5_rammed++;
               $.glass23_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass23_blip.remove();
             }
           }
@@ -705,7 +705,7 @@ async function ram_raid_loop() {
               $.shop5_rammed++;
               $.glass24_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass24_blip.remove();
             }
           }
@@ -714,7 +714,7 @@ async function ram_raid_loop() {
               $.shop5_rammed++;
               $.glass25_smashed = 1;
               $.all_shops_rammed++;
-              Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+              Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
               $.glass25_blip.remove();
             }
           }
@@ -785,58 +785,58 @@ async function ram_raid_loop() {
       //PRINTWORKS PURCHASING PICKUP
       //REMOVE_BLIP print_works_blip
       $.print_works_pickup.remove();
-      $.print_works_blip = Blip.AddShortRangeSpriteForContactPoint($.printbuyX, $.printbuyY, $.printbuyZ, RADAR_SPRITE_PROPERTY);
+      $.print_works_blip = Blip.AddShortRangeSpriteForContactPoint($.printbuyX, $.printbuyY, $.printbuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
       $.print_works_blip.changeDisplay(2 /* BLIP_ONLY */);
       $.print_works_pickup = Pickup.CreateForSaleProperty($.printbuyX, $.printbuyY, $.printbuyZ, $.printworks_price, "PRNT_L"); //Press R3 to purchase the Print Works for $~1~
-      // START_NEW_SCRIPT print_buy_loop
+      // START_NEW_SCRIPT print_buy_loop 
       //CAR SHOWROOM PURCHASING PICKUP
       //REMOVE_BLIP carbuy_blip
       $.carbuy_pickup.remove();
-      $.carbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.carbuyX, $.carbuyY, $.carbuyZ, RADAR_SPRITE_PROPERTY);
+      $.carbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.carbuyX, $.carbuyY, $.carbuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
       $.carbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
       $.carbuy_pickup = Pickup.CreateForSaleProperty($.carbuyX, $.carbuyY, $.carbuyZ, $.carbuy_price, "CAR_L"); //Press R3 to purchase the Car Showroom for $~1~
-      // START_NEW_SCRIPT property_car_loop
+      // START_NEW_SCRIPT property_car_loop 
       //FILM STUDIO PURCHASING PICKUP
       //REMOVE_BLIP pornbuy_blip
       $.pornbuy_pickup.remove();
-      $.pornbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.pornbuyX, $.pornbuyY, $.pornbuyZ, RADAR_SPRITE_PROPERTY);
+      $.pornbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.pornbuyX, $.pornbuyY, $.pornbuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
       $.pornbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
       $.pornbuy_pickup = Pickup.CreateForSaleProperty($.pornbuyX, $.pornbuyY, $.pornbuyZ, $.pornbuy_price, "PORN_L"); //Press R3 to purchase the Film Studios for $~1~
-      // START_NEW_SCRIPT pornbuy_loop
+      // START_NEW_SCRIPT pornbuy_loop 
       //ICECREAM FACTORY PURCHASING PICKUP
       //REMOVE_BLIP icebuy_blip
       $.icebuy_pickup.remove();
-      $.icebuy_blip = Blip.AddShortRangeSpriteForContactPoint($.icebuyX, $.icebuyY, $.icebuyZ, RADAR_SPRITE_PROPERTY);
+      $.icebuy_blip = Blip.AddShortRangeSpriteForContactPoint($.icebuyX, $.icebuyY, $.icebuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
       $.icebuy_blip.changeDisplay(2 /* BLIP_ONLY */);
       $.icebuy_pickup = Pickup.CreateForSaleProperty($.icebuyX, $.icebuyY, $.icebuyZ, $.icebuy_price, "ICE_L"); //Press R3 to purchase the Icecream Factory for $~1~
-      // START_NEW_SCRIPT icebuy_loop
+      // START_NEW_SCRIPT icebuy_loop 
       //TAXI FIRM PURCHASING PICKUP
       //REMOVE_BLIP taxibuy_blip
       $.taxibuy_pickup.remove();
-      $.taxibuy_blip = Blip.AddShortRangeSpriteForContactPoint($.taxibuyX, $.taxibuyY, $.taxibuyZ, RADAR_SPRITE_PROPERTY);
+      $.taxibuy_blip = Blip.AddShortRangeSpriteForContactPoint($.taxibuyX, $.taxibuyY, $.taxibuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
       $.taxibuy_blip.changeDisplay(2 /* BLIP_ONLY */);
       $.taxibuy_pickup = Pickup.CreateForSaleProperty($.taxibuyX, $.taxibuyY, $.taxibuyZ, $.taxibuy_price, "TAXI_L"); //Press R3 to purchase the Taxi Company for $~1~
-      // START_NEW_SCRIPT taxibuy_loop
+      // START_NEW_SCRIPT taxibuy_loop 
       //THE MALIBU PURCHASING PICKUP
       //REMOVE_BLIP bankbuy_blip
       $.bankbuy_pickup.remove();
-      $.bankbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.bankbuyX, $.bankbuyY, $.bankbuyZ, RADAR_SPRITE_PROPERTY);
+      $.bankbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.bankbuyX, $.bankbuyY, $.bankbuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
       $.bankbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
       $.bankbuy_pickup = Pickup.CreateForSaleProperty($.bankbuyX, $.bankbuyY, $.bankbuyZ, $.bankbuy_price, "BANK_L"); //Press R3 to purchase The Malibu for $~1~
-      // START_NEW_SCRIPT bankbuy_loop
+      // START_NEW_SCRIPT bankbuy_loop 
       //BOAT YARD PURCHASING PICKUP
       //REMOVE_BLIP boatbuy_blip
       $.boatbuy_pickup.remove();
-      $.boatbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.boatbuyX, $.boatbuyY, $.boatbuyZ, RADAR_SPRITE_PROPERTY);
+      $.boatbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.boatbuyX, $.boatbuyY, $.boatbuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
       $.boatbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
       $.boatbuy_pickup = Pickup.CreateForSaleProperty($.boatbuyX, $.boatbuyY, $.boatbuyZ, $.boatbuy_price, "BOAT_L"); //Press R3 to purchase the Boat Yard for $~1~
-      // START_NEW_SCRIPT boatbuy_loop
+      // START_NEW_SCRIPT boatbuy_loop 
       //STRIP CLUB PURCHASING PICKUP
       $.strpbuy_pickup.remove();
       $.strpbuy_pickup = Pickup.CreateForSaleProperty($.strpbuyX, $.strpbuyY, $.strpbuyZ, $.strpbuy_price, "STRP_L"); //Press R3 to purchase the Car Showroom for $~1~
-      $.strpbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.strpbuyX, $.strpbuyY, $.strpbuyZ, RADAR_SPRITE_PROPERTY);
+      $.strpbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.strpbuyX, $.strpbuyY, $.strpbuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
       $.strpbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
-      // START_NEW_SCRIPT strpbuy_loop
+      // START_NEW_SCRIPT strpbuy_loop 
       $.player1.setControl(false /* OFF */);
       Game.SetPoliceIgnorePlayer($.player1, true /* ON */);
       Game.SetEveryoneIgnorePlayer($.player1, true /* ON */);
@@ -847,7 +847,7 @@ async function ram_raid_loop() {
       Hud.SwitchWidescreen(true /* ON */);
       Clock.SetTimeOfDay(22, 0);
       if ($.flag_player_in_mall == 1) {
-        Streaming.SetAreaVisible(VIS_MAIN_MAP);
+        Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
       }
       World.SetCarDensityMultiplier(0.0);
       World.SetPedDensityMultiplier(0.0);
@@ -890,7 +890,7 @@ async function ram_raid_loop() {
         await asyncWait(0);
       }
       if ($.flag_player_in_mall == 1) {
-        Streaming.SetAreaVisible(VIS_MALL);
+        Streaming.SetAreaVisible(4 /* VIS_MALL */);
       }
       World.SetCarDensityMultiplier(1.0);
       World.SetPedDensityMultiplier(1.0);
@@ -942,8 +942,8 @@ async function mission_passed_protec1() {
   Stat.PlayerMadeProgress(1);
   Stat.RegisterMissionPassed("BUD_1");
   $.protect_contact_blip.remove();
-  $.protect_contact_blip = Blip.AddSpriteForContactPoint(-397.4, -561.3, 18.7, RADAR_SPRITE_TOMMY);
-  // START_NEW_SCRIPT protect_mission2_loop
+  $.protect_contact_blip = Blip.AddSpriteForContactPoint(-397.4, -561.3, 18.7, 29 /* RADAR_SPRITE_TOMMY */);
+  // START_NEW_SCRIPT protect_mission2_loop 
   $.laser_in_stock = 1;
   $.flag_protect_mission1_passed = 1;
 }
@@ -958,8 +958,8 @@ async function mission_cleanup_protec1() {
   $.player1.setAutoAim(true /* TRUE */);
   $.weapon_shop2_blip.remove();
   $.hardware_shop2.remove();
-  $.weapon_shop2_blip = Blip.AddShortRangeSpriteForCoord(364.8, 1051.5, 21.0, RADAR_SPRITE_GUN);
-  $.hardware_shop2 = Blip.AddShortRangeSpriteForCoord(364.8, 1086.5, 21.0, RADAR_SPRITE_HARDWARE);
+  $.weapon_shop2_blip = Blip.AddShortRangeSpriteForCoord(364.8, 1051.5, 21.0, 16 /* RADAR_SPRITE_GUN */);
+  $.hardware_shop2 = Blip.AddShortRangeSpriteForCoord(364.8, 1086.5, 21.0, 18 /* RADAR_SPRITE_HARDWARE */);
   $.glass1_blip.remove();
   $.glass2_blip.remove();
   $.glass3_blip.remove();

@@ -1,11 +1,11 @@
 // Generated from main/gates.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_gates() {
 
 
-  // START_NEW_SCRIPT haitian_factory_gates
+  // START_NEW_SCRIPT haitian_factory_gates 
 
 
   // MissionBoundary
@@ -36,8 +36,8 @@ async function haitian_factory_gate_inner() {
           if ($.player1.isInArea3D(-1107.0, 60.0, 5.0, -1121.0, 80.0, 15.0, false /* FALSE */)) {
             if ($.player1.isInModel(voodoo) || $.player1.isInArea3D(-1115.6, 60.0, 5.0, -1121.0, 80.0, 15.0, false /* FALSE */)) {
               if (gate_sfx1_hait == 0) {
-                Sound.AddOneOffSound(-1114.64, 72.85, 11.13, SOUND_POLICE_CELL_DOOR_CLUNK);
-                $.gate_slide_loop = Sound.AddContinuous(-1114.64, 72.85, 11.13, SOUND_POLICE_CELL_DOOR_SLIDING_LOOP);
+                Sound.AddOneOffSound(-1114.64, 72.85, 11.13, 3 /* SOUND_POLICE_CELL_DOOR_CLUNK */);
+                $.gate_slide_loop = Sound.AddContinuous(-1114.64, 72.85, 11.13, 2 /* SOUND_POLICE_CELL_DOOR_SLIDING_LOOP */);
                 gate_sfx1_hait = 1;
               }
               while (!($.haitian_gate.slide(-1114.5, 73.0, 10.1, 0.1, 0.1, 0.0, false /* FALSE */))) {
@@ -49,15 +49,15 @@ async function haitian_factory_gate_inner() {
                 not_clunked_yet = 0;
               }
               if (gate_sfx2_hait == 0) {
-                Sound.AddOneOffSound(-1114.64, 72.85, 11.13, SOUND_POLICE_CELL_DOOR_CLUNK);
+                Sound.AddOneOffSound(-1114.64, 72.85, 11.13, 3 /* SOUND_POLICE_CELL_DOOR_CLUNK */);
                 gate_sfx2_hait = 1;
               }
             }
           }
           else {
             if (gate_sfx1_hait == 1) {
-              Sound.AddOneOffSound(-1114.64, 72.85, 11.13, SOUND_POLICE_CELL_DOOR_CLUNK);
-              $.gate_slide_loop = Sound.AddContinuous(-1114.64, 72.85, 11.13, SOUND_POLICE_CELL_DOOR_SLIDING_LOOP);
+              Sound.AddOneOffSound(-1114.64, 72.85, 11.13, 3 /* SOUND_POLICE_CELL_DOOR_CLUNK */);
+              $.gate_slide_loop = Sound.AddContinuous(-1114.64, 72.85, 11.13, 2 /* SOUND_POLICE_CELL_DOOR_SLIDING_LOOP */);
             }
             while (!($.haitian_gate.slide(-1114.5, 67.0, 10.1, 0.1, 0.1, 0.0, true /* TRUE */))) {
               await asyncWait(0);
@@ -67,7 +67,7 @@ async function haitian_factory_gate_inner() {
             if (gate_sfx2_hait == 1) {
               not_clunked_yet = 1;
               if (objectx == -1114.1 && objecty == 67.0 && objectz == 10.1) {
-                Sound.AddOneOffSound(-1114.64, 72.85, 11.13, SOUND_POLICE_CELL_DOOR_CLUNK);
+                Sound.AddOneOffSound(-1114.64, 72.85, 11.13, 3 /* SOUND_POLICE_CELL_DOOR_CLUNK */);
                 gate_sfx2_hait = 0;
                 not_clunked_yet = 0;
               }
@@ -669,7 +669,7 @@ export async function gates() {
 
   if (intial_gate_creation == 0) {
     //gate for the haitian drugs factory
-    $.haitian_gate = ScriptObject.CreateNoOffset(1278 /* electricgate */, -1114.1, 67.0, 10.1);
+    $.haitian_gate = ScriptObject.CreateNoOffset(electricgate, -1114.1, 67.0, 10.1);
     $.haitian_gate.setHeading(90.0);
     $.haitian_gate.dontRemove();
     intial_gate_creation = 1;

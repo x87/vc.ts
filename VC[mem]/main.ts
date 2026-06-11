@@ -1,6 +1,6 @@
 // Generated from main.sc
 
-import { $ } from "./vars.mts";
+import { $ } from "./utils/vars.mts";
 
 async function mission_start() {
   // SCM GOTO → mission_start lowered to endless loop
@@ -14,7 +14,7 @@ async function mission_start() {
       if (ONMISSION == 0) {
         if ($.serg_mission3_start == 0) {
           if ($.flag_sergio_mission2_passed == 1 && $.flag_baron_mission2_passed == 1) {
-            // START_NEW_SCRIPT serg_mission3_loop
+            // START_NEW_SCRIPT serg_mission3_loop 
             $.sergio_contact_blip.remove();
             $.sergio_contact_blip = Blip.AddSpriteForContactPoint($.sergioX, $.sergioY, $.sergioZ, $.the_sergio_blip);
             $.serg_mission3_start = 1;
@@ -1270,7 +1270,7 @@ async function ambient_bank_loop_inner() {
             ambbank_cash3 = Pickup.CreateMoney(-927.4954, -339.4821, 17.2, 500);
             ambbank_cash4 = Pickup.CreateMoney(-930.0884, -339.5698, 17.2, 500);
             ambbank_cash5 = Pickup.CreateMoney(-932.9709, -339.4713, 17.2, 500);
-            ambbank_alarm = Sound.AddContinuous(-923.4324, -333.2397, 14.3816, SOUND_BANK_ALARM_LOOP);
+            ambbank_alarm = Sound.AddContinuous(-923.4324, -333.2397, 14.3816, 0 /* SOUND_BANK_ALARM_LOOP */);
             created_ambbank_stuff = 1;
           }
         }
@@ -2005,7 +2005,7 @@ async function icebuy_loop_inner() {
             Streaming.Switch(false /* OFF */);
             Text.PrintBig("CHERRYP", 6000, 2); //"CHERRY POPPER ICECREAMS"
             await get_fading_status();  // SCM GOSUB get_fading_status
-            // START_NEW_SCRIPT icecream_mission1_loop
+            // START_NEW_SCRIPT icecream_mission1_loop 
             // LoadLaunchMission icecut.sc
             return; // TERMINATE_THIS_SCRIPT
           }
@@ -2050,7 +2050,7 @@ async function taxibuy_loop_inner() {
             Streaming.Switch(false /* OFF */);
             Text.PrintBig("KAUFCAB", 6000, 2); //"Taxi Firm purchased: $ 15000"
             await get_fading_status();  // SCM GOSUB get_fading_status
-            // START_NEW_SCRIPT taxiwar_mission1_loop
+            // START_NEW_SCRIPT taxiwar_mission1_loop 
             // LoadLaunchMission taxicut.sc
             return; // TERMINATE_THIS_SCRIPT
           }
@@ -2676,7 +2676,7 @@ async function do_each_gang_member() {
         if ($.player1.isScoreGreater(6000)) {
           if (gang_member_flag == 0) {
             if (Streaming.HasModelLoaded(PGA)) {
-              if (Streaming.HasModelLoaded(178 /* UZI */)) {
+              if (Streaming.HasModelLoaded(UZI)) {
                 if (!(Camera.IsPointOnScreen(gang_member_start_x, gang_member_start_y, gang_member_start_z, 1.0))) {
                   $.gang_member = Char.Create(4 /* PEDTYPE_CIVMALE */, PGA, gang_member_start_x, gang_member_start_y, gang_member_start_z);
                   $.gang_member.setHeading(gang_member_start_heading);
@@ -2684,8 +2684,8 @@ async function do_each_gang_member() {
                   $.gang_member.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
                   $.gang_member.clearThreatSearch();
                   $.gang_member.setNeverTargeted(true /* TRUE */);
-                  $.gang_member.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
-                  $.gang_member.setWaitState(WAITSTATE_SIT_IDLE, 60000000);
+                  $.gang_member.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
+                  $.gang_member.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 60000000);
                   $.gang_member.dontRemove();
                   $.gang_member.setRunning(true /* TRUE */);
                   $.gang_member.setHealth(250);
@@ -2793,28 +2793,28 @@ async function army_base_loop_inner() {
     if ($.player1.isPlaying()) {
       if ($.player1.isInInfoZone("AIRPORT") || $.player1.isInInfoZone("ARMYBAS")) {
         if (setup_army_base_stuff == 0) {
-          Gang.SetPedModels(GANG_STREET, ARMY, ARMY);
-          Game.SetThreatForPedType(PEDTYPE_GANG_STREET, 1 /* THREAT_PLAYER1 */);
-          Gang.SetWeapons(GANG_STREET, WEAPONTYPE_M4, WEAPONTYPE_M4);
-          Gang.SetAttackPlayerWithCops(GANG_STREET, true /* TRUE */);
+          Gang.SetPedModels(2 /* GANG_STREET */, ARMY, ARMY);
+          Game.SetThreatForPedType(9 /* PEDTYPE_GANG_STREET */, 1 /* THREAT_PLAYER1 */);
+          Gang.SetWeapons(2 /* GANG_STREET */, 26 /* WEAPONTYPE_M4 */, 26 /* WEAPONTYPE_M4 */);
+          Gang.SetAttackPlayerWithCops(2 /* GANG_STREET */, true /* TRUE */);
           Streaming.RequestModel(ARMY);
           setup_army_base_stuff = 1;
         }
         if (setup_army_base_stuff == 1) {
           if ($.player1.isInModel(HUNTER) || $.player1.isWearing("player6") || $.player1.isInArea2D(-1682.2396, -179.9125, -1600.4482, -150.8878, false)) {
-            Game.ClearThreatForPedType(PEDTYPE_GANG_STREET, 1 /* THREAT_PLAYER1 */);
+            Game.ClearThreatForPedType(9 /* PEDTYPE_GANG_STREET */, 1 /* THREAT_PLAYER1 */);
           }
           else {
-            Game.SetThreatForPedType(PEDTYPE_GANG_STREET, 1 /* THREAT_PLAYER1 */);
+            Game.SetThreatForPedType(9 /* PEDTYPE_GANG_STREET */, 1 /* THREAT_PLAYER1 */);
           }
         }
       }
       else {
         if (setup_army_base_stuff == 1) {
-          Gang.SetPedModels(GANG_STREET, SGA, SGB);
-          Game.ClearThreatForPedType(PEDTYPE_GANG_STREET, 1 /* THREAT_PLAYER1 */);
-          Gang.SetWeapons(GANG_STREET, 2 /* WEAPONTYPE_PISTOL */, 0 /* WEAPONTYPE_UNARMED */);
-          Gang.SetAttackPlayerWithCops(GANG_STREET, false /* FALSE */);
+          Gang.SetPedModels(2 /* GANG_STREET */, SGA, SGB);
+          Game.ClearThreatForPedType(9 /* PEDTYPE_GANG_STREET */, 1 /* THREAT_PLAYER1 */);
+          Gang.SetWeapons(2 /* GANG_STREET */, 17 /* WEAPONTYPE_PISTOL */, 0 /* WEAPONTYPE_UNARMED */);
+          Gang.SetAttackPlayerWithCops(2 /* GANG_STREET */, false /* FALSE */);
           await asyncWait(0);
           await asyncWait(0);
           await asyncWait(0);
@@ -6619,7 +6619,7 @@ async function game_help_loop_inner() {
                   if ($.player1.isPlaying()) {
                     if ($.player1.isInAnyCar()) {
                       if ($.drive_by_help == 0) {
-                        if ($.player1.isCurrentWeapon(WEAPONTYPE_TEC9) || $.player1.isCurrentWeapon(3 /* WEAPONTYPE_UZI */) || $.player1.isCurrentWeapon(WEAPONTYPE_SILENCED_INGRAM) || $.player1.isCurrentWeapon(WEAPONTYPE_MP5)) {
+                        if ($.player1.isCurrentWeapon(22 /* WEAPONTYPE_TEC9 */) || $.player1.isCurrentWeapon(23 /* WEAPONTYPE_UZI */) || $.player1.isCurrentWeapon(24 /* WEAPONTYPE_SILENCED_INGRAM */) || $.player1.isCurrentWeapon(25 /* WEAPONTYPE_MP5 */)) {
                           Text.PrintHelp("HELP31"); // To do a drive-by, first look left or right using the L2 button or the R2 button.
                           await asyncWait(5000);
                           $.controlmode = Pad.GetControllerMode();
@@ -6743,7 +6743,7 @@ async function game_help_loop_inner() {
         }
         if ($.flag_hotel_mission1_passed == 1) {
           if ($.print_help_for_radar == 0) {
-            $.hotel_contact_blip = Blip.AddSpriteForContactPoint(219.8, -1273.5, 11.0, RADAR_SPRITE_SAVEHOUSE); //SAVE POINT HOTEL
+            $.hotel_contact_blip = Blip.AddSpriteForContactPoint(219.8, -1273.5, 11.0, 19 /* RADAR_SPRITE_SAVEHOUSE */); //SAVE POINT HOTEL
             $.hotel_contact_blip.changeDisplay(2 /* BLIP_ONLY */);
 
 
@@ -7299,16 +7299,16 @@ export async function main() {
 
   //BEACH
 
-  $.beach_bribe1 = Pickup.Create(1383 /* bribe */, 14 /* PICKUP_ON_STREET_SLOW */, 393.9, -60.2, 11.5); //Not far from Construction Site behind some houses
-  $.beach_bribe2 = Pickup.Create(1383 /* bribe */, 14 /* PICKUP_ON_STREET_SLOW */, 116.0, -1313.1, 4.4); //Through Underground Shopping mall (washinton)
-  $.beach_bribe3 = Pickup.Create(1383 /* bribe */, 14 /* PICKUP_ON_STREET_SLOW */, 393.7, -660.6, 10.7); //Middle of alleyways at back of Ocean Drive
-  $.beach_bribe4 = Pickup.Create(1383 /* bribe */, 14 /* PICKUP_ON_STREET_SLOW */, 470.7, 70.1, 10.8); //Just down from Pizza Hut in Vice Point
-  $.beach_bribe5 = Pickup.Create(1383 /* bribe */, 14 /* PICKUP_ON_STREET_SLOW */, 382.7, 364.1, 10.8); //In Alleyway in centre of Vice Point
-  $.beach_bribe6 = Pickup.Create(1383 /* bribe */, 14 /* PICKUP_ON_STREET_SLOW */, 422.4, 971.2, 12.1); //Near garages at Big Mall
+  $.beach_bribe1 = Pickup.Create(bribe, 15 /* PICKUP_ON_STREET_SLOW */, 393.9, -60.2, 11.5); //Not far from Construction Site behind some houses
+  $.beach_bribe2 = Pickup.Create(bribe, 15 /* PICKUP_ON_STREET_SLOW */, 116.0, -1313.1, 4.4); //Through Underground Shopping mall (washinton)
+  $.beach_bribe3 = Pickup.Create(bribe, 15 /* PICKUP_ON_STREET_SLOW */, 393.7, -660.6, 10.7); //Middle of alleyways at back of Ocean Drive
+  $.beach_bribe4 = Pickup.Create(bribe, 15 /* PICKUP_ON_STREET_SLOW */, 470.7, 70.1, 10.8); //Just down from Pizza Hut in Vice Point
+  $.beach_bribe5 = Pickup.Create(bribe, 15 /* PICKUP_ON_STREET_SLOW */, 382.7, 364.1, 10.8); //In Alleyway in centre of Vice Point
+  $.beach_bribe6 = Pickup.Create(bribe, 15 /* PICKUP_ON_STREET_SLOW */, 422.4, 971.2, 12.1); //Near garages at Big Mall
 
   //PORN ISLAND
 
-  $.porn_bribe1 = Pickup.Create(1383 /* bribe */, 14 /* PICKUP_ON_STREET_SLOW */, 89.1, 887.4, 10.5); //Down Unused street on Prawn Island
+  $.porn_bribe1 = Pickup.Create(bribe, 15 /* PICKUP_ON_STREET_SLOW */, 89.1, 887.4, 10.5); //Down Unused street on Prawn Island
 
   //GOLF ISLAND
 
@@ -7316,12 +7316,12 @@ export async function main() {
 
   //MAINLAND
 
-  $.main_bribe1 = Pickup.Create(1383 /* bribe */, 14 /* PICKUP_ON_STREET_SLOW */, -822.7, 1304.5, 11.7); //Between shortcut in downtown
-  $.main_bribe2 = Pickup.Create(1383 /* bribe */, 14 /* PICKUP_ON_STREET_SLOW */, -900.69, 251.4, 17.1); //over jump at top of Little Hiati into Move Over Miami Sign
-  $.main_bribe3 = Pickup.Create(1383 /* bribe */, 14 /* PICKUP_ON_STREET_SLOW */, -973.7, 61.0, 10.4); //in little haiti close by auntie poulets hut
-  $.main_bribe4 = Pickup.Create(1383 /* bribe */, 14 /* PICKUP_ON_STREET_SLOW */, -937.9, -114.1, 17.0); //Over little aquaduct in little hiati
-  $.main_bribe5 = Pickup.Create(1383 /* bribe */, 14 /* PICKUP_ON_STREET_SLOW */, -1015.9, -627.9, 11.2); //Through alleyway in little havana
-  $.main_bribe6 = Pickup.Create(1383 /* bribe */, 14 /* PICKUP_ON_STREET_SLOW */, -906.3, -834.0, 15.7); //Over jump from main drag into car yard
+  $.main_bribe1 = Pickup.Create(bribe, 15 /* PICKUP_ON_STREET_SLOW */, -822.7, 1304.5, 11.7); //Between shortcut in downtown
+  $.main_bribe2 = Pickup.Create(bribe, 15 /* PICKUP_ON_STREET_SLOW */, -900.69, 251.4, 17.1); //over jump at top of Little Hiati into Move Over Miami Sign
+  $.main_bribe3 = Pickup.Create(bribe, 15 /* PICKUP_ON_STREET_SLOW */, -973.7, 61.0, 10.4); //in little haiti close by auntie poulets hut
+  $.main_bribe4 = Pickup.Create(bribe, 15 /* PICKUP_ON_STREET_SLOW */, -937.9, -114.1, 17.0); //Over little aquaduct in little hiati
+  $.main_bribe5 = Pickup.Create(bribe, 15 /* PICKUP_ON_STREET_SLOW */, -1015.9, -627.9, 11.2); //Through alleyway in little havana
+  $.main_bribe6 = Pickup.Create(bribe, 15 /* PICKUP_ON_STREET_SLOW */, -906.3, -834.0, 15.7); //Over jump from main drag into car yard
 
   // ***************************************CAR GENERATORS***************************************
 
@@ -7990,24 +7990,24 @@ export async function main() {
   $.taxicashZ = 11.4;
 
 
-  $.the_sergio_blip = RADAR_SPRITE_AVERY;
-  $.the_taxiwar_blip = RADAR_SPRITE_KCABS;
-  $.the_lawyer_blip = RADAR_SPRITE_LAWYER;
-  $.the_kent_blip = RADAR_SPRITE_KENT;
-  $.the_general_blip = RADAR_SPRITE_CORTEZ;
-  $.the_baron_blip = RADAR_SPRITE_DIAZ;
-  $.the_bankjob_blip = RADAR_SPRITE_MALIBUCLUB;
-  $.the_phil_blip = RADAR_SPRITE_PHIL;
-  $.the_porn_blip = RADAR_SPRITE_FILM;
-  $.the_protection_blip = RADAR_SPRITE_TOMMY;
-  $.the_counter_blip = RADAR_SPRITE_PRINTWORKS;
+  $.the_sergio_blip = 4 /* RADAR_SPRITE_AVERY */;
+  $.the_taxiwar_blip = 22 /* RADAR_SPRITE_KCABS */;
+  $.the_lawyer_blip = 9 /* RADAR_SPRITE_LAWYER */;
+  $.the_kent_blip = 8 /* RADAR_SPRITE_KENT */;
+  $.the_general_blip = 6 /* RADAR_SPRITE_CORTEZ */;
+  $.the_baron_blip = 7 /* RADAR_SPRITE_DIAZ */;
+  $.the_bankjob_blip = 13 /* RADAR_SPRITE_MALIBUCLUB */;
+  $.the_phil_blip = 10 /* RADAR_SPRITE_PHIL */;
+  $.the_porn_blip = 15 /* RADAR_SPRITE_FILM */;
+  $.the_protection_blip = 29 /* RADAR_SPRITE_TOMMY */;
+  $.the_counter_blip = 24 /* RADAR_SPRITE_PRINTWORKS */;
 
 
-  $.the_biker_blip = RADAR_SPRITE_BIKERS;
-  $.the_rock_blip = RADAR_SPRITE_LOVEFIST;
-  $.the_cuban_blip = RADAR_SPRITE_CUBANS;
-  $.the_haitian_blip = RADAR_SPRITE_HAITIANS;
-  $.the_assasin_blip = RADAR_SPRITE_PHONE;
+  $.the_biker_blip = 11 /* RADAR_SPRITE_BIKERS */;
+  $.the_rock_blip = 23 /* RADAR_SPRITE_LOVEFIST */;
+  $.the_cuban_blip = 14 /* RADAR_SPRITE_CUBANS */;
+  $.the_haitian_blip = 17 /* RADAR_SPRITE_HAITIANS */;
+  $.the_assasin_blip = 30 /* RADAR_SPRITE_PHONE */;
 
 
 
@@ -8225,20 +8225,20 @@ export async function main() {
   // WASTED HELP ICONS
 
   // VAR_INT wasted_help1
-  $.wasted_help1 = Pickup.Create(1361 /* INFO */, 3 /* PICKUP_ONCE */, 493.5, 703.1, 12.1);
+  $.wasted_help1 = Pickup.Create(INFO, 3 /* PICKUP_ONCE */, 493.5, 703.1, 12.1);
 
 
   // VAR_INT wasted_help2
-  $.wasted_help2 = Pickup.Create(1361 /* INFO */, 3 /* PICKUP_ONCE */, -108.3, -974.4, 10.4);
+  $.wasted_help2 = Pickup.Create(INFO, 3 /* PICKUP_ONCE */, -108.3, -974.4, 10.4);
 
   // BUSTED HELP ICONS
 
   // VAR_INT busted_help1
-  $.busted_help1 = Pickup.Create(1361 /* INFO */, 3 /* PICKUP_ONCE */, 508.9, 506.8, 11.3);
+  $.busted_help1 = Pickup.Create(INFO, 3 /* PICKUP_ONCE */, 508.9, 506.8, 11.3);
 
 
   // VAR_INT busted_help2
-  $.busted_help2 = Pickup.Create(1361 /* INFO */, 3 /* PICKUP_ONCE */, 398.8, -469.7, 11.7);
+  $.busted_help2 = Pickup.Create(INFO, 3 /* PICKUP_ONCE */, 398.8, -469.7, 11.7);
 
   //PRINTWORKS PURCHASING PICKUP
 
@@ -8280,37 +8280,37 @@ export async function main() {
 
 
   $.nbmnbuy_pickup = Pickup.CreateForSaleProperty($.nbmnbuyX, $.nbmnbuyY, $.nbmnbuyZ, $.nbmnbuy_price, "NBMN_L"); //Press L1 to purchase the Mansion for $~1~
-  $.nbmnbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.nbmnbuyX, $.nbmnbuyY, $.nbmnbuyZ, RADAR_SPRITE_PROPERTY);
+  $.nbmnbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.nbmnbuyX, $.nbmnbuyY, $.nbmnbuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
   $.nbmnbuy_blip.remove();
 
 
   $.lnkvbuy_pickup = Pickup.CreateForSaleProperty($.lnkvbuyX, $.lnkvbuyY, $.lnkvbuyZ, $.lnkvbuy_price, "LNKV_L"); //Press L1 to purchase the Mansion for $~1~
-  $.lnkvbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.lnkvbuyX, $.lnkvbuyY, $.lnkvbuyZ, RADAR_SPRITE_PROPERTY);
+  $.lnkvbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.lnkvbuyX, $.lnkvbuyY, $.lnkvbuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
   $.lnkvbuy_blip.remove();
 
 
   $.hycobuy_pickup = Pickup.CreateForSaleProperty($.hycobuyX, $.hycobuyY, $.hycobuyZ, $.hycobuy_price, "HYCO_L"); //Press L1 to purchase the Mansion for $~1~
-  $.hycobuy_blip = Blip.AddShortRangeSpriteForContactPoint($.hycobuyX, $.hycobuyY, $.hycobuyZ, RADAR_SPRITE_PROPERTY);
+  $.hycobuy_blip = Blip.AddShortRangeSpriteForContactPoint($.hycobuyX, $.hycobuyY, $.hycobuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
   $.hycobuy_blip.remove();
 
 
   $.ochebuy_pickup = Pickup.CreateForSaleProperty($.ochebuyX, $.ochebuyY, $.ochebuyZ, $.ochebuy_price, "OCHE_L"); //Press L1 to purchase the Mansion for $~1~
-  $.ochebuy_blip = Blip.AddShortRangeSpriteForContactPoint($.ochebuyX, $.ochebuyY, $.ochebuyZ, RADAR_SPRITE_PROPERTY);
+  $.ochebuy_blip = Blip.AddShortRangeSpriteForContactPoint($.ochebuyX, $.ochebuyY, $.ochebuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
   $.ochebuy_blip.remove();
 
 
   $.washbuy_pickup = Pickup.CreateForSaleProperty($.washbuyX, $.washbuyY, $.washbuyZ, $.washbuy_price, "WASH_L"); //Press L1 to purchase the Mansion for $~1~
-  $.washbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.washbuyX, $.washbuyY, $.washbuyZ, RADAR_SPRITE_PROPERTY);
+  $.washbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.washbuyX, $.washbuyY, $.washbuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
   $.washbuy_blip.remove();
 
 
   $.vcptbuy_pickup = Pickup.CreateForSaleProperty($.vcptbuyX, $.vcptbuyY, $.vcptbuyZ, $.vcptbuy_price, "VCPT_L"); //Press L1 to purchase the Mansion for $~1~
-  $.vcptbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.vcptbuyX, $.vcptbuyY, $.vcptbuyZ, RADAR_SPRITE_PROPERTY);
+  $.vcptbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.vcptbuyX, $.vcptbuyY, $.vcptbuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
   $.vcptbuy_blip.remove();
 
 
   $.skumbuy_pickup = Pickup.CreateForSaleProperty($.skumbuyX, $.skumbuyY, $.skumbuyZ, $.skumbuy_price, "SKUM_L"); //Press L1 to purchase the Mansion for $~1~
-  $.skumbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.skumbuyX, $.skumbuyY, $.skumbuyZ, RADAR_SPRITE_PROPERTY);
+  $.skumbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.skumbuyX, $.skumbuyY, $.skumbuyZ, 25 /* RADAR_SPRITE_PROPERTY */);
   $.skumbuy_blip.remove();
 
 
@@ -8427,7 +8427,7 @@ export async function main() {
   // VAR_FLOAT spray_taxi_subX spray_taxi_subY spray_taxi_subZ
 
 
-  $.spray_taxi = Blip.AddSpriteForCoord($.spray_taxi_indX, $.spray_taxi_indY, $.spray_taxi_indZ, 18 /* RADAR_SPRITE_SPRAY */);
+  $.spray_taxi = Blip.AddSpriteForCoord($.spray_taxi_indX, $.spray_taxi_indY, $.spray_taxi_indZ, 27 /* RADAR_SPRITE_SPRAY */);
   $.spray_taxi.remove();
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -8489,71 +8489,71 @@ export async function main() {
   // ****************************************START_NEW_SCRIPTS******************************************
 
 
-  // START_NEW_SCRIPT t4x4_mission1_loop
+  // START_NEW_SCRIPT t4x4_mission1_loop 
 
 
-  // START_NEW_SCRIPT taxi_mission1_loop
+  // START_NEW_SCRIPT taxi_mission1_loop 
 
 
-  // START_NEW_SCRIPT fire_truck_mission_loop
+  // START_NEW_SCRIPT fire_truck_mission_loop 
 
 
-  // START_NEW_SCRIPT ambulance_mission_loop
+  // START_NEW_SCRIPT ambulance_mission_loop 
 
 
-  // START_NEW_SCRIPT cop_mission_loop
+  // START_NEW_SCRIPT cop_mission_loop 
 
 
-  // START_NEW_SCRIPT pizza_delivery_loop
+  // START_NEW_SCRIPT pizza_delivery_loop 
 
 
-  // START_NEW_SCRIPT bmx_loop
+  // START_NEW_SCRIPT bmx_loop 
 
 
-  // START_NEW_SCRIPT rchelipickup_loop
+  // START_NEW_SCRIPT rchelipickup_loop 
 
 
-  // START_NEW_SCRIPT rc_race_checkpoint_loop
+  // START_NEW_SCRIPT rc_race_checkpoint_loop 
 
 
-  // START_NEW_SCRIPT rc_plane_race_checkpoint_loop
+  // START_NEW_SCRIPT rc_plane_race_checkpoint_loop 
 
 
-  // START_NEW_SCRIPT carpark1_loop
+  // START_NEW_SCRIPT carpark1_loop 
 
 
-  // START_NEW_SCRIPT hotel_save_loop
+  // START_NEW_SCRIPT hotel_save_loop 
 
 
-  // START_NEW_SCRIPT game_help_loop
+  // START_NEW_SCRIPT game_help_loop 
 
 
-  // START_NEW_SCRIPT heli_mission1_loop
+  // START_NEW_SCRIPT heli_mission1_loop 
 
 
-  // START_NEW_SCRIPT heli_mission2_loop
+  // START_NEW_SCRIPT heli_mission2_loop 
 
 
-  // START_NEW_SCRIPT heli_mission3_loop
+  // START_NEW_SCRIPT heli_mission3_loop 
 
 
-  // START_NEW_SCRIPT heli_mission4_loop
+  // START_NEW_SCRIPT heli_mission4_loop 
 
 
-  // START_NEW_SCRIPT stadium_loop
+  // START_NEW_SCRIPT stadium_loop 
 
 
-  // START_NEW_SCRIPT army_base_loop
+  // START_NEW_SCRIPT army_base_loop 
 
   //SAFEHOUSE BUYING SCRIPTS
 
-  // START_NEW_SCRIPT nbmnbuy_loop
-  // START_NEW_SCRIPT lnkvbuy_loop
-  // START_NEW_SCRIPT hycobuy_loop
-  // START_NEW_SCRIPT ochebuy_loop
-  // START_NEW_SCRIPT washbuy_loop
-  // START_NEW_SCRIPT skumbuy_loop
-  // START_NEW_SCRIPT vcptbuy_loop
+  // START_NEW_SCRIPT nbmnbuy_loop 
+  // START_NEW_SCRIPT lnkvbuy_loop 
+  // START_NEW_SCRIPT hycobuy_loop 
+  // START_NEW_SCRIPT ochebuy_loop 
+  // START_NEW_SCRIPT washbuy_loop 
+  // START_NEW_SCRIPT skumbuy_loop 
+  // START_NEW_SCRIPT vcptbuy_loop 
 
 
   // LaunchMission hj.sc
@@ -8612,9 +8612,9 @@ export async function main() {
       }
     }
     Camera.DoFade(1000, 1 /* FADE_IN */);
-    // START_NEW_SCRIPT hotel_mission1_loop
+    // START_NEW_SCRIPT hotel_mission1_loop 
     if ($.player1.isPlaying()) {
-      Streaming.SetAreaVisible(VIS_MAIN_MAP);
+      Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
       $.player1.setControl(true /* on */);
     }
     Weather.Release();

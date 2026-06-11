@@ -1,13 +1,13 @@
 // Generated from main/interiors.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_interiors() {
 
 
 
 
-  // START_NEW_SCRIPT interiors
+  // START_NEW_SCRIPT interiors 
   //START_NEW_SCRIPT airport_security
   //START_NEW_SCRIPT aport2_security
 
@@ -147,7 +147,7 @@ $.weapon_model_slot_9 = _res291.weaponModel;
 
 
                     if ($.flag_eject == 0) {
-                      Streaming.SetAreaVisible(VIS_STRIP_CLUB);
+                      Streaming.SetAreaVisible(5 /* VIS_STRIP_CLUB */);
                       Streaming.LoadScene(91.2, -1460.9, 10.6);
                       $.player1.setCoordinates(91.2, -1460.9, 10.0);
                       $.player1.setHeading(40.0);
@@ -342,7 +342,7 @@ $.weapon_strip = _res300.weaponModel;
                 }
                 if ($.flag_eject == 0) {
                   $.flag_player_in_hotel = 1;
-                  Streaming.SetAreaVisible(VIS_HOTEL);
+                  Streaming.SetAreaVisible(1 /* VIS_HOTEL */);
                   World.SwitchRubbish(false /* OFF */);
                   Streaming.LoadScene(225.0, -1277.3, 12.0);
                   $.player1.setCoordinates(225.0, -1277.3, 11.5);
@@ -424,7 +424,7 @@ $.weapon_strip = _res300.weaponModel;
                 await transition_1();  // SCM GOSUB transition_1
                 if ($.flag_eject == 0) {
                   $.flag_player_in_apartment3c = 1;
-                  Streaming.SetAreaVisible(VIS_BIKER_BAR);
+                  Streaming.SetAreaVisible(11 /* VIS_BIKER_BAR */);
                   World.SwitchRubbish(false /* OFF */);
                   Streaming.LoadScene(27.19, -1327.0, 12.0);
                   $.player1.setCoordinates(27.19, -1327.0, 12.0);
@@ -523,7 +523,7 @@ $.weapon_strip = _res300.weaponModel;
                       }
                     }
                     if ($.flag_eject == 0) {
-                      Streaming.SetAreaVisible(VIS_POLICE_STATION);
+                      Streaming.SetAreaVisible(12 /* VIS_POLICE_STATION */);
                       $.flag_player_in_cop_shop = 1;
                       if ($.flag_player_on_bank1_mission == 0) {
                         Zone.SetPedInfo("STREET2", 1 /* DAY */, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000);
@@ -702,7 +702,7 @@ $.weapon_strip = _res300.weaponModel;
                       }
                     }
                     if ($.flag_eject == 0) {
-                      Streaming.SetAreaVisible(VIS_MALIBU_CLUB);
+                      Streaming.SetAreaVisible(17 /* VIS_MALIBU_CLUB */);
                       Path.SwitchPedRoadsOn(468.0, -77.0, 0.0, 490.0, -54.0, 30.0);
                       World.SwitchRubbish(false /* OFF */);
                       Streaming.LoadScene(484.2, -72.5, 9.5);
@@ -799,7 +799,7 @@ $.weapon_strip = _res300.weaponModel;
                 }
                 if ($.flag_eject == 0) {
                   $.flag_player_in_cafe = 1;
-                  Streaming.SetAreaVisible(VIS_COFFEE_SHOP);
+                  Streaming.SetAreaVisible(7 /* VIS_COFFEE_SHOP */);
                   Streaming.LoadScene(-1170.0, -611.0, 11.0);
                   World.ClearArea(-1170.0, -611.0, 11.0, 1.0, false /* FALSE */);
                   World.SwitchRubbish(false /* OFF */);
@@ -877,7 +877,7 @@ $.weapon_strip = _res300.weaponModel;
                 await transition_1();  // SCM GOSUB transition_1
                 if ($.flag_eject == 0) {
                   $.flag_player_in_mall = 1;
-                  Streaming.SetAreaVisible(VIS_MALL);
+                  Streaming.SetAreaVisible(4 /* VIS_MALL */);
                   Path.SwitchPedRoadsOn(474.0, 1250.0, 17.0, 356.0, 1003.0, 32.0); // LOWER FLOOR
                   World.SwitchRubbish(false /* OFF */);
                   Streaming.LoadScene(448.3, 1030.0, 18.0);
@@ -957,7 +957,7 @@ $.weapon_strip = _res300.weaponModel;
                 await transition_1();  // SCM GOSUB transition_1
                 if ($.flag_eject == 0) {
                   $.flag_player_in_mall = 1;
-                  Streaming.SetAreaVisible(VIS_MALL);
+                  Streaming.SetAreaVisible(4 /* VIS_MALL */);
                   Path.SwitchPedRoadsOn(474.0, 1250.0, 17.0, 356.0, 1003.0, 32.0); // LOWER FLOOR
                   World.SwitchRubbish(false /* OFF */);
                   Streaming.LoadScene(380.0, 1026.4, 18.2);
@@ -1039,7 +1039,7 @@ $.weapon_strip = _res300.weaponModel;
                 await transition_1();  // SCM GOSUB transition_1
                 if ($.flag_eject == 0) {
                   $.flag_player_in_mall = 1;
-                  Streaming.SetAreaVisible(VIS_MALL);
+                  Streaming.SetAreaVisible(4 /* VIS_MALL */);
                   Path.SwitchPedRoadsOn(474.0, 1250.0, 17.0, 356.0, 1003.0, 32.0); // LOWER FLOOR
                   World.SwitchRubbish(false /* OFF */);
                   Streaming.LoadScene(390.0, 1124.4, 17.5);
@@ -1120,7 +1120,7 @@ $.weapon_strip = _res300.weaponModel;
                 await transition_1();  // SCM GOSUB transition_1
                 if ($.flag_eject == 0) {
                   $.flag_player_in_mall = 1;
-                  Streaming.SetAreaVisible(VIS_MALL);
+                  Streaming.SetAreaVisible(4 /* VIS_MALL */);
                   Path.SwitchPedRoadsOn(474.0, 1250.0, 17.0, 356.0, 1003.0, 32.0); // LOWER FLOOR
                   World.SwitchRubbish(false /* OFF */);
                   Streaming.LoadScene(395.0, 1212.0, 24.4);
@@ -1201,7 +1201,7 @@ $.weapon_strip = _res300.weaponModel;
                 await transition_1();  // SCM GOSUB transition_1
                 if ($.flag_eject == 0) {
                   $.flag_player_in_mall = 1;
-                  Streaming.SetAreaVisible(VIS_MALL);
+                  Streaming.SetAreaVisible(4 /* VIS_MALL */);
                   Path.SwitchPedRoadsOn(474.0, 1250.0, 17.0, 356.0, 1003.0, 32.0); // LOWER FLOOR
                   World.SwitchRubbish(false /* OFF */);
                   Streaming.LoadScene(385.0, 1230.7, 18.0);
@@ -1282,7 +1282,7 @@ $.weapon_strip = _res300.weaponModel;
                 await transition_1();  // SCM GOSUB transition_1
                 if ($.flag_eject == 0) {
                   $.flag_player_in_mall = 1;
-                  Streaming.SetAreaVisible(VIS_MALL);
+                  Streaming.SetAreaVisible(4 /* VIS_MALL */);
                   Path.SwitchPedRoadsOn(474.0, 1250.0, 17.0, 356.0, 1003.0, 32.0); // LOWER FLOOR
                   World.SwitchRubbish(false /* OFF */);
                   Streaming.LoadScene(448.5, 1230.0, 18.0);
@@ -1363,7 +1363,7 @@ $.weapon_strip = _res300.weaponModel;
                 await transition_1();  // SCM GOSUB transition_1
                 if ($.flag_eject == 0) {
                   $.flag_player_in_mall = 1;
-                  Streaming.SetAreaVisible(VIS_MALL);
+                  Streaming.SetAreaVisible(4 /* VIS_MALL */);
                   Path.SwitchPedRoadsOn(474.0, 1250.0, 17.0, 356.0, 1003.0, 32.0); // LOWER FLOOR
                   World.SwitchRubbish(false /* OFF */);
                   Streaming.LoadScene(444.4, 1123.7, 17.0);
@@ -1449,7 +1449,7 @@ $.weapon_strip = _res300.weaponModel;
                   }
                 }
                 if ($.flag_eject == 0) {
-                  Streaming.SetAreaVisible(VIS_RIFLE_RANGE);
+                  Streaming.SetAreaVisible(10 /* VIS_RIFLE_RANGE */);
                   $.flag_player_in_shooting_range = 1;
                   World.SwitchRubbish(false /* OFF */);
                   Streaming.LoadScene(-667.8, 1221.0, 11.0);
@@ -1544,7 +1544,7 @@ $.weapon_strip = _res300.weaponModel;
                     ENDIF
                     */
                     if ($.flag_eject == 0) {
-                      Streaming.SetAreaVisible(VIS_MANSION);
+                      Streaming.SetAreaVisible(2 /* VIS_MANSION */);
                       $.flag_player_in_mansion = 1;
                       Path.SwitchPedRoadsOn(-414.0, -597.0, 12.0, -332.0, -555.0, 30.0); // LOWER FLOOR
                       World.SwitchRubbish(false /* OFF */);
@@ -1624,7 +1624,7 @@ $.weapon_strip = _res300.weaponModel;
                     }
                   }
                   if ($.flag_eject == 0) {
-                    Streaming.SetAreaVisible(VIS_MANSION);
+                    Streaming.SetAreaVisible(2 /* VIS_MANSION */);
                     $.flag_player_in_mansion = 1;
                     Path.SwitchPedRoadsOn(-414.0, -597.0, 12.0, -332.0, -555.0, 30.0); // LOWER FLOOR
                     World.SwitchRubbish(false /* OFF */);
@@ -1702,7 +1702,7 @@ $.weapon_strip = _res300.weaponModel;
                   ENDIF
                   */
                   if ($.flag_eject == 0) {
-                    Streaming.SetAreaVisible(VIS_MANSION);
+                    Streaming.SetAreaVisible(2 /* VIS_MANSION */);
                     $.flag_player_in_mansion = 1;
                     Path.SwitchPedRoadsOn(-414.0, -597.0, 12.0, -332.0, -555.0, 30.0); // LOWER FLOOR
                     World.SwitchRubbish(false /* OFF */);
@@ -1787,7 +1787,7 @@ $.weapon_strip = _res300.weaponModel;
                   }
                 }
                 if ($.flag_eject == 0) {
-                  Streaming.SetAreaVisible(VIS_BANK);
+                  Streaming.SetAreaVisible(3 /* VIS_BANK */);
                   World.SwitchRubbish(false /* OFF */);
                   if (ONMISSION == 0) {
                     Path.SwitchPedRoadsOn(-918.5, -355.0, 5.0, -898.0, -328.0, 16.0); // LOWER FLOOR
@@ -1936,7 +1936,7 @@ async function outgoing() {
   World.ClearExtraColors(false /* FALSE */);
   World.SetCarDensityMultiplier(1.0);
   World.SwitchRubbish(true /* ON */);
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 }
 
 
@@ -2098,7 +2098,7 @@ async function populate_strip() {
       $.dancer_2.clearThreatSearch();
       //CHAR_SET_IDLE dancer_2
       //ADD_BLIP_FOR_CHAR  dancer_2	testblip_2
-      $.dancer_2.setWaitState(WAITSTATE_STRIPPER, 999999);
+      $.dancer_2.setWaitState(32 /* WAITSTATE_STRIPPER */, 999999);
       $.s_punter_6 = Char.Create(4 /* PEDTYPE_CIVMALE */, WMOST, 79.5, -1463.1, 9.6); // back room far left
       $.s_punter_6.setHeading(5.0);
       $.s_punter_6.clearThreatSearch();
@@ -2119,7 +2119,7 @@ async function populate_strip() {
       $.dancer_3.clearThreatSearch();
       //CHAR_SET_IDLE dancer_3
       //ADD_BLIP_FOR_CHAR  dancer_3	testblip_3
-      $.dancer_3.setWaitState(WAITSTATE_STRIPPER, 999999);
+      $.dancer_3.setWaitState(32 /* WAITSTATE_STRIPPER */, 999999);
 
       // ***************** BIKERS & FAT BINT **************************************
 
@@ -2140,7 +2140,7 @@ async function populate_strip() {
       $.dancer_5.clearThreatSearch();
       //CHAR_SET_IDLE dancer_5
       //ADD_BLIP_FOR_CHAR  dancer_5	testblip_5
-      $.dancer_5.setWaitState(WAITSTATE_STRIPPER, 999999);
+      $.dancer_5.setWaitState(32 /* WAITSTATE_STRIPPER */, 999999);
 
       // ************************** EXCITED PUNTERS & DANCER ***************************
 
@@ -2159,7 +2159,7 @@ async function populate_strip() {
       $.dancer_1.clearThreatSearch();
       //CHAR_SET_IDLE dancer_1
       //ADD_BLIP_FOR_CHAR dancer_1 testblip_1
-      $.dancer_1.setWaitState(WAITSTATE_STRIPPER, 999999);
+      $.dancer_1.setWaitState(32 /* WAITSTATE_STRIPPER */, 999999);
 
       // ****************** BAR STAFF **************************************************
 
@@ -2423,9 +2423,9 @@ async function waitstate_every_frame() {
 
 async function bouncers() {
   if ($.flag_arm_bouncers == 0) {
-    Streaming.RequestModel(172 /* bat */);
-    while (!(Streaming.HasModelLoaded(172 /* bat */))) {
-      Streaming.RequestModel(172 /* bat */);
+    Streaming.RequestModel(bat);
+    while (!(Streaming.HasModelLoaded(bat))) {
+      Streaming.RequestModel(bat);
       await asyncWait(0);
     }
     $.flag_arm_bouncers = 1;
@@ -2446,7 +2446,7 @@ async function bouncers() {
 
 async function battage() {
   if (!(Char.IsDead($.ped_rumble))) {
-    $.ped_rumble.giveWeapon(1 /* WEAPONTYPE_BASEBALLBAT */, 0);
+    $.ped_rumble.giveWeapon(6 /* WEAPONTYPE_BASEBALLBAT */, 0);
   }
 }
 
@@ -2468,7 +2468,7 @@ async function geeble() {
     }
     if (!(Char.IsDead($.dancer_2))) {
       if (!(Game.IsAustralian())) {
-        $.dancer_2.giveWeapon(WEAPONTYPE_KNIFE, 0);
+        $.dancer_2.giveWeapon(5 /* WEAPONTYPE_KNIFE */, 0);
       }
       $.ped_rumble = $.dancer_2;
       await rumble();  // SCM GOSUB rumble
@@ -2525,7 +2525,7 @@ async function gabble() {
     }
     if (!(Char.IsDead($.bar_staff1))) {
       if (!(Game.IsAustralian())) {
-        $.bar_staff1.giveWeapon(WEAPONTYPE_MACHETE, 0);
+        $.bar_staff1.giveWeapon(9 /* WEAPONTYPE_MACHETE */, 0);
       }
       $.ped_rumble = $.bar_staff1;
       await rumble();  // SCM GOSUB rumble
@@ -2619,7 +2619,7 @@ async function the_groovy_room() {
     }
     $.dancer_4.setHeading(33.0);
     $.dancer_4.clearThreatSearch();
-    $.dancer_4.setWaitState(WAITSTATE_STRIPPER, 999999);
+    $.dancer_4.setWaitState(32 /* WAITSTATE_STRIPPER */, 999999);
     if (!(Char.IsDead($.scplayer))) {
       $.scplayer.setCoordinates(65.5, -1453.7, 9.6);
       $.scplayer.setWaitState($.ped_routine_2, 999999);
@@ -2741,7 +2741,7 @@ async function the_groovy_room() {
       }
       Streaming.LoadScene(72.0, -1454.7, 9.45);
       $.strip_door_poledance.delete();
-      Streaming.SetAreaVisible(VIS_STRIP_CLUB);
+      Streaming.SetAreaVisible(5 /* VIS_STRIP_CLUB */);
       World.SetExtraColors(2, false /* FALSE */);
       World.SetCarDensityMultiplier(0.1);
       World.SwitchRubbish(false /* OFF */);
@@ -3164,21 +3164,21 @@ async function populate_malibu() {
       $.bouncer_1 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL19, 487.8, -77.3, 10.5);
       $.bouncer_1.setHeading(55.0);
       $.bouncer_1.setPersonality(30 /* PEDSTAT_PSYCHO */);
-      $.bouncer_1.giveWeapon(WEAPONTYPE_BRASSKNUCKLE, 0);
+      $.bouncer_1.giveWeapon(1 /* WEAPONTYPE_BRASSKNUCKLE */, 0);
       $.bouncer_2 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL19, 490.9, -74.4, 10.5);
       $.bouncer_2.setHeading(55.0);
       $.bouncer_2.setPersonality(30 /* PEDSTAT_PSYCHO */);
-      $.bouncer_2.giveWeapon(WEAPONTYPE_BRASSKNUCKLE, 0);
+      $.bouncer_2.giveWeapon(1 /* WEAPONTYPE_BRASSKNUCKLE */, 0);
       if ($.flag_bought_malibu == 0) {
         $.bouncer_3 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL19, 463.2, -58.16, 10.5);
         $.bouncer_3.setHeading(250.0);
         $.bouncer_3.setPersonality(30 /* PEDSTAT_PSYCHO */);
         $.bouncer_3.setHealth(200);
-        $.bouncer_3.giveWeapon(WEAPONTYPE_BRASSKNUCKLE, 0);
+        $.bouncer_3.giveWeapon(1 /* WEAPONTYPE_BRASSKNUCKLE */, 0);
         $.bouncer_4 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL19, 465.5, -51.7, 14.7);
         $.bouncer_4.setHeading(134.0);
         $.bouncer_4.setPersonality(30 /* PEDSTAT_PSYCHO */);
-        $.bouncer_4.giveWeapon(WEAPONTYPE_BRASSKNUCKLE, 0);
+        $.bouncer_4.giveWeapon(1 /* WEAPONTYPE_BRASSKNUCKLE */, 0);
         $.bar_staff1 = Char.Create(5 /* PEDTYPE_CIVFEMALE */, BFYRI, 465.25, -54.66, 10.5);
         $.bar_staff1.setHeading(50.0);
         $.bar_staff1.setPersonality(30 /* PEDSTAT_PSYCHO */);
@@ -3189,11 +3189,11 @@ async function populate_malibu() {
         $.bouncer_3 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL19, 467.65, -60.36, 9.5);
         $.bouncer_3.setHeading(250.0);
         $.bouncer_3.setPersonality(30 /* PEDSTAT_PSYCHO */);
-        $.bouncer_3.giveWeapon(WEAPONTYPE_BRASSKNUCKLE, 0);
+        $.bouncer_3.giveWeapon(1 /* WEAPONTYPE_BRASSKNUCKLE */, 0);
         $.bouncer_4 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL19, 468.0, -55.6, 10.5);
         $.bouncer_4.setHeading(60.0);
         $.bouncer_4.setPersonality(30 /* PEDSTAT_PSYCHO */);
-        $.bouncer_4.giveWeapon(WEAPONTYPE_BRASSKNUCKLE, 0);
+        $.bouncer_4.giveWeapon(1 /* WEAPONTYPE_BRASSKNUCKLE */, 0);
         Streaming.LoadSpecialCharacter(18, "stripa");
         while (!(Streaming.HasSpecialCharacterLoaded(18))) {
           Streaming.LoadSpecialCharacter(18, "stripa");
@@ -3245,7 +3245,7 @@ async function populate_malibu() {
               await asyncWait(0);
             }
             if (!(Char.IsDead($.bar_staff1)) && $.player1.isPlaying()) {
-              $.bar_staff1.giveWeapon(WEAPONTYPE_STUBBY_SHOTGUN, 20);
+              $.bar_staff1.giveWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */, 20);
               $.bar_staff1.setObjKillPlayerOnFoot($.player1);
             }
             await attack_the_bastard();  // SCM GOSUB attack_the_bastard
@@ -3411,7 +3411,7 @@ async function dancer_stuff() {
     $.var_dancer.clearThreatSearch();
     $.var_dancer.setHeedThreats(true /* TRUE */);
     $.var_dancer.setPersonality(11 /* PEDSTAT_STREET_GUY */);
-    $.var_dancer.setWaitState(WAITSTATE_STRIPPER, 999999);
+    $.var_dancer.setWaitState(32 /* WAITSTATE_STRIPPER */, 999999);
     /*
     GENERATE_RANDOM_INT_IN_RANGE 1 3 var_pedstat
     IF var_pedstat = 1

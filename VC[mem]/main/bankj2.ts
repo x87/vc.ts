@@ -1,7 +1,7 @@
 // Generated from main/bankj2.sc
 
-import { $ } from "../vars.mts";
-import { timed } from "../scm.mts";
+import { $ } from "../utils/vars.mts";
+import { timed } from "../utils/scm.mts";
 
 async function mission_start_bankjob2() {
 
@@ -966,7 +966,7 @@ async function mission_start_bankjob2() {
   Streaming.LoadSpecialModel(CUTOBJ02, "clchr");
 
 
-  Streaming.SetAreaVisible(VIS_MALIBU_CLUB);
+  Streaming.SetAreaVisible(17 /* VIS_MALIBU_CLUB */);
 
 
   Streaming.LoadScene(481.03, -64.21, 8.98);
@@ -1202,7 +1202,7 @@ async function mission_start_bankjob2() {
   Streaming.MarkModelAsNoLongerNeeded(CUTOBJ02);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   Streaming.LoadScene(493.1, -82.4, 9.8);
@@ -1213,7 +1213,7 @@ async function mission_start_bankjob2() {
   $.flag_player_in_malibu = 0;
 
 
-  $.player1.setMood(PLAYER_MOOD_CALM, 60000);
+  $.player1.setMood(0 /* PLAYER_MOOD_CALM */, 60000);
 
   // fades the screen in
 
@@ -1646,7 +1646,7 @@ async function mission_start_bankjob2() {
   // ************************************ END OF CUTSCENE TWO ********************************
 
 
-  $.player1.setMood(PLAYER_MOOD_CALM, 60000);
+  $.player1.setMood(0 /* PLAYER_MOOD_CALM */, 60000);
 
 
   $.player1.shutUp(true /* TRUE */);
@@ -1661,7 +1661,7 @@ async function mission_start_bankjob2() {
   Streaming.RequestModel(tar_gun2);
 
 
-  Streaming.RequestModel(173 /* COLT45 */);
+  Streaming.RequestModel(COLT45);
 
 
   Streaming.RequestModel(tar_frame);
@@ -1682,7 +1682,7 @@ async function mission_start_bankjob2() {
   Streaming.RequestModel(tar_upright);
 
 
-  Streaming.RequestModel(1385 /* faketarget */);
+  Streaming.RequestModel(faketarget);
 
 
   Streaming.LoadSpecialCharacter(5, "igphil");
@@ -1694,7 +1694,7 @@ async function mission_start_bankjob2() {
   Audio.LoadMissionAudio(2, "BNK2_2" as any); // Aim 3-2-1 fire
 
 
-  while (!(Streaming.HasModelLoaded(MALE01)) || !(Streaming.HasModelLoaded(173 /* COLT45 */)) || !(Streaming.HasModelLoaded(tar_gun1)) || !(Streaming.HasSpecialCharacterLoaded(5)) || !(Audio.HasMissionAudioLoaded(1)) || !(Audio.HasMissionAudioLoaded(2))) {
+  while (!(Streaming.HasModelLoaded(MALE01)) || !(Streaming.HasModelLoaded(COLT45)) || !(Streaming.HasModelLoaded(tar_gun1)) || !(Streaming.HasSpecialCharacterLoaded(5)) || !(Audio.HasMissionAudioLoaded(1)) || !(Audio.HasMissionAudioLoaded(2))) {
 
 
     await asyncWait(0);
@@ -1710,7 +1710,7 @@ async function mission_start_bankjob2() {
   }
 
 
-  while (!(Streaming.HasModelLoaded(1385 /* faketarget */)) || !(Streaming.HasModelLoaded(tar_gun2))) {
+  while (!(Streaming.HasModelLoaded(faketarget)) || !(Streaming.HasModelLoaded(tar_gun2))) {
     await asyncWait(0);
 
 
@@ -1725,7 +1725,7 @@ async function mission_start_bankjob2() {
   $.phil_bankjob2.clearThreatSearch();
 
 
-  $.phil_bankjob2.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 1);
+  $.phil_bankjob2.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 1);
 
 
   $.phil_bankjob2.setHeading(90.0);
@@ -1739,7 +1739,7 @@ async function mission_start_bankjob2() {
   $.gunner1_bankjob2.clearThreatSearch();
 
 
-  $.gunner1_bankjob2.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 1);
+  $.gunner1_bankjob2.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 1);
 
 
   $.gunner1_bankjob2.setHeading(90.0);
@@ -1747,17 +1747,17 @@ async function mission_start_bankjob2() {
   // Creates the invisible target to stick palyer on
 
 
-  $.object1_bankjob2 = ScriptObject.CreateNoOffset(1385 /* faketarget */, -668.42, 1231.65, 10.08);
+  $.object1_bankjob2 = ScriptObject.CreateNoOffset(faketarget, -668.42, 1231.65, 10.08);
   $.object1_bankjob2.dontRemove();
   $.object1_bankjob2.setHeading(90.0);
 
 
-  $.object2_bankjob2 = ScriptObject.CreateNoOffset(1385 /* faketarget */, -664.73, 1269.09, 9.81);
+  $.object2_bankjob2 = ScriptObject.CreateNoOffset(faketarget, -664.73, 1269.09, 9.81);
   $.object2_bankjob2.dontRemove();
   $.object2_bankjob2.setHeading(90.0);
 
 
-  $.object3_bankjob2 = ScriptObject.CreateNoOffset(1385 /* faketarget */, -677.75, 1272.03, 9.81);
+  $.object3_bankjob2 = ScriptObject.CreateNoOffset(faketarget, -677.75, 1272.03, 9.81);
   $.object3_bankjob2.dontRemove();
   $.object3_bankjob2.setHeading(0.0);
 
@@ -1770,10 +1770,10 @@ $.slot4_ammo_bank2 = _res40.weaponAmmo;
 $.slot4_model_bank2 = _res40.weaponModel;
 
 
-  $.scplayer.attachToObject($.object1_bankjob2, 0.0, -2.0, 1.0, 0 /* FACING_FORWARD */, 60.0, 2 /* WEAPONTYPE_PISTOL */);
+  $.scplayer.attachToObject($.object1_bankjob2, 0.0, -2.0, 1.0, 0 /* FACING_FORWARD */, 60.0, 17 /* WEAPONTYPE_PISTOL */);
   $.scplayer.setCurrentWeapon(0 /* WEAPONTYPE_UNARMED */);
-  $.scplayer.setCurrentWeapon(2 /* WEAPONTYPE_PISTOL */);
-  $.player1.setAmmo(2 /* WEAPONTYPE_PISTOL */, 100);
+  $.scplayer.setCurrentWeapon(17 /* WEAPONTYPE_PISTOL */);
+  $.player1.setAmmo(17 /* WEAPONTYPE_PISTOL */, 100);
   $.ammo_given_round1_bankjob2 = 100;
 
   // fades the screen in
@@ -2162,7 +2162,7 @@ async function mission_skip_bank2() {
   $.doing_bad_audio_loaded_bankjob2 = 1;
 
 
-  Hud.DisplayTimer($.$id.timer_round1_bankjob2, TIMER_DOWN);
+  Hud.DisplayTimer($.$id.timer_round1_bankjob2, 1 /* TIMER_DOWN */);
 
 
   Hud.DisplayNthCounterWithString($.score_to_beat_bankjob2, 0 /* COUNTER_DISPLAY_NUMBER */, 2, "BJM2_18");
@@ -2174,7 +2174,7 @@ async function mission_skip_bank2() {
   TIMERA = 0;
 
 
-  $.target_moving_sound_bank2 = Sound.AddContinuous(-679.403, 1232.564, 11.105, SOUND_SHOOTING_RANGE_TARGET_MOVING_LOOP);
+  $.target_moving_sound_bank2 = Sound.AddContinuous(-679.403, 1232.564, 11.105, 11 /* SOUND_SHOOTING_RANGE_TARGET_MOVING_LOOP */);
 
 
   while ($.flag_round1_finished_bankjob2 == 0) {
@@ -2263,7 +2263,7 @@ async function mission_skip_bank2() {
       throw new Error("unresolved GOTO mission_bankjob2_failed"); // fallback: would break linear control flow
     }
     $.player1.clearWantedLevel();
-    $.ammo_round1_bankjob = $.player1.getAmmoInWeapon(2 /* WEAPONTYPE_PISTOL */);
+    $.ammo_round1_bankjob = $.player1.getAmmoInWeapon(17 /* WEAPONTYPE_PISTOL */);
     if ($.timer_round1_bankjob2 == 0 || $.ammo_round1_bankjob == 0) {
       if ($.flag_time_out_round1_bank2 == 0) {
         TIMERA = 0;
@@ -3011,8 +3011,8 @@ $.targ3_z_bankjob2 = _res46.z;
   // sets up player1 in 1st person camera mode and locks him in position.
 
 
-  $.scplayer.attachToObject($.object2_bankjob2, 0.0, 0.0, 1.0, 0 /* FACING_FORWARD */, 60.0, 2 /* WEAPONTYPE_PISTOL */);
-  $.player1.setAmmo(2 /* WEAPONTYPE_PISTOL */, 50);
+  $.scplayer.attachToObject($.object2_bankjob2, 0.0, 0.0, 1.0, 0 /* FACING_FORWARD */, 60.0, 17 /* WEAPONTYPE_PISTOL */);
+  $.player1.setAmmo(17 /* WEAPONTYPE_PISTOL */, 50);
   $.ammo_given_round2_bankjob2 = 50;
 
 
@@ -3182,12 +3182,12 @@ async function mission_skip2_bank2() {
   Text.ClearThisPrint("BNK2_2"); // Aim
 
 
-  Hud.DisplayTimer($.$id.timer_round2_bankjob2, TIMER_DOWN);
+  Hud.DisplayTimer($.$id.timer_round2_bankjob2, 1 /* TIMER_DOWN */);
 
   // Round two
 
 
-  $.target_moving_sound_bank2 = Sound.AddContinuous(-682.092, 1273.931, 10.818, SOUND_SHOOTING_RANGE_TARGET_MOVING_LOOP);
+  $.target_moving_sound_bank2 = Sound.AddContinuous(-682.092, 1273.931, 10.818, 11 /* SOUND_SHOOTING_RANGE_TARGET_MOVING_LOOP */);
 
 
   while ($.round2_finished_bankjob2 == 0) {
@@ -3759,7 +3759,7 @@ $.targ6_round2_z_bankjob2 = _res52.z;
       throw new Error("unresolved GOTO mission_bankjob2_failed"); // fallback: would break linear control flow
     }
     $.player1.clearWantedLevel();
-    $.ammo_round2_bankjob2 = $.player1.getAmmoInWeapon(2 /* WEAPONTYPE_PISTOL */);
+    $.ammo_round2_bankjob2 = $.player1.getAmmoInWeapon(17 /* WEAPONTYPE_PISTOL */);
     if ($.timer_round2_bankjob2 == 0 || $.ammo_round2_bankjob2 == 0) {
       if ($.flag_time_out_round2_bank2 == 0) {
         TIMERA = 0;
@@ -3897,8 +3897,8 @@ $.targ6_round2_z_bankjob2 = _res52.z;
   }
 
 
-  $.scplayer.attachToObject($.object3_bankjob2, 0.0, 0.0, 1.0, 0 /* FACING_FORWARD */, 50.0, 2 /* WEAPONTYPE_PISTOL */);
-  $.player1.setAmmo(2 /* WEAPONTYPE_PISTOL */, 30);
+  $.scplayer.attachToObject($.object3_bankjob2, 0.0, 0.0, 1.0, 0 /* FACING_FORWARD */, 50.0, 17 /* WEAPONTYPE_PISTOL */);
+  $.player1.setAmmo(17 /* WEAPONTYPE_PISTOL */, 30);
   $.ammo_given_round3_bankjob2 = 30;
 
 
@@ -4053,10 +4053,10 @@ async function mission_skip3_bank2() {
   TIMERB = 0;
 
 
-  Hud.DisplayTimer($.$id.timer_round3_bankjob2, TIMER_DOWN);
+  Hud.DisplayTimer($.$id.timer_round3_bankjob2, 1 /* TIMER_DOWN */);
 
 
-  $.target_moving_sound_bank2 = Sound.AddContinuous(-670.111, 1291.234, 10.818, SOUND_SHOOTING_RANGE_TARGET_MOVING_LOOP);
+  $.target_moving_sound_bank2 = Sound.AddContinuous(-670.111, 1291.234, 10.818, 11 /* SOUND_SHOOTING_RANGE_TARGET_MOVING_LOOP */);
 
 
   while ($.round3_finished_bankjob2 == 0) {
@@ -4666,7 +4666,7 @@ $.targ13_round3_z_bankjob2 = _res59.z;
       throw new Error("unresolved GOTO mission_bankjob2_failed"); // fallback: would break linear control flow
     }
     $.player1.clearWantedLevel();
-    $.ammo_round3_bankjob2 = $.player1.getAmmoInWeapon(2 /* WEAPONTYPE_PISTOL */);
+    $.ammo_round3_bankjob2 = $.player1.getAmmoInWeapon(17 /* WEAPONTYPE_PISTOL */);
     if ($.timer_round3_bankjob2 == 0 || $.ammo_round3_bankjob2 == 0) {
       if ($.flag_time_out_round3_bank2 == 0) {
         TIMERA = 0;
@@ -5200,8 +5200,8 @@ async function mission_bankjob2_passed() {
   $.player1.clearWantedLevel();
   Stat.RegisterHighestScore(0, $.player_score_bankjob2);
   Stat.RegisterHighestScore(1, $.percentage_hits_bankjob2);
-  // START_NEW_SCRIPT bankjob_mission3_loop
-  // START_NEW_SCRIPT shoot_range_loop
+  // START_NEW_SCRIPT bankjob_mission3_loop 
+  // START_NEW_SCRIPT shoot_range_loop 
 }
 
 
@@ -5284,7 +5284,7 @@ async function mission_cleanup_bankjob2() {
   Hud.ClearTimer($.$id.timer_round2_bankjob2);
   Hud.ClearTimer($.$id.timer_round3_bankjob2);
   Streaming.MarkModelAsNoLongerNeeded(MALE01);
-  Streaming.MarkModelAsNoLongerNeeded(173 /* COLT45 */);
+  Streaming.MarkModelAsNoLongerNeeded(COLT45);
   Streaming.MarkModelAsNoLongerNeeded(tar_gun1);
   Streaming.MarkModelAsNoLongerNeeded(tar_gun2);
   Streaming.MarkModelAsNoLongerNeeded(tar_frame);
@@ -5293,7 +5293,7 @@ async function mission_cleanup_bankjob2() {
   Streaming.MarkModelAsNoLongerNeeded(tar_top);
   Streaming.MarkModelAsNoLongerNeeded(tar_upleft);
   Streaming.MarkModelAsNoLongerNeeded(tar_upright);
-  Streaming.MarkModelAsNoLongerNeeded(1385 /* faketarget */);
+  Streaming.MarkModelAsNoLongerNeeded(faketarget);
   Streaming.UnloadSpecialCharacter(5);
   $.timer_mobile_start = Clock.GetGameTimer();
   Mission.Finish();

@@ -1,6 +1,6 @@
 // Generated from main/hj.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_hj() {
 

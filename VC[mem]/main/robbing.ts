@@ -1,17 +1,17 @@
 // Generated from main/robbing.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_shops() {
 
 
 
 
-  // START_NEW_SCRIPT shopware1
-  // START_NEW_SCRIPT shopware2
-  // START_NEW_SCRIPT shopware3
-  // START_NEW_SCRIPT shopware4
-  // START_NEW_SCRIPT shopware5
+  // START_NEW_SCRIPT shopware1 
+  // START_NEW_SCRIPT shopware2 
+  // START_NEW_SCRIPT shopware3 
+  // START_NEW_SCRIPT shopware4 
+  // START_NEW_SCRIPT shopware5 
 
 
   // MissionBoundary
@@ -621,7 +621,7 @@ $.shop_blokez = _res458.z;
             if ($.robbed_money1_created == 0) {
               $.shop_blokez = $.shop_blokez + 0.15;
               $.robbed_money1 = Pickup.CreateMoney($.shop_blokex, $.shop_blokey, $.shop_blokez, 50);
-              Sound.AddOneOffSound($.shop_blokex, $.shop_blokey, $.shop_blokez, SOUND_AMMUNATION_BUY_WEAPON);
+              Sound.AddOneOffSound($.shop_blokex, $.shop_blokey, $.shop_blokez, 13 /* SOUND_AMMUNATION_BUY_WEAPON */);
               await add_stat_point();  // SCM GOSUB add_stat_point
               $.robbed_money1_created = 1;
             }
@@ -631,7 +631,7 @@ $.shop_blokez = _res458.z;
               $.shop_blokey = $.shop_blokey + 0.1;
               $.shop_blokex = $.shop_blokex + 0.1;
               $.robbed_money2 = Pickup.CreateMoney($.shop_blokex, $.shop_blokey, $.shop_blokez, 100);
-              Sound.AddOneOffSound($.shop_blokex, $.shop_blokey, $.shop_blokez, SOUND_AMMUNATION_BUY_WEAPON);
+              Sound.AddOneOffSound($.shop_blokex, $.shop_blokey, $.shop_blokez, 13 /* SOUND_AMMUNATION_BUY_WEAPON */);
               $.player1.alterWantedLevelNoDrop(1);
               $.robbed_money2_created = 1;
             }
@@ -640,7 +640,7 @@ $.shop_blokez = _res458.z;
             if ($.robbed_money3_created == 0) {
               $.shop_blokey = $.shop_blokey + 0.1;
               $.robbed_money3 = Pickup.CreateMoney($.shop_blokex, $.shop_blokey, $.shop_blokez, 250);
-              Sound.AddOneOffSound($.shop_blokex, $.shop_blokey, $.shop_blokez, SOUND_AMMUNATION_BUY_WEAPON);
+              Sound.AddOneOffSound($.shop_blokex, $.shop_blokey, $.shop_blokez, 13 /* SOUND_AMMUNATION_BUY_WEAPON */);
               $.player1.alterWantedLevelNoDrop(2);
               $.robbed_money3_created = 1;
             }
@@ -650,14 +650,14 @@ $.shop_blokez = _res458.z;
               $.shop_blokey = $.shop_blokey + 0.1;
               $.shop_blokex = $.shop_blokex + 0.1;
               $.robbed_money4 = Pickup.CreateMoney($.shop_blokex, $.shop_blokey, $.shop_blokez, 600);
-              Sound.AddOneOffSound($.shop_blokex, $.shop_blokey, $.shop_blokez, SOUND_AMMUNATION_BUY_WEAPON);
+              Sound.AddOneOffSound($.shop_blokex, $.shop_blokey, $.shop_blokez, 13 /* SOUND_AMMUNATION_BUY_WEAPON */);
               $.player1.alterWantedLevelNoDrop(3);
               $.robbed_money4_created = 1;
             }
           }
         }
       }
-      if ($.player1.isShooting() || $.shop_bloke1.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON)) {
+      if ($.player1.isShooting() || $.shop_bloke1.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */)) {
         // SCM GOTO → duck_shop_robbing (not lowered; manual jump required)
         throw new Error("unresolved GOTO duck_shop_robbing"); // fallback: would break linear control flow
       }
@@ -668,7 +668,7 @@ $.shop_blokez = _res458.z;
     else {
       // SCM label duck_shop_robbing
       if ($.shop_bloke_hide == 0) {
-        if ($.player1.isShooting() || $.shop_bloke1.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON)) {
+        if ($.player1.isShooting() || $.shop_bloke1.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */)) {
           $.shop_bloke_hide = 1;
         }
       }
@@ -681,7 +681,7 @@ $.shop_blokez = _res458.z;
 $.shop_blokex = _res459.x;
 $.shop_blokey = _res459.y;
 $.shop_blokez = _res459.z;
-            $.shop_alarm = Sound.AddContinuous($.shop_blokex, $.shop_blokey, $.shop_blokez, SOUND_BANK_ALARM_LOOP);
+            $.shop_alarm = Sound.AddContinuous($.shop_blokex, $.shop_blokey, $.shop_blokez, 0 /* SOUND_BANK_ALARM_LOOP */);
             $.player1.alterWantedLevelNoDrop(2);
             $.shop_alarm_played = 1;
           }

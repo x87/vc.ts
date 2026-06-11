@@ -1,7 +1,7 @@
 // Generated from main/general5.sc
 
-import { $ } from "../vars.mts";
-import { timed } from "../scm.mts";
+import { $ } from "../utils/vars.mts";
+import { timed } from "../utils/scm.mts";
 
 async function body() {
   ////////////////////////////////////////////////////////////////////////////////////////////
@@ -317,7 +317,7 @@ $.the_yacht_z = _res242.z;
   ////////////////////////////////////////////////////////////////////////////////////////////
 
 
-  $.player1.setMood(PLAYER_MOOD_WISECRACKING, 60000);
+  $.player1.setMood(3 /* PLAYER_MOOD_WISECRACKING */, 60000);
 
   //IF IS_BUTTON_PRESSED PAD2 DPADUP//DEBUG!!!!!!!!!!
   //	GOTO col5b_cutscene			//DEBUG!!!!!!!!!!
@@ -335,8 +335,8 @@ $.the_yacht_z = _res242.z;
   Streaming.RequestModel(RUGER);
   Streaming.RequestModel(KATANA);
   Streaming.RequestModel(HMOST);
-  Streaming.RequestModel(178 /* UZI */);
-  Streaming.RequestModel(173 /* COLT45 */);
+  Streaming.RequestModel(UZI);
+  Streaming.RequestModel(COLT45);
   Streaming.LoadSpecialCharacter(1, "igcolon");
   Streaming.LoadSpecialCharacter(2, "cgona");
   //LOAD_SPECIAL_CHARACTER 3 fsfa
@@ -355,12 +355,12 @@ $.the_yacht_z = _res242.z;
   }
 
 
-  while (!(Streaming.HasSpecialCharacterLoaded(1)) || !(Streaming.HasSpecialCharacterLoaded(2)) || !(Streaming.HasModelLoaded(HMOST)) || !(Streaming.HasModelLoaded(178 /* UZI */)) || !(Streaming.HasModelLoaded(173 /* COLT45 */))) {
+  while (!(Streaming.HasSpecialCharacterLoaded(1)) || !(Streaming.HasSpecialCharacterLoaded(2)) || !(Streaming.HasModelLoaded(HMOST)) || !(Streaming.HasModelLoaded(UZI)) || !(Streaming.HasModelLoaded(COLT45))) {
     await asyncWait(0);
   }
 
 
-  $.player1.giveWeapon(WEAPONTYPE_KATANA, 1);
+  $.player1.giveWeapon(10 /* WEAPONTYPE_KATANA */, 1);
 
 
   $.player1.addArmour(200);
@@ -411,31 +411,31 @@ $.the_yacht_z = _res243.z;
   $.colonel.setProofs(false /* FALSE */, false /* FALSE */, true /* TRUE */, true /* TRUE */, false /* FALSE */);
   $.colonel.setAccuracy(40);
   $.colonel.setHealth(500);
-  $.colonel.attachToObject($.the_yacht, -2.5, -1.996, 4.179, 0, 360.0, WEAPONTYPE_RUGER); //4.288 -5.171 4.179 0 360.0 WEAPONTYPE_RUGER
+  $.colonel.attachToObject($.the_yacht, -2.5, -1.996, 4.179, 0, 360.0, 27 /* WEAPONTYPE_RUGER */); //4.288 -5.171 4.179 0 360.0 WEAPONTYPE_RUGER
 
 
   $.colonel_goon1 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL02, $.the_yacht_x, $.the_yacht_y, $.the_yacht_z);
   $.sailor = $.colonel_goon1;
   await setup_sailors();  // SCM GOSUB setup_sailors
-  $.colonel_goon1.attachToObject($.the_yacht, 4.288, -11.674, 4.179, 0, 360.0, WEAPONTYPE_RUGER);
+  $.colonel_goon1.attachToObject($.the_yacht, 4.288, -11.674, 4.179, 0, 360.0, 27 /* WEAPONTYPE_RUGER */);
 
 
   $.colonel_goon2 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL02, $.the_yacht_x, $.the_yacht_y, $.the_yacht_z);
   $.sailor = $.colonel_goon2;
   await setup_sailors();  // SCM GOSUB setup_sailors
-  $.colonel_goon2.attachToObject($.the_yacht, -4.215, -8.161, 4.179, 0, 360.0, WEAPONTYPE_RUGER);
+  $.colonel_goon2.attachToObject($.the_yacht, -4.215, -8.161, 4.179, 0, 360.0, 27 /* WEAPONTYPE_RUGER */);
 
 
   $.colonel_goon3 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL02, $.the_yacht_x, $.the_yacht_y, $.the_yacht_z);
   $.sailor = $.colonel_goon3;
   await setup_sailors();  // SCM GOSUB setup_sailors
-  $.colonel_goon3.attachToObject($.the_yacht, 4.267, -4.745, 4.179, 0, 360.0, WEAPONTYPE_RUGER);
+  $.colonel_goon3.attachToObject($.the_yacht, 4.267, -4.745, 4.179, 0, 360.0, 27 /* WEAPONTYPE_RUGER */);
 
 
   $.colonel_goon4 = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL02, $.the_yacht_x, $.the_yacht_y, $.the_yacht_z);
   $.sailor = $.colonel_goon4;
   await setup_sailors();  // SCM GOSUB setup_sailors
-  $.colonel_goon4.attachToObject($.the_yacht, -4.225, -12.46, 4.179, 0, 360.0, WEAPONTYPE_RUGER);
+  $.colonel_goon4.attachToObject($.the_yacht, -4.225, -12.46, 4.179, 0, 360.0, 27 /* WEAPONTYPE_RUGER */);
 
 
   $.the_path_spline.setSpeed(0.0);
@@ -444,25 +444,25 @@ $.the_yacht_z = _res243.z;
   if (ONMISSION == 0) {
     $.heli1 = Car.Create(HUNTER, 36.0195, -447.5407, 15.0170);
     $.killer_chopper = Car.Create(HUNTER, 36.0195, -447.5407, 15.0170);
-    $.killer_chopper_pilot = Char.Create(PEDTYPE_GANG_STREET, HMOST, 36.0195, -447.5407, 15.0170);
-    $.car01_goon1 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 36.0195, -447.5407, 15.0170);
-    $.car01_goon2 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 36.0195, -447.5407, 15.0170);
-    $.car01_goon3 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 36.0195, -447.5407, 15.0170);
-    $.car01_goon4 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 36.0195, -447.5407, 15.0170);
-    $.car02_goon1 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 36.0195, -447.5407, 15.0170);
-    $.car02_goon2 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 36.0195, -447.5407, 15.0170);
-    $.car02_goon3 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 36.0195, -447.5407, 15.0170);
-    $.car02_goon4 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 36.0195, -447.5407, 15.0170);
-    $.boarder_1 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 36.0195, -447.5407, 15.0170);
-    $.boarder_2 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 36.0195, -447.5407, 15.0170);
-    $.boarder_3 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 36.0195, -447.5407, 15.0170);
-    $.boarder_4 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 36.0195, -447.5407, 15.0170);
-    $.heli1_passenger1 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 36.0195, -447.5407, 15.0170);
-    $.heli1_passenger2 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 36.0195, -447.5407, 15.0170);
-    $.heli1_passenger3 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 36.0195, -447.5407, 15.0170);
-    $.heli2_passenger1 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 36.0195, -447.5407, 15.0170);
-    $.heli2_passenger2 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 36.0195, -447.5407, 15.0170);
-    $.heli2_passenger3 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 36.0195, -447.5407, 15.0170);
+    $.killer_chopper_pilot = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 36.0195, -447.5407, 15.0170);
+    $.car01_goon1 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 36.0195, -447.5407, 15.0170);
+    $.car01_goon2 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 36.0195, -447.5407, 15.0170);
+    $.car01_goon3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 36.0195, -447.5407, 15.0170);
+    $.car01_goon4 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 36.0195, -447.5407, 15.0170);
+    $.car02_goon1 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 36.0195, -447.5407, 15.0170);
+    $.car02_goon2 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 36.0195, -447.5407, 15.0170);
+    $.car02_goon3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 36.0195, -447.5407, 15.0170);
+    $.car02_goon4 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 36.0195, -447.5407, 15.0170);
+    $.boarder_1 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 36.0195, -447.5407, 15.0170);
+    $.boarder_2 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 36.0195, -447.5407, 15.0170);
+    $.boarder_3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 36.0195, -447.5407, 15.0170);
+    $.boarder_4 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 36.0195, -447.5407, 15.0170);
+    $.heli1_passenger1 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 36.0195, -447.5407, 15.0170);
+    $.heli1_passenger2 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 36.0195, -447.5407, 15.0170);
+    $.heli1_passenger3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 36.0195, -447.5407, 15.0170);
+    $.heli2_passenger1 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 36.0195, -447.5407, 15.0170);
+    $.heli2_passenger2 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 36.0195, -447.5407, 15.0170);
+    $.heli2_passenger3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 36.0195, -447.5407, 15.0170);
     $.car02 = Car.Create(WASHING, -238.2693, -1361.3296, 7.0786);
     $.car01 = Car.Create(WASHING, -238.2693, -1361.3296, 7.0786);
 
@@ -561,7 +561,7 @@ $.weapon_type = _res245.weaponType;
 $.ammo = _res245.weaponAmmo;
 $.model = _res245.weaponModel;
       if ($.ammo < 1) {
-        $.player1.giveWeapon(WEAPONTYPE_RUGER, 180);
+        $.player1.giveWeapon(27 /* WEAPONTYPE_RUGER */, 180);
       }
     }
 
@@ -572,7 +572,7 @@ $.weapon_type = _res246.weaponType;
 $.ammo = _res246.weaponAmmo;
 $.model = _res246.weaponModel;
       if ($.ammo < 1) {
-        $.player1.giveWeapon(3 /* WEAPONTYPE_UZI */, 80);
+        $.player1.giveWeapon(23 /* WEAPONTYPE_UZI */, 80);
         $.given_player_smg_flag = 1;
       }
     }
@@ -785,29 +785,29 @@ $.the_yacht_z = _res248.z;
       $.car02_goon4.markAsNoLongerNeeded();
       $.barricade_boat01 = Car.Create(DINGHY, 246.161, 934.99, 6.0);
       $.barricade_boat01.setHeading(165.0);
-      $.barricade_boat01_dr = Char.CreateInsideCar($.barricade_boat01, PEDTYPE_GANG_STREET, HMOST);
-      $.barricade_boat01_sh = Char.Create(PEDTYPE_GANG_STREET, HMOST, 274.1312, 969.9899, 23.4139);
+      $.barricade_boat01_dr = Char.CreateInsideCar($.barricade_boat01, 9 /* PEDTYPE_GANG_STREET */, HMOST);
+      $.barricade_boat01_sh = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 274.1312, 969.9899, 23.4139);
       $.boat_shooter_ped = $.barricade_boat01_sh;
       await setup_boat_shooters();  // SCM GOSUB setup_boat_shooters
-      $.barricade_boat01_sh.attachToCar($.barricade_boat01, 0.0742, -0.8961, 1.0623, 2 /* FACING_BACK */, 360.0, 3 /* WEAPONTYPE_UZI */);
+      $.barricade_boat01_sh.attachToCar($.barricade_boat01, 0.0742, -0.8961, 1.0623, 2 /* FACING_BACK */, 360.0, 23 /* WEAPONTYPE_UZI */);
 
 
       $.barricade_boat02 = Car.Create(DINGHY, 252.074, 929.9, 6.0);
       $.barricade_boat02.setHeading(165.0);
-      $.barricade_boat02_dr = Char.CreateInsideCar($.barricade_boat02, PEDTYPE_GANG_STREET, HMOST);
-      $.barricade_boat02_sh = Char.Create(PEDTYPE_GANG_STREET, HMOST, 274.1312, 969.9899, 23.4139);
+      $.barricade_boat02_dr = Char.CreateInsideCar($.barricade_boat02, 9 /* PEDTYPE_GANG_STREET */, HMOST);
+      $.barricade_boat02_sh = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 274.1312, 969.9899, 23.4139);
       $.boat_shooter_ped = $.barricade_boat02_sh;
       await setup_boat_shooters();  // SCM GOSUB setup_boat_shooters
-      $.barricade_boat02_sh.attachToCar($.barricade_boat02, 0.0742, -0.8961, 1.0623, 2 /* FACING_BACK */, 360.0, 3 /* WEAPONTYPE_UZI */);
+      $.barricade_boat02_sh.attachToCar($.barricade_boat02, 0.0742, -0.8961, 1.0623, 2 /* FACING_BACK */, 360.0, 23 /* WEAPONTYPE_UZI */);
 
 
       $.barricade_boat03 = Car.Create(RIO, 229.653, 929.049, 6.0);
       $.barricade_boat03.setHeading(124.5);
-      $.barricade_boat03_dr = Char.CreateInsideCar($.barricade_boat03, PEDTYPE_GANG_STREET, HMOST);
-      $.barricade_boat03_sh = Char.Create(PEDTYPE_GANG_STREET, HMOST, 274.1312, 969.9899, 23.4139);
+      $.barricade_boat03_dr = Char.CreateInsideCar($.barricade_boat03, 9 /* PEDTYPE_GANG_STREET */, HMOST);
+      $.barricade_boat03_sh = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 274.1312, 969.9899, 23.4139);
       $.boat_shooter_ped = $.barricade_boat03_sh;
       await setup_boat_shooters();  // SCM GOSUB setup_boat_shooters
-      $.barricade_boat03_sh.attachToCar($.barricade_boat03, 0.0, 4.0, 1.5, 0, 360.0, 3 /* WEAPONTYPE_UZI */);
+      $.barricade_boat03_sh.attachToCar($.barricade_boat03, 0.0, 4.0, 1.5, 0, 360.0, 23 /* WEAPONTYPE_UZI */);
 
 
       $.barricade_boat04 = Car.Create(TROPIC, 217.382, 940.656, 6.0);
@@ -816,27 +816,27 @@ $.the_yacht_z = _res248.z;
 
       $.barricade_boat05 = Car.Create(DINGHY, 210.127, 932.185, 6.0);
       $.barricade_boat05.setHeading(166.5);
-      $.barricade_boat05_dr = Char.CreateInsideCar($.barricade_boat05, PEDTYPE_GANG_STREET, HMOST);
-      $.barricade_boat05_sh = Char.Create(PEDTYPE_GANG_STREET, HMOST, 274.1312, 969.9899, 23.4139);
+      $.barricade_boat05_dr = Char.CreateInsideCar($.barricade_boat05, 9 /* PEDTYPE_GANG_STREET */, HMOST);
+      $.barricade_boat05_sh = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 274.1312, 969.9899, 23.4139);
       $.boat_shooter_ped = $.barricade_boat05_sh;
       await setup_boat_shooters();  // SCM GOSUB setup_boat_shooters
-      $.barricade_boat05_sh.attachToCar($.barricade_boat05, 0.0742, -0.8961, 1.0623, 2 /* FACING_BACK */, 360.0, 3 /* WEAPONTYPE_UZI */);
+      $.barricade_boat05_sh.attachToCar($.barricade_boat05, 0.0742, -0.8961, 1.0623, 2 /* FACING_BACK */, 360.0, 23 /* WEAPONTYPE_UZI */);
 
 
       $.barricade_boat06 = Car.Create(MARQUIS, 201.639, 942.166, 6.0);
       $.barricade_boat06.setHeading(72.0);
-      $.barricade_boat06_sh1 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 274.1312, 969.9899, 23.4139);
+      $.barricade_boat06_sh1 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 274.1312, 969.9899, 23.4139);
       $.boat_shooter_ped = $.barricade_boat06_sh1;
       await setup_boat_shooters();  // SCM GOSUB setup_boat_shooters
-      $.barricade_boat06_sh1.attachToCar($.barricade_boat06, 0.0, -2.0, 1.2, 0, 360.0, 3 /* WEAPONTYPE_UZI */);
-      $.barricade_boat06_sh2 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 274.1312, 969.9899, 23.4139);
+      $.barricade_boat06_sh1.attachToCar($.barricade_boat06, 0.0, -2.0, 1.2, 0, 360.0, 23 /* WEAPONTYPE_UZI */);
+      $.barricade_boat06_sh2 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 274.1312, 969.9899, 23.4139);
       $.boat_shooter_ped = $.barricade_boat06_sh2;
       await setup_boat_shooters();  // SCM GOSUB setup_boat_shooters
-      $.barricade_boat06_sh2.attachToCar($.barricade_boat06, 0.0, 6.0, 2.65, 0, 360.0, 3 /* WEAPONTYPE_UZI */);
-      $.barricade_boat06_sh3 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 274.1312, 969.9899, 23.4139);
+      $.barricade_boat06_sh2.attachToCar($.barricade_boat06, 0.0, 6.0, 2.65, 0, 360.0, 23 /* WEAPONTYPE_UZI */);
+      $.barricade_boat06_sh3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 274.1312, 969.9899, 23.4139);
       $.boat_shooter_ped = $.barricade_boat06_sh3;
       await setup_boat_shooters();  // SCM GOSUB setup_boat_shooters
-      $.barricade_boat06_sh3.attachToCar($.barricade_boat06, 0.0, 10.0, 1.9, 0, 360.0, 3 /* WEAPONTYPE_UZI */);
+      $.barricade_boat06_sh3.attachToCar($.barricade_boat06, 0.0, 10.0, 1.9, 0, 360.0, 23 /* WEAPONTYPE_UZI */);
       $.barricade_boat07 = Car.Create(TROPIC, 187.631, 953.41, 6.0);
       $.barricade_boat07.setHeading(-126.0);
 
@@ -847,7 +847,7 @@ $.the_yacht_z = _res248.z;
 
       $.barricade_boat09 = Car.Create(TROPIC, 195.398, 767.808, 6.0);
       $.barricade_boat09.setHeading(-7.5);
-      $.barricade_boat09_dr = Char.CreateInsideCar($.barricade_boat09, PEDTYPE_GANG_STREET, HMOST);
+      $.barricade_boat09_dr = Char.CreateInsideCar($.barricade_boat09, 9 /* PEDTYPE_GANG_STREET */, HMOST);
       $.created_bridge_scene = 2;
     }
 
@@ -933,7 +933,7 @@ $.the_yacht_z = _res249.z;
         //PICKUPS ON YACHT
         //CREATE_PICKUP HEALTH PICKUP_ON_STREET 189.6395 888.1066 12.6813 health_on_yacht
         //CREATE_PICKUP_WITH_AMMO RUGER PICKUP_ON_STREET 120 190.6359 887.7457 12.6813 ruger_on_yacht
-        $.health_on_yacht = Pickup.Create(1362 /* HEALTH */, 2 /* PICKUP_ON_STREET */, 189.4928, 885.3084, 13.7132);
+        $.health_on_yacht = Pickup.Create(HEALTH, 2 /* PICKUP_ON_STREET */, 189.4928, 885.3084, 13.7132);
         $.ruger_on_yacht = Pickup.CreateWithAmmo(RUGER, 2 /* PICKUP_ON_STREET */, 120, 190.5261, 885.2347, 13.7132);
       }
     }
@@ -1251,7 +1251,7 @@ $.y = _res250.y;
 $.z = _res250.z;
         if ($.z > 11.2) {
           //IF NOT IS_AREA_OCCUPIED 195.2 885.5 7.3 196.2 886.5 9.5 FALSE FALSE TRUE FALSE FALSE
-          $.boarder_1 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 195.7159, 886.0515, 8.0);
+          $.boarder_1 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 195.7159, 886.0515, 8.0);
           $.goon = $.boarder_1;
           await set_up_boarders_shite();  // SCM GOSUB set_up_boarders_shite
           $.boarder_1_flag = 1;
@@ -1351,7 +1351,7 @@ $.y = _res251.y;
 $.z = _res251.z;
         if ($.z > 11.2) {
           //IF NOT IS_AREA_OCCUPIED 195.2 885.5 7.3 196.2 886.5 9.5 FALSE FALSE TRUE FALSE FALSE
-          $.boarder_2 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 195.7159, 886.0515, 8.0);
+          $.boarder_2 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 195.7159, 886.0515, 8.0);
           $.goon = $.boarder_2;
           await set_up_boarders_shite();  // SCM GOSUB set_up_boarders_shite
           $.boarder_2_flag = 1;
@@ -1450,7 +1450,7 @@ $.y = _res252.y;
 $.z = _res252.z;
         if ($.z > 11.2) {
           //IF NOT IS_AREA_OCCUPIED 184.1 887.3 7.3 185.1 888.2 9.5 FALSE FALSE TRUE FALSE FALSE
-          $.boarder_3 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 184.5751, 887.7821, 8.0);
+          $.boarder_3 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 184.5751, 887.7821, 8.0);
           $.goon = $.boarder_3;
           await set_up_boarders_shite();  // SCM GOSUB set_up_boarders_shite
           $.boarder_3_flag = 1;
@@ -1551,7 +1551,7 @@ $.y = _res253.y;
 $.z = _res253.z;
         if ($.z > 11.2) {
           ////IF NOT IS_AREA_OCCUPIED 184.2 887.4 7.4 185.0 888.1 9.0 FALSE FALSE TRUE FALSE FALSE
-          $.boarder_4 = Char.Create(PEDTYPE_GANG_STREET, HMOST, 184.5751, 887.7821, 8.0);
+          $.boarder_4 = Char.Create(9 /* PEDTYPE_GANG_STREET */, HMOST, 184.5751, 887.7821, 8.0);
           $.goon = $.boarder_4;
           await set_up_boarders_shite();  // SCM GOSUB set_up_boarders_shite
           $.boarder_4_flag = 1;
@@ -1660,15 +1660,15 @@ $.z = _res253.z;
 
     if ($.heli1_counter == 0) {
       $.heli1 = Car.Create(MAVERICK, 314.2827, 993.9822, 13.2063);
-      $.heli1_pilot = Char.CreateInsideCar($.heli1, PEDTYPE_GANG_STREET, HMOST);
+      $.heli1_pilot = Char.CreateInsideCar($.heli1, 9 /* PEDTYPE_GANG_STREET */, HMOST);
       $.heli1.lockDoors(2 /* CARLOCK_LOCKED */);
-      $.heli1_passenger1 = Char.CreateAsPassenger($.heli1, PEDTYPE_GANG_STREET, HMOST, 0);
+      $.heli1_passenger1 = Char.CreateAsPassenger($.heli1, 9 /* PEDTYPE_GANG_STREET */, HMOST, 0);
       $.heli_passenger = $.heli1_passenger1;
       await setup_heli_passengers();  // SCM GOSUB setup_heli_passengers
-      $.heli1_passenger2 = Char.CreateAsPassenger($.heli1, PEDTYPE_GANG_STREET, HMOST, 1);
+      $.heli1_passenger2 = Char.CreateAsPassenger($.heli1, 9 /* PEDTYPE_GANG_STREET */, HMOST, 1);
       $.heli_passenger = $.heli1_passenger2;
       await setup_heli_passengers();  // SCM GOSUB setup_heli_passengers
-      $.heli1_passenger3 = Char.CreateAsPassenger($.heli1, PEDTYPE_GANG_STREET, HMOST, 2);
+      $.heli1_passenger3 = Char.CreateAsPassenger($.heli1, 9 /* PEDTYPE_GANG_STREET */, HMOST, 2);
       $.heli_passenger = $.heli1_passenger3;
       await setup_heli_passengers();  // SCM GOSUB setup_heli_passengers
       $.heli1.setForwardSpeed(0.1);
@@ -1763,13 +1763,13 @@ $.z = _res253.z;
               $.heli1_passenger1.markAsNoLongerNeeded();
               $.heli1_passenger2.markAsNoLongerNeeded();
               $.heli1_passenger3.markAsNoLongerNeeded();
-              $.heli1_passenger1 = Char.CreateAsPassenger($.heli1, PEDTYPE_GANG_STREET, HMOST, 0);
+              $.heli1_passenger1 = Char.CreateAsPassenger($.heli1, 9 /* PEDTYPE_GANG_STREET */, HMOST, 0);
               $.heli_passenger = $.heli1_passenger1;
               await setup_heli_passengers();  // SCM GOSUB setup_heli_passengers
-              $.heli1_passenger2 = Char.CreateAsPassenger($.heli1, PEDTYPE_GANG_STREET, HMOST, 1);
+              $.heli1_passenger2 = Char.CreateAsPassenger($.heli1, 9 /* PEDTYPE_GANG_STREET */, HMOST, 1);
               $.heli_passenger = $.heli1_passenger2;
               await setup_heli_passengers();  // SCM GOSUB setup_heli_passengers
-              $.heli1_passenger3 = Char.CreateAsPassenger($.heli1, PEDTYPE_GANG_STREET, HMOST, 2);
+              $.heli1_passenger3 = Char.CreateAsPassenger($.heli1, 9 /* PEDTYPE_GANG_STREET */, HMOST, 2);
               $.heli_passenger = $.heli1_passenger3;
               await setup_heli_passengers();  // SCM GOSUB setup_heli_passengers
               $.heli1.gotoCoords(314.2827, 993.9822, 40.0, 20);
@@ -1834,15 +1834,15 @@ $.z = _res253.z;
 
     if ($.heli2_counter == 0) {
       $.heli2 = Car.Create(MAVERICK, 302.9623, 909.7476, 11.6869);
-      $.heli2_pilot = Char.CreateInsideCar($.heli2, PEDTYPE_GANG_STREET, HMOST);
+      $.heli2_pilot = Char.CreateInsideCar($.heli2, 9 /* PEDTYPE_GANG_STREET */, HMOST);
       $.heli2.lockDoors(2 /* CARLOCK_LOCKED */);
-      $.heli2_passenger1 = Char.CreateAsPassenger($.heli2, PEDTYPE_GANG_STREET, HMOST, 0);
+      $.heli2_passenger1 = Char.CreateAsPassenger($.heli2, 9 /* PEDTYPE_GANG_STREET */, HMOST, 0);
       $.heli_passenger = $.heli2_passenger1;
       await setup_heli_passengers();  // SCM GOSUB setup_heli_passengers
-      $.heli2_passenger2 = Char.CreateAsPassenger($.heli2, PEDTYPE_GANG_STREET, HMOST, 1);
+      $.heli2_passenger2 = Char.CreateAsPassenger($.heli2, 9 /* PEDTYPE_GANG_STREET */, HMOST, 1);
       $.heli_passenger = $.heli2_passenger2;
       await setup_heli_passengers();  // SCM GOSUB setup_heli_passengers
-      $.heli2_passenger3 = Char.CreateAsPassenger($.heli2, PEDTYPE_GANG_STREET, HMOST, 2);
+      $.heli2_passenger3 = Char.CreateAsPassenger($.heli2, 9 /* PEDTYPE_GANG_STREET */, HMOST, 2);
       $.heli_passenger = $.heli2_passenger3;
       await setup_heli_passengers();  // SCM GOSUB setup_heli_passengers
       $.heli2.setForwardSpeed(0.1);
@@ -1934,13 +1934,13 @@ $.z = _res253.z;
               $.heli2_passenger1.markAsNoLongerNeeded();
               $.heli2_passenger2.markAsNoLongerNeeded();
               $.heli2_passenger3.markAsNoLongerNeeded();
-              $.heli2_passenger1 = Char.CreateAsPassenger($.heli2, PEDTYPE_GANG_STREET, HMOST, 0);
+              $.heli2_passenger1 = Char.CreateAsPassenger($.heli2, 9 /* PEDTYPE_GANG_STREET */, HMOST, 0);
               $.heli_passenger = $.heli2_passenger1;
               await setup_heli_passengers();  // SCM GOSUB setup_heli_passengers
-              $.heli2_passenger2 = Char.CreateAsPassenger($.heli2, PEDTYPE_GANG_STREET, HMOST, 1);
+              $.heli2_passenger2 = Char.CreateAsPassenger($.heli2, 9 /* PEDTYPE_GANG_STREET */, HMOST, 1);
               $.heli_passenger = $.heli2_passenger2;
               await setup_heli_passengers();  // SCM GOSUB setup_heli_passengers
-              $.heli2_passenger3 = Char.CreateAsPassenger($.heli2, PEDTYPE_GANG_STREET, HMOST, 2);
+              $.heli2_passenger3 = Char.CreateAsPassenger($.heli2, 9 /* PEDTYPE_GANG_STREET */, HMOST, 2);
               $.heli_passenger = $.heli2_passenger3;
               await setup_heli_passengers();  // SCM GOSUB setup_heli_passengers
               $.heli2.gotoCoords(302.9623, 909.7476, 40.0, 20);
@@ -2043,7 +2043,7 @@ $.z = _res253.z;
         if ($.killer_chopper_created == 1) {
           $.killer_chopper = Car.Create(HUNTER, 21.2864, 720.1946, 13.0);
           $.killer_chopper.setHeading(312.7112);
-          $.killer_chopper_pilot = Char.CreateInsideCar($.killer_chopper, PEDTYPE_GANG_STREET, HMOST);
+          $.killer_chopper_pilot = Char.CreateInsideCar($.killer_chopper, 9 /* PEDTYPE_GANG_STREET */, HMOST);
           $.killer_chopper.setHealth(2500);
           $.killer_chopper.lockDoors(2 /* CARLOCK_LOCKED */);
           $.killer_chopper.setForwardSpeed(30.0);
@@ -2085,16 +2085,16 @@ $.z = _res253.z;
             $.car01 = Car.Create(WASHING, -238.2693, -1361.3296, 7.0786);
             $.car01.changeColor(0, 0);
             $.car01.setHeading(10.7405);
-            $.car01_goon1 = Char.CreateInsideCar($.car01, PEDTYPE_GANG_STREET, HMOST);
+            $.car01_goon1 = Char.CreateInsideCar($.car01, 9 /* PEDTYPE_GANG_STREET */, HMOST);
             $.goon = $.car01_goon1;
             await setup_the_goons_shite();  // SCM GOSUB setup_the_goons_shite
-            $.car01_goon2 = Char.CreateAsPassenger($.car01, PEDTYPE_GANG_STREET, HMOST, 0);
+            $.car01_goon2 = Char.CreateAsPassenger($.car01, 9 /* PEDTYPE_GANG_STREET */, HMOST, 0);
             $.goon = $.car01_goon2;
             await setup_the_goons_shite();  // SCM GOSUB setup_the_goons_shite
-            $.car01_goon3 = Char.CreateAsPassenger($.car01, PEDTYPE_GANG_STREET, HMOST, 1);
+            $.car01_goon3 = Char.CreateAsPassenger($.car01, 9 /* PEDTYPE_GANG_STREET */, HMOST, 1);
             $.goon = $.car01_goon3;
             await setup_the_goons_shite();  // SCM GOSUB setup_the_goons_shite
-            $.car01_goon4 = Char.CreateAsPassenger($.car01, PEDTYPE_GANG_STREET, HMOST, 2);
+            $.car01_goon4 = Char.CreateAsPassenger($.car01, 9 /* PEDTYPE_GANG_STREET */, HMOST, 2);
             $.goon = $.car01_goon4;
             await setup_the_goons_shite();  // SCM GOSUB setup_the_goons_shite
             $.car01.setCruiseSpeed(100.0);
@@ -2139,7 +2139,7 @@ $.z = _res253.z;
         if ($.car01_goon1_counter == 4) {
           if ($.car01_goon1.locateOnFoot2D(-323.5134, -1232.9800, 1.5, 1.5, false)) {
             if (!(Car.IsDead($.boat03))) {
-              $.car01_goon1.attachToCar($.boat03, 0.0, 4.0, 1.5, 0, 360.0, 3 /* WEAPONTYPE_UZI */);
+              $.car01_goon1.attachToCar($.boat03, 0.0, 4.0, 1.5, 0, 360.0, 23 /* WEAPONTYPE_UZI */);
               $.car01_goon1_counter = 5;
             }
             else {
@@ -2182,7 +2182,7 @@ $.z = _res253.z;
           if ($.car01_goon2.locateOnFoot2D(-323.5134, -1232.9800, 1.5, 1.5, false)) {
             if (!(Car.IsDead($.boat03))) {
               $.car01_goon2.delete();
-              $.car01_goon2 = Char.CreateInsideCar($.boat03, PEDTYPE_GANG_STREET, HMOST);
+              $.car01_goon2 = Char.CreateInsideCar($.boat03, 9 /* PEDTYPE_GANG_STREET */, HMOST);
               $.car01_goon2_counter = 5;
             }
             else {
@@ -2317,7 +2317,7 @@ $.z = _res254.z;
         if ($.car01_goon3_counter == 4) {
           if ($.car01_goon3.locateOnFoot2D(-332.7804, -1217.1168, 2.0, 2.0, false)) {
             if (!(Car.IsDead($.boat02))) {
-              $.car01_goon3.attachToCar($.boat02, 0.6462, 1.4897, 1.3333, 0, 360.0, 3 /* WEAPONTYPE_UZI */);
+              $.car01_goon3.attachToCar($.boat02, 0.6462, 1.4897, 1.3333, 0, 360.0, 23 /* WEAPONTYPE_UZI */);
               $.car01_goon3_counter = 5;
             }
             else {
@@ -2360,7 +2360,7 @@ $.z = _res254.z;
           if ($.car01_goon4.locateOnFoot2D(-332.7804, -1217.1168, 2.0, 2.0, false)) {
             if (!(Car.IsDead($.boat02))) {
               $.car01_goon4.delete();
-              $.car01_goon4 = Char.CreateInsideCar($.boat02, PEDTYPE_GANG_STREET, HMOST);
+              $.car01_goon4 = Char.CreateInsideCar($.boat02, 9 /* PEDTYPE_GANG_STREET */, HMOST);
               $.car01_goon4_counter = 5;
             }
             else {
@@ -2500,16 +2500,16 @@ $.z = _res255.z;
             $.car02.changeColor(0, 0);
             $.car02.setHeading(10.7405);
             Streaming.MarkModelAsNoLongerNeeded(WASHING);
-            $.car02_goon1 = Char.CreateInsideCar($.car02, PEDTYPE_GANG_STREET, HMOST);
+            $.car02_goon1 = Char.CreateInsideCar($.car02, 9 /* PEDTYPE_GANG_STREET */, HMOST);
             $.goon = $.car02_goon1;
             await setup_the_goons_shite();  // SCM GOSUB setup_the_goons_shite
-            $.car02_goon2 = Char.CreateAsPassenger($.car02, PEDTYPE_GANG_STREET, HMOST, 0);
+            $.car02_goon2 = Char.CreateAsPassenger($.car02, 9 /* PEDTYPE_GANG_STREET */, HMOST, 0);
             $.goon = $.car02_goon2;
             await setup_the_goons_shite();  // SCM GOSUB setup_the_goons_shite
-            $.car02_goon3 = Char.CreateAsPassenger($.car02, PEDTYPE_GANG_STREET, HMOST, 1);
+            $.car02_goon3 = Char.CreateAsPassenger($.car02, 9 /* PEDTYPE_GANG_STREET */, HMOST, 1);
             $.goon = $.car02_goon3;
             await setup_the_goons_shite();  // SCM GOSUB setup_the_goons_shite
-            $.car02_goon4 = Char.CreateAsPassenger($.car02, PEDTYPE_GANG_STREET, HMOST, 2);
+            $.car02_goon4 = Char.CreateAsPassenger($.car02, 9 /* PEDTYPE_GANG_STREET */, HMOST, 2);
             $.goon = $.car02_goon4;
             await setup_the_goons_shite();  // SCM GOSUB setup_the_goons_shite
             $.car02.setCruiseSpeed(100.0);
@@ -2532,7 +2532,7 @@ $.z = _res255.z;
         if ($.car02_goon1_counter == 4) {
           if ($.car02_goon1.locateOnFoot2D(-328.9344, -1212.0651, 1.5, 1.5, false)) {
             if (!(Car.IsDead($.boat01))) {
-              $.car02_goon1.attachToCar($.boat01, 0.0, -2.0, 1.2, 0, 360.0, 3 /* WEAPONTYPE_UZI */);
+              $.car02_goon1.attachToCar($.boat01, 0.0, -2.0, 1.2, 0, 360.0, 23 /* WEAPONTYPE_UZI */);
               $.car02_goon1_counter = 5;
             }
             else {
@@ -2552,7 +2552,7 @@ $.z = _res255.z;
         if ($.car02_goon2_counter == 4) {
           if ($.car02_goon2.locateOnFoot2D(-328.9344, -1212.0651, 1.5, 1.5, false)) {
             if (!(Car.IsDead($.boat01))) {
-              $.car02_goon2.attachToCar($.boat01, 0.0, 6.0, 2.65, 0, 360.0, 3 /* WEAPONTYPE_UZI */);
+              $.car02_goon2.attachToCar($.boat01, 0.0, 6.0, 2.65, 0, 360.0, 23 /* WEAPONTYPE_UZI */);
               $.car02_goon2_counter = 5;
             }
             else {
@@ -2572,7 +2572,7 @@ $.z = _res255.z;
         if ($.car02_goon3_counter == 4) {
           if ($.car02_goon3.locateOnFoot2D(-328.9344, -1212.0651, 1.5, 1.5, false)) {
             if (!(Car.IsDead($.boat01))) {
-              $.car02_goon3.attachToCar($.boat01, 0.0, 10.0, 1.9, 0, 360.0, 3 /* WEAPONTYPE_UZI */);
+              $.car02_goon3.attachToCar($.boat01, 0.0, 10.0, 1.9, 0, 360.0, 23 /* WEAPONTYPE_UZI */);
               $.car02_goon3_counter = 5;
             }
             else {
@@ -2593,7 +2593,7 @@ $.z = _res255.z;
           if ($.car02_goon4.locateOnFoot2D(-328.9344, -1212.0651, 1.5, 1.5, false)) {
             if (!(Car.IsDead($.boat01))) {
               $.car02_goon4.delete();
-              $.car02_goon4 = Char.CreateInsideCar($.boat01, PEDTYPE_GANG_STREET, HMOST);
+              $.car02_goon4 = Char.CreateInsideCar($.boat01, 9 /* PEDTYPE_GANG_STREET */, HMOST);
               $.boat01_timer = $.game_timer + 5000;
               $.car02_goon4_counter = 5;
             }
@@ -3777,7 +3777,7 @@ async function wait_for_cs_time() {
 
 async function setup_the_goons_shite() {
   $.goon.clearThreatSearch();
-  $.goon.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.goon.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.goon.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.goon.setRunning(true /* TRUE */);
   $.goon.setUsePednodeSeek(false /* FALSE */);
@@ -3788,7 +3788,7 @@ async function setup_the_goons_shite() {
 
 async function set_up_boarders_shite() {
   $.goon.setStayInSamePlace(true /* TRUE */);
-  $.goon.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 9999);
+  $.goon.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 9999);
   $.goon.clearThreatSearch();
   $.goon.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.goon.setThreatSearch(1048576 /* THREAT_GUN */);
@@ -3804,7 +3804,7 @@ async function set_up_boarders_shite() {
 
 async function setup_boat_shooters() {
   $.boat_shooter_ped.setStayInSamePlace(true /* TRUE */);
-  $.boat_shooter_ped.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 9999);
+  $.boat_shooter_ped.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 9999);
   $.boat_shooter_ped.clearThreatSearch();
   $.boat_shooter_ped.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.boat_shooter_ped.setHeedThreats(true /* TRUE */);
@@ -3817,7 +3817,7 @@ async function setup_boat_shooters() {
 
 async function setup_heli_passengers() {
   $.heli_passenger.setStayInSamePlace(true /* TRUE */);
-  $.heli_passenger.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 9999);
+  $.heli_passenger.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 9999);
   $.heli_passenger.clearThreatSearch();
   $.heli_passenger.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.heli_passenger.setThreatSearch(1048576 /* THREAT_GUN */);
@@ -3830,7 +3830,7 @@ async function setup_heli_passengers() {
 async function setup_sailors() {
   $.sailor.setAsPlayerFriend($.player1, true /* TRUE */);
   $.sailor.clearThreatSearch();
-  $.sailor.setThreatSearch(THREAT_GANG_STREET);
+  $.sailor.setThreatSearch(512 /* THREAT_GANG_STREET */);
   $.sailor.setHeedThreats(true /* TRUE */);
   $.sailor.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.sailor.setStayInSamePlace(true /* TRUE */);
@@ -4000,8 +4000,8 @@ async function cleanup() {
   Weather.Release();
 
 
-  Streaming.MarkModelAsNoLongerNeeded(178 /* UZI */);
-  Streaming.MarkModelAsNoLongerNeeded(173 /* COLT45 */);
+  Streaming.MarkModelAsNoLongerNeeded(UZI);
+  Streaming.MarkModelAsNoLongerNeeded(COLT45);
   Streaming.MarkModelAsNoLongerNeeded(HUNTER);
   Streaming.MarkModelAsNoLongerNeeded(DINGHY);
   Streaming.MarkModelAsNoLongerNeeded(SPEEDER);

@@ -1,6 +1,6 @@
 // Generated from main/general3.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_general3() {
 
@@ -425,7 +425,7 @@ $.the_yacht_z = _res206.z;
   Camera.SetBehindPlayer();
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   // ****************************************END OF CUTSCENE**********************************
@@ -435,7 +435,7 @@ $.the_yacht_z = _res206.z;
   Streaming.RequestModel(CLa); //diaz bg1
   Streaming.RequestModel(CLb); //diaz bg2
   Streaming.RequestModel(INFERNUS);
-  Streaming.RequestModel(178 /* UZI */);
+  Streaming.RequestModel(UZI);
   Streaming.RequestModel(RUGER);
 
 
@@ -449,7 +449,7 @@ $.the_yacht_z = _res206.z;
 
 
 
-  while (!(Streaming.HasModelLoaded(admiral)) || !(Streaming.HasModelLoaded(CLa)) || !(Streaming.HasModelLoaded(CLb)) || !(Streaming.HasModelLoaded(INFERNUS)) || !(Streaming.HasModelLoaded(178 /* UZI */))) {
+  while (!(Streaming.HasModelLoaded(admiral)) || !(Streaming.HasModelLoaded(CLa)) || !(Streaming.HasModelLoaded(CLb)) || !(Streaming.HasModelLoaded(INFERNUS)) || !(Streaming.HasModelLoaded(UZI))) {
     await asyncWait(0);
   }
 
@@ -478,7 +478,7 @@ $.the_yacht_z = _res206.z;
 
 
 
-  Weather.ForceNow(WEATHER_EXTRA_SUNNY);
+  Weather.ForceNow(4 /* WEATHER_EXTRA_SUNNY */);
   Camera.DoFade(1500, 1 /* FADE_IN */);
 
 
@@ -716,7 +716,7 @@ async function general3_mission_loop() {
             Camera.RestoreJumpcut();
             $.meeting_blip_s3 = Blip.AddForCoord($.meetingx_s3, $.meetingy_s3, 11.062);
             Text.PrintNow("GEN3_44", 10000, 2);
-            Audio.SetRadioChannel(FEVER, -1);
+            Audio.SetRadioChannel(3 /* FEVER */, -1);
             $.protect_deal_flag = 2;
 
 
@@ -829,24 +829,24 @@ async function general3_mission_loop() {
             $.coke_barons_car.lockDoors(3 /* CARLOCK_LOCKOUT_PLAYER_ONLY */);
             $.coke_barons_car.setProofs(true /* TRUE */, true /* TRUE */, true /* TRUE */, true /* TRUE */, true /* TRUE */);
             $.coke_barons_car.setCanBurstTires(false /* FALSE */);
-            $.coke_baron_g3 = Char.CreateInsideCar($.coke_barons_car, PEDTYPE_GANG_DIAZ, SPECIAL02);
+            $.coke_baron_g3 = Char.CreateInsideCar($.coke_barons_car, 10 /* PEDTYPE_GANG_DIAZ */, SPECIAL02);
             $.coke_barons_car.setIdle();
             $.coke_baron_g3.clearThreatSearch();
             $.coke_baron_g3.setHealth(500); //coke baron health
             $.coke_baron_g3.setNeverTargeted(true /* TRUE */);
-            $.coke_barons_goon1 = Char.CreateAsPassenger($.coke_barons_car, PEDTYPE_GANG_DIAZ, CLb, 0);
-            $.coke_barons_goon1.giveWeapon(3 /* WEAPONTYPE_UZI */, 3000);
+            $.coke_barons_goon1 = Char.CreateAsPassenger($.coke_barons_car, 10 /* PEDTYPE_GANG_DIAZ */, CLb, 0);
+            $.coke_barons_goon1.giveWeapon(23 /* WEAPONTYPE_UZI */, 3000);
             $.coke_barons_goon1.clearThreatSearch();
             $.coke_barons_goon1.setHealth(10);
-            $.coke_barons_goon1.setThreatSearch(THREAT_GANG_HAITIAN);
+            $.coke_barons_goon1.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
             $.coke_barons_goon1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
             $.coke_barons_goon1.setAccuracy(10);
             $.coke_barons_goon1.setNeverTargeted(true /* TRUE */);
-            $.coke_barons_goon2 = Char.CreateAsPassenger($.coke_barons_car, PEDTYPE_GANG_DIAZ, CLa, 1);
-            $.coke_barons_goon2.giveWeapon(3 /* WEAPONTYPE_UZI */, 3000);
+            $.coke_barons_goon2 = Char.CreateAsPassenger($.coke_barons_car, 10 /* PEDTYPE_GANG_DIAZ */, CLa, 1);
+            $.coke_barons_goon2.giveWeapon(23 /* WEAPONTYPE_UZI */, 3000);
             $.coke_barons_goon2.clearThreatSearch();
             $.coke_barons_goon2.setHealth(10);
-            $.coke_barons_goon2.setThreatSearch(THREAT_GANG_HAITIAN);
+            $.coke_barons_goon2.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
             $.coke_barons_goon2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
             $.coke_barons_goon2.setAccuracy(10);
             $.coke_barons_goon2.setNeverTargeted(true /* TRUE */);
@@ -1084,7 +1084,7 @@ async function general3_mission_loop() {
         if (!(Char.IsDead($.buddy_g3))) {
           if (!(Char.IsDead($.coke_barons_goon1))) {
             if (!(Char.IsDead($.coke_barons_goon2))) {
-              $.coke_baron_g3.giveWeapon(3 /* WEAPONTYPE_UZI */, 3000);
+              $.coke_baron_g3.giveWeapon(23 /* WEAPONTYPE_UZI */, 3000);
               //					STOP_CHAR_LOOKING coke_barons_goon1
               //					STOP_CHAR_LOOKING coke_barons_goon2
               $.coke_barons_goon2.setVisible(true /* TRUE */);
@@ -1092,16 +1092,16 @@ async function general3_mission_loop() {
               Camera.Restore();
               $.player1.setControl(true /* ON */);
               $.roof_blip_g3 = Blip.AddForCoord($.roofposx, $.roofposy, $.roofposz);
-              $.buddy_g3.followPath($.lanceposx, $.lanceposy, $.lanceposz, 1.0, RUN);
+              $.buddy_g3.followPath($.lanceposx, $.lanceposy, $.lanceposz, 1.0, 1 /* RUN */);
               $.coke_baron_g3.setStayInSamePlace(true /* TRUE */);
               $.coke_barons_goon1.setStayInSamePlace(true /* TRUE */);
               $.coke_barons_goon2.setStayInSamePlace(true /* TRUE */);
 
               ////////////////////////////////////////////////////////////////	FOLLOW THE LEADER
 
-              $.coke_baron_g3.setCanBeDamagedByMembersOfGang(GANG_DIAZ, false /* FALSE */);
-              $.coke_barons_goon1.setCanBeDamagedByMembersOfGang(GANG_DIAZ, false /* FALSE */);
-              $.coke_barons_goon2.setCanBeDamagedByMembersOfGang(GANG_DIAZ, false /* FALSE */);
+              $.coke_baron_g3.setCanBeDamagedByMembersOfGang(3 /* GANG_DIAZ */, false /* FALSE */);
+              $.coke_barons_goon1.setCanBeDamagedByMembersOfGang(3 /* GANG_DIAZ */, false /* FALSE */);
+              $.coke_barons_goon2.setCanBeDamagedByMembersOfGang(3 /* GANG_DIAZ */, false /* FALSE */);
               TIMERA = 0;
               $.protect_deal_flag = 7;
             }
@@ -1115,7 +1115,7 @@ async function general3_mission_loop() {
     if ($.protect_deal_flag == 7) {
       if (!(Char.IsDead($.buddy_g3))) {
         if (!($.buddy_g3.locateOnFoot3D($.lanceposx, $.lanceposy, $.lanceposz, 2.0, 2.0, 2.0, false /* FALSE */))) {
-          $.buddy_g3.followPath($.lanceposx, $.lanceposy, $.lanceposz, 1.0, RUN);
+          $.buddy_g3.followPath($.lanceposx, $.lanceposy, $.lanceposz, 1.0, 1 /* RUN */);
         }
       }
     }
@@ -1170,7 +1170,7 @@ async function general3_mission_loop() {
 
 
         if ($.buddy1help == 0) {
-          if ($.buddy_g3.hasBeenDamagedByWeapon(WEAPONTYPE_TEC9)) {
+          if ($.buddy_g3.hasBeenDamagedByWeapon(22 /* WEAPONTYPE_TEC9 */)) {
             $.buddy_g3.clearLastWeaponDamage();
             if ($.playingaudio == 0) {
               $.playingaudio = 3;
@@ -1209,7 +1209,7 @@ async function general3_mission_loop() {
         ////////////////////////////////////////////////////////////////////
 
         if ($.buddy1help == 1) {
-          if ($.buddy_g3.hasBeenDamagedByWeapon(WEAPONTYPE_TEC9)) {
+          if ($.buddy_g3.hasBeenDamagedByWeapon(22 /* WEAPONTYPE_TEC9 */)) {
             $.buddy_g3.clearLastWeaponDamage();
             if ($.playingaudio == 0) {
               $.playingaudio = 6;
@@ -1218,7 +1218,7 @@ async function general3_mission_loop() {
           }
         }
         if ($.buddy1help == 2) {
-          if ($.buddy_g3.hasBeenDamagedByWeapon(WEAPONTYPE_TEC9)) {
+          if ($.buddy_g3.hasBeenDamagedByWeapon(22 /* WEAPONTYPE_TEC9 */)) {
             $.buddy_g3.clearLastWeaponDamage();
             if ($.playingaudio == 0) {
               $.playingaudio = 7;
@@ -1227,7 +1227,7 @@ async function general3_mission_loop() {
           }
         }
         if ($.buddy1help == 3) {
-          if ($.buddy_g3.hasBeenDamagedByWeapon(WEAPONTYPE_TEC9)) {
+          if ($.buddy_g3.hasBeenDamagedByWeapon(22 /* WEAPONTYPE_TEC9 */)) {
             $.buddy_g3.clearLastWeaponDamage();
             if ($.playingaudio == 0) {
               $.playingaudio = 8;
@@ -1572,17 +1572,17 @@ async function general3_mission_loop() {
               $.otherdeal_car.setStraightLineDistance(3);
               $.otherdeal_car.setHeading($.otherdealheading);
               $.otherdeal_car.setHealth(3500);
-              $.cubandrugdealerboss = Char.CreateInsideCar($.otherdeal_car, PEDTYPE_GANG_CUBAN, CBa);
-              $.cubandrugdealerboss.giveWeapon(WEAPONTYPE_TEC9, 3000);
+              $.cubandrugdealerboss = Char.CreateInsideCar($.otherdeal_car, 7 /* PEDTYPE_GANG_CUBAN */, CBa);
+              $.cubandrugdealerboss.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 3000);
               $.otherdeal_car.setIdle();
               $.cubandrugdealerboss.clearThreatSearch();
-              $.cubandrugdealerboss.setThreatSearch(THREAT_GANG_HAITIAN);
+              $.cubandrugdealerboss.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
               $.cubandrugdealerboss.setHealth(10);
               $.cubandrugdealerboss.setNeverTargeted(true /* TRUE */);
-              $.cubandrugdealer1 = Char.CreateAsPassenger($.otherdeal_car, PEDTYPE_GANG_CUBAN, CBa, 0);
-              $.cubandrugdealer1.giveWeapon(WEAPONTYPE_TEC9, 3000);
+              $.cubandrugdealer1 = Char.CreateAsPassenger($.otherdeal_car, 7 /* PEDTYPE_GANG_CUBAN */, CBa, 0);
+              $.cubandrugdealer1.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 3000);
               $.cubandrugdealer1.clearThreatSearch();
-              $.cubandrugdealer1.setThreatSearch(THREAT_GANG_HAITIAN);
+              $.cubandrugdealer1.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
               $.cubandrugdealer1.setHealth(10);
               $.cubandrugdealer1.followChar($.cubandrugdealerboss);
               $.cubandrugdealer1.setNeverTargeted(true /* TRUE */);
@@ -1635,7 +1635,7 @@ async function general3_mission_loop() {
                   Text.ClearThisPrint("GEN3_37");
                   Camera.RestoreJumpcut();
                   Camera.SetBehindPlayer();
-                  $.coke_baron_g3.setThreatSearch(THREAT_GANG_HAITIAN);
+                  $.coke_baron_g3.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
                   $.coke_baron_g3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
                   $.cubandrugdealerboss.setObjLeaveCar($.otherdeal_car);
                   $.cubandrugdealer1.setObjLeaveCar($.otherdeal_car);
@@ -1702,7 +1702,7 @@ $.cokellastz = _res208.z;
                   $.briefcaseobject_g3x = $.briefcaseobject_g3x / 2.0;
                   $.briefcaseobject_g3y = $.briefcaseobject_g3y / 2.0;
                   $.briefcaseobject_g3y = $.briefcaseobject_g3y * -1.0;
-                  $.briefcase_deal = ScriptObject.Create(1319 /* BRIEFCASE */, $.briefcaseobject_g3x, $.briefcaseobject_g3y, 10.062503);
+                  $.briefcase_deal = ScriptObject.Create(BRIEFCASE, $.briefcaseobject_g3x, $.briefcaseobject_g3y, 10.062503);
                   $.coke_baron_g3.setOnlyDamagedByPlayer(false /* FALSE */);
                   $.coke_baron_g3.setSuffersCriticalHits(false /* FALSE */);
                   $.buddy_g3.setSuffersCriticalHits(false /* FALSE */);
@@ -1711,7 +1711,7 @@ $.cokellastz = _res208.z;
                   $.cubandrugdealer1.setStayInSamePlace(true /* TRUE */);
                   $.cubandrugdealerboss.setStayInSamePlace(true /* TRUE */); //new line
                   TIMERA = 0;
-                  $.player1.setMood(PLAYER_MOOD_ANGRY, 120000);
+                  $.player1.setMood(2 /* PLAYER_MOOD_ANGRY */, 120000);
                   $.protect_deal_flag = 11;
 
 
@@ -1731,8 +1731,8 @@ $.cokellastz = _res208.z;
             if (!(Char.IsDead($.coke_barons_goon2))) {
               if (!(Char.IsDead($.cubandrugdealer1))) {
                 $.buddy_g3.setStayInSamePlace(true /* TRUE */);
-                $.buddy_g3.setThreatSearch(THREAT_GANG_HAITIAN);
-                $.buddy_g3.giveWeapon(3 /* WEAPONTYPE_UZI */, 300000);
+                $.buddy_g3.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
+                $.buddy_g3.giveWeapon(23 /* WEAPONTYPE_UZI */, 300000);
                 $.buddy_g3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
                 $.coke_barons_goon1.setStayInSamePlace(false /* FALSE */);
                 $.coke_barons_goon2.setStayInSamePlace(false /* FALSE */);
@@ -1898,22 +1898,22 @@ $.cokellastz = _res208.z;
           $.hncar1.setCanBurstTires(false /* FALSE */);
           $.hncar1.setOnlyDamagedByPlayer(true /* TRUE */);
           $.hncar1.setHeading($.hncar1heading);
-          $.haiti_bust_guy1 = Char.CreateInsideCar($.hncar1, PEDTYPE_GANG_HAITIAN, HNa);
+          $.haiti_bust_guy1 = Char.CreateInsideCar($.hncar1, 8 /* PEDTYPE_GANG_HAITIAN */, HNa);
           $.haiti_bust_guy1.setCanBeShotInVehicle(false /* FALSE */);
-          $.haiti_bust_guy1.giveWeapon(WEAPONTYPE_TEC9, 300000);
+          $.haiti_bust_guy1.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 300000);
           $.haiti_bust_guy1.clearThreatSearch();
-          $.haiti_bust_guy1.setThreatSearch(THREAT_GANG_DIAZ);
-          $.haiti_bust_guy1.setThreatSearch(THREAT_GANG_CUBAN);
+          $.haiti_bust_guy1.setThreatSearch(1024 /* THREAT_GANG_DIAZ */);
+          $.haiti_bust_guy1.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
           $.haiti_bust_guy1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
           $.haiti_bust_guy1blip = Blip.AddForCharOld($.haiti_bust_guy1, 4 /* YELLOW */, 2 /* BLIP_ONLY */);
           $.haiti_bust_guy1blip.changeScale(2);
           $.haiti_bust_guy1.setHealth(150);
-          $.haiti_bust_guy2 = Char.CreateAsPassenger($.hncar1, PEDTYPE_GANG_HAITIAN, HNb, 0);
+          $.haiti_bust_guy2 = Char.CreateAsPassenger($.hncar1, 8 /* PEDTYPE_GANG_HAITIAN */, HNb, 0);
           $.haiti_bust_guy2.setCanBeShotInVehicle(false /* FALSE */);
-          $.haiti_bust_guy2.giveWeapon(WEAPONTYPE_TEC9, 300000);
+          $.haiti_bust_guy2.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 300000);
           $.haiti_bust_guy2.clearThreatSearch();
-          $.haiti_bust_guy2.setThreatSearch(THREAT_GANG_DIAZ);
-          $.haiti_bust_guy2.setThreatSearch(THREAT_GANG_CUBAN);
+          $.haiti_bust_guy2.setThreatSearch(1024 /* THREAT_GANG_DIAZ */);
+          $.haiti_bust_guy2.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
           $.haiti_bust_guy2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
           $.haiti_bust_guy2blip = Blip.AddForCharOld($.haiti_bust_guy2, 4 /* YELLOW */, 2 /* BLIP_ONLY */);
           $.haiti_bust_guy2blip.changeScale(2);
@@ -2018,23 +2018,23 @@ $.cokellastz = _res208.z;
               $.hncar2.setCanBurstTires(false /* FALSE */);
               $.hncar2.setOnlyDamagedByPlayer(true /* TRUE */);
               $.hncar2.setHeading($.hncar2heading);
-              $.haiti_bust_guy3 = Char.CreateInsideCar($.hncar2, PEDTYPE_GANG_HAITIAN, HNb);
+              $.haiti_bust_guy3 = Char.CreateInsideCar($.hncar2, 8 /* PEDTYPE_GANG_HAITIAN */, HNb);
               $.haiti_bust_guy3.setCanBeShotInVehicle(false /* FALSE */);
-              $.haiti_bust_guy3.giveWeapon(WEAPONTYPE_TEC9, 300000);
+              $.haiti_bust_guy3.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 300000);
               $.haiti_bust_guy3.clearThreatSearch();
-              $.haiti_bust_guy3.setThreatSearch(THREAT_GANG_DIAZ);
-              $.haiti_bust_guy3.setThreatSearch(THREAT_GANG_CUBAN);
-              $.haiti_bust_guy3.setThreatSearch(THREAT_GANG_PLAYER);
+              $.haiti_bust_guy3.setThreatSearch(1024 /* THREAT_GANG_DIAZ */);
+              $.haiti_bust_guy3.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
+              $.haiti_bust_guy3.setThreatSearch(8192 /* THREAT_GANG_PLAYER */);
               $.haiti_bust_guy3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
               $.haiti_bust_guy3blip = Blip.AddForCharOld($.haiti_bust_guy3, 4 /* YELLOW */, 2 /* BLIP_ONLY */);
               $.haiti_bust_guy3blip.changeScale(2);
               $.haiti_bust_guy3.setHealth(130);
-              $.haiti_bust_guy4 = Char.CreateAsPassenger($.hncar2, PEDTYPE_GANG_HAITIAN, HNa, 0);
+              $.haiti_bust_guy4 = Char.CreateAsPassenger($.hncar2, 8 /* PEDTYPE_GANG_HAITIAN */, HNa, 0);
               $.haiti_bust_guy4.setCanBeShotInVehicle(false /* FALSE */);
-              $.haiti_bust_guy4.giveWeapon(WEAPONTYPE_TEC9, 300000);
+              $.haiti_bust_guy4.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 300000);
               $.haiti_bust_guy4.clearThreatSearch();
-              $.haiti_bust_guy4.setThreatSearch(THREAT_GANG_DIAZ);
-              $.haiti_bust_guy4.setThreatSearch(THREAT_GANG_CUBAN);
+              $.haiti_bust_guy4.setThreatSearch(1024 /* THREAT_GANG_DIAZ */);
+              $.haiti_bust_guy4.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
               $.haiti_bust_guy4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
               $.haiti_bust_guy4blip = Blip.AddForCharOld($.haiti_bust_guy4, 4 /* YELLOW */, 2 /* BLIP_ONLY */);
               $.haiti_bust_guy4blip.changeScale(2);
@@ -2113,38 +2113,38 @@ $.cokellastz = _res208.z;
               $.hncar3.setCanBurstTires(false /* FALSE */);
               $.hncar3.setOnlyDamagedByPlayer(true /* TRUE */);
               $.hncar3.setHeading($.hncar3heading);
-              $.haiti_bust_guy5 = Char.CreateInsideCar($.hncar3, PEDTYPE_GANG_HAITIAN, HNa);
+              $.haiti_bust_guy5 = Char.CreateInsideCar($.hncar3, 8 /* PEDTYPE_GANG_HAITIAN */, HNa);
               $.haiti_bust_guy5.setCanBeShotInVehicle(false /* FALSE */);
-              $.haiti_bust_guy5.giveWeapon(WEAPONTYPE_TEC9, 300000);
+              $.haiti_bust_guy5.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 300000);
               $.haiti_bust_guy5.clearThreatSearch();
-              $.haiti_bust_guy5.setThreatSearch(THREAT_GANG_DIAZ);
-              $.haiti_bust_guy5.setThreatSearch(THREAT_GANG_CUBAN);
+              $.haiti_bust_guy5.setThreatSearch(1024 /* THREAT_GANG_DIAZ */);
+              $.haiti_bust_guy5.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
               $.haiti_bust_guy5.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
               $.haiti_bust_guy5.setHealth(150);
               $.haiti_bust_guy5blip = Blip.AddForCharOld($.haiti_bust_guy5, 4 /* YELLOW */, 2 /* BLIP_ONLY */);
               $.haiti_bust_guy5blip.changeScale(2);
-              $.haiti_bust_guy6 = Char.CreateAsPassenger($.hncar3, PEDTYPE_GANG_HAITIAN, HNb, 0);
+              $.haiti_bust_guy6 = Char.CreateAsPassenger($.hncar3, 8 /* PEDTYPE_GANG_HAITIAN */, HNb, 0);
               $.haiti_bust_guy6.setCanBeShotInVehicle(false /* FALSE */);
-              $.haiti_bust_guy6.giveWeapon(WEAPONTYPE_TEC9, 300000);
+              $.haiti_bust_guy6.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 300000);
               $.haiti_bust_guy6.clearThreatSearch();
-              $.haiti_bust_guy6.setThreatSearch(THREAT_GANG_DIAZ);
-              $.haiti_bust_guy6.setThreatSearch(THREAT_GANG_CUBAN);
+              $.haiti_bust_guy6.setThreatSearch(1024 /* THREAT_GANG_DIAZ */);
+              $.haiti_bust_guy6.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
               $.haiti_bust_guy6.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
               $.haiti_bust_guy6blip = Blip.AddForCharOld($.haiti_bust_guy6, 4 /* YELLOW */, 2 /* BLIP_ONLY */);
               $.haiti_bust_guy6blip.changeScale(2);
-              $.haiti_bust_guy7 = Char.CreateAsPassenger($.hncar3, PEDTYPE_GANG_HAITIAN, HNb, 1);
-              $.haiti_bust_guy7.giveWeapon(WEAPONTYPE_TEC9, 300000);
+              $.haiti_bust_guy7 = Char.CreateAsPassenger($.hncar3, 8 /* PEDTYPE_GANG_HAITIAN */, HNb, 1);
+              $.haiti_bust_guy7.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 300000);
               $.haiti_bust_guy7.clearThreatSearch();
-              $.haiti_bust_guy7.setThreatSearch(THREAT_GANG_DIAZ);
-              $.haiti_bust_guy7.setThreatSearch(THREAT_GANG_CUBAN);
+              $.haiti_bust_guy7.setThreatSearch(1024 /* THREAT_GANG_DIAZ */);
+              $.haiti_bust_guy7.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
               $.haiti_bust_guy7.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
               $.haiti_bust_guy7blip = Blip.AddForCharOld($.haiti_bust_guy7, 4 /* YELLOW */, 2 /* BLIP_ONLY */);
               $.haiti_bust_guy7blip.changeScale(2);
-              $.haiti_bust_guy8 = Char.CreateAsPassenger($.hncar3, PEDTYPE_GANG_HAITIAN, HNa, 2);
-              $.haiti_bust_guy8.giveWeapon(WEAPONTYPE_TEC9, 300000);
+              $.haiti_bust_guy8 = Char.CreateAsPassenger($.hncar3, 8 /* PEDTYPE_GANG_HAITIAN */, HNa, 2);
+              $.haiti_bust_guy8.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 300000);
               $.haiti_bust_guy8.clearThreatSearch();
-              $.haiti_bust_guy8.setThreatSearch(THREAT_GANG_DIAZ);
-              $.haiti_bust_guy8.setThreatSearch(THREAT_GANG_CUBAN);
+              $.haiti_bust_guy8.setThreatSearch(1024 /* THREAT_GANG_DIAZ */);
+              $.haiti_bust_guy8.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
               //SET_CHAR_THREAT_SEARCH haiti_bust_guy8 THREAT_PLAYER1
               $.haiti_bust_guy8.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
               $.haiti_bust_guy8blip = Blip.AddForCharOld($.haiti_bust_guy8, 4 /* YELLOW */, 2 /* BLIP_ONLY */);
@@ -2301,41 +2301,41 @@ $.cokellastz = _res208.z;
             $.hncar4.setCanBurstTires(false /* FALSE */);
             $.hncar4.setOnlyDamagedByPlayer(true /* TRUE */);
             $.hncar4.setHeading($.hncar4heading);
-            $.haiti_bust_guy11 = Char.CreateInsideCar($.hncar4, PEDTYPE_GANG_HAITIAN, HNb);
+            $.haiti_bust_guy11 = Char.CreateInsideCar($.hncar4, 8 /* PEDTYPE_GANG_HAITIAN */, HNb);
             $.haiti_bust_guy11.setCanBeShotInVehicle(false /* FALSE */);
-            $.haiti_bust_guy11.giveWeapon(WEAPONTYPE_TEC9, 300000);
+            $.haiti_bust_guy11.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 300000);
             $.haiti_bust_guy11.clearThreatSearch();
-            $.haiti_bust_guy11.setThreatSearch(THREAT_GANG_DIAZ);
-            $.haiti_bust_guy11.setThreatSearch(THREAT_GANG_CUBAN);
+            $.haiti_bust_guy11.setThreatSearch(1024 /* THREAT_GANG_DIAZ */);
+            $.haiti_bust_guy11.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
             $.haiti_bust_guy11.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
             $.haiti_bust_guy11blip = Blip.AddForCharOld($.haiti_bust_guy11, 4 /* YELLOW */, 2 /* BLIP_ONLY */);
             $.haiti_bust_guy11blip.changeScale(2);
-            $.haiti_bust_guy12 = Char.CreateAsPassenger($.hncar4, PEDTYPE_GANG_HAITIAN, HNa, 0);
+            $.haiti_bust_guy12 = Char.CreateAsPassenger($.hncar4, 8 /* PEDTYPE_GANG_HAITIAN */, HNa, 0);
             $.haiti_bust_guy12.setCanBeShotInVehicle(false /* FALSE */);
-            $.haiti_bust_guy12.giveWeapon(WEAPONTYPE_TEC9, 300000);
+            $.haiti_bust_guy12.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 300000);
             $.haiti_bust_guy12.clearThreatSearch();
-            $.haiti_bust_guy12.setThreatSearch(THREAT_GANG_DIAZ);
-            $.haiti_bust_guy12.setThreatSearch(THREAT_GANG_CUBAN);
+            $.haiti_bust_guy12.setThreatSearch(1024 /* THREAT_GANG_DIAZ */);
+            $.haiti_bust_guy12.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
             $.haiti_bust_guy12.setThreatSearch(1 /* THREAT_PLAYER1 */);
             $.haiti_bust_guy12.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
             $.haiti_bust_guy12blip = Blip.AddForCharOld($.haiti_bust_guy12, 4 /* YELLOW */, 2 /* BLIP_ONLY */);
             $.haiti_bust_guy12.setHealth(130);
             $.haiti_bust_guy12blip.changeScale(2);
-            $.haiti_bust_guy13 = Char.CreateAsPassenger($.hncar4, PEDTYPE_GANG_HAITIAN, HNb, 1);
-            $.haiti_bust_guy13.giveWeapon(WEAPONTYPE_TEC9, 300000);
+            $.haiti_bust_guy13 = Char.CreateAsPassenger($.hncar4, 8 /* PEDTYPE_GANG_HAITIAN */, HNb, 1);
+            $.haiti_bust_guy13.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 300000);
             $.haiti_bust_guy13.clearThreatSearch();
             $.haiti_bust_guy13.setThreatSearch(1 /* THREAT_PLAYER1 */);
-            $.haiti_bust_guy13.setThreatSearch(THREAT_GANG_DIAZ);
-            $.haiti_bust_guy13.setThreatSearch(THREAT_GANG_CUBAN);
+            $.haiti_bust_guy13.setThreatSearch(1024 /* THREAT_GANG_DIAZ */);
+            $.haiti_bust_guy13.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
             $.haiti_bust_guy13.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
             $.haiti_bust_guy13blip = Blip.AddForCharOld($.haiti_bust_guy13, 4 /* YELLOW */, 2 /* BLIP_ONLY */);
             $.haiti_bust_guy13.setHealth(130);
             $.haiti_bust_guy13blip.changeScale(2);
-            $.haiti_bust_guy14 = Char.CreateAsPassenger($.hncar4, PEDTYPE_GANG_HAITIAN, HNa, 2);
-            $.haiti_bust_guy14.giveWeapon(WEAPONTYPE_TEC9, 300000);
+            $.haiti_bust_guy14 = Char.CreateAsPassenger($.hncar4, 8 /* PEDTYPE_GANG_HAITIAN */, HNa, 2);
+            $.haiti_bust_guy14.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 300000);
             $.haiti_bust_guy14.clearThreatSearch();
-            $.haiti_bust_guy14.setThreatSearch(THREAT_GANG_DIAZ);
-            $.haiti_bust_guy14.setThreatSearch(THREAT_GANG_CUBAN);
+            $.haiti_bust_guy14.setThreatSearch(1024 /* THREAT_GANG_DIAZ */);
+            $.haiti_bust_guy14.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
             $.haiti_bust_guy14.setThreatSearch(1 /* THREAT_PLAYER1 */);
             $.haiti_bust_guy14.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
             $.haiti_bust_guy14blip = Blip.AddForCharOld($.haiti_bust_guy14, 4 /* YELLOW */, 2 /* BLIP_ONLY */);
@@ -2506,23 +2506,23 @@ $.cokellastz = _res208.z;
                 $.hncar5.setCanBurstTires(false /* FALSE */);
                 $.hncar5.setOnlyDamagedByPlayer(true /* TRUE */);
                 $.hncar5.setHeading($.hncar5heading);
-                $.haiti_bust_guy17 = Char.CreateInsideCar($.hncar5, PEDTYPE_GANG_HAITIAN, HNb);
+                $.haiti_bust_guy17 = Char.CreateInsideCar($.hncar5, 8 /* PEDTYPE_GANG_HAITIAN */, HNb);
                 $.haiti_bust_guy17.setCanBeShotInVehicle(false /* FALSE */);
-                $.haiti_bust_guy17.giveWeapon(WEAPONTYPE_TEC9, 300000);
+                $.haiti_bust_guy17.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 300000);
                 $.haiti_bust_guy17.clearThreatSearch();
-                $.haiti_bust_guy17.setThreatSearch(THREAT_GANG_DIAZ);
-                $.haiti_bust_guy17.setThreatSearch(THREAT_GANG_CUBAN);
+                $.haiti_bust_guy17.setThreatSearch(1024 /* THREAT_GANG_DIAZ */);
+                $.haiti_bust_guy17.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
                 $.haiti_bust_guy17.setThreatSearch(1 /* THREAT_PLAYER1 */);
                 $.haiti_bust_guy17.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
                 $.haiti_bust_guy17blip = Blip.AddForCharOld($.haiti_bust_guy17, 4 /* YELLOW */, 2 /* BLIP_ONLY */);
                 $.haiti_bust_guy17blip.changeScale(2);
-                $.haiti_bust_guy18 = Char.CreateAsPassenger($.hncar5, PEDTYPE_GANG_HAITIAN, HNa, 0);
+                $.haiti_bust_guy18 = Char.CreateAsPassenger($.hncar5, 8 /* PEDTYPE_GANG_HAITIAN */, HNa, 0);
                 $.haiti_bust_guy18.setHealth(130);
                 $.haiti_bust_guy18.setCanBeShotInVehicle(false /* FALSE */);
-                $.haiti_bust_guy18.giveWeapon(WEAPONTYPE_TEC9, 300000);
+                $.haiti_bust_guy18.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 300000);
                 $.haiti_bust_guy18.clearThreatSearch();
-                $.haiti_bust_guy18.setThreatSearch(THREAT_GANG_DIAZ);
-                $.haiti_bust_guy18.setThreatSearch(THREAT_GANG_CUBAN);
+                $.haiti_bust_guy18.setThreatSearch(1024 /* THREAT_GANG_DIAZ */);
+                $.haiti_bust_guy18.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
                 $.haiti_bust_guy18.setThreatSearch(1 /* THREAT_PLAYER1 */);
                 $.haiti_bust_guy18.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
                 $.haiti_bust_guy18blip = Blip.AddForCharOld($.haiti_bust_guy18, 4 /* YELLOW */, 2 /* BLIP_ONLY */);
@@ -2729,7 +2729,7 @@ $.cokellastz = _res208.z;
         $.bike1_g3 = Car.Create(sanchez, 467.9877, -432.7724, 9.5777);
         $.bike1_g3.changeColor(6 /* CARCOLOUR_TAXIYELLOW */, 6 /* CARCOLOUR_TAXIYELLOW */);
         $.bike1_g3.setHeading(176.3589);
-        $.biker1_g3 = Char.CreateInsideCar($.bike1_g3, PEDTYPE_GANG_HAITIAN, HNb);
+        $.biker1_g3 = Char.CreateInsideCar($.bike1_g3, 8 /* PEDTYPE_GANG_HAITIAN */, HNb);
         $.biker1_g3.clearThreatSearch();
         $.biker1_g3.setOnlyDamagedByPlayer(true /* TRUE */);
         $.bike1_g3.setOnlyDamagedByPlayer(true /* TRUE */);
@@ -2741,7 +2741,7 @@ $.cokellastz = _res208.z;
         $.bike2_g3 = Car.Create(sanchez, 465.3870, -430.1095, 9.53);
         $.bike2_g3.changeColor(6 /* CARCOLOUR_TAXIYELLOW */, 6 /* CARCOLOUR_TAXIYELLOW */);
         $.bike2_g3.setHeading(176.3589);
-        $.biker2_g3 = Char.CreateInsideCar($.bike2_g3, PEDTYPE_GANG_HAITIAN, HNb);
+        $.biker2_g3 = Char.CreateInsideCar($.bike2_g3, 8 /* PEDTYPE_GANG_HAITIAN */, HNb);
 
 
         $.biker2_g3.clearThreatSearch();
@@ -2780,7 +2780,7 @@ $.cokellastz = _res208.z;
         $.hncar1 = Car.Create(voodoo, 464.6875, -501.688837, 10.793473);
         $.hncar1.setHeading(327.731);
         $.hncar1.setCanBurstTires(false /* FALSE */);
-        $.briefcase_deal = ScriptObject.Create(1319 /* briefcase */, 461.5507, -495.9435, 10.06);
+        $.briefcase_deal = ScriptObject.Create(briefcase, 461.5507, -495.9435, 10.06);
         Streaming.MarkModelAsNoLongerNeeded(cuban);
         Streaming.MarkModelAsNoLongerNeeded(voodoo);
         Streaming.MarkModelAsNoLongerNeeded(tec9);
@@ -2992,7 +2992,7 @@ $.cokellastz = _res208.z;
                 Camera.RestoreJumpcut();
                 Camera.SetBehindPlayer();
                 World.SetCarDensityMultiplier(1.0);
-                $.gun2_g3 = Pickup.CreateWithAmmo(178 /* UZI */, 3 /* PICKUP_ONCE */, 90, 455.9854, -531.2479, 10.7576);
+                $.gun2_g3 = Pickup.CreateWithAmmo(UZI, 3 /* PICKUP_ONCE */, 90, 455.9854, -531.2479, 10.7576);
                 if (!(Car.IsDead($.bike2_g3))) {
                   $.tempblip_g3 = Blip.AddForCarOld($.bike2_g3, 0 /* RED */, 1 /* MARKER_ONLY */);
                 }
@@ -3189,7 +3189,7 @@ $.cokellastz = _res208.z;
 $.biker1x_g3 = _res209.x;
 $.biker1y_g3 = _res209.y;
 $.biker1z_g3 = _res209.z;
-              $.briefcase_g3 = Pickup.Create(1319 /* briefcase */, 3 /* PICKUP_ONCE */, $.biker1x_g3, $.biker1y_g3, $.biker1z_g3);
+              $.briefcase_g3 = Pickup.Create(briefcase, 3 /* PICKUP_ONCE */, $.biker1x_g3, $.biker1y_g3, $.biker1z_g3);
               $.briefcase_g3blip = Blip.AddForPickup($.briefcase_g3);
               Text.PrintNow("GEN3_29", 7000, 2); //Collect the case and take it back
               $.you_got_the_case_back_g3 = 1;
@@ -3665,7 +3665,7 @@ async function mission_cleanup_general3() {
   Streaming.MarkModelAsNoLongerNeeded(voodoo);
   Streaming.MarkModelAsNoLongerNeeded(TEC9);
   Streaming.MarkModelAsNoLongerNeeded(sanchez);
-  Streaming.MarkModelAsNoLongerNeeded(178 /* UZI */);
+  Streaming.MarkModelAsNoLongerNeeded(UZI);
   Streaming.MarkModelAsNoLongerNeeded(RUGER);
   Streaming.MarkModelAsNoLongerNeeded(infernus);
 

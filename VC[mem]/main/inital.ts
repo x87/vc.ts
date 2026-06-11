@@ -1,6 +1,6 @@
 // Generated from main/inital.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 export async function inital() {
   // MissionBoundary
@@ -490,18 +490,18 @@ export async function inital() {
   //REMOVE_BLIP	taxibuy_blip
 
 
-  $.weapon_shop1_blip = Blip.AddShortRangeSpriteForCoord($.ammu1X, $.ammu1Y, $.ammu1Z, RADAR_SPRITE_GUN);
-  $.weapon_shop2_blip = Blip.AddShortRangeSpriteForCoord(364.8, 1051.5, 21.0, RADAR_SPRITE_GUN);
-  $.weapon_shop3_blip = Blip.AddShortRangeSpriteForCoord($.ammu3X, $.ammu3Y, $.ammu3Z, RADAR_SPRITE_GUN);
-  $.hardware_shop1 = Blip.AddShortRangeSpriteForCoord($.hard1X, $.hard1Y, $.hard1Z, RADAR_SPRITE_HARDWARE);
-  $.hardware_shop2 = Blip.AddShortRangeSpriteForCoord(364.8, 1086.5, 21.0, RADAR_SPRITE_HARDWARE);
-  $.hardware_shop3 = Blip.AddShortRangeSpriteForCoord($.hard3X, $.hard3Y, $.hard3Z, RADAR_SPRITE_HARDWARE);
+  $.weapon_shop1_blip = Blip.AddShortRangeSpriteForCoord($.ammu1X, $.ammu1Y, $.ammu1Z, 16 /* RADAR_SPRITE_GUN */);
+  $.weapon_shop2_blip = Blip.AddShortRangeSpriteForCoord(364.8, 1051.5, 21.0, 16 /* RADAR_SPRITE_GUN */);
+  $.weapon_shop3_blip = Blip.AddShortRangeSpriteForCoord($.ammu3X, $.ammu3Y, $.ammu3Z, 16 /* RADAR_SPRITE_GUN */);
+  $.hardware_shop1 = Blip.AddShortRangeSpriteForCoord($.hard1X, $.hard1Y, $.hard1Z, 18 /* RADAR_SPRITE_HARDWARE */);
+  $.hardware_shop2 = Blip.AddShortRangeSpriteForCoord(364.8, 1086.5, 21.0, 18 /* RADAR_SPRITE_HARDWARE */);
+  $.hardware_shop3 = Blip.AddShortRangeSpriteForCoord($.hard3X, $.hard3Y, $.hard3Z, 18 /* RADAR_SPRITE_HARDWARE */);
 
 
-  $.spray_shop1 = Blip.AddShortRangeSpriteForCoord(-3.8, -1265.8, 12.0, 18 /* RADAR_SPRITE_SPRAY */); //South beach
-  $.spray_shop2 = Blip.AddShortRangeSpriteForCoord(319.0, 441.3, 12.0, 18 /* RADAR_SPRITE_SPRAY */); //Vice Point
-  $.spray_shop3 = Blip.AddShortRangeSpriteForCoord(-903.0, -1261.1, 12.0, 18 /* RADAR_SPRITE_SPRAY */); //Docks
-  $.spray_shop5 = Blip.AddShortRangeSpriteForCoord(-876.2, -105.5, 12.0, 18 /* RADAR_SPRITE_SPRAY */); //Main road haiti
+  $.spray_shop1 = Blip.AddShortRangeSpriteForCoord(-3.8, -1265.8, 12.0, 27 /* RADAR_SPRITE_SPRAY */); //South beach
+  $.spray_shop2 = Blip.AddShortRangeSpriteForCoord(319.0, 441.3, 12.0, 27 /* RADAR_SPRITE_SPRAY */); //Vice Point
+  $.spray_shop3 = Blip.AddShortRangeSpriteForCoord(-903.0, -1261.1, 12.0, 27 /* RADAR_SPRITE_SPRAY */); //Docks
+  $.spray_shop5 = Blip.AddShortRangeSpriteForCoord(-876.2, -105.5, 12.0, 27 /* RADAR_SPRITE_SPRAY */); //Main road haiti
 
   //CHANGE_BLIP_DISPLAY hotel_contact_blip BLIP_ONLY
 
@@ -554,8 +554,8 @@ export async function inital() {
   Zone.SetCarInfo("STREET4", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("STREET4", 1 /* DAY */, 300, 0, 350, 200, 0, 0, 100, 50, 0, 500, 500);
   Zone.SetCivilianCarInfo("STREET4", 0 /* NIGHT */, 250, 0, 300, 250, 0, 0, 150, 50, 0, 500, 500);
-  Zone.SetGroup("STREET4", 1 /* DAY */, STREET4_PEDGRP);
-  Zone.SetGroup("STREET4", 0 /* NIGHT */, STREET4_NIGHT_PEDGRP);
+  Zone.SetGroup("STREET4", 1 /* DAY */, 7 /* STREET4_PEDGRP */);
+  Zone.SetGroup("STREET4", 0 /* NIGHT */, 8 /* STREET4_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("RICH2", 1 /* DAY */, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40);
@@ -564,8 +564,8 @@ export async function inital() {
   Zone.SetCarInfo("RICH2", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("RICH2", 1 /* DAY */, 300, 0, 350, 200, 0, 0, 100, 50, 0, 500, 500);
   Zone.SetCivilianCarInfo("RICH2", 0 /* NIGHT */, 250, 0, 300, 250, 0, 0, 150, 50, 0, 500, 500);
-  Zone.SetGroup("RICH2", 1 /* DAY */, RICH2_PEDGRP);
-  Zone.SetGroup("RICH2", 0 /* NIGHT */, RICH2_NIGHT_PEDGRP);
+  Zone.SetGroup("RICH2", 1 /* DAY */, 27 /* RICH2_PEDGRP */);
+  Zone.SetGroup("RICH2", 0 /* NIGHT */, 28 /* RICH2_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("CLUB2", 1 /* DAY */, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40);
@@ -574,8 +574,8 @@ export async function inital() {
   Zone.SetCarInfo("CLUB2", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("CLUB2", 1 /* DAY */, 300, 0, 350, 200, 0, 0, 100, 50, 0, 500, 500);
   Zone.SetCivilianCarInfo("CLUB2", 0 /* NIGHT */, 250, 0, 300, 250, 0, 0, 150, 50, 0, 500, 500);
-  Zone.SetGroup("CLUB2", 1 /* DAY */, CLUB2_PEDGRP);
-  Zone.SetGroup("CLUB2", 0 /* NIGHT */, CLUB2_NIGHT_PEDGRP);
+  Zone.SetGroup("CLUB2", 1 /* DAY */, 57 /* CLUB2_PEDGRP */);
+  Zone.SetGroup("CLUB2", 0 /* NIGHT */, 58 /* CLUB2_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("SHOP3", 1 /* DAY */, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40);
@@ -584,8 +584,8 @@ export async function inital() {
   Zone.SetCarInfo("SHOP3", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("SHOP3", 1 /* DAY */, 300, 0, 350, 200, 0, 0, 100, 50, 0, 500, 500);
   Zone.SetCivilianCarInfo("SHOP3", 0 /* NIGHT */, 250, 0, 300, 250, 0, 0, 150, 50, 0, 500, 500);
-  Zone.SetGroup("SHOP3", 1 /* DAY */, SHOP3_PEDGRP);
-  Zone.SetGroup("SHOP3", 0 /* NIGHT */, SHOP3_NIGHT_PEDGRP);
+  Zone.SetGroup("SHOP3", 1 /* DAY */, 35 /* SHOP3_PEDGRP */);
+  Zone.SetGroup("SHOP3", 0 /* NIGHT */, 36 /* SHOP3_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("STREET3", 1 /* DAY */, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40);
@@ -594,8 +594,8 @@ export async function inital() {
   Zone.SetCarInfo("STREET3", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("STREET3", 1 /* DAY */, 300, 0, 350, 200, 0, 0, 100, 50, 0, 500, 500);
   Zone.SetCivilianCarInfo("STREET3", 0 /* NIGHT */, 250, 0, 300, 250, 0, 0, 150, 50, 0, 500, 500);
-  Zone.SetGroup("STREET3", 1 /* DAY */, STREET3_PEDGRP);
-  Zone.SetGroup("STREET3", 0 /* NIGHT */, STREET3_NIGHT_PEDGRP);
+  Zone.SetGroup("STREET3", 1 /* DAY */, 5 /* STREET3_PEDGRP */);
+  Zone.SetGroup("STREET3", 0 /* NIGHT */, 6 /* STREET3_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("SHOP2", 1 /* DAY */, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40);
@@ -604,8 +604,8 @@ export async function inital() {
   Zone.SetCarInfo("SHOP2", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("SHOP2", 1 /* DAY */, 300, 0, 350, 200, 0, 0, 100, 50, 0, 500, 500);
   Zone.SetCivilianCarInfo("SHOP2", 0 /* NIGHT */, 250, 0, 300, 250, 0, 0, 150, 50, 0, 500, 500);
-  Zone.SetGroup("SHOP2", 1 /* DAY */, SHOP2_PEDGRP);
-  Zone.SetGroup("SHOP2", 0 /* NIGHT */, SHOP2_NIGHT_PEDGRP);
+  Zone.SetGroup("SHOP2", 1 /* DAY */, 33 /* SHOP2_PEDGRP */);
+  Zone.SetGroup("SHOP2", 0 /* NIGHT */, 34 /* SHOP2_NIGHT_PEDGRP */);
 
   //SET_ZONE_PED_INFO	ZoneName Day/Night PedDensity Gang1 Gang2 Gang3 Gang4 Gang5 Gang6 Gang7 Gang8 Gang9 Police
   //SET_ZONE_CAR_INFO Zone Name Day/Night CarDensity Gang1 Gang2 Gang3 Gang4 Gang5 Gang6 Gang7 Gang8 Gang9 Police
@@ -618,8 +618,8 @@ export async function inital() {
   Zone.SetCarInfo("OCEAND1", 0 /* NIGHT */, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 30);
   Zone.SetCivilianCarInfo("OCEAND1", 1 /* DAY */, 200, 0, 250, 300, 0, 0, 150, 100, 0, 500, 500);
   Zone.SetCivilianCarInfo("OCEAND1", 0 /* NIGHT */, 200, 0, 250, 350, 0, 0, 150, 50, 0, 500, 500);
-  Zone.SetGroup("OCEAND1", 1 /* DAY */, OCEAND1_PEDGRP);
-  Zone.SetGroup("OCEAND1", 0 /* NIGHT */, OCEAND1_NIGHT_PEDGRP);
+  Zone.SetGroup("OCEAND1", 1 /* DAY */, 63 /* OCEAND1_PEDGRP */);
+  Zone.SetGroup("OCEAND1", 0 /* NIGHT */, 64 /* OCEAND1_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("OCEAND2", 1 /* DAY */, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 30);
@@ -628,8 +628,8 @@ export async function inital() {
   Zone.SetCarInfo("OCEAND2", 0 /* NIGHT */, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 30);
   Zone.SetCivilianCarInfo("OCEAND2", 1 /* DAY */, 200, 0, 250, 300, 0, 0, 150, 100, 0, 500, 500);
   Zone.SetCivilianCarInfo("OCEAND2", 0 /* NIGHT */, 200, 0, 250, 350, 0, 0, 150, 50, 0, 500, 500);
-  Zone.SetGroup("OCEAND2", 1 /* DAY */, OCEAND2_PEDGRP);
-  Zone.SetGroup("OCEAND2", 0 /* NIGHT */, OCEAND2_NIGHT_PEDGRP);
+  Zone.SetGroup("OCEAND2", 1 /* DAY */, 65 /* OCEAND2_PEDGRP */);
+  Zone.SetGroup("OCEAND2", 0 /* NIGHT */, 66 /* OCEAND2_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("BEACH1", 1 /* DAY */, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40);
@@ -638,8 +638,8 @@ export async function inital() {
   Zone.SetCarInfo("BEACH1", 0 /* NIGHT */, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("BEACH1", 1 /* DAY */, 300, 0, 250, 300, 0, 0, 100, 50, 0, 500, 500);
   Zone.SetCivilianCarInfo("BEACH1", 0 /* NIGHT */, 300, 0, 250, 300, 0, 0, 150, 0, 0, 500, 500);
-  Zone.SetGroup("BEACH1", 1 /* DAY */, BEACH1_PEDGRP);
-  Zone.SetGroup("BEACH1", 0 /* NIGHT */, BEACH1_NIGHT_PEDGRP);
+  Zone.SetGroup("BEACH1", 1 /* DAY */, 45 /* BEACH1_PEDGRP */);
+  Zone.SetGroup("BEACH1", 0 /* NIGHT */, 46 /* BEACH1_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("BEACH2", 1 /* DAY */, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40);
@@ -648,8 +648,8 @@ export async function inital() {
   Zone.SetCarInfo("BEACH2", 0 /* NIGHT */, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("BEACH2", 1 /* DAY */, 260, 0, 240, 300, 0, 0, 100, 100, 0, 500, 500);
   Zone.SetCivilianCarInfo("BEACH2", 0 /* NIGHT */, 200, 0, 300, 350, 0, 0, 100, 50, 0, 500, 500);
-  Zone.SetGroup("BEACH2", 1 /* DAY */, BEACH2_PEDGRP);
-  Zone.SetGroup("BEACH2", 0 /* NIGHT */, BEACH2_NIGHT_PEDGRP);
+  Zone.SetGroup("BEACH2", 1 /* DAY */, 47 /* BEACH2_PEDGRP */);
+  Zone.SetGroup("BEACH2", 0 /* NIGHT */, 48 /* BEACH2_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("BEACH3", 1 /* DAY */, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40);
@@ -658,8 +658,8 @@ export async function inital() {
   Zone.SetCarInfo("BEACH3", 0 /* NIGHT */, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("BEACH3", 1 /* DAY */, 200, 0, 200, 300, 0, 0, 100, 100, 100, 500, 500);
   Zone.SetCivilianCarInfo("BEACH3", 0 /* NIGHT */, 200, 0, 300, 300, 0, 0, 100, 0, 100, 500, 500);
-  Zone.SetGroup("BEACH3", 1 /* DAY */, BEACH3_PEDGRP);
-  Zone.SetGroup("BEACH3", 0 /* NIGHT */, BEACH3_NIGHT_PEDGRP);
+  Zone.SetGroup("BEACH3", 1 /* DAY */, 49 /* BEACH3_PEDGRP */);
+  Zone.SetGroup("BEACH3", 0 /* NIGHT */, 50 /* BEACH3_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("STREET2", 1 /* DAY */, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40);
@@ -668,8 +668,8 @@ export async function inital() {
   Zone.SetCarInfo("STREET2", 0 /* NIGHT */, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("STREET2", 1 /* DAY */, 325, 0, 350, 200, 0, 0, 75, 50, 0, 500, 500);
   Zone.SetCivilianCarInfo("STREET2", 0 /* NIGHT */, 250, 0, 300, 250, 0, 0, 150, 50, 0, 500, 500);
-  Zone.SetGroup("STREET2", 1 /* DAY */, STREET2_PEDGRP);
-  Zone.SetGroup("STREET2", 0 /* NIGHT */, STREET2_NIGHT_PEDGRP);
+  Zone.SetGroup("STREET2", 1 /* DAY */, 3 /* STREET2_PEDGRP */);
+  Zone.SetGroup("STREET2", 0 /* NIGHT */, 4 /* STREET2_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("CONSTRU", 1 /* DAY */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20);
@@ -678,8 +678,8 @@ export async function inital() {
   Zone.SetCarInfo("CONSTRU", 0 /* NIGHT */, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10);
   Zone.SetCivilianCarInfo("CONSTRU", 1 /* DAY */, 200, 200, 0, 0, 500, 0, 50, 0, 50, 500, 500);
   Zone.SetCivilianCarInfo("CONSTRU", 0 /* NIGHT */, 200, 200, 0, 0, 500, 0, 50, 0, 50, 500, 500);
-  Zone.SetGroup("CONSTRU", 1 /* DAY */, 19 /* CONSTRUCTION_PEDGRP */);
-  Zone.SetGroup("CONSTRU", 0 /* NIGHT */, 20 /* CONSTRUCTION_NIGHT_PEDGRP */);
+  Zone.SetGroup("CONSTRU", 1 /* DAY */, 17 /* CONSTRUCTION_PEDGRP */);
+  Zone.SetGroup("CONSTRU", 0 /* NIGHT */, 18 /* CONSTRUCTION_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("CLUB1", 1 /* DAY */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20);
@@ -688,8 +688,8 @@ export async function inital() {
   Zone.SetCarInfo("CLUB1", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20);
   Zone.SetCivilianCarInfo("CLUB1", 1 /* DAY */, 170, 0, 350, 350, 0, 0, 100, 0, 30, 500, 500);
   Zone.SetCivilianCarInfo("CLUB1", 0 /* NIGHT */, 170, 0, 350, 350, 0, 0, 100, 0, 30, 500, 500);
-  Zone.SetGroup("CLUB1", 1 /* DAY */, CLUB1_PEDGRP);
-  Zone.SetGroup("CLUB1", 0 /* NIGHT */, CLUB1_NIGHT_PEDGRP);
+  Zone.SetGroup("CLUB1", 1 /* DAY */, 55 /* CLUB1_PEDGRP */);
+  Zone.SetGroup("CLUB1", 0 /* NIGHT */, 56 /* CLUB1_NIGHT_PEDGRP */);
 
   //SET_ZONE_PED_INFO	ZoneName Day/Night PedDensity Gang1 Gang2 Gang3 Gang4 Gang5 Gang6 Gang7 Gang8 Gang9 Police
   //SET_ZONE_CAR_INFO Zone Name Day/Night CarDensity Gang1 Gang2 Gang3 Gang4 Gang5 Gang6 Gang7 Gang8 Gang9 Police
@@ -700,16 +700,16 @@ export async function inital() {
   Zone.SetPedInfo("GOLF1", 0 /* NIGHT */, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 0, 0);
   Zone.SetCarInfo("GOLF1", 1 /* DAY */, 3, 0, 0, 0, 0, 0, 0, 0, 1000, 0, 0);
   Zone.SetCarInfo("GOLF1", 0 /* NIGHT */, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 0, 0);
-  Zone.SetGroup("GOLF1", 1 /* DAY */, GOLF1_PEDGRP);
-  Zone.SetGroup("GOLF1", 0 /* NIGHT */, GOLF1_NIGHT_PEDGRP);
+  Zone.SetGroup("GOLF1", 1 /* DAY */, 41 /* GOLF1_PEDGRP */);
+  Zone.SetGroup("GOLF1", 0 /* NIGHT */, 42 /* GOLF1_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("GOLF2", 1 /* DAY */, 2, 0, 0, 0, 0, 0, 0, 0, 1000, 0, 0);
   Zone.SetPedInfo("GOLF2", 0 /* NIGHT */, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 0, 0);
   Zone.SetCarInfo("GOLF2", 1 /* DAY */, 2, 0, 0, 0, 0, 0, 0, 0, 1000, 0, 0);
   Zone.SetCarInfo("GOLF2", 0 /* NIGHT */, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 0, 0);
-  Zone.SetGroup("GOLF2", 1 /* DAY */, GOLF2_PEDGRP);
-  Zone.SetGroup("GOLF2", 0 /* NIGHT */, GOLF2_NIGHT_PEDGRP);
+  Zone.SetGroup("GOLF2", 1 /* DAY */, 43 /* GOLF2_PEDGRP */);
+  Zone.SetGroup("GOLF2", 0 /* NIGHT */, 44 /* GOLF2_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("STREET1", 1 /* DAY */, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40);
@@ -718,8 +718,8 @@ export async function inital() {
   Zone.SetCarInfo("STREET1", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("STREET1", 1 /* DAY */, 225, 550, 100, 0, 0, 0, 75, 0, 50, 500, 500);
   Zone.SetCivilianCarInfo("STREET1", 0 /* NIGHT */, 250, 500, 100, 0, 0, 0, 100, 0, 50, 500, 500);
-  Zone.SetGroup("STREET1", 1 /* DAY */, STREET1_PEDGRP);
-  Zone.SetGroup("STREET1", 0 /* NIGHT */, STREET1_NIGHT_PEDGRP);
+  Zone.SetGroup("STREET1", 1 /* DAY */, 1 /* STREET1_PEDGRP */);
+  Zone.SetGroup("STREET1", 0 /* NIGHT */, 2 /* STREET1_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("RICH1", 1 /* DAY */, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40);
@@ -728,8 +728,8 @@ export async function inital() {
   Zone.SetCarInfo("RICH1", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("RICH1", 1 /* DAY */, 100, 0, 400, 400, 0, 0, 100, 0, 0, 500, 500);
   Zone.SetCivilianCarInfo("RICH1", 0 /* NIGHT */, 100, 0, 400, 400, 0, 0, 100, 0, 0, 500, 500);
-  Zone.SetGroup("RICH1", 1 /* DAY */, RICH1_PEDGRP);
-  Zone.SetGroup("RICH1", 0 /* NIGHT */, RICH1_NIGHT_PEDGRP);
+  Zone.SetGroup("RICH1", 1 /* DAY */, 25 /* RICH1_PEDGRP */);
+  Zone.SetGroup("RICH1", 0 /* NIGHT */, 26 /* RICH1_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("SHOP1", 1 /* DAY */, 200, 0, 0, 0, 0, 20, 0, 0, 0, 0, 30); // Big Mall
@@ -738,8 +738,8 @@ export async function inital() {
   Zone.SetCarInfo("SHOP1", 0 /* NIGHT */, 9, 0, 0, 50, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("SHOP1", 1 /* DAY */, 250, 250, 200, 0, 100, 0, 200, 0, 0, 500, 500);
   Zone.SetCivilianCarInfo("SHOP1", 0 /* NIGHT */, 250, 250, 200, 0, 100, 0, 200, 0, 0, 500, 500);
-  Zone.SetGroup("SHOP1", 1 /* DAY */, SHOP1_PEDGRP);
-  Zone.SetGroup("SHOP1", 0 /* NIGHT */, SHOP1_NIGHT_PEDGRP);
+  Zone.SetGroup("SHOP1", 1 /* DAY */, 31 /* SHOP1_PEDGRP */);
+  Zone.SetGroup("SHOP1", 0 /* NIGHT */, 32 /* SHOP1_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("TOUR1", 1 /* DAY */, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10);
@@ -748,8 +748,8 @@ export async function inital() {
   Zone.SetCarInfo("TOUR1", 0 /* NIGHT */, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20);
   Zone.SetCivilianCarInfo("TOUR1", 1 /* DAY */, 900, 0, 0, 0, 0, 0, 50, 0, 50, 800, 200);
   Zone.SetCivilianCarInfo("TOUR1", 0 /* NIGHT */, 900, 0, 0, 0, 0, 0, 50, 0, 50, 800, 200);
-  Zone.SetGroup("TOUR1", 1 /* DAY */, TOURIST1_PEDGRP);
-  Zone.SetGroup("TOUR1", 0 /* NIGHT */, TOURIST1_NIGHT_PEDGRP);
+  Zone.SetGroup("TOUR1", 1 /* DAY */, 19 /* TOURIST1_PEDGRP */);
+  Zone.SetGroup("TOUR1", 0 /* NIGHT */, 20 /* TOURIST1_NIGHT_PEDGRP */);
 
   //SET_ZONE_PED_INFO	ZoneName Day/Night PedDensity Gang1 Gang2 Gang3 Gang4 Gang5 Gang6 Gang7 Gang8 Gang9 Police
   //SET_ZONE_CAR_INFO Zone Name Day/Night CarDensity Gang1 Gang2 Gang3 Gang4 Gang5 Gang6 Gang7 Gang8 Gang9 Police
@@ -762,19 +762,19 @@ export async function inital() {
   Zone.SetCarInfo("TOUR2", 0 /* NIGHT */, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20);
   Zone.SetCivilianCarInfo("TOUR2", 1 /* DAY */, 900, 0, 0, 0, 0, 0, 50, 0, 50, 800, 200);
   Zone.SetCivilianCarInfo("TOUR2", 0 /* NIGHT */, 900, 0, 0, 0, 0, 0, 50, 0, 50, 800, 200);
-  Zone.SetGroup("TOUR2", 1 /* DAY */, TOURIST2_PEDGRP);
-  Zone.SetGroup("TOUR2", 0 /* NIGHT */, TOURIST2_NIGHT_PEDGRP);
+  Zone.SetGroup("TOUR2", 1 /* DAY */, 21 /* TOURIST2_PEDGRP */);
+  Zone.SetGroup("TOUR2", 0 /* NIGHT */, 22 /* TOURIST2_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("AIRPORT", 1 /* DAY */, 13, 0, 0, 0, 0, 50, 0, 0, 0, 0, 40);
   Zone.SetPedInfo("AIRPORT", 0 /* NIGHT */, 10, 0, 0, 0, 0, 50, 0, 0, 0, 0, 30);
-  Gang.SetCarModel(GANG_SECURITY, BAGGAGE);
+  Gang.SetCarModel(4 /* GANG_SECURITY */, BAGGAGE);
   Zone.SetCarInfo("AIRPORT", 1 /* DAY */, 12, 0, 0, 0, 0, 50, 0, 0, 0, 0, 50);
   Zone.SetCarInfo("AIRPORT", 0 /* NIGHT */, 12, 0, 0, 0, 0, 50, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("AIRPORT", 1 /* DAY */, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 900, 100);
   Zone.SetCivilianCarInfo("AIRPORT", 0 /* NIGHT */, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 900, 100);
-  Zone.SetGroup("AIRPORT", 1 /* DAY */, 27 /* AIRPORT_PEDGRP */);
-  Zone.SetGroup("AIRPORT", 0 /* NIGHT */, 28 /* AIRPORT_NIGHT_PEDGRP */);
+  Zone.SetGroup("AIRPORT", 1 /* DAY */, 51 /* AIRPORT_PEDGRP */);
+  Zone.SetGroup("AIRPORT", 0 /* NIGHT */, 52 /* AIRPORT_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("TERMINL", 1 /* DAY */, 13, 0, 0, 0, 0, 50, 0, 0, 0, 0, 40);
@@ -783,8 +783,8 @@ export async function inital() {
   Zone.SetCarInfo("TERMINL", 0 /* NIGHT */, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("TERMINL", 1 /* DAY */, 200, 0, 300, 300, 0, 0, 200, 0, 0, 500, 500);
   Zone.SetCivilianCarInfo("TERMINL", 0 /* NIGHT */, 200, 0, 300, 300, 0, 0, 200, 0, 0, 500, 500);
-  Zone.SetGroup("TERMINL", 1 /* DAY */, TERMINAL_PEDGRP);
-  Zone.SetGroup("TERMINL", 0 /* NIGHT */, TERMINAL_NIGHT_PEDGRP);
+  Zone.SetGroup("TERMINL", 1 /* DAY */, 53 /* TERMINAL_PEDGRP */);
+  Zone.SetGroup("TERMINL", 0 /* NIGHT */, 54 /* TERMINAL_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("DOCKS", 1 /* DAY */, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20);
@@ -793,8 +793,8 @@ export async function inital() {
   Zone.SetCarInfo("DOCKS", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10);
   Zone.SetCivilianCarInfo("DOCKS", 1 /* DAY */, 0, 100, 0, 0, 700, 200, 0, 0, 0, 500, 500);
   Zone.SetCivilianCarInfo("DOCKS", 0 /* NIGHT */, 0, 100, 0, 0, 700, 200, 0, 0, 0, 500, 500);
-  Zone.SetGroup("DOCKS", 1 /* DAY */, 7 /* DOCKS_PEDGRP */);
-  Zone.SetGroup("DOCKS", 0 /* NIGHT */, 8 /* DOCKS_NIGHT_PEDGRP */);
+  Zone.SetGroup("DOCKS", 1 /* DAY */, 15 /* DOCKS_PEDGRP */);
+  Zone.SetGroup("DOCKS", 0 /* NIGHT */, 16 /* DOCKS_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("STREET6", 1 /* DAY */, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40);
@@ -803,8 +803,8 @@ export async function inital() {
   Zone.SetCarInfo("STREET6", 0 /* NIGHT */, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("STREET6", 1 /* DAY */, 200, 0, 300, 300, 0, 0, 200, 0, 0, 500, 500);
   Zone.SetCivilianCarInfo("STREET6", 0 /* NIGHT */, 200, 0, 300, 300, 0, 0, 200, 0, 0, 500, 500);
-  Zone.SetGroup("STREET6", 1 /* DAY */, STREET6_PEDGRP);
-  Zone.SetGroup("STREET6", 0 /* NIGHT */, STREET6_NIGHT_PEDGRP);
+  Zone.SetGroup("STREET6", 1 /* DAY */, 23 /* STREET6_PEDGRP */);
+  Zone.SetGroup("STREET6", 0 /* NIGHT */, 24 /* STREET6_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("STREET5", 1 /* DAY */, 4, 0, 0, 100, 0, 0, 0, 0, 0, 0, 40);
@@ -813,8 +813,8 @@ export async function inital() {
   Zone.SetCarInfo("STREET5", 0 /* NIGHT */, 6, 0, 0, 200, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("STREET5", 1 /* DAY */, 200, 700, 0, 0, 70, 0, 30, 0, 0, 500, 500);
   Zone.SetCivilianCarInfo("STREET5", 0 /* NIGHT */, 200, 700, 0, 0, 70, 0, 30, 0, 0, 500, 500);
-  Zone.SetGroup("STREET5", 1 /* DAY */, STREET5_PEDGRP);
-  Zone.SetGroup("STREET5", 0 /* NIGHT */, STREET5_NIGHT_PEDGRP);
+  Zone.SetGroup("STREET5", 1 /* DAY */, 9 /* STREET5_PEDGRP */);
+  Zone.SetGroup("STREET5", 0 /* NIGHT */, 10 /* STREET5_NIGHT_PEDGRP */);
 
   //SET_ZONE_PED_INFO	ZoneName Day/Night PedDensity Gang1 Gang2 Gang3 Gang4 Gang5 Gang6 Gang7 Gang8 Gang9 Police
   //SET_ZONE_CAR_INFO Zone Name Day/Night CarDensity Gang1 Gang2 Gang3 Gang4 Gang5 Gang6 Gang7 Gang8 Gang9 Police
@@ -827,8 +827,8 @@ export async function inital() {
   Zone.SetCarInfo("SHOP4", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("SHOP4", 1 /* DAY */, 300, 350, 50, 0, 100, 0, 100, 0, 100, 500, 500);
   Zone.SetCivilianCarInfo("SHOP4", 0 /* NIGHT */, 300, 350, 50, 0, 100, 0, 100, 0, 100, 500, 500);
-  Zone.SetGroup("SHOP4", 1 /* DAY */, SHOP4_PEDGRP);
-  Zone.SetGroup("SHOP4", 0 /* NIGHT */, SHOP4_NIGHT_PEDGRP);
+  Zone.SetGroup("SHOP4", 1 /* DAY */, 37 /* SHOP4_PEDGRP */);
+  Zone.SetGroup("SHOP4", 0 /* NIGHT */, 38 /* SHOP4_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("SHOP5", 1 /* DAY */, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40); //Downtown
@@ -837,8 +837,8 @@ export async function inital() {
   Zone.SetCarInfo("SHOP5", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("SHOP5", 1 /* DAY */, 300, 350, 50, 0, 100, 0, 100, 0, 100, 500, 500);
   Zone.SetCivilianCarInfo("SHOP5", 0 /* NIGHT */, 300, 350, 50, 0, 100, 0, 100, 0, 100, 500, 500);
-  Zone.SetGroup("SHOP5", 1 /* DAY */, SHOP5_PEDGRP);
-  Zone.SetGroup("SHOP5", 0 /* NIGHT */, SHOP5_NIGHT_PEDGRP);
+  Zone.SetGroup("SHOP5", 1 /* DAY */, 39 /* SHOP5_PEDGRP */);
+  Zone.SetGroup("SHOP5", 0 /* NIGHT */, 40 /* SHOP5_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("BUSINES", 1 /* DAY */, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40); //Downtown
@@ -847,16 +847,16 @@ export async function inital() {
   Zone.SetCarInfo("BUSINES", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("BUSINES", 1 /* DAY */, 50, 0, 350, 350, 0, 0, 100, 0, 150, 500, 500);
   Zone.SetCivilianCarInfo("BUSINES", 0 /* NIGHT */, 50, 0, 250, 250, 0, 0, 300, 0, 150, 500, 500);
-  Zone.SetGroup("BUSINES", 1 /* DAY */, BUSINESS_PEDGRP);
-  Zone.SetGroup("BUSINES", 0 /* NIGHT */, BUSINESS_NIGHT_PEDGRP);
+  Zone.SetGroup("BUSINES", 1 /* DAY */, 11 /* BUSINESS_PEDGRP */);
+  Zone.SetGroup("BUSINES", 0 /* NIGHT */, 12 /* BUSINESS_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("TESTT", 1 /* DAY */, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0); //Dirt bike course
   Zone.SetPedInfo("TESTT", 0 /* NIGHT */, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
   Zone.SetCarInfo("TESTT", 1 /* DAY */, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
   Zone.SetCarInfo("TESTT", 0 /* NIGHT */, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-  Zone.SetGroup("TESTT", 1 /* DAY */, BUSINESS_PEDGRP);
-  Zone.SetGroup("TESTT", 0 /* NIGHT */, BUSINESS_NIGHT_PEDGRP);
+  Zone.SetGroup("TESTT", 1 /* DAY */, 11 /* BUSINESS_PEDGRP */);
+  Zone.SetGroup("TESTT", 0 /* NIGHT */, 12 /* BUSINESS_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("BIKAREA", 1 /* DAY */, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20); //Bikers Downtown
@@ -865,8 +865,8 @@ export async function inital() {
   Zone.SetCarInfo("BIKAREA", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 100, 0, 0, 0, 10);
   Zone.SetCivilianCarInfo("BIKAREA", 1 /* DAY */, 350, 300, 0, 0, 100, 0, 100, 0, 150, 500, 500);
   Zone.SetCivilianCarInfo("BIKAREA", 0 /* NIGHT */, 350, 300, 0, 0, 100, 0, 100, 0, 150, 500, 500);
-  Zone.SetGroup("BIKAREA", 1 /* DAY */, BIKER_AREA_PEDGRP);
-  Zone.SetGroup("BIKAREA", 0 /* NIGHT */, BIKER_AREA_NIGHT_PEDGRP);
+  Zone.SetGroup("BIKAREA", 1 /* DAY */, 13 /* BIKER_AREA_PEDGRP */);
+  Zone.SetGroup("BIKAREA", 0 /* NIGHT */, 14 /* BIKER_AREA_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("GANG2", 1 /* DAY */, 13, 0, 250, 0, 0, 0, 0, 0, 0, 0, 10); //Haitians
@@ -875,8 +875,8 @@ export async function inital() {
   Zone.SetCarInfo("GANG2", 0 /* NIGHT */, 10, 0, 250, 0, 0, 0, 0, 0, 0, 0, 10);
   Zone.SetCivilianCarInfo("GANG2", 1 /* DAY */, 200, 600, 0, 0, 100, 0, 50, 0, 50, 500, 500);
   Zone.SetCivilianCarInfo("GANG2", 0 /* NIGHT */, 200, 600, 0, 0, 100, 0, 50, 0, 50, 500, 500);
-  Zone.SetGroup("GANG2", 1 /* DAY */, GHETTO1_PEDGRP);
-  Zone.SetGroup("GANG2", 0 /* NIGHT */, GHETTO1_PEDGRP);
+  Zone.SetGroup("GANG2", 1 /* DAY */, 59 /* GHETTO1_PEDGRP */);
+  Zone.SetGroup("GANG2", 0 /* NIGHT */, 59 /* GHETTO1_PEDGRP */);
 
 
   Zone.SetPedInfo("GHETTO1", 1 /* DAY */, 13, 0, 150, 0, 0, 0, 0, 0, 0, 0, 10); //Haitians
@@ -885,8 +885,8 @@ export async function inital() {
   Zone.SetCarInfo("GHETTO1", 0 /* NIGHT */, 10, 0, 150, 0, 0, 0, 0, 0, 0, 0, 10);
   Zone.SetCivilianCarInfo("GHETTO1", 1 /* DAY */, 200, 600, 0, 0, 100, 0, 50, 0, 50, 500, 500);
   Zone.SetCivilianCarInfo("GHETTO1", 0 /* NIGHT */, 200, 600, 0, 0, 100, 0, 50, 0, 50, 500, 500);
-  Zone.SetGroup("GHETTO1", 1 /* DAY */, GHETTO1_PEDGRP);
-  Zone.SetGroup("GHETTO1", 0 /* NIGHT */, GHETTO1_NIGHT_PEDGRP);
+  Zone.SetGroup("GHETTO1", 1 /* DAY */, 59 /* GHETTO1_PEDGRP */);
+  Zone.SetGroup("GHETTO1", 0 /* NIGHT */, 60 /* GHETTO1_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("GHETTO2", 1 /* DAY */, 13, 150, 0, 0, 0, 0, 0, 0, 0, 0, 10); //Cubans
@@ -895,8 +895,8 @@ export async function inital() {
   Zone.SetCarInfo("GHETTO2", 0 /* NIGHT */, 10, 200, 0, 0, 0, 0, 0, 0, 0, 0, 10);
   Zone.SetCivilianCarInfo("GHETTO2", 1 /* DAY */, 200, 600, 0, 0, 100, 0, 50, 0, 50, 500, 500);
   Zone.SetCivilianCarInfo("GHETTO2", 0 /* NIGHT */, 200, 600, 0, 0, 100, 0, 50, 0, 50, 500, 500);
-  Zone.SetGroup("GHETTO2", 1 /* DAY */, GHETTO2_PEDGRP);
-  Zone.SetGroup("GHETTO2", 0 /* NIGHT */, GHETTO2_NIGHT_PEDGRP);
+  Zone.SetGroup("GHETTO2", 1 /* DAY */, 61 /* GHETTO2_PEDGRP */);
+  Zone.SetGroup("GHETTO2", 0 /* NIGHT */, 62 /* GHETTO2_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("RICH3", 1 /* DAY */, 13, 0, 0, 0, 0, 50, 0, 0, 0, 0, 40); //Starfish island
@@ -905,8 +905,8 @@ export async function inital() {
   Zone.SetCarInfo("RICH3", 0 /* NIGHT */, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50);
   Zone.SetCivilianCarInfo("RICH3", 1 /* DAY */, 50, 0, 400, 400, 50, 0, 50, 0, 50, 500, 500);
   Zone.SetCivilianCarInfo("RICH3", 0 /* NIGHT */, 50, 0, 400, 400, 50, 0, 50, 0, 50, 500, 500);
-  Zone.SetGroup("RICH3", 1 /* DAY */, RICH3_PEDGRP);
-  Zone.SetGroup("RICH3", 0 /* NIGHT */, RICH3_NIGHT_PEDGRP);
+  Zone.SetGroup("RICH3", 1 /* DAY */, 29 /* RICH3_PEDGRP */);
+  Zone.SetGroup("RICH3", 0 /* NIGHT */, 30 /* RICH3_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("GANG1", 1 /* DAY */, 13, 0, 0, 0, 1000, 0, 0, 0, 0, 0, 0); // Mansion
@@ -915,8 +915,8 @@ export async function inital() {
   Zone.SetCarInfo("GANG1", 0 /* NIGHT */, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
   Zone.SetCivilianCarInfo("GANG1", 1 /* DAY */, 50, 0, 400, 400, 50, 0, 50, 0, 50, 500, 500);
   Zone.SetCivilianCarInfo("GANG1", 0 /* NIGHT */, 50, 0, 400, 400, 50, 0, 50, 0, 50, 500, 500);
-  Zone.SetGroup("GANG1", 1 /* DAY */, GHETTO1_PEDGRP);
-  Zone.SetGroup("GANG1", 0 /* NIGHT */, GHETTO1_NIGHT_PEDGRP);
+  Zone.SetGroup("GANG1", 1 /* DAY */, 59 /* GHETTO1_PEDGRP */);
+  Zone.SetGroup("GANG1", 0 /* NIGHT */, 60 /* GHETTO1_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("Baggag", 1 /* DAY */, 5, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); // Airport
@@ -926,8 +926,8 @@ export async function inital() {
   //SET_ZONE_CIVILIAN_CAR_INFO TERMINL DAY   50 0 400 400 50 0 50 0 50 500 500
   //SET_ZONE_CIVILIAN_CAR_INFO TERMINL NIGHT 50 0 400 400 50 0 50 0 50 500 500
 
-  Zone.SetGroup("TERMINL", 1 /* DAY */, GHETTO1_PEDGRP);
-  Zone.SetGroup("TERMINL", 0 /* NIGHT */, GHETTO1_NIGHT_PEDGRP);
+  Zone.SetGroup("TERMINL", 1 /* DAY */, 59 /* GHETTO1_PEDGRP */);
+  Zone.SetGroup("TERMINL", 0 /* NIGHT */, 60 /* GHETTO1_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("ICCREAM", 1 /* DAY */, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10);
@@ -936,8 +936,8 @@ export async function inital() {
   Zone.SetCarInfo("ICCREAM", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10);
   Zone.SetCivilianCarInfo("ICCREAM", 1 /* DAY */, 200, 600, 0, 0, 100, 0, 50, 0, 50, 500, 500);
   Zone.SetCivilianCarInfo("ICCREAM", 0 /* NIGHT */, 200, 600, 0, 0, 100, 0, 50, 0, 50, 500, 500);
-  Zone.SetGroup("ICCREAM", 1 /* DAY */, GHETTO2_PEDGRP);
-  Zone.SetGroup("ICCREAM", 0 /* NIGHT */, GHETTO2_NIGHT_PEDGRP);
+  Zone.SetGroup("ICCREAM", 1 /* DAY */, 61 /* GHETTO2_PEDGRP */);
+  Zone.SetGroup("ICCREAM", 0 /* NIGHT */, 62 /* GHETTO2_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("BOATYRD", 1 /* DAY */, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20);
@@ -946,8 +946,8 @@ export async function inital() {
   Zone.SetCarInfo("BOATYRD", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10);
   Zone.SetCivilianCarInfo("BOATYRD", 1 /* DAY */, 0, 100, 0, 0, 700, 200, 0, 0, 0, 500, 500);
   Zone.SetCivilianCarInfo("BOATYRD", 0 /* NIGHT */, 0, 100, 0, 0, 700, 200, 0, 0, 0, 500, 500);
-  Zone.SetGroup("BOATYRD", 1 /* DAY */, 7 /* DOCKS_PEDGRP */);
-  Zone.SetGroup("BOATYRD", 0 /* NIGHT */, 8 /* DOCKS_NIGHT_PEDGRP */);
+  Zone.SetGroup("BOATYRD", 1 /* DAY */, 15 /* DOCKS_PEDGRP */);
+  Zone.SetGroup("BOATYRD", 0 /* NIGHT */, 16 /* DOCKS_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("KAUFCAB", 1 /* DAY */, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10);
@@ -956,8 +956,8 @@ export async function inital() {
   Zone.SetCarInfo("KAUFCAB", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10);
   Zone.SetCivilianCarInfo("KAUFCAB", 1 /* DAY */, 200, 600, 0, 0, 100, 0, 50, 0, 50, 500, 500);
   Zone.SetCivilianCarInfo("KAUFCAB", 0 /* NIGHT */, 200, 600, 0, 0, 100, 0, 50, 0, 50, 500, 500);
-  Zone.SetGroup("KAUFCAB", 1 /* DAY */, GHETTO1_PEDGRP);
-  Zone.SetGroup("KAUFCAB", 0 /* NIGHT */, GHETTO1_PEDGRP);
+  Zone.SetGroup("KAUFCAB", 1 /* DAY */, 59 /* GHETTO1_PEDGRP */);
+  Zone.SetGroup("KAUFCAB", 0 /* NIGHT */, 59 /* GHETTO1_PEDGRP */);
 
 
   Zone.SetPedInfo("PRINTWK", 1 /* DAY */, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10);
@@ -966,8 +966,8 @@ export async function inital() {
   Zone.SetCarInfo("PRINTWK", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10);
   Zone.SetCivilianCarInfo("PRINTWK", 1 /* DAY */, 200, 600, 0, 0, 100, 0, 50, 0, 50, 500, 500);
   Zone.SetCivilianCarInfo("PRINTWK", 0 /* NIGHT */, 200, 600, 0, 0, 100, 0, 50, 0, 50, 500, 500);
-  Zone.SetGroup("PRINTWK", 1 /* DAY */, GHETTO1_PEDGRP);
-  Zone.SetGroup("PRINTWK", 0 /* NIGHT */, GHETTO1_NIGHT_PEDGRP);
+  Zone.SetGroup("PRINTWK", 1 /* DAY */, 59 /* GHETTO1_PEDGRP */);
+  Zone.SetGroup("PRINTWK", 0 /* NIGHT */, 60 /* GHETTO1_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("CARYRD", 1 /* DAY */, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20);
@@ -976,8 +976,8 @@ export async function inital() {
   Zone.SetCarInfo("CARYRD", 0 /* NIGHT */, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20);
   Zone.SetCivilianCarInfo("CARYRD", 1 /* DAY */, 200, 0, 300, 300, 0, 0, 200, 0, 0, 500, 500);
   Zone.SetCivilianCarInfo("CARYRD", 0 /* NIGHT */, 200, 0, 300, 300, 0, 0, 200, 0, 0, 500, 500);
-  Zone.SetGroup("CARYRD", 1 /* DAY */, STREET6_PEDGRP);
-  Zone.SetGroup("CARYRD", 0 /* NIGHT */, STREET6_NIGHT_PEDGRP);
+  Zone.SetGroup("CARYRD", 1 /* DAY */, 23 /* STREET6_PEDGRP */);
+  Zone.SetGroup("CARYRD", 0 /* NIGHT */, 24 /* STREET6_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("PORNSTU", 1 /* DAY */, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20);
@@ -986,16 +986,16 @@ export async function inital() {
   Zone.SetCarInfo("PORNSTU", 0 /* NIGHT */, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20);
   Zone.SetCivilianCarInfo("PORNSTU", 1 /* DAY */, 200, 700, 0, 0, 70, 0, 30, 0, 0, 500, 500);
   Zone.SetCivilianCarInfo("PORNSTU", 0 /* NIGHT */, 200, 700, 0, 0, 70, 0, 30, 0, 0, 500, 500);
-  Zone.SetGroup("PORNSTU", 1 /* DAY */, STREET5_PEDGRP);
-  Zone.SetGroup("PORNSTU", 0 /* NIGHT */, STREET5_NIGHT_PEDGRP);
+  Zone.SetGroup("PORNSTU", 1 /* DAY */, 9 /* STREET5_PEDGRP */);
+  Zone.SetGroup("PORNSTU", 0 /* NIGHT */, 10 /* STREET5_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("ARMYBAS", 1 /* DAY */, 18, 0, 0, 1000, 0, 0, 0, 0, 0, 0, 0);
   Zone.SetPedInfo("ARMYBAS", 0 /* NIGHT */, 18, 0, 0, 1000, 0, 0, 0, 0, 0, 0, 0);
   Zone.SetCarInfo("ARMYBAS", 1 /* DAY */, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20);
   Zone.SetCarInfo("ARMYBAS", 0 /* NIGHT */, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20);
-  Zone.SetGroup("ARMYBAS", 1 /* DAY */, 27 /* AIRPORT_PEDGRP */);
-  Zone.SetGroup("ARMYBAS", 0 /* NIGHT */, 28 /* AIRPORT_NIGHT_PEDGRP */);
+  Zone.SetGroup("ARMYBAS", 1 /* DAY */, 51 /* AIRPORT_PEDGRP */);
+  Zone.SetGroup("ARMYBAS", 0 /* NIGHT */, 52 /* AIRPORT_NIGHT_PEDGRP */);
 
   /*
   SET_ZONE_PED_INFO STREET2 DAY   (14) 0 0 0 0 0 0 0 0 0 20
@@ -1086,26 +1086,26 @@ export async function inital() {
   // ***************************************** GANGS*******************************************
 
 
-  Gang.SetCarModel(GANG_CUBAN, cuban);
-  Gang.SetCarModel(GANG_HAITIAN, voodoo);
-  Gang.SetCarModel(GANG_STREET, gangbur);
-  Gang.SetCarModel(GANG_BIKER, angel);
+  Gang.SetCarModel(0 /* GANG_CUBAN */, cuban);
+  Gang.SetCarModel(1 /* GANG_HAITIAN */, voodoo);
+  Gang.SetCarModel(2 /* GANG_STREET */, gangbur);
+  Gang.SetCarModel(5 /* GANG_BIKER */, angel);
 
 
-  Gang.SetAttackPlayerWithCops(GANG_SECURITY, true /* TRUE */);
-  Gang.SetWeapons(GANG_CUBAN, 2 /* WEAPONTYPE_PISTOL */, 0 /* WEAPONTYPE_UNARMED */);
-  Gang.SetWeapons(GANG_HAITIAN, 2 /* WEAPONTYPE_PISTOL */, 0 /* WEAPONTYPE_UNARMED */);
-  Gang.SetWeapons(GANG_STREET, 2 /* WEAPONTYPE_PISTOL */, 0 /* WEAPONTYPE_UNARMED */);
-  Gang.SetWeapons(GANG_DIAZ, 2 /* WEAPONTYPE_PISTOL */, 2 /* WEAPONTYPE_PISTOL */);
-  Gang.SetWeapons(GANG_SECURITY, 2 /* WEAPONTYPE_PISTOL */, 2 /* WEAPONTYPE_PISTOL */);
-  Gang.SetWeapons(GANG_BIKER, 2 /* WEAPONTYPE_PISTOL */, 0 /* WEAPONTYPE_UNARMED */);
-  Gang.SetWeapons(GANG_PLAYER, 2 /* WEAPONTYPE_PISTOL */, 2 /* WEAPONTYPE_PISTOL */);
+  Gang.SetAttackPlayerWithCops(4 /* GANG_SECURITY */, true /* TRUE */);
+  Gang.SetWeapons(0 /* GANG_CUBAN */, 17 /* WEAPONTYPE_PISTOL */, 0 /* WEAPONTYPE_UNARMED */);
+  Gang.SetWeapons(1 /* GANG_HAITIAN */, 17 /* WEAPONTYPE_PISTOL */, 0 /* WEAPONTYPE_UNARMED */);
+  Gang.SetWeapons(2 /* GANG_STREET */, 17 /* WEAPONTYPE_PISTOL */, 0 /* WEAPONTYPE_UNARMED */);
+  Gang.SetWeapons(3 /* GANG_DIAZ */, 17 /* WEAPONTYPE_PISTOL */, 17 /* WEAPONTYPE_PISTOL */);
+  Gang.SetWeapons(4 /* GANG_SECURITY */, 17 /* WEAPONTYPE_PISTOL */, 17 /* WEAPONTYPE_PISTOL */);
+  Gang.SetWeapons(5 /* GANG_BIKER */, 17 /* WEAPONTYPE_PISTOL */, 0 /* WEAPONTYPE_UNARMED */);
+  Gang.SetWeapons(6 /* GANG_PLAYER */, 17 /* WEAPONTYPE_PISTOL */, 17 /* WEAPONTYPE_PISTOL */);
 
   //SET_THREAT_FOR_PED_TYPE PEDTYPE_GANG_COLOMBIAN THREAT_PLAYER1
 
 
-  Game.SetThreatForPedType(PEDTYPE_GANG_CUBAN, THREAT_GANG_HAITIAN);
-  Game.SetThreatForPedType(PEDTYPE_GANG_HAITIAN, THREAT_GANG_CUBAN);
+  Game.SetThreatForPedType(7 /* PEDTYPE_GANG_CUBAN */, 256 /* THREAT_GANG_HAITIAN */);
+  Game.SetThreatForPedType(8 /* PEDTYPE_GANG_HAITIAN */, 128 /* THREAT_GANG_CUBAN */);
 
   //SET_GANG_PLAYER_ATTITUDE GANG_PLAYER LOVES Player1
 
@@ -1199,7 +1199,7 @@ export async function inital() {
   // VAR_INT haitian_gate
 
 
-  $.haitian_gate = ScriptObject.CreateNoOffset(1278 /* electricgate */, -1114.1, 67.0, 10.1);
+  $.haitian_gate = ScriptObject.CreateNoOffset(electricgate, -1114.1, 67.0, 10.1);
   $.haitian_gate.setHeading(90.0);
   $.haitian_gate.dontRemove();
 
@@ -1208,13 +1208,13 @@ export async function inital() {
   // VAR_INT cabmagedon_gate
 
 
-  $.strike_gate = ScriptObject.CreateNoOffset(1278 /* electricgate */, 298.0, -313.6, 11.0);
+  $.strike_gate = ScriptObject.CreateNoOffset(electricgate, 298.0, -313.6, 11.0);
   //SET_OBJECT_HEADING strike_gate 180.0
 
   $.strike_gate.dontRemove();
 
 
-  $.cabmagedon_gate = ScriptObject.CreateNoOffset(1278 /* electricgate */, -989.9, -1252.2, 10.4);
+  $.cabmagedon_gate = ScriptObject.CreateNoOffset(electricgate, -989.9, -1252.2, 10.4);
   $.cabmagedon_gate.setHeading(249.0);
   $.cabmagedon_gate.dontRemove();
 
@@ -1283,7 +1283,7 @@ export async function inital() {
 
   // VAR_INT cams_celldoor
   $.cams_celldoor = ScriptObject.CreateNoOffset(od_celldoor02, 384.098, -505.893, 9.68);
-  $.cams_celldoor.setAreaVisible(VIS_POLICE_STATION);
+  $.cams_celldoor.setAreaVisible(12 /* VIS_POLICE_STATION */);
   $.cams_celldoor.dontRemove();
   $.cams_celldoor.setHeading(0.0);
 
@@ -1341,7 +1341,7 @@ export async function inital() {
   //Assasin 5 - Loose Ends gate near back of ice cream factory
 
   // VAR_INT ice_gate
-  $.ice_gate = ScriptObject.CreateNoOffset(1278 /* electricgate */, -973.664, -519.65, 10.092);
+  $.ice_gate = ScriptObject.CreateNoOffset(electricgate, -973.664, -519.65, 10.092);
   $.ice_gate.setHeading(98.5);
   $.ice_gate.dontRemove();
 
@@ -1372,49 +1372,49 @@ export async function inital() {
 
   // VAR_INT bank_windows
   $.bank_windows = ScriptObject.CreateNoOffset(unrocketed_win1, -899.851, -341.061, 14.318);
-  $.bank_windows.setAreaVisible(VIS_BANK);
+  $.bank_windows.setAreaVisible(3 /* VIS_BANK */);
   $.bank_windows.dontRemove();
 
   //Bank Grills
 
   // VAR_INT grill_1 grill_2 grill_3 grill_4 grill_5 grill_6
   $.grill_1 = ScriptObject.CreateNoOffset(Bnk_grill01, -899.214, -333.656, 21.233);
-  $.grill_1.setAreaVisible(VIS_BANK);
+  $.grill_1.setAreaVisible(3 /* VIS_BANK */);
   $.grill_1.setCollision(false /* FALSE */);
   $.grill_1.setDynamic(false /* FALSE */);
   $.grill_1.dontRemove();
 
 
   $.grill_2 = ScriptObject.CreateNoOffset(Bnk_grill01, -899.214, -348.466, 21.233);
-  $.grill_2.setAreaVisible(VIS_BANK);
+  $.grill_2.setAreaVisible(3 /* VIS_BANK */);
   $.grill_2.setCollision(false /* FALSE */);
   $.grill_2.setDynamic(false /* FALSE */);
   $.grill_2.dontRemove();
 
 
   $.grill_3 = ScriptObject.CreateNoOffset(Bnk_grill01, -907.307, -336.618, 23.987);
-  $.grill_3.setAreaVisible(VIS_BANK);
+  $.grill_3.setAreaVisible(3 /* VIS_BANK */);
   $.grill_3.setCollision(false /* FALSE */);
   $.grill_3.setDynamic(false /* FALSE */);
   $.grill_3.dontRemove();
 
 
   $.grill_4 = ScriptObject.CreateNoOffset(Bnk_grill01, -907.307, -345.504, 23.987);
-  $.grill_4.setAreaVisible(VIS_BANK);
+  $.grill_4.setAreaVisible(3 /* VIS_BANK */);
   $.grill_4.setCollision(false /* FALSE */);
   $.grill_4.setDynamic(false /* FALSE */);
   $.grill_4.dontRemove();
 
 
   $.grill_5 = ScriptObject.CreateNoOffset(Bnk_grill01, -915.401, -336.6184, 23.987);
-  $.grill_5.setAreaVisible(VIS_BANK);
+  $.grill_5.setAreaVisible(3 /* VIS_BANK */);
   $.grill_5.setCollision(false /* FALSE */);
   $.grill_5.setDynamic(false /* FALSE */);
   $.grill_5.dontRemove();
 
 
   $.grill_6 = ScriptObject.CreateNoOffset(Bnk_grill01, -915.401, -345.50, 23.987);
-  $.grill_6.setAreaVisible(VIS_BANK);
+  $.grill_6.setAreaVisible(3 /* VIS_BANK */);
   $.grill_6.setCollision(false /* FALSE */);
   $.grill_6.setDynamic(false /* FALSE */);
   $.grill_6.dontRemove();
@@ -2195,28 +2195,28 @@ export async function inital() {
   //BEACH
 
   $.chainsaw1 = Pickup.Create(chnsaw, 2 /* PICKUP_ON_STREET */, 30.0, -1330.9, 13.0); //Scarface chainsaw room
-  $.gun_beach1 = Pickup.Create(172 /* bat */, 2 /* PICKUP_ON_STREET */, 206.7, -1254.4, 12.0); //Behind Ocean View
-  $.gun_beach2 = Pickup.CreateWithAmmo(173 /* colt45 */, 14 /* PICKUP_ON_STREET_SLOW */, 34, -228.4, -1318.2, 9.1); //down the Ocean Bay Marina
-  $.gun_beach3 = Pickup.CreateWithAmmo(173 /* colt45 */, 14 /* PICKUP_ON_STREET_SLOW */, 34, 340.5, -249.5, 12.5); //At Construction Site (Tex's)
-  $.gun_beach4 = Pickup.CreateWithAmmo(chromegun, 14 /* PICKUP_ON_STREET_SLOW */, 16, 42.3, -959.2, 21.8); //Top of Small Mall
-  $.gun_beach5 = Pickup.CreateWithAmmo(chromegun, 14 /* PICKUP_ON_STREET_SLOW */, 16, 568.9, -449.3, 11.1); //Top of the walway along Beach
-  $.gun_beach6 = Pickup.CreateWithAmmo(tec9, 14 /* PICKUP_ON_STREET_SLOW */, 100, 287.9, 50.7, 10.8); //Just off small road that used to lead onto golfcourse
-  $.gun_beach7 = Pickup.CreateWithAmmo(170 /* grenade */, 14 /* PICKUP_ON_STREET_SLOW */, 4, 362.2, -500.5, 12.3); //behind police station
-  $.gun_beach8 = Pickup.Create(cleaver, 14 /* PICKUP_ON_STREET_SLOW */, 402.6, 102.5, 11.4); //Behind North Pizza Hut
-  $.gun_beach9 = Pickup.CreateWithAmmo(ruger, 14 /* PICKUP_ON_STREET_SLOW */, 60, 418.9, 589.9, 18.3); //On top of swank house
-  $.gun_beach10 = Pickup.Create(katana, 14 /* PICKUP_ON_STREET_SLOW */, 476.9, 1014.9, 19.2); //Inside Tarbrush Coffee
-  $.gun_beach11 = Pickup.Create(nitestick, 14 /* PICKUP_ON_STREET_SLOW */, 402.4, -488.3, 12.4); //Inside Police Station
-  $.gun_beach13 = Pickup.Create(brassknuckle, 14 /* PICKUP_ON_STREET_SLOW */, 224.0, -1207.5, 11.0); //behind Moonlite Hotel on Ocean Drive
-  $.gun_beach14 = Pickup.Create(knifecur, 14 /* PICKUP_ON_STREET_SLOW */, 118.7, -1546.1, 10.8); //behind Northstar Hotel on Ocean Drive
-  $.gun_beach15 = Pickup.Create(machete, 14 /* PICKUP_ON_STREET_SLOW */, 56.6, -459.3, 11.4); //On bridge leadign to star island
-  $.gun_beach16 = Pickup.CreateWithAmmo(178 /* uzi */, 14 /* PICKUP_ON_STREET_SLOW */, 60, 5.4, -1277.0, 10.4); //Behind paint n spray in washington
-  $.gun_beach17 = Pickup.CreateWithAmmo(178 /* uzi */, 14 /* PICKUP_ON_STREET_SLOW */, 60, 157.0, -895.3, 12.3); //in middle of washington next to swimming pool
-  $.gun_beach12 = Pickup.CreateWithAmmo(182 /* bomb */, 14 /* PICKUP_ON_STREET_SLOW */, 4, 556.6, 207.4, 14.5); //building tall hotel next to beach in South vice point
+  $.gun_beach1 = Pickup.Create(bat, 2 /* PICKUP_ON_STREET */, 206.7, -1254.4, 12.0); //Behind Ocean View
+  $.gun_beach2 = Pickup.CreateWithAmmo(colt45, 15 /* PICKUP_ON_STREET_SLOW */, 34, -228.4, -1318.2, 9.1); //down the Ocean Bay Marina
+  $.gun_beach3 = Pickup.CreateWithAmmo(colt45, 15 /* PICKUP_ON_STREET_SLOW */, 34, 340.5, -249.5, 12.5); //At Construction Site (Tex's)
+  $.gun_beach4 = Pickup.CreateWithAmmo(chromegun, 15 /* PICKUP_ON_STREET_SLOW */, 16, 42.3, -959.2, 21.8); //Top of Small Mall
+  $.gun_beach5 = Pickup.CreateWithAmmo(chromegun, 15 /* PICKUP_ON_STREET_SLOW */, 16, 568.9, -449.3, 11.1); //Top of the walway along Beach
+  $.gun_beach6 = Pickup.CreateWithAmmo(tec9, 15 /* PICKUP_ON_STREET_SLOW */, 100, 287.9, 50.7, 10.8); //Just off small road that used to lead onto golfcourse
+  $.gun_beach7 = Pickup.CreateWithAmmo(grenade, 15 /* PICKUP_ON_STREET_SLOW */, 4, 362.2, -500.5, 12.3); //behind police station
+  $.gun_beach8 = Pickup.Create(cleaver, 15 /* PICKUP_ON_STREET_SLOW */, 402.6, 102.5, 11.4); //Behind North Pizza Hut
+  $.gun_beach9 = Pickup.CreateWithAmmo(ruger, 15 /* PICKUP_ON_STREET_SLOW */, 60, 418.9, 589.9, 18.3); //On top of swank house
+  $.gun_beach10 = Pickup.Create(katana, 15 /* PICKUP_ON_STREET_SLOW */, 476.9, 1014.9, 19.2); //Inside Tarbrush Coffee
+  $.gun_beach11 = Pickup.Create(nitestick, 15 /* PICKUP_ON_STREET_SLOW */, 402.4, -488.3, 12.4); //Inside Police Station
+  $.gun_beach13 = Pickup.Create(brassknuckle, 15 /* PICKUP_ON_STREET_SLOW */, 224.0, -1207.5, 11.0); //behind Moonlite Hotel on Ocean Drive
+  $.gun_beach14 = Pickup.Create(knifecur, 15 /* PICKUP_ON_STREET_SLOW */, 118.7, -1546.1, 10.8); //behind Northstar Hotel on Ocean Drive
+  $.gun_beach15 = Pickup.Create(machete, 15 /* PICKUP_ON_STREET_SLOW */, 56.6, -459.3, 11.4); //On bridge leadign to star island
+  $.gun_beach16 = Pickup.CreateWithAmmo(uzi, 15 /* PICKUP_ON_STREET_SLOW */, 60, 5.4, -1277.0, 10.4); //Behind paint n spray in washington
+  $.gun_beach17 = Pickup.CreateWithAmmo(uzi, 15 /* PICKUP_ON_STREET_SLOW */, 60, 157.0, -895.3, 12.3); //in middle of washington next to swimming pool
+  $.gun_beach12 = Pickup.CreateWithAmmo(bomb, 15 /* PICKUP_ON_STREET_SLOW */, 4, 556.6, 207.4, 14.5); //building tall hotel next to beach in South vice point
 
   //PORN ISLAND
 
-  $.prawn_gun1 = Pickup.CreateWithAmmo(m4, 14 /* PICKUP_ON_STREET_SLOW */, 60, -32.8, 1019.2, 13.0); //Inside Studio B
-  $.prawn_gun2 = Pickup.CreateWithAmmo(178 /* uzi */, 14 /* PICKUP_ON_STREET_SLOW */, 60, 17.3, 1145.7, 23.5); //At front of Street Gang building
+  $.prawn_gun1 = Pickup.CreateWithAmmo(m4, 15 /* PICKUP_ON_STREET_SLOW */, 60, -32.8, 1019.2, 13.0); //Inside Studio B
+  $.prawn_gun2 = Pickup.CreateWithAmmo(uzi, 15 /* PICKUP_ON_STREET_SLOW */, 60, 17.3, 1145.7, 23.5); //At front of Street Gang building
 
   //GOLF ISLAND
 
@@ -2224,26 +2224,26 @@ export async function inital() {
 
   //STAR ISLAND
 
-  $.star_gun1 = Pickup.CreateWithAmmo(181 /* flame */, 14 /* PICKUP_ON_STREET_SLOW */, 300, -546.0, -418.9, 9.8); //In the star of R* symbol
-  $.star_gun2 = Pickup.CreateWithAmmo(7 /* sniper */, 14 /* PICKUP_ON_STREET_SLOW */, 20, -476.4, -571.2, 12.9); //In the Maze
-  $.star_gun5 = Pickup.Create(katana, 14 /* PICKUP_ON_STREET_SLOW */, -554.11, -547.7, 10.7); //Inside garage of house next to mansion
+  $.star_gun1 = Pickup.CreateWithAmmo(flame, 15 /* PICKUP_ON_STREET_SLOW */, 300, -546.0, -418.9, 9.8); //In the star of R* symbol
+  $.star_gun2 = Pickup.CreateWithAmmo(7 /* sniper */, 15 /* PICKUP_ON_STREET_SLOW */, 20, -476.4, -571.2, 12.9); //In the Maze
+  $.star_gun5 = Pickup.Create(katana, 15 /* PICKUP_ON_STREET_SLOW */, -554.11, -547.7, 10.7); //Inside garage of house next to mansion
 
   //MAINLAND
 
-  $.gun_main1 = Pickup.CreateWithAmmo(174 /* molotov */, 14 /* PICKUP_ON_STREET_SLOW */, 4, -755.7, 1347.5, 11.8); //Taco Shop
-  $.gun_main2 = Pickup.CreateWithAmmo(178 /* uzi */, 14 /* PICKUP_ON_STREET_SLOW */, 60, -545.8, 694.6, 11.0); //Across from biker bar
-  $.gun_main3 = Pickup.CreateWithAmmo(m4, 14 /* PICKUP_ON_STREET_SLOW */, 60, -980.4, 118.7, 9.3); //Between Haitain Houses
-  $.gun_main4 = Pickup.CreateWithAmmo(m4, 14 /* PICKUP_ON_STREET_SLOW */, 60, -1221.0, -641.6, 11.7); //Behind house across from Umberto's
-  $.gun_main5 = Pickup.CreateWithAmmo(7 /* sniper */, 14 /* PICKUP_ON_STREET_SLOW */, 20, -742.1, -949.9, 9.9); //Behind Toll Booth on last bridge on way to Beach
-  $.gun_main6 = Pickup.CreateWithAmmo(rocketla, 14 /* PICKUP_ON_STREET_SLOW */, 4, -995.1, -1178.1, 13.6); //In Hooker Inn Swimming Pool.
-  $.gun_main7 = Pickup.CreateWithAmmo(ingramsl, 14 /* PICKUP_ON_STREET_SLOW */, 60, -713.3, -1466.0, 11.2); //Across from fastest boat Boat Shed
-  $.gun_main8 = Pickup.CreateWithAmmo(181 /* flame */, 14 /* PICKUP_ON_STREET_SLOW */, 300, -1015.1, -1392.9, 11.5); //beside Bomb SHop in Docks
-  $.gun_main9 = Pickup.CreateWithAmmo(shotgspa, 14 /* PICKUP_ON_STREET_SLOW */, 14, -1359.0, -742.2, 14.9); //Across from main terminal at airport
-  $.gun_main10 = Pickup.CreateWithAmmo(M60, 14 /* PICKUP_ON_STREET_SLOW */, 100, -1744.9, -288.9, 29.7); //left hand tower at Army Hanger
-  $.gun_main11 = Pickup.CreateWithAmmo(170 /* grenade */, 14 /* PICKUP_ON_STREET_SLOW */, 4, -939.8, -464.9, 10.9); //In basketball courts close to ice cream factory
-  $.gun_main12 = Pickup.CreateWithAmmo(python, 14 /* PICKUP_ON_STREET_SLOW */, 12, -1182.7, -61.1, 11.4); //South Across water from junkyard
-  $.gun_main13 = Pickup.CreateWithAmmo(buddyshot, 14 /* PICKUP_ON_STREET_SLOW */, 10, -1305.2, 177.1, 11.4); //Behind large hanger from junkyard
-  $.gun_main14 = Pickup.CreateWithAmmo(laser, 14 /* PICKUP_ON_STREET_SLOW */, 14, -1114.3, -602.0, 26.0); //Next to Kaufmann cabs sign in Lttle Havana (close to cuban cafe)
+  $.gun_main1 = Pickup.CreateWithAmmo(molotov, 15 /* PICKUP_ON_STREET_SLOW */, 4, -755.7, 1347.5, 11.8); //Taco Shop
+  $.gun_main2 = Pickup.CreateWithAmmo(uzi, 15 /* PICKUP_ON_STREET_SLOW */, 60, -545.8, 694.6, 11.0); //Across from biker bar
+  $.gun_main3 = Pickup.CreateWithAmmo(m4, 15 /* PICKUP_ON_STREET_SLOW */, 60, -980.4, 118.7, 9.3); //Between Haitain Houses
+  $.gun_main4 = Pickup.CreateWithAmmo(m4, 15 /* PICKUP_ON_STREET_SLOW */, 60, -1221.0, -641.6, 11.7); //Behind house across from Umberto's
+  $.gun_main5 = Pickup.CreateWithAmmo(7 /* sniper */, 15 /* PICKUP_ON_STREET_SLOW */, 20, -742.1, -949.9, 9.9); //Behind Toll Booth on last bridge on way to Beach
+  $.gun_main6 = Pickup.CreateWithAmmo(rocketla, 15 /* PICKUP_ON_STREET_SLOW */, 4, -995.1, -1178.1, 13.6); //In Hooker Inn Swimming Pool.
+  $.gun_main7 = Pickup.CreateWithAmmo(ingramsl, 15 /* PICKUP_ON_STREET_SLOW */, 60, -713.3, -1466.0, 11.2); //Across from fastest boat Boat Shed
+  $.gun_main8 = Pickup.CreateWithAmmo(flame, 15 /* PICKUP_ON_STREET_SLOW */, 300, -1015.1, -1392.9, 11.5); //beside Bomb SHop in Docks
+  $.gun_main9 = Pickup.CreateWithAmmo(shotgspa, 15 /* PICKUP_ON_STREET_SLOW */, 14, -1359.0, -742.2, 14.9); //Across from main terminal at airport
+  $.gun_main10 = Pickup.CreateWithAmmo(M60, 15 /* PICKUP_ON_STREET_SLOW */, 100, -1744.9, -288.9, 29.7); //left hand tower at Army Hanger
+  $.gun_main11 = Pickup.CreateWithAmmo(grenade, 15 /* PICKUP_ON_STREET_SLOW */, 4, -939.8, -464.9, 10.9); //In basketball courts close to ice cream factory
+  $.gun_main12 = Pickup.CreateWithAmmo(python, 15 /* PICKUP_ON_STREET_SLOW */, 12, -1182.7, -61.1, 11.4); //South Across water from junkyard
+  $.gun_main13 = Pickup.CreateWithAmmo(buddyshot, 15 /* PICKUP_ON_STREET_SLOW */, 10, -1305.2, 177.1, 11.4); //Behind large hanger from junkyard
+  $.gun_main14 = Pickup.CreateWithAmmo(laser, 15 /* PICKUP_ON_STREET_SLOW */, 14, -1114.3, -602.0, 26.0); //Next to Kaufmann cabs sign in Lttle Havana (close to cuban cafe)
 
 
 
@@ -2256,43 +2256,43 @@ export async function inital() {
 
   //BEACH
 
-  $.beach_health1 = Pickup.Create(1362 /* health */, 1 /* PICKUP_IN_SHOP */, -113.2, -975.7, 10.4); //Ocean View Hospital
-  $.beach_health2 = Pickup.Create(1362 /* health */, 14 /* PICKUP_ON_STREET_SLOW */, -225.1, -1158.1, 9.1); //On Windy Path Along from marina
-  $.beach_health3 = Pickup.Create(1362 /* health */, 14 /* PICKUP_ON_STREET_SLOW */, 456.2, -471.4, 16.6); //On roof next to Protect the Deal shootout
-  $.beach_health4 = Pickup.Create(1362 /* health */, 14 /* PICKUP_ON_STREET_SLOW */, 377.4, 467.7, 11.6); //Next to garbage can where THE CHASE guy falls onto
-  $.beach_health5 = Pickup.Create(1362 /* health */, 1 /* PICKUP_IN_SHOP */, 469.6, 697.4, 11.7); //Shady Palms Hospital
-  $.beach_health8 = Pickup.Create(1362 /* health */, 14 /* PICKUP_ON_STREET_SLOW */, 385.3, 1210.9, 19.4); //Inside Cup in Big Mall (behind free car)
-  $.beach_health9 = Pickup.Create(1362 /* health */, 1 /* PICKUP_IN_SHOP */, 384.3, 756.6, 11.7); //Inside Dispensary at middle of Vice Point
+  $.beach_health1 = Pickup.Create(health, 1 /* PICKUP_IN_SHOP */, -113.2, -975.7, 10.4); //Ocean View Hospital
+  $.beach_health2 = Pickup.Create(health, 15 /* PICKUP_ON_STREET_SLOW */, -225.1, -1158.1, 9.1); //On Windy Path Along from marina
+  $.beach_health3 = Pickup.Create(health, 15 /* PICKUP_ON_STREET_SLOW */, 456.2, -471.4, 16.6); //On roof next to Protect the Deal shootout
+  $.beach_health4 = Pickup.Create(health, 15 /* PICKUP_ON_STREET_SLOW */, 377.4, 467.7, 11.6); //Next to garbage can where THE CHASE guy falls onto
+  $.beach_health5 = Pickup.Create(health, 1 /* PICKUP_IN_SHOP */, 469.6, 697.4, 11.7); //Shady Palms Hospital
+  $.beach_health8 = Pickup.Create(health, 15 /* PICKUP_ON_STREET_SLOW */, 385.3, 1210.9, 19.4); //Inside Cup in Big Mall (behind free car)
+  $.beach_health9 = Pickup.Create(health, 1 /* PICKUP_IN_SHOP */, 384.3, 756.6, 11.7); //Inside Dispensary at middle of Vice Point
 
   //PORN ISLAND
 
-  $.porn_health1 = Pickup.Create(1362 /* health */, 14 /* PICKUP_ON_STREET_SLOW */, 10.7, 1099.0, 16.6); //In front of Fish Fountain
+  $.porn_health1 = Pickup.Create(health, 15 /* PICKUP_ON_STREET_SLOW */, 10.7, 1099.0, 16.6); //In front of Fish Fountain
 
   //GOLF ISLAND
 
-  $.golf_health1 = Pickup.Create(1362 /* health */, 14 /* PICKUP_ON_STREET_SLOW */, 85.3, 402.7, 19.8); //On Bridge near tennis Courts
+  $.golf_health1 = Pickup.Create(health, 15 /* PICKUP_ON_STREET_SLOW */, 85.3, 402.7, 19.8); //On Bridge near tennis Courts
 
   //STAR ISLAND
 
-  $.star_health1 = Pickup.Create(1362 /* health */, 14 /* PICKUP_ON_STREET_SLOW */, -711.7, -501.7, 11.3); //Near Mainland gate
-  $.star_health2 = Pickup.Create(1362 /* health */, 14 /* PICKUP_ON_STREET_SLOW */, -404.0, -588.0, 11.6); //In bottom of Mansion
-  $.health_pickup = Pickup.Create(1362 /* health */, 2 /* PICKUP_ON_STREET */, -406.2503, -566.4947, 19.5804); //in mansion (for chris' finale)
+  $.star_health1 = Pickup.Create(health, 15 /* PICKUP_ON_STREET_SLOW */, -711.7, -501.7, 11.3); //Near Mainland gate
+  $.star_health2 = Pickup.Create(health, 15 /* PICKUP_ON_STREET_SLOW */, -404.0, -588.0, 11.6); //In bottom of Mansion
+  $.health_pickup = Pickup.Create(health, 2 /* PICKUP_ON_STREET */, -406.2503, -566.4947, 19.5804); //in mansion (for chris' finale)
 
   //MAINLAND
 
-  $.main_health1 = Pickup.Create(1362 /* health */, 14 /* PICKUP_ON_STREET_SLOW */, -478.1, 1438.5, 16.1); //Dirtbike Track
-  $.main_health2 = Pickup.Create(1362 /* health */, 14 /* PICKUP_ON_STREET_SLOW */, -675.0, 1263.3, 25.1); //On top of Roof in Downtown near Fight for Harley
-  $.main_health3 = Pickup.Create(1362 /* health */, 14 /* PICKUP_ON_STREET_SLOW */, -821.8, 1144.8, 26.1); //Near Fifth Jump in G-Spotlight Course
-  $.main_health4 = Pickup.Create(1362 /* health */, 14 /* PICKUP_ON_STREET_SLOW */, -1139.4, 55.4, 11.2); //Next to steps leading out of haitian Drug Factory
-  $.main_health5 = Pickup.Create(1362 /* health */, 14 /* PICKUP_ON_STREET_SLOW */, -1290.9, 91.9, 26.9); //Top of Garbage Lift in Garbage Dump
-  $.main_health6 = Pickup.Create(1362 /* health */, 1 /* PICKUP_IN_SHOP */, -885.4, -483.4, 13.1); //Westhaven Hospital
-  $.main_health7 = Pickup.Create(1362 /* health */, 14 /* PICKUP_ON_STREET_SLOW */, -925.1, -638.3, 16.0); //Roof leading to Ice Cream roofs
-  $.main_health9 = Pickup.Create(1362 /* health */, 14 /* PICKUP_ON_STREET_SLOW */, -692.4, -1283.8, 11.1); //underneath stairs leading to ship
-  $.main_health10 = Pickup.Create(1362 /* health */, 14 /* PICKUP_ON_STREET_SLOW */, -655.1, -1506.3, 8.1); //Off jetty at fastest boat yard
-  $.main_health11 = Pickup.Create(1362 /* health */, 14 /* PICKUP_ON_STREET_SLOW */, -1399.4, -865.9, 20.9); //Upstairs in Airport terminal
-  $.main_health12 = Pickup.Create(1362 /* health */, 1 /* PICKUP_IN_SHOP */, -822.6, 1137.3, 12.4); //Downtown Hospital
-  $.main_health13 = Pickup.Create(1362 /* health */, 1 /* PICKUP_IN_SHOP */, -851.4, -78.8, 11.5); //In pharmacy
-  $.main_health14 = Pickup.Create(1362 /* health */, 1 /* PICKUP_IN_SHOP */, -834.2, 740.6, 11.3); //In DOWNTOWN dispensary
+  $.main_health1 = Pickup.Create(health, 15 /* PICKUP_ON_STREET_SLOW */, -478.1, 1438.5, 16.1); //Dirtbike Track
+  $.main_health2 = Pickup.Create(health, 15 /* PICKUP_ON_STREET_SLOW */, -675.0, 1263.3, 25.1); //On top of Roof in Downtown near Fight for Harley
+  $.main_health3 = Pickup.Create(health, 15 /* PICKUP_ON_STREET_SLOW */, -821.8, 1144.8, 26.1); //Near Fifth Jump in G-Spotlight Course
+  $.main_health4 = Pickup.Create(health, 15 /* PICKUP_ON_STREET_SLOW */, -1139.4, 55.4, 11.2); //Next to steps leading out of haitian Drug Factory
+  $.main_health5 = Pickup.Create(health, 15 /* PICKUP_ON_STREET_SLOW */, -1290.9, 91.9, 26.9); //Top of Garbage Lift in Garbage Dump
+  $.main_health6 = Pickup.Create(health, 1 /* PICKUP_IN_SHOP */, -885.4, -483.4, 13.1); //Westhaven Hospital
+  $.main_health7 = Pickup.Create(health, 15 /* PICKUP_ON_STREET_SLOW */, -925.1, -638.3, 16.0); //Roof leading to Ice Cream roofs
+  $.main_health9 = Pickup.Create(health, 15 /* PICKUP_ON_STREET_SLOW */, -692.4, -1283.8, 11.1); //underneath stairs leading to ship
+  $.main_health10 = Pickup.Create(health, 15 /* PICKUP_ON_STREET_SLOW */, -655.1, -1506.3, 8.1); //Off jetty at fastest boat yard
+  $.main_health11 = Pickup.Create(health, 15 /* PICKUP_ON_STREET_SLOW */, -1399.4, -865.9, 20.9); //Upstairs in Airport terminal
+  $.main_health12 = Pickup.Create(health, 1 /* PICKUP_IN_SHOP */, -822.6, 1137.3, 12.4); //Downtown Hospital
+  $.main_health13 = Pickup.Create(health, 1 /* PICKUP_IN_SHOP */, -851.4, -78.8, 11.5); //In pharmacy
+  $.main_health14 = Pickup.Create(health, 1 /* PICKUP_IN_SHOP */, -834.2, 740.6, 11.3); //In DOWNTOWN dispensary
 
 
 
@@ -2304,35 +2304,35 @@ export async function inital() {
 
   //BEACH
 
-  $.beach_arm1 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, 4.9, -1239.2, 19.2); //Up stairs in middle of Washington (behind pay n spray)
-  $.beach_arm2 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, 205.7, -885.7, 12.2); //End of swimming pool middle of washington
-  $.beach_arm3 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, 148.8, -349.9, 8.7); //In Construction Yard
-  $.beach_arm4 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, 520.2, -171.2, 13.9); //Standing Vice point Hotel (not far from Club)
-  $.beach_arm5 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, 430.8, 162.1, 11.8); //Close to basketball courts in middle of Vice Point
-  $.beach_arm6 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, 416.1, 517.7, 11.2); //In centre of Wooden Drinks Shack @ swank house in vice point
-  $.beach_arm7 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, 350.2, 884.8, 25.5); //In House Near Big Mall with ramp inside it
-  $.beach_arm8 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, 535.3, 1214.1, 18.9); //Near Big Mall Garages
+  $.beach_arm1 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, 4.9, -1239.2, 19.2); //Up stairs in middle of Washington (behind pay n spray)
+  $.beach_arm2 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, 205.7, -885.7, 12.2); //End of swimming pool middle of washington
+  $.beach_arm3 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, 148.8, -349.9, 8.7); //In Construction Yard
+  $.beach_arm4 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, 520.2, -171.2, 13.9); //Standing Vice point Hotel (not far from Club)
+  $.beach_arm5 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, 430.8, 162.1, 11.8); //Close to basketball courts in middle of Vice Point
+  $.beach_arm6 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, 416.1, 517.7, 11.2); //In centre of Wooden Drinks Shack @ swank house in vice point
+  $.beach_arm7 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, 350.2, 884.8, 25.5); //In House Near Big Mall with ramp inside it
+  $.beach_arm8 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, 535.3, 1214.1, 18.9); //Near Big Mall Garages
 
   //PORN ISLAND
 
-  $.porn_arm1 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, 42.8, 951.1, 11.0); //Across from porn studios in run down back yard
+  $.porn_arm1 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, 42.8, 951.1, 11.0); //Across from porn studios in run down back yard
 
   //GOLF ISLAND
 
-  $.golf_arm2 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, -70.8, 510.6, 11.6); //In Bunker at golf course
+  $.golf_arm2 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, -70.8, 510.6, 11.6); //In Bunker at golf course
 
   //STAR ISLAND
 
   //MAINLAND
 
-  $.main_arm1 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, -1695.6, -289.4, 29.7); //In the Right Tower at the army hanger
-  $.main_arm2 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, -567.6, 1370.36, 16.4); //Next to flip down ladder on gspotlight course
-  $.main_arm3 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, -921.9, 722.9, 11.0); //Behind Rock City
-  $.main_arm5 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, -1058.9, -240.6, 18.2); //Upstairs from Printing Studios
-  $.main_arm8 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, -625.5, 622.2, 11.7); //Behind Bikers bar
-  $.main_arm10 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, -733.5, -1294.7, 12.4); //Across from Plates Ship
-  $.main_arm11 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, -1177.0, -915.3, 14.9); //Airport Car Park
-  $.main_arm4 = Pickup.Create(1364 /* bodyarmour */, 14 /* PICKUP_ON_STREET_SLOW */, -1171.0, -457.4, 10.7); //Airport Car Park
+  $.main_arm1 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, -1695.6, -289.4, 29.7); //In the Right Tower at the army hanger
+  $.main_arm2 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, -567.6, 1370.36, 16.4); //Next to flip down ladder on gspotlight course
+  $.main_arm3 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, -921.9, 722.9, 11.0); //Behind Rock City
+  $.main_arm5 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, -1058.9, -240.6, 18.2); //Upstairs from Printing Studios
+  $.main_arm8 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, -625.5, 622.2, 11.7); //Behind Bikers bar
+  $.main_arm10 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, -733.5, -1294.7, 12.4); //Across from Plates Ship
+  $.main_arm11 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, -1177.0, -915.3, 14.9); //Airport Car Park
+  $.main_arm4 = Pickup.Create(bodyarmour, 15 /* PICKUP_ON_STREET_SLOW */, -1171.0, -457.4, 10.7); //Airport Car Park
 
 
 
@@ -2344,12 +2344,12 @@ export async function inital() {
 
   //BEACH
 
-  $.beach_adrn1 = Pickup.Create(1363 /* adrenaline */, 14 /* PICKUP_ON_STREET_SLOW */, -37.7, -938.3, 10.5); //In Small Mall
-  $.beach_adrn2 = Pickup.Create(1363 /* adrenaline */, 14 /* PICKUP_ON_STREET_SLOW */, 471.1, -444.1, 10.6); //In the alleyway behind Ocean Drive (close to the Protect the Deal location)
-  $.beach_adrn3 = Pickup.Create(1363 /* adrenaline */, 14 /* PICKUP_ON_STREET_SLOW */, 448.6, 16.6, 11.0); //Behind Sex Pad
-  $.beach_adrn4 = Pickup.Create(1363 /* adrenaline */, 14 /* PICKUP_ON_STREET_SLOW */, 425.6, 221.1, 16.2); //Across from The Chase House
-  $.beach_adrn5 = Pickup.Create(1363 /* adrenaline */, 14 /* PICKUP_ON_STREET_SLOW */, 428.4, 947.5, 13.2); //Across from The Big Mall
-  $.beach_adrn6 = Pickup.Create(1363 /* adrenaline */, 1 /* PICKUP_IN_SHOP */, 385.6, 752.3, 11.7); //Inside Dispensary at middle of Vice Point
+  $.beach_adrn1 = Pickup.Create(adrenaline, 15 /* PICKUP_ON_STREET_SLOW */, -37.7, -938.3, 10.5); //In Small Mall
+  $.beach_adrn2 = Pickup.Create(adrenaline, 15 /* PICKUP_ON_STREET_SLOW */, 471.1, -444.1, 10.6); //In the alleyway behind Ocean Drive (close to the Protect the Deal location)
+  $.beach_adrn3 = Pickup.Create(adrenaline, 15 /* PICKUP_ON_STREET_SLOW */, 448.6, 16.6, 11.0); //Behind Sex Pad
+  $.beach_adrn4 = Pickup.Create(adrenaline, 15 /* PICKUP_ON_STREET_SLOW */, 425.6, 221.1, 16.2); //Across from The Chase House
+  $.beach_adrn5 = Pickup.Create(adrenaline, 15 /* PICKUP_ON_STREET_SLOW */, 428.4, 947.5, 13.2); //Across from The Big Mall
+  $.beach_adrn6 = Pickup.Create(adrenaline, 1 /* PICKUP_IN_SHOP */, 385.6, 752.3, 11.7); //Inside Dispensary at middle of Vice Point
 
   //PORN ISLAND
 
@@ -2357,19 +2357,19 @@ export async function inital() {
 
   //STAR ISLAND
 
-  $.star_adrn1 = Pickup.Create(1363 /* adrenaline */, 14 /* PICKUP_ON_STREET_SLOW */, -366.6, -500.3, 11.3); //In Front of Mansion in trees
-  $.star_adrn2 = Pickup.Create(1363 /* adrenaline */, 14 /* PICKUP_ON_STREET_SLOW */, -342.2, -591.5, 36.9); //On top of Mansion
+  $.star_adrn1 = Pickup.Create(adrenaline, 15 /* PICKUP_ON_STREET_SLOW */, -366.6, -500.3, 11.3); //In Front of Mansion in trees
+  $.star_adrn2 = Pickup.Create(adrenaline, 15 /* PICKUP_ON_STREET_SLOW */, -342.2, -591.5, 36.9); //On top of Mansion
 
   //MAINLAND
 
-  $.main_adrn1 = Pickup.Create(1363 /* adrenaline */, 14 /* PICKUP_ON_STREET_SLOW */, -381.2, 1065.2, 13.0); //Next to main bridge in downtown
-  $.main_adrn2 = Pickup.Create(1363 /* adrenaline */, 14 /* PICKUP_ON_STREET_SLOW */, -730.1, 1226.3, 24.2); //On "Free the Harley" roof in downtown between ramps
-  $.main_adrn3 = Pickup.Create(1363 /* adrenaline */, 14 /* PICKUP_ON_STREET_SLOW */, -1095.1, 99.4, 12.3); //Up steps close to cuban shop next to Haitian Drugs Factory
-  $.main_adrn4 = Pickup.Create(1363 /* adrenaline */, 14 /* PICKUP_ON_STREET_SLOW */, -967.1, -62.6, 11.0); //Across from second drugs pickup point from Hait 1
-  $.main_adrn5 = Pickup.Create(1363 /* adrenaline */, 14 /* PICKUP_ON_STREET_SLOW */, -1022.1, -547.0, 11.2); //Across the road from the Assassin phone behind the drugs factory
-  $.main_adrn6 = Pickup.Create(1363 /* adrenaline */, 14 /* PICKUP_ON_STREET_SLOW */, -882.0, 111.2, 9.3); //Close to the Dirty Lickin's roof
-  $.main_adrn7 = Pickup.Create(1363 /* adrenaline */, 1 /* PICKUP_IN_SHOP */, -857.1, -83.6, 11.5); //In pharmacy
-  $.main_adrn8 = Pickup.Create(1363 /* adrenaline */, 1 /* PICKUP_IN_SHOP */, -839.0, 740.6, 11.3); //In DOWNTOWN dispensary
+  $.main_adrn1 = Pickup.Create(adrenaline, 15 /* PICKUP_ON_STREET_SLOW */, -381.2, 1065.2, 13.0); //Next to main bridge in downtown
+  $.main_adrn2 = Pickup.Create(adrenaline, 15 /* PICKUP_ON_STREET_SLOW */, -730.1, 1226.3, 24.2); //On "Free the Harley" roof in downtown between ramps
+  $.main_adrn3 = Pickup.Create(adrenaline, 15 /* PICKUP_ON_STREET_SLOW */, -1095.1, 99.4, 12.3); //Up steps close to cuban shop next to Haitian Drugs Factory
+  $.main_adrn4 = Pickup.Create(adrenaline, 15 /* PICKUP_ON_STREET_SLOW */, -967.1, -62.6, 11.0); //Across from second drugs pickup point from Hait 1
+  $.main_adrn5 = Pickup.Create(adrenaline, 15 /* PICKUP_ON_STREET_SLOW */, -1022.1, -547.0, 11.2); //Across the road from the Assassin phone behind the drugs factory
+  $.main_adrn6 = Pickup.Create(adrenaline, 15 /* PICKUP_ON_STREET_SLOW */, -882.0, 111.2, 9.3); //Close to the Dirty Lickin's roof
+  $.main_adrn7 = Pickup.Create(adrenaline, 1 /* PICKUP_IN_SHOP */, -857.1, -83.6, 11.5); //In pharmacy
+  $.main_adrn8 = Pickup.Create(adrenaline, 1 /* PICKUP_IN_SHOP */, -839.0, 740.6, 11.3); //In DOWNTOWN dispensary
 
 
 
@@ -2541,77 +2541,77 @@ export async function inital() {
 
   //COP CARS IN ALLEY
 
-  World.AddSetPiece(SETPIECE_TWOCOPCARSINALLEY, 225.0, -1244.0, 227.4, -1248.5, 249.0, -1255.0, 246.0, -1250.6, 208.4, -1238.4, 209.6, -1243.5);
+  World.AddSetPiece(1 /* SETPIECE_TWOCOPCARSINALLEY */, 225.0, -1244.0, 227.4, -1248.5, 249.0, -1255.0, 246.0, -1250.6, 208.4, -1238.4, 209.6, -1243.5);
 
 
   //COP CARS BLOCKING PLAYER
 
-  World.AddSetPiece(SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE, 235.3, -1299.6, 261.1, -1270.7, 212.2, -1309.6, 228.0, -1311.3, 221.2, -1309.6, 228.0, -1311.3); //Ocean Drive outside Ocean View
-  World.AddSetPiece(SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE, 220.0, -1144.0, 232.0, -1136.0, 190.5, -1101.5, 185.5, -1122.7, 278.8, -1112.0, 269.0, -1140.5); //big alleyway between Ocean Dr. and Washington
-  World.AddSetPiece(SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE, -112.5, -1275.0, -120.5, -1267.0, -37.7, -1244.15, -36.7, -1270.0, -189.5, -1295.4, -190.0, -1279.3); // Road perpendicular to Colonel docks
+  World.AddSetPiece(6 /* SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE */, 235.3, -1299.6, 261.1, -1270.7, 212.2, -1309.6, 228.0, -1311.3, 221.2, -1309.6, 228.0, -1311.3); //Ocean Drive outside Ocean View
+  World.AddSetPiece(6 /* SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE */, 220.0, -1144.0, 232.0, -1136.0, 190.5, -1101.5, 185.5, -1122.7, 278.8, -1112.0, 269.0, -1140.5); //big alleyway between Ocean Dr. and Washington
+  World.AddSetPiece(6 /* SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE */, -112.5, -1275.0, -120.5, -1267.0, -37.7, -1244.15, -36.7, -1270.0, -189.5, -1295.4, -190.0, -1279.3); // Road perpendicular to Colonel docks
 
 
   //COP CARS RAMMING PLAYER FROM THE SIDE
 
-  World.AddSetPiece(SETPIECE_CARRAMMINGPLAYERFROMSIDE, 324.0, -735.5, 332.0, -727.5, 361.6, -715.0, 338.6, -705.5, -189.5, -1295.4, -190.0, -1279.3); // Washington drive
-  World.AddSetPiece(SETPIECE_CARRAMMINGPLAYERFROMSIDE, 385.6, -602.2, 377.6, -594.2, 374.6, -559.0, 394.6, -571.5, -189.5, -1295.4, -190.0, -1279.3); // washington drive nr cop shop
+  World.AddSetPiece(3 /* SETPIECE_CARRAMMINGPLAYERFROMSIDE */, 324.0, -735.5, 332.0, -727.5, 361.6, -715.0, 338.6, -705.5, -189.5, -1295.4, -190.0, -1279.3); // Washington drive
+  World.AddSetPiece(3 /* SETPIECE_CARRAMMINGPLAYERFROMSIDE */, 385.6, -602.2, 377.6, -594.2, 374.6, -559.0, 394.6, -571.5, -189.5, -1295.4, -190.0, -1279.3); // washington drive nr cop shop
 
 
-  World.AddSetPiece(SETPIECE_CARRAMMINGPLAYERFROMSIDE, 146.6, -450.2, 154.6, -440.2, 183.9, -480.0, 184.6, -447.5, -189.5, -1295.4, -190.0, -1279.3); // road from star island towards beach.
-  World.AddSetPiece(SETPIECE_CARRAMMINGPLAYERFROMSIDE, 250.6, -457.2, 240.6, -449.2, 346.8, -466.4, 311.5, -461.5, -189.5, -1295.4, -190.0, -1279.3); // following on from above
+  World.AddSetPiece(3 /* SETPIECE_CARRAMMINGPLAYERFROMSIDE */, 146.6, -450.2, 154.6, -440.2, 183.9, -480.0, 184.6, -447.5, -189.5, -1295.4, -190.0, -1279.3); // road from star island towards beach.
+  World.AddSetPiece(3 /* SETPIECE_CARRAMMINGPLAYERFROMSIDE */, 250.6, -457.2, 240.6, -449.2, 346.8, -466.4, 311.5, -461.5, -189.5, -1295.4, -190.0, -1279.3); // following on from above
 
 
-  World.AddSetPiece(SETPIECE_TWOCARSRAMMINGPLAYERFROMSIDE, 171.0, -549.2, 179.0, -557.2, 161.8, -693.4, 168.5, -650.5, 169.5, -693.4, 173.0, -660.0); // humpbacked bridge supeer doubler!
-  World.AddSetPiece(SETPIECE_CARBLOCKINGPLAYERFROMSIDE, 305.6, -183.2, 315.6, -191.2, 269.2, -197.8, 276.6, -180.5, -189.5, -1295.4, -190.0, -1279.3);
-  World.AddSetPiece(SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE, 316.5, -65.0, 322.5, -58.0, 296.5, 6.9, 315.7, -11.0, 369.5, 12.2, 342.0, -9.7); //
+  World.AddSetPiece(7 /* SETPIECE_TWOCARSRAMMINGPLAYERFROMSIDE */, 171.0, -549.2, 179.0, -557.2, 161.8, -693.4, 168.5, -650.5, 169.5, -693.4, 173.0, -660.0); // humpbacked bridge supeer doubler!
+  World.AddSetPiece(2 /* SETPIECE_CARBLOCKINGPLAYERFROMSIDE */, 305.6, -183.2, 315.6, -191.2, 269.2, -197.8, 276.6, -180.5, -189.5, -1295.4, -190.0, -1279.3);
+  World.AddSetPiece(6 /* SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE */, 316.5, -65.0, 322.5, -58.0, 296.5, 6.9, 315.7, -11.0, 369.5, 12.2, 342.0, -9.7); //
 
 
-  World.AddSetPiece(SETPIECE_TWOCARSRAMMINGPLAYERFROMSIDE, 364.0, 236.2, 372.0, 244.2, 336.1, 271.4, 337.8, 249.5, 401.5, 213.4, 401.0, 234.0); // humpbacked bridge super doubler!
-  World.AddSetPiece(SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE, 364.5, 169.0, 372.5, 177.0, 406.7, 151.15, 398.7, 170.0, 326.5, 182.4, 346.0, 164.3); // Road perpendicular to Colonel docks
+  World.AddSetPiece(7 /* SETPIECE_TWOCARSRAMMINGPLAYERFROMSIDE */, 364.0, 236.2, 372.0, 244.2, 336.1, 271.4, 337.8, 249.5, 401.5, 213.4, 401.0, 234.0); // humpbacked bridge super doubler!
+  World.AddSetPiece(6 /* SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE */, 364.5, 169.0, 372.5, 177.0, 406.7, 151.15, 398.7, 170.0, 326.5, 182.4, 346.0, 164.3); // Road perpendicular to Colonel docks
 
 
-  World.AddSetPiece(SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE, -87.0, -937.0, -99.0, -947.0, -136.0, -912.15, -115.0, -901.6, -56.0, -875.0, -95.5, -893.3); // Road perpendicular to Colonel docks
-  World.AddSetPiece(SETPIECE_TWOCARSRAMMINGPLAYERFROMSIDE, 536.0, 696.2, 546.0, 706.2, 516.0, 753.6, 541.5, 753.5, 506.2, 654.4, 534.0, 657.0); // humpbacked bridge supeer doubler!
+  World.AddSetPiece(6 /* SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE */, -87.0, -937.0, -99.0, -947.0, -136.0, -912.15, -115.0, -901.6, -56.0, -875.0, -95.5, -893.3); // Road perpendicular to Colonel docks
+  World.AddSetPiece(7 /* SETPIECE_TWOCARSRAMMINGPLAYERFROMSIDE */, 536.0, 696.2, 546.0, 706.2, 516.0, 753.6, 541.5, 753.5, 506.2, 654.4, 534.0, 657.0); // humpbacked bridge supeer doubler!
 
 
-  World.AddSetPiece(SETPIECE_CARBLOCKINGPLAYERFROMSIDE, 314.0, 906.0, 322.0, 914.0, 348.3, 864.0, 316.0, 870.8, -189.5, -1295.4, -190.0, -1279.3);
-  World.AddSetPiece(SETPIECE_TWOCARSRAMMINGPLAYERFROMSIDE, 356.0, 748.0, 364.0, 756.0, 335.0, 667.6, 356.2, 685.2, 388.5, 846.2, 366.0, 828.0); // humpbacked bridge supeer doubler!
+  World.AddSetPiece(2 /* SETPIECE_CARBLOCKINGPLAYERFROMSIDE */, 314.0, 906.0, 322.0, 914.0, 348.3, 864.0, 316.0, 870.8, -189.5, -1295.4, -190.0, -1279.3);
+  World.AddSetPiece(7 /* SETPIECE_TWOCARSRAMMINGPLAYERFROMSIDE */, 356.0, 748.0, 364.0, 756.0, 335.0, 667.6, 356.2, 685.2, 388.5, 846.2, 366.0, 828.0); // humpbacked bridge supeer doubler!
 
   // ****************** PRAWN ISLAND ***************************************************************************************************
 
 
-  World.AddSetPiece(SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE, -34.0, 1041.0, -26.0, 1049.0, 23.3, 1075.0, 28.0, 1030.8, 35.5, 993.4, 39.0, 1023.3);
-  World.AddSetPiece(SETPIECE_CARBLOCKINGPLAYERFROMSIDE, 16.0, 930.0, 24.0, 938.0, 28.3, 874.0, 10.0, 881.8, -189.5, -1295.4, -190.0, -1279.3);
+  World.AddSetPiece(6 /* SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE */, -34.0, 1041.0, -26.0, 1049.0, 23.3, 1075.0, 28.0, 1030.8, 35.5, 993.4, 39.0, 1023.3);
+  World.AddSetPiece(2 /* SETPIECE_CARBLOCKINGPLAYERFROMSIDE */, 16.0, 930.0, 24.0, 938.0, 28.3, 874.0, 10.0, 881.8, -189.5, -1295.4, -190.0, -1279.3);
 
   // ****************** STARFISH ISLAND ***************************************************************************************************
 
 
-  World.AddSetPiece(SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE, -368.0, -480.0, -378.0, -490.0, -253.5, -439.0, -252.5, -470.5, -451.2, -452.4, -442.0, -480.0);
-  World.AddSetPiece(SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE, -533.0, -480.0, -543.0, -490.0, -647.0, -449.0, -637.5, -481.5, -451.2, -452.4, -457.0, -480.0);
+  World.AddSetPiece(6 /* SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE */, -368.0, -480.0, -378.0, -490.0, -253.5, -439.0, -252.5, -470.5, -451.2, -452.4, -442.0, -480.0);
+  World.AddSetPiece(6 /* SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE */, -533.0, -480.0, -543.0, -490.0, -647.0, -449.0, -637.5, -481.5, -451.2, -452.4, -457.0, -480.0);
 
 
-  World.AddSetPiece(SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE, -255.0, -435.0, -245.0, -443.0, -210.8, -470.0, -241.5, -472.0, -298.2, -485.0, -257.0, -477.5);
-  World.AddSetPiece(SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE, -645.0, -446.0, -637.0, -454.0, -610.8, -482.0, -635.5, -472.0, -684.2, -492.0, -651.0, -480.5);
+  World.AddSetPiece(6 /* SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE */, -255.0, -435.0, -245.0, -443.0, -210.8, -470.0, -241.5, -472.0, -298.2, -485.0, -257.0, -477.5);
+  World.AddSetPiece(6 /* SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE */, -645.0, -446.0, -637.0, -454.0, -610.8, -482.0, -635.5, -472.0, -684.2, -492.0, -651.0, -480.5);
 
 
   // ****************** MAINLAND (docks) ***************************************************************************************************
 
 
-  World.AddSetPiece(SETPIECE_CARRAMMINGPLAYERFROMSIDE, -790.0, -1490.2, -798.0, -1498.2, -815.8, -1450.5, -822.0, -1469.0, -189.5, -1295.4, -190.0, -1279.3);
-  World.AddSetPiece(SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE, -809.0, -1436.7, -800.0, -1428.0, -853.3, -1466.0, -824.5, -1474.8, -808.5, -1382.4, -788.0, -1392.3);
-  World.AddSetPiece(SETPIECE_TWOCARSRAMMINGPLAYERFROMSIDE, -870.0, -1335.7, -862.0, -1327.0, -902.3, -1343.0, -882.5, -1348.8, -880.5, -1297.4, -860.0, -1307.3);
-  World.AddSetPiece(SETPIECE_CARRAMMINGPLAYERFROMSIDE, -924.0, -1248.0, -916.0, -1240.0, -909.8, -1270.5, -920.0, -1265.0, -189.5, -1295.4, -190.0, -1279.3);
-  World.AddSetPiece(SETPIECE_CARRAMMINGPLAYERFROMSIDE, -1224.0, -788.0, -1216.0, -780.0, -1260.8, -737.5, -1258.0, -780.0, -189.5, -1295.4, -190.0, -1279.3);
-  World.AddSetPiece(SETPIECE_CARRAMMINGPLAYERFROMSIDE, -884.0, -1070.0, -876.0, -1078.0, -925.0, -1044.5, -901.0, -1074.0, -189.5, -1295.4, -190.0, -1279.3);
+  World.AddSetPiece(3 /* SETPIECE_CARRAMMINGPLAYERFROMSIDE */, -790.0, -1490.2, -798.0, -1498.2, -815.8, -1450.5, -822.0, -1469.0, -189.5, -1295.4, -190.0, -1279.3);
+  World.AddSetPiece(6 /* SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE */, -809.0, -1436.7, -800.0, -1428.0, -853.3, -1466.0, -824.5, -1474.8, -808.5, -1382.4, -788.0, -1392.3);
+  World.AddSetPiece(7 /* SETPIECE_TWOCARSRAMMINGPLAYERFROMSIDE */, -870.0, -1335.7, -862.0, -1327.0, -902.3, -1343.0, -882.5, -1348.8, -880.5, -1297.4, -860.0, -1307.3);
+  World.AddSetPiece(3 /* SETPIECE_CARRAMMINGPLAYERFROMSIDE */, -924.0, -1248.0, -916.0, -1240.0, -909.8, -1270.5, -920.0, -1265.0, -189.5, -1295.4, -190.0, -1279.3);
+  World.AddSetPiece(3 /* SETPIECE_CARRAMMINGPLAYERFROMSIDE */, -1224.0, -788.0, -1216.0, -780.0, -1260.8, -737.5, -1258.0, -780.0, -189.5, -1295.4, -190.0, -1279.3);
+  World.AddSetPiece(3 /* SETPIECE_CARRAMMINGPLAYERFROMSIDE */, -884.0, -1070.0, -876.0, -1078.0, -925.0, -1044.5, -901.0, -1074.0, -189.5, -1295.4, -190.0, -1279.3);
 
 
   // ****************** MAINLAND (L Havana) ***************************************************************************************************
 
 
-  World.AddSetPiece(SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE, -1130.0, -711.7, -1138.0, -719.7, -1111.3, -683.0, -1134.5, -686.4, -1166.0, -691.4, -1144.7, -690.3);
-  World.AddSetPiece(SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE, -986.0, -713.0, -978.0, -721.0, -1011.8, -577.4, -989.7, -575.4, -945.5, -660.0, -969.4, -661.6);
-  World.AddSetPiece(SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE, -1012.0, -392.0, -1004.0, -384.0, -1044.3, -337.8, -1023.7, -336.4, -975.0, -444.0, -1000.4, -445.6);
-  World.AddSetPiece(SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE, -1112.0, -372.0, -1104.0, -364.0, -1078.3, -337.0, -1101.5, -339.4, -1138.0, -348.4, -1117.3, -346.3);
+  World.AddSetPiece(6 /* SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE */, -1130.0, -711.7, -1138.0, -719.7, -1111.3, -683.0, -1134.5, -686.4, -1166.0, -691.4, -1144.7, -690.3);
+  World.AddSetPiece(6 /* SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE */, -986.0, -713.0, -978.0, -721.0, -1011.8, -577.4, -989.7, -575.4, -945.5, -660.0, -969.4, -661.6);
+  World.AddSetPiece(6 /* SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE */, -1012.0, -392.0, -1004.0, -384.0, -1044.3, -337.8, -1023.7, -336.4, -975.0, -444.0, -1000.4, -445.6);
+  World.AddSetPiece(6 /* SETPIECE_TWOCARSBLOCKINGPLAYERFROMSIDE */, -1112.0, -372.0, -1104.0, -364.0, -1078.3, -337.0, -1101.5, -339.4, -1138.0, -348.4, -1117.3, -346.3);
 
   // ****************** MAINLAND (airport) ***************************************************************************************************
 

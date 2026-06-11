@@ -1,6 +1,6 @@
 // Generated from main/usj.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_usj() {
   // SCM GOTO → mission_start_usj lowered to endless loop
@@ -856,7 +856,7 @@ async function reward_usj() {
   $.do_usj_reward = 0;
 
 
-  Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+  Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
 
 
   Stat.RegisterUniqueJumpFound();

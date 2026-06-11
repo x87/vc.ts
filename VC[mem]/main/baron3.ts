@@ -1,6 +1,6 @@
 // Generated from main/baron3.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *******************************************************************************************
 // *******************************************************************************************
@@ -40,7 +40,7 @@ async function body() {
   player_spotted_by_mech1 = 0;
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   Streaming.LoadSpecialCharacter(1, "CSplay");
@@ -82,7 +82,7 @@ async function body() {
 
 
   $.cs_dshotgn = CutsceneObject.Create(CUTOBJ01);
-  $.cs_dshotgn.attachToBone($.cs_diaz, BONE_R_HAND);
+  $.cs_dshotgn.attachToBone($.cs_diaz, 24 /* BONE_R_HAND */);
 
 
   World.ClearArea(-379.2, -536.4, 16.2, 0.5, true /* TRUE */);
@@ -312,7 +312,7 @@ async function body() {
   Streaming.MarkModelAsNoLongerNeeded(CUTOBJ01);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   Streaming.LoadScene(-379.2, -536.4, 16.2);
 
 
@@ -388,88 +388,88 @@ async function body() {
   $.guard_boat2.setHeading(250.0);
 
 
-  boat_guard1 = Char.Create(PEDTYPE_GANG_CUBAN, HMYST, -640.9, -1491.3, -100.0); //Guarding the front door
+  boat_guard1 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, HMYST, -640.9, -1491.3, -100.0); //Guarding the front door
   boat_guard1.setHeading(270.0);
   boat_guard1.clearThreatSearch();
   boat_guard1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   boat_guard1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  boat_guard1.giveWeapon(WEAPONTYPE_RUGER, 500);
+  boat_guard1.giveWeapon(27 /* WEAPONTYPE_RUGER */, 500);
   boat_guard1.setStayInSamePlace(true /* TRUE */);
 
 
-  boat_guard2 = Char.Create(PEDTYPE_GANG_CUBAN, HMYST, -636.8, -1480.0, -100.0); //Guarding the front door
+  boat_guard2 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, HMYST, -636.8, -1480.0, -100.0); //Guarding the front door
   boat_guard2.setHeading(270.0);
   boat_guard2.clearThreatSearch();
   boat_guard2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   boat_guard2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  boat_guard2.giveWeapon(WEAPONTYPE_RUGER, 500);
+  boat_guard2.giveWeapon(27 /* WEAPONTYPE_RUGER */, 500);
   boat_guard2.setStayInSamePlace(true /* TRUE */);
 
 
-  boat_guard3 = Char.Create(PEDTYPE_GANG_CUBAN, HMYST, -623.9, -1477.7, -100.0); //Starts close to the boat
+  boat_guard3 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, HMYST, -623.9, -1477.7, -100.0); //Starts close to the boat
   boat_guard3.setHeading(73.5);
   boat_guard3.clearThreatSearch();
   boat_guard3.setThreatSearch(1 /* THREAT_PLAYER1 */);
   boat_guard3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  boat_guard3.giveWeapon(WEAPONTYPE_RUGER, 500);
+  boat_guard3.giveWeapon(27 /* WEAPONTYPE_RUGER */, 500);
 
 
-  boat_guard4 = Char.Create(PEDTYPE_GANG_CUBAN, HMYST, -682.8, -1484.8, -100.0); //Starts close to the entrance
+  boat_guard4 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, HMYST, -682.8, -1484.8, -100.0); //Starts close to the entrance
   boat_guard4.setHeading(260.0);
   boat_guard4.clearThreatSearch();
   boat_guard4.setThreatSearch(1 /* THREAT_PLAYER1 */);
   boat_guard4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  boat_guard4.giveWeapon(WEAPONTYPE_RUGER, 500);
+  boat_guard4.giveWeapon(27 /* WEAPONTYPE_RUGER */, 500);
 
 
-  boat_guard5 = Char.Create(PEDTYPE_GANG_CUBAN, HMYST, -671.7, -1459.1, -100.0);
+  boat_guard5 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, HMYST, -671.7, -1459.1, -100.0);
   boat_guard5.setHeading(160.5);
   boat_guard5.clearThreatSearch();
   boat_guard5.setThreatSearch(1 /* THREAT_PLAYER1 */);
   boat_guard5.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  boat_guard5.giveWeapon(WEAPONTYPE_RUGER, 500);
+  boat_guard5.giveWeapon(27 /* WEAPONTYPE_RUGER */, 500);
 
 
-  boat_guard6 = Char.Create(PEDTYPE_GANG_CUBAN, HMYST, -573.7, -1522.5, 6.9); //On jetty near boat
+  boat_guard6 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, HMYST, -573.7, -1522.5, 6.9); //On jetty near boat
   boat_guard6.setHeading(70.0);
   boat_guard6.clearThreatSearch();
   boat_guard6.setThreatSearch(1 /* THREAT_PLAYER1 */);
   boat_guard6.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  boat_guard6.giveWeapon(WEAPONTYPE_RUGER, 500);
+  boat_guard6.giveWeapon(27 /* WEAPONTYPE_RUGER */, 500);
   boat_guard6.setStayInSamePlace(true /* TRUE */);
 
 
-  boat_guard7 = Char.Create(PEDTYPE_GANG_CUBAN, HMYST, -586.9, -1496.2, 7.0); //On jetty opposite side
+  boat_guard7 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, HMYST, -586.9, -1496.2, 7.0); //On jetty opposite side
   boat_guard7.setHeading(76.0);
   boat_guard7.clearThreatSearch();
   boat_guard7.setThreatSearch(1 /* THREAT_PLAYER1 */);
   boat_guard7.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  boat_guard7.giveWeapon(WEAPONTYPE_RUGER, 500);
+  boat_guard7.giveWeapon(27 /* WEAPONTYPE_RUGER */, 500);
   boat_guard7.setStayInSamePlace(true /* TRUE */);
 
 
-  boat_mech1 = Char.Create(PEDTYPE_GANG_CUBAN, HMYAP, -662.0, -1481.7, 13.0);
+  boat_mech1 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, HMYAP, -662.0, -1481.7, 13.0);
   boat_mech1.setHeading(6.0);
   boat_mech1.clearThreatSearch();
   boat_mech1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   boat_mech1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  boat_mech1.giveWeapon(WEAPONTYPE_HAMMER, 0);
+  boat_mech1.giveWeapon(7 /* WEAPONTYPE_HAMMER */, 0);
 
 
-  boat_mech2 = Char.Create(PEDTYPE_GANG_CUBAN, HMYAP, -661.9, -1479.7, 12.5);
+  boat_mech2 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, HMYAP, -661.9, -1479.7, 12.5);
   boat_mech2.setHeading(200.0);
   boat_mech2.clearThreatSearch();
   boat_mech2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   boat_mech2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  boat_mech2.giveWeapon(WEAPONTYPE_SCREWDRIVER, 0);
+  boat_mech2.giveWeapon(2 /* WEAPONTYPE_SCREWDRIVER */, 0);
 
 
-  boat_mech3 = Char.Create(PEDTYPE_GANG_CUBAN, HMYAP, -662.4, -1481.6, 13.0);
+  boat_mech3 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, HMYAP, -662.4, -1481.6, 13.0);
   boat_mech3.setHeading(280.0);
   boat_mech3.clearThreatSearch();
   boat_mech3.setThreatSearch(1 /* THREAT_PLAYER1 */);
   boat_mech3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  boat_mech3.giveWeapon(WEAPONTYPE_HAMMER, 0);
+  boat_mech3.giveWeapon(7 /* WEAPONTYPE_HAMMER */, 0);
   Game.SetCharsChatting(boat_mech3, boat_mech2, 999999);
 
 
@@ -1120,7 +1120,7 @@ async function mission_baron3_passed() {
   $.player1.addScore(4000);
   Stat.RegisterMissionPassed("COK_3");
   Stat.PlayerMadeProgress(1);
-  // START_NEW_SCRIPT baron_mission4_loop
+  // START_NEW_SCRIPT baron_mission4_loop 
 }
 
 
@@ -1250,7 +1250,7 @@ async function boat_cut_scenes() {
     $.player1.setHeading(150.0);
     coke3_weapon = $.player1.getCurrentWeapon();
     $.player1.setCurrentWeapon(0 /* WEAPONTYPE_UNARMED */);
-    $.scplayer.setWaitState(WAITSTATE_USE_ATM, 1000);
+    $.scplayer.setWaitState(25 /* WAITSTATE_USE_ATM */, 1000);
     TIMERB = 0;
     while (!(TIMERB > 1000)) {
       await asyncWait(0);
@@ -1282,44 +1282,44 @@ async function boat_cut_scenes() {
     Hud.SwitchWidescreen(false /* OFF */);
     Camera.RestoreJumpcut();
     Text.PrintNow("COK3_9", 8000, 1); // Now get into the boat.
-    $.boat_guard8 = Char.Create(PEDTYPE_GANG_CUBAN, HMYST, -640.6, -1500.3, -100.0);
+    $.boat_guard8 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, HMYST, -640.6, -1500.3, -100.0);
     $.boat_guard8.setHeading(335.0);
     $.boat_guard8.clearThreatSearch();
     $.boat_guard8.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.boat_guard8.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-    $.boat_guard8.giveWeapon(WEAPONTYPE_TEC9, 500);
+    $.boat_guard8.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 500);
     $.boat_guard8.setStayInSamePlace(true /* TRUE */);
-    $.boat_guard9 = Char.Create(PEDTYPE_GANG_CUBAN, HMYST, -652.5, -1497.5, -100.0);
+    $.boat_guard9 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, HMYST, -652.5, -1497.5, -100.0);
     $.boat_guard9.setHeading(245.0);
     $.boat_guard9.clearThreatSearch();
     $.boat_guard9.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.boat_guard9.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-    $.boat_guard9.giveWeapon(WEAPONTYPE_TEC9, 500);
+    $.boat_guard9.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 500);
     $.boat_guard9.setStayInSamePlace(true /* TRUE */);
-    $.boat_guard10 = Char.Create(PEDTYPE_GANG_CUBAN, HMYST, -632.5, -1476.1, -100.0);
+    $.boat_guard10 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, HMYST, -632.5, -1476.1, -100.0);
     $.boat_guard10.setHeading(165.9);
     $.boat_guard10.clearThreatSearch();
     $.boat_guard10.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.boat_guard10.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-    $.boat_guard10.giveWeapon(WEAPONTYPE_TEC9, 500);
-    $.boat_guard11 = Char.Create(PEDTYPE_GANG_CUBAN, HMYST, -643.2, -1467.1, -100.0);
+    $.boat_guard10.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 500);
+    $.boat_guard11 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, HMYST, -643.2, -1467.1, -100.0);
     $.boat_guard11.setHeading(252.0);
     $.boat_guard11.clearThreatSearch();
     $.boat_guard11.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.boat_guard11.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-    $.boat_guard11.giveWeapon(WEAPONTYPE_TEC9, 500);
-    $.boat_guard12 = Char.Create(PEDTYPE_GANG_CUBAN, HMYST, -666.5, -1458.0, -100.0);
+    $.boat_guard11.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 500);
+    $.boat_guard12 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, HMYST, -666.5, -1458.0, -100.0);
     $.boat_guard12.setHeading(245.0);
     $.boat_guard12.clearThreatSearch();
     $.boat_guard12.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.boat_guard12.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-    $.boat_guard12.giveWeapon(WEAPONTYPE_TEC9, 500);
-    $.boat_guard13 = Char.Create(PEDTYPE_GANG_CUBAN, HMYST, -678.8, -1486.3, -100.0);
+    $.boat_guard12.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 500);
+    $.boat_guard13 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, HMYST, -678.8, -1486.3, -100.0);
     $.boat_guard13.setHeading(252.0);
     $.boat_guard13.clearThreatSearch();
     $.boat_guard13.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.boat_guard13.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-    $.boat_guard13.giveWeapon(WEAPONTYPE_TEC9, 500);
+    $.boat_guard13.giveWeapon(22 /* WEAPONTYPE_TEC9 */, 500);
     $.raise_the_alarm = 1;
     boat_button_pressed = 1;
   }
@@ -1363,68 +1363,68 @@ $.player_y = _res94.y;
 $.player_z = _res94.z;
       if (!(Char.IsDead(boat_guard7))) {
         if (!(boat_guard7.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-          boat_guard7.followPath($.player_x, $.player_y, $.player_z, 4.0, RUN);
+          boat_guard7.followPath($.player_x, $.player_y, $.player_z, 4.0, 1 /* RUN */);
         }
       }
       if (!(Char.IsDead(boat_guard6))) {
         if (!(boat_guard6.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-          boat_guard6.followPath($.player_x, $.player_y, $.player_z, 4.0, RUN);
+          boat_guard6.followPath($.player_x, $.player_y, $.player_z, 4.0, 1 /* RUN */);
         }
       }
       if (!(Char.IsDead(boat_guard5))) {
         if (!(boat_guard5.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-          boat_guard5.followPath($.player_x, $.player_y, $.player_z, 4.0, RUN);
+          boat_guard5.followPath($.player_x, $.player_y, $.player_z, 4.0, 1 /* RUN */);
         }
       }
       if (!(Char.IsDead(boat_guard4))) {
         if (!(boat_guard4.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-          boat_guard4.followPath($.player_x, $.player_y, $.player_z, 4.0, RUN);
+          boat_guard4.followPath($.player_x, $.player_y, $.player_z, 4.0, 1 /* RUN */);
         }
       }
       if (!(Char.IsDead(boat_guard3))) {
         if (!(boat_guard3.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-          boat_guard3.followPath($.player_x, $.player_y, $.player_z, 4.0, RUN);
+          boat_guard3.followPath($.player_x, $.player_y, $.player_z, 4.0, 1 /* RUN */);
         }
       }
       if (!(Char.IsDead(boat_guard2))) {
         if (!(boat_guard2.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-          boat_guard2.followPath($.player_x, $.player_y, $.player_z, 4.0, RUN);
+          boat_guard2.followPath($.player_x, $.player_y, $.player_z, 4.0, 1 /* RUN */);
         }
       }
       if (!(Char.IsDead(boat_guard1))) {
         if (!(boat_guard1.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-          boat_guard1.followPath($.player_x, $.player_y, $.player_z, 4.0, RUN);
+          boat_guard1.followPath($.player_x, $.player_y, $.player_z, 4.0, 1 /* RUN */);
         }
       }
       if (boat_button_pressed == 1) {
         if (!(Char.IsDead($.boat_guard8))) {
           if (!($.boat_guard8.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-            $.boat_guard8.followPath($.player_x, $.player_y, $.player_z, 4.0, RUN);
+            $.boat_guard8.followPath($.player_x, $.player_y, $.player_z, 4.0, 1 /* RUN */);
           }
         }
         if (!(Char.IsDead($.boat_guard9))) {
           if (!($.boat_guard9.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-            $.boat_guard9.followPath($.player_x, $.player_y, $.player_z, 4.0, RUN);
+            $.boat_guard9.followPath($.player_x, $.player_y, $.player_z, 4.0, 1 /* RUN */);
           }
         }
         if (!(Char.IsDead($.boat_guard10))) {
           if (!($.boat_guard10.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-            $.boat_guard10.followPath($.player_x, $.player_y, $.player_z, 4.0, RUN);
+            $.boat_guard10.followPath($.player_x, $.player_y, $.player_z, 4.0, 1 /* RUN */);
           }
         }
         if (!(Char.IsDead($.boat_guard11))) {
           if (!($.boat_guard11.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-            $.boat_guard11.followPath($.player_x, $.player_y, $.player_z, 4.0, RUN);
+            $.boat_guard11.followPath($.player_x, $.player_y, $.player_z, 4.0, 1 /* RUN */);
           }
         }
         if (!(Char.IsDead($.boat_guard12))) {
           if (!($.boat_guard12.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-            $.boat_guard12.followPath($.player_x, $.player_y, $.player_z, 4.0, RUN);
+            $.boat_guard12.followPath($.player_x, $.player_y, $.player_z, 4.0, 1 /* RUN */);
           }
         }
         if (!(Char.IsDead($.boat_guard13))) {
           if (!($.boat_guard13.isWanderPathClear($.player_x, $.player_y, $.player_z, 4.0))) {
-            $.boat_guard13.followPath($.player_x, $.player_y, $.player_z, 4.0, RUN);
+            $.boat_guard13.followPath($.player_x, $.player_y, $.player_z, 4.0, 1 /* RUN */);
           }
         }
 

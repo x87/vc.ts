@@ -1,7 +1,7 @@
 // Generated from main/porn4.sc
 
-import { $ } from "../vars.mts";
-import { timed } from "../scm.mts";
+import { $ } from "../utils/vars.mts";
+import { timed } from "../utils/scm.mts";
 
 async function mission_start_porn4() {
 
@@ -321,7 +321,7 @@ async function mission_start_porn4() {
   Clock.SetTimeOfDay(17, 0);
   //------------------REQUEST_MODELS ------------------------------
 
-  $.player1.setMood(PLAYER_MOOD_WISECRACKING, 60000);
+  $.player1.setMood(3 /* PLAYER_MOOD_WISECRACKING */, 60000);
 
 
   Streaming.RequestModel(HFYBU);
@@ -546,7 +546,7 @@ async function porn4_main_loop() {
 
       //DRAW_CORONA -552.6 1074.7 52.4 1.0 CORONATYPE_CIRCLE FLARETYPE_NONE 0 0 255
       if ($.player1.locateAnyMeans3D(-552.6, 1074.7, 52.4, 15.0, 15.0, 15.0, true /* TRUE */)) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.corona_blip.remove();
         $.corona_blip = Blip.AddForCoord(-645.7, 1129.7, 29.1);
         $.porn4_goals = 9;
@@ -558,7 +558,7 @@ async function porn4_main_loop() {
 
       //DRAW_CORONA -645.7 1129.7 29.1 1.0 CORONATYPE_CIRCLE FLARETYPE_NONE 0 0 255
       if ($.player1.locateAnyMeans3D(-645.7, 1129.7, 29.1, 10.0, 10.0, 10.0, true /* TRUE */)) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.corona_blip.remove();
         $.corona_blip = Blip.AddForCoord(-695.5, 1130.3, 32.6);
         $.porn4_goals = 10;
@@ -570,7 +570,7 @@ async function porn4_main_loop() {
 
       //DRAW_CORONA -695.5 1130.3 32.6 1.0 CORONATYPE_CIRCLE FLARETYPE_NONE 0 0 255
       if ($.player1.locateAnyMeans3D(-695.5, 1130.3, 32.6, 10.0, 10.0, 10.0, true /* TRUE */)) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.corona_blip.remove();
         $.corona_blip = Blip.AddForCoord(-800.6, 1141.7, 25.6);
         $.porn4_goals = 11;
@@ -582,7 +582,7 @@ async function porn4_main_loop() {
 
       //DRAW_CORONA -800.6 1141.7 25.6 1.0 CORONATYPE_CIRCLE FLARETYPE_NONE 0 0 255
       if ($.player1.locateAnyMeans3D(-800.6, 1141.7, 25.6, 20.0, 20.0, 20.0, true /* TRUE */)) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.corona_blip.remove();
         $.corona_blip = Blip.AddForCoord(-840.1, 1194.3, 16.7);
         $.porn4_goals = 12;
@@ -606,7 +606,7 @@ async function porn4_main_loop() {
 
       //DRAW_CORONA -792.4 1299.2 27.9 1.0 CORONATYPE_CIRCLE FLARETYPE_NONE 0 0 255
       if ($.player1.locateAnyMeans3D(-792.4, 1299.2, 27.9, 10.0, 10.0, 10.0, true /* TRUE */)) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.corona_blip.remove();
         $.corona_blip = Blip.AddForCoord(-710.1, 1302.5, 20.6);
         $.porn4_goals = 14;
@@ -618,7 +618,7 @@ async function porn4_main_loop() {
 
       //DRAW_CORONA -710.1 1302.5 20.6 1.0 CORONATYPE_CIRCLE FLARETYPE_NONE 0 0 255
       if ($.player1.locateAnyMeans3D(-710.1, 1302.5, 20.6, 10.0, 10.0, 10.0, true /* TRUE */)) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.corona_blip.remove();
         $.corona_blip = Blip.AddForCoord(-681.8, 1338.8, 24.3);
         $.porn4_goals = 15;
@@ -630,7 +630,7 @@ async function porn4_main_loop() {
 
       //DRAW_CORONA -681.8 1338.8 24.3 1.0 CORONATYPE_CIRCLE FLARETYPE_NONE 0 0 255
       if ($.player1.locateAnyMeans3D(-681.8, 1338.8, 24.3, 10.0, 10.0, 10.0, true /* TRUE */)) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.corona_blip.remove();
         $.corona_blip = Blip.AddForCoord(-573.5, 1365.4, 16.6);
         $.porn4_goals = 16;
@@ -642,7 +642,7 @@ async function porn4_main_loop() {
 
       //DRAW_CORONA -573.5 1365.4 16.6 1.0 CORONATYPE_CIRCLE FLARETYPE_NONE 0 0 255
       if ($.player1.locateAnyMeans3D(-573.5, 1365.4, 16.6, 10.0, 10.0, 10.0, true /* TRUE */)) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.corona_blip.remove();
         $.corona_blip = Blip.AddForCoord(-482.0, 1355.7, 24.7);
         $.porn4_goals = 17;
@@ -686,7 +686,7 @@ async function porn4_main_loop() {
 
       //DRAW_CORONA -482.0 1355.7 24.7 1.0 CORONATYPE_CIRCLE FLARETYPE_NONE 0 0 255
       if ($.player1.locateAnyMeans3D(-482.0, 1355.7, 24.7, 10.0, 10.0, 10.0, true /* TRUE */)) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.corona_blip.remove();
         $.corona_blip = Blip.AddForCoord(-410.6, 1364.8, 29.7);
         $.porn4_goals = 18;
@@ -698,7 +698,7 @@ async function porn4_main_loop() {
 
       //DRAW_CORONA -410.6 1364.8 29.7 1.0 CORONATYPE_CIRCLE FLARETYPE_NONE 0 0 255
       if ($.player1.locateAnyMeans3D(-410.6, 1364.8, 29.7, 10.0, 10.0, 10.0, true /* TRUE */)) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.corona_blip.remove();
         $.corona_blip = Blip.AddForCoord(-354.3, 1385.0, 27.0);
         $.porn4_goals = 19;
@@ -710,7 +710,7 @@ async function porn4_main_loop() {
 
       //DRAW_CORONA -354.3 1385.0 27.0 1.0 CORONATYPE_CIRCLE FLARETYPE_NONE 0 0 255
       if ($.player1.locateAnyMeans3D(-354.3, 1385.0, 27.0, 10.0, 10.0, 10.0, true /* TRUE */)) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.corona_blip.remove();
         $.corona_blip = Blip.AddForCoord(-283.3, 1401.7, 27.3);
         $.porn4_goals = 20;
@@ -722,7 +722,7 @@ async function porn4_main_loop() {
 
       //DRAW_CORONA -283.3 1401.7 27.3 1.0 CORONATYPE_CIRCLE FLARETYPE_NONE 0 0 255
       if ($.player1.locateAnyMeans3D(-283.3, 1401.7, 27.3, 10.0, 10.0, 10.0, true /* TRUE */)) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.corona_blip.remove();
         $.corona_blip = Blip.AddForCoord(-280.5, 1335.0, 27.1);
         $.porn4_goals = 21;
@@ -734,7 +734,7 @@ async function porn4_main_loop() {
 
       //DRAW_CORONA -280.5 1335.0 27.1 1.0 CORONATYPE_CIRCLE FLARETYPE_NONE 0 0 255
       if ($.player1.locateAnyMeans3D(-280.5, 1335.0, 27.1, 10.0, 10.0, 10.0, true /* TRUE */)) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.corona_blip.remove();
         $.corona_blip = Blip.AddForCoord(-277.1, 1274.0, 27.9);
         $.porn4_goals = 22;
@@ -746,7 +746,7 @@ async function porn4_main_loop() {
 
       //DRAW_CORONA -277.1 1274.0 27.9 1.0 CORONATYPE_CIRCLE FLARETYPE_NONE 0 0 255
       if ($.player1.locateAnyMeans3D(-277.1, 1274.0, 27.9, 10.0, 10.0, 10.0, true /* TRUE */)) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.corona_blip.remove();
         $.corona_blip = Blip.AddForCoord(-277.3, 1216.3, 42.6);
         $.porn4_goals = 23;
@@ -758,7 +758,7 @@ async function porn4_main_loop() {
 
       //DRAW_CORONA -277.3 1216.3 42.6 1.0 CORONATYPE_CIRCLE FLARETYPE_NONE 0 0 255
       if ($.player1.locateAnyMeans3D(-277.3, 1216.3, 42.6, 10.0, 10.0, 10.0, true /* TRUE */)) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.corona_blip.remove();
         $.corona_blip = Blip.AddForCoord(-336.5, 1047.8, 38.7);
         $.porn4_goals = 24;
@@ -1178,37 +1178,37 @@ async function porn4_main_loop() {
 
 
     if (!(Char.IsDead($.bottom_office3))) {
-      $.bottom_office3.setWaitState(WAITSTATE_SIT_IDLE, 999999);
+      $.bottom_office3.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 999999);
     }
 
 
     if (!(Char.IsDead($.bottom_office5))) {
-      $.bottom_office5.setWaitState(WAITSTATE_USE_ATM, 999999);
+      $.bottom_office5.setWaitState(25 /* WAITSTATE_USE_ATM */, 999999);
     }
 
 
     if (!(Char.IsDead($.bottom_office6))) {
-      $.bottom_office6.setWaitState(WAITSTATE_SIT_IDLE, 999999);
+      $.bottom_office6.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 999999);
     }
 
 
     if (!(Char.IsDead($.top_office1))) {
-      $.top_office1.setWaitState(WAITSTATE_SIT_IDLE, 999999);
+      $.top_office1.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 999999);
     }
 
 
     if (!(Char.IsDead($.top_office2))) {
-      $.top_office2.setWaitState(WAITSTATE_USE_ATM, 999999);
+      $.top_office2.setWaitState(25 /* WAITSTATE_USE_ATM */, 999999);
     }
 
 
     if (!(Char.IsDead($.top_office3))) {
-      $.top_office3.setWaitState(WAITSTATE_SIT_IDLE, 999999);
+      $.top_office3.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 999999);
     }
 
 
     if (!(Char.IsDead($.top_office7))) {
-      $.top_office7.setWaitState(WAITSTATE_SIT_IDLE, 999999);
+      $.top_office7.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 999999);
     }
 
 
@@ -1255,7 +1255,7 @@ $.minutes = _res430.minutes;
 
         //switching off camera
         await asyncWait(1000);
-        $.scplayer.setWaitState(WAITSTATE_USE_ATM, 1000);
+        $.scplayer.setWaitState(25 /* WAITSTATE_USE_ATM */, 1000);
         await asyncWait(2000);
         $.scplayer.clearWaitState();
         $.spotlight_shining_to_sea.delete();

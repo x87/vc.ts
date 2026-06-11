@@ -1,6 +1,6 @@
 // Generated from main/hotel.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_hotel() {
 
@@ -30,7 +30,7 @@ async function mission_start_hotel() {
   World.SwitchRubbish(false /* OFF */);
 
 
-  Streaming.SetAreaVisible(VIS_HOTEL);
+  Streaming.SetAreaVisible(1 /* VIS_HOTEL */);
   World.SetVisibilityOfClosestObjectOfType(231.4, -1277.7, 19.0, 50.0, mob_mobroom2, true /* TRUE */);
   World.SetVisibilityOfClosestObjectOfType(231.4, -1277.7, 19.0, 50.0, mob_detailsb, true /* TRUE */);
 
@@ -342,7 +342,7 @@ async function mission_start_hotel() {
 
 
   // TERMINATE_ALL_SCRIPTS_WITH_THIS_NAME("LAW1");
-  // START_NEW_SCRIPT lawyer_mission1_loop
+  // START_NEW_SCRIPT lawyer_mission1_loop 
   Clock.SetTimeOfDay(8, 0);
   Weather.ForceNow(0 /* WEATHER_SUNNY */);
   $.player1.setControl(false /* OFF */);

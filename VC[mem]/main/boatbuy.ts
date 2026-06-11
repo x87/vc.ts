@@ -1,6 +1,6 @@
 // Generated from main/boatbuy.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 export async function boatbuy() {
   // MissionBoundary
@@ -39,7 +39,7 @@ export async function boatbuy() {
 
 
   if (ONMISSION == 0) {
-    $.boatbuy_blip = Blip.AddShortRangeSpriteForCoord(-664.1, -1476.3, 13.8, RADAR_SPRITE_LAWYER);
+    $.boatbuy_blip = Blip.AddShortRangeSpriteForCoord(-664.1, -1476.3, 13.8, 9 /* RADAR_SPRITE_LAWYER */);
   }
   await asyncWait(0);
 
@@ -283,7 +283,7 @@ export async function boatbuy() {
 
   Text.PrintWithNumberBig("BOATBUY", $.boatbuy_price, 7000, 6); //
   Stat.AddMoneySpentOnProperty($.boatbuy_price);
-  Stat.SetPropertyAsOwned(PROP_BOATYARD);
+  Stat.SetPropertyAsOwned(6 /* PROP_BOATYARD */);
 
 
   await asyncWait(7000);
@@ -300,15 +300,15 @@ export async function boatbuy() {
 
 
   $.boatbuy_blip.remove();
-  $.boatbuy_blip = Blip.AddShortRangeSpriteForContactPoint(-664.1, -1476.3, 13.8, RADAR_SPRITE_BOATYARD);
+  $.boatbuy_blip = Blip.AddShortRangeSpriteForContactPoint(-664.1, -1476.3, 13.8, 12 /* RADAR_SPRITE_BOATYARD */);
   $.boatbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
   //ADD_SHORT_RANGE_SPRITE_BLIP_FOR_COORD -664.1 -1476.3 13.8 RADAR_SPRITE_HOUSEG boatbuy_blip
 
   Zone.SetPedInfo("BOATYRD", 1 /* DAY */, 13, 0, 0, 0, 0, 0, 0, 1000, 0, 0, 0);
   Zone.SetPedInfo("BOATYRD", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 1000, 0, 0, 0);
   Path.SwitchPedRoadsOn(-692.193, -1522.901, 0.0, -575.311, -1453.378, 30.0); //BOAT YARD
-  // START_NEW_SCRIPT boatbuy_save_loop
-  // START_NEW_SCRIPT boatyard_oddjob_loop
+  // START_NEW_SCRIPT boatbuy_save_loop 
+  // START_NEW_SCRIPT boatyard_oddjob_loop 
 
 
   Camera.RestoreJumpcut();

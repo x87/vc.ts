@@ -1,6 +1,6 @@
 // Generated from main/buypro10.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_vcptbuy() {
 
@@ -28,17 +28,17 @@ async function mission_start_vcptbuy() {
   while (Camera.GetFadingStatus()) {
     await asyncWait(0);
     if (!($.player1.isPlaying())) {
-      $.vcptbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.vcptbuyX, $.vcptbuyY, $.vcptbuyZ, RADAR_SPRITE_SAVEHOUSE);
+      $.vcptbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.vcptbuyX, $.vcptbuyY, $.vcptbuyZ, 19 /* RADAR_SPRITE_SAVEHOUSE */);
       $.vcptbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
-      // START_NEW_SCRIPT vcptsave1_save_loop
+      // START_NEW_SCRIPT vcptsave1_save_loop 
       return; // TERMINATE_THIS_SCRIPT
     }
   }
 
 
-  $.vcptbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.vcptbuyX, $.vcptbuyY, $.vcptbuyZ, RADAR_SPRITE_SAVEHOUSE);
+  $.vcptbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.vcptbuyX, $.vcptbuyY, $.vcptbuyZ, 19 /* RADAR_SPRITE_SAVEHOUSE */);
   $.vcptbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
-  // START_NEW_SCRIPT vcptsave1_save_loop
+  // START_NEW_SCRIPT vcptsave1_save_loop 
 
 
   World.ClearArea(529.6626, 1272.1550, 16.8220, 1.0, true /* TRUE */);
@@ -69,7 +69,7 @@ async function mission_start_vcptbuy() {
   $.safehouse_created4 = 1;
   Text.PrintWithNumberBig("VCPTBUY", $.vcptbuy_price, 5000, 6); //3321 Vice Point purchased: $ ~1~
   Stat.AddMoneySpentOnProperty($.vcptbuy_price);
-  Stat.SetPropertyAsOwned(PROP_VICEPOINT);
+  Stat.SetPropertyAsOwned(8 /* PROP_VICEPOINT */);
   //vcptbuy_price *= -1
   //ADD_SCORE player1 vcptbuy_price
 

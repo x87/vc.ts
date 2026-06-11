@@ -1,6 +1,6 @@
 // Generated from main/prot3.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_protec3() {
   Text.ClearThisPrint("M_FAIL");
@@ -385,7 +385,7 @@ async function mission_start_protec3() {
   $.player1.setControl(true /* ON */);
   //------------------REQUEST_MODELS ------------------------------
 
-  $.player1.setMood(PLAYER_MOOD_CALM, 60000);
+  $.player1.setMood(0 /* PLAYER_MOOD_CALM */, 60000);
 
   //remove clothes picups
 
@@ -413,7 +413,7 @@ async function mission_start_protec3() {
   Streaming.RequestModel(m4);
   Streaming.RequestModel(sentinel);
   Streaming.RequestModel(police);
-  Streaming.RequestModel(173 /* colt45 */);
+  Streaming.RequestModel(colt45);
 
 
   while (!(Streaming.HasModelLoaded(cop)) || !(Streaming.HasModelLoaded(army)) || !(Streaming.HasModelLoaded(dynamite)) || !(Streaming.HasModelLoaded(nitestick))) {
@@ -421,7 +421,7 @@ async function mission_start_protec3() {
   }
 
 
-  while (!(Streaming.HasModelLoaded(buddyshot)) || !(Streaming.HasModelLoaded(m4)) || !(Streaming.HasModelLoaded(sentinel)) || !(Streaming.HasModelLoaded(police)) || !(Streaming.HasModelLoaded(173 /* colt45 */))) {
+  while (!(Streaming.HasModelLoaded(buddyshot)) || !(Streaming.HasModelLoaded(m4)) || !(Streaming.HasModelLoaded(sentinel)) || !(Streaming.HasModelLoaded(police)) || !(Streaming.HasModelLoaded(colt45))) {
     await asyncWait(0);
   }
 
@@ -456,8 +456,8 @@ async function mission_start_protec3() {
   Zone.SetCarInfo("RICH1", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000);
   Zone.SetCivilianCarInfo("RICH1", 1 /* DAY */, 90, 0, 400, 400, 0, 0, 100, 0, 10, 500, 500);
   Zone.SetCivilianCarInfo("RICH1", 0 /* NIGHT */, 90, 0, 400, 400, 0, 0, 100, 0, 10, 500, 500);
-  Zone.SetGroup("RICH1", 1 /* DAY */, RICH1_PEDGRP);
-  Zone.SetGroup("RICH1", 0 /* NIGHT */, RICH1_NIGHT_PEDGRP);
+  Zone.SetGroup("RICH1", 1 /* DAY */, 25 /* RICH1_PEDGRP */);
+  Zone.SetGroup("RICH1", 0 /* NIGHT */, 26 /* RICH1_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("SHOP1", 1 /* DAY */, 30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000);
@@ -466,8 +466,8 @@ async function mission_start_protec3() {
   Zone.SetCarInfo("SHOP1", 0 /* NIGHT */, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000);
   Zone.SetCivilianCarInfo("SHOP1", 1 /* DAY */, 250, 250, 200, 0, 100, 0, 200, 0, 0, 500, 500);
   Zone.SetCivilianCarInfo("SHOP1", 0 /* NIGHT */, 250, 250, 200, 0, 100, 0, 200, 0, 0, 500, 500);
-  Zone.SetGroup("SHOP1", 1 /* DAY */, SHOP1_PEDGRP);
-  Zone.SetGroup("SHOP1", 0 /* NIGHT */, SHOP1_NIGHT_PEDGRP);
+  Zone.SetGroup("SHOP1", 1 /* DAY */, 31 /* SHOP1_PEDGRP */);
+  Zone.SetGroup("SHOP1", 0 /* NIGHT */, 32 /* SHOP1_NIGHT_PEDGRP */);
 
 
   if (ONMISSION == 0) {
@@ -477,7 +477,7 @@ async function mission_start_protec3() {
   }
 
 
-  $.buddy = Char.Create(PEDTYPE_GANG_PLAYER, SPECIAL01, -351.3, -525.1, 11.7);
+  $.buddy = Char.Create(13 /* PEDTYPE_GANG_PLAYER */, SPECIAL01, -351.3, -525.1, 11.7);
   $.buddy.setHeading(124.3);
   $.buddy.setAsPlayerFriend($.player1, true /* TRUE */);
 
@@ -486,7 +486,7 @@ async function mission_start_protec3() {
   $.buddy.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.buddy.setOnlyDamagedByPlayer(true /* TRUE */);
   $.buddy.setCantBeDraggedOut(true /* TRUE */);
-  $.buddy.giveWeapon(WEAPONTYPE_STUBBY_SHOTGUN, 30000);
+  $.buddy.giveWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */, 30000);
   $.buddy.setRunning(true /* TRUE */);
   $.buddy.followPlayer($.player1);
 
@@ -495,7 +495,7 @@ async function mission_start_protec3() {
   $.waitingarmy1 = Char.Create(4 /* PEDTYPE_CIVMALE */, army, 464.3, 1010.9, 17.2);
   $.waitingarmy1.setHeading(37.9);
   $.waitingarmy1.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.waitingarmy1.giveWeapon(WEAPONTYPE_M4, 30000);
+  $.waitingarmy1.giveWeapon(26 /* WEAPONTYPE_M4 */, 30000);
   $.waitingarmy1.setAccuracy(90);
   $.waitingarmy1.setStayInSamePlace(true /* TRUE */);
 
@@ -503,7 +503,7 @@ async function mission_start_protec3() {
   $.waitingarmy2 = Char.Create(4 /* PEDTYPE_CIVMALE */, army, 462.5, 1009.0, 17.2);
   $.waitingarmy2.setHeading(54.3);
   $.waitingarmy2.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.waitingarmy2.giveWeapon(WEAPONTYPE_M4, 30000);
+  $.waitingarmy2.giveWeapon(26 /* WEAPONTYPE_M4 */, 30000);
   $.waitingarmy2.setStayInSamePlace(true /* TRUE */);
   $.waitingarmy1.setAccuracy(90);
 
@@ -534,8 +534,8 @@ async function mission_start_protec3() {
   $.dyn5.setDynamic(false /* FALSE */);
 
 
-  $.buddy.setCanBeDamagedByMembersOfGang(GANG_PLAYER, false /* FALSE */);
-  $.scplayer.setCanBeDamagedByMembersOfGang(GANG_PLAYER, false /* FALSE */);
+  $.buddy.setCanBeDamagedByMembersOfGang(6 /* GANG_PLAYER */, false /* FALSE */);
+  $.scplayer.setCanBeDamagedByMembersOfGang(6 /* GANG_PLAYER */, false /* FALSE */);
 
 
   $.bud3_garage.open();
@@ -612,7 +612,7 @@ async function disguise_loop() {
                   $.cop3 = Char.Create(4 /* PEDTYPE_CIVMALE */, cop, 444.6, 348.4, 10.7);
                   $.cop3.setObjKillPlayerOnFoot($.player1);
                   $.cop3.setThreatSearch(1 /* THREAT_PLAYER1 */);
-                  $.cop3.giveWeapon(WEAPONTYPE_NIGHTSTICK, 1);
+                  $.cop3.giveWeapon(4 /* WEAPONTYPE_NIGHTSTICK */, 1);
                   $.cop3_flag = 1;
                 }
               }
@@ -621,7 +621,7 @@ async function disguise_loop() {
                   $.cop4 = Char.Create(4 /* PEDTYPE_CIVMALE */, cop, 472.1, 347.8, 10.6);
                   $.cop4.setObjKillPlayerOnFoot($.player1);
                   $.cop4.setThreatSearch(1 /* THREAT_PLAYER1 */);
-                  $.cop4.giveWeapon(WEAPONTYPE_NIGHTSTICK, 1);
+                  $.cop4.giveWeapon(4 /* WEAPONTYPE_NIGHTSTICK */, 1);
                   $.cop4_flag = 1;
                 }
               }
@@ -865,7 +865,7 @@ async function disguise_loop() {
           $.buddy.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
           $.buddy.setOnlyDamagedByPlayer(true /* TRUE */);
           $.buddy.setCantBeDraggedOut(true /* TRUE */);
-          $.buddy.giveWeapon(WEAPONTYPE_STUBBY_SHOTGUN, 30000);
+          $.buddy.giveWeapon(21 /* WEAPONTYPE_STUBBY_SHOTGUN */, 30000);
           $.buddy.setRunning(true /* TRUE */);
           $.buddy.followPlayer($.player1);
           if ($.player1.isInAnyCar()) {
@@ -953,31 +953,31 @@ async function disguise_loop() {
       $.fbidoor1 = Char.Create(4 /* PEDTYPE_CIVMALE */, cop, 452.1, 994.0, 17.2); //door closest to bomb place, front EAST of mall
       $.fbidoor1.setHeading(171.9);
       $.fbidoor1.setOnlyDamagedByPlayer(true /* TRUE */);
-      $.fbidoor1.giveWeapon(WEAPONTYPE_M4, 30000);
+      $.fbidoor1.giveWeapon(26 /* WEAPONTYPE_M4 */, 30000);
       $.fbidoor2 = Char.Create(4 /* PEDTYPE_CIVMALE */, cop, 377.3, 993.8, 17.2); //front WEST of mall
       $.fbidoor2.setHeading(172.1);
       $.fbidoor2.setOnlyDamagedByPlayer(true /* TRUE */);
-      $.fbidoor2.giveWeapon(WEAPONTYPE_M4, 30000);
+      $.fbidoor2.giveWeapon(26 /* WEAPONTYPE_M4 */, 30000);
       $.fbidoor3 = Char.Create(4 /* PEDTYPE_CIVMALE */, cop, 348.9, 1122.3, 17.2); //middle WEST of mall
       $.fbidoor3.setHeading(86.1);
       $.fbidoor3.setOnlyDamagedByPlayer(true /* TRUE */);
-      $.fbidoor3.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 30000);
+      $.fbidoor3.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 30000);
       $.fbidoor4 = Char.Create(4 /* PEDTYPE_CIVMALE */, cop, 478.9, 1125.5, 17.5); //middle EAST of mall
       $.fbidoor4.setHeading(259.1);
       $.fbidoor4.setOnlyDamagedByPlayer(true /* TRUE */);
-      $.fbidoor4.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 30000);
+      $.fbidoor4.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 30000);
       $.fbidoor5 = Char.Create(4 /* PEDTYPE_CIVMALE */, cop, 368.9, 1208.5, 24.5); //multi storey car park entrance
       $.fbidoor5.setHeading(90.1);
       $.fbidoor5.setOnlyDamagedByPlayer(true /* TRUE */);
-      $.fbidoor5.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 30000);
+      $.fbidoor5.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 30000);
       $.fbidoor6 = Char.Create(4 /* PEDTYPE_CIVMALE */, cop, 380.5, 1257.9, 16.4); //back WEST of mall
       $.fbidoor6.setHeading(353.1);
       $.fbidoor6.setOnlyDamagedByPlayer(true /* TRUE */);
-      $.fbidoor6.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 30000);
+      $.fbidoor6.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 30000);
       $.fbidoor7 = Char.Create(4 /* PEDTYPE_CIVMALE */, cop, 447.7, 1257.1, 17.3); //back EAST of mall
       $.fbidoor7.setHeading(2.6);
       $.fbidoor7.setOnlyDamagedByPlayer(true /* TRUE */);
-      $.fbidoor7.giveWeapon(2 /* WEAPONTYPE_PISTOL */, 30000);
+      $.fbidoor7.giveWeapon(17 /* WEAPONTYPE_PISTOL */, 30000);
 
 
       //script controlled roadblocks - thanks obbe :)
@@ -1158,7 +1158,7 @@ async function disguise_loop() {
           Game.SetEveryoneIgnorePlayer($.player1, true /* TRUE */);
           $.scplayer = $.player1.getChar();
           $.scplayer.setHeading(232.0);
-          $.scplayer.setWaitState(WAITSTATE_BOMBER, 1000);
+          $.scplayer.setWaitState(31 /* WAITSTATE_BOMBER */, 1000);
           Camera.SetBehindPlayer();
           await asyncWait(1000);
           if (!(Char.IsDead($.scplayer))) {
@@ -1234,44 +1234,44 @@ $.player_z = _res433.z;
 
           //shop counter
           Fx.AddExplosion(471.5, 1009.5, 18.1, 2 /* EXPLOSION_ROCKET */);
-          Fx.AddExplosion(471.5, 1009.5, 18.1, 9 /* EXPLOSION_HELI_BOMB */);
+          Fx.AddExplosion(471.5, 1009.5, 18.1, 11 /* EXPLOSION_HELI_BOMB */);
           Fx.AddExplosion(471.5, 1009.5, 18.1, 1 /* EXPLOSION_MOLOTOV */);
-          Fx.AddExplosion(471.5, 1009.5, 18.1, 5 /* EXPLOSION_HELI */);
+          Fx.AddExplosion(471.5, 1009.5, 18.1, 6 /* EXPLOSION_HELI */);
           Camera.Shake(900);
           await asyncWait(1000);
 
           //looking out.  right shop window right
           Fx.AddExplosion(468.5, 1010.1, 18.1, 2 /* EXPLOSION_ROCKET */);
-          Fx.AddExplosion(468.5, 1010.1, 18.1, 9 /* EXPLOSION_HELI_BOMB */);
+          Fx.AddExplosion(468.5, 1010.1, 18.1, 11 /* EXPLOSION_HELI_BOMB */);
           Fx.AddExplosion(468.5, 1010.1, 18.1, 1 /* EXPLOSION_MOLOTOV */);
-          Fx.AddExplosion(468.5, 1010.1, 18.1, 5 /* EXPLOSION_HELI */);
-          Fx.AddMovingParticleEffect(15 /* POBJECT_FIREBALL_AND_SMOKE */, 468.5, 1010.1, 18.1, 0.1, 0.0, 0.2, 0.6, 5, 156, 165, 11000);
+          Fx.AddExplosion(468.5, 1010.1, 18.1, 6 /* EXPLOSION_HELI */);
+          Fx.AddMovingParticleEffect(17 /* POBJECT_FIREBALL_AND_SMOKE */, 468.5, 1010.1, 18.1, 0.1, 0.0, 0.2, 0.6, 5, 156, 165, 11000);
           //looking out.  right shop window left
           Fx.AddExplosion(466.5, 1012.5, 18.1, 2 /* EXPLOSION_ROCKET */);
-          Fx.AddExplosion(466.5, 1012.5, 18.1, 9 /* EXPLOSION_HELI_BOMB */);
+          Fx.AddExplosion(466.5, 1012.5, 18.1, 11 /* EXPLOSION_HELI_BOMB */);
           Fx.AddExplosion(466.5, 1012.5, 18.1, 1 /* EXPLOSION_MOLOTOV */);
           Camera.Shake(900);
           await asyncWait(1000);
           //looking out.  left shop window right
           Fx.AddExplosion(465.3, 1005.6, 18.1, 2 /* EXPLOSION_ROCKET */);
-          Fx.AddExplosion(465.3, 1005.6, 18.1, 9 /* EXPLOSION_HELI_BOMB */);
+          Fx.AddExplosion(465.3, 1005.6, 18.1, 11 /* EXPLOSION_HELI_BOMB */);
           Fx.AddExplosion(465.3, 1005.6, 18.1, 1 /* EXPLOSION_MOLOTOV */);
 
           //looking out.  left shop window left
           Fx.AddExplosion(461.7, 1002.3, 18.1, 2 /* EXPLOSION_ROCKET */);
-          Fx.AddExplosion(461.7, 1002.3, 18.1, 9 /* EXPLOSION_HELI_BOMB */);
+          Fx.AddExplosion(461.7, 1002.3, 18.1, 11 /* EXPLOSION_HELI_BOMB */);
           Fx.AddExplosion(461.7, 1002.3, 18.1, 1 /* EXPLOSION_MOLOTOV */);
-          Fx.AddExplosion(461.7, 1002.3, 18.1, 5 /* EXPLOSION_HELI */);
-          Fx.AddMovingParticleEffect(15 /* POBJECT_FIREBALL_AND_SMOKE */, 461.7, 1002.3, 18.1, 0.1, 0.0, 0.2, 0.8, 0, 0, 0, 11000);
+          Fx.AddExplosion(461.7, 1002.3, 18.1, 6 /* EXPLOSION_HELI */);
+          Fx.AddMovingParticleEffect(17 /* POBJECT_FIREBALL_AND_SMOKE */, 461.7, 1002.3, 18.1, 0.1, 0.0, 0.2, 0.8, 0, 0, 0, 11000);
           Camera.Shake(1800);
           await asyncWait(2000);
-          Fx.AddExplosion(463.9, 1008.0, 18.1, 5 /* EXPLOSION_HELI */);
-          Fx.AddExplosion(464.3, 1008.0, 18.1, 5 /* EXPLOSION_HELI */);
-          Fx.AddExplosion(464.9, 1008.0, 18.1, 5 /* EXPLOSION_HELI */);
-          Fx.AddExplosion(465.3, 1008.0, 18.1, 5 /* EXPLOSION_HELI */);
-          Fx.AddExplosion(465.9, 1008.0, 18.1, 5 /* EXPLOSION_HELI */);
+          Fx.AddExplosion(463.9, 1008.0, 18.1, 6 /* EXPLOSION_HELI */);
+          Fx.AddExplosion(464.3, 1008.0, 18.1, 6 /* EXPLOSION_HELI */);
+          Fx.AddExplosion(464.9, 1008.0, 18.1, 6 /* EXPLOSION_HELI */);
+          Fx.AddExplosion(465.3, 1008.0, 18.1, 6 /* EXPLOSION_HELI */);
+          Fx.AddExplosion(465.9, 1008.0, 18.1, 6 /* EXPLOSION_HELI */);
           Fx.AddMovingParticleEffect(4 /* POBJECT_DARK_SMOKE */, 463.9, 1008.0, 18.1, 0.2, 0.0, 0.1, 3.0, 0, 0, 0, 11000);
-          Fx.AddExplosion(452.5358, 1023.1326, 22.5928, 5 /* EXPLOSION_HELI */);
+          Fx.AddExplosion(452.5358, 1023.1326, 22.5928, 6 /* EXPLOSION_HELI */);
           Camera.Shake(1000);
           Camera.SetFadingColor(255, 255, 255);
           Camera.DoFade(400, 0 /* FADE_OUT */);
@@ -1500,7 +1500,7 @@ async function mission_passed_protec3() {
   Text.PrintWithNumberBig("M_PASS", 10000, 5000, 1); //"Mission Passed!"
   $.clothes_pickup6 = Pickup.CreateClothes(405.7, -485.6, 12.3, 6);
   $.clothes6_created = 1;
-  // START_NEW_SCRIPT cloth5
+  // START_NEW_SCRIPT cloth5 
   //PLAY_MISSION_PASSED_TUNE 1
 
   $.player1.clearWantedLevel();
@@ -1509,7 +1509,7 @@ async function mission_passed_protec3() {
   Stat.RegisterMissionPassed("BUD_3");
   $.protect_contact_blip.remove();
   $.baron_contact_blip.remove();
-  $.baron_contact_blip = Blip.AddShortRangeSpriteForCoord(-378.4, -536.9, 17.2, RADAR_SPRITE_TOMMY);
+  $.baron_contact_blip = Blip.AddShortRangeSpriteForCoord(-378.4, -536.9, 17.2, 29 /* RADAR_SPRITE_TOMMY */);
   ++$.counter_60_percent;
   $.flag_protect_mission3_passed = 1;
 }
@@ -1535,7 +1535,7 @@ async function mission_cleanup_protec3() {
   Streaming.MarkModelAsNoLongerNeeded(police);
   Streaming.MarkModelAsNoLongerNeeded(dynamite);
   Streaming.MarkModelAsNoLongerNeeded(nitestick);
-  Streaming.MarkModelAsNoLongerNeeded(173 /* colt45 */);
+  Streaming.MarkModelAsNoLongerNeeded(colt45);
   $.dyn1.delete();
   $.dyn2.delete();
   $.dyn3.delete();
@@ -1551,8 +1551,8 @@ async function mission_cleanup_protec3() {
   Zone.SetCarInfo("RICH1", 0 /* NIGHT */, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10);
   Zone.SetCivilianCarInfo("RICH1", 1 /* DAY */, 90, 0, 400, 400, 0, 0, 100, 0, 10, 500, 500);
   Zone.SetCivilianCarInfo("RICH1", 0 /* NIGHT */, 90, 0, 400, 400, 0, 0, 100, 0, 10, 500, 500);
-  Zone.SetGroup("RICH1", 1 /* DAY */, RICH1_PEDGRP);
-  Zone.SetGroup("RICH1", 0 /* NIGHT */, RICH1_NIGHT_PEDGRP);
+  Zone.SetGroup("RICH1", 1 /* DAY */, 25 /* RICH1_PEDGRP */);
+  Zone.SetGroup("RICH1", 0 /* NIGHT */, 26 /* RICH1_NIGHT_PEDGRP */);
 
 
   Zone.SetPedInfo("SHOP1", 1 /* DAY */, 30, 0, 0, 50, 0, 50, 0, 0, 0, 0, 10);
@@ -1561,8 +1561,8 @@ async function mission_cleanup_protec3() {
   Zone.SetCarInfo("SHOP1", 0 /* NIGHT */, 13, 0, 0, 50, 0, 0, 0, 0, 0, 0, 10);
   Zone.SetCivilianCarInfo("SHOP1", 1 /* DAY */, 250, 250, 200, 0, 100, 0, 200, 0, 0, 500, 500);
   Zone.SetCivilianCarInfo("SHOP1", 0 /* NIGHT */, 250, 250, 200, 0, 100, 0, 200, 0, 0, 500, 500);
-  Zone.SetGroup("SHOP1", 1 /* DAY */, SHOP1_PEDGRP);
-  Zone.SetGroup("SHOP1", 0 /* NIGHT */, SHOP1_NIGHT_PEDGRP);
+  Zone.SetGroup("SHOP1", 1 /* DAY */, 31 /* SHOP1_PEDGRP */);
+  Zone.SetGroup("SHOP1", 0 /* NIGHT */, 32 /* SHOP1_NIGHT_PEDGRP */);
 
 
   if ($.mansion_clothes_created == 1) {

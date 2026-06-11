@@ -1,13 +1,13 @@
 // Generated from main/mobile.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_cell_phone() {
 
 
 
 
-  // START_NEW_SCRIPT cell_phone
+  // START_NEW_SCRIPT cell_phone 
 
 
   // MissionBoundary
@@ -251,9 +251,9 @@ async function cell_phone_inner() {
                 }
                 if ($.flag_player_answered_phone == 1) {
                   $.flag_mob_24 = 1;
-                  // START_NEW_SCRIPT general_mission1_loop
+                  // START_NEW_SCRIPT general_mission1_loop 
                   $.general_contact_blip.remove();
-                  $.general_contact_blip = Blip.AddSpriteForContactPoint($.generalX, $.generalY, $.generalZ, RADAR_SPRITE_CORTEZ);
+                  $.general_contact_blip = Blip.AddSpriteForContactPoint($.generalX, $.generalY, $.generalZ, 6 /* RADAR_SPRITE_CORTEZ */);
                   //FLASH_RADAR_BLIP general_contact_blip
                   Text.PrintHelp("NEWCONT");
                   $.flag_new_cont = 1;
@@ -283,9 +283,9 @@ async function cell_phone_inner() {
                 }
                 if ($.flag_player_answered_phone == 1) {
                   $.flag_mob_70 = 1;
-                  // START_NEW_SCRIPT general_mission4_loop
+                  // START_NEW_SCRIPT general_mission4_loop 
                   $.general_contact_blip.remove();
-                  $.general_contact_blip = Blip.AddSpriteForContactPoint($.generalX, $.generalY, $.generalZ, RADAR_SPRITE_CORTEZ);
+                  $.general_contact_blip = Blip.AddSpriteForContactPoint($.generalX, $.generalY, $.generalZ, 6 /* RADAR_SPRITE_CORTEZ */);
                 }
                 // SCM label mob_70_plonk
                 await mobile_message_cleanup();  // SCM GOSUB mobile_message_cleanup
@@ -320,9 +320,9 @@ async function cell_phone_inner() {
                 }
                 if ($.flag_player_answered_phone == 1) {
                   $.flag_mob_25 = 1;
-                  // START_NEW_SCRIPT general_mission5_loop
+                  // START_NEW_SCRIPT general_mission5_loop 
                   $.general_contact_blip.remove();
-                  $.general_contact_blip = Blip.AddSpriteForContactPoint($.generalX, $.generalY, $.generalZ, RADAR_SPRITE_CORTEZ);
+                  $.general_contact_blip = Blip.AddSpriteForContactPoint($.generalX, $.generalY, $.generalZ, 6 /* RADAR_SPRITE_CORTEZ */);
                 }
                 // SCM label mob_25_plonk
                 await mobile_message_cleanup();  // SCM GOSUB mobile_message_cleanup
@@ -505,7 +505,7 @@ async function cell_phone_inner() {
                   $.star_gate_2.dontRemove();
                   $.baron_contact_blip.remove();
                   $.baron_contact_blip = Blip.AddSpriteForContactPoint($.baronX, $.baronY, $.baronZ, $.the_baron_blip);
-                  // START_NEW_SCRIPT baron_mission1_loop
+                  // START_NEW_SCRIPT baron_mission1_loop 
                 }
                 // SCM label mob_62_plonk
                 await mobile_message_cleanup();  // SCM GOSUB mobile_message_cleanup
@@ -585,7 +585,7 @@ async function cell_phone_inner() {
                 $.flag_mob_01 = 1;
                 $.kent_contact_blip.remove();
                 $.kent_contact_blip = Blip.AddSpriteForContactPoint(491.0, -77.7, 10.4, $.the_kent_blip);
-                // START_NEW_SCRIPT kent_mission1_loop
+                // START_NEW_SCRIPT kent_mission1_loop 
                 $.flag_kent_mission_active = 1;
               }
               // SCM label mob_01_plonk
@@ -621,7 +621,7 @@ async function cell_phone_inner() {
                 $.printworks_cash_pickup.remove();
                 $.counter_contact_blip.remove();
                 $.counter_contact_blip = Blip.AddSpriteForContactPoint($.counterX, $.counterY, $.counterZ, $.the_counter_blip);
-                // START_NEW_SCRIPT finale_mission1_loop
+                // START_NEW_SCRIPT finale_mission1_loop 
               }
               // SCM label mob_02_plonk
               await mobile_message_cleanup();  // SCM GOSUB mobile_message_cleanup
@@ -656,7 +656,7 @@ async function cell_phone_inner() {
               if ($.flag_player_answered_phone == 1) {
                 $.flag_mob_68 = 1;
                 $.rock_contact_blip = Blip.AddSpriteForContactPoint($.rockX, $.rockY, $.rockZ, $.the_rock_blip);
-                // START_NEW_SCRIPT rock_mission1_loop
+                // START_NEW_SCRIPT rock_mission1_loop 
               }
               // SCM label mob_68_plonk
               await mobile_message_cleanup();  // SCM GOSUB mobile_message_cleanup
@@ -693,7 +693,7 @@ async function cell_phone_inner() {
               if ($.flag_player_answered_phone == 1) {
                 $.flag_mob_04 = 1;
                 $.bikers_contact_blip = Blip.AddSpriteForContactPoint($.bikersX, $.bikersY, $.bikersZ, $.the_biker_blip);
-                // START_NEW_SCRIPT bikers_mission1_loop
+                // START_NEW_SCRIPT bikers_mission1_loop 
               }
               // SCM label mob_04_plonk
               await mobile_message_cleanup();  // SCM GOSUB mobile_message_cleanup
@@ -819,7 +819,7 @@ async function cell_phone_inner() {
                 $.flag_mob_09 = 1;
                 $.cuban_contact_blip.remove();
                 $.cuban_contact_blip = Blip.AddSpriteForContactPoint($.cubanX, $.cubanY, $.cubanZ, $.the_cuban_blip);
-                // START_NEW_SCRIPT cuban_mission1_loop
+                // START_NEW_SCRIPT cuban_mission1_loop 
               }
               // SCM label mob_09_plonk
               await mobile_message_cleanup();  // SCM GOSUB mobile_message_cleanup
@@ -907,7 +907,7 @@ async function cell_phone_inner() {
               if ($.flag_player_answered_phone == 1) {
                 $.flag_mob_06 = 1;
                 $.haitian_contact_blip = Blip.AddSpriteForContactPoint($.haitianX, $.haitianY, $.haitianZ, $.the_haitian_blip);
-                // START_NEW_SCRIPT haitian_mission1_loop
+                // START_NEW_SCRIPT haitian_mission1_loop 
               }
               // SCM label mob_06_plonk
               await mobile_message_cleanup();  // SCM GOSUB mobile_message_cleanup
@@ -1215,7 +1215,7 @@ async function cell_phone_inner() {
               if ($.flag_player_answered_phone == 1) {
                 $.flag_mob_34 = 1;
                 $.phil_contact_blip = Blip.AddSpriteForContactPoint($.philX, $.philY, $.philZ, $.the_phil_blip);
-                // START_NEW_SCRIPT phil_mission1_loop
+                // START_NEW_SCRIPT phil_mission1_loop 
               }
               // SCM label mob_34_plonk
               await mobile_message_cleanup();  // SCM GOSUB mobile_message_cleanup
@@ -1252,7 +1252,7 @@ async function cell_phone_inner() {
               if ($.flag_player_answered_phone == 1) {
                 $.flag_mob_33 = 1;
                 $.phil_contact_blip = Blip.AddSpriteForContactPoint($.philX, $.philY, $.philZ, $.the_phil_blip);
-                // START_NEW_SCRIPT phil_mission2_loop
+                // START_NEW_SCRIPT phil_mission2_loop 
               }
               // SCM label mob_33_plonk
               await mobile_message_cleanup();  // SCM GOSUB mobile_message_cleanup
@@ -1807,7 +1807,7 @@ async function cell_phone_inner() {
                   $.flag_mob_47 = 1;
                   $.protect_contact_blip.remove();
                   $.protect_contact_blip = Blip.AddSpriteForContactPoint(-378.3, -579.8, 24.5, $.the_protection_blip);
-                  // START_NEW_SCRIPT finale_mission2_loop
+                  // START_NEW_SCRIPT finale_mission2_loop 
                 }
                 // SCM label mob_47_plonk
                 await mobile_message_cleanup();  // SCM GOSUB mobile_message_cleanup
@@ -2024,7 +2024,7 @@ async function cell_phone_inner() {
                 $.flag_mob_99 = 1;
                 $.assasin_contact_blip.remove();
                 $.assasin_contact_blip = Blip.AddSpriteForContactPoint($.ass_1_x, $.ass_1_Y, $.ass_1_Z, $.the_assasin_blip);
-                // START_NEW_SCRIPT assin_mission1_loop
+                // START_NEW_SCRIPT assin_mission1_loop 
               }
               // SCM label mob_99_plonk
               await mobile_message_cleanup();  // SCM GOSUB mobile_message_cleanup
@@ -2049,7 +2049,7 @@ async function cell_phone_inner() {
                 $.flag_mob_98 = 1;
                 $.assasin_contact_blip.remove();
                 $.assasin_contact_blip = Blip.AddSpriteForContactPoint($.ass_2_x, $.ass_2_Y, $.ass_2_Z, $.the_assasin_blip);
-                // START_NEW_SCRIPT assin_mission2_loop
+                // START_NEW_SCRIPT assin_mission2_loop 
               }
               // SCM label mob_98_plonk
               await mobile_message_cleanup();  // SCM GOSUB mobile_message_cleanup
@@ -2073,7 +2073,7 @@ async function cell_phone_inner() {
                 $.flag_mob_97 = 1;
                 $.assasin_contact_blip.remove();
                 $.assasin_contact_blip = Blip.AddSpriteForContactPoint($.ass_3_x, $.ass_3_Y, $.ass_3_Z, $.the_assasin_blip);
-                // START_NEW_SCRIPT assin_mission3_loop
+                // START_NEW_SCRIPT assin_mission3_loop 
               }
               // SCM label mob_97_plonk
               await mobile_message_cleanup();  // SCM GOSUB mobile_message_cleanup
@@ -2097,7 +2097,7 @@ async function cell_phone_inner() {
                 $.flag_mob_96 = 1;
                 $.assasin_contact_blip.remove();
                 $.assasin_contact_blip = Blip.AddSpriteForContactPoint($.ass_4_x, $.ass_4_Y, $.ass_4_Z, $.the_assasin_blip);
-                // START_NEW_SCRIPT assin_mission4_loop
+                // START_NEW_SCRIPT assin_mission4_loop 
               }
               // SCM label mob_96_plonk
               await mobile_message_cleanup();  // SCM GOSUB mobile_message_cleanup
@@ -2121,7 +2121,7 @@ async function cell_phone_inner() {
                 $.flag_mob_95 = 1;
                 $.assasin_contact_blip.remove();
                 $.assasin_contact_blip = Blip.AddSpriteForContactPoint($.ass_5_x, $.ass_5_Y, $.ass_5_Z, $.the_assasin_blip);
-                // START_NEW_SCRIPT assin_mission5_loop
+                // START_NEW_SCRIPT assin_mission5_loop 
               }
               // SCM label mob_95_plonk
               await mobile_message_cleanup();  // SCM GOSUB mobile_message_cleanup

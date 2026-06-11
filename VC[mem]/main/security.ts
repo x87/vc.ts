@@ -1,13 +1,13 @@
 // Generated from main/security.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_security() {
 
 
 
 
-  // START_NEW_SCRIPT security
+  // START_NEW_SCRIPT security 
   //START_NEW_SCRIPT airport_security
   //START_NEW_SCRIPT aport2_security
 
@@ -301,13 +301,13 @@ $.zob_z = _res466.z;
             }
             //GOSUB pickup_check
             if ($.flag_player_on_bike == 1) {
-              Game.SetThreatForPedType(PEDTYPE_GANG_SECURITY, 1 /* THREAT_PLAYER1 */);
+              Game.SetThreatForPedType(11 /* PEDTYPE_GANG_SECURITY */, 1 /* THREAT_PLAYER1 */);
             }
           }
           else {
             if ($.flag_zone == 2) {
               await security_zone_cleanup();  // SCM GOSUB security_zone_cleanup
-              Game.ClearThreatForPedType(PEDTYPE_GANG_SECURITY, 1 /* THREAT_PLAYER1 */);
+              Game.ClearThreatForPedType(11 /* PEDTYPE_GANG_SECURITY */, 1 /* THREAT_PLAYER1 */);
               $.flag_player_on_bike = 0;
               $.theta_security = 0.0;
               $.flag_gate = 0;
@@ -835,7 +835,7 @@ async function kill_them_all_1() {
     if ($.player1.isPlaying()) {
       $.security_bloke1.setObjKillPlayerAnyMeans($.player1);
       if ($.flag_1_tooled == 0 && Streaming.HasModelLoaded(nitestick)) {
-        $.security_bloke1.giveWeapon(WEAPONTYPE_NIGHTSTICK, 0);
+        $.security_bloke1.giveWeapon(4 /* WEAPONTYPE_NIGHTSTICK */, 0);
         $.flag_1_tooled = 1;
       }
     }
@@ -852,7 +852,7 @@ async function kill_them_all_2() {
     if ($.player1.isPlaying()) {
       $.security_bloke2.setObjKillPlayerAnyMeans($.player1);
       if ($.flag_2_tooled == 0) {
-        $.security_bloke2.giveWeapon(WEAPONTYPE_NIGHTSTICK, 0);
+        $.security_bloke2.giveWeapon(4 /* WEAPONTYPE_NIGHTSTICK */, 0);
         $.flag_2_tooled = 1;
       }
     }

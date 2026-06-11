@@ -1,6 +1,6 @@
 // Generated from main/cuban1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_cuban1() {
   Text.ClearThisPrint("M_FAIL");
@@ -189,8 +189,8 @@ async function mission_start_cuban1() {
 
   // ****************************************START OF CUTSCENE********************************
 
-  Streaming.SetAreaVisible(VIS_COFFEE_SHOP);
-  $.player1.setMood(PLAYER_MOOD_CALM, 60000);
+  Streaming.SetAreaVisible(7 /* VIS_COFFEE_SHOP */);
+  $.player1.setMood(0 /* PLAYER_MOOD_CALM */, 60000);
 
 
   World.ClearAreaOfChars(-1174.8, -609.0, 10.4, -116.3, -632.5, 15.3);
@@ -535,7 +535,7 @@ async function mission_start_cuban1() {
   Streaming.MarkModelAsNoLongerNeeded(CUTOBJ01);
   Streaming.MarkModelAsNoLongerNeeded(CUTOBJ02);
   Streaming.MarkModelAsNoLongerNeeded(CUTOBJ03);
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   $.flag_player_in_cafe = 0;
   World.SetCarDensityMultiplier(1.0);
   World.SetPedDensityMultiplier(1.0);
@@ -573,7 +573,7 @@ async function mission_start_cuban1() {
 
   //forcing weather to be nice
 
-  Weather.ForceNow(WEATHER_EXTRA_SUNNY);
+  Weather.ForceNow(4 /* WEATHER_EXTRA_SUNNY */);
 
   //switching off ped nodes
 
@@ -587,7 +587,7 @@ async function mission_start_cuban1() {
   $.player1.setCoordinates(-67.7, 91.2, 9.5);
   //creating boat and waiting for player to reach it
 
-  $.rico_passenger = Char.Create(PEDTYPE_GANG_CUBAN, CBb, -74.17, 90.20, 8.6);
+  $.rico_passenger = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, CBb, -74.17, 90.20, 8.6);
   $.rico_passenger.setAsPlayerFriend($.player1, true /* TRUE */);
   $.rico_passenger.setHeading(40.2);
 
@@ -839,7 +839,7 @@ async function boat_loop() {
       if ($.golfer_hit1 == 0) {
         if (Char.IsDead($.fake_golfer1)) {
           Text.PrintWithNumberBig("BONUS", 100, 1000, 1);
-          Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+          Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
           $.player1.addScore(100);
           $.golfer_hit1 = 1;
         }
@@ -929,7 +929,7 @@ async function boat_loop() {
                   $.next_boatcheck_blip.remove();
                   ++$.boat_check_counter;
                   --$.checks_left;
-                  Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+                  Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
                   if ($.boat_check_counter == 3) {
                     $.camerax = 369.99;
                     $.cameray = 74.30;
@@ -1050,7 +1050,7 @@ async function boat_loop() {
 
     if ($.boat_check_counter == 1) {
       if ($.starting_timer == 0) {
-        Hud.DisplayTimerWithString($.$id.boatrace_end, TIMER_DOWN, "RACES");
+        Hud.DisplayTimerWithString($.$id.boatrace_end, 1 /* TIMER_DOWN */, "RACES");
         Hud.DisplayCounterWithString($.$id.checks_left, 0, "KICK1_9");
         $.starting_timer = 1;
       }
@@ -1231,7 +1231,7 @@ async function boat_loop() {
           if ($.player1.locateAnyMeans3D($.boatcheck_blipx, $.boatcheck_blipy, $.boatcheck_blipz, 7.0, 7.0, 7.0, false /* FALSE */)) {
             ++$.boat_check_counter;
             --$.checks_left;
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.boatcheck_blip.remove();
             $.next_boatcheck_blip.remove();
             if ($.boat_check_counter == 1) {
@@ -1503,7 +1503,7 @@ async function boat_loop() {
                   $.rico_passenger.delete();
                   $.pred_boat.setCoordinates(-84.5, 82.7, 5.1);
                   $.pred_boat.setHeading(180.0);
-                  $.rico_passenger = Char.CreateInsideCar($.pred_boat, PEDTYPE_GANG_CUBAN, CBb);
+                  $.rico_passenger = Char.CreateInsideCar($.pred_boat, 7 /* PEDTYPE_GANG_CUBAN */, CBb);
                 }
               }
 
@@ -1637,7 +1637,7 @@ async function mission_passed_cuban1() {
   $.player1.addScore(1000);
   Stat.PlayerMadeProgress(1);
   Stat.RegisterMissionPassed("CUB_1");
-  // START_NEW_SCRIPT cuban_mission2_loop
+  // START_NEW_SCRIPT cuban_mission2_loop 
   $.flag_cuban_mission1_passed = 1;
 }
 

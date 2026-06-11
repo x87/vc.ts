@@ -1,6 +1,6 @@
 // Generated from main/assin1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_assin1() {
 
@@ -213,7 +213,7 @@ async function assin1_loop() {
     if ($.mission_assin1_started == 0) {
       Text.PrintNow("ASM1_7", 10000, 2);
       $.mission_assin1_started = 2;
-      $.player1.setMood(PLAYER_MOOD_ANGRY, 350000);
+      $.player1.setMood(2 /* PLAYER_MOOD_ANGRY */, 350000);
 
       //bar
       Hud.DisplayCounterWithString($.$id.delivery_status, 0 /* COUNTER_DISPLAY_NUMBER */, "ASM1_6");

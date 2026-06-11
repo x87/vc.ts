@@ -1,6 +1,6 @@
 // Generated from main/general1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_general1() {
   Text.ClearThisPrint("M_FAIL");
@@ -312,8 +312,8 @@ $.the_yacht_z = _res190.z;
 
   //------------------ REQUEST_MODELS ------------------------------
 
-  $.player1.setMood(PLAYER_MOOD_PISSED_OFF, 60000);
-  Weather.ForceNow(WEATHER_EXTRA_SUNNY);
+  $.player1.setMood(1 /* PLAYER_MOOD_PISSED_OFF */, 60000);
+  Weather.ForceNow(4 /* WEATHER_EXTRA_SUNNY */);
 
 
   Streaming.RequestModel(chnsaw);
@@ -333,7 +333,7 @@ $.the_yacht_z = _res190.z;
   Path.SwitchPedRoadsOff(479.9, -1.4, 11.0, 450.3, 59.5, 40.0);
 
 
-  $.player1.giveWeapon(WEAPONTYPE_CHAINSAW, 1);
+  $.player1.giveWeapon(11 /* WEAPONTYPE_CHAINSAW */, 1);
 
 
   $.gonzalez_house = Blip.AddForCoord(476.8, 30.4, 11.0);
@@ -480,15 +480,15 @@ $.the_yacht_z = _res190.z;
   Hud.SwitchWidescreen(true /* ON */);
 
 
-  $.player1.giveWeapon(WEAPONTYPE_CHAINSAW, 1);
-  $.player1.setCurrentWeapon(WEAPONTYPE_CHAINSAW);
+  $.player1.giveWeapon(11 /* WEAPONTYPE_CHAINSAW */, 1);
+  $.player1.setCurrentWeapon(11 /* WEAPONTYPE_CHAINSAW */);
 
 
   $.gonzalez = Char.Create(4 /* PEDTYPE_CIVMALE */, SPECIAL01, 466.0, 38.2, 32.0);
   $.gonzalez.clearThreatSearch();
   $.gonzalez.setHealth(150);
   $.gonzalez.setOnlyDamagedByPlayer(true /* TRUE */);
-  $.gonzalez.setAnimGroup(18 /* ANIM_PANIC_CHUNKYPED */);
+  $.gonzalez.setAnimGroup(50 /* ANIM_PANIC_CHUNKYPED */);
 
 
 
@@ -835,7 +835,7 @@ async function gen1_main_loop() {
       }
     }
     else {
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       Text.PrintNow("GEN1_19", 5000, 1); //The Vice City Police are on to you!
       $.player1.alterWantedLevelNoDrop(2);
       if ($.respray_garage4.hasResprayHappened() || $.respray_garage5.hasResprayHappened()) {
@@ -1007,7 +1007,7 @@ async function gonzalez_running_away() {
     if (!(Char.IsDead($.gonzalez))) {
       if (TIMERA > 500) {
         if (!($.gonzalez.isWanderPathClear(402.1, -462.2, 10.1, 1.0))) {
-          $.gonzalez.followPath(402.1, -462.2, 10.1, 1.0, RUN);
+          $.gonzalez.followPath(402.1, -462.2, 10.1, 1.0, 1 /* RUN */);
         }
         else {
           $.gonzalez.setObjRunToCoord(402.1, -462.2);
@@ -1019,7 +1019,7 @@ $.player_x = _res191.x;
 $.player_y = _res191.y;
 $.player_z = _res191.z;
             if (!($.gonzalez_goon1.isWanderPathClear($.player_x, $.player_y, $.player_z, 1.0))) {
-              $.gonzalez_goon1.followPath($.player_x, $.player_y, $.player_z, 1.0, RUN);
+              $.gonzalez_goon1.followPath($.player_x, $.player_y, $.player_z, 1.0, 1 /* RUN */);
             }
             else {
               $.gonzalez_goon1.setObjRunToCoord($.player_x, $.player_y);
@@ -1039,7 +1039,7 @@ $.player_x = _res192.x;
 $.player_y = _res192.y;
 $.player_z = _res192.z;
             if (!($.gonzalez_goon2.isWanderPathClear($.player_x, $.player_y, $.player_z, 1.0))) {
-              $.gonzalez_goon2.followPath($.player_x, $.player_y, $.player_z, 1.0, RUN);
+              $.gonzalez_goon2.followPath($.player_x, $.player_y, $.player_z, 1.0, 1 /* RUN */);
             }
             else {
               $.gonzalez_goon2.setObjRunToCoord($.player_x, $.player_y);
@@ -1091,7 +1091,7 @@ $.player_z = _res192.z;
         $.where_gonzalez = 6;
       }
       if (Char.IsDead($.gonzalez)) {
-        Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
         Text.PrintNow("GEN1_19", 5000, 1); //The Vice City Police are on to you!
         $.player1.alterWantedLevelNoDrop(2);
         if ($.respray_garage4.hasResprayHappened() || $.respray_garage5.hasResprayHappened()) {
@@ -1129,7 +1129,7 @@ $.player_z = _res192.z;
 
     }
     else {
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       Text.PrintNow("GEN1_19", 5000, 1); //The Vice City Police are on to you!
       $.player1.alterWantedLevelNoDrop(2);
       if ($.respray_garage4.hasResprayHappened() || $.respray_garage5.hasResprayHappened()) {
@@ -1187,7 +1187,7 @@ async function gonzalez_at_police_station() {
 
   if (!(Char.IsDead($.gonzalez))) {
     if (!($.gonzalez.isWanderPathClear($.player_x, $.player_y, $.player_z, 1.0))) {
-      $.gonzalez.followPath(393.5, -476.4, 12.3, 1.0, RUN);
+      $.gonzalez.followPath(393.5, -476.4, 12.3, 1.0, 1 /* RUN */);
     }
     else {
       $.gonzalez.setObjRunToCoord(393.5, -476.4);
@@ -1354,14 +1354,14 @@ async function mission_passed_general1() {
   Text.PrintWithNumberBig("M_PASS", 250, 5000, 1); //"Mission Passed!"
   $.clothes_pickup7 = Pickup.CreateClothes(414.3, 1042.0, 25.4, 8);
   $.clothes7_created = 1;
-  // START_NEW_SCRIPT cloth6
+  // START_NEW_SCRIPT cloth6 
   Audio.PlayMissionPassedTune(1);
   $.player1.clearWantedLevel();
   $.player1.addScore(250);
   Stat.RegisterMissionPassed("COL_1");
   Stat.PlayerMadeProgress(1);
   $.machete_in_stock = 1;
-  // START_NEW_SCRIPT general_mission2_loop
+  // START_NEW_SCRIPT general_mission2_loop 
   $.flag_general_mission1_passed = 1;
 }
 
@@ -1455,7 +1455,7 @@ $.player_x = _res193.x;
 $.player_y = _res193.y;
 $.player_z = _res193.z;
         if (!($.gonzalez_goon1.isWanderPathClear($.player_x, $.player_y, $.player_z, 1.0))) {
-          $.gonzalez_goon1.followPath($.player_x, $.player_y, $.player_z, 1.0, RUN);
+          $.gonzalez_goon1.followPath($.player_x, $.player_y, $.player_z, 1.0, 1 /* RUN */);
         }
         else {
           $.gonzalez_goon1.setObjRunToCoord($.player_x, $.player_y);
@@ -1477,7 +1477,7 @@ $.player_x = _res194.x;
 $.player_y = _res194.y;
 $.player_z = _res194.z;
         if (!($.gonzalez_goon2.isWanderPathClear($.player_x, $.player_y, $.player_z, 1.0))) {
-          $.gonzalez_goon2.followPath($.player_x, $.player_y, $.player_z, 1.0, RUN);
+          $.gonzalez_goon2.followPath($.player_x, $.player_y, $.player_z, 1.0, 1 /* RUN */);
         }
         else {
           $.gonzalez_goon2.setObjRunToCoord($.player_x, $.player_y);

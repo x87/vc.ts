@@ -1,6 +1,6 @@
 // Generated from main/buypro11.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_skumbuy() {
 
@@ -28,17 +28,17 @@ async function mission_start_skumbuy() {
   while (Camera.GetFadingStatus()) {
     await asyncWait(0);
     if (!($.player1.isPlaying())) {
-      $.skumbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.skumbuyX, $.skumbuyY, $.skumbuyZ, RADAR_SPRITE_SAVEHOUSE);
+      $.skumbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.skumbuyX, $.skumbuyY, $.skumbuyZ, 19 /* RADAR_SPRITE_SAVEHOUSE */);
       $.skumbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
-      // START_NEW_SCRIPT skumsave1_save_loop
+      // START_NEW_SCRIPT skumsave1_save_loop 
       return; // TERMINATE_THIS_SCRIPT
     }
   }
 
 
-  $.skumbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.skumbuyX, $.skumbuyY, $.skumbuyZ, RADAR_SPRITE_SAVEHOUSE);
+  $.skumbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.skumbuyX, $.skumbuyY, $.skumbuyZ, 19 /* RADAR_SPRITE_SAVEHOUSE */);
   $.skumbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
-  // START_NEW_SCRIPT skumsave1_save_loop
+  // START_NEW_SCRIPT skumsave1_save_loop 
 
 
   World.ClearArea(-559.9, 705.4, 19.8, 1.0, true /* TRUE */);
@@ -69,7 +69,7 @@ async function mission_start_skumbuy() {
   $.safehouse_created1 = 1;
   Text.PrintWithNumberBig("SKUMBUY", $.skumbuy_price, 5000, 6); //Skumole shack purchased: $ ~1~
   Stat.AddMoneySpentOnProperty($.skumbuy_price);
-  Stat.SetPropertyAsOwned(PROP_SKUMOLESHACK);
+  Stat.SetPropertyAsOwned(13 /* PROP_SKUMOLESHACK */);
   //skumbuy_price *= -1
   //ADD_SCORE player1 skumbuy_price
 

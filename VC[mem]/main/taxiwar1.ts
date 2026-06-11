@@ -1,6 +1,6 @@
 // Generated from main/taxiwar1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *******************************************************************************************
 // *******************************************************************************************
@@ -115,7 +115,7 @@ async function skip_passed_taxi1_cut() {
 
 
   $.countdown_taxiwar = 61000;
-  Hud.DisplayTimer($.$id.countdown_taxiwar, TIMER_DOWN);
+  Hud.DisplayTimer($.$id.countdown_taxiwar, 1 /* TIMER_DOWN */);
 
 
   if ($.player1.isInAnyCar()) {
@@ -552,7 +552,7 @@ async function mission_taxiwar1_passed() {
   $.player1.addScore(1000);
   Stat.RegisterMissionPassed("TAXI_1");
   Stat.PlayerMadeProgress(1);
-  // START_NEW_SCRIPT taxiwar_mission2_loop
+  // START_NEW_SCRIPT taxiwar_mission2_loop 
 }
 
 

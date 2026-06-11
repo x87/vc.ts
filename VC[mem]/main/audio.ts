@@ -1,6 +1,6 @@
 // Generated from main/audio.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_aud() {
 
@@ -125,7 +125,7 @@ $.minutes_s = _res38.minutes;
       if ($.player1.isInZone("DTOWN")) {
         if ($.flag_bikers_mission1_passed == 0) {
           if ($.biker_bar_sound1_added == 0) {
-            $.bike_bar_loop1 = Sound.AddContinuous(-596.018, 640.916, 12.0, SOUND_NEW_BUILDING_BAR_1); //Biker bar
+            $.bike_bar_loop1 = Sound.AddContinuous(-596.018, 640.916, 12.0, 36 /* SOUND_NEW_BUILDING_BAR_1 */); //Biker bar
             $.biker_bar_sound1_added = 1;
           }
 
@@ -134,7 +134,7 @@ $.minutes_s = _res38.minutes;
         if ($.flag_bikers_mission1_passed == 1) {
           if ($.flag_bikers_mission2_passed == 0) {
             if ($.biker_bar_sound2_added == 0) {
-              $.bike_bar_loop2 = Sound.AddContinuous(-596.018, 640.916, 12.0, SOUND_NEW_BUILDING_BAR_2); //Biker bar
+              $.bike_bar_loop2 = Sound.AddContinuous(-596.018, 640.916, 12.0, 37 /* SOUND_NEW_BUILDING_BAR_2 */); //Biker bar
               $.biker_bar_sound2_added = 1;
             }
 
@@ -147,7 +147,7 @@ $.minutes_s = _res38.minutes;
           if ($.flag_bikers_mission2_passed == 1) {
             if ($.flag_bikers_mission3_passed == 0) {
               if ($.biker_bar_sound3_added == 0) {
-                $.bike_bar_loop3 = Sound.AddContinuous(-596.018, 640.916, 12.0, SOUND_NEW_BUILDING_BAR_3); //Biker bar
+                $.bike_bar_loop3 = Sound.AddContinuous(-596.018, 640.916, 12.0, 38 /* SOUND_NEW_BUILDING_BAR_3 */); //Biker bar
                 $.biker_bar_sound3_added = 1;
               }
 
@@ -184,7 +184,7 @@ $.minutes_s = _res38.minutes;
       if ($.player1.isInZone("BEACH3")) {
         if ($.hours_s >= 23 || $.hours_s < 7) {
           if ($.malibu_sound1_playing == 0 && $.malibu_sound2_playing == 0 && $.malibu_sound3_playing == 0) {
-            $.malibu_loop1 = Sound.AddContinuous(494.652, -83.347, 10.032, SOUND_NEW_BUILDING_MALIBU_1);
+            $.malibu_loop1 = Sound.AddContinuous(494.652, -83.347, 10.032, 40 /* SOUND_NEW_BUILDING_MALIBU_1 */);
             $.malibu_sound1_playing = 1;
           }
 
@@ -200,7 +200,7 @@ $.minutes_s = _res38.minutes;
         }
         if ($.hours_s >= 7 && $.hours_s < 15) {
           if ($.malibu_sound2_playing == 0 && $.malibu_sound1_playing == 0 && $.malibu_sound3_playing == 0) {
-            $.malibu_loop2 = Sound.AddContinuous(494.652, -83.347, 10.032, SOUND_NEW_BUILDING_MALIBU_2);
+            $.malibu_loop2 = Sound.AddContinuous(494.652, -83.347, 10.032, 41 /* SOUND_NEW_BUILDING_MALIBU_2 */);
             $.malibu_sound2_playing = 1;
           }
 
@@ -216,7 +216,7 @@ $.minutes_s = _res38.minutes;
         }
         if ($.hours_s >= 15 && $.hours_s < 23) {
           if ($.malibu_sound3_playing == 0 && $.malibu_sound1_playing == 0 && $.malibu_sound2_playing == 0) {
-            $.malibu_loop3 = Sound.AddContinuous(494.652, -83.347, 10.032, SOUND_NEW_BUILDING_MALIBU_3);
+            $.malibu_loop3 = Sound.AddContinuous(494.652, -83.347, 10.032, 42 /* SOUND_NEW_BUILDING_MALIBU_3 */);
             $.malibu_sound3_playing = 1;
           }
 
@@ -255,7 +255,7 @@ $.minutes_s = _res38.minutes;
       if ($.player1.isInZone("BEACH1")) {
         if ($.hours_s >= 23 || $.hours_s < 7) {
           if ($.strip_bar_sound1_playing == 0 && $.strip_bar_sound2_playing == 0 && $.strip_bar_sound3_playing == 0) {
-            $.strip_loop1 = Sound.AddContinuous(87.738, -1456.117, 11.0, SOUND_NEW_BUILDING_STRIP_1); //Strip club
+            $.strip_loop1 = Sound.AddContinuous(87.738, -1456.117, 11.0, 43 /* SOUND_NEW_BUILDING_STRIP_1 */); //Strip club
             $.strip_bar_sound1_playing = 1;
           }
 
@@ -271,7 +271,7 @@ $.minutes_s = _res38.minutes;
         }
         if ($.hours_s >= 7 && $.hours_s < 15) {
           if ($.strip_bar_sound2_playing == 0 && $.strip_bar_sound1_playing == 0 && $.strip_bar_sound3_playing == 0) {
-            $.strip_loop2 = Sound.AddContinuous(87.738, -1456.117, 11.0, SOUND_NEW_BUILDING_STRIP_2); //Strip club
+            $.strip_loop2 = Sound.AddContinuous(87.738, -1456.117, 11.0, 44 /* SOUND_NEW_BUILDING_STRIP_2 */); //Strip club
             $.strip_bar_sound2_playing = 1;
           }
 
@@ -287,7 +287,7 @@ $.minutes_s = _res38.minutes;
         }
         if ($.hours_s >= 15 && $.hours_s < 23) {
           if ($.strip_bar_sound3_playing == 0 && $.strip_bar_sound1_playing == 0 && $.strip_bar_sound2_playing == 0) {
-            $.strip_loop3 = Sound.AddContinuous(87.738, -1456.117, 11.0, SOUND_NEW_BUILDING_STRIP_3); //Strip club
+            $.strip_loop3 = Sound.AddContinuous(87.738, -1456.117, 11.0, 45 /* SOUND_NEW_BUILDING_STRIP_3 */); //Strip club
             $.strip_bar_sound3_playing = 1;
           }
 
@@ -306,7 +306,7 @@ $.minutes_s = _res38.minutes;
 
         if ($.hours_s == 10) {
           if ($.church_sounds_added == 0) {
-            $.church_loop1 = Sound.AddContinuous(-76.074, -1528.485, 13.397, SOUND_NEW_BUILDING_CHURCH); // Church in Washington
+            $.church_loop1 = Sound.AddContinuous(-76.074, -1528.485, 13.397, 46 /* SOUND_NEW_BUILDING_CHURCH */); // Church in Washington
             $.church_sounds_added = 1;
           }
 
@@ -324,7 +324,7 @@ $.minutes_s = _res38.minutes;
         // fountain
 
         if ($.fountain_sound1_added == 0) {
-          $.fountain_loop1 = Sound.AddContinuous(-67.015, -1546.671, 11.485, SOUND_NEW_WATERFALL); // Fountain by church
+          $.fountain_loop1 = Sound.AddContinuous(-67.015, -1546.671, 11.485, 51 /* SOUND_NEW_WATERFALL */); // Fountain by church
           $.fountain_sound1_added = 1;
         }
 
@@ -356,7 +356,7 @@ $.minutes_s = _res38.minutes;
       }
       if ($.player1.isInZone("PORNI")) {
         if ($.fountain_sound2_added == 0) {
-          $.fountain_loop2 = Sound.AddContinuous(9.637, 1092.344, 17.211, SOUND_NEW_WATERFALL); // Fountain in porn island
+          $.fountain_loop2 = Sound.AddContinuous(9.637, 1092.344, 17.211, 51 /* SOUND_NEW_WATERFALL */); // Fountain in porn island
           $.fountain_sound2_added = 1;
         }
 
@@ -400,7 +400,7 @@ export async function audio() {
 
 
 
-  // START_NEW_SCRIPT mission_start_aud
+  // START_NEW_SCRIPT mission_start_aud 
 
 
   // MissionBoundary

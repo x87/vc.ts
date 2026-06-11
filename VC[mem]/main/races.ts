@@ -1,6 +1,6 @@
 // Generated from main/races.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *****************************************************************************************
 // *********************************** Road Races ******************************************
@@ -2654,16 +2654,16 @@ async function race_start() {
     Game.SetEveryoneIgnorePlayer($.player1, true /* TRUE */);
     Game.SetAllCarsCanBeDamaged(false /* FALSE */);
     Text.PrintBig("RACES_4", 1100, 4);
-    Sound.AddOneOffSound(0.0, 0.0, 0.0, 97 /* SOUND_RACE_START_3 */);
+    Sound.AddOneOffSound(0.0, 0.0, 0.0, 7 /* SOUND_RACE_START_3 */);
     await asyncWait(1000);
     Text.PrintBig("RACES_5", 1100, 4);
-    Sound.AddOneOffSound(0.0, 0.0, 0.0, 98 /* SOUND_RACE_START_2 */);
+    Sound.AddOneOffSound(0.0, 0.0, 0.0, 8 /* SOUND_RACE_START_2 */);
     await asyncWait(1000);
     Text.PrintBig("RACES_6", 1100, 4);
-    Sound.AddOneOffSound(0.0, 0.0, 0.0, 99 /* SOUND_RACE_START_1 */);
+    Sound.AddOneOffSound(0.0, 0.0, 0.0, 9 /* SOUND_RACE_START_1 */);
     await asyncWait(1000);
     Text.PrintBig("RACES_7", 800, 4);
-    Sound.AddOneOffSound(0.0, 0.0, 0.0, 100 /* SOUND_RACE_START_GO */);
+    Sound.AddOneOffSound(0.0, 0.0, 0.0, 10 /* SOUND_RACE_START_GO */);
     $.player1.setControl(true /* ON */);
     Game.SetEveryoneIgnorePlayer($.player1, false /* FALSE */);
     Game.SetAllCarsCanBeDamaged(true /* TRUE */);
@@ -2735,7 +2735,7 @@ async function race_start() {
 
 
   $.race_timer = 0;
-  Hud.DisplayTimerWithString($.$id.race_timer, TIMER_UP, "RACES");
+  Hud.DisplayTimerWithString($.$id.race_timer, 0 /* TIMER_UP */, "RACES");
 
 
   while ($.player_cpcounter < $.total_checkpoints) {
@@ -2743,7 +2743,7 @@ async function race_start() {
     $.game_timer = Clock.GetGameTimer();
     $.position = 0;
     if ($.player1.locateInCar3D($.player1_cp_x, $.player1_cp_y, $.player1_cp_z, 6.0, 6.0, 6.0, false)) {
-      Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+      Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
       ++$.player_cpcounter;
       $.blip_chase.remove();
       $.second_blip.remove();

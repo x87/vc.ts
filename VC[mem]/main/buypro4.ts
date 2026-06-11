@@ -1,6 +1,6 @@
 // Generated from main/buypro4.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_buypro4() {
 
@@ -10,7 +10,7 @@ async function mission_start_buypro4() {
 
   ONMISSION = 1;
   if (ONMISSION == 0) {
-    $.strpbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.strpbuyX, $.strpbuyY, $.strpbuyZ, RADAR_SPRITE_STRIPCLUB);
+    $.strpbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.strpbuyX, $.strpbuyY, $.strpbuyZ, 20 /* RADAR_SPRITE_STRIPCLUB */);
     $.strpbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
   }
 
@@ -31,7 +31,7 @@ async function mission_start_buypro4() {
   while (Camera.GetFadingStatus()) {
     await asyncWait(0);
     if (!($.player1.isPlaying())) {
-      $.strpbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.strpbuyX, $.strpbuyY, $.strpbuyZ, RADAR_SPRITE_STRIPCLUB);
+      $.strpbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.strpbuyX, $.strpbuyY, $.strpbuyZ, 20 /* RADAR_SPRITE_STRIPCLUB */);
       $.strpbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
       //START_NEW_SCRIPT strpbuy_save_loop
       $.flag_membership = 1;
@@ -40,13 +40,13 @@ async function mission_start_buypro4() {
   }
 
 
-  $.strpbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.strpbuyX, $.strpbuyY, $.strpbuyZ, RADAR_SPRITE_STRIPCLUB);
+  $.strpbuy_blip = Blip.AddShortRangeSpriteForContactPoint($.strpbuyX, $.strpbuyY, $.strpbuyZ, 20 /* RADAR_SPRITE_STRIPCLUB */);
   $.strpbuy_blip.changeDisplay(2 /* BLIP_ONLY */);
-  // START_NEW_SCRIPT strpbuy_save_loop
+  // START_NEW_SCRIPT strpbuy_save_loop 
   $.flag_membership = 1;
   $.clothes_pickup8 = Pickup.CreateClothes(158.3, -1275.9, 10.6, 9);
   $.clothes8_created = 1;
-  // START_NEW_SCRIPT cloth7
+  // START_NEW_SCRIPT cloth7 
 
 
   World.ClearArea(100.9297, -1470.6222, 9.3871, 1.0, true /* TRUE */);
@@ -73,7 +73,7 @@ async function mission_start_buypro4() {
 
   Text.PrintWithNumberBig("STRPBUY", $.strpbuy_price, 5000, 6); //"Pole Position Club membership purchased: $ 15000"
   Stat.AddMoneySpentOnProperty($.strpbuy_price);
-  Stat.SetPropertyAsOwned(PROP_STRIPCLUB);
+  Stat.SetPropertyAsOwned(7 /* PROP_STRIPCLUB */);
   //	strpbuy_price *= -1
   //	ADD_SCORE player1 strpbuy_price
 

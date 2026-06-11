@@ -1,6 +1,6 @@
 // Generated from main/baron5.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *******************************************************************************************
 // *******************************************************************************************
@@ -263,7 +263,7 @@ async function skip_passed_car_scene() {
   Streaming.RequestModel(CLa);
   Streaming.RequestModel(CLb);
   Streaming.RequestModel(M4);
-  Streaming.RequestModel(178 /* uzi */);
+  Streaming.RequestModel(uzi);
   Streaming.RequestModel(mp5lng);
   Streaming.LoadSpecialCharacter(4, "igdiaz");
 
@@ -272,7 +272,7 @@ async function skip_passed_car_scene() {
   //LOAD_MISSION_AUDIO 2 ASS_2
 
 
-  while (!(Streaming.HasModelLoaded(CLa)) || !(Streaming.HasModelLoaded(178 /* uzi */)) || !(Streaming.HasModelLoaded(M4)) || !(Streaming.HasModelLoaded(mp5lng))) {
+  while (!(Streaming.HasModelLoaded(CLa)) || !(Streaming.HasModelLoaded(uzi)) || !(Streaming.HasModelLoaded(M4)) || !(Streaming.HasModelLoaded(mp5lng))) {
     await asyncWait(0);
   }
 
@@ -307,9 +307,9 @@ async function skip_passed_car_scene() {
 
 
 
-  $.player1.giveWeapon(WEAPONTYPE_M4, 150);
-  $.player1.setCurrentWeapon(WEAPONTYPE_M4);
-  Game.SetThreatForPedType(PEDTYPE_GANG_DIAZ, 1 /* THREAT_PLAYER1 */);
+  $.player1.giveWeapon(26 /* WEAPONTYPE_M4 */, 150);
+  $.player1.setCurrentWeapon(26 /* WEAPONTYPE_M4 */);
+  Game.SetThreatForPedType(10 /* PEDTYPE_GANG_DIAZ */, 1 /* THREAT_PLAYER1 */);
 
 
 
@@ -318,8 +318,8 @@ async function skip_passed_car_scene() {
     $.buddy.clearThreatSearch();
     $.buddy.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
     $.buddy.setSuffersCriticalHits(false /* FALSE */);
-    $.buddy.giveWeapon(WEAPONTYPE_M4, 9999);
-    $.buddy.setThreatSearch(THREAT_GANG_DIAZ);
+    $.buddy.giveWeapon(26 /* WEAPONTYPE_M4 */, 9999);
+    $.buddy.setThreatSearch(1024 /* THREAT_GANG_DIAZ */);
     $.buddy.setHealth(200);
     $.buddy.setRunning(true /* TRUE */);
     $.buddy.setAsPlayerFriend($.player1, true /* TRUE */);
@@ -328,64 +328,64 @@ async function skip_passed_car_scene() {
   }
 
 
-  balcony_front1 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -375.2, -552.1, 18.7); //Front Door
+  balcony_front1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -375.2, -552.1, 18.7); //Front Door
   balcony_front1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   balcony_front1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   balcony_front1.setThreatSearch(16 /* THREAT_CIVMALE */);
-  balcony_front1.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  balcony_front1.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   balcony_front1.setStayInSamePlace(true /* TRUE */);
   balcony_front1.setCeaseAttackTimer(1500);
   balcony_front1.setHealth(150);
 
 
-  balcony_front2 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -381.7, -552.4, 18.7); //Front Door
+  balcony_front2 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -381.7, -552.4, 18.7); //Front Door
   balcony_front2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   balcony_front2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   balcony_front2.setThreatSearch(16 /* THREAT_CIVMALE */);
-  balcony_front2.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  balcony_front2.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   balcony_front2.setStayInSamePlace(true /* TRUE */);
   balcony_front2.setCeaseAttackTimer(1500);
   balcony_front2.setHealth(150);
 
 
-  $.grounds_gaurd1 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -327.9, -606.5, 12.1); //left back
+  $.grounds_gaurd1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -327.9, -606.5, 12.1); //left back
   $.grounds_gaurd1.setHeading(180.0);
   $.grounds_gaurd1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.grounds_gaurd1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.grounds_gaurd1.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.grounds_gaurd1.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.grounds_gaurd1.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.grounds_gaurd1.setStayInSamePlace(true /* TRUE */);
   $.grounds_gaurd1.setCeaseAttackTimer(1500);
   $.grounds_gaurd1.setHealth(150);
 
 
-  $.grounds_gaurd2 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -363.9, -610.2, 9.6); //low
+  $.grounds_gaurd2 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -363.9, -610.2, 9.6); //low
   $.grounds_gaurd2.setHeading(266.0);
   $.grounds_gaurd2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.grounds_gaurd2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.grounds_gaurd2.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.grounds_gaurd2.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.grounds_gaurd2.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.grounds_gaurd2.setStayInSamePlace(true /* TRUE */);
   $.grounds_gaurd2.setCeaseAttackTimer(1500);
   $.grounds_gaurd2.setHealth(150);
 
 
-  $.grounds_gaurd4 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -392.6, -616.5, 10.9); //left back
+  $.grounds_gaurd4 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -392.6, -616.5, 10.9); //left back
   $.grounds_gaurd4.setHeading(270.0);
   $.grounds_gaurd4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.grounds_gaurd4.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.grounds_gaurd4.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.grounds_gaurd4.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.grounds_gaurd4.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.grounds_gaurd4.setStayInSamePlace(true /* TRUE */);
   $.grounds_gaurd4.setCeaseAttackTimer(1500);
   $.grounds_gaurd4.setHealth(150);
 
 
-  $.chatting_gaurd1 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -303.5, -554.8, 12.1);
+  $.chatting_gaurd1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -303.5, -554.8, 12.1);
   $.chatting_gaurd1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.chatting_gaurd1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.chatting_gaurd1.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.chatting_gaurd1.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.chatting_gaurd1.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.chatting_gaurd1.setStayInSamePlace(true /* TRUE */);
   $.chatting_gaurd1.setHeading(270.0);
   $.chatting_gaurd1.setCeaseAttackTimer(1500);
@@ -394,11 +394,11 @@ async function skip_passed_car_scene() {
   $.chatting_gaurd1.setHealth(150);
 
 
-  $.chatting_gaurd2 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -301.8, -555.0, 12.1);
+  $.chatting_gaurd2 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -301.8, -555.0, 12.1);
   $.chatting_gaurd2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.chatting_gaurd2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.chatting_gaurd2.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.chatting_gaurd2.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.chatting_gaurd2.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.chatting_gaurd2.setStayInSamePlace(true /* TRUE */);
   $.chatting_gaurd2.setHeading(90.0);
   $.chatting_gaurd2.setCeaseAttackTimer(1500);
@@ -408,157 +408,157 @@ async function skip_passed_car_scene() {
   $.chatting_gaurd2.setHealth(150);
 
 
-  $.grounds_gaurd8 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -287.0, -581.8, 12.1);
+  $.grounds_gaurd8 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -287.0, -581.8, 12.1);
   $.grounds_gaurd8.setHeading(90.0);
   $.grounds_gaurd8.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.grounds_gaurd8.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.grounds_gaurd8.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.grounds_gaurd8.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.grounds_gaurd8.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.grounds_gaurd8.setStayInSamePlace(true /* TRUE */);
   $.grounds_gaurd8.setCeaseAttackTimer(1500);
   $.grounds_gaurd8.setHealth(150);
 
 
-  $.maze_gaurd1 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -468.3, -576.2, 11.9); //Maze
+  $.maze_gaurd1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -468.3, -576.2, 11.9); //Maze
   $.maze_gaurd1.setHeading(265.0);
   $.maze_gaurd1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.maze_gaurd1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.maze_gaurd1.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.maze_gaurd1.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.maze_gaurd1.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.maze_gaurd1.setStayInSamePlace(true /* TRUE */);
   $.maze_gaurd1.setCeaseAttackTimer(1500);
   $.maze_gaurd1.setHealth(150);
 
 
-  $.maze_gaurd2 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -471.1, -590.2, 11.9); //Maze
+  $.maze_gaurd2 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -471.1, -590.2, 11.9); //Maze
   $.maze_gaurd2.setHeading(90.0);
   $.maze_gaurd2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.maze_gaurd2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.maze_gaurd2.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.maze_gaurd2.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.maze_gaurd2.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.maze_gaurd2.setStayInSamePlace(true /* TRUE */);
   $.maze_gaurd2.setCeaseAttackTimer(1500);
   $.maze_gaurd2.setHealth(150);
 
 
-  $.maze_chat_gaurd1 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -407.7, -592.3, 10.9); //Maze
+  $.maze_chat_gaurd1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -407.7, -592.3, 10.9); //Maze
   $.maze_chat_gaurd1.setHeading(8.0);
   $.maze_chat_gaurd1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.maze_chat_gaurd1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.maze_chat_gaurd1.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.maze_chat_gaurd1.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.maze_chat_gaurd1.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.maze_chat_gaurd1.setStayInSamePlace(true /* TRUE */);
   $.maze_chat_gaurd1.setCeaseAttackTimer(1500);
   $.maze_chat_gaurd1.setHealth(150);
 
 
-  $.maze_chat_gaurd2 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -407.0, -590.1, 10.6); //Maze
+  $.maze_chat_gaurd2 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -407.0, -590.1, 10.6); //Maze
   $.maze_chat_gaurd2.setHeading(180.0);
   $.maze_chat_gaurd2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.maze_chat_gaurd2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.maze_chat_gaurd2.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.maze_chat_gaurd2.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.maze_chat_gaurd2.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.maze_chat_gaurd2.setStayInSamePlace(true /* TRUE */);
   $.maze_chat_gaurd2.setCeaseAttackTimer(1500);
   $.maze_chat_gaurd2.setHealth(150);
   Game.SetCharsChatting($.maze_chat_gaurd1, $.maze_chat_gaurd2, 999999);
 
 
-  $.door_chat_gaurd1 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -374.2, -518.1, 11.7); //Front door chat
+  $.door_chat_gaurd1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -374.2, -518.1, 11.7); //Front door chat
   $.door_chat_gaurd1.setHeading(230.0);
   $.door_chat_gaurd1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.door_chat_gaurd1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.door_chat_gaurd1.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.door_chat_gaurd1.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.door_chat_gaurd1.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.door_chat_gaurd1.setStayInSamePlace(true /* TRUE */);
   $.door_chat_gaurd1.setCeaseAttackTimer(1500);
   $.door_chat_gaurd1.setHealth(150);
 
 
-  $.door_chat_gaurd2 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -372.0, -519.6, 11.7); //Front door chat
+  $.door_chat_gaurd2 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -372.0, -519.6, 11.7); //Front door chat
   $.door_chat_gaurd2.setHeading(62.0);
   $.door_chat_gaurd2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.door_chat_gaurd2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.door_chat_gaurd2.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.door_chat_gaurd2.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.door_chat_gaurd2.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.door_chat_gaurd2.setStayInSamePlace(true /* TRUE */);
   $.door_chat_gaurd2.setCeaseAttackTimer(1500);
   $.door_chat_gaurd2.setHealth(150);
   Game.SetCharsChatting($.door_chat_gaurd2, $.door_chat_gaurd1, 999999);
 
 
-  $.grounds_gaurd9 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -312.4, -570.2, 12.0); //
+  $.grounds_gaurd9 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -312.4, -570.2, 12.0); //
   $.grounds_gaurd9.setHeading(342.0);
   $.grounds_gaurd9.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.grounds_gaurd9.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.grounds_gaurd9.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.grounds_gaurd9.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.grounds_gaurd9.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.grounds_gaurd9.setStayInSamePlace(true /* TRUE */);
   $.grounds_gaurd9.setCeaseAttackTimer(1500);
   $.grounds_gaurd9.setHealth(150);
 
 
-  $.grounds_gaurd10 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -316.4, -617.7, 9.5); //Lawn
+  $.grounds_gaurd10 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -316.4, -617.7, 9.5); //Lawn
   $.grounds_gaurd10.setHeading(11.0);
   $.grounds_gaurd10.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.grounds_gaurd10.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.grounds_gaurd10.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.grounds_gaurd10.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.grounds_gaurd10.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.grounds_gaurd10.setStayInSamePlace(true /* TRUE */);
   $.grounds_gaurd10.setCeaseAttackTimer(1500);
   $.grounds_gaurd10.setHealth(150);
 
 
-  $.grounds_gaurd11 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -445.0, -574.4, 12.0); //Maze end
+  $.grounds_gaurd11 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -445.0, -574.4, 12.0); //Maze end
   $.grounds_gaurd11.setHeading(180.0);
   $.grounds_gaurd11.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.grounds_gaurd11.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.grounds_gaurd11.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.grounds_gaurd11.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.grounds_gaurd11.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.grounds_gaurd11.setStayInSamePlace(true /* TRUE */);
   $.grounds_gaurd11.setCeaseAttackTimer(1500);
   $.grounds_gaurd10.setHealth(150);
 
 
-  $.grounds_gaurd12 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -293.7, -606.3, 12.0); //
+  $.grounds_gaurd12 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -293.7, -606.3, 12.0); //
   $.grounds_gaurd12.setHeading(0.0);
   $.grounds_gaurd12.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.grounds_gaurd12.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.grounds_gaurd12.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.grounds_gaurd12.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.grounds_gaurd12.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.grounds_gaurd12.setStayInSamePlace(true /* TRUE */);
   $.grounds_gaurd12.setCeaseAttackTimer(1500);
   $.grounds_gaurd12.setHealth(150);
 
 
-  $.grounds_gaurd13 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -343.9, -530.4, 14.4); //
+  $.grounds_gaurd13 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -343.9, -530.4, 14.4); //
   $.grounds_gaurd13.setHeading(280.0);
   $.grounds_gaurd13.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.grounds_gaurd13.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.grounds_gaurd13.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.grounds_gaurd13.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.grounds_gaurd13.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.grounds_gaurd13.setStayInSamePlace(true /* TRUE */);
   $.grounds_gaurd13.setCeaseAttackTimer(1500);
   $.grounds_gaurd13.setHealth(150);
 
 
-  $.grounds_gaurd14 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -442.8, -555.0, 13.1); //	chat maze
+  $.grounds_gaurd14 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -442.8, -555.0, 13.1); //	chat maze
   $.grounds_gaurd14.setHeading(160.0);
   $.grounds_gaurd14.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.grounds_gaurd14.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.grounds_gaurd14.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.grounds_gaurd14.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.grounds_gaurd14.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.grounds_gaurd14.setStayInSamePlace(true /* TRUE */);
   $.grounds_gaurd14.setCeaseAttackTimer(1500);
   $.grounds_gaurd14.setHealth(150);
 
 
-  $.grounds_gaurd15 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -443.7, -557.4, 13.1); // chat maze
+  $.grounds_gaurd15 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -443.7, -557.4, 13.1); // chat maze
   $.grounds_gaurd15.setHeading(345.0);
   $.grounds_gaurd15.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.grounds_gaurd15.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.grounds_gaurd15.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.grounds_gaurd15.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.grounds_gaurd15.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.grounds_gaurd15.setStayInSamePlace(true /* TRUE */);
   $.grounds_gaurd15.setCeaseAttackTimer(1500);
   $.grounds_gaurd15.setHealth(150);
@@ -580,7 +580,7 @@ async function skip_passed_car_scene() {
   Coke_Baron_blip = Blip.AddForCoord(-382.02, -596.57, 24.9);
 
 
-  Coke_Baron = Char.Create(PEDTYPE_GANG_DIAZ, SPECIAL04, -382.02, -596.57, 24.9);
+  Coke_Baron = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, SPECIAL04, -382.02, -596.57, 24.9);
 
 
 
@@ -590,7 +590,7 @@ async function skip_passed_car_scene() {
   Coke_Baron.setHealth(1000);
   Coke_Baron.setHeading(53.0);
   Coke_Baron.setStayInSamePlace(true /* TRUE */);
-  Coke_Baron.setWaitState(WAITSTATE_SIT_IDLE, 99999);
+  Coke_Baron.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 99999);
   Coke_Baron.setCeaseAttackTimer(1500);
 
 
@@ -612,7 +612,7 @@ async function skip_passed_car_scene() {
   Camera.PointAtPoint(-378.119, -597.144, 25.534, 2 /* JUMP_CUT */); //View of baron sitting
 
 
-  Streaming.SetAreaVisible(VIS_MANSION);
+  Streaming.SetAreaVisible(2 /* VIS_MANSION */);
   Streaming.LoadScene(-376.452, -593.374, 26.273);
 
 
@@ -639,7 +639,7 @@ async function skip_passed_car_scene() {
 
 
   if (!(Char.IsDead(Coke_Baron))) {
-    Coke_Baron.setWaitState(WAITSTATE_SIT_UP, 500);
+    Coke_Baron.setWaitState(23 /* WAITSTATE_SIT_UP */, 500);
     Coke_Baron.setObjGotoCoordOnFoot(-383.8, -596.6);
   }
 
@@ -700,7 +700,7 @@ async function skip_passed_car_scene() {
   }
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   Streaming.LoadScene(-277.513, -498.283, 13.227);
   Camera.SetFixedPosition(-278.092, -497.514, 13.499, 0.0, 0.0, 0.0);
   Camera.PointAtPoint(-277.513, -498.283, 13.227, 2 /* JUMP_CUT */); //security camera
@@ -734,7 +734,7 @@ async function skip_passed_car_scene() {
   Camera.PointAtPoint(-382.977, -593.619, 25.612, 2 /* JUMP_CUT */); //view of gun on table
 
 
-  Streaming.SetAreaVisible(VIS_MANSION);
+  Streaming.SetAreaVisible(2 /* VIS_MANSION */);
   Streaming.LoadScene(-376.452, -593.374, 26.273);
 
 
@@ -787,7 +787,7 @@ async function skip_timer_cok5() {
 
 
   Camera.SwitchSecurity(false /* OFF */);
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   Streaming.LoadScene(-282.3, -511.0, 11.7);
   Camera.RestoreJumpcut();
   $.player1.setHeading(100.0);
@@ -926,7 +926,7 @@ async function skip_timer_cok5() {
         if ($.buddy_in_the_maze == 1) {
           if ($.player1.locateAnyMeans3D(-442.6, -574.9, 11.8, 2.0, 2.0, 3.0, false /* FALSE */) && $.buddy.locateAnyMeans3D(-442.6, -574.9, 11.8, 2.0, 2.0, 3.0, false /* FALSE */)) {
             $.buddy.followPlayer($.player1);
-            Game.SetThreatForPedType(PEDTYPE_GANG_DIAZ, 1 /* THREAT_PLAYER1 */);
+            Game.SetThreatForPedType(10 /* PEDTYPE_GANG_DIAZ */, 1 /* THREAT_PLAYER1 */);
             Audio.LoadMissionAudio(2, "ASS_4" as any);
             while (!(Audio.HasMissionAudioLoaded(2))) {
               await asyncWait(0);
@@ -947,7 +947,7 @@ async function skip_timer_cok5() {
         if ($.buddy_in_the_maze == 2) {
           if ($.player1.locateAnyMeans3D(-370.1, -596.4, 9.5, 2.0, 2.0, 3.0, false /* FALSE */) && $.buddy.locateAnyMeans3D(-370.1, -596.4, 9.5, 2.0, 2.0, 3.0, false /* FALSE */)) {
             $.buddy.followPlayer($.player1);
-            Game.SetThreatForPedType(PEDTYPE_GANG_DIAZ, 1 /* THREAT_PLAYER1 */);
+            Game.SetThreatForPedType(10 /* PEDTYPE_GANG_DIAZ */, 1 /* THREAT_PLAYER1 */);
             Audio.LoadMissionAudio(2, "ASS_4" as any);
             while (!(Audio.HasMissionAudioLoaded(2))) {
               await asyncWait(0);
@@ -996,45 +996,45 @@ async function skip_timer_cok5() {
         $.chatting_gaurd1.delete();
         $.chatting_gaurd2.delete();
         $.grounds_gaurd9.delete();
-        $.grounds_gaurd3 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -318.2, -577.1, 15.4); //stair well
+        $.grounds_gaurd3 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -318.2, -577.1, 15.4); //stair well
         $.grounds_gaurd3.setHeading(90.0);
         $.grounds_gaurd3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
         $.grounds_gaurd3.setThreatSearch(1 /* THREAT_PLAYER1 */);
         $.grounds_gaurd3.setThreatSearch(16 /* THREAT_CIVMALE */);
-        $.grounds_gaurd3.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+        $.grounds_gaurd3.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
         $.grounds_gaurd3.setStayInSamePlace(true /* TRUE */);
         $.grounds_gaurd3.setCeaseAttackTimer(1500);
         $.grounds_gaurd3.setHeedThreats(true /* TRUE */);
         $.grounds_gaurd3.setCrouchWhenThreatened(true /* TRUE */);
         $.grounds_gaurd3.setHealth(150);
-        $.grounds_gaurd5 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -324.6, -581.2, 19.0); //stair well
+        $.grounds_gaurd5 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -324.6, -581.2, 19.0); //stair well
         $.grounds_gaurd5.setHeading(305.0);
         $.grounds_gaurd5.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
         $.grounds_gaurd5.setThreatSearch(1 /* THREAT_PLAYER1 */);
         $.grounds_gaurd5.setThreatSearch(16 /* THREAT_CIVMALE */);
-        $.grounds_gaurd5.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+        $.grounds_gaurd5.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
         $.grounds_gaurd5.setStayInSamePlace(true /* TRUE */);
         $.grounds_gaurd5.setCeaseAttackTimer(1500);
         $.grounds_gaurd5.setHeedThreats(true /* TRUE */);
         $.grounds_gaurd5.setCrouchWhenThreatened(true /* TRUE */);
         $.grounds_gaurd5.setHealth(150);
-        $.grounds_gaurd6 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -318.2, -573.4, 22.0); //stair well
+        $.grounds_gaurd6 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -318.2, -573.4, 22.0); //stair well
         $.grounds_gaurd6.setHeading(90.0);
         $.grounds_gaurd6.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
         $.grounds_gaurd6.setThreatSearch(1 /* THREAT_PLAYER1 */);
         $.grounds_gaurd6.setThreatSearch(16 /* THREAT_CIVMALE */);
-        $.grounds_gaurd6.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+        $.grounds_gaurd6.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
         $.grounds_gaurd6.setStayInSamePlace(true /* TRUE */);
         $.grounds_gaurd6.setCeaseAttackTimer(1500);
         $.grounds_gaurd6.setHeedThreats(true /* TRUE */);
         $.grounds_gaurd6.setCrouchWhenThreatened(true /* TRUE */);
         $.grounds_gaurd6.setHealth(150);
-        $.grounds_gaurd7 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -335.5, -568.6, 19.0); //corridor landing 1
+        $.grounds_gaurd7 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -335.5, -568.6, 19.0); //corridor landing 1
         $.grounds_gaurd7.setHeading(180.0);
         $.grounds_gaurd7.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
         $.grounds_gaurd7.setThreatSearch(1 /* THREAT_PLAYER1 */);
         $.grounds_gaurd7.setThreatSearch(16 /* THREAT_CIVMALE */);
-        $.grounds_gaurd7.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+        $.grounds_gaurd7.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
         $.grounds_gaurd7.setStayInSamePlace(true /* TRUE */);
         $.grounds_gaurd7.setCeaseAttackTimer(1500);
         $.grounds_gaurd7.setHeedThreats(true /* TRUE */);
@@ -1043,7 +1043,7 @@ async function skip_timer_cok5() {
         $.buddy_in_the_maze = 0;
         if (!(Char.IsDead($.buddy))) {
           $.buddy.followPlayer($.player1);
-          Game.SetThreatForPedType(PEDTYPE_GANG_DIAZ, 1 /* THREAT_PLAYER1 */);
+          Game.SetThreatForPedType(10 /* PEDTYPE_GANG_DIAZ */, 1 /* THREAT_PLAYER1 */);
           $.buddy.setCoordinates(-341.0, -578.5, 10.9);
         }
         Audio.LoadMissionAudio(1, "ASS_11" as any);
@@ -1088,22 +1088,22 @@ async function skip_timer_cok5() {
   balcony_front2.delete();
 
 
-  front_door1 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -373.5, -564.8, 18.7); //Main hall bottom of stairs
+  front_door1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -373.5, -564.8, 18.7); //Main hall bottom of stairs
   front_door1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   front_door1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   front_door1.setThreatSearch(16 /* THREAT_CIVMALE */);
-  front_door1.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  front_door1.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   front_door1.setHeading(0.0);
   front_door1.setStayInSamePlace(true /* TRUE */);
   front_door1.setCeaseAttackTimer(1500);
   front_door1.setHealth(150);
 
 
-  $.front_door2 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -383.7, -565.3, 18.7); //Main hall bottom of stairs
+  $.front_door2 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -383.7, -565.3, 18.7); //Main hall bottom of stairs
   $.front_door2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.front_door2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.front_door2.setThreatSearch(16 /* THREAT_CIVMALE */);
-  $.front_door2.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  $.front_door2.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   $.front_door2.setHeading(0.0);
   $.front_door2.setStayInSamePlace(true /* TRUE */);
   $.front_door2.setCeaseAttackTimer(1500);
@@ -1111,53 +1111,53 @@ async function skip_timer_cok5() {
   $.front_door2.setHealth(150);
 
 
-  door_goon1 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -376.0, -582.5, 24.5); //Diaz guard1
+  door_goon1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -376.0, -582.5, 24.5); //Diaz guard1
   door_goon1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   door_goon1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   door_goon1.setThreatSearch(16 /* THREAT_CIVMALE */);
-  door_goon1.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  door_goon1.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   door_goon1.setStayInSamePlace(true /* TRUE */);
   door_goon1.setCeaseAttackTimer(1500);
   door_goon1.setHealth(150);
 
 
-  door_goon2 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -380.9, -582.6, 24.5); //Diaz guard2
+  door_goon2 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -380.9, -582.6, 24.5); //Diaz guard2
   door_goon2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   door_goon2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   door_goon2.setThreatSearch(16 /* THREAT_CIVMALE */);
-  door_goon2.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  door_goon2.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   door_goon2.setStayInSamePlace(true /* TRUE */);
   door_goon2.setCeaseAttackTimer(1500);
   door_goon2.setHealth(150);
 
 
-  door_goon3 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -361.6, -559.3, 26.6); //Next to top entrance
+  door_goon3 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -361.6, -559.3, 26.6); //Next to top entrance
   door_goon3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   door_goon3.setThreatSearch(1 /* THREAT_PLAYER1 */);
   door_goon3.setThreatSearch(16 /* THREAT_CIVMALE */);
-  door_goon3.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  door_goon3.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   door_goon3.setStayInSamePlace(true /* TRUE */);
   door_goon3.setHeading(156.6);
   door_goon3.setCeaseAttackTimer(1500);
   door_goon3.setHealth(150);
 
 
-  door_goon4 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -378.2, -560.7, 26.6); //Next to top entrance
+  door_goon4 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -378.2, -560.7, 26.6); //Next to top entrance
   door_goon4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   door_goon4.setThreatSearch(1 /* THREAT_PLAYER1 */);
   door_goon4.setThreatSearch(16 /* THREAT_CIVMALE */);
-  door_goon4.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  door_goon4.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   door_goon4.setStayInSamePlace(true /* TRUE */);
   door_goon4.setHeading(180.0);
   door_goon4.setCeaseAttackTimer(1500);
   door_goon4.setHealth(150);
 
 
-  door_goon5 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -391.6, -566.5, 26.6); //Next to top entrance
+  door_goon5 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -391.6, -566.5, 26.6); //Next to top entrance
   door_goon5.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   door_goon5.setThreatSearch(1 /* THREAT_PLAYER1 */);
   door_goon5.setThreatSearch(16 /* THREAT_CIVMALE */);
-  door_goon5.giveWeapon(3 /* WEAPONTYPE_UZI */, 9999);
+  door_goon5.giveWeapon(23 /* WEAPONTYPE_UZI */, 9999);
   door_goon5.setStayInSamePlace(true /* TRUE */);
   door_goon5.setHeading(248.7);
   door_goon5.setCeaseAttackTimer(1500);
@@ -1194,12 +1194,12 @@ async function skip_timer_cok5() {
 
           World.ClearArea(378.4, -588.4, 24.5, 1.0, true /* TRUE */);
           if (!(Char.IsDead(Coke_Baron))) {
-            Coke_Baron.giveWeapon(WEAPONTYPE_MP5, 30000);
+            Coke_Baron.giveWeapon(25 /* WEAPONTYPE_MP5 */, 30000);
             Coke_Baron.setObjNoObj();
             Coke_Baron.clearWaitState();
             coke_baron.setCoordinates(-378.4, -588.4, 24.5);
             coke_baron.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-            Coke_Baron.setAnimGroup(4 /* ANIM_PLAYER_2ARMED_PED */);
+            Coke_Baron.setAnimGroup(33 /* ANIM_PLAYER_2ARMED_PED */);
             World.ClearArea(-378.4, -575.7, 24.5, 1.0, true /* TRUE */);
             await asyncWait(0);
             if (!(Char.IsDead(Coke_Baron))) {
@@ -1434,37 +1434,37 @@ async function barons_death() {
   }
 
 
-  balcony_front1 = Char.Create(PEDTYPE_GANG_DIAZ, CLb, -392.0, -559.5, 27.5);
+  balcony_front1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLb, -392.0, -559.5, 27.5);
   balcony_front1.setHeading(286.0);
   balcony_front1.setSuffersCriticalHits(false /* FALSE */);
   balcony_front1.explodeHead();
 
 
-  $.grounds_gaurd1 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -393.0, -565.4, 27.5);
+  $.grounds_gaurd1 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -393.0, -565.4, 27.5);
   $.grounds_gaurd1.setHeading(180.0);
   $.grounds_gaurd1.setSuffersCriticalHits(false /* FALSE */);
   $.grounds_gaurd1.explodeHead();
 
 
-  $.grounds_gaurd2 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -382.3, -557.7, 27.5);
+  $.grounds_gaurd2 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -382.3, -557.7, 27.5);
   $.grounds_gaurd2.setHeading(90.0);
   $.grounds_gaurd2.setSuffersCriticalHits(false /* FALSE */);
   $.grounds_gaurd2.explodeHead();
 
 
-  $.grounds_gaurd3 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -371.8, -580.4, 25.5);
+  $.grounds_gaurd3 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -371.8, -580.4, 25.5);
   $.grounds_gaurd3.setHeading(270.0);
   $.grounds_gaurd3.setSuffersCriticalHits(false /* FALSE */);
   $.grounds_gaurd3.explodeHead();
 
 
-  $.grounds_gaurd4 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -389.7, -580.2, 25.5);
+  $.grounds_gaurd4 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -389.7, -580.2, 25.5);
   $.grounds_gaurd4.setHeading(166.0);
   $.grounds_gaurd4.setSuffersCriticalHits(false /* FALSE */);
   $.grounds_gaurd4.explodeHead();
 
 
-  $.grounds_gaurd5 = Char.Create(PEDTYPE_GANG_DIAZ, CLa, -370.3, -559.2, 27.5);
+  $.grounds_gaurd5 = Char.Create(10 /* PEDTYPE_GANG_DIAZ */, CLa, -370.3, -559.2, 27.5);
   $.grounds_gaurd5.setHeading(100.0);
   $.grounds_gaurd5.setSuffersCriticalHits(false /* FALSE */);
   $.grounds_gaurd5.explodeHead();
@@ -1535,7 +1535,7 @@ async function barons_death() {
 
 
   $.cs_mfour = CutsceneObject.Create(CUTOBJ01);
-  $.cs_mfour.attachToBone($.cs_player, BONE_R_HAND);
+  $.cs_mfour.attachToBone($.cs_player, 24 /* BONE_R_HAND */);
 
 
   cs_mfour2 = CutsceneObject.Create(CUTOBJ02);
@@ -1705,7 +1705,7 @@ async function barons_death() {
   World.ClearArea(-379.0, -564.6, 19.8, 40.0, true /* TRUE */);
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   Streaming.LoadScene(-381.8, -536.0, 26.3);
@@ -1752,7 +1752,7 @@ async function barons_death() {
   await asyncWait(500);
 
 
-  Streaming.SetAreaVisible(VIS_MANSION);
+  Streaming.SetAreaVisible(2 /* VIS_MANSION */);
   Streaming.LoadScene(-378.3, -592.4, 24.8);
 
 
@@ -1788,7 +1788,7 @@ async function onFailed() {
           await asyncWait(0);
         }
         if ($.player1.isPlaying()) {
-          Streaming.SetAreaVisible(VIS_MAIN_MAP);
+          Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
           Streaming.LoadScene(-274.4, -492.9, 10.3);
           $.player1.setCoordinates(-274.4, -492.9, 10.3);
           $.player1.setHeading(270.0);
@@ -1832,10 +1832,10 @@ async function mission_baron5_passed() {
   $.heli3_cargen.switch(101);
   $.heli4_cargen.switch(101);
   $.mansion_save_garage11.changeType(31 /* GARAGE_HIDEOUT_ELEVEN */);
-  $.star_gun3 = Pickup.CreateWithAmmo(m4, 14 /* PICKUP_ON_STREET_SLOW */, 120, -330.9, -569.7, 11.6); //In the armoury
-  $.star_gun4 = Pickup.CreateWithAmmo(chromegun, 14 /* PICKUP_ON_STREET_SLOW */, 50, -335.9, -569.5, 11.6); //In the armoury
-  $.star_health3 = Pickup.Create(1362 /* health */, 2 /* PICKUP_ON_STREET */, -330.702, -573.366, 11.6); //In armoury
-  $.star_arm1 = Pickup.Create(1364 /* bodyarmour */, 2 /* PICKUP_ON_STREET */, -336.0, -573.7, 11.6); //In the armoury
+  $.star_gun3 = Pickup.CreateWithAmmo(m4, 15 /* PICKUP_ON_STREET_SLOW */, 120, -330.9, -569.7, 11.6); //In the armoury
+  $.star_gun4 = Pickup.CreateWithAmmo(chromegun, 15 /* PICKUP_ON_STREET_SLOW */, 50, -335.9, -569.5, 11.6); //In the armoury
+  $.star_health3 = Pickup.Create(health, 2 /* PICKUP_ON_STREET */, -330.702, -573.366, 11.6); //In armoury
+  $.star_arm1 = Pickup.Create(bodyarmour, 2 /* PICKUP_ON_STREET */, -336.0, -573.7, 11.6); //In the armoury
   $.mansion_clothes = Pickup.CreateClothes(-384.5, -591.9, 25.3, 1);
   $.mansion_clothes_created = 1;
   $.gen_car51.switch(0);
@@ -1843,14 +1843,14 @@ async function mission_baron5_passed() {
   $.m4_in_stock = 1;
   $.mp5_in_stock = 1;
   $.python_in_stock = 1;
-  // START_NEW_SCRIPT protect_mission1_loop
-  // START_NEW_SCRIPT mansion_save_loop
+  // START_NEW_SCRIPT protect_mission1_loop 
+  // START_NEW_SCRIPT mansion_save_loop 
   //ADD_SHORT_RANGE_SPRITE_BLIP_FOR_COORD -378.3 -597.2 25.8 RADAR_SPRITE_HOUSEG mansion_blip
 
   $.baron_contact_blip.remove();
   $.protect_contact_blip.remove();
   Text.PrintWithNumberBig("M_PASS", 50000, 2000, 1); //"Mission Passed!"
-  $.protect_contact_blip = Blip.AddSpriteForContactPoint(-378.3, -579.8, 24.5, RADAR_SPRITE_TOMMY);
+  $.protect_contact_blip = Blip.AddSpriteForContactPoint(-378.3, -579.8, 24.5, 29 /* RADAR_SPRITE_TOMMY */);
 }
 
 
@@ -1868,7 +1868,7 @@ async function cleanup() {
   Streaming.MarkModelAsNoLongerNeeded(CLb);
   Streaming.MarkModelAsNoLongerNeeded(M4);
   Streaming.MarkModelAsNoLongerNeeded(mp5lng);
-  Streaming.MarkModelAsNoLongerNeeded(178 /* uzi */);
+  Streaming.MarkModelAsNoLongerNeeded(uzi);
   Streaming.MarkModelAsNoLongerNeeded(stallion);
   door_goon1.markAsNoLongerNeeded();
   door_goon2.markAsNoLongerNeeded();
@@ -1964,24 +1964,24 @@ $.player_z = _res97.z;
         if (!(Char.IsDead(door_goon1))) {
           door_goon1.setStayInSamePlace(false /* FALSE */);
           if (!(door_goon1.isWanderPathClear($.player_x, $.player_y, $.player_z, 1.0))) {
-            door_goon1.followPath($.player_x, $.player_y, $.player_z, 1.0, RUN);
+            door_goon1.followPath($.player_x, $.player_y, $.player_z, 1.0, 1 /* RUN */);
           }
         }
         if (!(Char.IsDead(door_goon2))) {
           door_goon2.setStayInSamePlace(false /* FALSE */);
           if (!(door_goon2.isWanderPathClear($.player_x, $.player_y, $.player_z, 1.0))) {
-            door_goon2.followPath($.player_x, $.player_y, $.player_z, 1.0, RUN);
+            door_goon2.followPath($.player_x, $.player_y, $.player_z, 1.0, 1 /* RUN */);
           }
         }
       }
       if (!(Char.IsDead(door_goon3))) {
         if (!(door_goon3.isWanderPathClear($.player_x, $.player_y, $.player_z, 1.0))) {
-          door_goon3.followPath($.player_x, $.player_y, $.player_z, 1.0, RUN);
+          door_goon3.followPath($.player_x, $.player_y, $.player_z, 1.0, 1 /* RUN */);
         }
       }
       if (!(Char.IsDead(door_goon4))) {
         if (!(door_goon4.isWanderPathClear($.player_x, $.player_y, $.player_z, 1.0))) {
-          door_goon4.followPath($.player_x, $.player_y, $.player_z, 1.0, RUN);
+          door_goon4.followPath($.player_x, $.player_y, $.player_z, 1.0, 1 /* RUN */);
         }
       }
       /*IF NOT IS_CHAR_DEAD door_goon5
@@ -1991,7 +1991,7 @@ $.player_z = _res97.z;
       ENDIF*/
       if (!(Char.IsDead(front_door1))) {
         if (!(front_door1.isWanderPathClear($.player_x, $.player_y, $.player_z, 1.0))) {
-          front_door1.followPath($.player_x, $.player_y, $.player_z, 1.0, RUN);
+          front_door1.followPath($.player_x, $.player_y, $.player_z, 1.0, 1 /* RUN */);
         }
       }
       /*IF NOT IS_CHAR_DEAD front_door2
@@ -2016,7 +2016,7 @@ async function buddy_maze_path1() {
   if (TIMERA > 1000) {
     if (!(Char.IsDead($.buddy))) {
       if (!($.buddy.isWanderPathClear(-442.6, -574.9, 11.0, 0.5))) {
-        $.buddy.followPath(-442.6, -574.9, 11.0, 0.5, RUN);
+        $.buddy.followPath(-442.6, -574.9, 11.0, 0.5, 1 /* RUN */);
       }
     }
     TIMERA = 0;
@@ -2032,7 +2032,7 @@ async function buddy_maze_path2() {
   if (TIMERA > 1000) {
     if (!(Char.IsDead($.buddy))) {
       if (!($.buddy.isWanderPathClear(-370.1, -596.4, 9.5, 0.5))) {
-        $.buddy.followPath(-370.1, -596.4, 9.5, 0.5, RUN);
+        $.buddy.followPath(-370.1, -596.4, 9.5, 0.5, 1 /* RUN */);
       }
     }
     TIMERA = 0;
@@ -2053,7 +2053,7 @@ $.player_y = _res98.y;
 $.player_z = _res98.z;
     if (!(Char.IsDead($.buddy))) {
       if (!($.buddy.isWanderPathClear($.player_x, $.player_y, $.player_z, 0.5))) {
-        $.buddy.followPath($.player_x, $.player_y, $.player_z, 0.5, RUN);
+        $.buddy.followPath($.player_x, $.player_y, $.player_z, 0.5, 1 /* RUN */);
       }
     }
     TIMERB = 0;

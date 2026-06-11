@@ -1,6 +1,6 @@
 // Generated from main/carpark_1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 // *****************************************************************************************
 // *****************************************************************************************
@@ -324,8 +324,8 @@ async function body() {
   Text.ClearThisPrint("M_FAIL");
 
 
-  Streaming.RequestModel(1360 /* trafficcone */);
-  while (!(Streaming.HasModelLoaded(1360 /* trafficcone */))) {
+  Streaming.RequestModel(trafficcone);
+  while (!(Streaming.HasModelLoaded(trafficcone))) {
     await asyncWait(0);
   }
 
@@ -347,7 +347,7 @@ async function body() {
       }
     }
     if ($.counter_4x4_pickups == 1 && $.flag_timer == 0) {
-      Hud.DisplayTimer($.$id.timer_4x4, TIMER_DOWN);
+      Hud.DisplayTimer($.$id.timer_4x4, 1 /* TIMER_DOWN */);
       TIMERA = 0;
       $.flag_timer = 1;
     }
@@ -358,7 +358,7 @@ async function body() {
       if ($.player1.locateInCar3D($.x_1, $.y_1, $.z_1, 2.5, 2.5, 3.5, false /* false */)) {
         $.blip_1.remove();
         ++$.counter_4x4_pickups;
-        Sound.AddOneOffSound($.x_1, $.y_1, $.z_1, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_1, $.y_1, $.z_1, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.timer_4x4 = $.timer_4x4 + $.timer_bonus;
         $.flag_blip_1 = 1;
         //PRINT_WITH_NUMBER_NOW (T4X4_3C) counter_4x4_pickups 3000 1
@@ -370,7 +370,7 @@ async function body() {
       if ($.player1.locateInCar3D($.x_2, $.y_2, $.z_2, 2.5, 2.5, 3.5, false /* false */)) {
         $.blip_2.remove();
         ++$.counter_4x4_pickups;
-        Sound.AddOneOffSound($.x_2, $.y_2, $.z_2, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_2, $.y_2, $.z_2, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.timer_4x4 = $.timer_4x4 + $.timer_bonus;
         $.flag_blip_2 = 1;
         //PRINT_WITH_NUMBER_NOW (T4X4_3C) counter_4x4_pickups 3000 1
@@ -382,7 +382,7 @@ async function body() {
       if ($.player1.locateInCar3D($.x_3, $.y_3, $.z_3, 2.5, 2.5, 3.5, false /* false */)) {
         $.blip_3.remove();
         ++$.counter_4x4_pickups;
-        Sound.AddOneOffSound($.x_3, $.y_3, $.z_3, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_3, $.y_3, $.z_3, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.timer_4x4 = $.timer_4x4 + $.timer_bonus;
         $.flag_blip_3 = 1;
         //PRINT_WITH_NUMBER_NOW (T4X4_3C) counter_4x4_pickups 3000 1
@@ -394,7 +394,7 @@ async function body() {
       if ($.player1.locateInCar3D($.x_4, $.y_4, $.z_4, 2.5, 2.5, 3.5, false /* false */)) {
         $.blip_4.remove();
         ++$.counter_4x4_pickups;
-        Sound.AddOneOffSound($.x_4, $.y_4, $.z_4, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_4, $.y_4, $.z_4, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.timer_4x4 = $.timer_4x4 + $.timer_bonus;
         $.flag_blip_4 = 1;
         //PRINT_WITH_NUMBER_NOW (T4X4_3C) counter_4x4_pickups 3000 1
@@ -406,7 +406,7 @@ async function body() {
       if ($.player1.locateInCar3D($.x_5, $.y_5, $.z_5, 2.5, 2.5, 3.5, false /* false */)) {
         $.blip_5.remove();
         ++$.counter_4x4_pickups;
-        Sound.AddOneOffSound($.x_5, $.y_5, $.z_5, 94 /* SOUND_PART_MISSION_COMPLETE */);
+        Sound.AddOneOffSound($.x_5, $.y_5, $.z_5, 1 /* SOUND_PART_MISSION_COMPLETE */);
         $.timer_4x4 = $.timer_4x4 + $.timer_bonus;
         $.flag_blip_5 = 1;
         //PRINT_WITH_NUMBER_NOW (T4X4_3C) counter_4x4_pickups 3000 1
@@ -662,53 +662,53 @@ async function body() {
       while (Camera.GetFadingStatus()) {
         await asyncWait(0);
       }
-      $.cone_1 = ScriptObject.Create(1360 /* trafficcone */, $.x_cone_1, $.y_cone_1, $.z_cone);
+      $.cone_1 = ScriptObject.Create(trafficcone, $.x_cone_1, $.y_cone_1, $.z_cone);
       $.cone_1.setCollision(true /* true */);
       $.cone_1.setDynamic(true /* true */);
-      $.cone_2 = ScriptObject.Create(1360 /* trafficcone */, $.x_cone_2, $.y_cone_2, $.z_cone);
+      $.cone_2 = ScriptObject.Create(trafficcone, $.x_cone_2, $.y_cone_2, $.z_cone);
       $.cone_2.setCollision(true /* true */);
       $.cone_2.setDynamic(true /* true */);
-      $.cone_3 = ScriptObject.Create(1360 /* trafficcone */, $.x_cone_3, $.y_cone_3, $.z_cone);
+      $.cone_3 = ScriptObject.Create(trafficcone, $.x_cone_3, $.y_cone_3, $.z_cone);
       $.cone_3.setCollision(true /* true */);
       $.cone_3.setDynamic(true /* true */);
-      $.cone_4 = ScriptObject.Create(1360 /* trafficcone */, $.x_cone_4, $.y_cone_4, $.z_cone);
+      $.cone_4 = ScriptObject.Create(trafficcone, $.x_cone_4, $.y_cone_4, $.z_cone);
       $.cone_4.setCollision(true /* true */);
       $.cone_4.setDynamic(true /* true */);
-      $.cone_5 = ScriptObject.Create(1360 /* trafficcone */, $.x_cone_5, $.y_cone_5, $.z_cone);
+      $.cone_5 = ScriptObject.Create(trafficcone, $.x_cone_5, $.y_cone_5, $.z_cone);
       $.cone_5.setCollision(true /* true */);
       $.cone_5.setDynamic(true /* true */);
-      $.cone_6 = ScriptObject.Create(1360 /* trafficcone */, $.x_cone_6, $.y_cone_6, $.z_cone);
+      $.cone_6 = ScriptObject.Create(trafficcone, $.x_cone_6, $.y_cone_6, $.z_cone);
       $.cone_6.setCollision(true /* true */);
       $.cone_6.setDynamic(true /* true */);
-      $.cone_7 = ScriptObject.Create(1360 /* trafficcone */, $.x_cone_7, $.y_cone_7, $.z_cone);
+      $.cone_7 = ScriptObject.Create(trafficcone, $.x_cone_7, $.y_cone_7, $.z_cone);
       $.cone_7.setCollision(true /* true */);
       $.cone_7.setDynamic(true /* true */);
-      $.cone_8 = ScriptObject.Create(1360 /* trafficcone */, $.x_cone_8, $.y_cone_8, $.z_cone);
+      $.cone_8 = ScriptObject.Create(trafficcone, $.x_cone_8, $.y_cone_8, $.z_cone);
       $.cone_8.setCollision(true /* true */);
       $.cone_8.setDynamic(true /* true */);
-      $.cone_9 = ScriptObject.Create(1360 /* trafficcone */, $.x_cone_9, $.y_cone_9, $.z_cone);
+      $.cone_9 = ScriptObject.Create(trafficcone, $.x_cone_9, $.y_cone_9, $.z_cone);
       $.cone_9.setCollision(true /* true */);
       $.cone_9.setDynamic(true /* true */);
-      $.cone_10 = ScriptObject.Create(1360 /* trafficcone */, $.x_cone_10, $.y_cone_10, $.z_cone);
+      $.cone_10 = ScriptObject.Create(trafficcone, $.x_cone_10, $.y_cone_10, $.z_cone);
       $.cone_10.setCollision(true /* true */);
       $.cone_10.setDynamic(true /* true */);
-      $.cone_11 = ScriptObject.Create(1360 /* trafficcone */, $.x_cone_11, $.y_cone_11, $.z_cone);
+      $.cone_11 = ScriptObject.Create(trafficcone, $.x_cone_11, $.y_cone_11, $.z_cone);
       $.cone_11.setCollision(true /* true */);
       $.cone_11.setDynamic(true /* true */);
-      $.cone_12 = ScriptObject.Create(1360 /* trafficcone */, $.x_cone_12, $.y_cone_12, $.z_cone);
+      $.cone_12 = ScriptObject.Create(trafficcone, $.x_cone_12, $.y_cone_12, $.z_cone);
       $.cone_12.setCollision(true /* true */);
       $.cone_12.setDynamic(true /* true */);
-      $.cone_13 = ScriptObject.Create(1360 /* trafficcone */, $.x_cone_13, $.y_cone_13, $.z_cone);
+      $.cone_13 = ScriptObject.Create(trafficcone, $.x_cone_13, $.y_cone_13, $.z_cone);
       $.cone_13.setCollision(true /* true */);
       $.cone_13.setDynamic(true /* true */);
-      $.cone_14 = ScriptObject.Create(1360 /* trafficcone */, $.x_cone_14, $.y_cone_14, $.z_cone);
+      $.cone_14 = ScriptObject.Create(trafficcone, $.x_cone_14, $.y_cone_14, $.z_cone);
       $.cone_14.setCollision(true /* true */);
       $.cone_14.setDynamic(true /* true */);
-      $.cone_15 = ScriptObject.Create(1360 /* trafficcone */, $.x_cone_15, $.y_cone_15, $.z_cone);
+      $.cone_15 = ScriptObject.Create(trafficcone, $.x_cone_15, $.y_cone_15, $.z_cone);
       $.cone_15.setCollision(true /* true */);
       $.cone_15.setDynamic(true /* true */);
       await cone_circle();  // SCM GOSUB cone_circle
-      $.cone_32 = ScriptObject.Create(1360 /* trafficcone */, $.circle_x, $.circle_y, $.z_cone);
+      $.cone_32 = ScriptObject.Create(trafficcone, $.circle_x, $.circle_y, $.z_cone);
       $.cone_32.setCollision(true /* true */);
       $.cone_32.setDynamic(true /* true */);
 
@@ -912,7 +912,7 @@ async function cleanup() {
   await delete_cones();  // SCM GOSUB delete_cones
 
 
-  Streaming.MarkModelAsNoLongerNeeded(1360 /* trafficcone */);
+  Streaming.MarkModelAsNoLongerNeeded(trafficcone);
 
 
   Hud.ClearTimer($.$id.timer_4x4);
@@ -944,112 +944,112 @@ async function inner_circle() {
 
 
   if ($.theta == 0.0) {
-    $.cone_16 = ScriptObject.Create(1360 /* trafficcone */, $.cone_x, $.cone_y, $.z_cone);
+    $.cone_16 = ScriptObject.Create(trafficcone, $.cone_x, $.cone_y, $.z_cone);
     $.cone_16.setCollision(true /* true */);
     $.cone_16.setDynamic(true /* true */);
   }
 
 
   if ($.theta == 18.0) {
-    $.cone_17 = ScriptObject.Create(1360 /* trafficcone */, $.cone_x, $.cone_y, $.z_cone);
+    $.cone_17 = ScriptObject.Create(trafficcone, $.cone_x, $.cone_y, $.z_cone);
     $.cone_17.setCollision(true /* true */);
     $.cone_17.setDynamic(true /* true */);
   }
 
 
   if ($.theta == 36.0) {
-    $.cone_18 = ScriptObject.Create(1360 /* trafficcone */, $.cone_x, $.cone_y, $.z_cone);
+    $.cone_18 = ScriptObject.Create(trafficcone, $.cone_x, $.cone_y, $.z_cone);
     $.cone_18.setCollision(true /* true */);
     $.cone_18.setDynamic(true /* true */);
   }
 
 
   if ($.theta == 54.0) {
-    $.cone_19 = ScriptObject.Create(1360 /* trafficcone */, $.cone_x, $.cone_y, $.z_cone);
+    $.cone_19 = ScriptObject.Create(trafficcone, $.cone_x, $.cone_y, $.z_cone);
     $.cone_19.setCollision(true /* true */);
     $.cone_19.setDynamic(true /* true */);
   }
 
 
   if ($.theta == 72.0) {
-    $.cone_20 = ScriptObject.Create(1360 /* trafficcone */, $.cone_x, $.cone_y, $.z_cone);
+    $.cone_20 = ScriptObject.Create(trafficcone, $.cone_x, $.cone_y, $.z_cone);
     $.cone_20.setCollision(true /* true */);
     $.cone_20.setDynamic(true /* true */);
   }
 
 
   if ($.theta == 90.0) {
-    $.cone_21 = ScriptObject.Create(1360 /* trafficcone */, $.cone_x, $.cone_y, $.z_cone);
+    $.cone_21 = ScriptObject.Create(trafficcone, $.cone_x, $.cone_y, $.z_cone);
     $.cone_21.setCollision(true /* true */);
     $.cone_21.setDynamic(true /* true */);
   }
 
 
   if ($.theta == 108.0) {
-    $.cone_22 = ScriptObject.Create(1360 /* trafficcone */, $.cone_x, $.cone_y, $.z_cone);
+    $.cone_22 = ScriptObject.Create(trafficcone, $.cone_x, $.cone_y, $.z_cone);
     $.cone_22.setCollision(true /* true */);
     $.cone_22.setDynamic(true /* true */);
   }
 
 
   if ($.theta == 126.0) {
-    $.cone_23 = ScriptObject.Create(1360 /* trafficcone */, $.cone_x, $.cone_y, $.z_cone);
+    $.cone_23 = ScriptObject.Create(trafficcone, $.cone_x, $.cone_y, $.z_cone);
     $.cone_23.setCollision(true /* true */);
     $.cone_23.setDynamic(true /* true */);
   }
 
 
   if ($.theta == 144.0) {
-    $.cone_24 = ScriptObject.Create(1360 /* trafficcone */, $.cone_x, $.cone_y, $.z_cone);
+    $.cone_24 = ScriptObject.Create(trafficcone, $.cone_x, $.cone_y, $.z_cone);
     $.cone_24.setCollision(true /* true */);
     $.cone_24.setDynamic(true /* true */);
   }
 
 
   if ($.theta == 162.0) {
-    $.cone_25 = ScriptObject.Create(1360 /* trafficcone */, $.cone_x, $.cone_y, $.z_cone);
+    $.cone_25 = ScriptObject.Create(trafficcone, $.cone_x, $.cone_y, $.z_cone);
     $.cone_25.setCollision(true /* true */);
     $.cone_25.setDynamic(true /* true */);
   }
 
 
   if ($.theta == 180.0) {
-    $.cone_26 = ScriptObject.Create(1360 /* trafficcone */, $.cone_x, $.cone_y, $.z_cone);
+    $.cone_26 = ScriptObject.Create(trafficcone, $.cone_x, $.cone_y, $.z_cone);
     $.cone_26.setCollision(true /* true */);
     $.cone_26.setDynamic(true /* true */);
   }
 
 
   if ($.theta == 198.0) {
-    $.cone_27 = ScriptObject.Create(1360 /* trafficcone */, $.cone_x, $.cone_y, $.z_cone);
+    $.cone_27 = ScriptObject.Create(trafficcone, $.cone_x, $.cone_y, $.z_cone);
     $.cone_27.setCollision(true /* true */);
     $.cone_27.setDynamic(true /* true */);
   }
 
 
   if ($.theta == 216.0) {
-    $.cone_28 = ScriptObject.Create(1360 /* trafficcone */, $.cone_x, $.cone_y, $.z_cone);
+    $.cone_28 = ScriptObject.Create(trafficcone, $.cone_x, $.cone_y, $.z_cone);
     $.cone_28.setCollision(true /* true */);
     $.cone_28.setDynamic(true /* true */);
   }
 
 
   if ($.theta == 234.0) {
-    $.cone_29 = ScriptObject.Create(1360 /* trafficcone */, $.cone_x, $.cone_y, $.z_cone);
+    $.cone_29 = ScriptObject.Create(trafficcone, $.cone_x, $.cone_y, $.z_cone);
     $.cone_29.setCollision(true /* true */);
     $.cone_29.setDynamic(true /* true */);
   }
 
 
   if ($.theta == 252.0) {
-    $.cone_30 = ScriptObject.Create(1360 /* trafficcone */, $.cone_x, $.cone_y, $.z_cone);
+    $.cone_30 = ScriptObject.Create(trafficcone, $.cone_x, $.cone_y, $.z_cone);
     $.cone_30.setCollision(true /* true */);
     $.cone_30.setDynamic(true /* true */);
   }
 
 
   if ($.theta == 270.0) {
-    $.cone_31 = ScriptObject.Create(1360 /* trafficcone */, $.cone_x, $.cone_y, $.z_cone);
+    $.cone_31 = ScriptObject.Create(trafficcone, $.cone_x, $.cone_y, $.z_cone);
     $.cone_31.setCollision(true /* true */);
     $.cone_31.setDynamic(true /* true */);
   }

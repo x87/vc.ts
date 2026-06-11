@@ -1,6 +1,6 @@
 // Generated from main/hait3.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_haitian3() {
 
@@ -553,7 +553,7 @@ async function mission_start_haitian3() {
   Streaming.LoadScene(-962.697, 149.793, 10.21);
 
 
-  Streaming.SetAreaVisible(VIS_POLICE_STATION);
+  Streaming.SetAreaVisible(12 /* VIS_POLICE_STATION */);
 
 
   World.SetExtraColors(13, false /* FALSE */);
@@ -746,7 +746,7 @@ async function mission_start_haitian3() {
   }
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   Streaming.LoadScene(-962.53, 141.69, 8.25);
@@ -769,7 +769,7 @@ async function mission_start_haitian3() {
   // ****************************************END OF CUTSCENE**********************************
 
 
-  $.player1.setMood(PLAYER_MOOD_CALM, 60000);
+  $.player1.setMood(0 /* PLAYER_MOOD_CALM */, 60000);
 
   //Request the models for the mission
 
@@ -811,7 +811,7 @@ async function mission_start_haitian3() {
   }
 
 
-  $.distance_check_targ_hait3 = Char.Create(PEDTYPE_GANG_CUBAN, CBa, -886.519, 41.28, 10.55);
+  $.distance_check_targ_hait3 = Char.Create(7 /* PEDTYPE_GANG_CUBAN */, CBa, -886.519, 41.28, 10.55);
 
 
   $.distance_check_targ_hait3.delete();
@@ -912,7 +912,7 @@ async function mission_start_haitian3() {
   }
 
 
-  $.player1.giveWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */, 30);
+  $.player1.giveWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */, 30);
 
   // waiting for the player1 to kill all the cubans at fight location one
 
@@ -2551,43 +2551,43 @@ async function ambush2_hait3() {
     $.ambush_cuban4_hait3 = Char.Create(4 /* PEDTYPE_CIVMALE */, CBa, -862.426, 59.084, 8.38);
     $.ambush_cuban4_blip_hait3 = Blip.AddForChar($.ambush_cuban4_hait3);
     $.ambush_cuban4_hait3.clearThreatSearch();
-    $.ambush_cuban4_hait3.setThreatSearch(THREAT_GANG_HAITIAN);
+    $.ambush_cuban4_hait3.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
     $.ambush_cuban4_hait3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
     $.ambush_cuban4_hait3.setObjRunToCoord($.fight1_x_hait3, $.fight1_y_hait3);
     $.cuban4_goto_position_hait3 = 1;
     $.ambush_cuban5_hait3 = Char.Create(4 /* PEDTYPE_CIVMALE */, CBb, -864.075, 59.570, 8.38);
     $.ambush_cuban5_hait3.clearThreatSearch();
     $.ambush_cuban5_blip_hait3 = Blip.AddForChar($.ambush_cuban5_hait3);
-    $.ambush_cuban5_hait3.setThreatSearch(THREAT_GANG_HAITIAN);
+    $.ambush_cuban5_hait3.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
     $.ambush_cuban5_hait3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
     $.ambush_cuban5_hait3.setObjRunToCoord($.fight1_x_hait3, $.fight1_y_hait3);
     $.cuban5_goto_position_hait3 = 1;
     $.ambush_cuban6_hait3 = Char.Create(4 /* PEDTYPE_CIVMALE */, CBa, -865.799, 60.488, 8.38);
     $.ambush_cuban6_hait3.clearThreatSearch();
     $.ambush_cuban6_blip_hait3 = Blip.AddForChar($.ambush_cuban6_hait3);
-    $.ambush_cuban6_hait3.setThreatSearch(THREAT_GANG_HAITIAN);
-    $.ambush_cuban6_hait3.giveWeapon(WEAPONTYPE_KATANA, 1);
+    $.ambush_cuban6_hait3.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
+    $.ambush_cuban6_hait3.giveWeapon(10 /* WEAPONTYPE_KATANA */, 1);
     $.ambush_cuban6_hait3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
     $.ambush_cuban6_hait3.setObjRunToCoord($.fight1_x_hait3, $.fight1_y_hait3);
     $.cuban6_goto_position_hait3 = 1;
     $.ambush_cuban7_hait3 = Char.Create(4 /* PEDTYPE_CIVMALE */, CBb, -868.311, 61.519, 8.38);
     $.ambush_cuban7_hait3.clearThreatSearch();
     $.ambush_cuban7_blip_hait3 = Blip.AddForChar($.ambush_cuban7_hait3);
-    $.ambush_cuban7_hait3.setThreatSearch(THREAT_GANG_HAITIAN);
+    $.ambush_cuban7_hait3.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
     $.ambush_cuban7_hait3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
     $.ambush_cuban7_hait3.setObjRunToCoord($.fight1_x_hait3, $.fight1_y_hait3);
     $.cuban7_goto_position_hait3 = 1;
     $.ambush_cuban8_hait3 = Char.Create(4 /* PEDTYPE_CIVMALE */, CBa, -870.435, 62.566, 8.38);
     $.ambush_cuban8_hait3.clearThreatSearch();
     $.ambush_cuban8_blip_hait3 = Blip.AddForChar($.ambush_cuban8_hait3);
-    $.ambush_cuban8_hait3.setThreatSearch(THREAT_GANG_HAITIAN);
+    $.ambush_cuban8_hait3.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
     $.ambush_cuban8_hait3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
     $.ambush_cuban8_hait3.setObjRunToCoord($.fight1_x_hait3, $.fight1_y_hait3);
     $.cuban8_goto_position_hait3 = 1;
     $.ambush_cuban9_hait3 = Char.Create(4 /* PEDTYPE_CIVMALE */, CBb, -872.876, 63.476, 8.38);
     $.ambush_cuban9_hait3.clearThreatSearch();
     $.ambush_cuban9_blip_hait3 = Blip.AddForChar($.ambush_cuban9_hait3);
-    $.ambush_cuban9_hait3.setThreatSearch(THREAT_GANG_HAITIAN);
+    $.ambush_cuban9_hait3.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
     $.ambush_cuban9_hait3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
     $.ambush_cuban9_hait3.setObjRunToCoord($.fight1_x_hait3, $.fight1_y_hait3);
     $.cuban9_goto_position_hait3 = 1;
@@ -3733,7 +3733,7 @@ async function all_guys_death_check_hait3() {
       if (Char.IsDead($.gosub_death_check_bloke_hait3)) {
         if ($.gosub_death_check_bloke_hait3.hasBeenDamagedByChar($.scplayer)) {
           $.gosub_death_check_bloke_hait3.clearLastDamageEntity();
-          if ($.gosub_death_check_bloke_hait3.hasBeenDamagedByWeapon(WEAPONTYPE_ANYMELEE) || $.gosub_death_check_bloke_hait3.hasBeenDamagedByWeapon(16 /* WEAPONTYPE_RAMMEDBYCAR */) || $.gosub_death_check_bloke_hait3.hasBeenDamagedByWeapon(17 /* WEAPONTYPE_RUNOVERBYCAR */) || $.gosub_death_check_bloke_hait3.hasBeenDamagedByWeapon(WEAPONTYPE_ANYWEAPON)) {
+          if ($.gosub_death_check_bloke_hait3.hasBeenDamagedByWeapon(46 /* WEAPONTYPE_ANYMELEE */) || $.gosub_death_check_bloke_hait3.hasBeenDamagedByWeapon(39 /* WEAPONTYPE_RAMMEDBYCAR */) || $.gosub_death_check_bloke_hait3.hasBeenDamagedByWeapon(40 /* WEAPONTYPE_RUNOVERBYCAR */) || $.gosub_death_check_bloke_hait3.hasBeenDamagedByWeapon(47 /* WEAPONTYPE_ANYWEAPON */)) {
             $.gosub_death_check_bloke_hait3.clearLastWeaponDamage();
             $.player_spotted_melee_hait3 = 1;
           }

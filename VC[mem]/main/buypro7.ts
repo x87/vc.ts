@@ -1,6 +1,6 @@
 // Generated from main/buypro7.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_hycobuy() {
 
@@ -27,17 +27,17 @@ async function mission_start_hycobuy() {
   while (Camera.GetFadingStatus()) {
     await asyncWait(0);
     if (!($.player1.isPlaying())) {
-      $.hycobuy_blip = Blip.AddShortRangeSpriteForContactPoint($.hycobuyX, $.hycobuyY, $.hycobuyZ, RADAR_SPRITE_SAVEHOUSE);
+      $.hycobuy_blip = Blip.AddShortRangeSpriteForContactPoint($.hycobuyX, $.hycobuyY, $.hycobuyZ, 19 /* RADAR_SPRITE_SAVEHOUSE */);
       $.hycobuy_blip.changeDisplay(2 /* BLIP_ONLY */);
-      // START_NEW_SCRIPT hycosave1_save_loop
+      // START_NEW_SCRIPT hycosave1_save_loop 
       return; // TERMINATE_THIS_SCRIPT
     }
   }
 
 
-  $.hycobuy_blip = Blip.AddShortRangeSpriteForContactPoint($.hycobuyX, $.hycobuyY, $.hycobuyZ, RADAR_SPRITE_SAVEHOUSE);
+  $.hycobuy_blip = Blip.AddShortRangeSpriteForContactPoint($.hycobuyX, $.hycobuyY, $.hycobuyZ, 19 /* RADAR_SPRITE_SAVEHOUSE */);
   $.hycobuy_blip.changeDisplay(2 /* BLIP_ONLY */);
-  // START_NEW_SCRIPT hycosave1_save_loop
+  // START_NEW_SCRIPT hycosave1_save_loop 
 
 
   World.ClearArea(-833.8110, 1304.0696, 10.5131, 1.0, true /* TRUE */);
@@ -67,7 +67,7 @@ async function mission_start_hycobuy() {
   $.safehouse_created2 = 1;
   Text.PrintWithNumberBig("HYCOBUY", $.hycobuy_price, 5000, 6); //"Hyman Condo purchased: $ 15000"
   Stat.AddMoneySpentOnProperty($.hycobuy_price);
-  Stat.SetPropertyAsOwned(PROP_HYMAN_CONDO);
+  Stat.SetPropertyAsOwned(14 /* PROP_HYMAN_CONDO */);
   //hycobuy_price *= -1
   //ADD_SCORE player1 hycobuy_price
 

@@ -1,6 +1,6 @@
 // Generated from main/bankj1.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_bankjob1() {
 
@@ -497,7 +497,7 @@ async function mission_start_bankjob1() {
   Path.SwitchPedRoadsOff(376.66, -453.85, -10.00, 328.91, -504.02, 30.0); //Cop Shop (Used in bank1)
 
 
-  $.door_sliding_bankjob1 = Sound.AddContinuous(385.49, -509.0, 9.6, SOUND_BANK_ALARM_LOOP);
+  $.door_sliding_bankjob1 = Sound.AddContinuous(385.49, -509.0, 9.6, 0 /* SOUND_BANK_ALARM_LOOP */);
   $.door_sliding_bankjob1.remove();
 
 
@@ -518,7 +518,7 @@ async function mission_start_bankjob1() {
   Streaming.LoadSpecialModel(CUTOBJ02, "clchr");
 
 
-  Streaming.SetAreaVisible(VIS_MALIBU_CLUB);
+  Streaming.SetAreaVisible(17 /* VIS_MALIBU_CLUB */);
 
 
   Streaming.LoadScene(481.03, -64.21, 8.98);
@@ -710,7 +710,7 @@ async function mission_start_bankjob1() {
   Camera.SetBehindPlayer();
 
 
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
 
 
   Streaming.LoadScene(493.1, -82.4, 9.8);
@@ -721,7 +721,7 @@ async function mission_start_bankjob1() {
   $.flag_player_in_malibu = 0;
 
 
-  $.player1.setMood(PLAYER_MOOD_CALM, 60000);
+  $.player1.setMood(0 /* PLAYER_MOOD_CALM */, 60000);
 
 
   if (!($.cams_celldoor.hasBeenDamaged())) {
@@ -752,19 +752,19 @@ async function mission_start_bankjob1() {
 
   Streaming.RequestModel(COP);
   Streaming.LoadSpecialCharacter(3, "IGMIKE"); //CAM Jones
-  Streaming.RequestModel(178 /* UZI */);
+  Streaming.RequestModel(UZI);
   Streaming.RequestModel(SENTINEL);
 
 
 
-  while (!(Streaming.HasModelLoaded(COP)) || !(Streaming.HasModelLoaded(178 /* UZI */)) || !(Streaming.HasSpecialCharacterLoaded(3)) || !(Streaming.HasModelLoaded(SENTINEL))) {
+  while (!(Streaming.HasModelLoaded(COP)) || !(Streaming.HasModelLoaded(UZI)) || !(Streaming.HasSpecialCharacterLoaded(3)) || !(Streaming.HasModelLoaded(SENTINEL))) {
     await asyncWait(0);
 
 
   }
 
 
-  $.health_bankjob1 = Pickup.Create(1362 /* health */, 3 /* PICKUP_ONCE */, 366.9, -491.80, 13.5);
+  $.health_bankjob1 = Pickup.Create(health, 3 /* PICKUP_ONCE */, 366.9, -491.80, 13.5);
 
   // creates the safecracker
 
@@ -788,7 +788,7 @@ async function mission_start_bankjob1() {
   $.safecracker_bankjob1.setNeverTargeted(true /* TRUE */);
 
 
-  $.safecracker_bankjob1.setWaitState(WAITSTATE_SIT_DOWN, 1000000);
+  $.safecracker_bankjob1.setWaitState(21 /* WAITSTATE_SIT_DOWN */, 1000000);
 
 
   Text.PrintNow("BJM1_1", 4000, 1); //"Break the safecracker out of police custody!"
@@ -841,7 +841,7 @@ async function mission_start_bankjob1() {
   $.cop2_bankjob1.setHeading(352.371);
 
 
-  $.cop2_bankjob1.setWaitState(WAITSTATE_SIT_DOWN, 1000000);
+  $.cop2_bankjob1.setWaitState(21 /* WAITSTATE_SIT_DOWN */, 1000000);
 
   // Creates cop3 at info desk sitting a computer on left hand side cowardly cop ducks most of the time
 
@@ -864,7 +864,7 @@ async function mission_start_bankjob1() {
   $.cop3_bankjob1.setHeading(105.497);
 
 
-  $.cop3_bankjob1.setWaitState(WAITSTATE_SIT_DOWN, 1000000);
+  $.cop3_bankjob1.setWaitState(21 /* WAITSTATE_SIT_DOWN */, 1000000);
 
   // Creates cop4 guy with key for cells in upstrairs office left hand side - large office
 
@@ -887,7 +887,7 @@ async function mission_start_bankjob1() {
   $.cop4_bankjob1.setHeading(11.32);
 
 
-  $.cop4_bankjob1.setWaitState(WAITSTATE_SIT_DOWN, 1000000);
+  $.cop4_bankjob1.setWaitState(21 /* WAITSTATE_SIT_DOWN */, 1000000);
 
   // Creates cop5 in sitting at desk
 
@@ -933,7 +933,7 @@ async function mission_start_bankjob1() {
   $.cop6_bankjob1.setHeading(326.965);
 
 
-  $.cop6_bankjob1.setWaitState(WAITSTATE_SIT_DOWN, 1000000);
+  $.cop6_bankjob1.setWaitState(21 /* WAITSTATE_SIT_DOWN */, 1000000);
 
   // Creates cop8 in middle of floor chats
 
@@ -956,7 +956,7 @@ async function mission_start_bankjob1() {
   $.cop8_bankjob1.setHeading(289.756);
 
 
-  $.cop8_bankjob1.setWaitState(WAITSTATE_SIT_DOWN, 1000000);
+  $.cop8_bankjob1.setWaitState(21 /* WAITSTATE_SIT_DOWN */, 1000000);
 
   // Creates cop9 in top floor in office in chair next to cop 10
 
@@ -976,7 +976,7 @@ async function mission_start_bankjob1() {
   $.cop9_bankjob1.setHeading(168.022);
 
 
-  $.cop9_bankjob1.setWaitState(WAITSTATE_SIT_DOWN, 1000000);
+  $.cop9_bankjob1.setWaitState(21 /* WAITSTATE_SIT_DOWN */, 1000000);
 
   // Creates cop10 seat facing into office right hand side
 
@@ -996,7 +996,7 @@ async function mission_start_bankjob1() {
   $.cop10_bankjob1.setHeading(177.095);
 
 
-  $.cop10_bankjob1.setWaitState(WAITSTATE_SIT_DOWN, 1000000);
+  $.cop10_bankjob1.setWaitState(21 /* WAITSTATE_SIT_DOWN */, 1000000);
 
   // Creates cop 7 filing cabinet in the middle of the floor
 
@@ -1016,7 +1016,7 @@ async function mission_start_bankjob1() {
   $.cop7_bankjob1.setHeading(47.54);
 
 
-  $.cop7_bankjob1.setWaitState(WAITSTATE_USE_ATM, 1000);
+  $.cop7_bankjob1.setWaitState(25 /* WAITSTATE_USE_ATM */, 1000);
 
 
   $.cop7_sitting_bankjob1 = 1;
@@ -1039,7 +1039,7 @@ async function mission_start_bankjob1() {
   $.cop11_bankjob1.setHeading(232.192);
 
 
-  $.cop11_bankjob1.setWaitState(WAITSTATE_USE_ATM, 1000);
+  $.cop11_bankjob1.setWaitState(25 /* WAITSTATE_USE_ATM */, 1000);
 
 
   $.cop11_sitting_bankjob1 = 1;
@@ -1053,7 +1053,7 @@ async function mission_start_bankjob1() {
   $.sphere_bankjob1 = Sphere.Create(407.90, -486.35, 11.35, 1.0);
 
 
-  $.snore_bank1 = Sound.AddContinuous(405.565, -488.547, 12.69, SOUND_SNORING_LOOP);
+  $.snore_bank1 = Sound.AddContinuous(405.565, -488.547, 12.69, 6 /* SOUND_SNORING_LOOP */);
 
 
   $.blob_flag = 1;
@@ -1190,7 +1190,7 @@ async function mission_start_bankjob1() {
       if (TIMERB >= 1000) {
         if ($.kill_player_flag_bankjob1 == 1) {
           if ($.alarm_sound_added_bankjob1 == 0) {
-            $.alarm_bankjob1 = Sound.AddContinuous(385.49, -509.0, 9.6, SOUND_BANK_ALARM_LOOP);
+            $.alarm_bankjob1 = Sound.AddContinuous(385.49, -509.0, 9.6, 0 /* SOUND_BANK_ALARM_LOOP */);
             $.player1.alterWantedLevelNoDrop(4);
             $.alarm_sound_added_bankjob1 = 1;
           }
@@ -1253,7 +1253,7 @@ $.player_z_bankjob1 = _res39.z;
         if ($.flag_cell_door_open_bankjob1 == 1) {
           if ($.player1.locateOnFootChar3D($.safecracker_bankjob1, 4.0, 4.0, 4.0, false /* FALSE */)) {
             $.safecracker_bankjob1.followPlayer($.player1);
-            $.safecracker_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // set to infinate ammo
+            $.safecracker_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // set to infinate ammo
             $.safecracker_bankjob1.setRunning(true /* TRUE */);
             $.radar_blip_ped1_bankjob1.remove();
             $.kill_player_flag_bankjob1 = 1;
@@ -1300,7 +1300,7 @@ $.player_z_bankjob1 = _res39.z;
 
         }
         else {
-          $.safecracker_bankjob1.setWaitState(WAITSTATE_SIT_IDLE, 1000000);
+          $.safecracker_bankjob1.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 1000000);
         }
 
 
@@ -1665,7 +1665,7 @@ async function mission_bankjob1_passed() {
   Stat.PlayerMadeProgress(1);
   Audio.PlayMissionPassedTune(1);
   $.player1.clearWantedLevel();
-  // START_NEW_SCRIPT bankjob_mission2_loop
+  // START_NEW_SCRIPT bankjob_mission2_loop 
 }
 
 
@@ -1684,7 +1684,7 @@ async function mission_cleanup_bankjob1() {
   $.safecracker_bankjob1.removeElegantly();
 
 
-  $.gun_beach11 = Pickup.Create(nitestick, 14 /* PICKUP_ON_STREET_SLOW */, 402.4, -488.3, 12.4); //Inside Police Station
+  $.gun_beach11 = Pickup.Create(nitestick, 15 /* PICKUP_ON_STREET_SLOW */, 402.4, -488.3, 12.4); //Inside Police Station
   $.health_bankjob1.remove();
 
 
@@ -1694,7 +1694,7 @@ async function mission_cleanup_bankjob1() {
   $.key_bankjob1.remove();
   $.alarm_bankjob1.remove();
   Streaming.MarkModelAsNoLongerNeeded(COP);
-  Streaming.MarkModelAsNoLongerNeeded(178 /* UZI */);
+  Streaming.MarkModelAsNoLongerNeeded(UZI);
 
 
   Streaming.MarkModelAsNoLongerNeeded(SENTINEL);
@@ -1817,7 +1817,7 @@ async function cop_death_check() {
       $.cop2_health_bank1 = $.cop2_bankjob1.getHealth();
       if ($.kill_player_flag_bankjob1 == 0) {
         if ($.cop2_sitting_bankjob1 == 1) {
-          $.cop2_bankjob1.setWaitState(WAITSTATE_SIT_IDLE, 1000);
+          $.cop2_bankjob1.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 1000);
         }
         if ($.player1.isTargetingChar($.cop2_bankjob1) || $.cop2_health_bank1 <= 95) {
           $.kill_player_flag_bankjob1 = 1;
@@ -1853,7 +1853,7 @@ async function cop_death_check() {
       $.cop3_health_bank1 = $.cop3_bankjob1.getHealth();
       if ($.kill_player_flag_bankjob1 == 0) {
         if ($.cop3_sitting_bankjob1 == 1) {
-          $.cop3_bankjob1.setWaitState(WAITSTATE_SIT_IDLE, 1000);
+          $.cop3_bankjob1.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 1000);
         }
         if ($.player1.isTargetingChar($.cop3_bankjob1) || $.cop3_health_bank1 <= 95) {
           $.kill_player_flag_bankjob1 = 1;
@@ -1889,7 +1889,7 @@ async function cop_death_check() {
       $.cop4_health_bank1 = $.cop4_bankjob1.getHealth();
       if ($.kill_player_flag_bankjob1 == 0) {
         if ($.cop4_sitting_bankjob1 == 1) {
-          $.cop4_bankjob1.setWaitState(WAITSTATE_SIT_IDLE, 1000);
+          $.cop4_bankjob1.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 1000);
         }
         if ($.player1.isTargetingChar($.cop4_bankjob1) || $.cop4_health_bank1 <= 95) {
           $.kill_player_flag_bankjob1 = 1;
@@ -1958,7 +1958,7 @@ async function cop_death_check() {
       $.cop6_health_bank1 = $.cop6_bankjob1.getHealth();
       if ($.kill_player_flag_bankjob1 == 0) {
         if ($.cop6_sitting_bankjob1 == 1) {
-          $.cop6_bankjob1.setWaitState(WAITSTATE_SIT_IDLE, 1000);
+          $.cop6_bankjob1.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 1000);
         }
         if ($.player1.isTargetingChar($.cop6_bankjob1) || $.cop6_health_bank1 <= 95) {
           $.kill_player_flag_bankjob1 = 1;
@@ -1994,7 +1994,7 @@ async function cop_death_check() {
       $.cop7_health_bank1 = $.cop7_bankjob1.getHealth();
       if ($.kill_player_flag_bankjob1 == 0) {
         if ($.cop7_sitting_bankjob1 == 1) {
-          $.cop7_bankjob1.setWaitState(WAITSTATE_USE_ATM, 1000);
+          $.cop7_bankjob1.setWaitState(25 /* WAITSTATE_USE_ATM */, 1000);
         }
         if ($.player1.isTargetingChar($.cop7_bankjob1) || $.cop7_health_bank1 <= 95) {
           $.kill_player_flag_bankjob1 = 1;
@@ -2034,7 +2034,7 @@ async function cop_death_check() {
           $.kill_player_flag_bankjob1 = 1;
         }
         if ($.cop8_sitting_bankjob1 == 1) {
-          $.cop8_bankjob1.setWaitState(WAITSTATE_SIT_IDLE, 1000);
+          $.cop8_bankjob1.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 1000);
         }
 
 
@@ -2070,7 +2070,7 @@ async function cop_death_check() {
           $.kill_player_flag_bankjob1 = 1;
         }
         if ($.cop9_sitting_bankjob1 == 1) {
-          $.cop9_bankjob1.setWaitState(WAITSTATE_SIT_IDLE, 1000);
+          $.cop9_bankjob1.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 1000);
         }
 
 
@@ -2106,7 +2106,7 @@ async function cop_death_check() {
           $.kill_player_flag_bankjob1 = 1;
         }
         if ($.cop10_sitting_bankjob1 == 1) {
-          $.cop10_bankjob1.setWaitState(WAITSTATE_SIT_IDLE, 1000);
+          $.cop10_bankjob1.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 1000);
         }
 
 
@@ -2139,7 +2139,7 @@ async function cop_death_check() {
       $.cop11_health_bank1 = $.cop11_bankjob1.getHealth();
       if ($.kill_player_flag_bankjob1 == 0) {
         if ($.cop11_sitting_bankjob1 == 1) {
-          $.cop11_bankjob1.setWaitState(WAITSTATE_USE_ATM, 1000);
+          $.cop11_bankjob1.setWaitState(25 /* WAITSTATE_USE_ATM */, 1000);
         }
         if ($.player1.isTargetingChar($.cop11_bankjob1) || $.cop11_health_bank1 <= 95) {
           $.kill_player_flag_bankjob1 = 1;
@@ -2194,7 +2194,7 @@ async function cop_area_check() {
             if ($.player1.locateOnFootChar2D($.cop1_bankjob1, 2.0, 2.0, false /* FALSE */)) {
               if ($.times_done_gun_cop1_bankjob1 == 0) {
                 $.cop1_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                $.cop1_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
+                $.cop1_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
                 $.cop1_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
                 $.cop1_bankjob1.setStayInSamePlace(true /* TRUE */);
                 $.cop1_bankjob1.setObjKillPlayerOnFoot($.player1);
@@ -2215,7 +2215,7 @@ async function cop_area_check() {
               if ($.timer_gun_cop1_bankjob1 >= 20) {
                 if ($.flag_cop1_got_gun_bankjob1 == 0) {
                   $.cop1_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                  $.cop1_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
+                  $.cop1_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
                   $.cop1_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
                   $.cop1_bankjob1.setStayInSamePlace(true /* TRUE */);
                   $.cop1_bankjob1.setObjKillPlayerOnFoot($.player1);
@@ -2232,7 +2232,7 @@ async function cop_area_check() {
               if ($.flag_cop1_got_gun_bankjob1 == 1) {
                 $.cop1_bankjob1.setObjNoObj();
                 $.cop1_bankjob1.clearThreatSearch();
-                $.cop1_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 0);
+                $.cop1_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 0);
                 $.flag_cop1_got_gun_bankjob1 = 0;
               }
               if ($.flag_duck_cop1 == 0) {
@@ -2248,7 +2248,7 @@ async function cop_area_check() {
                 $.cop1_bankjob1.setWaitState(0 /* WAITSTATE_FALSE */, 0);
                 if ($.flag_cop1_got_gun_bankjob1 == 0) {
                   $.cop1_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                  $.cop1_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+                  $.cop1_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
                   $.flag_cop1_got_gun_bankjob1 = 1;
                 }
                 $.cop1_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -2264,7 +2264,7 @@ async function cop_area_check() {
           else {
             if ($.times_done_gun_cop1_bankjob1 == 0) {
               $.cop1_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-              $.cop1_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+              $.cop1_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
               $.cop1_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
               $.cop1_bankjob1.setStayInSamePlace(true /* TRUE */);
               $.cop1_bankjob1.setObjKillPlayerOnFoot($.player1);
@@ -2283,7 +2283,7 @@ async function cop_area_check() {
             if ($.timer_gun_cop1_bankjob1 >= 20) {
               if ($.flag_cop1_got_gun_bankjob1 == 0) {
                 $.cop1_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                $.cop1_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+                $.cop1_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
                 $.cop1_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
                 $.cop1_bankjob1.setStayInSamePlace(true /* TRUE */);
                 $.cop1_bankjob1.setObjKillPlayerOnFoot($.player1);
@@ -2327,7 +2327,7 @@ async function cop_area_check() {
             if ($.player1.locateOnFootChar2D($.cop2_bankjob1, 2.0, 2.0, false /* FALSE */)) {
               if ($.times_done_gun_cop2_bankjob1 == 0) {
                 $.cop2_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                $.cop2_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
+                $.cop2_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
                 $.cop2_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
                 $.cop2_bankjob1.setStayInSamePlace(true /* TRUE */);
                 $.cop2_bankjob1.setObjKillPlayerOnFoot($.player1);
@@ -2346,7 +2346,7 @@ async function cop_area_check() {
               if ($.timer_gun_cop2_bankjob1 >= 20) {
                 if ($.flag_cop2_got_gun_bankjob1 == 0) {
                   $.cop2_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                  $.cop2_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
+                  $.cop2_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
                   $.cop2_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
                   $.cop2_bankjob1.setStayInSamePlace(true /* TRUE */);
                   $.cop2_bankjob1.setObjKillPlayerOnFoot($.player1);
@@ -2363,7 +2363,7 @@ async function cop_area_check() {
               if ($.flag_cop2_got_gun_bankjob1 == 1) {
                 $.cop2_bankjob1.setObjNoObj();
                 $.cop2_bankjob1.clearThreatSearch();
-                $.cop2_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 0);
+                $.cop2_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 0);
                 $.flag_cop2_got_gun_bankjob1 = 0;
               }
               if ($.flag_duck_cop2 == 0) {
@@ -2379,7 +2379,7 @@ async function cop_area_check() {
                 $.cop2_bankjob1.setWaitState(0 /* WAITSTATE_FALSE */, 0);
                 if ($.flag_cop2_got_gun_bankjob1 == 0) {
                   $.cop2_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                  $.cop2_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+                  $.cop2_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
                   $.flag_cop2_got_gun_bankjob1 = 1;
                 }
                 $.cop2_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -2395,7 +2395,7 @@ async function cop_area_check() {
           else {
             if ($.times_done_gun_cop2_bankjob1 == 0) {
               $.cop2_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-              $.cop2_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+              $.cop2_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
               $.cop2_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
               $.cop2_bankjob1.setStayInSamePlace(true /* TRUE */);
               $.cop2_bankjob1.setObjKillPlayerOnFoot($.player1);
@@ -2414,7 +2414,7 @@ async function cop_area_check() {
             if ($.timer_gun_cop2_bankjob1 >= 20) {
               if ($.flag_cop2_got_gun_bankjob1 == 0) {
                 $.cop2_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                $.cop2_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+                $.cop2_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
                 $.cop2_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
                 $.cop2_bankjob1.setStayInSamePlace(true /* TRUE */);
                 $.cop2_bankjob1.setObjKillPlayerOnFoot($.player1);
@@ -2431,7 +2431,7 @@ async function cop_area_check() {
         }
         else {
           if ($.kill_player_flag_bankjob1 == 0) {
-            $.cop2_bankjob1.setWaitState(WAITSTATE_SIT_IDLE, 10);
+            $.cop2_bankjob1.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 10);
           }
 
 
@@ -2465,7 +2465,7 @@ async function cop_area_check() {
             if ($.player1.locateOnFootChar2D($.cop3_bankjob1, 2.0, 2.0, false /* FALSE */)) {
               if ($.times_done_gun_cop3_bankjob1 == 0) {
                 $.cop3_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                $.cop3_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
+                $.cop3_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
                 $.cop3_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
                 $.cop3_bankjob1.setStayInSamePlace(true /* TRUE */);
                 $.cop3_bankjob1.setObjKillPlayerOnFoot($.player1);
@@ -2484,7 +2484,7 @@ async function cop_area_check() {
               if ($.timer_gun_cop3_bankjob1 >= 20) {
                 if ($.flag_cop3_got_gun_bankjob1 == 0) {
                   $.cop3_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                  $.cop3_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
+                  $.cop3_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
                   $.cop3_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
                   $.cop3_bankjob1.setStayInSamePlace(true /* TRUE */);
                   $.cop3_bankjob1.setObjKillPlayerOnFoot($.player1);
@@ -2501,7 +2501,7 @@ async function cop_area_check() {
               if ($.flag_cop3_got_gun_bankjob1 == 1) {
                 $.cop3_bankjob1.setObjNoObj();
                 $.cop3_bankjob1.clearThreatSearch();
-                $.cop3_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 0);
+                $.cop3_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 0);
                 $.flag_cop3_got_gun_bankjob1 = 0;
               }
               if ($.flag_duck_cop3 == 0) {
@@ -2517,7 +2517,7 @@ async function cop_area_check() {
                 $.cop3_bankjob1.setWaitState(0 /* WAITSTATE_FALSE */, 0);
                 if ($.flag_cop3_got_gun_bankjob1 == 0) {
                   $.cop3_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                  $.cop3_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+                  $.cop3_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
                   $.flag_cop3_got_gun_bankjob1 = 1;
                 }
                 $.cop3_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -2533,7 +2533,7 @@ async function cop_area_check() {
           else {
             if ($.times_done_gun_cop3_bankjob1 == 0) {
               $.cop3_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-              $.cop3_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+              $.cop3_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
               $.cop3_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
               $.cop3_bankjob1.setStayInSamePlace(true /* TRUE */);
               $.cop3_bankjob1.setObjKillPlayerOnFoot($.player1);
@@ -2552,7 +2552,7 @@ async function cop_area_check() {
             if ($.timer_gun_cop3_bankjob1 >= 20) {
               if ($.flag_cop3_got_gun_bankjob1 == 0) {
                 $.cop3_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                $.cop3_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000);
+                $.cop3_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000);
                 $.cop3_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
                 $.cop3_bankjob1.setStayInSamePlace(true /* TRUE */);
                 $.cop3_bankjob1.setObjKillPlayerOnFoot($.player1);
@@ -2569,7 +2569,7 @@ async function cop_area_check() {
         }
         else {
           if ($.kill_player_flag_bankjob1 == 0) {
-            $.cop3_bankjob1.setWaitState(WAITSTATE_SIT_IDLE, 10);
+            $.cop3_bankjob1.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 10);
           }
 
 
@@ -2603,7 +2603,7 @@ async function cop_area_check() {
             if ($.player1.locateOnFootChar2D($.cop4_bankjob1, 2.0, 2.0, false /* FALSE */)) {
               if ($.times_done_gun_cop4_bankjob1 == 0) {
                 $.cop4_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                $.cop4_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
+                $.cop4_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
                 $.cop4_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
                 $.cop4_bankjob1.setStayInSamePlace(true /* TRUE */);
                 $.cop4_bankjob1.setObjKillPlayerOnFoot($.player1);
@@ -2622,7 +2622,7 @@ async function cop_area_check() {
               if ($.timer_gun_cop4_bankjob1 >= 20) {
                 if ($.flag_cop4_got_gun_bankjob1 == 0) {
                   $.cop4_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                  $.cop4_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
+                  $.cop4_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
                   $.cop4_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
                   $.cop4_bankjob1.setStayInSamePlace(true /* TRUE */);
                   $.cop4_bankjob1.setObjKillPlayerOnFoot($.player1);
@@ -2639,7 +2639,7 @@ async function cop_area_check() {
               if ($.flag_cop4_got_gun_bankjob1 == 1) {
                 $.cop4_bankjob1.setObjNoObj();
                 $.cop4_bankjob1.clearThreatSearch();
-                $.cop4_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 0); // sets gun to no ammo
+                $.cop4_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 0); // sets gun to no ammo
                 $.flag_cop4_got_gun_bankjob1 = 0;
               }
               if ($.flag_duck_cop4 == 0) {
@@ -2655,7 +2655,7 @@ async function cop_area_check() {
                 $.cop4_bankjob1.setWaitState(0 /* WAITSTATE_FALSE */, 0);
                 if ($.flag_cop4_got_gun_bankjob1 == 0) {
                   $.cop4_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                  $.cop4_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
+                  $.cop4_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
                   $.flag_cop4_got_gun_bankjob1 = 1;
                 }
                 $.cop4_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -2670,7 +2670,7 @@ async function cop_area_check() {
           else {
             if ($.times_done_gun_cop4_bankjob1 == 0) {
               $.cop4_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-              $.cop4_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
+              $.cop4_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
               $.cop4_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
               $.cop4_bankjob1.setStayInSamePlace(true /* TRUE */);
               $.cop4_bankjob1.setObjKillPlayerOnFoot($.player1);
@@ -2689,7 +2689,7 @@ async function cop_area_check() {
             if ($.timer_gun_cop4_bankjob1 >= 20) {
               if ($.flag_cop4_got_gun_bankjob1 == 0) {
                 $.cop4_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                $.cop4_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
+                $.cop4_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
                 $.cop4_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
                 $.cop4_bankjob1.setStayInSamePlace(true /* TRUE */);
                 $.cop4_bankjob1.setObjKillPlayerOnFoot($.player1);
@@ -2706,7 +2706,7 @@ async function cop_area_check() {
         }
         else {
           if ($.kill_player_flag_bankjob1 == 0) {
-            $.cop4_bankjob1.setWaitState(WAITSTATE_SIT_IDLE, 10);
+            $.cop4_bankjob1.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 10);
           }
 
 
@@ -2727,13 +2727,13 @@ async function cop_area_check() {
       }
       else {
         if ($.flag_cop5_got_gun_bankjob1 == 0) {
-          $.cop5_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // Unlimited ammo
-          $.cop5_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+          $.cop5_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // Unlimited ammo
+          $.cop5_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
           $.cop5_bankjob1.setObjKillPlayerOnFoot($.player1);
           $.flag_cop5_got_gun_bankjob1 = 1;
         }
         if ($.timer_guards_react_bank1 == 2) {
-          $.cop5_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+          $.cop5_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
           $.cop5_bankjob1.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -2765,7 +2765,7 @@ async function cop_area_check() {
             if ($.player1.locateOnFootChar2D($.cop6_bankjob1, 2.0, 2.0, false /* FALSE */)) {
               if ($.times_done_gun_cop6_bankjob1 == 0) {
                 $.cop6_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                $.cop6_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
+                $.cop6_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
                 $.cop6_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
                 $.cop6_bankjob1.setStayInSamePlace(true /* TRUE */);
                 $.cop6_bankjob1.setObjKillPlayerOnFoot($.player1);
@@ -2784,7 +2784,7 @@ async function cop_area_check() {
               if ($.timer_gun_cop6_bankjob1 >= 20) {
                 if ($.flag_cop6_got_gun_bankjob1 == 0) {
                   $.cop6_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                  $.cop6_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
+                  $.cop6_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
                   $.cop6_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
                   $.cop6_bankjob1.setStayInSamePlace(true /* TRUE */);
                   $.cop6_bankjob1.setObjKillPlayerOnFoot($.player1);
@@ -2801,7 +2801,7 @@ async function cop_area_check() {
               if ($.flag_cop6_got_gun_bankjob1 == 1) {
                 $.cop6_bankjob1.setObjNoObj();
                 $.cop6_bankjob1.clearThreatSearch();
-                $.cop6_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 0); // sets gun to no ammo
+                $.cop6_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 0); // sets gun to no ammo
                 $.flag_cop6_got_gun_bankjob1 = 0;
               }
               if ($.flag_duck_cop6 == 0) {
@@ -2817,7 +2817,7 @@ async function cop_area_check() {
                 $.cop6_bankjob1.setWaitState(0 /* WAITSTATE_FALSE */, 0);
                 if ($.flag_cop6_got_gun_bankjob1 == 0) {
                   $.cop6_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                  $.cop6_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
+                  $.cop6_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
                   $.flag_cop6_got_gun_bankjob1 = 1;
                 }
                 $.cop6_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
@@ -2833,7 +2833,7 @@ async function cop_area_check() {
           else {
             if ($.times_done_gun_cop6_bankjob1 == 0) {
               $.cop6_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-              $.cop6_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
+              $.cop6_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
               $.cop6_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
               $.cop6_bankjob1.setObjKillPlayerOnFoot($.player1);
               $.cop6_bankjob1.setStayInSamePlace(true /* TRUE */);
@@ -2852,7 +2852,7 @@ async function cop_area_check() {
             if ($.timer_gun_cop6_bankjob1 >= 20) {
               if ($.flag_cop6_got_gun_bankjob1 == 0) {
                 $.cop6_bankjob1.turnToFaceCoord($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1);
-                $.cop6_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
+                $.cop6_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // sets gun to infinate ammo
                 $.cop6_bankjob1.setThreatSearch(1 /* THREAT_PLAYER1 */);
                 $.cop6_bankjob1.setStayInSamePlace(true /* TRUE */);
                 $.cop6_bankjob1.setObjKillPlayerOnFoot($.player1);
@@ -2869,7 +2869,7 @@ async function cop_area_check() {
         }
         else {
           if ($.kill_player_flag_bankjob1 == 0) {
-            $.cop6_bankjob1.setWaitState(WAITSTATE_SIT_IDLE, 10);
+            $.cop6_bankjob1.setWaitState(24 /* WAITSTATE_SIT_IDLE */, 10);
           }
 
 
@@ -2890,13 +2890,13 @@ async function cop_area_check() {
       }
       else {
         if ($.flag_cop7_got_gun_bankjob1 == 0) {
-          $.cop7_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // Unlimited ammo
-          $.cop7_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+          $.cop7_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // Unlimited ammo
+          $.cop7_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
           $.cop7_bankjob1.setObjKillPlayerOnFoot($.player1);
           $.flag_cop7_got_gun_bankjob1 = 1;
         }
         if ($.timer_guards_react_bank1 == 2) {
-          $.cop7_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+          $.cop7_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
           $.cop7_bankjob1.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -2915,13 +2915,13 @@ async function cop_area_check() {
       }
       else {
         if ($.flag_cop8_got_gun_bankjob1 == 0) {
-          $.cop8_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // Unlimited ammo
-          $.cop8_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+          $.cop8_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // Unlimited ammo
+          $.cop8_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
           $.cop8_bankjob1.setObjKillPlayerOnFoot($.player1);
           $.flag_cop8_got_gun_bankjob1 = 1;
         }
         if ($.timer_guards_react_bank1 == 2) {
-          $.cop8_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+          $.cop8_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
           $.cop8_bankjob1.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -2940,13 +2940,13 @@ async function cop_area_check() {
       }
       else {
         if ($.flag_cop9_got_gun_bankjob1 == 0) {
-          $.cop9_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // Unlimited ammo
-          $.cop9_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+          $.cop9_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // Unlimited ammo
+          $.cop9_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
           $.cop9_bankjob1.setObjKillPlayerOnFoot($.player1);
           $.flag_cop9_got_gun_bankjob1 = 1;
         }
         if ($.timer_guards_react_bank1 == 2) {
-          $.cop9_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+          $.cop9_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
           $.cop9_bankjob1.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -2965,13 +2965,13 @@ async function cop_area_check() {
       }
       else {
         if ($.flag_cop10_got_gun_bankjob1 == 0) {
-          $.cop10_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // Unlimited ammo
-          $.cop10_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+          $.cop10_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // Unlimited ammo
+          $.cop10_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
           $.cop10_bankjob1.setObjKillPlayerOnFoot($.player1);
           $.flag_cop10_got_gun_bankjob1 = 1;
         }
         if ($.timer_guards_react_bank1 == 2) {
-          $.cop10_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+          $.cop10_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
           $.cop10_bankjob1.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -2990,13 +2990,13 @@ async function cop_area_check() {
       }
       else {
         if ($.flag_cop11_got_gun_bankjob1 == 0) {
-          $.cop11_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // Unlimited ammo
-          $.cop11_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+          $.cop11_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // Unlimited ammo
+          $.cop11_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
           $.cop11_bankjob1.setObjKillPlayerOnFoot($.player1);
           $.flag_cop11_got_gun_bankjob1 = 1;
         }
         if ($.timer_guards_react_bank1 == 2) {
-          $.cop11_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+          $.cop11_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
           $.cop11_bankjob1.setObjKillPlayerOnFoot($.player1);
         }
 
@@ -3058,7 +3058,7 @@ async function key_check_bankjob1() {
         Camera.SetFixedPosition(387.22, -506.517, 9.194, 0.0, 0.0, 0.0);
         Camera.PointAtPoint(386.633, -507.287, 9.430, 2 /* JUMP_CUT */);
         $.scplayer.turnToFaceCoord(384.932, -510.077, 9.848);
-        $.scplayer.setWaitState(WAITSTATE_USE_ATM, 100000);
+        $.scplayer.setWaitState(25 /* WAITSTATE_USE_ATM */, 100000);
         TIMERA = 0;
         while (TIMERA < 3000) {
           await asyncWait(0);
@@ -3067,7 +3067,7 @@ async function key_check_bankjob1() {
           }
           if (TIMERA >= 2000) {
             if ($.flag_played_card_beep_bank1 == 0) {
-              Sound.AddOneOffSound(384.932, -510.077, 9.848, SOUND_WILLIE_CARD_SWIPE);
+              Sound.AddOneOffSound(384.932, -510.077, 9.848, 18 /* SOUND_WILLIE_CARD_SWIPE */);
               $.flag_played_card_beep_bank1 = 1;
             }
 
@@ -3084,11 +3084,11 @@ async function key_check_bankjob1() {
           while (!($.cams_celldoor.slide(383.252, -506.903, 9.68, 0.01, 0.01, 0.0, false /* FALSE */)) || !(Audio.HasMissionAudioLoaded(1)) || !(Audio.HasMissionAudioLoaded(2))) {
             await asyncWait(0);
             if ($.door_sfx1_bankjob1 == 0) {
-              Sound.AddOneOffSound(383.252, -506.903, 9.68, SOUND_POLICE_CELL_DOOR_CLUNK);
+              Sound.AddOneOffSound(383.252, -506.903, 9.68, 3 /* SOUND_POLICE_CELL_DOOR_CLUNK */);
               $.door_sfx1_bankjob1 = 1;
             }
             if ($.door_sfx1_bankjob1 == 1) {
-              $.door_sliding_bankjob1 = Sound.AddContinuous(383.252, -506.903, 9.68, SOUND_POLICE_CELL_DOOR_SLIDING_LOOP);
+              $.door_sliding_bankjob1 = Sound.AddContinuous(383.252, -506.903, 9.68, 2 /* SOUND_POLICE_CELL_DOOR_SLIDING_LOOP */);
               $.door_sfx1_bankjob1 = 2;
             }
             if (Char.IsDead($.safecracker_bankjob1)) {
@@ -3099,7 +3099,7 @@ async function key_check_bankjob1() {
           }
           $.door_sliding_bankjob1.remove();
           if ($.door_sfx1_bankjob1 == 2) {
-            Sound.AddOneOffSound(383.252, -506.903, 9.68, SOUND_POLICE_CELL_DOOR_CLUNK);
+            Sound.AddOneOffSound(383.252, -506.903, 9.68, 3 /* SOUND_POLICE_CELL_DOOR_CLUNK */);
             $.door_sfx1_bankjob1 = 3;
           }
           $.flag_doors_moved_bankjob1 = 1;
@@ -3314,7 +3314,7 @@ async function player_armed_bankjob1() {
 
   if ($.uniform_pickedup_bankjob1 == 0) {
     if ($.player1.isInAngledAreaOnFoot3D(393.174, -470.686, 10.0, 386.992, -478.052, 15.0, 8.20, false /* FALSE */) || $.player1.isInAngledAreaOnFoot3D(389.12, -478.56, 10.34, 379.50, -489.40, 14.0, 4.0, false /* FALSE */) || $.player1.isInAngledAreaOnFoot3D(397.983, -479.156, 10.0, 394.546, -483.252, 15.0, 3.30, false /* FALSE */) || $.player1.isInAngledAreaOnFoot3D(401.651, -480.614, 10.0, 397.416, -485.66, 15.0, 9.40, false /* FALSE */) || $.player1.isInAngledAreaOnFoot3D(407.682, -480.576, 10.0, 405.289, -483.392, 15.0, 4.80, false /* FALSE */) || $.player1.isInAngledAreaOnFoot3D(389.12, -478.56, 10.34, 379.50, -489.40, 14.0, 4.0, false /* FALSE */)) {
-      if (!($.player1.isCurrentWeapon(0 /* WEAPONTYPE_UNARMED */)) && !($.player1.isCurrentWeapon(WEAPONTYPE_BRASSKNUCKLE))) {
+      if (!($.player1.isCurrentWeapon(0 /* WEAPONTYPE_UNARMED */)) && !($.player1.isCurrentWeapon(1 /* WEAPONTYPE_BRASSKNUCKLE */))) {
         if ($.player_had_gun_warning_bank1 == 0) {
           Audio.LoadMissionAudio(1, "bjm1_20" as any);
           $.player_had_gun_warning_bank1 = 1;
@@ -3707,8 +3707,8 @@ async function guard_AI_bankjob1() {
   if ($.flag_created_bloke_in_area_bankjob1 == 1) {
     if (!(Char.IsDead($.guard_number_bankjob1))) {
       if ($.guard_number_bankjob1.locateOnFoot3D(381.53, -490.91, 11.35, 1.0, 1.0, 2.0, false /* FALSE */)) {
-        $.guard_number_bankjob1.giveWeapon(3 /* WEAPONTYPE_UZI */, 30000); // Set to infinate ammo
-        $.guard_number_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+        $.guard_number_bankjob1.giveWeapon(23 /* WEAPONTYPE_UZI */, 30000); // Set to infinate ammo
+        $.guard_number_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
         $.guard_number_bankjob1.setObjKillPlayerOnFoot($.player1);
         $.flag_created_bloke_in_area_bankjob1 = 2;
       }
@@ -3738,7 +3738,7 @@ async function alarm_guard_death_check_bankjob1() {
     }
     else {
       if ($.timer_alarm_guards_react_bank1 == 2) {
-        $.created_guard1_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+        $.created_guard1_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
         $.created_guard1_bankjob1.setObjKillPlayerOnFoot($.player1);
       }
 
@@ -3757,7 +3757,7 @@ async function alarm_guard_death_check_bankjob1() {
     }
     else {
       if ($.timer_alarm_guards_react_bank1 == 2) {
-        $.created_guard2_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+        $.created_guard2_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
         $.created_guard2_bankjob1.setObjKillPlayerOnFoot($.player1);
       }
 
@@ -3776,7 +3776,7 @@ async function alarm_guard_death_check_bankjob1() {
     }
     else {
       if ($.timer_alarm_guards_react_bank1 == 2) {
-        $.created_guard3_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+        $.created_guard3_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
         $.created_guard3_bankjob1.setObjKillPlayerOnFoot($.player1);
       }
 
@@ -3795,7 +3795,7 @@ async function alarm_guard_death_check_bankjob1() {
     }
     else {
       if ($.timer_alarm_guards_react_bank1 == 2) {
-        $.created_guard4_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+        $.created_guard4_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
         $.created_guard4_bankjob1.setObjKillPlayerOnFoot($.player1);
       }
 
@@ -3814,7 +3814,7 @@ async function alarm_guard_death_check_bankjob1() {
     }
     else {
       if ($.timer_alarm_guards_react_bank1 == 2) {
-        $.created_guard5_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+        $.created_guard5_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
         $.created_guard5_bankjob1.setObjKillPlayerOnFoot($.player1);
       }
 
@@ -3833,7 +3833,7 @@ async function alarm_guard_death_check_bankjob1() {
     }
     else {
       if ($.timer_alarm_guards_react_bank1 == 2) {
-        $.created_guard6_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+        $.created_guard6_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
         $.created_guard6_bankjob1.setObjKillPlayerOnFoot($.player1);
       }
 
@@ -3852,7 +3852,7 @@ async function alarm_guard_death_check_bankjob1() {
     }
     else {
       if ($.timer_alarm_guards_react_bank1 == 2) {
-        $.created_guard7_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+        $.created_guard7_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
         $.created_guard7_bankjob1.setObjKillPlayerOnFoot($.player1);
       }
 
@@ -3871,7 +3871,7 @@ async function alarm_guard_death_check_bankjob1() {
     }
     else {
       if ($.timer_alarm_guards_react_bank1 == 2) {
-        $.created_guard8_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, RUN);
+        $.created_guard8_bankjob1.followPath($.player_x_bankjob1, $.player_y_bankjob1, $.player_z_bankjob1, 0.5, 1 /* RUN */);
         $.created_guard8_bankjob1.setObjKillPlayerOnFoot($.player1);
       }
 

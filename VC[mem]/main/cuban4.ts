@@ -1,6 +1,6 @@
 // Generated from main/cuban4.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_cuban4() {
 
@@ -54,7 +54,7 @@ async function mission_start_cuban4() {
 
   // ****************************************START OF CUTSCENE********************************
 
-  Streaming.SetAreaVisible(VIS_COFFEE_SHOP);
+  Streaming.SetAreaVisible(7 /* VIS_COFFEE_SHOP */);
   Cutscene.DisableShadows();
   World.ClearAreaOfChars(-1174.8, -609.0, 10.4, -116.3, -632.5, 15.3);
   World.SetCarDensityMultiplier(0.0);
@@ -397,7 +397,7 @@ async function mission_start_cuban4() {
   Streaming.UnloadSpecialCharacter(5);
   Streaming.MarkModelAsNoLongerNeeded(CUTOBJ01);
   Streaming.MarkModelAsNoLongerNeeded(CUTOBJ02);
-  Streaming.SetAreaVisible(VIS_MAIN_MAP);
+  Streaming.SetAreaVisible(0 /* VIS_MAIN_MAP */);
   $.flag_player_in_cafe = 0;
   World.SetCarDensityMultiplier(1.0);
   World.SetPedDensityMultiplier(1.0);
@@ -416,10 +416,10 @@ async function mission_start_cuban4() {
   Camera.SetBehindPlayer();
   //------------------REQUEST_MODELS ------------------------------
 
-  $.player1.setMood(PLAYER_MOOD_PISSED_OFF, 60000);
+  $.player1.setMood(1 /* PLAYER_MOOD_PISSED_OFF */, 60000);
 
 
-  Game.SetThreatForPedType(PEDTYPE_GANG_HAITIAN, 1 /* THREAT_PLAYER1 */);
+  Game.SetThreatForPedType(8 /* PEDTYPE_GANG_HAITIAN */, 1 /* THREAT_PLAYER1 */);
 
 
   Streaming.RequestModel(HNa);
@@ -452,9 +452,9 @@ async function mission_start_cuban4() {
     $.bombplace3 = Blip.AddForCoord(-1198.9, 108.3, 11.1);
     $.meetingplace1_blip = Blip.AddForCoord(-1037.4, 172.3, 10.0);
     $.final_meeting_place_blip = Blip.AddForCoord(-1084.1, 70.2, 10.8);
-    $.random_haitian1 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1197.9, 82.5, 10.1);
-    $.random_haitian2 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1189.0, 83.6, 10.1);
-    $.random_haitian3 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1190.5, 68.5, 10.1);
+    $.random_haitian1 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1197.9, 82.5, 10.1);
+    $.random_haitian2 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1189.0, 83.6, 10.1);
+    $.random_haitian3 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1190.5, 68.5, 10.1);
   }
 
   //closing gate
@@ -472,9 +472,9 @@ async function mission_start_cuban4() {
 
   //pepe
 
-  $.cuban_trojan1 = Char.Create(PEDTYPE_GANG_GOLFER, CBb, -1170.0, -607.0, 10.6);
+  $.cuban_trojan1 = Char.Create(14 /* PEDTYPE_GANG_GOLFER */, CBb, -1170.0, -607.0, 10.6);
   $.cuban_trojan1.setAsPlayerFriend($.player1, true /* TRUE */);
-  $.cuban_trojan1.giveWeapon(WEAPONTYPE_tec9, 30000);
+  $.cuban_trojan1.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
   $.cuban_trojan1.clearThreatSearch();
   $.cuban_trojan1.setOnlyDamagedByPlayer(true /* TRUE */);
   $.cuban_trojan1.setCantBeDraggedOut(true /* TRUE */);
@@ -490,18 +490,18 @@ async function mission_start_cuban4() {
   //creating haitian doorman
 
 
-  $.haitian_doorman = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1116.8, 74.3, 10.1);
+  $.haitian_doorman = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1116.8, 74.3, 10.1);
   $.haitian_doorman.setHeading(234.8);
-  $.haitian_doorman.giveWeapon(WEAPONTYPE_tec9, 30000);
+  $.haitian_doorman.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
   $.haitian_doorman.clearThreatSearch();
   $.haitian_doorman.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.haitian_doorman.setHeedThreats(true /* TRUE */);
   $.haitian_doorman.setStayInSamePlace(true /* TRUE */);
 
 
-  $.haitian_sniper = Char.Create(PEDTYPE_GANG_HAITIAN, HNb, -1179.4, 71.2, 23.9);
+  $.haitian_sniper = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNb, -1179.4, 71.2, 23.9);
   $.haitian_sniper.setHeading(270.0);
-  $.haitian_sniper.giveWeapon(7 /* WEAPONTYPE_SNIPERRIFLE */, 30000);
+  $.haitian_sniper.giveWeapon(28 /* WEAPONTYPE_SNIPERRIFLE */, 30000);
   $.haitian_sniper.clearThreatSearch();
   $.haitian_sniper.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
   $.haitian_sniper.setHeedThreats(true /* TRUE */);
@@ -519,17 +519,17 @@ async function mission_start_cuban4() {
   $.trojan_horse2.setDrivingStyle(2);
 
 
-  $.cuban_trojan2 = Char.CreateInsideCar($.trojan_horse2, PEDTYPE_GANG_GOLFER, CBb); //rico
+  $.cuban_trojan2 = Char.CreateInsideCar($.trojan_horse2, 14 /* PEDTYPE_GANG_GOLFER */, CBb); //rico
   $.cuban_trojan2.setAsPlayerFriend($.player1, true /* TRUE */);
-  $.cuban_trojan2.giveWeapon(WEAPONTYPE_tec9, 30000);
+  $.cuban_trojan2.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
   $.cuban_trojan2.clearThreatSearch();
   $.cuban_trojan2.setCantBeDraggedOut(true /* TRUE */);
   $.cuban_trojan2.setNeverTargeted(true /* TRUE */);
 
 
-  $.cuban_trojan3 = Char.CreateAsPassenger($.trojan_horse2, PEDTYPE_GANG_GOLFER, CBa, 0);
+  $.cuban_trojan3 = Char.CreateAsPassenger($.trojan_horse2, 14 /* PEDTYPE_GANG_GOLFER */, CBa, 0);
   $.cuban_trojan3.setAsPlayerFriend($.player1, true /* TRUE */);
-  $.cuban_trojan3.giveWeapon(WEAPONTYPE_tec9, 30000);
+  $.cuban_trojan3.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
   $.cuban_trojan3.clearThreatSearch();
   $.cuban_trojan3.setCantBeDraggedOut(true /* TRUE */);
   $.cuban_trojan3.setNeverTargeted(true /* TRUE */);
@@ -546,17 +546,17 @@ async function mission_start_cuban4() {
   $.trojan_horse3.setDrivingStyle(2);
 
 
-  $.cuban_trojan4 = Char.CreateInsideCar($.trojan_horse3, PEDTYPE_GANG_GOLFER, CBa);
+  $.cuban_trojan4 = Char.CreateInsideCar($.trojan_horse3, 14 /* PEDTYPE_GANG_GOLFER */, CBa);
   $.cuban_trojan4.setAsPlayerFriend($.player1, true /* TRUE */);
-  $.cuban_trojan4.giveWeapon(WEAPONTYPE_tec9, 30000);
+  $.cuban_trojan4.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
   $.cuban_trojan4.clearThreatSearch();
   $.cuban_trojan4.setCantBeDraggedOut(true /* TRUE */);
   $.cuban_trojan4.setNeverTargeted(true /* TRUE */);
 
 
-  $.cuban_trojan5 = Char.CreateAsPassenger($.trojan_horse3, PEDTYPE_GANG_GOLFER, CBa, 0);
+  $.cuban_trojan5 = Char.CreateAsPassenger($.trojan_horse3, 14 /* PEDTYPE_GANG_GOLFER */, CBa, 0);
   $.cuban_trojan5.setAsPlayerFriend($.player1, true /* TRUE */);
-  $.cuban_trojan5.giveWeapon(WEAPONTYPE_tec9, 30000);
+  $.cuban_trojan5.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
   $.cuban_trojan5.clearThreatSearch();
   $.cuban_trojan5.setCantBeDraggedOut(true /* TRUE */);
   $.cuban_trojan5.setNeverTargeted(true /* TRUE */);
@@ -607,7 +607,7 @@ async function meeting_second_car_loop() {
         $.trojan_horse = $.player1.storeCarIsIn();
         if (!(Car.IsDead($.trojan_horse))) {
           if ($.trojan_horse.isModel(voodoo)) {
-            Game.ClearThreatForPedType(PEDTYPE_GANG_HAITIAN, 1 /* THREAT_PLAYER1 */);
+            Game.ClearThreatForPedType(8 /* PEDTYPE_GANG_HAITIAN */, 1 /* THREAT_PLAYER1 */);
             $.meetingplace1_blip.remove();
             $.final_meeting_place_blip.remove();
             if (!(Char.IsDead($.cuban_trojan1))) {
@@ -638,7 +638,7 @@ async function meeting_second_car_loop() {
             }
           }
           else {
-            Game.SetThreatForPedType(PEDTYPE_GANG_HAITIAN, 1 /* THREAT_PLAYER1 */);
+            Game.SetThreatForPedType(8 /* PEDTYPE_GANG_HAITIAN */, 1 /* THREAT_PLAYER1 */);
             $.trojan_horse.markAsNoLongerNeeded();
             $.plyr_in_hait_car = 0;
           }
@@ -1276,8 +1276,8 @@ async function haitian_opening_gate() {
           if ($.haitian_doorman.isObjectivePassed()) {
             $.haitian_doorman.setStayInSamePlace(true /* TRUE */);
             $.haitian_doorman.setHeading(234.8);
-            Sound.AddOneOffSound(-1114.64, 72.85, 11.13, SOUND_POLICE_CELL_DOOR_CLUNK);
-            $.gate_slide_loop = Sound.AddContinuous(-1114.64, 72.85, 11.13, SOUND_POLICE_CELL_DOOR_SLIDING_LOOP);
+            Sound.AddOneOffSound(-1114.64, 72.85, 11.13, 3 /* SOUND_POLICE_CELL_DOOR_CLUNK */);
+            $.gate_slide_loop = Sound.AddContinuous(-1114.64, 72.85, 11.13, 2 /* SOUND_POLICE_CELL_DOOR_SLIDING_LOOP */);
             while (!($.haitian_gate.slide(-1114.5, 73.0, 10.1, 0.1, 0.1, 0.0, false /* FALSE */))) {
               await asyncWait(0);
             }
@@ -1386,27 +1386,27 @@ async function the_hornets_nest() {
   if (!(Car.IsDead($.trojan_horse2))) {
     if ($.trojan_horse2.locate2D(-1126.1, 70.5, 3.0, 3.0, false /* FALSE */)) {
       if ($.haitian_engineers_created == 0) {
-        $.haitian_engineer3 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1143.4, 84.5, 11.1);
+        $.haitian_engineer3 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1143.4, 84.5, 11.1);
         $.haitian_engineer3.setHeading(190.2);
-        $.haitian_engineer3.giveWeapon(WEAPONTYPE_tec9, 30000);
+        $.haitian_engineer3.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
         $.haitian_engineer3.clearThreatSearch();
         $.haitian_engineer3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
         $.haitian_engineer3.setHeedThreats(true /* TRUE */);
-        $.haitian_engineer4 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1143.4, 83.3, 11.1);
+        $.haitian_engineer4 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1143.4, 83.3, 11.1);
         $.haitian_engineer4.setHeading(190.2);
-        $.haitian_engineer4.giveWeapon(WEAPONTYPE_tec9, 30000);
+        $.haitian_engineer4.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
         $.haitian_engineer4.clearThreatSearch();
         $.haitian_engineer4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
         $.haitian_engineer4.setHeedThreats(true /* TRUE */);
-        $.hait_defender1 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1168.2, 106.7, 10.1);
+        $.hait_defender1 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1168.2, 106.7, 10.1);
         $.hait_defender1.setHeading(271.4);
-        $.hait_defender1.giveWeapon(WEAPONTYPE_tec9, 30000);
+        $.hait_defender1.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
         $.hait_defender1.clearThreatSearch();
         $.hait_defender1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
         $.hait_defender1.setHeedThreats(true /* TRUE */);
-        $.hait_defender2 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1166.0, 107.1, 10.1);
+        $.hait_defender2 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1166.0, 107.1, 10.1);
         $.hait_defender2.setHeading(92.5);
-        $.hait_defender2.giveWeapon(WEAPONTYPE_tec9, 30000);
+        $.hait_defender2.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
         $.hait_defender2.clearThreatSearch();
         $.hait_defender2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
         $.hait_defender2.setHeedThreats(true /* TRUE */);
@@ -1704,14 +1704,14 @@ async function trojan_horse_loop() {
                 Game.SetEveryoneIgnorePlayer($.player1, true /* TRUE */);
                 $.scplayer.setHeading(344.6);
                 Camera.SetBehindPlayer();
-                $.scplayer.setWaitState(WAITSTATE_BOMBER, 2000);
+                $.scplayer.setWaitState(31 /* WAITSTATE_BOMBER */, 2000);
                 $.playonce = 1;
               }
               // SCM GOTO → lsd1 (not lowered; manual jump required)
               throw new Error("unresolved GOTO lsd1"); // fallback: would break linear control flow
             }
             else {
-              Sound.AddOneOffSound(-1187.2, 104.2, 11.2, SOUND_IMRAN_ARM_BOMB);
+              Sound.AddOneOffSound(-1187.2, 104.2, 11.2, 16 /* SOUND_IMRAN_ARM_BOMB */);
               $.dynamite1 = ScriptObject.Create(dynamite, -1187.2, 104.2, 11.2);
               $.dynamite1.setCollision(false /* FALSE */);
               $.dynamite1.setDynamic(false /* FALSE */);
@@ -1741,14 +1741,14 @@ async function trojan_horse_loop() {
                 Game.SetEveryoneIgnorePlayer($.player1, true /* TRUE */);
                 $.scplayer.setHeading(25.0);
                 Camera.SetBehindPlayer();
-                $.scplayer.setWaitState(WAITSTATE_BOMBER, 2000);
+                $.scplayer.setWaitState(31 /* WAITSTATE_BOMBER */, 2000);
                 $.playonce = 1;
               }
               // SCM GOTO → lsd2 (not lowered; manual jump required)
               throw new Error("unresolved GOTO lsd2"); // fallback: would break linear control flow
             }
             else {
-              Sound.AddOneOffSound(-1181.5, 82.1, 11.2, SOUND_IMRAN_ARM_BOMB);
+              Sound.AddOneOffSound(-1181.5, 82.1, 11.2, 16 /* SOUND_IMRAN_ARM_BOMB */);
               $.dynamite2 = ScriptObject.Create(dynamite, -1181.5, 82.1, 11.2);
               $.dynamite2.setCollision(false /* FALSE */);
               $.dynamite2.setDynamic(false /* FALSE */);
@@ -1776,14 +1776,14 @@ async function trojan_horse_loop() {
                 Game.SetEveryoneIgnorePlayer($.player1, true /* TRUE */);
                 $.scplayer.setHeading(7.5);
                 Camera.SetBehindPlayer();
-                $.scplayer.setWaitState(WAITSTATE_BOMBER, 2000);
+                $.scplayer.setWaitState(31 /* WAITSTATE_BOMBER */, 2000);
                 $.playonce = 1;
               }
               // SCM GOTO → lsd3 (not lowered; manual jump required)
               throw new Error("unresolved GOTO lsd3"); // fallback: would break linear control flow
             }
             else {
-              Sound.AddOneOffSound(-1174.0, 71.1, 18.0, SOUND_IMRAN_ARM_BOMB);
+              Sound.AddOneOffSound(-1174.0, 71.1, 18.0, 16 /* SOUND_IMRAN_ARM_BOMB */);
               $.dynamite3 = ScriptObject.Create(dynamite, -1174.0, 71.1, 18.0);
               $.dynamite3.setCollision(false /* FALSE */);
               $.dynamite3.setDynamic(false /* FALSE */);
@@ -1799,7 +1799,7 @@ async function trojan_horse_loop() {
         }
         if ($.all_bombs_set == 1) {
           if ($.timerupyet == 0) {
-            Hud.DisplayTimer($.$id.bomb_timer, TIMER_DOWN);
+            Hud.DisplayTimer($.$id.bomb_timer, 1 /* TIMER_DOWN */);
             $.timerupyet = 1;
           }
         }
@@ -1811,7 +1811,7 @@ async function trojan_horse_loop() {
           if (!(Char.IsDead($.cuban_trojan2))) {
             $.cuban_trojan2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
             $.cuban_trojan2.setObjLeaveCar($.trojan_horse2);
-            $.cuban_trojan2.setThreatSearch(THREAT_GANG_HAITIAN);
+            $.cuban_trojan2.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
             $.cuban_trojan2.setThreatSearch(64 /* THREAT_COP */);
             $.cuban_trojan2.setThreatSearch(65536 /* THREAT_EMERGENCY */);
             $.cuban_trojan2.setObjRunToCoord(-1184.6, 92.3);
@@ -1819,7 +1819,7 @@ async function trojan_horse_loop() {
           if (!(Char.IsDead($.cuban_trojan3))) {
             $.cuban_trojan3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
             $.cuban_trojan3.setObjLeaveCar($.trojan_horse2);
-            $.cuban_trojan3.setThreatSearch(THREAT_GANG_HAITIAN);
+            $.cuban_trojan3.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
             $.cuban_trojan3.setThreatSearch(64 /* THREAT_COP */);
             $.cuban_trojan3.setThreatSearch(65536 /* THREAT_EMERGENCY */);
             $.cuban_trojan3.setObjRunToCoord(-1184.9, 100.2);
@@ -1831,7 +1831,7 @@ async function trojan_horse_loop() {
           if (!(Char.IsDead($.cuban_trojan4))) {
             $.cuban_trojan4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
             $.cuban_trojan4.setObjLeaveCar($.trojan_horse3);
-            $.cuban_trojan4.setThreatSearch(THREAT_GANG_HAITIAN);
+            $.cuban_trojan4.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
             $.cuban_trojan4.setThreatSearch(64 /* THREAT_COP */);
             $.cuban_trojan4.setThreatSearch(65536 /* THREAT_EMERGENCY */);
             $.cuban_trojan4.setObjRunToCoord(-1157.7, 73.5);
@@ -1839,7 +1839,7 @@ async function trojan_horse_loop() {
           if (!(Char.IsDead($.cuban_trojan5))) {
             $.cuban_trojan5.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
             $.cuban_trojan5.setObjLeaveCar($.trojan_horse3);
-            $.cuban_trojan5.setThreatSearch(THREAT_GANG_HAITIAN);
+            $.cuban_trojan5.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
             $.cuban_trojan5.setThreatSearch(64 /* THREAT_COP */);
             $.cuban_trojan5.setThreatSearch(65536 /* THREAT_EMERGENCY */);
             $.cuban_trojan5.setObjRunToCoord(-1157.5, 69.5);
@@ -1950,23 +1950,23 @@ async function trojan_horse_loop() {
         if (!(Car.IsDead($.trojan_horse2))) {
           $.trojan_horse2.markAsNoLongerNeeded();
         }
-        $.haitian_engineer3 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1180.2, 81.2, 10.1);
+        $.haitian_engineer3 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1180.2, 81.2, 10.1);
         $.haitian_engineer3.setHeading(25.0);
-        $.haitian_engineer3.setWaitState(WAITSTATE_USE_ATM, 999999);
-        $.haitian_engineer4 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1197.1, 70.3, 10.1);
-        $.haitian_engineer4.setAnimGroup(18 /* ANIM_PANIC_CHUNKYPED */);
+        $.haitian_engineer3.setWaitState(25 /* WAITSTATE_USE_ATM */, 999999);
+        $.haitian_engineer4 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1197.1, 70.3, 10.1);
+        $.haitian_engineer4.setAnimGroup(50 /* ANIM_PANIC_CHUNKYPED */);
         $.haitian_engineer4.setObjRunToCoord(-1169.6, 109.2);
-        $.hait_defender1 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1197.4, 74.9, 10.1);
-        $.hait_defender1.setAnimGroup(18 /* ANIM_PANIC_CHUNKYPED */);
+        $.hait_defender1 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1197.4, 74.9, 10.1);
+        $.hait_defender1.setAnimGroup(50 /* ANIM_PANIC_CHUNKYPED */);
         $.hait_defender1.setObjRunToCoord(-1169.6, 109.2);
-        $.hait_defender2 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1189.8, 81.2, 10.1);
-        $.hait_defender2.setAnimGroup(18 /* ANIM_PANIC_CHUNKYPED */);
+        $.hait_defender2 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1189.8, 81.2, 10.1);
+        $.hait_defender2.setAnimGroup(50 /* ANIM_PANIC_CHUNKYPED */);
         $.hait_defender2.setObjRunToCoord(-1169.6, 109.2);
-        $.random_haitian1 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1189.0, 83.6, 10.1);
-        $.random_haitian1.setAnimGroup(18 /* ANIM_PANIC_CHUNKYPED */);
+        $.random_haitian1 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1189.0, 83.6, 10.1);
+        $.random_haitian1.setAnimGroup(50 /* ANIM_PANIC_CHUNKYPED */);
         $.random_haitian1.setObjRunToCoord(-1169.6, 109.2);
-        $.random_haitian2 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1190.5, 68.5, 10.1);
-        $.random_haitian2.setAnimGroup(18 /* ANIM_PANIC_CHUNKYPED */);
+        $.random_haitian2 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1190.5, 68.5, 10.1);
+        $.random_haitian2.setAnimGroup(50 /* ANIM_PANIC_CHUNKYPED */);
         $.random_haitian2.setObjRunToCoord(-1169.6, 109.2);
         $.trojan_horse2 = Car.Create(voodoo, -1166.2, 85.1, 9.8);
         $.trojan_horse2.setHeading(112.8);
@@ -1982,193 +1982,193 @@ async function trojan_horse_loop() {
 
         //first two explosions in doorway and first strut
         Fx.AddExplosion(-1182.8, 76.7, 10.1, 2 /* EXPLOSION_ROCKET */); //strut in far left corner
-        Fx.AddExplosion(-1182.8, 76.7, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1182.8, 76.7, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1182.8, 76.7, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1182.8, 76.7, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1182.8, 76.7, 10.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1175.8, 70.6, 16.9, 2 /* EXPLOSION_ROCKET */); //outside office upstairs
-        Fx.AddExplosion(-1175.8, 70.6, 16.9, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1175.8, 70.6, 16.9, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1175.8, 70.6, 16.9, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1175.8, 70.6, 16.9, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1175.8, 70.6, 16.9, 6 /* EXPLOSION_HELI */);
         Camera.Shake(900);
         await asyncWait(1000);
         Camera.SetFixedPosition(-1196.61, 68.74, 18.19, 0.0, 0.0, 0.0);
         Camera.PointAtPoint(-1187.74, 83.15, 14.59, 2 /* JUMP_CUT */);
         await asyncWait(500);
         Fx.AddExplosion(-1182.8, 76.7, 10.1, 2 /* EXPLOSION_ROCKET */); //strut in far left corner
-        Fx.AddExplosion(-1182.8, 76.7, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1182.8, 76.7, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1182.8, 76.7, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1182.8, 76.7, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1182.8, 76.7, 10.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1196.4, 101.8, 10.1, 2 /* EXPLOSION_ROCKET */); //strut as you go in
-        Fx.AddExplosion(-1196.4, 101.8, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1196.4, 101.8, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1196.4, 101.8, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1196.4, 101.8, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1196.4, 101.8, 10.1, 6 /* EXPLOSION_HELI */);
         Camera.Shake(900);
         await asyncWait(1000);
         //
         Fx.AddExplosion(-1182.8, 76.7, 10.1, 2 /* EXPLOSION_ROCKET */); //strut in far left corner
-        Fx.AddExplosion(-1182.8, 76.7, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1182.8, 76.7, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1182.8, 76.7, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1182.8, 76.7, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1182.8, 76.7, 10.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1196.4, 101.8, 10.1, 2 /* EXPLOSION_ROCKET */); //strut as you go in
-        Fx.AddExplosion(-1196.4, 101.8, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1196.4, 101.8, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1196.4, 101.8, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1196.4, 101.8, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1196.4, 101.8, 10.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1181.4, 76.8, 17.3, 2 /* EXPLOSION_ROCKET */); //above strut in far left corner
-        Fx.AddExplosion(-1181.4, 76.8, 17.3, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1181.4, 76.8, 17.3, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1181.4, 76.8, 17.3, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1181.4, 76.8, 17.3, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1181.4, 76.8, 17.3, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1187.69, 102.0, 17.2, 2 /* EXPLOSION_ROCKET */); //above strut as you go in
-        Fx.AddExplosion(-1187.69, 102.0, 17.2, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1187.69, 102.0, 17.2, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1187.69, 102.0, 17.2, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1187.69, 102.0, 17.2, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1187.69, 102.0, 17.2, 6 /* EXPLOSION_HELI */);
         Camera.Shake(900);
         await asyncWait(1000);
         //
         Fx.AddExplosion(-1182.8, 76.7, 10.1, 2 /* EXPLOSION_ROCKET */); //strut in far left corner
-        Fx.AddExplosion(-1182.8, 76.7, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1182.8, 76.7, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1182.8, 76.7, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1182.8, 76.7, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1182.8, 76.7, 10.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1196.4, 101.8, 10.1, 2 /* EXPLOSION_ROCKET */); //strut as you go in
-        Fx.AddExplosion(-1196.4, 101.8, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1196.4, 101.8, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1196.4, 101.8, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1196.4, 101.8, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1196.4, 101.8, 10.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1181.4, 76.8, 17.3, 2 /* EXPLOSION_ROCKET */); //above strut in far left corner
-        Fx.AddExplosion(-1181.4, 76.8, 17.3, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1181.4, 76.8, 17.3, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1181.4, 76.8, 17.3, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1181.4, 76.8, 17.3, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1181.4, 76.8, 17.3, 6 /* EXPLOSION_HELI */);
         Camera.Shake(300);
         await asyncWait(300);
         Fx.AddExplosion(-1187.69, 102.0, 17.2, 2 /* EXPLOSION_ROCKET */); //above strut as you go in
-        Fx.AddExplosion(-1187.69, 102.0, 17.2, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1187.69, 102.0, 17.2, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1187.69, 102.0, 17.2, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1187.69, 102.0, 17.2, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1187.69, 102.0, 17.2, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1198.1, 103.2, 17.1, 2 /* EXPLOSION_ROCKET */); //above far strut as you go in
-        Fx.AddExplosion(-1198.1, 103.2, 17.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1198.1, 103.2, 17.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1198.1, 103.2, 17.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1198.1, 103.2, 17.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1198.1, 103.2, 17.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1198.1, 103.2, 10.1, 2 /* EXPLOSION_ROCKET */); //far strut as you go in
-        Fx.AddExplosion(-1198.1, 103.2, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1198.1, 103.2, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1198.1, 103.2, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1198.1, 103.2, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1198.1, 103.2, 10.1, 6 /* EXPLOSION_HELI */);
         Camera.Shake(900);
         await asyncWait(1000);
         //
         Fx.AddExplosion(-1182.8, 76.7, 10.1, 2 /* EXPLOSION_ROCKET */); //strut in far left corner
-        Fx.AddExplosion(-1182.8, 76.7, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1182.8, 76.7, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1182.8, 76.7, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1182.8, 76.7, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1182.8, 76.7, 10.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1196.4, 101.8, 10.1, 2 /* EXPLOSION_ROCKET */); //strut as you go in
-        Fx.AddExplosion(-1196.4, 101.8, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1196.4, 101.8, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1196.4, 101.8, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1196.4, 101.8, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1196.4, 101.8, 10.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1181.4, 76.8, 17.3, 2 /* EXPLOSION_ROCKET */); //above strut in far left corner
-        Fx.AddExplosion(-1181.4, 76.8, 17.3, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1181.4, 76.8, 17.3, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1181.4, 76.8, 17.3, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1181.4, 76.8, 17.3, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1181.4, 76.8, 17.3, 6 /* EXPLOSION_HELI */);
         Camera.Shake(200);
         await asyncWait(200);
         Fx.AddExplosion(-1187.69, 102.0, 17.2, 2 /* EXPLOSION_ROCKET */); //above strut as you go in
-        Fx.AddExplosion(-1187.69, 102.0, 17.2, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1187.69, 102.0, 17.2, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1187.69, 102.0, 17.2, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1187.69, 102.0, 17.2, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1187.69, 102.0, 17.2, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1198.1, 103.2, 17.1, 2 /* EXPLOSION_ROCKET */); //above far strut as you go in
-        Fx.AddExplosion(-1198.1, 103.2, 17.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1198.1, 103.2, 17.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1198.1, 103.2, 17.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1198.1, 103.2, 17.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1198.1, 103.2, 17.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1198.1, 103.2, 10.1, 2 /* EXPLOSION_ROCKET */); //far strut as you go in
-        Fx.AddExplosion(-1198.1, 103.2, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1198.1, 103.2, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1198.1, 103.2, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1198.1, 103.2, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1198.1, 103.2, 10.1, 6 /* EXPLOSION_HELI */);
         Camera.Shake(100);
         await asyncWait(100);
         Fx.AddExplosion(-1189.7, 83.6, 17.1, 2 /* EXPLOSION_ROCKET */); //above last remaining strut
-        Fx.AddExplosion(-1189.7, 83.6, 17.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1189.7, 83.6, 17.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1189.7, 83.6, 17.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1189.7, 83.6, 17.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1189.7, 83.6, 17.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1189.7, 83.6, 10.1, 2 /* EXPLOSION_ROCKET */); //last remaining strut
-        Fx.AddExplosion(-1189.7, 83.6, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1189.7, 83.6, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1189.7, 83.6, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1189.7, 83.6, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1189.7, 83.6, 10.1, 6 /* EXPLOSION_HELI */);
         Camera.Shake(1400);
         await asyncWait(1500);
         //
         Fx.AddExplosion(-1182.8, 76.7, 10.1, 2 /* EXPLOSION_ROCKET */); //strut in far left corner
-        Fx.AddExplosion(-1182.8, 76.7, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1182.8, 76.7, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1182.8, 76.7, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1182.8, 76.7, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1182.8, 76.7, 10.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1196.4, 101.8, 10.1, 2 /* EXPLOSION_ROCKET */); //strut as you go in
-        Fx.AddExplosion(-1196.4, 101.8, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1196.4, 101.8, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1196.4, 101.8, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1196.4, 101.8, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1196.4, 101.8, 10.1, 6 /* EXPLOSION_HELI */);
         Camera.Shake(400);
         await asyncWait(400);
         Fx.AddExplosion(-1181.4, 76.8, 17.3, 2 /* EXPLOSION_ROCKET */); //above strut in far left corner
-        Fx.AddExplosion(-1181.4, 76.8, 17.3, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1181.4, 76.8, 17.3, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1181.4, 76.8, 17.3, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1181.4, 76.8, 17.3, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1181.4, 76.8, 17.3, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1187.69, 102.0, 17.2, 2 /* EXPLOSION_ROCKET */); //above strut as you go in
-        Fx.AddExplosion(-1187.69, 102.0, 17.2, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1187.69, 102.0, 17.2, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1187.69, 102.0, 17.2, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1187.69, 102.0, 17.2, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1187.69, 102.0, 17.2, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1198.1, 103.2, 17.1, 2 /* EXPLOSION_ROCKET */); //above far strut as you go in
-        Fx.AddExplosion(-1198.1, 103.2, 17.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1198.1, 103.2, 17.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1198.1, 103.2, 17.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1198.1, 103.2, 17.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1198.1, 103.2, 17.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1198.1, 103.2, 10.1, 2 /* EXPLOSION_ROCKET */); //far strut as you go in
-        Fx.AddExplosion(-1198.1, 103.2, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1198.1, 103.2, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1198.1, 103.2, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1198.1, 103.2, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1198.1, 103.2, 10.1, 6 /* EXPLOSION_HELI */);
         Camera.Shake(300);
         await asyncWait(300);
         Fx.AddExplosion(-1189.7, 83.6, 17.1, 2 /* EXPLOSION_ROCKET */); //above last remaining strut
-        Fx.AddExplosion(-1189.7, 83.6, 17.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1189.7, 83.6, 17.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1189.7, 83.6, 17.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1189.7, 83.6, 17.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1189.7, 83.6, 17.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1189.7, 83.6, 10.1, 2 /* EXPLOSION_ROCKET */); //last remaining strut
-        Fx.AddExplosion(-1189.7, 83.6, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1189.7, 83.6, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1189.7, 83.6, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1189.7, 83.6, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1189.7, 83.6, 10.1, 6 /* EXPLOSION_HELI */);
 
 
         Camera.Shake(1400);
         await asyncWait(1500);
         //
         Fx.AddExplosion(-1182.8, 76.7, 10.1, 2 /* EXPLOSION_ROCKET */); //strut in far left corner
-        Fx.AddExplosion(-1182.8, 76.7, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1182.8, 76.7, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1182.8, 76.7, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1182.8, 76.7, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1182.8, 76.7, 10.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1196.4, 101.8, 10.1, 2 /* EXPLOSION_ROCKET */); //strut as you go in
-        Fx.AddExplosion(-1196.4, 101.8, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1196.4, 101.8, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1196.4, 101.8, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1196.4, 101.8, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1196.4, 101.8, 10.1, 6 /* EXPLOSION_HELI */);
         Camera.Shake(200);
         await asyncWait(200);
         Fx.AddExplosion(-1181.4, 76.8, 17.3, 2 /* EXPLOSION_ROCKET */); //above strut in far left corner
-        Fx.AddExplosion(-1181.4, 76.8, 17.3, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1181.4, 76.8, 17.3, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1181.4, 76.8, 17.3, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1181.4, 76.8, 17.3, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1181.4, 76.8, 17.3, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1187.69, 102.0, 17.2, 2 /* EXPLOSION_ROCKET */); //above strut as you go in
-        Fx.AddExplosion(-1187.69, 102.0, 17.2, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1187.69, 102.0, 17.2, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1187.69, 102.0, 17.2, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1187.69, 102.0, 17.2, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1187.69, 102.0, 17.2, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1198.1, 103.2, 17.1, 2 /* EXPLOSION_ROCKET */); //above far strut as you go in
-        Fx.AddExplosion(-1198.1, 103.2, 17.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1198.1, 103.2, 17.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1198.1, 103.2, 17.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1198.1, 103.2, 17.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1198.1, 103.2, 17.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1198.1, 103.2, 10.1, 2 /* EXPLOSION_ROCKET */); //far strut as you go in
-        Fx.AddExplosion(-1198.1, 103.2, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1198.1, 103.2, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1198.1, 103.2, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1198.1, 103.2, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1198.1, 103.2, 10.1, 6 /* EXPLOSION_HELI */);
         Camera.Shake(100);
         await asyncWait(100);
         Fx.AddExplosion(-1189.7, 83.6, 17.1, 2 /* EXPLOSION_ROCKET */); //above last remaining strut
-        Fx.AddExplosion(-1189.7, 83.6, 17.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1189.7, 83.6, 17.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1189.7, 83.6, 17.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1189.7, 83.6, 17.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1189.7, 83.6, 17.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1189.7, 83.6, 10.1, 2 /* EXPLOSION_ROCKET */); //last remaining strut
-        Fx.AddExplosion(-1189.7, 83.6, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1189.7, 83.6, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1189.7, 83.6, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1189.7, 83.6, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1189.7, 83.6, 10.1, 6 /* EXPLOSION_HELI */);
 
 
         Camera.Shake(900);
@@ -2179,17 +2179,17 @@ async function trojan_horse_loop() {
         Camera.SetFixedPosition(-1159.03, 108.49, 15.35, 0.0, 0.0, 0.0);
         Camera.PointAtPoint(-1180.11, 90.65, 16.05, 2 /* JUMP_CUT */);
         Fx.AddExplosion(-1182.8, 76.7, 10.1, 2 /* EXPLOSION_ROCKET */); //strut in far left corner
-        Fx.AddExplosion(-1182.8, 76.7, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1182.8, 76.7, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1182.8, 76.7, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1182.8, 76.7, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1182.8, 76.7, 10.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1196.4, 101.8, 10.1, 2 /* EXPLOSION_ROCKET */); //strut as you go in
-        Fx.AddExplosion(-1196.4, 101.8, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1196.4, 101.8, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1196.4, 101.8, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1196.4, 101.8, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1196.4, 101.8, 10.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1181.4, 76.8, 17.3, 2 /* EXPLOSION_ROCKET */); //above strut in far left corner
-        Fx.AddExplosion(-1181.4, 76.8, 17.3, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1181.4, 76.8, 17.3, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1181.4, 76.8, 17.3, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1181.4, 76.8, 17.3, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1181.4, 76.8, 17.3, 6 /* EXPLOSION_HELI */);
         Fx.AddMovingParticleEffect(4 /* POBJECT_DARK_SMOKE */, -1184.97, 96.72, 11.13, 16.0, 0.0, 0.1, 5.0, 0, 0, 0, 11000);
         Fx.AddMovingParticleEffect(4 /* POBJECT_DARK_SMOKE */, -1184.97, 96.72, 11.13, 16.0, 0.0, 0.1, 5.0, 0, 0, 0, 11000);
         Fx.AddMovingParticleEffect(4 /* POBJECT_DARK_SMOKE */, -1184.97, 96.72, 11.13, 16.0, 0.0, 0.1, 5.0, 0, 0, 0, 11000);
@@ -2198,87 +2198,87 @@ async function trojan_horse_loop() {
         Camera.Shake(600);
         await asyncWait(600);
         Fx.AddExplosion(-1187.69, 102.0, 17.2, 2 /* EXPLOSION_ROCKET */); //above strut as you go in
-        Fx.AddExplosion(-1187.69, 102.0, 17.2, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1187.69, 102.0, 17.2, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1187.69, 102.0, 17.2, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1187.69, 102.0, 17.2, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1187.69, 102.0, 17.2, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1198.1, 103.2, 17.1, 2 /* EXPLOSION_ROCKET */); //above far strut as you go in
-        Fx.AddExplosion(-1198.1, 103.2, 17.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1198.1, 103.2, 17.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1198.1, 103.2, 17.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1198.1, 103.2, 17.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1198.1, 103.2, 17.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1198.1, 103.2, 10.1, 2 /* EXPLOSION_ROCKET */); //far strut as you go in
-        Fx.AddExplosion(-1198.1, 103.2, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1198.1, 103.2, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1198.1, 103.2, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1198.1, 103.2, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1198.1, 103.2, 10.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1189.7, 83.6, 17.1, 2 /* EXPLOSION_ROCKET */); //above last remaining strut
-        Fx.AddExplosion(-1189.7, 83.6, 17.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1189.7, 83.6, 17.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1189.7, 83.6, 17.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1189.7, 83.6, 17.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1189.7, 83.6, 17.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1189.7, 83.6, 10.1, 2 /* EXPLOSION_ROCKET */); //last remaining strut
-        Fx.AddExplosion(-1189.7, 83.6, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1189.7, 83.6, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1189.7, 83.6, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1189.7, 83.6, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1189.7, 83.6, 10.1, 6 /* EXPLOSION_HELI */);
         Camera.Shake(200);
         await asyncWait(200);
         Fx.AddExplosion(-1197.0, 89.5, 17.1, 2 /* EXPLOSION_ROCKET */); //last space
-        Fx.AddExplosion(-1197.0, 89.5, 17.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1197.0, 89.5, 17.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1197.0, 89.5, 17.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1197.0, 89.5, 17.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1197.0, 89.5, 17.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1197.0, 89.5, 10.1, 2 /* EXPLOSION_ROCKET */); //last space
-        Fx.AddExplosion(-1197.0, 89.5, 10.1, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1197.0, 89.5, 10.1, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1197.0, 89.5, 10.1, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1197.0, 89.5, 10.1, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1197.0, 89.5, 10.1, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1196.61, 68.74, 18.19, 2 /* EXPLOSION_ROCKET */); //in front of camera
-        Fx.AddExplosion(-1196.61, 68.74, 18.19, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1196.61, 68.74, 18.19, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1196.61, 68.74, 18.19, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1196.61, 68.74, 18.19, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1196.61, 68.74, 18.19, 6 /* EXPLOSION_HELI */);
         Camera.Shake(1000);
         await asyncWait(1000);
         //
 
         Fx.AddExplosion(-1171.06, 68.74, 20.34, 2 /* EXPLOSION_ROCKET */); //windows blowing out
-        Fx.AddExplosion(-1171.06, 68.74, 20.34, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1171.06, 68.74, 20.34, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1171.06, 68.74, 20.34, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1171.06, 68.74, 20.34, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1171.06, 68.74, 20.34, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1171.06, 74.74, 20.34, 2 /* EXPLOSION_ROCKET */); //windows blowing out
-        Fx.AddExplosion(-1171.06, 74.74, 20.34, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1171.06, 74.74, 20.34, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1171.06, 74.74, 20.34, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1171.06, 74.74, 20.34, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1171.06, 74.74, 20.34, 6 /* EXPLOSION_HELI */);
         Camera.Shake(100);
         await asyncWait(100);
         Fx.AddExplosion(-1171.06, 79.74, 20.34, 2 /* EXPLOSION_ROCKET */); //windows blowing out
-        Fx.AddExplosion(-1171.06, 79.74, 20.34, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1171.06, 79.74, 20.34, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1171.06, 79.74, 20.34, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1171.06, 79.74, 20.34, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1171.06, 79.74, 20.34, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1171.06, 85.74, 20.34, 2 /* EXPLOSION_ROCKET */); //windows blowing out
-        Fx.AddExplosion(-1171.06, 85.74, 20.34, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1171.06, 85.74, 20.34, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1171.06, 85.74, 20.34, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1171.06, 85.74, 20.34, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1171.06, 85.74, 20.34, 6 /* EXPLOSION_HELI */);
         Camera.Shake(100);
         await asyncWait(100);
         Fx.AddExplosion(-1171.06, 90.74, 20.34, 2 /* EXPLOSION_ROCKET */); //windows blowing out
-        Fx.AddExplosion(-1171.06, 90.74, 20.34, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1171.06, 90.74, 20.34, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1171.06, 90.74, 20.34, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1171.06, 90.74, 20.34, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1171.06, 90.74, 20.34, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1171.06, 96.74, 20.34, 2 /* EXPLOSION_ROCKET */); //windows blowing out
-        Fx.AddExplosion(-1171.06, 96.74, 20.34, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1171.06, 96.74, 20.34, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1171.06, 96.74, 20.34, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1171.06, 96.74, 20.34, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1171.06, 96.74, 20.34, 6 /* EXPLOSION_HELI */);
         Camera.Shake(100);
         await asyncWait(100);
         Fx.AddExplosion(-1171.06, 103.74, 20.34, 2 /* EXPLOSION_ROCKET */); //windows blowing out
-        Fx.AddExplosion(-1171.06, 103.74, 20.34, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1171.06, 103.74, 20.34, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1171.06, 103.74, 20.34, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1171.06, 103.74, 20.34, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1171.06, 103.74, 20.34, 6 /* EXPLOSION_HELI */);
         Fx.AddExplosion(-1179.06, 105.74, 20.34, 2 /* EXPLOSION_ROCKET */); //windows blowing out
-        Fx.AddExplosion(-1179.06, 105.74, 20.34, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1179.06, 105.74, 20.34, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1179.06, 105.74, 20.34, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1179.06, 105.74, 20.34, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1179.06, 105.74, 20.34, 6 /* EXPLOSION_HELI */);
         Camera.Shake(100);
         await asyncWait(100);
         Fx.AddExplosion(-1188.06, 105.74, 20.34, 2 /* EXPLOSION_ROCKET */); //windows blowing out
-        Fx.AddExplosion(-1188.06, 105.74, 20.34, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion(-1188.06, 105.74, 20.34, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion(-1188.06, 105.74, 20.34, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion(-1188.06, 105.74, 20.34, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1188.06, 105.74, 20.34, 6 /* EXPLOSION_HELI */);
         if (!(Car.IsDead($.trojan_horse2))) {
           if (!($.player1.isInCar($.trojan_horse2))) {
             $.trojan_horse2.setCanBeDamaged(true /* TRUE */);
@@ -2293,7 +2293,7 @@ async function trojan_horse_loop() {
         }
         Camera.SetFadingColor(255, 255, 255);
         Camera.DoFade(400, 0 /* FADE_OUT */);
-        Fx.AddExplosion(-1159.03, 108.49, 10.35, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1159.03, 108.49, 10.35, 6 /* EXPLOSION_HELI */);
         while (Camera.GetFadingStatus()) {
           await asyncWait(0);
         }
@@ -2310,7 +2310,7 @@ async function trojan_horse_loop() {
         $.dynamite2.delete();
         $.dynamite3.delete();
         $.bomb_timer = 0;
-        Fx.AddExplosion(-1159.03, 108.49, 10.35, 5 /* EXPLOSION_HELI */);
+        Fx.AddExplosion(-1159.03, 108.49, 10.35, 6 /* EXPLOSION_HELI */);
         Camera.DoFade(1600, 1 /* FADE_IN */);
 
 
@@ -2383,10 +2383,10 @@ async function mission_passed_cuban4() {
   Zone.SetPedInfo("GHETTO2", 0 /* NIGHT */, 10, 100, 0, 0, 0, 0, 0, 0, 0, 0, 10);
   Zone.SetCarInfo("GHETTO2", 1 /* DAY */, 12, 100, 0, 0, 0, 0, 0, 0, 0, 0, 10);
   Zone.SetCarInfo("GHETTO2", 0 /* NIGHT */, 10, 100, 0, 0, 0, 0, 0, 0, 0, 0, 10);
-  Game.ClearThreatForPedType(PEDTYPE_GANG_HAITIAN, THREAT_GANG_CUBAN);
-  Game.ClearThreatForPedType(PEDTYPE_GANG_CUBAN, THREAT_GANG_HAITIAN);
+  Game.ClearThreatForPedType(8 /* PEDTYPE_GANG_HAITIAN */, 128 /* THREAT_GANG_CUBAN */);
+  Game.ClearThreatForPedType(7 /* PEDTYPE_GANG_CUBAN */, 256 /* THREAT_GANG_HAITIAN */);
   if ($.bomb_timer == 0) {
-    $.haitbase_pickup = Pickup.CreateWithAmmo(minigun, 14 /* PICKUP_ON_STREET_SLOW */, 100, -1184.17, 102.62, 17.5);
+    $.haitbase_pickup = Pickup.CreateWithAmmo(minigun, 15 /* PICKUP_ON_STREET_SLOW */, 100, -1184.17, 102.62, 17.5);
     $.bomb_timer = 1;
   }
   $.flag_cuban_mission4_passed = 1;
@@ -2402,7 +2402,7 @@ async function mission_cleanup_cuban4() {
   $.player1.setControl(true /* on */);
   //andy_has_control = 0 //reseting gate
 
-  Game.ClearThreatForPedType(PEDTYPE_GANG_HAITIAN, THREAT_GANG_GOLFER);
+  Game.ClearThreatForPedType(8 /* PEDTYPE_GANG_HAITIAN */, 16384 /* THREAT_GANG_GOLFER */);
   Streaming.MarkModelAsNoLongerNeeded(HNa);
   Streaming.MarkModelAsNoLongerNeeded(HNb);
   Streaming.MarkModelAsNoLongerNeeded(CBa);
@@ -2436,26 +2436,26 @@ async function set_up_for_laying_bombs() {
   $.bombplace2 = Blip.AddForCoord(-1180.2, 81.2, 10.1);
   $.bombplace3 = Blip.AddForCoord(-1173.6, 70.2, 16.9);
   if (!(Char.IsDead($.cuban_trojan1))) {
-    $.cuban_trojan1.setThreatSearch(THREAT_GANG_HAITIAN);
+    $.cuban_trojan1.setThreatSearch(256 /* THREAT_GANG_HAITIAN */);
     $.cuban_trojan1.setThreatSearch(64 /* THREAT_COP */);
     $.cuban_trojan1.setOnlyDamagedByPlayer(false /* FALSE */);
   }
   if (!(Char.IsDead($.haitian_engineer3))) {
-    $.haitian_engineer3.setThreatSearch(THREAT_GANG_CUBAN);
+    $.haitian_engineer3.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
     $.haitian_engineer3.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.haitian_engineer3.setThreatSearch(64 /* THREAT_COP */);
     $.haitian_engineer3.setHeading(4.7);
     $.haitian_engineer3.setObjKillPlayerAnyMeans($.player1);
   }
   if (!(Char.IsDead($.haitian_engineer4))) {
-    $.haitian_engineer4.setThreatSearch(THREAT_GANG_CUBAN);
+    $.haitian_engineer4.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
     $.haitian_engineer4.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.haitian_engineer4.setThreatSearch(64 /* THREAT_COP */);
     $.haitian_engineer4.setHeading(4.7);
     $.haitian_engineer4.setObjKillPlayerAnyMeans($.player1);
   }
   if (!(Char.IsDead($.hait_defender1))) {
-    $.hait_defender1.setThreatSearch(THREAT_GANG_CUBAN);
+    $.hait_defender1.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
     $.hait_defender1.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.hait_defender1.setThreatSearch(64 /* THREAT_COP */);
     if (!(Char.IsDead($.hait_defender2))) {
@@ -2463,12 +2463,12 @@ async function set_up_for_laying_bombs() {
     }
   }
   if (!(Char.IsDead($.hait_defender2))) {
-    $.hait_defender2.setThreatSearch(THREAT_GANG_CUBAN);
+    $.hait_defender2.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
     $.hait_defender2.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.hait_defender2.setThreatSearch(64 /* THREAT_COP */);
   }
   if (!(Char.IsDead($.haitian_doorman))) {
-    $.haitian_doorman.setThreatSearch(THREAT_GANG_CUBAN);
+    $.haitian_doorman.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
     $.haitian_doorman.setThreatSearch(1 /* THREAT_PLAYER1 */);
     $.haitian_doorman.setThreatSearch(64 /* THREAT_COP */);
     $.haitian_doorman.setHeading(109.6);
@@ -2476,84 +2476,84 @@ async function set_up_for_laying_bombs() {
   }
 
 
-  $.haitian_doorman2 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1115.2, 67.0, 10.1);
+  $.haitian_doorman2 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1115.2, 67.0, 10.1);
   $.haitian_doorman2.setHeading(85.4);
-  $.haitian_doorman2.giveWeapon(WEAPONTYPE_tec9, 30000);
+  $.haitian_doorman2.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
   $.haitian_doorman2.clearThreatSearch();
   $.haitian_doorman2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  $.haitian_doorman2.setThreatSearch(THREAT_GANG_CUBAN);
+  $.haitian_doorman2.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
   $.haitian_doorman2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.haitian_doorman2.setThreatSearch(64 /* THREAT_COP */);
   $.haitian_doorman2.setHeedThreats(true /* TRUE */);
   $.haitian_doorman2.setStayInSamePlace(true /* TRUE */);
 
 
-  $.hait_defender3 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1182.3, 80.5, 10.1);
+  $.hait_defender3 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1182.3, 80.5, 10.1);
   $.hait_defender3.setHeading(355.1);
-  $.hait_defender3.giveWeapon(WEAPONTYPE_tec9, 30000);
+  $.hait_defender3.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
   $.hait_defender3.clearThreatSearch();
   $.hait_defender3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  $.hait_defender3.setThreatSearch(THREAT_GANG_CUBAN);
+  $.hait_defender3.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
   $.hait_defender3.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.hait_defender3.setThreatSearch(64 /* THREAT_COP */);
   $.hait_defender3.setHeedThreats(true /* TRUE */);
   $.hait_defender3.setStayInSamePlace(true /* TRUE */);
 
 
-  $.hait_defender4 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1192.2, 102.7, 10.1);
+  $.hait_defender4 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1192.2, 102.7, 10.1);
   $.hait_defender4.setHeading(109.6);
-  $.hait_defender4.giveWeapon(WEAPONTYPE_tec9, 30000);
+  $.hait_defender4.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
   $.hait_defender4.clearThreatSearch();
   $.hait_defender4.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  $.hait_defender4.setThreatSearch(THREAT_GANG_CUBAN);
+  $.hait_defender4.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
   $.hait_defender4.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.hait_defender4.setThreatSearch(64 /* THREAT_COP */);
   $.hait_defender4.setHeedThreats(true /* TRUE */);
   $.hait_defender4.setStayInSamePlace(true /* TRUE */);
 
 
-  $.hait_defender5 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1183.4, 67.0, 16.9);
+  $.hait_defender5 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1183.4, 67.0, 16.9);
   $.hait_defender5.setHeading(12.0);
-  $.hait_defender5.giveWeapon(WEAPONTYPE_tec9, 30000);
+  $.hait_defender5.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
   $.hait_defender5.clearThreatSearch();
   $.hait_defender5.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  $.hait_defender5.setThreatSearch(THREAT_GANG_CUBAN);
+  $.hait_defender5.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
   $.hait_defender5.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.hait_defender5.setThreatSearch(64 /* THREAT_COP */);
   $.hait_defender5.setHeedThreats(true /* TRUE */);
   $.hait_defender5.setStayInSamePlace(true /* TRUE */);
 
 
-  $.random_haitian1 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1197.9, 82.5, 10.1);
+  $.random_haitian1 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1197.9, 82.5, 10.1);
   $.random_haitian1.setHeading(347.0);
-  $.random_haitian1.giveWeapon(WEAPONTYPE_tec9, 30000);
+  $.random_haitian1.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
   $.random_haitian1.clearThreatSearch();
   $.random_haitian1.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  $.random_haitian1.setThreatSearch(THREAT_GANG_CUBAN);
+  $.random_haitian1.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
   $.random_haitian1.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.random_haitian1.setThreatSearch(64 /* THREAT_COP */);
   $.random_haitian1.setHeedThreats(true /* TRUE */);
   $.random_haitian1.setStayInSamePlace(true /* TRUE */);
 
 
-  $.random_haitian2 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1189.0, 83.6, 10.1);
+  $.random_haitian2 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1189.0, 83.6, 10.1);
   $.random_haitian2.setHeading(20.0);
-  $.random_haitian2.giveWeapon(WEAPONTYPE_tec9, 30000);
+  $.random_haitian2.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
   $.random_haitian2.clearThreatSearch();
   $.random_haitian2.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  $.random_haitian2.setThreatSearch(THREAT_GANG_CUBAN);
+  $.random_haitian2.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
   $.random_haitian2.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.random_haitian2.setThreatSearch(64 /* THREAT_COP */);
   $.random_haitian2.setHeedThreats(true /* TRUE */);
   $.random_haitian2.setStayInSamePlace(true /* TRUE */);
 
 
-  $.random_haitian3 = Char.Create(PEDTYPE_GANG_HAITIAN, HNa, -1190.5, 68.5, 10.1);
+  $.random_haitian3 = Char.Create(8 /* PEDTYPE_GANG_HAITIAN */, HNa, -1190.5, 68.5, 10.1);
   $.random_haitian3.setHeading(13.8);
-  $.random_haitian3.giveWeapon(WEAPONTYPE_tec9, 30000);
+  $.random_haitian3.giveWeapon(22 /* WEAPONTYPE_tec9 */, 30000);
   $.random_haitian3.clearThreatSearch();
   $.random_haitian3.setPersonality(16 /* PEDSTAT_TOUGH_GUY */);
-  $.random_haitian3.setThreatSearch(THREAT_GANG_CUBAN);
+  $.random_haitian3.setThreatSearch(128 /* THREAT_GANG_CUBAN */);
   $.random_haitian3.setThreatSearch(1 /* THREAT_PLAYER1 */);
   $.random_haitian3.setThreatSearch(64 /* THREAT_COP */);
   $.random_haitian3.setHeedThreats(true /* TRUE */);
@@ -2566,8 +2566,8 @@ async function set_up_for_laying_bombs() {
   if (!(Car.IsDead($.trojan_horse3))) {
     $.trojan_horse3.setOnlyDamagedByPlayer(true /* TRUE */);
   }
-  Game.SetThreatForPedType(PEDTYPE_GANG_HAITIAN, 1 /* THREAT_PLAYER1 */);
-  Game.SetThreatForPedType(PEDTYPE_GANG_HAITIAN, THREAT_GANG_GOLFER);
+  Game.SetThreatForPedType(8 /* PEDTYPE_GANG_HAITIAN */, 1 /* THREAT_PLAYER1 */);
+  Game.SetThreatForPedType(8 /* PEDTYPE_GANG_HAITIAN */, 16384 /* THREAT_GANG_GOLFER */);
 
 
   Audio.LoadMissionAudio(1, "CUB4_9" as any);

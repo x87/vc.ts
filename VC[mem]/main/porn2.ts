@@ -1,6 +1,6 @@
 // Generated from main/porn2.sc
 
-import { $ } from "../vars.mts";
+import { $ } from "../utils/vars.mts";
 
 async function mission_start_porn2() {
   Text.ClearThisPrint("M_FAIL");
@@ -382,7 +382,7 @@ async function skip_for_aussie_version2() {
   Camera.SetBehindPlayer();
   //------------------REQUEST_MODELS ------------------------------
 
-  $.player1.setMood(PLAYER_MOOD_CALM, 60000);
+  $.player1.setMood(0 /* PLAYER_MOOD_CALM */, 60000);
 
 
   Streaming.RequestModel(skimmer);
@@ -394,7 +394,7 @@ async function skip_for_aussie_version2() {
 
   //forcing weather to be nice
 
-  Weather.ForceNow(WEATHER_EXTRA_SUNNY);
+  Weather.ForceNow(4 /* WEATHER_EXTRA_SUNNY */);
 
   //setting player1 next to plane and creating plane
 
@@ -505,7 +505,7 @@ async function dildo_loop() {
             Fx.DrawCorona($.dildo_check1x, $.dildo_check1y, $.dildo_check1z, 5.5, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 0, 0, 255);
           }
           else {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.dildocheck_blip1.remove();
             $.dildo_check1x = -872.0;
             $.dildo_check1y = -574.0;
@@ -526,7 +526,7 @@ async function dildo_loop() {
             Fx.DrawCorona($.dildo_check2x, $.dildo_check2y, $.dildo_check2z, 5.5, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 0, 0, 255);
           }
           else {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.dildocheck_blip1.remove();
             $.dildocheck_blip2.remove();
             $.dildo_check2x = -354.2;
@@ -547,7 +547,7 @@ async function dildo_loop() {
             Fx.DrawCorona($.dildo_check3x, $.dildo_check3y, $.dildo_check3z, 5.5, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 0, 0, 255);
           }
           else {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.dildocheck_blip1.remove();
             $.dildocheck_blip2.remove();
             $.dildocheck_blip3.remove();
@@ -568,7 +568,7 @@ async function dildo_loop() {
             Fx.DrawCorona($.dildo_check4x, $.dildo_check4y, $.dildo_check4z, 5.5, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 0, 0, 255);
           }
           else {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.dildocheck_blip1.remove();
             $.dildocheck_blip2.remove();
             $.dildocheck_blip3.remove();
@@ -589,7 +589,7 @@ async function dildo_loop() {
             Fx.DrawCorona($.dildo_check5x, $.dildo_check5y, $.dildo_check5z, 5.5, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 0, 0, 255);
           }
           else {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.dildocheck_blip1.remove();
             $.dildocheck_blip2.remove();
             $.dildocheck_blip3.remove();
@@ -610,7 +610,7 @@ async function dildo_loop() {
             Fx.DrawCorona($.dildo_check6x, $.dildo_check6y, $.dildo_check6z, 5.5, 6 /* CORONATYPE_CIRCLE */, 0 /* FLARETYPE_NONE */, 0, 0, 255);
           }
           else {
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.dildocheck_blip1.remove();
             $.dildocheck_blip2.remove();
             $.dildocheck_blip3.remove();
@@ -670,7 +670,7 @@ async function dildo_loop() {
               $.dildocheck_blip6 = Blip.AddForCoord($.dildo_check6x, $.dildo_check6y, $.dildo_check6z);
               $.dildocheck_blip6.changeColor(2 /* BLUE */);
             }
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.dildocheck_blip1.remove();
             $.particle_effect_ok = 0;
             $.dildo1 = 2;
@@ -702,7 +702,7 @@ async function dildo_loop() {
               $.dildocheck_blip6 = Blip.AddForCoord($.dildo_check6x, $.dildo_check6y, $.dildo_check6z);
               $.dildocheck_blip6.changeColor(2 /* BLUE */);
             }
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.dildocheck_blip2.remove();
             $.particle_effect_ok = 0;
             $.dildo2 = 2;
@@ -734,7 +734,7 @@ async function dildo_loop() {
               $.dildocheck_blip6 = Blip.AddForCoord($.dildo_check6x, $.dildo_check6y, $.dildo_check6z);
               $.dildocheck_blip6.changeColor(2 /* BLUE */);
             }
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.dildocheck_blip3.remove();
             $.particle_effect_ok = 0;
             $.dildo3 = 2;
@@ -766,7 +766,7 @@ async function dildo_loop() {
               $.dildocheck_blip6 = Blip.AddForCoord($.dildo_check6x, $.dildo_check6y, $.dildo_check6z);
               $.dildocheck_blip6.changeColor(2 /* BLUE */);
             }
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.dildocheck_blip4.remove();
             $.particle_effect_ok = 0;
             $.dildo4 = 2;
@@ -798,7 +798,7 @@ async function dildo_loop() {
               $.dildocheck_blip6 = Blip.AddForCoord($.dildo_check6x, $.dildo_check6y, $.dildo_check6z);
               $.dildocheck_blip6.changeColor(2 /* BLUE */);
             }
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.dildocheck_blip5.remove();
             $.particle_effect_ok = 0;
             $.dildo5 = 2;
@@ -830,7 +830,7 @@ async function dildo_loop() {
               $.dildocheck_blip5 = Blip.AddForCoord($.dildo_check5x, $.dildo_check5y, $.dildo_check5z);
               $.dildocheck_blip5.changeColor(2 /* BLUE */);
             }
-            Sound.AddOneOffSound(0.0, 0.0, 0.0, 94 /* SOUND_PART_MISSION_COMPLETE */);
+            Sound.AddOneOffSound(0.0, 0.0, 0.0, 1 /* SOUND_PART_MISSION_COMPLETE */);
             $.dildocheck_blip6.remove();
             $.particle_effect_ok = 0;
             $.dildo6 = 2;
@@ -1005,10 +1005,10 @@ $.player_x = _res426.x;
 $.player_y = _res426.y;
 $.player_z = _res426.z;
         Fx.AddExplosion($.player_x, $.player_y, $.player_z, 2 /* EXPLOSION_ROCKET */);
-        Fx.AddExplosion($.player_x, $.player_y, $.player_z, 9 /* EXPLOSION_HELI_BOMB */);
+        Fx.AddExplosion($.player_x, $.player_y, $.player_z, 11 /* EXPLOSION_HELI_BOMB */);
         Fx.AddExplosion($.player_x, $.player_y, $.player_z, 1 /* EXPLOSION_MOLOTOV */);
-        Fx.AddExplosion($.player_x, $.player_y, $.player_z, 5 /* EXPLOSION_HELI */);
-        Fx.AddMovingParticleEffect(15 /* POBJECT_FIREBALL_AND_SMOKE */, $.player_x, $.player_y, $.player_z, 0.1, 0.0, 0.2, 0.8, 0, 0, 0, 11000);
+        Fx.AddExplosion($.player_x, $.player_y, $.player_z, 6 /* EXPLOSION_HELI */);
+        Fx.AddMovingParticleEffect(17 /* POBJECT_FIREBALL_AND_SMOKE */, $.player_x, $.player_y, $.player_z, 0.1, 0.0, 0.2, 0.8, 0, 0, 0, 11000);
         // SCM GOTO → mission_failed_porn2 (not lowered; manual jump required)
         throw new Error("unresolved GOTO mission_failed_porn2"); // fallback: would break linear control flow
       }
@@ -1041,7 +1041,7 @@ $.player_z = _res426.z;
 $.player_x = _res427.x;
 $.player_y = _res427.y;
 $.player_z = _res427.z;
-          Sound.AddOneOffSound($.player_x, $.player_y, $.player_z, SOUND_SEAPLANE_LOW_FUEL);
+          Sound.AddOneOffSound($.player_x, $.player_y, $.player_z, 35 /* SOUND_SEAPLANE_LOW_FUEL */);
           TIMERA = 0;
         }
       }
@@ -1086,7 +1086,7 @@ async function mission_passed_porn2() {
   $.gen_car100.switch(101);
   Stat.PlayerMadeProgress(1);
   Stat.RegisterMissionPassed("PORN_2");
-  // START_NEW_SCRIPT porn_mission3_loop
+  // START_NEW_SCRIPT porn_mission3_loop 
   $.flag_porn_mission2_passed = 1;
 }
 
@@ -1123,7 +1123,7 @@ async function creating_flyers() {
 $.player_x = _res428.x;
 $.player_y = _res428.y;
 $.player_z = _res428.z;
-  Fx.CreateSingleParticle(PARTICLE_FLYERS, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.0, 0.8);
+  Fx.CreateSingleParticle(11 /* PARTICLE_FLYERS */, $.player_x, $.player_y, $.player_z, 0.0, 0.0, 0.0, 0.8);
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   return;
